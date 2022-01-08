@@ -1,0 +1,49 @@
+/* 헤더와 푸터를 위한 css
+헤더와 푸터 스타일 변경하고 싶을 때 여기서 하면 됩니다. */
+
+
+*{margin: 0;padding: 0;}
+ul, li{list-style: none;}
+a, p, span{text-decoration: none;}
+img{border: 0;}
+
+header{
+    width: 1130px;
+    margin: 0 auto;
+    height: 120px;
+    background-color: #B47134;
+    opacity: 0.88;
+    overflow: hidden;
+}
+
+
+
+header::after{
+    clear: both;
+    display: block;
+    content: '';
+}
+
+img {
+    width: 50px;
+}
+
+
+
+header img {
+    width: 131px;
+    height: 118px;
+}
+
+.head1 {
+    width: 700px;
+    height: 150px;
+    float: left;
+}
+footer {
+    width: 1130px;
+    height: 193px;
+    margin: 0 auto;
+    background-color: #EFEFEF;
+    overflow: hidden;
+}
