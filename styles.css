@@ -4,66 +4,25 @@ section {
     margin: 0 auto;
 }
 
-#mainmenu {
-    width: 600px;
-    height: 100px;
-}
-
-#mainmenu ul {
-    width: 600px;
-    height: 100px;
-    overflow: hidden;
-}
-
-
-#mainmenu li {
-    width: 100px;
-    height: 100px;
-    float: left;
-    overflow: hidden;
-    margin-top: 70px;
-}
-
-<!--float left 잠시 보였다가 사라짐-->
-#mainmenu a {
-    color: #FFFFFF;
-    font-size: 30px;
-    width: 40px;
-    height: 30px;
-    float: left;
-}
-
-#mainmenu li::after{
-    clear: both;
-    display: block;
-    content: '';
-}
-
-#mainmenu::after{
-    clear: both;
-    display: block;
-    content: '';
-}
-
-
 #main_welcome {
-    width: 1190px;
+    width: 1130px;
     height: 575px;
     overflow: hidden;
     position: relative;
+    margin: 8px 0;
 }
 
 #main_welcome > img {
-    width: 100%;
-    height: 100%;
+    width: 1130px;
+    height: 575px;
     object-fit: cover;
 }
 
 #main_welcome > p {
     color: #FFFFFF;
     position: absolute;
-    top: 30%;
-    left: 30%;
+    top: 25%;
+    left: 25%;
     font-size: 96px;
     font-family: 'Reenie Beanie', cursive;
 }
@@ -100,48 +59,48 @@ section {
 }
 
 .spell {
-    width: 1190px;
+    width: 1130px;
     overflow: hidden;
 
 }
 
 #k > .spell_intro {
-    width: 300px;
+    width: 500px;
     height: 300px;
     float: left;
     margin: 30px;
 }
 
 #p > .spell_intro {
-    width: 300px;
+    width: 500px;
     height: 300px;
     float: left;
     margin: 30px;
 }
 
 #i > .spell_intro {
-    width: 300px;
+    width: 500px;
     height: 300px;
     float: left;
     margin: 30px;
 }
 
 #u > .spell_intro {
-    width: 300px;
+    width: 500px;
     height: 300px;
     float: right;
     margin: 30px;
 }
 
 #h > .spell_intro {
-    width: 300px;
+    width: 500px;
     height: 300px;
     float: right;
     margin: 30px;
 }
 
 #l > .spell_intro {
-    width: 300px;
+    width: 500px;
     height: 300px;
     float: right;
     margin: 30px;
