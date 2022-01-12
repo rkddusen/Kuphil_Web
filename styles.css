@@ -6,7 +6,7 @@ section {
 
 #main_welcome {
     width: 1130px;
-    height: 575px;
+    height: 505px;
     overflow: hidden;
     position: relative;
     margin: 8px 0;
@@ -14,14 +14,14 @@ section {
 
 #main_welcome > img {
     width: 1130px;
-    height: 575px;
+    height: 505px;
     object-fit: cover;
 }
 
 #main_welcome > p {
     color: #FFFFFF;
     position: absolute;
-    top: 25%;
+    top: 20%;
     left: 25%;
     font-size: 96px;
     font-family: 'Reenie Beanie', cursive;
@@ -29,132 +29,197 @@ section {
 
 #whatsnew {
     background-color: #FFF4EA;
-    height: 126px;
+    height: 120px;
 }
 
-#whatsnew > p:first-child {
+#whatsnew > p {
     color:#864415;
-    font-size: 36px;
+    font-size: 32px;
     font-family: 'Alegreya', serif;
 }
 
-#whatsnew > p:last-child {
+#whatsnew a {
     color: #000000;
-    font-size: 36px;
+    font-size: 32px;
+}
+
+#whatsnew > div {
+    height: 32px;
     text-align: center;
-    line-height: 43px;
+    line-height: 32px;
 }
 
 .spelling_introduce span {
     color: #FF8A00;
     font-size: 60px;
+    font-family: 'Alegreya', serif;
 }
 
 .spell  p:first-child {
     font-size: 40px;
+    font-family: 'Alegreya', serif;
 }
 
 .spell  p:last-child {
     font-size: 20px;
+    font-family: 'Basic', sans-serif;
 }
 
 .spell {
     width: 1130px;
     overflow: hidden;
-
+    margin-bottom: 60px;
 }
 
 #k > .spell_intro {
-    width: 500px;
-    height: 300px;
+    width: 440px;
+    height: 400px;
     float: left;
     margin: 30px;
+    position: relative;
+    z-index: 2;
 }
 
-#p > .spell_intro {
-    width: 500px;
-    height: 300px;
-    float: left;
-    margin: 30px;
+#k > .spell_intro:nth-child(2) {
+    width: 490px;
+    margin-left: 80px;
 }
 
-#i > .spell_intro {
-    width: 500px;
-    height: 300px;
-    float: left;
-    margin: 30px;
+#circle1 {
+    position: relative;
+    width: 268px;
+    height: 134px;
+    border-radius: 134px 134px 0 0;
+    background-color: #FFD6B0;
+    transform: rotate(90deg);
+    z-index: 1;
+    right: -505px;
+    bottom: -90px;
 }
 
 #u > .spell_intro {
-    width: 500px;
+    width: 400px;
     height: 300px;
     float: right;
     margin: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+#u > .spell_intro:nth-child(2) {
+    width: 440px;
+    margin-right: 130px;
+}
+
+#circle2 {
+    position: relative;
+    width: 132px;
+    height: 132px;
+    border-radius: 66px;
+    background-color: #FFD6B0;
+    z-index: 1;
+    right: -60px;
+    bottom: -20px;
+}
+
+#p > .spell_intro {
+    width: 400px;
+    height: 300px;
+    float: left;
+    margin: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+#p > .spell_intro:nth-child(2) {
+    width: 500px;
+    margin-left: 130px;
+}
+
+#circle3 {
+    position: relative;
+    width: 278px;
+    height: 278px;
+    border-radius: 139px;
+    background-color: #FFD6B0;
+    z-index: 1;
+    right: -820px;
+    bottom: -80px;
 }
 
 #h > .spell_intro {
-    width: 500px;
-    height: 300px;
+    width: 480px;
+    height: 320px;
     float: right;
     margin: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+#circle4 {
+    position: relative;
+    width: 300px;
+    height: 150px;
+    border-radius: 150px 150px 0 0;
+    background-color: #FFD6B0;
+    transform: rotate(-90deg);
+    z-index: 1;
+    right: -395px;
+    bottom: -115px;
+}
+
+#i > .spell_intro {
+    width: 480px;
+    height: 270px;
+    float: left;
+    margin: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+#i > .spell_intro:nth-child(2) {
+    margin-left: 80px;
+}
+
+#circle5 {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    background-color: #FFD6B0;
+    z-index: 1;
+    right: -520px;
+    bottom: -20px;
 }
 
 #l > .spell_intro {
-    width: 500px;
+    width: 400px;
     height: 300px;
     float: right;
     margin: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+#l > .spell_intro:nth-child(2) {
+    width: 550px;
+    margin-right: 50px;
+}
+
+#circle6 {
+    position: relative;
+    width: 314px;
+    height: 157px;
+    border-radius: 157px 157px 0 0;
+    z-index: 1;
+    transform: rotate(90deg);
+    background-color: #FFD6B0;
+    right: 40px;
+    bottom: -100px;
 }
 
 .spell::after {
     clear: both;
     display: block;
     content: '';
-}
-
-#footer_left {
-    width: 500px;
-    height: 100px;
-    overflow: hidden;
-}
-
-#footer_left > div {
-    width: 150px;
-    height: 50px;
-    float: left;
-}
-
-#footer_left > p {
-    font-size: 24px;
-}
-
-#footer_left::after {
-    clear: both;
-    display: block;
-    content: '';
-}
-
-#footer_right {
-    width: 600px;
-    height: 140px;
-    margin-left: 10px;
-}
-
-#footer_right > #terms {
-    width: 550px;
-    height: 100px;
-    overflow: hidden;
-}
-
-#footer_right li {
-    width: 170px;
-    height: 60px;
-    font-size: 18px;
-    float: left;
-}
-
-footer > div {
-    width: 550px;
-    height: 100px;
-    float: left;
 }
