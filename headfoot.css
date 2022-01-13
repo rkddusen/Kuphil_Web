@@ -11,6 +11,7 @@ header {
     width: 1130px;
     margin: 0 auto;
     height: 145px;
+    padding: 0 30px;
 }
 
 /* float 속성을 해제(clear)하기 위해 float된 요소의 부모태그에
@@ -134,8 +135,8 @@ footer {
     width: 1130px;
     height: 180px;
     margin: 0 auto;
-    background-color: #EFEFEF;
     overflow: hidden;
+    padding: 0 30px;
 }
 
 #footer_right > p {
@@ -151,6 +152,7 @@ footer {
     width: 500px;
     height: 180px;
     overflow: hidden;
+    background-color: #EFEFEF;
 }
 
 #footer_left > div {
@@ -180,6 +182,7 @@ footer {
 #footer_right {
     width: 630px;
     height: 180px;
+    background-color: #EFEFEF;
 }
 
 #footer_right > #terms {
