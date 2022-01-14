@@ -42,6 +42,7 @@
 
 .poster_title {
     margin: 0 auto;
+    margin-bottom: 100px;
     display: flex;
     justify-content: center;
     text-align: center;
