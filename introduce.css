@@ -1,42 +1,6 @@
 
 /* 소개 */
-* {margin: 0;padding: 0;}
-section {
-    width: 1130px;
-    padding: 0 30px;
-    margin: 0 auto;
-}
 
-#introduce {
-    font-size: 24px;
-    color: #BE7743;
-    font-family: 'Suwannaphum';
-    position: relative;
-    left: 467px;
-}
-
-#bar {
-    font-size: 24px;
-    color: #BE7743;
-    font-family: 'Suwannaphum';
-    position: relative;
-    left: 510px;
-    top: -4px;
-}
-#history {
-    font-size: 24px;
-    color: #909090;
-    font-family: 'Suwannaphum';
-    position: relative;
-    left: 553px;
-}
-
-hr {
-    width: 1130px;
-    height: 3px;
-    background-color: #BE7743;
-    border: 0;
-}
 
 #introduce_greeting {
     width: 1130px;
