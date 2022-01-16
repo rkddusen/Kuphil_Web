@@ -64,11 +64,13 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
     color: #FF8A00;
     font-size: 60px;
     font-family: 'Alegreya', serif;
+    font-weight: bold;
 }
 
 .spell  p:first-child {
     font-size: 40px;
     font-family: 'Alegreya', serif;
+    font-weight: bold;
 }
 
 .spell  p:last-child {
@@ -86,7 +88,7 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
     width: 440px;
     height: 400px;
     float: left;
-    margin: 30px;
+    margin: 90px 30px 30px;
     position: relative;
     z-index: 2;
 }
@@ -110,7 +112,7 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     transform: rotate(90deg);
     z-index: 1;
     right: -505px;
-    bottom: -90px;
+    bottom: -150px;
 }
 
 #u > .spell_intro {
@@ -204,7 +206,7 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     border-radius: 100px;
     background-color: #FFD6B0;
     z-index: 1;
-    right: -520px;
+    right: -590px;
     bottom: -20px;
 }
 
@@ -220,6 +222,7 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
 #l > .spell_intro:nth-child(2) {
     width: 550px;
     margin-right: 50px;
+    margin-left: 0;
 }
 
 #circle6 {
@@ -230,7 +233,7 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     z-index: 1;
     transform: rotate(90deg);
     background-color: #FFD6B0;
-    right: 40px;
+    right: 79px;
     bottom: -100px;
 }
 
