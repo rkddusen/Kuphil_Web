@@ -9,7 +9,7 @@
     font-size: 24px;
     text-align: center;
     align-items: center;
-    line-height: 43px;
+    line-height: 50px;
     color: #BE7743;
 }
 
@@ -42,7 +42,7 @@
 
 .poster_title {
     margin: 0 auto;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     display: flex;
     justify-content: center;
     text-align: center;
