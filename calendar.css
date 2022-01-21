@@ -1,0 +1,98 @@
+
+#table_title{
+    width: 1130px;
+    
+    margin: 30px auto;
+    margin-top: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+}
+.table_move{
+    color: black;
+    background-color: #FFF9F1;
+    border: 2px solid #BE7743;
+    border-radius: 10%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 44px;
+
+}
+.calendar_now{
+    font-size: 36px;
+    width: 250px;
+    text-align: center;
+}
+#calendar{
+    width: 1130px;
+    margin: 0 auto;
+}
+#calendar_table{
+    margin: 0 auto;
+    text-align: center;
+    background-color: #FFF1DE;
+    font-size: 27px;
+    padding: 10px 70px;
+    border-radius:5px;
+}
+thead td{
+    height: 60px;
+}
+tbody td{
+    height: 40px;
+    width: 80px;
+}
+.today_date{
+    background-color: #FFC690;
+}
+.today_date_red{
+    background-color: #FFC690;
+    color: red;
+}
+.date_red{
+    color: red;
+}
+#schedule_box{
+    width: 1130px;
+    margin: 0 auto;
+}
+#schedule{
+    margin: 50px auto;
+    width: 700px;
+    height: 400px;
+    background-color: #FFF9F1;
+    font-family: 'Nanum Pen Script', cursive;
+}
+#sche_month{
+    font-size: 45px;
+    margin: 20px 15px;
+}
+.entry{
+    margin: 10px;
+}
+#output{
+    font-size: 25px;
+}
+
+#add{
+    width: 1130px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+#add input{
+    width: 100px;
+}
+
+#sche_plus{
+    margin: 5px;
+    float: right;
+    width: 30px;
+    height: 30px;
+    background-color: #FFF9F1;
+    line-height: 25px;
+    font-size: 30px;
+    border-radius: 5px;
+}
