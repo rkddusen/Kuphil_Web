@@ -6,6 +6,11 @@
 ul, li {list-style: none;}
 a, p, span {text-decoration: none;}
 img {border: 0;}
+button, input{
+    all: unset;
+    cursor: pointer;
+}
+
 
 header {
     width: 1130px;
