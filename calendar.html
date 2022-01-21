@@ -1,9 +1,120 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>달력</title>
+    <link rel="stylesheet" type="text/css" href="calendar.css">
+    <link rel="stylesheet" type="text/css" href="headfoot.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <!-- 헤더 -->
+    <header>
+        <div id="head1">
+            <div id="mainlogo">
+                <a href="mainpage.html"><img src="kuphil_logo.png" alt="KUPHIL 흰색로고"></a>
+            </div>
+            <div id="nav">
+                    <ul>
+                        <li><a href="introduce.html">소개</a></li>
+                        <li><a href="archive.html">아카이브</a></li>
+                        <li><a href="calendar.html">달력</a></li>
+                        <li><a href="#">게시판</a></li>
+                        <li><a href="#">마이페이지</a></li>
+                    </ul>
+            </div>
+        </div>
+        <div id="head2">
+            <a href="#">로그인</a>
+        </div>
+        <hr>
+        <article id="archive_title" class="head3">
+            <p>달력</p>
+        </article>
+        <hr>
+    </header>
 
-    </head>
-    <body>
+    <!-- 달력이 그려지는 공간 -->
+
+    <!-- 년월을 표시 js에서 yyyy, mm부분을 새로 채움-->
+    <div id="table_title">
+        <input class="table_move" name="calendar_prev" type="button" value=" mm달 ">
+        <div class="calendar_now"> yyyy년 mm월 </div>
+        <input class="table_move" name="calendar_next" type="button" value=" mm달 ">
+    </div>
+
+    <!-- js에서 테이블 내에서 tr, td 를 추가해 줌-->
+    <div id="calendar">
+        <table id="calendar_table" border="0px;">
+            <thead>
+                <tr>
+                    <td style="color: red;">Sun</td>
+                    <td>Mon</td>
+                    <td>Tue</td>
+                    <td>Wed</td>
+                    <td>Thu</td>
+                    <td>Fri</td>
+                    <td>Sat</td>
+                </tr>
+            </thead>
+                <tbody></tbody>
+        </table>
+    </div>
+
+    <!-- 일정을 추가할 수 있는 버튼 -->
+    <div id="add">
         
-    </body>
+        <div id="add_form">
+
+        </div>
+    </div>
+
+    <!-- 스케줄 적히는 공간 -->
+    <div id="schedule_box">
+        
+        <div id="schedule">
+            <input id="sche_plus" type="button" value="+" name="add_sche"/>
+            <div id="sche_month">이 달의 일정!</div>
+            <div id="output">없음</div>
+        </div>
+    </div>
+
+
+    <!-- 푸터 -->
+    <footer> 
+        <div id="footer_left">
+            <p>Contact us! :)</p>
+            <div>
+                <a hr ef="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">
+                    <img src="kuphil_youtube.png" alt="쿠필 유튜브">
+                </a>
+            </div>
+            <div>
+                <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank">
+                    <img src="kuphil_instagram.png" alt="쿠필 인스타그램">
+                </a>
+            </div>
+            <div>
+                <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank">
+                    <img src="kuphil_facebook.png" alt="쿠필 페이스북">
+                </a>
+            </div>
+        </div>
+        <div id="footer_right">
+            <div id="terms">
+                <li><a href="#">이용 약관</a></li>
+                <li><a href="#">제휴 제안</a></li>
+                <li><a href="#">개인정보 처리방침</a></li>
+            </div>
+            <div id="address_n_right">
+                <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+                <p>copyright 2021 KUPHIL, All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script type="text/javascript" src="calendar.js"></script>
 </html>
