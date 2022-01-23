@@ -2,11 +2,11 @@
 헤더와 푸터 스타일 변경하고 싶을 때 여기서 하면 됩니다. */
 
 /* css 기본 세팅*/
-* {margin: 0;padding: 0;}
+* {margin: 0;padding: 0;font-family: Arial, Helvetica, sans-serif;}
 ul, li {list-style: none;}
 a, p, span {text-decoration: none;}
 img {border: 0;}
-button, input{
+button{
     all: unset;
     cursor: pointer;
 }
@@ -30,6 +30,7 @@ header::after {
 #nav {
     width: 660px;
     height: 118px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* 자식 태그가 float한 경우
