@@ -110,7 +110,8 @@ $(function(){
             sche+='<div class="entry">☑'+entry.date+'일 ';
             sche+=Math.floor(entry.startTime/100)+'시 '+entry.startTime%100+'분 ~ '+Math.floor(entry.endTime/100)+'시 '+entry.endTime%100+'분 ';
             sche+='"'+entry.title+'"'+'</div>'
-            $("#num"+entry.date).text("\u00a0"+entry.date+"'");
+            $("#num"+entry.date).prepend("\u00a0");
+            $("#num"+entry.date).append("<span style='color:#dc143c;'>°</span>");
             }
         });
         $('#output').html(sche);
