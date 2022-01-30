@@ -1,86 +1,35 @@
-* {margin: 0;padding: 0;}
-section {
+#historyyyyyyy{
+    position:relative;
     width: 1130px;
-    padding: 0 30px;
     margin: 0 auto;
 }
 
-#introduce {
-    font-size: 24px;
-    color: #909090;
-    font-family: 'Suwannaphum';
-    position: relative;
-    left: 467px;
+#background{
+    position:absolute;
+    width:1130px;
 }
 
-#bar {
-    font-size: 24px;
-    color: #BE7743;
-    font-family: 'Suwannaphum';
-    position: relative;
-    left: 510px;
-    top: -4px;
-}
-#history {
-    font-size: 24px;
-    color: #BE7743;
-    font-family: 'Suwannaphum';
-    position: relative;
-    left: 553px;
+#background > img{
+    width: 1032.36px;
+    height: 920px;
+    opacity: 0.2;
+    margin: 20px auto;
 }
 
-hr {
+.kuphil_history{
     width: 1130px;
-    height: 3px;
-    background-color: #BE7743;
-    border: 0;
+    position: relative;
+    margin: 20px 0;
+    padding: 0 60px;
+    z-index:1;
 }
 
-#year {
-    width: 630px;
-    height: 126px;
+.kuphil_history  p:first-child {
+    font-size: 48px;
+    margin: 10px 0;
 }
 
-#yaer ul {
-    width: 630px;
-    height: 126px;
-    overflow: hidden;
-}
-
-#year li {
-    width: 126px;
-    height: 50px;
-    float: left;
-    overflow: hidden;
-    margin-top: 76px;
-}
-
-#year a {
-    color: #909090;
-    font-size: 20px;
-    width: 126px;
-    height: 100px;
-    float: left;
-}
-
-#year li::after{
-    clear: both;
-    display: block;
-    content: '';
-}
-
-#year::after{
-    clear: both;
-    display: block;
-    content: '';
-}
-
-#background_logo{
-    width: 1021.36px;
-height: 920px;
-left: 209px;
-top: 520px;
-
-background: url(쿠필 로고 (흰색).png);
-opacity: 0.2;
+.spell  p:last-child {
+    font-size: 24px;
+    margin: 80px 0;
 }

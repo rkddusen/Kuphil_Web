@@ -4,47 +4,63 @@
 
 #introduce_greeting {
     width: 1130px;
-    height: 800px;
-    overflow: hidden;
-    position: relative;
-    margin: 8px 0;
+    height: 100%;
+    margin: 20px 0;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 #introduce_greeting > p {
-    position: relative;
-    left: 50px;
-    top: 30px;
+    margin: 10px 0;
+    padding: 0 20px;
+    height: 50px;
     font-family:'Alegreya';
     font-size: 36px;
 }
 
 #introduce_greeting > img {
-    position: relative;
-    left: 165px;
-    top: 50px;
+    position: flex;
+    align-self: center;
     width: 800px;
     height: 600px;
 }
 
+#path {
+    width: 1130px;
+    height: 100%;
+    margin: 20px 0;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
 #path > p {
-    position: relative;
-    left: 50px;
+    padding: 0 20px;
+    height: 50px;
     font-family:'Alegreya';
     font-size: 36px;
 }
 
-#path > img {
-    position: relative;
-    left: 50px;
-    top: 10px;
-    width: 684px;
-    height: 511px;
+#how {
+    width: 1130px;
+    height:100%;
+    margin: 20px 0;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: row;
 }
 
-#path > span {
-    position: relative;
-    left: 750px;
-    top: -350px;
+#how > img {
+    width: 750px;
+    height: 370px;
+    padding: 0 20px;
+}
+
+#how > span {
+    justify-self: end;
+    align-self: center;
     font-family:'Alegreya';
     font-size: 18px;
 }
