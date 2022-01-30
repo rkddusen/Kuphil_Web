@@ -1,0 +1,66 @@
+
+/* 소개 */
+
+
+#introduce_greeting {
+    width: 1130px;
+    height: 100%;
+    margin: 20px 0;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#introduce_greeting > p {
+    margin: 10px 0;
+    padding: 0 20px;
+    height: 50px;
+    font-family:'Alegreya';
+    font-size: 36px;
+}
+
+#introduce_greeting > img {
+    position: flex;
+    align-self: center;
+    width: 800px;
+    height: 600px;
+}
+
+#path {
+    width: 1130px;
+    height: 100%;
+    margin: 20px 0;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+#path > p {
+    padding: 0 20px;
+    height: 50px;
+    font-family:'Alegreya';
+    font-size: 36px;
+}
+
+#how {
+    width: 1130px;
+    height:100%;
+    margin: 20px 0;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+#how > img {
+    width: 750px;
+    height: 370px;
+    padding: 0 20px;
+}
+
+#how > span {
+    justify-self: end;
+    align-self: center;
+    font-family:'Alegreya';
+    font-size: 18px;
+}
