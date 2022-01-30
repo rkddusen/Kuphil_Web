@@ -5,15 +5,11 @@
 #introduce_greeting {
     width: 1130px;
     height: 100%;
-    margin: 20px 0;
-    padding: 0 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    margin: 20px auto;
 }
 
 #introduce_greeting > p {
-    margin: 10px 0;
+    margin: 10px auto;
     padding: 0 20px;
     height: 50px;
     font-family:'Alegreya';
@@ -21,7 +17,6 @@
 }
 
 #introduce_greeting > img {
-    position: flex;
     align-self: center;
     width: 800px;
     height: 600px;
@@ -30,11 +25,8 @@
 #path {
     width: 1130px;
     height: 100%;
-    margin: 20px 0;
+    margin: 20px auto;
     padding: 0 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
 }
 #path > p {
     padding: 0 20px;
