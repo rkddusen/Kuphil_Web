@@ -6,8 +6,10 @@
 ul, li {list-style: none;}
 a, p, span {text-decoration: none;}
 img {border: 0;}
+
+/* 마우스를 더블클릭하거나 드래그하는와중에, button 속에 text 가 선택됨. 이것을 방지 */
 button{
-    all: unset;
+    user-select : none; 
     cursor: pointer;
 }
 
