@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>KUPHIL</title>
+    <link rel="stylesheet" type="text/css" href="headfoot.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="login.css">
+
+    <!--Google Web Font를 이용하기 위한 link들 삽입-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Basic&Alegreya&family=Reenie+Beanie&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id="head1">
+            <div id="mainlogo">
+                <a href="mainpage.html"><img src="kuphil_logo.png" alt="KUPHIL 흰색로고"></a>
+            </div>
+            <div id="nav">
+                    <ul>
+                        <li><a href="introduce.html">소개</a></li>
+                        <li><a href="archive.html">아카이브</a></li>
+                        <li><a href="calendar.html">달력</a></li>
+                        <li><a href="#">게시판</a></li>
+                        <li><a href="#">마이페이지</a></li>
+                    </ul>
+            </div>
+        </div>
+        <div id="head2">
+            <a href="login.html">로그인</a>
+        </div>
+        <hr>
+    </header>
+    <section>
+        <div id="signup2_sec">
+            <h3>Step 2 회원 정보 입력</h3>
+            <form method="post" id="signup_form" name="signup_form" action="http://localhost/signup.php">
+                <div id="signup_form_div">
+                    <label for="signup_id" id="signup_id_label">아이디</label>
+                    <input type="text" id="signup_id" name="signup_id" placeholder="">
+                    <p>5~20자리 영어 소문자, 숫자만 사용가능합니다.<br>
+                        (사용 가능한 특수문자 33자 : ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ ＼ ] ^ _ ` { | } ~ \)</p>
+                    <button type="button" id="duplicate_check_btn">중복 확인</button>
+                    <label for="signup_pwd" id="signup_pwd_label">비밀번호</label>
+                    <input type="password" id="signup_pwd" name="signup_pwd" placeholder="">
+                    <p>8~16자리 영어 대소문자, 숫자, 특수문자만 사용</p>
+                    <label for="verify_pwd" id="verify_pwd_label">비밀번호 확인</label>
+                    <input type="password" id="verify_pwd" placeholder="">
+                    <label for="signup_name" id="signup_name_label">이름</label>
+                    <input type="text" id="signup_name" name="signup_name" placeholder="">
+                    <!--인증메일 보내지 않는 이상 불안한데...-->
+                    <label for="signup_email" id="signup_email_label">e-mail</label>
+                    <input type="email" id="signup_email" name="signup_email" placeholder="xxx@yyy.zzz">
+                    <label for="signup_year" id="signup_year_label">기수</label>
+                    <input type="number" id="signup_year" name="signup_year" placeholder="숫자만">
+                    <label for="signup_instr" id="signup_instr_label">악기</label>
+                    <select id="signup_instr" name="signup_instr" size="1">
+                        <option value="violin" selected>바이올린</option>
+                        <option value="viola">비올라</option>
+                        <option value="cello">첼로</option>
+                        <option value="contrabass">콘트라베이스</option>
+                        <option value="flute">플룻</option>
+                        <option value="oboe">오보에</option>
+                        <option value="clarinet">클라리넷</option>
+                        <option value="bassoon">바순</option>
+                        <option value="horn">호른</option>
+                        <option value="trumpet">트럼펫</option>
+                        <option value="trombone">트롬본</option>
+                        <option value="tuba">튜바</option>
+                    </select>
+                    <label for="signup_code" id="signup_code_label">가입 코드</label>
+                    <input type="text" id="signup_code" name="signup_code" placeholder="임원진에게 문의">
+                </div>
+        </form>
+        <form method="post" id="given_signup_code_form" name="given_signup_code_form">
+            <div>
+                <label id="gsc_label">
+                    <span>본인은 KUPhil의 단원이며, 관리자 또는 임원진에게 가입 코드를 
+                        <span id=directly>직접</span> 전달 받았습니다.</span>
+                    <input type="checkbox" id="gsc_cb" name="gsc_cb" value="yes">
+                </label>
+            </div>
+        </form>
+        <p id="note">확인되지 않은 단원일 경우 가입이 불가합니다.<br>
+        개인정보를 허위로 기재할 경우 관리자에 의해 가입이 거부됩니다.</p>
+        <div id="two_btn">
+            <button type="button" id="signup_personal_info_btn">등록</button>
+            <button type="button" id="signup_cancel_btn">취소</button>
+        </div>
+        </div>
+    </section>
+    <footer>
+        <div id="footer_left">
+            <p>Contact us! :)</p>
+            <div>
+                <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">
+                    <img src="kuphil_youtube.png" alt="쿠필 유튜브">
+                </a>
+            </div>
+            <div>
+                <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank">
+                    <img src="kuphil_instagram.png" alt="쿠필 인스타그램">
+                </a>
+            </div>
+            <div>
+                <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank">
+                    <img src="kuphil_facebook.png" alt="쿠필 페이스북">
+                </a>
+            </div>
+        </div>
+        <div id="footer_right">
+            <div id="terms">
+                <li><a href="#">이용 약관</a></li>
+                <li><a href="#">제휴 제안</a></li>
+                <li><a href="#">개인정보 처리방침</a></li>
+            </div>
+            <div id="address_n_right">
+                <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+                <p>copyright 2021 KUPHIL, All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
