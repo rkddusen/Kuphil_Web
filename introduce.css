@@ -1,14 +1,14 @@
 
 /* 소개 */
 
-
 #introduce_greeting {
     width: 1130px;
-    height: 100%;
+    padding: 0 30px;
     margin: 20px auto;
+    margin-top: 70px;
 }
 
-#introduce_greeting > p {
+#introduce_greeting > span {
     margin: 10px auto;
     padding: 0 20px;
     height: 50px;
@@ -16,19 +16,35 @@
     font-size: 36px;
 }
 
-#introduce_greeting > img {
-    align-self: center;
-    width: 800px;
-    height: 600px;
+#introduce_welcome {
+    margin: 20px auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: flex-start;
 }
+
+#introduce_welcome > img {
+    width:250px;
+    height: 250px;
+}
+
+#introduce_welcome > p {
+    font-size: 20px;
+    margin-left: 50px;
+    background-color:#dfd3c3a2;
+    width: 1000px;
+    height: 700px;
+}
+/* 색은 대충 영역만 표시해둔거라 신경 안 써도 O */
 
 #path {
     width: 1130px;
-    height: 100%;
     margin: 20px auto;
     padding: 0 30px;
 }
+
 #path > p {
+    margin-top: 100px;
     padding: 0 20px;
     height: 50px;
     font-family:'Alegreya';
@@ -36,10 +52,8 @@
 }
 
 #how {
-    width: 1130px;
-    height:100%;
-    margin: 20px 0;
-    padding: 0 30px;
+    width: 1130px; 
+    margin: 20px auto;
     display: flex;
     flex-direction: row;
 }
@@ -47,12 +61,11 @@
 #how > img {
     width: 750px;
     height: 370px;
-    padding: 0 20px;
 }
 
 #how > span {
-    justify-self: end;
     align-self: center;
     font-family:'Alegreya';
     font-size: 18px;
+    padding: 0 30px;
 }
