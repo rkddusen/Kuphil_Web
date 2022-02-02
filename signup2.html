@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>KUPHIL</title>
-    <link rel="stylesheet" type="text/css" href="headfoot.css">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" type="text/css" href="login.css">
+    <link rel="stylesheet" type="text/css" href="/headfoot.css">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <link rel="stylesheet" type="text/css" href="/login.css">
 
     <!--Google Web Font를 이용하기 위한 link들 삽입-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Basic&Alegreya&family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Basic&Alegreya&family=Reenie+Beanie&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header>
         <div id="head1">
             <div id="mainlogo">
-                <a href="mainpage.html"><img src="kuphil_logo.png" alt="KUPHIL 흰색로고"></a>
+                <a href="./"><img src="kuphil_logo.png" alt="KUPHIL 흰색로고"></a>
             </div>
             <div id="nav">
-                    <ul>
-                        <li><a href="introduce.html">소개</a></li>
-                        <li><a href="archive.html">아카이브</a></li>
-                        <li><a href="calendar.html">달력</a></li>
-                        <li><a href="#">게시판</a></li>
-                        <li><a href="#">마이페이지</a></li>
-                    </ul>
+                <ul>
+                    <li><a href="./introduce">소개</a></li>
+                    <li><a href="./archive">아카이브</a></li>
+                    <li><a href="./calendar">달력</a></li>
+                    <li><a href="./board">게시판</a></li>
+                    <li><a href="./myPage">마이페이지</a></li>
+                </ul>
             </div>
         </div>
         <div id="head2">
-            <a href="login.html">로그인</a>
+            <a href="./login">로그인</a>
         </div>
         <hr>
     </header>
@@ -41,7 +44,7 @@
                     <label for="signup_id" id="signup_id_label">아이디</label>
                     <input type="text" id="signup_id" name="signup_id" placeholder="">
                     <p>5~20자리 영어 소문자, 숫자만 사용가능합니다.<br>
-                        (사용 가능한 특수문자 33자 : ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ ＼ ] ^ _ ` { | } ~ \)</p>
+                        (사용 가능한 특수문자 33자 : ! " # $ % & ' ( ) * + , - . / : ; <=> ? @ [ ＼ ] ^ _ ` { | } ~ \)</p>
                     <button type="button" id="duplicate_check_btn">중복 확인</button>
                     <label for="signup_pwd" id="signup_pwd_label">비밀번호</label>
                     <input type="password" id="signup_pwd" name="signup_pwd" placeholder="">
@@ -73,22 +76,22 @@
                     <label for="signup_code" id="signup_code_label">가입 코드</label>
                     <input type="text" id="signup_code" name="signup_code" placeholder="임원진에게 문의">
                 </div>
-        </form>
-        <form method="post" id="given_signup_code_form" name="given_signup_code_form">
-            <div>
-                <label id="gsc_label">
-                    <span>본인은 KUPhil의 단원이며, 관리자 또는 임원진에게 가입 코드를 
-                        <span id=directly>직접</span> 전달 받았습니다.</span>
-                    <input type="checkbox" id="gsc_cb" name="gsc_cb" value="yes">
-                </label>
+            </form>
+            <form method="post" id="given_signup_code_form" name="given_signup_code_form">
+                <div>
+                    <label id="gsc_label">
+                        <span>본인은 KUPhil의 단원이며, 관리자 또는 임원진에게 가입 코드를
+                            <span id=directly>직접</span> 전달 받았습니다.</span>
+                        <input type="checkbox" id="gsc_cb" name="gsc_cb" value="yes">
+                    </label>
+                </div>
+            </form>
+            <p id="note">확인되지 않은 단원일 경우 가입이 불가합니다.<br>
+                개인정보를 허위로 기재할 경우 관리자에 의해 가입이 거부됩니다.</p>
+            <div id="two_btn">
+                <button type="button" id="signup_personal_info_btn">등록</button>
+                <button type="button" id="signup_cancel_btn">취소</button>
             </div>
-        </form>
-        <p id="note">확인되지 않은 단원일 경우 가입이 불가합니다.<br>
-        개인정보를 허위로 기재할 경우 관리자에 의해 가입이 거부됩니다.</p>
-        <div id="two_btn">
-            <button type="button" id="signup_personal_info_btn">등록</button>
-            <button type="button" id="signup_cancel_btn">취소</button>
-        </div>
         </div>
     </section>
     <footer>
@@ -123,4 +126,5 @@
         </div>
     </footer>
 </body>
+
 </html>

@@ -3,19 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>KUPHIL</title>
+    <title>달력</title>
+    <link rel="stylesheet" type="text/css" href="/calendar.css">
     <link rel="stylesheet" type="text/css" href="/headfoot.css">
-    <link rel="stylesheet" type="text/css" href="/styles.css">
-    <link rel="stylesheet" type="text/css" href="/login.css">
-
-    <!--Google Web Font를 이용하기 위한 link들 삽입-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Basic&Alegreya&family=Reenie+Beanie&display=swap"
-        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 </head>
 
 <body>
+    <!-- 헤더 -->
     <header>
         <div id="head1">
             <div id="mainlogo">
@@ -35,39 +30,64 @@
             <a href="./login">로그인</a>
         </div>
         <hr>
+        <article id="archive_title" class="head3">
+            <p>달력</p>
+        </article>
+        <hr>
     </header>
-    <section>
-        <div id="main_back">
-            <img src="mainimage.jpg">
-            <img src="wave_png.png">
+
+    <!-- 달력이 그려지는 공간 -->
+    <!-- 년월을 표시 js에서 yyyy, mm부분을 새로 채움-->
+    <div id="table_title">
+        <input class="table_move" name="calendar_prev" type="button" value="◀" onclick="prevCalendar()">
+        <div class="calendar_now"> yyyy년 mm월 </div>
+        <input class="table_move" name="calendar_next" type="button" value="▶" onclick="nextCalendar()">
+    </div>
+    <section class="calendar_part">
+        <!-- js에서 테이블 내에서 tr, td 를 추가해 줌-->
+        <div id="calendar">
+            <table id="calendar_table">
+                <thead>
+                    <tr>
+                        <td style="color: red;">일</td>
+                        <td>월</td>
+                        <td>화</td>
+                        <td>수</td>
+                        <td>목</td>
+                        <td>금</td>
+                        <td>토</td>
+                    </tr>
+                </thead>
+                <tbody class="body_calendar"></tbody>
+            </table>
         </div>
 
-        <div id="login_div">
-            <p>KUPhil에 오신 것을 환영합니다.</p>
-            <form method="post" id="login_form" name="login_form" action="">
-                <input type="hidden" name="redirectUrl" value="mainpage.html">
-                <div id="submit_div">
-                    <label for="login_id" id="id_label">ID</label>
-                    <input type="text" id="login_id" name="login_id" placeholder=" ">
-                    <label for="login_pwd" id="pwd_label">password</label>
-                    <input type="password" id="login_pwd" name="login_pwd" placeholder=" ">
+        <!-- 스케줄 적히는 공간 -->
+        <div id="schedule_box">
 
-                    <!--나중에 button에 disabled 집어넣고 id, pwd 둘 다 입력되면 클릭되도록 코드 작성-->
-                    <!--혹은 일반적으로 쓰는 로그인 버튼은 활성화시키되 입력 여부 확인하는 거-->
-                    <button type="button" id="login_submit_btn">Login</button>
-                </div>
-            </form>
-            <div id="exlogin_div">
-                <a href="#">아이디/비밀번호 찾기</a>
-                <a href="signup1.html">회원가입</a>
+            <button id="sche_plus" onclick="showForm();">±</button>
+            <div id="sche_month"></div>
+            <div id="output">
+                <!-- app.js에서 db정보 받아서 출력해줌 -->
+                <script>
+                    let data = "<%=db%>";
+                </script>
             </div>
+
         </div>
     </section>
+    <!-- 일정을 추가할 수 있는 영역 -->
+    <div id="add">
+        <div id="add_data"></div>
+        <div id="delete_data"></div>
+    </div>
+
+    <!-- 푸터 -->
     <footer>
         <div id="footer_left">
             <p>Contact us! :)</p>
             <div>
-                <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">
+                <a hr ef="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">
                     <img src="kuphil_youtube.png" alt="쿠필 유튜브">
                 </a>
             </div>
@@ -95,5 +115,6 @@
         </div>
     </footer>
 </body>
+<script type="text/javascript" src="/calendar.js"></script>
 
 </html>
