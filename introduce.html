@@ -1,96 +1,98 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <title>KUPhil</title>
-        <link rel="stylesheet" type="text/css" href="headfoot.css">
-        <link rel="stylesheet" type="text/css" href="introduce.css">
-        <link rel="stylesheet" type="text/css" href="styles.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
 
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>KUPhil</title>
+    <link rel="stylesheet" type="text/css" href="/headfoot.css">
+    <link rel="stylesheet" type="text/css" href="/introduce.css">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
 
-    <body>
-        <header>
-            <div id="head1">
-                <div id="mainlogo">
-                    <img src="kuphil_logo.png" alt="KUPHIL 흰색로고">
-                </div>
-                <div id="nav">
-                        <ul>
-                            <li><a href="#">소개</a></li>
-                            <li><a href="#">아카이브</a></li>
-                            <li><a href="#">달력</a></li>
-                            <li><a href="#">게시판</a></li>
-                            <li><a href="#">마이페이지</a></li>
-                        </ul>
-                </div>
+</head>
+
+<body>
+    <header>
+        <div id="head1">
+            <div id="mainlogo">
+                <a href="./"><img src="kuphil_logo.png" alt="KUPHIL 흰색로고"></a>
             </div>
-            <div id="head2">
-                <a href="#">로그인</a>
+            <div id="nav">
+                <ul>
+                    <li><a href="./introduce">소개</a></li>
+                    <li><a href="./archive">아카이브</a></li>
+                    <li><a href="./calendar">달력</a></li>
+                    <li><a href="./board">게시판</a></li>
+                    <li><a href="./myPage">마이페이지</a></li>
+                </ul>
             </div>
-            <hr>
-            <section>
-                <div class="head3">
-                    <a id="introduce" href="#">소개</a>
-                    <span id="bar">|</span>
-                    <a id="history" href="#">연혁</a>
-                </div>
-            </section>
-            <hr>
-        </header>
-    
+        </div>
+        <div id="head2">
+            <a href="./login">로그인</a>
+        </div>
+        <hr>
+        <section>
+            <div class="head3">
+                <a id="introduce" href="#">소개</a>
+                <span id="bar">|</span>
+                <a id="history" href="#">연혁</a>
+            </div>
+        </section>
+        <hr>
+    </header>
 
-        <div id="introduce_greeting">
-            <span>About KUPhil</span>
-            <div id="introduce_welcome">
-                <img src="professor.png" alt="교수님 사진">
-                <!--인사말이랑 교수님/임원진/동아리 사진 받아서 넣기-->
-                <p>안녕하세요 우리는 쿠필입니다.<br>
+
+    <div id="introduce_greeting">
+        <span>About KUPhil</span>
+        <div id="introduce_welcome">
+            <img src="professor.png" alt="교수님 사진">
+            <!--인사말이랑 교수님/임원진/동아리 사진 받아서 넣기-->
+            <p>안녕하세요 우리는 쿠필입니다.<br>
                 우리는 음악으로 ~~~~
-                </p>
+            </p>
+        </div>
+    </div>
+
+
+    <div id="path">
+        <p> 찾아오시는 길</p>
+        <div id="how">
+            <img src="Map.png" alt="동방 오는 길">
+            <span>
+                <br>1. 지하철 정보 (2, 7호선) <br>- 건대입구역 4번 출구로 나와 도보 이동 <br><br>2. 버스 정보 <br>- n번 ~ 역 <br>- n 번 ~역 <br>
+            </span>
+        </div>
+    </div>
+
+    <footer>
+        <div id="footer_left">
+            <p>Contact us! :)</p>
+            <!--SNS 로고는 저작권 확인 후 가져오기-->
+            <!--link 걸어주기-->
+            <div>
+                <img alt="유튜브 로고">
+            </div>
+            <div>
+                <img alt="인스타그램 로고">
+            </div>
+            <div>
+                <img alt="페이스북 로고">
             </div>
         </div>
-
-
-        <div id="path">
-            <p> 찾아오시는 길</p>
-                <div id="how">
-                    <img src="Map.png" alt="동방 오는 길">
-                    <span>
-                        <br>1. 지하철 정보 (2, 7호선) <br>- 건대입구역 4번 출구로 나와 도보 이동 <br><br>2. 버스 정보 <br>- n번 ~ 역 <br>- n 번 ~역 <br>
-                    </span>
-                </div> 
+        <div id="footer_right">
+            <div id="terms">
+                <li><a href="#">이용 약관</a></li>
+                <li><a href="#">제휴 제안</a></li>
+                <li><a href="#">개인정보 처리방침</a></li>
+            </div>
+            <div>
+                <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+                <p>copyright 2021 KUPHIL, All rights reserved.</p>
+            </div>
         </div>
+        <footer>
+</body>
 
-        <footer>
-            <div id="footer_left">
-                <p>Contact us! :)</p>
-                <!--SNS 로고는 저작권 확인 후 가져오기-->
-                <!--link 걸어주기-->
-                <div>
-                    <img alt="유튜브 로고">
-                </div>
-                <div>
-                    <img alt="인스타그램 로고">
-                </div>
-                <div>
-                    <img alt="페이스북 로고">
-                </div>
-            </div>
-            <div id="footer_right">
-                <div id="terms">
-                    <li><a href="#">이용 약관</a></li>
-                    <li><a href="#">제휴 제안</a></li>
-                    <li><a href="#">개인정보 처리방침</a></li>
-                </div>
-                <div>
-                    <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
-                    <p>copyright 2021 KUPHIL, All rights reserved.</p>
-                </div>
-            </div>
-        <footer>
-    </body>
 </html>

@@ -1,0 +1,139 @@
+#table_title{
+    width: 1190px;
+    margin: 30px auto;
+    margin-top: 70px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+}
+#table_title input{
+    cursor: pointer;
+}
+.table_move{
+    color: black;
+    border: none;
+    background-color: white;
+    border-radius: 5px;
+    width: 25px;
+    height: 20px;
+    text-align: center;
+    line-height: 18px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.calendar_now{
+    font-size: 36px;
+    width: 250px;
+    text-align: center;
+}
+.calendar_part{
+    width: 1190px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    
+}
+#calendar_table{
+    text-align: center;
+    background-color: #FFF1DE;
+    padding: 10px 10px;
+    height: 480px;
+    border-spacing: 20px 0;
+}
+td{
+width: 50px;height: 50px;
+padding: 5px; background-clip: content-box;}
+thead td{
+    font-size: 30px;
+}
+tbody td{
+    font-size: 25px;
+    border-top-left-radius: 100%;border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%; border-bottom-left-radius: 100%;
+}
+
+#schedule_box{
+    width: 400px;
+    height: 480px;
+    background-color: #FFF9F1;
+}
+#sche_month{
+    font-size: 30px;
+    margin: 40px 0 20px 20px;
+}
+.entry{
+    margin: 10px;
+}
+#output{
+    font-size: 20px;
+    margin: 10px;
+}
+.schedule_data{
+    margin: 5px auto;
+}
+
+#sche_plus{
+    text-align: center;
+    margin: 5px;
+    float: right;
+    width: 30px;
+    height: 30px;
+    background-color: #FFF9F1;
+    line-height: 25px;
+    font-size: 25px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+.cal{
+    cursor: pointer;
+}
+.calRed{
+    color: red;
+    cursor: pointer;
+}
+.calRedToday, .calToday{
+    background-color: #fca972;
+    cursor: pointer;
+}
+
+sup{
+    font-size:15px;
+}
+
+
+#add{
+    width: 1190px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    width: 300px;
+    margin: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    font-size: 17px;
+    border: 3px double black;
+    padding:10px;
+    height: 150px;
+}
+#aform>div:nth-child(2){
+    width: 300px;
+    text-align: left;
+}
+#dform>select{
+    width: 250px;
+    margin: 0 auto;
+}
+
+/* 두개 폼의 버튼들 */
+.subCan, .subDel{
+    width: 100px;
+    height: 20px;
+    border: 1px solid black;
+    background-color: white;
+}
