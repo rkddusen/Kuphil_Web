@@ -1,6 +1,17 @@
 
 /* 소개 */
 
+.head3 {
+    width: 1130px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    align-items: center;
+    line-height: 50px;
+    color: #BE7743;
+    tab-size: 8;
+}
+
 #introduce_greeting {
     width: 1130px;
     padding: 0 30px;
