@@ -69,3 +69,10 @@
     font-size: 18px;
     padding: 0 30px;
 }
+
+a:link {color: #BE7743; text-decoration: none;}
+a:visited {color: #BE7743; text-decoration: none;}
+
+#history {
+    color:darkgray; text-decoration: none;
+}
