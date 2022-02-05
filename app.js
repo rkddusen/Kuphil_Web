@@ -24,7 +24,7 @@ server.use(bodyParser.json());
 //request 이벤트 리스너 설정//라우터 설정
 server.get("/", (req, res) => {
 
-    res.sendFile(__dirname + "/mainpage.html");
+    res.sendFile(__dirname + "/index.html");
 });
 server.get("/introduce", (req, res) => {
 
