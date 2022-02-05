@@ -1,5 +1,3 @@
-
-
 //모듈을 추출
 const express = require("express"); http = require('http'), path = require('path');
 
@@ -33,6 +31,10 @@ server.get("/introduce", (req, res) => {
 server.get("/login", (req, res) => {
 
     res.sendFile(__dirname + "/login.html");
+});
+server.get("/history", (req, res) => {
+
+    res.sendFile(__dirname + "/history.html");
 });
 
 
