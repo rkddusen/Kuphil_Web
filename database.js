@@ -4,10 +4,10 @@ module.exports = function () {
     return {
         init: function () {
             return mysql.createConnection({
-                host: 'localhost',
+                host: '172.30.1.51',
                 port: '3306',
-                user: 'root',
-                password: 'dusen4120',
+                user: 'kuphil',
+                password: 'kuphil031103',
                 database: 'schedule',
                 dateStrings: 'date'
             })
