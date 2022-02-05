@@ -1,5 +1,5 @@
 {
-  "name": "kuphil_web",
+  "name": "kuphil",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -27,5 +27,6 @@
   "engines": {
     "node": "17.4.0",
     "npm": "8.3.1"
-  }
+  },
+  "devDependencies": {}
 }
