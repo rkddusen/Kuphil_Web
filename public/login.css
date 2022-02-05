@@ -1,0 +1,346 @@
+#login_div {
+    width: 350px;
+    height: 150px;
+    margin: 50px auto;
+    padding : 10px;
+    background-color: rgba(223, 211, 195, 0.08);
+}
+
+#login_div > p {
+    color: #864415;
+}
+
+#submit_div {
+    display: grid;
+    margin: 20px auto 10px;
+    grid-template-areas: 
+                    "id_label login_id login_id submit_btn"
+                    "pwd_label login_pwd login_pwd submit_btn";
+    gap: 10px 0;
+}
+
+#id_label {
+    grid-area: id_label;
+    width: 100px;
+    height: 25px;
+    text-align: right;
+}
+
+#login_id {
+    grid-area: login_id;
+    background-color: rgba(223, 211, 195, 0.37);
+    border: none;
+    width: 150px;
+    height: 25px;
+}
+
+#login_submit_btn {
+    grid-area: submit_btn;
+    background-color: rgba(223, 211, 195, 0.5);
+    color: #864415;
+    border-radius: 8px;
+    border: none;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+}
+
+#pwd_label {
+    grid-area: pwd_label;
+    width: 100px;
+    height: 25px;
+    text-align: right;
+}
+
+#login_pwd {
+    grid-area: login_pwd;
+    background-color: rgba(223, 211, 195, 0.37);
+    border: none;
+    width: 150px;
+    height: 25px;
+}
+
+#exlogin_div {
+    width: 260px;
+    height: 20px;
+    padding: 0 75px;
+}
+
+#exlogin_div > a {
+    color: #6A6868;
+    font-size: 10px;
+    text-align: center;
+    margin-left: 20px;
+}
+
+#main_back {
+    width: 1130px;
+    height: 150px;
+}
+
+#main_back > img {
+    width: 1130px;
+    height: 150px;
+    object-fit: cover;
+    z-index: 1;
+}
+
+#main_back > img:nth-child(2) {
+    width: 1130px;
+    height: 150px;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+    bottom: 150px;
+    filter: opacity(0.5) drop-shadow(0 0 0 white);
+}
+
+#signup_TOS_form, #PIA_form {
+    width: 1130px;
+    height: 100px;
+}
+
+#signup_TOS_form > div {
+    width: fit-content;
+    height: fit-content;
+    margin-left: 917.48px;
+    margin-top: 10px;
+}
+
+#PIA_form > div {
+    width: fit-content;
+    height: fit-content;
+    margin-left: 864.15px;
+    margin-top: 10px;
+}
+
+#signup_TOS_cb, #PIA_cb {
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+}
+
+#signup_TOS_cb span, #PIA_cb span {
+    vertical-align: top;
+}
+
+#signup_agree_btn {
+    background-color: rgba(223, 211, 195, 0.5);
+    color: #864415;
+    border-radius: 8px;
+    border: none;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    margin: 0 auto 50px;
+    display: block;
+}
+
+#notice {
+    margin-top: 50px;
+    line-height: 2;
+}
+
+#main_div {
+    margin: 50px 0 0;
+}
+
+#main_div > h3 {
+    margin-bottom: 10px;
+}
+
+.scroll {
+    width: 1130px;
+    height: 300px;
+    overflow: scroll;
+    border: 1px solid black;
+}
+
+.scroll > p {
+    padding: 5px;
+}
+
+#signup2_sec > h3 {
+    margin: 50px 30px 20px 40px;
+}
+
+#signup_form {
+    width: 1130px;
+    height: 400px;
+}
+
+#signup_form_div {
+    display: grid;
+    margin: 20px auto 10px;
+    grid-template-areas: 
+                    "signup_id_label signup_id duplicate_check_btn"
+                    "signup_pwd_label signup_pwd ."
+                    "verify_pwd_label verify_pwd ."
+                    "signup_name_label signup_name ."
+                    "signup_email_label signup_email ."
+                    "signup_year_label signup_year ."
+                    "signup_instr_label signup_instr ."
+                    "signup_code_label signup_code .";
+    gap: 10px 10px;
+    width: 550px;
+    height: 320px;
+    grid-template-columns: 150px 200px 100px;
+    grid-template-rows: repeat(8, 40px);
+}
+
+#signup_id_label {
+    grid-area: signup_id_label;
+    text-align: center;
+    line-height: 40px;
+}
+
+#signup_id {
+    grid-area: signup_id;
+    background-color: rgba(223, 211, 195, 0.55);
+    border: none;
+}
+
+#duplicate_check_btn {
+    grid-area: duplicate_check_btn;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 20px;
+    border: 1px soild #EEE7DF;
+}
+
+#signup_pwd_label {
+    grid-area: signup_pwd_label;
+    text-align: center;
+    line-height: 40px;
+}
+
+#signup_pwd {
+    grid-area: signup_pwd;
+    background-color: rgba(223, 211, 195, 0.55);
+    border: none;
+}
+
+#verify_pwd_label {
+    grid-area: verify_pwd_label;
+    text-align: center;
+    line-height: 40px;
+}
+
+#verify_pwd {
+    grid-area: verify_pwd;
+    background-color: rgba(223, 211, 195, 0.55);
+    border: none;
+}
+
+#signup_name_label {
+    grid-area: signup_name_label;
+    text-align: center;
+    line-height: 40px;
+}
+
+#signup_name {
+    grid-area: signup_name;
+    background-color: rgba(223, 211, 195, 0.55);
+    border: none;
+}
+
+#signup_email_label {
+    grid-area: signup_email_label;
+    text-align: center;
+    line-height: 40px;
+}
+
+#signup_email {
+    grid-area: signup_email;
+    background-color: rgba(223, 211, 195, 0.55);
+    border: none;
+}
+
+#signup_year_label {
+    grid-area: signup_year_label;
+    text-align: center;
+    line-height: 40px;
+}
+
+#signup_year {
+    grid-area: signup_year;
+    background-color: rgba(223, 211, 195, 0.55);
+    border: none;
+}
+
+#signup_instr_label {
+    grid-area: signup_instr_label;
+    text-align: center;
+    line-height: 40px;
+}
+
+#signup_instr {
+    grid-area: signup_instr;
+    background-color: rgba(223, 211, 195, 0.55);
+    border: none;
+}
+
+#signup_code_label {
+    grid-area: signup_code_label;
+    text-align: center;
+    line-height: 40px;
+}
+
+#signup_code {
+    grid-area: signup_code;
+    background-color: rgba(223, 211, 195, 0.55);
+    border: none;
+}
+
+#directly {
+    text-decoration: underline;
+}
+
+#given_signup_code_form {
+    width: 1130px;
+    height: 30px;
+    margin-top: 20px;
+}
+
+#given_signup_code_form > div {
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+}
+
+#gsc_cb {
+    width: 21.33px;
+    height: 21.33px;
+}
+
+#gsc_label > span {
+    vertical-align: top;
+}
+
+#note {
+    color: #FF0000;
+    text-align: right;
+    margin-right: 300px;
+}
+
+#signup_personal_info_btn {
+    border-radius: 20px;
+    background-color: rgba(223, 211, 195, 0.5);
+    width: 75px;
+    height: 50px;
+    text-align: center;
+}
+
+#signup_cancel_btn {
+    border-radius: 20px;
+    width: 75px;
+    height: 50px;
+    text-align: center;
+    border: 1px soild #EEE7DF;
+}
+
+#two_btn {
+    width: fit-content;
+    height: fit-content;
+    margin: 30px auto;
+}

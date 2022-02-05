@@ -1,0 +1,245 @@
+/* section으로 사실상 body 영역 기본세팅 */
+section {
+    width: 1130px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+/* position: relative로 인해 부모 태그가 자식 태그의 기준점이 됨 */
+#main_welcome {
+    width: 1130px;
+    height: 505px;
+    overflow: hidden;
+    position: relative;
+    margin: 8px 0;
+}
+
+/* object-fit은 img같은 대체 콘텐츠의 크기를 어떤 방식으로 조절해 요소에 맞출 것인지 지정
+cover는 대체 콘텐츠의 가로세로비를 유지하면서 요소 콘텐츠 박스 가득 채움
+서로의 가로세로비가 일치하지 않으면 객체 일부가 잘려나감 */
+#main_welcome > img {
+    width: 1130px;
+    height: 505px;
+    object-fit: cover;
+}
+
+/* position: absolute로 인해 부모 태그를 기준으로 위치가 결정됨 */
+/* font-family는 앞쪽이 사용하고 싶은 글꼴이고 뒤쪽은 기본 글꼴임
+사용하고 싶은 글꼴을 불러오지 못하는 경우 웹 브라우저에 지정된 기본 글꼴로 대체됨 
+앞쪽부터 순서대로 불러오기 때문에 여러 개 지정해둘 수도 있음 */
+#main_welcome > p {
+    color: #FFFFFF;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    font-size: 96px;
+    font-family: 'Reenie Beanie', cursive;
+}
+
+#whatsnew {
+    background-color: #FFF4EA;
+    height: 120px;
+}
+
+#whatsnew > p {
+    color:#864415;
+    font-size: 32px;
+    font-family: 'Alegreya', serif;
+}
+
+#whatsnew a {
+    color: #000000;
+    font-size: 32px;
+}
+
+/* text-align 속성을 사용해서 text 위치 지정 가능
+height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
+#whatsnew > div {
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+}
+
+.spelling_introduce span {
+    color: #FF8A00;
+    font-size: 60px;
+    font-family: 'Alegreya', serif;
+    font-weight: bold;
+}
+
+.spell  p:first-child {
+    font-size: 40px;
+    font-family: 'Alegreya', serif;
+    font-weight: bold;
+}
+
+.spell  p:last-child {
+    font-size: 20px;
+    font-family: 'Basic', sans-serif;
+}
+
+.spell {
+    width: 1130px;
+    overflow: hidden;
+    margin-bottom: 60px;
+}
+
+#k > .spell_intro {
+    width: 440px;
+    height: 400px;
+    float: left;
+    margin: 90px 30px 30px;
+    position: relative;
+    z-index: 2;
+}
+
+#k > .spell_intro:nth-child(2) {
+    width: 490px;
+    margin-left: 80px;
+}
+
+/* border-radius 속성을 사용해서 여러 부채꼴을 만들 수 있음
+transform: rotate()을 이용해 회전 가능
+z-index는 겹쳐진 요소들 사이에서 front, back을 정하는 우선순위, 숫자가 클수록 front에 위치
+right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 방향을 기준으로
+태그가 안쪽 방향으로 이동하기 때문에 -를 붙여야 바깥쪽 방향으로 이동하게 됨 */
+#circle1 {
+    position: relative;
+    width: 268px;
+    height: 134px;
+    border-radius: 134px 134px 0 0;
+    background-color: #FFD6B0;
+    transform: rotate(90deg);
+    z-index: 1;
+    right: -505px;
+    bottom: -150px;
+}
+
+#u > .spell_intro {
+    width: 400px;
+    height: 300px;
+    float: right;
+    margin: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+#u > .spell_intro:nth-child(2) {
+    width: 440px;
+    margin-right: 130px;
+}
+
+#circle2 {
+    position: relative;
+    width: 132px;
+    height: 132px;
+    border-radius: 66px;
+    background-color: #FFD6B0;
+    z-index: 1;
+    right: -60px;
+    bottom: -20px;
+}
+
+#p > .spell_intro {
+    width: 400px;
+    height: 300px;
+    float: left;
+    margin: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+#p > .spell_intro:nth-child(2) {
+    width: 500px;
+    margin-left: 130px;
+}
+
+#circle3 {
+    position: relative;
+    width: 278px;
+    height: 278px;
+    border-radius: 139px;
+    background-color: #FFD6B0;
+    z-index: 1;
+    right: -820px;
+    bottom: -80px;
+}
+
+#h > .spell_intro {
+    width: 480px;
+    height: 320px;
+    float: right;
+    margin: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+#circle4 {
+    position: relative;
+    width: 300px;
+    height: 150px;
+    border-radius: 150px 150px 0 0;
+    background-color: #FFD6B0;
+    transform: rotate(-90deg);
+    z-index: 1;
+    right: -395px;
+    bottom: -115px;
+}
+
+#i > .spell_intro {
+    width: 480px;
+    height: 270px;
+    float: left;
+    margin: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+#i > .spell_intro:nth-child(2) {
+    margin-left: 80px;
+}
+
+#circle5 {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    background-color: #FFD6B0;
+    z-index: 1;
+    right: -590px;
+    bottom: -20px;
+}
+
+#l > .spell_intro {
+    width: 400px;
+    height: 300px;
+    float: right;
+    margin: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+#l > .spell_intro:nth-child(2) {
+    width: 550px;
+    margin-right: 50px;
+    margin-left: 0;
+}
+
+#circle6 {
+    position: relative;
+    width: 314px;
+    height: 157px;
+    border-radius: 157px 157px 0 0;
+    z-index: 1;
+    transform: rotate(90deg);
+    background-color: #FFD6B0;
+    right: 79px;
+    bottom: -100px;
+}
+
+.spell::after {
+    clear: both;
+    display: block;
+    content: '';
+}
+
