@@ -14,7 +14,7 @@ var router = express.Router();
 
 //기본 속성 설정
 server.set('port', process.env.PORT || 8080);
-
+server.set('hostname', '127.0.0.1');
 
 //정적(css,일부js,사진)파일을 사용 가능하게끔
 server.use(express.static(__dirname + "/public"));
