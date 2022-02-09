@@ -8,7 +8,7 @@ module.exports = function () {
                 port: '3306',
                 user: 'esl47komgii9v3gq',
                 password: 'clm9yqrvpzkxd4in',
-                database: 'schedule',
+                database: 'iu4mzdh4h1qngohz',
                 dateStrings: 'date'
             })
         },
