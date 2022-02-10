@@ -45,8 +45,12 @@
         </article>
         <article id="whatsnew">
             <p>What`s NEW</p>
-            <div>
-                <a href="#">제 28회 정기연주회 프로그램 발표</a>
+            <div id="show">
+                <script>
+                    let data = "<%=db%>";
+                    let show=document.getElementById("show");
+                    show.innerHTML=data;
+                </script>
             </div>
         </article>
         <article class="spelling_introduce">
@@ -143,5 +147,4 @@
         </div>
     </footer>
 </body>
-
 </html>

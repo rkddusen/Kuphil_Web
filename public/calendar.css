@@ -121,13 +121,16 @@ form{
     padding:10px;
     height: 150px;
 }
-#aform>div:nth-child(2){
+#aform div:nth-child(2){
     width: 300px;
     text-align: left;
 }
-#dform>select{
-    width: 250px;
+#dform select{
+    width: 270px;
     margin: 0 auto;
+    /* 생략기호로 보이게 */
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* 두개 폼의 버튼들 */

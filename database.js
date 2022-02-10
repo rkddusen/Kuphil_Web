@@ -9,7 +9,8 @@ module.exports = function () {
                 user: 'esl47komgii9v3gq',
                 password: 'clm9yqrvpzkxd4in',
                 database: 'iu4mzdh4h1qngohz',
-                dateStrings: 'date'
+                dateStrings: 'date',
+                multipleStatements : true//다중쿼리문 보낼수있음
             })
         },
 

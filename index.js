@@ -5,6 +5,7 @@ const express = require("express"); http = require('http'), path = require('path
 var static = require('serve-static'), bodyParser = require('body-parser'); var session = require('express-session');
 const ejs = require('ejs');
 const fs = require('fs');
+const { rawListeners } = require("process");
 
 //서버를 생성, express 객체 생성
 const server = express();
@@ -20,10 +21,6 @@ server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
 
 //request 이벤트 리스너 설정//라우터 설정
-server.get("/", (req, res) => {
-
-    res.sendFile(__dirname + "/index.html");
-});
 server.get("/introduce", (req, res) => {
 
     res.sendFile(__dirname + "/introduce.html");
@@ -37,23 +34,22 @@ server.get("/history", (req, res) => {
     res.sendFile(__dirname + "/history.html");
 });
 
-
 server.post("/calendar/add_schedule", (req, res) => {
     let title = req.body.title;
     let startDate = req.body.year + '-' + req.body.month + '-' + req.body.day;
     let startTime = req.body.startHour + ':' + req.body.startMin;
     let endTime = req.body.endHour + ':' + req.body.endMin;
+    let main = (req.body.maincheck=='on') ? 1 : 0;
     if (req.body.allDay) {
         startTime = '00:00';
         endTime = '23:59';
     }
-    let sql = 'INSERT INTO schedule (title, date, startTime, endTime) VALUES(?, ?, ?, ?)';
-    let params = [title, startDate, startTime + ":00", endTime + ":00"];
+    let sql = 'UPDATE schedule SET main=0 ; INSERT INTO schedule (title, date, startTime, endTime, main) VALUES(?, ?, ?, ?, ?)';
+    let params = [title, startDate, startTime + ":00", endTime + ":00", main];
     connection.query(sql, params, function (err, result, fields) {
         if (err) {
             console.log(err);
         }
-        console.log('done!!!!!!!!!!!!!!!!!!!');
         return res.redirect('/calendar');
     })
 });
@@ -70,7 +66,6 @@ server.post("/calendar/delete_schedule", (req, res) => {
         if (err) {
             console.log(err);
         }
-        console.log('done!!!!!!!!!!!!!!!!!!!');
         return res.redirect('/calendar');
     })
 });
@@ -103,8 +98,39 @@ server.get("/calendar", (req, res) => {
             }
         }
     );
-
 });
+const mainPage = fs.readFileSync('./index.ejs', 'utf8');
+server.get("/", (req, res) => {
+    let data = '';
+    connection.query('SELECT date,starttime,endtime,title FROM schedule WHERE main=1',
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error); 
+            }
+            else {
+                if(rows.length==0){
+                    data='환영합니다~!';
+                }
+                else{
+                    data += rows[0].date + " " + rows[0].starttime.substring(0,5) + "~";
+                    data += rows[0].endtime.substring(0,5) + " / ";
+                    data += rows[0].title;
+                    console.log(data);
+                }
+                //데이터 생성
+                var page = ejs.render(mainPage, {
+                    db: data,
+                });
+                //응답
+                res.send(page);
+            }
+        }
+    );
+});
+// server.get("/", (req, res) => {
+
+//     res.sendFile(__dirname + "/index.html");
+// });
 server.get("/archive", (req, res) => {
 
     res.sendFile(__dirname + "/archive.html");
