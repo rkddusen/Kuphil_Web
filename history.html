@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <title>KUPhil</title>
     <link rel="stylesheet" type="text/css" href="/headfoot.css">
-    <link rel="stylesheet" type="text/css" href="/history.css">
+    <link rel="stylesheet" type="text/css" href="/introduce.css">
     <link rel="stylesheet" type="text/css" href="/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
-
 </head>
-
+    
 <body>
     <header>
         <div id="head1">
@@ -24,7 +23,7 @@
                     <li><a href="./introduce">소개</a></li>
                     <li><a href="./archive">아카이브</a></li>
                     <li><a href="./calendar">달력</a></li>
-                    <li><a href="./board">게시판</a></li>
+                    <li><a href="./photo">사진첩</a></li>
                     <li><a href="./myPage">마이페이지</a></li>
                 </ul>
             </div>
@@ -33,19 +32,34 @@
             <a href="./login">로그인</a>
         </div>
         <hr>
+        <section>
+            <div class="head3">
+                <a id="introduce" href="./introduce">소개</a>
+                <span id="bar">&ensp;&ensp;|&ensp;&ensp;</span>
+                <a id="history" href="./history">연혁</a>
+            </div>
+        </section>
+        <hr>
     </header>
 
-    <section>
-        <div>
-            <a id="introduce" href="#">소개</a>
-            <span id="bar">|</span>
-            <a id="history" href="#">연혁</a>
-            <hr>
-        </div>
-    </section>
-
-    <div id="year">
-        <input type='button' value='2003-2005' onclick= />
+    <div class="year">
+        <ul>
+            <li class="select">
+                <a href="#">2003-2005</a>
+            </li>
+            <li>
+                <a href="#">2006-2010</a>
+            </li>
+            <li>
+                <a href="#">2011-2015</a>
+            </li>
+            <li>
+                <a href="#">2016-2020</a>
+            </li>
+            <li>
+                <a href="#">2021-현재</a>
+            </li>
+        </ul>
     </div>
 
     <div id="historyyyyyyy">
@@ -63,3 +77,39 @@
             <p>2021.08.28. 제 n회 정기연주회</p>
         </div>
     </div>
+    
+    <footer>
+        <div id="footer_left">
+            <p>Contact us! :)</p>
+            <div>
+                <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">
+                    <img src="kuphil_youtube.png" alt="쿠필 유튜브">
+                </a>
+            </div>
+            <div>
+                <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank">
+                    <img src="kuphil_instagram.png" alt="쿠필 인스타그램">
+                </a>
+            </div>
+            <div>
+                <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank">
+                    <img src="kuphil_facebook.png" alt="쿠필 페이스북">
+                </a>
+            </div>
+        </div>
+        <div id="footer_right">
+            <div id="terms">
+                <li><a href="#">이용 약관</a></li>
+                <li><a href="#">제휴 제안</a></li>
+                <li><a href="#">개인정보 처리방침</a></li>
+            </div>
+            <div id="address_n_right">
+                <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+                <p>copyright 2021 KUPHIL, All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+
