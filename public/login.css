@@ -166,26 +166,37 @@
 
 #signup_form {
     width: 1130px;
-    height: 400px;
+    height: 650px;
 }
+
+/* visibility 속성을 사용해서 메세지 부분을 가려도 grid는 그 영역을 계속 잡고 있기 때문에
+input을 받고 입력된 걸 검증한 뒤 동적으로 영역을 집어넣어주어야 할 거 같다 */
 
 #signup_form_div {
     display: grid;
     margin: 20px auto 10px;
     grid-template-areas: 
                     "signup_id_label signup_id duplicate_check_btn"
+                    ". idMsg ."
                     "signup_pwd_label signup_pwd ."
+                    ". pwdMsg ."
                     "verify_pwd_label verify_pwd ."
+                    ". verify_pwdMsg ."
                     "signup_name_label signup_name ."
                     "signup_email_label signup_email ."
+                    ". emailMsg ."
+                    "verify_email_label verify_email verify_email_btn"
+                    ". verify_emailMsg ."
                     "signup_year_label signup_year ."
+                    ". yearMsg ."
                     "signup_instr_label signup_instr ."
-                    "signup_code_label signup_code .";
+                    "signup_code_label signup_code ."
+                    ". codeMsg .";
     gap: 10px 10px;
     width: 550px;
-    height: 320px;
+    height: 650px;
     grid-template-columns: 150px 200px 100px;
-    grid-template-rows: repeat(8, 40px);
+    grid-template-rows: repeat(3, 40px 20px) 40px repeat(3, 40px 20px) repeat(2, 40px) 20px;
 }
 
 #signup_id_label {
@@ -200,12 +211,20 @@
     border: none;
 }
 
+/* user agent stylesheet로 인해 border 대신 속성들 다 쪼개서 적음 */
 #duplicate_check_btn {
     grid-area: duplicate_check_btn;
     text-align: center;
     line-height: 40px;
     border-radius: 20px;
-    border: 1px soild #EEE7DF;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #EEE7DF;
+    background-color: #FFFFFF;
+}
+
+#idMsg {
+    grid-area: idMsg;
 }
 
 #signup_pwd_label {
@@ -220,6 +239,10 @@
     border: none;
 }
 
+#pwdMsg {
+    grid-area: pwdMsg;
+}
+
 #verify_pwd_label {
     grid-area: verify_pwd_label;
     text-align: center;
@@ -230,6 +253,10 @@
     grid-area: verify_pwd;
     background-color: rgba(223, 211, 195, 0.55);
     border: none;
+}
+
+#verify_pwdMsg {
+    grid-area: verify_pwdMsg;
 }
 
 #signup_name_label {
@@ -256,6 +283,37 @@
     border: none;
 }
 
+#emailMsg {
+    grid-area: emailMsg;
+}
+
+#verify_email_label {
+    grid-area: verify_email_label;
+    text-align: center;
+    line-height: 40px;
+}
+
+#verify_email {
+    grid-area: verify_email;
+    background-color: rgba(223, 211, 195, 0.55);
+    border: none;
+}
+
+#verify_email_btn {
+    grid-area: verify_email_btn;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #EEE7DF;
+    background-color: #FFFFFF;
+}
+
+#verify_emailMsg {
+    grid-area: verify_emailMsg;
+}
+
 #signup_year_label {
     grid-area: signup_year_label;
     text-align: center;
@@ -266,6 +324,10 @@
     grid-area: signup_year;
     background-color: rgba(223, 211, 195, 0.55);
     border: none;
+}
+
+#yearMsg {
+    grid-area: yearMsg;
 }
 
 #signup_instr_label {
@@ -290,6 +352,17 @@
     grid-area: signup_code;
     background-color: rgba(223, 211, 195, 0.55);
     border: none;
+}
+
+#codeMsg {
+    grid-area: codeMsg;
+}
+
+.signup_info_Msg {
+    font-size: 5px;
+    color: red;
+    gap: 0 10px;
+    /*aria-hidden: true;*/
 }
 
 #directly {
@@ -329,6 +402,7 @@
     width: 75px;
     height: 50px;
     text-align: center;
+    border-style: none;
 }
 
 #signup_cancel_btn {
@@ -336,7 +410,9 @@
     width: 75px;
     height: 50px;
     text-align: center;
-    border: 1px soild #EEE7DF;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #EEE7DF;
 }
 
 #two_btn {

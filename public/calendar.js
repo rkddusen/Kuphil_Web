@@ -207,7 +207,7 @@ function showForm() {
     //데이터를 추가하는 폼
     addDataForm += '<form class="form" id="aform" action="/calendar/add_schedule" method="post" onsubmit="return doAction();">'
     addDataForm += '<div>♬ 일정 추가 ♬</div >';
-    addDataForm += '<div>일\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 정 : ' + '<input type="text" name="title" id="stitle"/><br>';
+    addDataForm += '<div>일\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 정 : ' + '<input type="text" name="title" id="stitle"/> <input type="checkbox" name="maincheck" /> 메인 <br>';
     addDataForm += '날\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 짜 : ' + daySelect + '<br>';
     addDataForm += '시작 시간 : ' + '<select name="startHour" class="timeSelect">' + hourSelect + '</select>시 <select name="startMin" class="timeSelect">' + minSelect + '</select>분<br>';
     addDataForm += '종료 시간 : ' + '<select name="endHour" class="timeSelect">' + hourSelect + '</select>시 <select name="endMin" class="timeSelect">' + minSelect + '</select>분 ';
@@ -259,7 +259,11 @@ function hideForm() {
 //addDataForm에 아무 데이터가 없는데 제출버튼 눌렀을 경우를 방지
 function doAction() {
     if (document.getElementById("stitle").value == "") {
-        alert('내용을 입력하세요');
+        alert('내용을 입력하세요.');
+        return false;
+    }
+    else if(document.getElementById("stitle").value.length>30){
+        alert('내용이 너무 깁니다.');
         return false;
     }
     if (document.getElementsByClassName('timeSelect')[0].value > document.getElementsByClassName('timeSelect')[2].value) {
