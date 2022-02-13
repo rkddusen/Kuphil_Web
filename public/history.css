@@ -1,7 +1,18 @@
+.year{
+    color: #BE7743;
+    border: none;
+    background-color: white;
+    width: 200px;
+    height: 30px;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
 #historyyyyyyy{
     position:relative;
     width: 1130px;
     margin: 0 auto;
+    height: 1000px;
 }
 
 #background{
@@ -10,10 +21,13 @@
 }
 
 #background > img{
-    width: 1032.36px;
-    height: 920px;
+    width: 774.27px;
+    height: 690px;
     opacity: 0.2;
     margin: 20px auto;
+    display:flex;
+    justify-self: center;
+    align-self: center;
 }
 
 .kuphil_history{
@@ -27,13 +41,16 @@
 .kuphil_history  p:first-child {
     font-size: 48px;
     margin: 10px 0;
+    margin-top: 70px;
 }
 
-.spell  p:last-child {
+.kuphil_history  p:last-child {
     font-size: 24px;
-    margin: 80px 0;
 }
 
 a:link {color: #BE7743; text-decoration: none;}
 a:visited { color: #BE7743; text-decoration: none;}
-a:hover { color: #BE7743; text-decoration: underline;}
+
+#introduce{
+    color: darkgray; text-decoration: none;
+}
