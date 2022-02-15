@@ -1,0 +1,41 @@
+#albumhtml{
+    width: 1130px;
+    padding: 0 30px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+#albumSection{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25%,auto));
+}
+.album{
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    margin: 20px;
+}
+
+.albumCon{
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.albumCon img{
+    position:absolute;
+    width: 100%;
+    top:50%; left:50%; transform: translate(-50%, -50%);
+}
+.albumTi{
+    display: inline-block;
+    width: 120px;
+    height: 20px;
+    
+}
+.albumTi p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
