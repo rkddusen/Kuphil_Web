@@ -1,10 +1,8 @@
-#albumhtml{
+#albumSection{
     width: 1130px;
     padding: 0 30px;
     margin: 0 auto;
     margin-top: 100px;
-}
-#albumSection{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(25%,auto));
 }
@@ -17,8 +15,8 @@
 
 .albumCon{
     display: inline-block;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     margin: 10px;
     overflow: hidden;
     position: relative;
@@ -38,4 +36,16 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.blank{
+    background-color: white;
+    border: 3px solid black;
+    width: 70%;
+    height: 95%;
+    margin: auto;
+    align-items: center;
+}
+.blank p{
+    padding: 40px 0;
 }
