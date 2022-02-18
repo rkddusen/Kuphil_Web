@@ -23,7 +23,7 @@
                     <li><a href="./introduce">소개</a></li>
                     <li><a href="./archive">아카이브</a></li>
                     <li><a href="./calendar">달력</a></li>
-                    <li><a href="./photo">사진첩</a></li>
+                    <li><a href="./album">사진첩</a></li>
                     <li><a href="./myPage">마이페이지</a></li>
                 </ul>
             </div>
@@ -37,36 +37,15 @@
         </article>
         <hr>
     </header>
-    <div class="posterbox_1">
-        <div class="poster_img">
-            <!-- 다른 포스터들도 이런 식으로 poster_img div안에 이미지 삽입할 것..?ㄱㅊ? -->
-            <a href="#">
-                <img scr="poster_sample.png" alt="제1회포스터" />
-            </a>
-        </div>
-        <div class="poster_img"></div>
-        <div class="poster_img"></div>
-    </div>
-    <div class="poster_title">
-        <div class="poster_title_text">제1회 정기 연주회</div>
-        <div class="poster_title_text">제2회 정기 연주회</div>
-        <div class="poster_title_text">제3회 정기 연주회</div>
-    </div>
+    <div class="posterbox_1"></div>
+
     <div class="page_button">
-        <button onclick="location.href='이전페이지.html'" class="loadposters">
-        </button>
-        <button onclick="location.href='다음페이지.html'" class="loadposters">></button>
+        <button onclick= "prevPage();" class="loadposters">◀</button>
+        <button onclick="nextPage();" class="loadposters">▶</button>
     </div>
-    <div class="posterbox_2">
-        <div class="poster_img"></div>
-        <div class="poster_img"></div>
-        <div class="poster_img"></div>
-    </div>
-    <div class="poster_title">
-        <div class="poster_title_text">제4회 정기 연주회</div>
-        <div class="poster_title_text">제5회 정기 연주회</div>
-        <div class="poster_title_text">제6회 정기 연주회</div>
-    </div>
+    
+    <div class="posterbox_2"></div>
+
     <footer>
         <div id="footer_left">
             <p>Contact us! :)</p>
@@ -99,5 +78,5 @@
         </div>
     </footer>
 </body>
-
+<script type = "text/javascript" src = "/archive.js"></script>
 </html>
