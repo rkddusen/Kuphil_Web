@@ -38,7 +38,7 @@ showAlbum();
 
 function openSecondAlbum(id) {
     let secondText = '';
-    console.log(id);
+
     secondText += '<div class="album">';
     secondText += '<div class="albumCon" id="back" onclick="showAlbum();"><img src="refolder.png"></div>';
     secondText += '<div class="albumTi"><p>Back</p></div>';
@@ -69,10 +69,9 @@ function openSecondAlbum(id) {
 function openImage(id) {
     let thirdText = '';
     let prevId = id.split("_")[0];
-    console.log(prevId);
 
     thirdText += '<div class="album">';
-    thirdText += '<div class="albumCon" id="back" onclick="showAlbum();"><img src="refolder.png"></div>';
+    thirdText += '<div class="albumCon" id="'+prevId+'" onclick="openSecondAlbum(this.id);"><img src="refolder.png"></div>';
     thirdText += '<div class="albumTi"><p>Back</p></div>';
     thirdText += '</div></div>';
 
