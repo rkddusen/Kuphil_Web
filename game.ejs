@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="/album.css">
+    <link rel="stylesheet" type="text/css" href="/game.css">
     <link rel="stylesheet" type="text/css" href="/headfoot.css">
 </head>
 
@@ -29,23 +29,50 @@
         </div>
         <hr>
         <article class="head3">
-            <p>사진첩</p>
+            <p>악기 추천</p>
         </article>
         <hr>
     </header>
+    <!-- 내용 -->
     <script>
-        let data = "<%=db%>";
-        let count = "<%=count%>";
+        let question = "<%=question%>".split(",");
+        let conductor = "<%=conductor%>".split(",");
+        let firstViolin = "<%=firstViolin%>".split(",");
+        let secondViolin = "<%=secondViolin%>".split(",");
+        let viola = "<%=viola%>".split(",");
+        let cello = "<%=cello%>".split(",");
+        let contra = "<%=contra%>".split(",");
+        let flute = "<%=flute%>".split(",");
+        let piccolo = "<%=piccolo%>".split(",");
+        let oboe = "<%=oboe%>".split(",");
+        let clarinet = "<%=clarinet%>".split(",");
+        let basson = "<%=basson%>".split(",");
+        let trumpet = "<%=trumpet%>".split(",");
+        let trombone = "<%=trombone%>".split(",");
+        let horn = "<%=horn%>".split(",");
+        let tuba = "<%=tuba%>".split(",");
+        let timpani = "<%=timpani%>".split(",");
+        let cymbals = "<%=cymbals%>".split(",");
+        let bassdrum = "<%=bassdrum%>".split(",");
+        let piano = "<%=piano%>".split(",");
+        let triangle = "<%=triangle%>".split(",");
+        let audience = "<%=audience%>".split(",");
+        let answer = "<%=answer%>".split(",");
     </script>
-    <div id="albumSection">
-        <!-- <div class="album">
-                <div class="albumCon" id="연주회" onclick="openSecondAlbum(this.id);"><img src="folder.png" width="200px"></div>
-                <div class="albumTi">
-                    <p>연주회</p>
-                </div>
-            </div> -->
+    <div class="gameContents">
+        <div class="question">
+            당신에게 어울리는 악기를 추천해 드려도 될까요?<br />
+            <span style="font-size: 12px; color: red;">(* 이 테스트는 오로지 재미를 위해 만들어진 테스트입니다.^^)</span>
+        </div>
+        <div class="answer">
+            <div class="firstAnswer">
+                <button onclick="startGame();">너무 좋아요 :)</button>
+            </div>
+            <div class="secondAnswer">
+                <button>다음에 봐요 :(</button>
+            </div>
+        </div>
     </div>
-
     <footer>
         <div id="footer_left">
             <p>Contact us! :)</p>
@@ -78,6 +105,6 @@
         </div>
     </footer>
 </body>
-<script type="text/javascript" src="/album.js"></script>
+<script type="text/javascript" src="/game.js"></script>
 
 </html>
