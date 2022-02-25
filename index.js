@@ -39,7 +39,7 @@ server.post("/calendar/add_schedule", (req, res) => {
     let startDate = req.body.year + '-' + req.body.month + '-' + req.body.day;
     let startTime = req.body.startHour + ':' + req.body.startMin;
     let endTime = req.body.endHour + ':' + req.body.endMin;
-    let main = (req.body.maincheck=='on') ? 1 : 0;
+    let main = (req.body.maincheck == 'on') ? 1 : 0;
     if (req.body.allDay) {
         startTime = '00:00';
         endTime = '23:59';
@@ -105,15 +105,15 @@ server.get("/", (req, res) => {
     connection.query('SELECT date,starttime,endtime,title FROM schedule WHERE main=1',
         function (error, rows, fields) {
             if (error) {
-                console.log(error); 
+                console.log(error);
             }
             else {
-                if(rows.length==0){
-                    data='환영합니다~!';
+                if (rows.length == 0) {
+                    data = '환영합니다~!';
                 }
-                else{
-                    data += rows[0].date + " " + rows[0].starttime.substring(0,5) + "~";
-                    data += rows[0].endtime.substring(0,5) + " / ";
+                else {
+                    data += rows[0].date + " " + rows[0].starttime.substring(0, 5) + "~";
+                    data += rows[0].endtime.substring(0, 5) + " / ";
                     data += rows[0].title;
                     console.log(data);
                 }
@@ -136,25 +136,25 @@ server.get("/archive", (req, res) => {
     res.sendFile(__dirname + "/archive.html");
 });
 
-const calPagealbum = fs.readFileSync('./album.ejs', 'utf8');
+const albPage = fs.readFileSync('./album.ejs', 'utf8');
 server.get("/album", (req, res) => {
-    
+
     connection.query('SELECT firstTitle, secondTitle, address FROM album ORDER BY firstTitle, secondTitle',
         function (error, rows, fields) {
             if (error) {
                 console.log(error);
             }
             else {
-                let imagealbum=[];
-                let count=0;
+                let imagealbum = [];
+                let count = 0;
                 for (var i in rows) {
                     imagealbum[i] = rows[i].firstTitle + "//" + rows[i].secondTitle + "//";
                     imagealbum[i] += rows[i].address;
                     count++;
                 }//데이터 생성
-                var page = ejs.render(calPagealbum, {
+                var page = ejs.render(albPage, {
                     db: imagealbum,
-                    count:count,
+                    count: count,
                 });
                 //응답
                 res.send(page);
@@ -163,7 +163,45 @@ server.get("/album", (req, res) => {
     );
 });
 
+const gamePage = fs.readFileSync('./game.ejs', 'utf8');
+server.get("/game", (req, res) => {
 
+    connection.query('SELECT question, conductor, firstViolin,secondViolin,viola,cello,contra,flute,piccolo,oboe,clarinet,basson,trumpet,trombone,horn,tuba,timpani,cymbals ,bassdrum ,piano ,triangle ,audience ,answer FROM game ORDER BY RAND()',
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            }
+            else {
+                let question = []; let conductor = []; let firstViolin = []; let secondViolin = []; let viola = []; let cello = []; let contra = [];
+                let flute = []; let piccolo = []; let oboe = []; let clarinet = []; let basson = []; let trumpet = []; let trombone = []; let horn = []; let tuba = [];
+                let timpani = []; let cymbals = []; let bassdrum = []; let piano = []; let triangle = []; let audience = []; let answer = [];
+                for (var i in rows) {
+                    question[i] = rows[i].question; conductor[i] = rows[i].conductor; firstViolin[i] = rows[i].firstViolin;
+                    secondViolin[i] = rows[i].secondViolin; viola[i] = rows[i].viola; cello[i] = rows[i].cello; contra[i] = rows[i].contra;
+                    flute[i] = rows[i].flute; piccolo[i] = rows[i].piccolo; oboe[i] = rows[i].oboe; clarinet[i] = rows[i].clarinet;
+                    basson[i] = rows[i].basson; trumpet[i] = rows[i].trumpet; trombone[i] = rows[i].trombone; horn[i] = rows[i].horn;
+                    tuba[i] = rows[i].tuba; timpani[i] = rows[i].timpani; cymbals[i] = rows[i].cymbals; bassdrum[i] = rows[i].bassdrum;
+                    piano[i] = rows[i].piano; triangle[i] = rows[i].triangle; audience[i] = rows[i].audience; answer[i] = rows[i].answer;
+                }//데이터 생성
+                var page = ejs.render(gamePage, {
+                    question: question, conductor: conductor, firstViolin: firstViolin, secondViolin: secondViolin, viola: viola,
+                    cello: cello, contra: contra, flute: flute, piccolo: piccolo, oboe: oboe,
+                    clarinet: clarinet, basson: basson, trumpet: trumpet, trombone: trombone, horn: horn,
+                    tuba: tuba, timpani: timpani, cymbals: cymbals, bassdrum: bassdrum, piano: piano,
+                    triangle: triangle, audience: audience, answer: answer,
+                });
+                //응답
+                console.log(question[0]);
+                res.send(page);
+            }
+        }
+    );
+});
+
+server.get("/game", (req, res) => {
+
+    res.sendFile(__dirname + "/game.html");
+});
 
 server.use((req, res) => {
     res.sendFile(__dirname + "/404.html");
@@ -175,5 +213,5 @@ server.use((req, res) => {
 //     console.log("The server is listening on port 3000");
 // });
 http.createServer(server).listen(server.get('port'), server.get('host'), () => {
-    console.log('Express server running at ' + server.get('hostname') +':'+ server.get('port'));
+    console.log('Express server running at ' + server.get('hostname') + ':' + server.get('port'));
 });
