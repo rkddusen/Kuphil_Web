@@ -1,7 +1,8 @@
 #table_title{
-    width: 1190px;
+    width: 1130px;
+    padding: 0 30px;
     margin: 30px auto;
-    margin-top: 70px;
+    margin-top: 120px;
     height: 30px;
     display: flex;
     justify-content: center;
@@ -27,11 +28,11 @@
     text-align: center;
 }
 .calendar_part{
-    width: 1190px;
-    margin: 0 auto;
+    width: 1130px;
+    padding: 0 30px;
+    margin: 50px auto;
     display: flex;
     justify-content: center;
-    
 }
 #calendar_table{
     text-align: center;
@@ -42,7 +43,7 @@
 }
 td{
 width: 50px;height: 50px;
-padding: 5px; background-clip: content-box;}
+padding: 5px; }
 thead td{
     font-size: 30px;
 }
@@ -57,14 +58,12 @@ tbody td{
     height: 480px;
     background-color: #FFF9F1;
 }
-#sche_month{
+.sche_date{
     font-size: 30px;
     margin: 40px 0 20px 20px;
 }
-.entry{
-    margin: 10px;
-}
-#output{
+
+.sche_date_output{
     font-size: 20px;
     margin: 10px;
 }
