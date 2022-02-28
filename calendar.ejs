@@ -59,18 +59,17 @@
                 <tbody class="body_calendar"></tbody>
             </table>
         </div>
-
+        <script>
+            let data = "<%=db%>";
+        </script>
         <!-- 스케줄 적히는 공간 -->
         <div id="schedule_box">
 
             <button id="sche_plus" onclick="showForm();">±</button>
-            <div id="sche_month"></div>
-            <div id="output">
-                <!-- app.js에서 db정보 받아서 출력해줌 -->
-                <script>
-                    let data = "<%=db%>";
-                </script>
-            </div>
+            <div class="sche_date"></div>
+            <div class="sche_date_output"></div>
+            <div class="sche_date"></div>
+            <div class="sche_date_output"></div>
 
         </div>
     </section>
