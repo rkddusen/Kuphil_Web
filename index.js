@@ -162,6 +162,51 @@ server.get("/album", (req, res) => {
         }
     );
 });
+server.get("/board", (req, res) => {
+    res.redirect("/board/1");
+});
+
+const boaPage = fs.readFileSync('./board.ejs', 'utf8');
+server.get("/board/:page", (req, res) => {
+    var paging=req.params.page;
+    let pageStart=(paging-1)*10;
+    let sql='SELECT category, title, content, writer, date FROM board ORDER BY date DESC LIMIT '+pageStart+', 10;';
+    let sqll='SELECT table_rows FROM information_schema.tables WHERE table_name ="board";';
+    connection.query(sql+sqll,
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            }
+            else {
+                let dataResult=rows[0];
+                let countResult=rows[1];
+                let data = [];
+                let content=[];
+                let number=countResult[0].table_rows;
+                for (var i in rows[0]) {
+                    data[i] = dataResult[i].category + "//" + dataResult[i].title + "//" + dataResult[i].writer+"//"+ dataResult[i].date;
+                    content[i] = dataResult[i].content;
+                }
+                //데이터 생성
+                page = ejs.render(boaPage, {
+                    page_num:10,
+                    pass:true,
+                    page:paging,
+                    data:data,
+                    content:content,
+                    number:number,
+                });
+                if((number/10)+1<paging){
+                    res.redirect("/board/1");
+                }
+                //응답
+                else{
+                res.send(page);
+                }
+            }
+        }
+    );
+});
 
 const gamePage = fs.readFileSync('./game.ejs', 'utf8');
 server.get("/game", (req, res) => {

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/board.css">
+    <link rel="stylesheet" type="text/css" href="/headfoot.css">
+</head>
+
+<body>
+    <!-- 헤더 -->
+    <header>
+        <div id="head1">
+            <div id="mainlogo">
+                <a href="../"><img src="../kuphil_logo.png" alt="KUPHIL 흰색로고"></a>
+            </div>
+            <div id="nav">
+                <ul>
+                    <li><a href="../introduce">소개</a></li>
+                    <li><a href="../archive">아카이브</a></li>
+                    <li><a href="../calendar">달력</a></li>
+                    <li><a href="../album">사진첩</a></li>
+                    <li><a href="../myPage">마이페이지</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="head2">
+            <a href="../login">로그인</a>
+        </div>
+        <hr>
+        <article class="head3">
+            <p>게시판</p>
+        </article>
+        <hr>
+    </header>
+
+    <!-- 글쓰기 -->
+    <div class="board_plus">
+        <p>글쓰기</p>
+    </div>
+    
+    <section class="board_part">
+        <!-- 게시판 테이블 -->
+        <table class="board_table">
+            <thead>
+                <tr>
+                    <td class="td_no" style="width: 70px;">No.</td>
+                    <td class="td_category" style="width: 100px;">전체 ▼</td>
+                    <td class="td_title" style="width: 500px;">제목</td>
+                    <td class="td_writer" style="width: 150px;">작성자</td>
+                    <td class="td_date" style="width: 150px;">날짜</td>
+                </tr>
+            </thead>
+            <tbody class="board_body">
+                <%
+                for(var i = 0; i < page_num; i++) {
+                if(number<=((page-1)*page_num+i)){
+                %>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <%
+                }else{
+                %>
+                <tr>
+                    <td><%= i + 1 %></td>
+                    <td><%= data[i].split("//")[0] %></td>
+                    <td><%= data[i].split("//")[1] %></td>
+                    <td><%= data[i].split("//")[2] %></td>
+                    <td><%= data[i].split("//")[3].split(" ")[0] %></td>
+                </tr>
+                <% }
+                }
+                %>
+
+            </tbody>
+        </table>
+        <!-- 게시판 넘기는 번호 -->
+        <table class="board_number">
+            <tr>
+                <td><a id="prev" href="/board/<%= (page - 1) %>">이전</a></td>
+                    <%
+                    let pageStartNum=Math.floor((page-1)/page_num);
+                    let pageEndNum=(number/page_num-1)%10+1;
+                    for(var j = pageStartNum*10; j <= pageStartNum*10+pageEndNum; j++){
+                    %>
+                    <td><a id="num_<%= j + 1 %>" href="/board/<%= j + 1 %>"><%= j + 1 %></a></td>
+                    <%
+                    }
+                    %>
+                    <td><a id="next" href="/board/<%= (parseInt(page)+1) %>">다음</a></td>
+                    <script>
+                        document.getElementById("num_"+"<%= page %>").style.color='red';
+                        if("<%= page %>"<=1){
+                            document.getElementById("prev").setAttribute("href", "/board/1");
+                        }
+                        else if("<%= page %>">="<%=number/page_num%>"){
+                            document.getElementById("next").setAttribute("href", "/board/<%=page%>");
+                        }
+                        
+                    </script>
+            </tr>
+        </table>
+    </section>
+
+    <!-- 푸터 -->
+    <footer>
+        <div id="footer_left">
+            <p>Contact us! :)</p>
+            <div>
+                <a hr ef="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">
+                    <img src="../kuphil_youtube.png" alt="쿠필 유튜브">
+                </a>
+            </div>
+            <div>
+                <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank">
+                    <img src="../kuphil_instagram.png" alt="쿠필 인스타그램">
+                </a>
+            </div>
+            <div>
+                <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank">
+                    <img src="../kuphil_facebook.png" alt="쿠필 페이스북">
+                </a>
+            </div>
+        </div>
+        <div id="footer_right">
+            <div id="terms">
+                <li><a href="#">이용 약관</a></li>
+                <li><a href="#">제휴 제안</a></li>
+                <li><a href="#">개인정보 처리방침</a></li>
+            </div>
+            <div id="address_n_right">
+                <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+                <p>copyright 2021 KUPHIL, All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script type="text/javascript" src="/board.js"></script>
+
+</html>
