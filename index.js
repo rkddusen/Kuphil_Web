@@ -211,7 +211,7 @@ server.get("/board/:page", (req, res) => {
 const gamePage = fs.readFileSync('./game.ejs', 'utf8');
 server.get("/game", (req, res) => {
 
-    connection.query('SELECT question, conductor, firstViolin,secondViolin,viola,cello,contra,flute,oboe,clarinet,basson,trumpet,trombone,horn,tuba,timpani,percussion ,piano ,audience ,answer,sanswer FROM game ORDER BY RAND()',
+    connection.query('SELECT question, conductor, firstViolin,secondViolin,viola,cello,contra,flute,oboe,clarinet,basson,trumpet,trombone,horn,tuba,timpani,percussion ,piano ,audience ,answer,sanswer FROM game ORDER BY id',
         function (error, rows, fields) {
             if (error) {
                 console.log(error);
