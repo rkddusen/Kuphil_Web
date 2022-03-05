@@ -103,19 +103,16 @@ function todaySche(num) {
 let dataArray = data.split('//');
 
 function showSchedule(num) {
-    //스케줄영역에 일자 표시=> '~일의 일정'
-    let todayOut = document.getElementById("sche_month");
-    let whatToday = num;
-    todayOut.innerHTML = '𝄞 ' + whatToday + '일의 일정 𝄞';
+    //오늘의 일정
+    document.getElementsByClassName("sche_date")[0].innerHTML = '𝄞 오늘<span style="font-size:20px">(' + today_temp.getDate() + '일)</span>의 일정 𝄞';
 
-    let out = document.getElementById("output");
-    out.innerHTML = '';
-
+    document.getElementsByClassName("sche_date")[1].innerHTML = '𝄞 ' + num + '일의 일정 𝄞';
     //순서대로 시작날, 시작시간, 종료시간, 제목을 담을 변수
     let scheStartDate = [];
     let scheStartTime = [];
     let scheEndTime = [];
     let scheTitle = [];
+
     // /로 분리해서 각각의 변수에 담음
     for (let i = 0; i < dataArray.length; i++) {
         let spl = dataArray[i].split('/');
@@ -124,32 +121,61 @@ function showSchedule(num) {
         scheEndTime[i] = spl[2];
         scheTitle[i] = spl[3];
     }
+
+    //'오늘' 스케줄을 출력할 변수
+    let showdata_today = '';
     //스케줄을 출력할 변수
     let showdata = '';
     //현재 달력에 표시되는 년, 월을 알기 위해 클래스가 calendar_now인 요소를 가져와서 _로 분리(년_월 형태이기 때문)
     //0번은 년, 1번은 달
     let yearMonth = now.id;
     for (let i = 0; i < dataArray.length; i++) {
+        let scheStartDate_date = parseInt(scheStartDate[i].substring(8, 10));
+        if (today_temp.getFullYear() == scheStartDate[i].substring(0, 4)) {
+            if (today_temp.getMonth() + 1 == parseInt(scheStartDate[i].substring(5, 7))) {
+                if (today_temp.getDate() == scheStartDate_date) {
+                    showdata_today += '<p class="schedule_data"> ♪ ' + scheStartTime[i].substring(0, 5) + ' ~ ';
+                    showdata_today += scheEndTime[i].substring(0, 5);
+                    showdata_today += " '" + scheTitle[i] + "'";
+                    showdata_today += "</p>";
+                }
+            }
+        }
         //현재 달력에 표시된 년,월과 데이터에 담긴 스케줄의 년,월을 비교하여->해당 년월에 맞는 스케줄을 보여주고자 함
-        if ((yearMonth == scheStartDate[i].substring(0, 7))) {
+        if (yearMonth == scheStartDate[i].substring(0, 7)) {
+            //일정 시작날의 date 부분을 담는 변수
+
             //달력에 이번 달에 일정 있는 날에 #표시
-            let caldata = document.getElementById("num" + parseInt(scheStartDate[i].substring(8, 10)));
-            let change_caldata = "\u00a0" + parseInt(scheStartDate[i].substring(8, 10)) + "<sup style='color:grey'>" + "#" + "</sup>";
-            caldata.innerHTML = change_caldata;
+            let change_caldata = "\u00a0" + scheStartDate_date + "<sup style='color:grey'>" + "#" + "</sup>";
+            document.getElementById("num" + scheStartDate_date).innerHTML = change_caldata;
             //오늘의 일정부분에 일정 보여주기
-            if (num === parseInt(scheStartDate[i].substring(8, 10))) {
-                showdata += '<p class="schedule_data"> ♪ ' + scheStartTime[i].substring(0, 5) + ' ~ ';
-                showdata += scheEndTime[i].substring(0, 5);
-                showdata += " '" + scheTitle[i] + "'";
-                showdata += "</p>";
+            if (num === scheStartDate_date) {
+                    showdata += '<p class="schedule_data"> ♪ ' + scheStartTime[i].substring(0, 5) + ' ~ ';
+                    showdata += scheEndTime[i].substring(0, 5);
+                    showdata += " '" + scheTitle[i] + "'";
+                    showdata += "</p>";
+                    //스케줄영역에 일자 표시=> '~일의 일정'
             }
         }
     }
     //아무 일정 없을 때 표시
     if (showdata == '') {
-        showdata += '<p class="schedule_data"> ♪ 오늘은 일정이 없습니다~</p> ';
+        showdata += '<p class="schedule_data"> ♪ 일정이 없습니다~</p> ';
     }
-    out.innerHTML = showdata;
+    if (showdata_today == '') {
+        showdata_today += '<p class="schedule_data"> ♪ 오늘은 일정이 없습니다~</p> ';
+    }
+
+    if (today_temp.getFullYear() == yearMonth.split('-')[0]) {
+        if (today_temp.getMonth() + 1 == parseInt(yearMonth.split('-')[1])) {
+            if (today_temp.getDate() == num) {
+                showdata = '';
+                document.getElementsByClassName("sche_date")[1].innerHTML = '';
+            }
+        }
+    }
+    document.getElementsByClassName("sche_date_output")[0].innerHTML = showdata_today;
+    document.getElementsByClassName("sche_date_output")[1].innerHTML = showdata;
 }
 showSchedule(today.getDate());
 
@@ -262,7 +288,7 @@ function doAction() {
         alert('내용을 입력하세요.');
         return false;
     }
-    else if(document.getElementById("stitle").value.length>30){
+    else if (document.getElementById("stitle").value.length > 30) {
         alert('내용이 너무 깁니다.');
         return false;
     }
