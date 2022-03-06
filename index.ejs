@@ -25,8 +25,8 @@
                     <li><a href="./introduce">소개</a></li>
                     <li><a href="./archive">아카이브</a></li>
                     <li><a href="./calendar">달력</a></li>
-                    <li><a href="./album">사진첩</a></li>
-                    <li><a href="./myPage">마이페이지</a></li>
+                    <li><a href="./board">게시판</a></li>
+                    <li><a href="./lab">실험실</a></li>
                 </ul>
             </div>
         </div>
@@ -43,13 +43,14 @@
             </div>
             <hr>
         </article>
-        <article id="whatsnew">
-            <p>What`s NEW</p>
+        <article id="d_day">
+            <p>디데이</p>
             <div id="show">
                 <script>
                     let data = "<%=db%>";
+                    let text="<%=text%>";
                     let show=document.getElementById("show");
-                    show.innerHTML=data;
+                    show.innerHTML=text+' '+data;
                 </script>
             </div>
         </article>
