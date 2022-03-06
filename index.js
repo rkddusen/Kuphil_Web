@@ -6,6 +6,7 @@ var static = require('serve-static'), bodyParser = require('body-parser'); var s
 const ejs = require('ejs');
 const fs = require('fs');
 const { rawListeners } = require("process");
+const { text } = require("express");
 
 //서버를 생성, express 객체 생성
 const server = express();
@@ -101,25 +102,39 @@ server.get("/calendar", (req, res) => {
 });
 const mainPage = fs.readFileSync('./index.ejs', 'utf8');
 server.get("/", (req, res) => {
-    let data = '';
-    connection.query('SELECT date,starttime,endtime,title FROM schedule WHERE main=1',
+    let data = '';let text='';
+    connection.query('SELECT date,title FROM schedule WHERE main=1',
         function (error, rows, fields) {
             if (error) {
                 console.log(error);
             }
             else {
                 if (rows.length == 0) {
-                    data = '환영합니다~!';
+                    data = '아직 특별한 일정이 없어요!';
                 }
                 else {
-                    data += rows[0].date + " " + rows[0].starttime.substring(0, 5) + "~";
-                    data += rows[0].endtime.substring(0, 5) + " / ";
                     data += rows[0].title;
                     console.log(data);
+                    let today=new Date();
+                    let mainDay=new Date(rows[0].date.replace(/-/g,','));
+                    
+                    let gap=mainDay.getTime()-today.getTime();
+                    let result=Math.ceil(gap/(1000*60*60*24));
+                    
+                    if(result<0){
+                        text='D + '+Math.abs(result);
+                    }
+                    else if(result==0){
+                        text='D-day';
+                    }
+                    else if(result>0){
+                        text='D - '+result;
+                    }
                 }
                 //데이터 생성
                 var page = ejs.render(mainPage, {
                     db: data,
+                    text:text,
                 });
                 //응답
                 res.send(page);
