@@ -6,10 +6,20 @@ function removeHistory() {
     previous_content.remove();
 }
 
+//버튼 색 지우기 -> 새로운 색 넣기 전 지우기
+function removecolor() {
+    for (let i=1;i<6;i++){
+        document.getElementsByClassName('year')[i].style.color='darkgray';
+    }
+}
+
 //새 연혁 가져오기
 function getHistory(btn){
     removeHistory();
+    removecolor();
     if (btn.value=="2021-현재"){
+        let when=document.getElementsByClassName("year")[5];
+        when.style.color="#BE7743";
         let history;
         let story = document.createElement('div');
         story.setAttribute('class' , 'kuphil_history');
@@ -28,6 +38,8 @@ function getHistory(btn){
         our_history.appendChild(story);
 
     } else if (btn.value=="2016-2020"){
+        let when=document.getElementsByClassName("year")[4];
+        when.style.color="#BE7743";
         let history;
         let story = document.createElement('div');
         story.setAttribute('class' , 'kuphil_history');
@@ -44,19 +56,26 @@ function getHistory(btn){
         story.innerHTML=history;
         let our_history=document.getElementById("our_history");
         our_history.appendChild(story);
+
     } else if (btn.value=="2011-2015"){
+        let when=document.getElementsByClassName("year")[3];
+        when.style.color="#BE7743";
         let history;
         let story = document.createElement('div');
         story.setAttribute('class' , 'kuphil_history');
         story.id='story';
 
     } else if (btn.value=="2006-2010"){
+        let when=document.getElementsByClassName("year")[2];
+        when.style.color="#BE7743";
         let history;
         let story = document.createElement('div');
         story.setAttribute('class' , 'kuphil_history');
         story.id='story';
         
     } else if (btn.value=="2003-2005"){
+        let when=document.getElementsByClassName("year")[1];
+        when.style.color="#BE7743";
         let history;
         let story = document.createElement('div');
         story.setAttribute('class' , 'kuphil_history');
@@ -65,15 +84,4 @@ function getHistory(btn){
     }
 }
 
-//버튼 색 지우기 -> 새로운 색 넣기 전 지우기
-function removecolor() {
-    let all=document.getElementsByClassName("year");
-    all.style.color="darkgray";
-}
-
-//버튼 색 변경
-function changeBtnColor(btn){
-    let when=document.getElementById(btn.value);
-    when.style.color="#BE7743";
-}
 
