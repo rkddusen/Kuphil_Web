@@ -185,9 +185,11 @@ const boaPage = fs.readFileSync('./board.ejs', 'utf8');
 server.get("/board/:page", (req, res) => {
     var paging=req.params.page;
     let pageStart=(paging-1)*10;
-    let sql='SELECT category, title, content, writer, date FROM board ORDER BY date DESC LIMIT '+pageStart+', 10;';
-    let sqll='SELECT table_rows FROM information_schema.tables WHERE table_name ="board";';
-    connection.query(sql+sqll,
+    // let sqlcnt='SELECT SQL_CALC_FOUND_ROWS * FROM board';
+    let sql='SELECT category, title, writer, date FROM board ORDER BY date DESC LIMIT ?, 10;';
+    // let sqll='SELECT table_rows FROM information_schema.tables WHERE table_name ="board";';
+    let sqll='SELECT COUNT(*) AS number FROM board;';
+    connection.query(sql+sqll,[pageStart],
         function (error, rows, fields) {
             if (error) {
                 console.log(error);
@@ -196,11 +198,9 @@ server.get("/board/:page", (req, res) => {
                 let dataResult=rows[0];
                 let countResult=rows[1];
                 let data = [];
-                let content=[];
-                let number=countResult[0].table_rows;
+                let number=countResult[0].number;
                 for (var i in rows[0]) {
                     data[i] = dataResult[i].category + "//" + dataResult[i].title + "//" + dataResult[i].writer+"//"+ dataResult[i].date;
-                    content[i] = dataResult[i].content;
                 }
                 //데이터 생성
                 page = ejs.render(boaPage, {
@@ -208,16 +208,33 @@ server.get("/board/:page", (req, res) => {
                     pass:true,
                     page:paging,
                     data:data,
-                    content:content,
                     number:number,
                 });
-                if((number/10)+1<paging){
-                    res.redirect("/board/1");
-                }
-                //응답
-                else{
                 res.send(page);
-                }
+            }
+        }
+    );
+});
+
+const boaReaPage = fs.readFileSync('./board-read.ejs', 'utf8');
+server.get("/read/:idx", (req, res) => {
+    var idx=req.params.idx;
+    connection.query('SELECT idx, category, title, content, writer, date FROM board WHERE idx=?;',[idx],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            }
+            else {
+                //데이터 생성
+                page = ejs.render(boaReaPage, {
+                    idx:rows[0].idx,
+                    category:rows[0].category,
+                    title:rows[0].title,
+                    content:rows[0].content,
+                    writer:rows[0].writer,
+                    date:rows[0].date,
+                });
+                res.send(page);
             }
         }
     );

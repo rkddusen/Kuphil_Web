@@ -19,8 +19,8 @@
                     <li><a href="../introduce">소개</a></li>
                     <li><a href="../archive">아카이브</a></li>
                     <li><a href="../calendar">달력</a></li>
-                    <li><a href="../album">사진첩</a></li>
-                    <li><a href="../myPage">마이페이지</a></li>
+                    <li><a href="../board">게시판</a></li>
+                    <li><a href="../lab">실험실</a></li>
                 </ul>
             </div>
         </div>
@@ -29,7 +29,7 @@
         </div>
         <hr>
         <article class="head3">
-            <p>게시판</p>
+            <p><a class="toBoard" href="../board">게시판</a>&ensp;&ensp;|&ensp;&ensp;<a class="toAlbum" href="../album">사진첩</a></p>
         </article>
         <hr>
     </header>
@@ -54,7 +54,7 @@
             <tbody class="board_body">
                 <%
                 for(var i = 0; i < page_num; i++) {
-                if(number<=((page-1)*page_num+i)){
+                if(number-((page-1)*10)-i<=0){
                 %>
                 <tr>
                     <td></td>
@@ -66,10 +66,10 @@
                 <%
                 }else{
                 %>
-                <tr>
-                    <td><%= i + 1 %></td>
+                <tr >
+                    <td><%= number-((page-1)*10)-i %></td>
                     <td><%= data[i].split("//")[0] %></td>
-                    <td><%= data[i].split("//")[1] %></td>
+                    <td onclick="location.href='../read/<%=number-((page-1)*10)-i%>'"><%= data[i].split("//")[1] %></td>
                     <td><%= data[i].split("//")[2] %></td>
                     <td><%= data[i].split("//")[3].split(" ")[0] %></td>
                 </tr>
@@ -96,10 +96,12 @@
                     <script>
                         document.getElementById("num_"+"<%= page %>").style.color='red';
                         if("<%= page %>"<=1){
-                            document.getElementById("prev").setAttribute("href", "/board/1");
+                            document.getElementById("prev").style.color='grey';
+                            document.getElementById("prev").setAttribute("onclick", "return false;");
                         }
                         else if("<%= page %>">="<%=number/page_num%>"){
-                            document.getElementById("next").setAttribute("href", "/board/<%=page%>");
+                            document.getElementById("next").style.color='grey';
+                            document.getElementById("next").setAttribute("onclick", "return false;");
                         }
                         
                     </script>
