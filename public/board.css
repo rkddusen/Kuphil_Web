@@ -3,7 +3,12 @@
     color: black;
     text-decoration: none;}
 
-
+.toBoard{
+    color: #BE7743;
+}
+.toAlbum{
+    color: darkgray;
+}
 .board_plus{
     width: 1130px;
     padding: 0 30px;
@@ -45,4 +50,49 @@
 }
 .board_number tr td{
     width: 40px;
+}
+
+.board_read_back{
+    width: 850px;
+    margin: 0 auto;
+    padding: 0 170px;
+    margin-top: 120px;
+    cursor: pointer;
+}
+
+.board_read_table td{
+    padding: 10px;
+    white-space: pre-line;
+}
+.board_read_part{
+    width: 1130px;
+    padding: 0 30px;
+    margin: 0 auto;
+    margin-bottom: 150px;
+}
+.board_read_table{
+    width: 850px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+.board_read_table thead tr{
+    font-size: 25px;
+}
+
+.board_read_main{
+    font-size: 20px;
+}
+.board_read_hr{
+    width: 820px;
+    height: 1px;
+    margin: 0 auto;
+    background-color: black;
+}
+.board_read_cont{
+    vertical-align: top;
+}
+.board_read_footer{
+    font-size: 40px;
+    vertical-align: bottom;
 }
