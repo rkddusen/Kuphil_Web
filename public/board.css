@@ -18,7 +18,7 @@
 .board_plus p{
     float: right;
     cursor: pointer;
-    margin-right: 80px;
+    margin-right: 130px;
 }
 .board_part{
     clear: both;
@@ -51,6 +51,21 @@
 .board_number tr td{
     width: 40px;
 }
+/* .td_category select{
+    width: 50px;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance:none;
+    appearance:none;
+    background-color: #DFD3C3;
+    font-size: 20px;
+    background: url("./triangle.png") no-repeat 140% 10%/30px;
+}
+    /*IE 10, 11의 네이티브 화살표 숨기기 ( IE에서 디자인 적용안되는 현상 해결 )
+.td_category select::-ms-expand { 
+    display: none;
+} */
+
 
 .board_read_back{
     width: 850px;
