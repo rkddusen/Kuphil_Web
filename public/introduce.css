@@ -1,6 +1,18 @@
 
 /* 소개 */
 
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.toIntroduce{
+    color: #BE7743;
+}
+
+.toHistory{
+    color: darkgray;
+}
 
 #introduce_greeting {
     width: 1130px;
@@ -72,11 +84,4 @@
     font-size: 18px;
     padding: 0 30px;
     line-height:200%;
-}
-
-a:link {color: #BE7743; text-decoration: none;}
-a:visited {color: #BE7743; text-decoration: none;}
-
-#history {
-    color:darkgray; text-decoration: none;
 }
