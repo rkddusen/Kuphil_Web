@@ -141,7 +141,7 @@ hr {
 
 footer {
     width: 1130px;
-    height: 180px;
+    height: 150px;
     margin: 0 auto;
     overflow: hidden;
     padding: 0 30px;
@@ -158,7 +158,7 @@ footer {
 
 #footer_left {
     width: 500px;
-    height: 180px;
+    height: 150px;
     overflow: hidden;
     background-color: #EFEFEF;
 }
@@ -189,7 +189,7 @@ footer {
 
 #footer_right {
     width: 630px;
-    height: 180px;
+    height: 150px;
     background-color: #EFEFEF;
 }
 

@@ -1,39 +1,68 @@
-#historyyyyyyy{
-    position:relative;
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.toIntroduce{
+    color:darkgray;
+}
+
+.toHistory{
+    color:#BE7743;
+}
+
+.year{
+    width: 900px;
+    border: none;
+    background-color: transparent;
+    display:flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    margin-top: 40px;
+    font-size: 20px;
+    color: darkgray;
+}
+
+.year:active{
+    color: #BE7743;
+}
+
+.back{
+    position: relative;
     width: 1130px;
+    height: 1500px;
     margin: 0 auto;
 }
 
-#background{
-    position:absolute;
-    width:1130px;
-}
-
-#background > img{
-    width: 1032.36px;
-    height: 920px;
+.back_image img{
+    position: absolute;
+    width: 825.8px;
+    height: 735.6px;
     opacity: 0.2;
-    margin: 20px auto;
+    margin: 10px auto;
+    top: 10%;
+    left: 13%;
 }
 
-.kuphil_history{
+
+.our_history{
     width: 1130px;
     position: relative;
     margin: 20px 0;
     padding: 0 60px;
+    margin-top: 150px;
+    margin-bottom: 150px;
     z-index:1;
 }
 
-.kuphil_history  p:first-child {
+.history_content  p:first-child {
     font-size: 48px;
     margin: 10px 0;
 }
 
-.spell  p:last-child {
+.history_content  p:last-child {
     font-size: 24px;
     margin: 80px 0;
+    margin-top: 30px;
+    line-height: 200%;
 }
-
-a:link {color: #BE7743; text-decoration: none;}
-a:visited { color: #BE7743; text-decoration: none;}
-a:hover { color: #BE7743; text-decoration: underline;}

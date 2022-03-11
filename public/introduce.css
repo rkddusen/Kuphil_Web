@@ -1,15 +1,28 @@
 
 /* 소개 */
 
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.toIntroduce{
+    color: #BE7743;
+}
+
+.toHistory{
+    color: darkgray;
+}
+
 #introduce_greeting {
     width: 1130px;
     padding: 0 30px;
-    margin: 20px auto;
-    margin-top: 70px;
+    margin: 30px auto;
+    margin-top: 150px;
 }
 
 #introduce_greeting > span {
-    margin: 10px auto;
+    margin: 20px auto;
     padding: 0 20px;
     height: 50px;
     font-family:'Alegreya';
@@ -17,7 +30,7 @@
 }
 
 #introduce_welcome {
-    margin: 20px auto;
+    margin: 30px auto;
     padding: 0 20px;
     display: flex;
     align-items: flex-start;
@@ -34,17 +47,18 @@
     background-color:#dfd3c3a2;
     width: 1000px;
     height: 700px;
+    line-height:180%;
 }
-/* 색은 대충 영역만 표시해둔거라 신경 안 써도 O */
 
 #path {
     width: 1130px;
-    margin: 20px auto;
+    margin: 30px auto;
     padding: 0 30px;
+    margin-bottom: 150px;
 }
 
 #path > p {
-    margin-top: 100px;
+    margin-top: 250px;
     padding: 0 20px;
     height: 50px;
     font-family:'Alegreya';
@@ -53,7 +67,7 @@
 
 #how {
     width: 1130px; 
-    margin: 20px auto;
+    margin: 70px auto;
     display: flex;
     flex-direction: row;
 }
@@ -61,6 +75,7 @@
 #how > img {
     width: 750px;
     height: 370px;
+    margin-right: 50px;
 }
 
 #how > span {
@@ -68,11 +83,5 @@
     font-family:'Alegreya';
     font-size: 18px;
     padding: 0 30px;
-}
-
-a:link {color: #BE7743; text-decoration: none;}
-a:visited {color: #BE7743; text-decoration: none;}
-
-#history {
-    color:darkgray; text-decoration: none;
+    line-height:200%;
 }

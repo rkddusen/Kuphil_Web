@@ -6,6 +6,7 @@ var static = require('serve-static'), bodyParser = require('body-parser'); var s
 const ejs = require('ejs');
 const fs = require('fs');
 const { rawListeners } = require("process");
+const { text } = require("express");
 
 //서버를 생성, express 객체 생성
 const server = express();
@@ -101,25 +102,39 @@ server.get("/calendar", (req, res) => {
 });
 const mainPage = fs.readFileSync('./index.ejs', 'utf8');
 server.get("/", (req, res) => {
-    let data = '';
-    connection.query('SELECT date,starttime,endtime,title FROM schedule WHERE main=1',
+    let data = '';let text='';
+    connection.query('SELECT date,title FROM schedule WHERE main=1',
         function (error, rows, fields) {
             if (error) {
                 console.log(error);
             }
             else {
                 if (rows.length == 0) {
-                    data = '환영합니다~!';
+                    data = '아직 특별한 일정이 없어요!';
                 }
                 else {
-                    data += rows[0].date + " " + rows[0].starttime.substring(0, 5) + "~";
-                    data += rows[0].endtime.substring(0, 5) + " / ";
                     data += rows[0].title;
                     console.log(data);
+                    let today=new Date();
+                    let mainDay=new Date(rows[0].date.replace(/-/g,','));
+                    
+                    let gap=mainDay.getTime()-today.getTime();
+                    let result=Math.ceil(gap/(1000*60*60*24));
+                    
+                    if(result<0){
+                        text='D + '+Math.abs(result);
+                    }
+                    else if(result==0){
+                        text='D-day';
+                    }
+                    else if(result>0){
+                        text='D - '+result;
+                    }
                 }
                 //데이터 생성
                 var page = ejs.render(mainPage, {
                     db: data,
+                    text:text,
                 });
                 //응답
                 res.send(page);
@@ -162,33 +177,94 @@ server.get("/album", (req, res) => {
         }
     );
 });
+server.get("/board", (req, res) => {
+    res.redirect("/board/1");
+});
+
+const boaPage = fs.readFileSync('./board.ejs', 'utf8');
+server.get("/board/:page", (req, res) => {
+    var paging=req.params.page;
+    let pageStart=(paging-1)*10;
+    // let sqlcnt='SELECT SQL_CALC_FOUND_ROWS * FROM board';
+    let sql='SELECT title, writer, date FROM board ORDER BY date DESC LIMIT ?, 10;';
+    // let sqll='SELECT table_rows FROM information_schema.tables WHERE table_name ="board";';
+    let sqll='SELECT COUNT(*) AS number FROM board;';
+    connection.query(sql+sqll,[pageStart],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            }
+            else {
+                let dataResult=rows[0];
+                let countResult=rows[1];
+                let data = [];
+                let number=countResult[0].number;
+                for (var i in rows[0]) {
+                    data[i] = dataResult[i].title + "//" + dataResult[i].writer+"//"+ dataResult[i].date;
+                }
+                //데이터 생성
+                page = ejs.render(boaPage, {
+                    page_num:10,
+                    pass:true,
+                    page:paging,
+                    data:data,
+                    number:number,
+                });
+                res.send(page);
+            }
+        }
+    );
+});
+
+const boaReaPage = fs.readFileSync('./board-read.ejs', 'utf8');
+server.get("/read/:idx", (req, res) => {
+    var idx=req.params.idx;
+    connection.query('SELECT idx, title, content, writer, date FROM board WHERE idx=?;',[idx],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            }
+            else {
+                //데이터 생성
+                page = ejs.render(boaReaPage, {
+                    idx:rows[0].idx,
+                    title:rows[0].title,
+                    content:rows[0].content,
+                    writer:rows[0].writer,
+                    date:rows[0].date,
+                });
+                res.send(page);
+            }
+        }
+    );
+});
 
 const gamePage = fs.readFileSync('./game.ejs', 'utf8');
 server.get("/game", (req, res) => {
 
-    connection.query('SELECT question, conductor, firstViolin,secondViolin,viola,cello,contra,flute,piccolo,oboe,clarinet,basson,trumpet,trombone,horn,tuba,timpani,cymbals ,bassdrum ,piano ,triangle ,audience ,answer FROM game ORDER BY RAND()',
+    connection.query('SELECT question, conductor, firstViolin,secondViolin,viola,cello,contra,flute,oboe,clarinet,basson,trumpet,trombone,horn,tuba,timpani,percussion ,piano ,audience ,answer,sanswer FROM game ORDER BY id',
         function (error, rows, fields) {
             if (error) {
                 console.log(error);
             }
             else {
                 let question = []; let conductor = []; let firstViolin = []; let secondViolin = []; let viola = []; let cello = []; let contra = [];
-                let flute = []; let piccolo = []; let oboe = []; let clarinet = []; let basson = []; let trumpet = []; let trombone = []; let horn = []; let tuba = [];
-                let timpani = []; let cymbals = []; let bassdrum = []; let piano = []; let triangle = []; let audience = []; let answer = [];
+                let flute = []; let oboe = []; let clarinet = []; let basson = []; let trumpet = []; let trombone = []; let horn = []; let tuba = [];
+                let timpani = []; let percussion = []; let piano = []; let audience = []; let fanswer = []; let sanswer = [];
                 for (var i in rows) {
                     question[i] = rows[i].question; conductor[i] = rows[i].conductor; firstViolin[i] = rows[i].firstViolin;
                     secondViolin[i] = rows[i].secondViolin; viola[i] = rows[i].viola; cello[i] = rows[i].cello; contra[i] = rows[i].contra;
-                    flute[i] = rows[i].flute; piccolo[i] = rows[i].piccolo; oboe[i] = rows[i].oboe; clarinet[i] = rows[i].clarinet;
+                    flute[i] = rows[i].flute; oboe[i] = rows[i].oboe; clarinet[i] = rows[i].clarinet;
                     basson[i] = rows[i].basson; trumpet[i] = rows[i].trumpet; trombone[i] = rows[i].trombone; horn[i] = rows[i].horn;
-                    tuba[i] = rows[i].tuba; timpani[i] = rows[i].timpani; cymbals[i] = rows[i].cymbals; bassdrum[i] = rows[i].bassdrum;
-                    piano[i] = rows[i].piano; triangle[i] = rows[i].triangle; audience[i] = rows[i].audience; answer[i] = rows[i].answer;
+                    tuba[i] = rows[i].tuba; timpani[i] = rows[i].timpani; percussion[i] = rows[i].percussion;
+                    piano[i] = rows[i].piano; audience[i] = rows[i].audience; fanswer[i] = rows[i].answer; sanswer[i] = rows[i].sanswer;
                 }//데이터 생성
                 var page = ejs.render(gamePage, {
                     question: question, conductor: conductor, firstViolin: firstViolin, secondViolin: secondViolin, viola: viola,
-                    cello: cello, contra: contra, flute: flute, piccolo: piccolo, oboe: oboe,
+                    cello: cello, contra: contra, flute: flute, oboe: oboe,
                     clarinet: clarinet, basson: basson, trumpet: trumpet, trombone: trombone, horn: horn,
-                    tuba: tuba, timpani: timpani, cymbals: cymbals, bassdrum: bassdrum, piano: piano,
-                    triangle: triangle, audience: audience, answer: answer,
+                    tuba: tuba, timpani: timpani, percussion: percussion, piano: piano,
+                    audience: audience, fanswer: fanswer,sanswer: sanswer,
                 });
                 //응답
                 console.log(question[0]);
