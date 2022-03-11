@@ -80,5 +80,5 @@ function nextPage() {
 showPage();
 
 function popPoster() {
-    window.open('windowopen.html','window팝업','width = 400, height = 200, menubar = no, status = no, toolbar = no');
+    window.open('windowopen.html','window팝업','width = 400, height = 200, status = no, toolbar = no');
 }
