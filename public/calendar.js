@@ -26,8 +26,27 @@ function bulidCalendar() {
     }
     else
         now.id = myYear + '-' + (myMonth + 1);
-    now.innerText = myYear + "년 " + (myMonth + 1) + "월";
-
+    let myMonth_eng='';
+    let prevNextMonth_eng='';
+    switch(myMonth+1){
+        case 1: myMonth_eng='Jan';prevNextMonth_eng='Dec,Feb';break;
+        case 2: myMonth_eng='Feb';prevNextMonth_eng='Jan,Mar';break;
+        case 3: myMonth_eng='Mar';prevNextMonth_eng='Feb,Apr';break;
+        case 4: myMonth_eng='Apr';prevNextMonth_eng='Mar,May';break;
+        case 5: myMonth_eng='May';prevNextMonth_eng='Apr,Jun';break;
+        case 6: myMonth_eng='Jun';prevNextMonth_eng='May,Jul';break;
+        case 7: myMonth_eng='Jul';prevNextMonth_eng='Jun,Aug';break;
+        case 8: myMonth_eng='Aug';prevNextMonth_eng='Jul,Sep';break;
+        case 9: myMonth_eng='Sep';prevNextMonth_eng='Aug,Oct';break;
+        case 10: myMonth_eng='Oct';prevNextMonth_eng='Sep,Nov';break;
+        case 11: myMonth_eng='Nov';prevNextMonth_eng='Oct,Dec';break;
+        case 12: myMonth_eng='Dec';prevNextMonth_eng='Nov,Jan';break;
+    }
+    let now_html='<p class="calendar_now_year">'+myYear+'</p>';
+    now_html+='<p class="calendar_now_month">'+myMonth_eng+'</p>';
+    now.innerHTML=now_html;
+    document.getElementsByClassName("table_move")[0].innerHTML=prevNextMonth_eng.split(',')[0];
+    document.getElementsByClassName("table_move")[1].innerHTML=prevNextMonth_eng.split(',')[1];
     //테이블 만들 변수
     let bulid = '';
     //첫 날 전까지는 빈 td
@@ -96,15 +115,17 @@ bulidCalendar();
 function todaySche(num) {
     //다른 날짜를 클릭했을 때마다 그 날의 일정 표시하기 위함
     bulidCalendar();
-    document.getElementById("num" + num).style.backgroundColor = 'pink';
+    document.getElementById("num" + num).style.backgroundColor = '#E96969';
+    document.getElementById("num" + num).style.color = 'white';
     showSchedule(num);
+    document.getElementById("supnum"+num).style.color="white";
 }
 //app.js에서 넘어오는 데이터의 형태가 '시작날/시작시간/종료시간/제목//' 이기 때문에 //로 분리
 let dataArray = data.split('//');
 
 function showSchedule(num) {
     //오늘의 일정
-    document.getElementsByClassName("sche_date")[0].innerHTML = '𝄞 오늘<span style="font-size:20px">(' + today_temp.getDate() + '일)</span>의 일정 𝄞';
+    document.getElementsByClassName("sche_date")[0].innerHTML = '𝄞 오늘<span style="font-size:20px">(' + (today_temp.getMonth()+1)+'월 '+today_temp.getDate() + '일)</span>의 일정 𝄞';
 
     document.getElementsByClassName("sche_date")[1].innerHTML = '𝄞 ' + num + '일의 일정 𝄞';
     //순서대로 시작날, 시작시간, 종료시간, 제목을 담을 변수
@@ -146,7 +167,7 @@ function showSchedule(num) {
             //일정 시작날의 date 부분을 담는 변수
 
             //달력에 이번 달에 일정 있는 날에 #표시
-            let change_caldata = "\u00a0" + scheStartDate_date + "<sup style='color:grey'>" + "#" + "</sup>";
+            let change_caldata = "\u00a0" + scheStartDate_date + "<sup id='supnum"+scheStartDate_date+"'>" + "#" + "</sup>";
             document.getElementById("num" + scheStartDate_date).innerHTML = change_caldata;
             //오늘의 일정부분에 일정 보여주기
             if (num === scheStartDate_date) {
