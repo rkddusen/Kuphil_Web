@@ -60,41 +60,45 @@
 
     <!-- 달력이 그려지는 공간 -->
     <!-- 년월을 표시 js에서 yyyy, mm부분을 새로 채움-->
-    <div id="table_title">
-        <input class="table_move" name="calendar_prev" type="button" value="◀" onclick="prevCalendar()">
-        <div class="calendar_now"> yyyy년 mm월 </div>
-        <input class="table_move" name="calendar_next" type="button" value="▶" onclick="nextCalendar()">
-    </div>
-    <section class="calendar_part">
-        <!-- js에서 테이블 내에서 tr, td 를 추가해 줌-->
-        <div id="calendar">
-            <table id="calendar_table">
+    <div class="calendar">
+        <div class="calendar_title">
+            <div class="calendar_now"></div>
+            <div class="calendar_move">
+                <span class="table_move" onclick="prevCalendar()"></span>
+                <span class="table_move" onclick="nextCalendar()"></span>
+            </div>
+            <!-- <input class="table_move" name="calendar_prev" type="button" value="◀" onclick="prevCalendar()">
+            <input class="table_move" name="calendar_next" type="button" value="▶" onclick="nextCalendar()"> -->
+        </div>
+        <div class="calendar_table">
+            <table>
                 <thead>
                     <tr>
-                        <td style="color: red;">일</td>
-                        <td>월</td>
-                        <td>화</td>
-                        <td>수</td>
-                        <td>목</td>
-                        <td>금</td>
-                        <td>토</td>
+                        <td style="color: red;">Sun</td>
+                        <td>Mon</td>
+                        <td>Tue</td>
+                        <td>Wen</td>
+                        <td>Thu</td>
+                        <td>Fri</td>
+                        <td>Sat</td>
                     </tr>
                 </thead>
                 <tbody class="body_calendar"></tbody>
             </table>
         </div>
+    </div>
+    <section class="schedule">
+        <!-- js에서 테이블 내에서 tr, td 를 추가해 줌-->
         <script>
             let data = "<%=db%>";
         </script>
         <!-- 스케줄 적히는 공간 -->
-        <div id="schedule_box">
-
+        <div class="schedule_box">
             <button id="sche_plus" onclick="showForm();">±</button>
             <div class="sche_date"></div>
             <div class="sche_date_output"></div>
             <div class="sche_date"></div>
             <div class="sche_date_output"></div>
-
         </div>
     </section>
     <!-- 일정을 추가할 수 있는 영역 -->

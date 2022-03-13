@@ -1,62 +1,90 @@
-#table_title{
+body{
     width: 1130px;
     padding: 0 30px;
-    margin: 30px auto;
-    margin-top: 120px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
+    margin: 0 auto;
 }
-#table_title input{
-    cursor: pointer;
-}
-.table_move{
-    color: black;
-    border: none;
-    background-color: white;
-    border-radius: 5px;
-    width: 25px;
-    height: 20px;
-    text-align: center;
-    line-height: 18px;
-    font-size: 20px;
-    margin-top: 10px;
-}
-.calendar_now{
-    font-size: 36px;
-    width: 250px;
-    text-align: center;
-}
-.calendar_part{
+.calendar{
     width: 1130px;
     padding: 0 30px;
-    margin: 50px auto;
     display: flex;
     justify-content: center;
-}
-#calendar_table{
-    text-align: center;
-    background-color: #FFF1DE;
-    padding: 10px 10px;
-    height: 480px;
-    border-spacing: 20px 0;
-}
-td{
-width: 50px;height: 50px;
-padding: 5px; }
-thead td{
-    font-size: 30px;
-}
-tbody td{
-    font-size: 25px;
-    border-top-left-radius: 100%;border-top-right-radius: 100%;
-    border-bottom-right-radius: 100%; border-bottom-left-radius: 100%;
 }
 
-#schedule_box{
-    width: 400px;
-    height: 480px;
-    background-color: #FFF9F1;
+.calendar_title{
+    width: 420px;
+    margin-top: 100px;
+    height: 420px;
+    background-color: #FFF1E7;
+    border: 2px solid #94613C;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    text-align: center;
+}
+/* #table_title input{
+    cursor: pointer;
+} */
+.calendar_move{
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+.table_move{
+    border: none;
+    font-size: 20px;
+    color: #94613C;
+    margin: 0 15px;
+    cursor: pointer;
+}
+.calendar_now{
+    margin-top: 100px;
+    font-size: 36px;
+    text-align: center;
+    color: #94613C;
+}
+.calendar_now_month{
+    font-size: 140px;
+}
+.calendar_table{
+    width: 458px;
+    height: 400px;
+    margin-top: 100px;
+    padding: 10px 10px;
+    border: 2px solid #94613C;
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+    text-align: center;
+}
+.calendar_table table{
+    border-spacing: 10px 2px;
+    margin: 0 auto;text-align: center;
+}
+td{
+    width: 43px;
+    height: 43px;
+    padding: 5px;
+}
+thead td{
+    font-size: 21px;
+}
+
+tbody td{
+    font-size: 25px;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+}
+.schedule{
+    width: 1130px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+.schedule_box{
+    width: 900px;
+    height: 400px;
+    border: 2px solid #94613C;
+    border-top: 1px solid #94613C;
+    margin: 0 auto;
 }
 .sche_date{
     font-size: 30px;
@@ -77,12 +105,13 @@ tbody td{
     float: right;
     width: 30px;
     height: 30px;
-    background-color: #FFF9F1;
+    background-color: white;
     line-height: 25px;
     font-size: 25px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
+    color: #94613C;
 }
 .cal{
     cursor: pointer;
@@ -92,7 +121,7 @@ tbody td{
     cursor: pointer;
 }
 .calRedToday, .calToday{
-    background-color: #fca972;
+    background-color: #DFC7B4;
     cursor: pointer;
 }
 
