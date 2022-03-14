@@ -11,6 +11,13 @@ a{
     color:#BE7743;
 }
 
+#SelectYear {
+    width: 900px;
+    padding: 0 200px;
+    margin: 30px auto;
+    margin-top: 60px;
+}
+
 .year{
     width: 900px;
     border: none;
@@ -48,8 +55,8 @@ a{
 .our_history{
     width: 1130px;
     position: relative;
-    margin: 20px 0;
-    padding: 0 60px;
+    margin: 20px auto;
+    padding: 0 30px;
     margin-top: 100px;
     margin-bottom: 150px;
     z-index:1;
