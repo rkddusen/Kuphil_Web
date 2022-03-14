@@ -1,1 +1,26 @@
-# 
+#game_notice{
+    padding-left: 10px;
+    text-align:left;
+    font-size:24px;
+    line-height:30px;
+    color: #5C3A1A;
+}
+
+.test{
+    display:flex;
+    align-items:center;
+    width:1130px;
+}
+
+.test p:first-child{
+    font-size: 36px;
+}
+
+.test p:last-child{
+    font-size:18px;
+}
+
+.test img{
+    width: 500px;
+    height: 500px;
+}
