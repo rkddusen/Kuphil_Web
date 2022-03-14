@@ -19,3 +19,8 @@
 .test p:last-child{
     font-size:18px;
 }
+
+.test img{
+    width: 500px;
+    height: 500px;
+}
