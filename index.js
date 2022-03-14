@@ -239,8 +239,8 @@ server.get("/read/:idx", (req, res) => {
     );
 });
 
-const gamePage = fs.readFileSync('./game.ejs', 'utf8');
-server.get("/game", (req, res) => {
+const gamePage = fs.readFileSync('./test.ejs', 'utf8');
+server.get("/test", (req, res) => {
 
     connection.query('SELECT question, conductor, firstViolin,secondViolin,viola,cello,contra,flute,oboe,clarinet,basson,trumpet,trombone,horn,tuba,timpani,percussion ,piano ,audience ,answer,sanswer FROM game ORDER BY id',
         function (error, rows, fields) {
@@ -274,10 +274,11 @@ server.get("/game", (req, res) => {
     );
 });
 
-server.get("/game", (req, res) => {
+server.get("/lab", (req, res) => {
 
-    res.sendFile(__dirname + "/game.html");
+    res.sendFile(__dirname + "/lab.html");
 });
+
 
 server.use((req, res) => {
     res.sendFile(__dirname + "/404.html");

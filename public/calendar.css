@@ -24,7 +24,7 @@ body{
     cursor: pointer;
 } */
 .calendar_move{
-    margin-top: 80px;
+    margin-top: 100px;
     display: flex;
     justify-content: space-between;
 }
@@ -36,16 +36,16 @@ body{
     cursor: pointer;
 }
 .calendar_now{
-    margin-top: 100px;
+    margin-top: 120px;
     font-size: 36px;
     text-align: center;
     color: #94613C;
 }
 .calendar_now_month{
-    font-size: 140px;
+    font-size: 100px;
 }
 .calendar_table{
-    width: 458px;
+    width: 500px;
     height: 400px;
     margin-top: 100px;
     padding: 10px 10px;
@@ -68,7 +68,7 @@ thead td{
 }
 
 tbody td{
-    font-size: 25px;
+    font-size: 20px;
     border-top-left-radius: 100%;
     border-top-right-radius: 100%;
     border-bottom-right-radius: 100%;
@@ -80,7 +80,7 @@ tbody td{
     margin: 0 auto;
 }
 .schedule_box{
-    width: 900px;
+    width: 942px;
     height: 400px;
     border: 2px solid #94613C;
     border-top: 1px solid #94613C;
