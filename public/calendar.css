@@ -1,9 +1,6 @@
-body{
-    width: 1130px;
-    padding: 0 30px;
-    margin: 0 auto;
-}
+
 .calendar{
+    margin: 0 auto;
     width: 1130px;
     padding: 0 30px;
     display: flex;
