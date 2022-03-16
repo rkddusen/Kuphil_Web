@@ -9,8 +9,13 @@ for (let i = 0; i < count; i++) {
     secondTitle[i] = al[i].split('//')[1];
     address[i] = al[i].split('//')[2];
 }
-let html = document.getElementById("albumSection");
+let html = document.getElementsByClassName("sideAlbum")[0];
+let centerHtml = document.getElementsByClassName("centerAlbum")[0];
+
+
+
 function showAlbum() {
+    
 
     let firstText = '';
 
@@ -20,9 +25,9 @@ function showAlbum() {
                 continue;
             }
         }
-        firstText += '<div class="album">';
-        firstText += '<div class="albumCon" id="' + firstTitle[i] + '" onclick="openSecondAlbum(this.id);"><img src="folder.png"></div>';
-        firstText += '<div class="albumTi"><p>' + firstTitle[i] + '</p></div>';
+        firstText += '<div class="firstAlbum">';
+        firstText += '<div class="firstAlbumCon" id="' + firstTitle[i] + '" onclick="openSecondAlbum(this.id);"><img src="folder.png"></div>';
+        firstText += '<div class="firstAbumTi"><p>' + firstTitle[i] + '</p></div>';
         firstText += '</div>';
     }
     // 앨범 추가 부분
@@ -32,18 +37,14 @@ function showAlbum() {
     // firstText += '</div>';
 
     html.innerHTML = firstText;
+
 }
 
 showAlbum();
 
 function openSecondAlbum(id) {
     let secondText = '';
-
-    secondText += '<div class="album">';
-    secondText += '<div class="albumCon" id="back" onclick="showAlbum();"><img src="refolder.png"></div>';
-    secondText += '<div class="albumTi"><p>Back</p></div>';
-    secondText += '</div>';
-
+    
     for (let i = 0; i < count; i++) {
         if (id == firstTitle[i]) {
             if (i >= 1) {
@@ -51,9 +52,9 @@ function openSecondAlbum(id) {
                     continue;
                 }
             }
-            secondText += '<div class="album">';
-            secondText += '<div class="albumCon" id="' + firstTitle[i] + '_' + secondTitle[i] + '" onclick="openImage(this.id);"><img src="folder.png"></div>';
-            secondText += '<div class="albumTi"><p>' + secondTitle[i] + '</p></div>';
+            secondText += '<div class="secondAlbum">';
+            secondText += '<div class="secondAlbumCon" id="' + firstTitle[i] + '_' + secondTitle[i] + '" onclick="openImage(this.id);"><img src="folder.png"></div>';
+            secondText += '<div class="secondAlbumTi"><p>' + secondTitle[i] + '</p></div>';
             secondText += '</div>';
         }
     }
@@ -63,22 +64,23 @@ function openSecondAlbum(id) {
     // secondText += '<div class="albumTi"><p>앨범 추가</p></div>'
     // secondText += '</div>';
 
-    html.innerHTML = secondText;
+    centerHtml.innerHTML = secondText;
+    showAlbum();
+    document.getElementById(id).style.backgroundColor="#BE7743";
 }
-
 function openImage(id) {
     let thirdText = '';
     let prevId = id.split("_")[0];
 
-    thirdText += '<div class="album">';
-    thirdText += '<div class="albumCon" id="'+prevId+'" onclick="openSecondAlbum(this.id);"><img src="refolder.png"></div>';
-    thirdText += '<div class="albumTi"><p>Back</p></div>';
+    thirdText += '<div class="backAlbum">';
+    thirdText += '<div class="backAlbumCon" id="'+prevId+'" onclick="openSecondAlbum(this.id);"><img src="refolder.png"></div>';
+    thirdText += '<div class="backAlbumTi"><p>Back</p></div>';
     thirdText += '</div></div>';
 
     for (let i = 0; i < count; i++) {
         if (id == firstTitle[i] + '_' + secondTitle[i]) {
-            thirdText += '<div class="album">';
-            thirdText += '<div class="albumCon"><img src="' + address[i] + '" alt="사진없음"></div>';
+            thirdText += '<div class="photo">';
+            thirdText += '<div class="photoCon"><img src="' + address[i] + '" alt="사진없음"></div>';
             thirdText += '</div>';
         }
     }
@@ -87,7 +89,7 @@ function openImage(id) {
     // thirdText += '<div class="albumCon"><div class="blank"><p style="font-size:50px;">+</p></div></div>';
     // thirdText += '</div>';
 
-    html.innerHTML = thirdText;
+    centerHtml.innerHTML = thirdText;
 }
 
 // 앨범 추가 함수

@@ -2,44 +2,87 @@ a{
     color: black;
     text-decoration: none;
 }
-#albumSection{
+.head3_board, .head3_album_a{
+    color: #784520;
+}
+.head3_board_a{
+    color: #f3e9e1;
+}
+.albumSection{
     width: 1130px;
     padding: 0 30px;
-    margin: 0 auto;
-    margin-top: 100px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(25%,auto));
+    margin: 80px auto;
+    display: flex;
 }
-.album{
-    width: 250px;
-    height: 250px;
-    text-align: center;
-    margin: 20px;
+.sideAlbum{
+    width: 200px;
+    background-color: rgb(255, 240, 212);
+    margin: 0 10 0 20px;
 }
-
-.albumCon{
-    display: inline-block;
-    width: 150px;
+.centerAlbum{
+    margin: 60px 0 0 30px;
+    width: 800px;
+    display: flex;
+    justify-content: flex-start;
+}
+.firstAlbum{
+    width: 180px;
     height: 150px;
+    text-align: center;
     margin: 10px;
-    overflow: hidden;
-    position: relative;
 }
-.albumCon img{
-    position:absolute;
-    width: 100%;
-    top:50%; left:50%; transform: translate(-50%, -50%);
+.secondAlbum, .backAlbum{
+    width: 180px;
+    height: 150px;
+    text-align: center;
 }
-.albumTi{
+.firstAlbumCon{
+    background-color: rgb(255, 240, 212);
+    width: 120px;
+    height: 110px;
+    margin: 10px;
+    margin: 0 auto;
+}
+.secondAlbumCon, .backAlbumCon{
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+    margin: 0 auto;
+}
+.firstAlbumCon img, .secondAlbumCon img, .backAlbumCon img{
+    width: 100px;
+    
+}
+.firstAlbumTi, .secondAlbumTi, .backAlbumTi{
     display: inline-block;
     width: 120px;
     height: 20px;
     
 }
-.albumTi p{
+.firstAlbumTi p, .secondAlbumTi p, .backAlbumTi p{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+.photo{
+    width: 180px;
+    height: 180px;
+    text-align: center;
+    margin: 0 10px;
+}
+.photoCon{
+    width: 170px;
+    height: 170px;
+    margin: 10px;
+    margin: 0 auto;
+}
+.photoCon img{
+    display: block;
+  max-width:170px;
+  max-height:170px;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
 }
 
 .blank{
