@@ -3,21 +3,18 @@ a{
     color: black;
     text-decoration: none;
 }
-.head3_board{
+.head3_board, .head3_board_a{
     color: #784520;
 }
 .head3_album_a{
     color: #f3e9e1;
-}
-.head3_board_a{
-    color: #784520;
 }
 
 .board_plus{
     width: 1130px;
     padding: 0 30px;
     margin: 0 auto;
-    margin-top: 120px;
+    margin-top: 50px;
 }
 .board_plus p{
     float: right;
@@ -29,6 +26,7 @@ a{
     width: 1130px;
     padding: 0 30px;
     margin: 0 auto;
+    padding-top: 8px;
     text-align: center;
 }
 .board_table{
@@ -81,17 +79,22 @@ a{
 
 
 .board_read_back{
-    width: 700px;
-    margin: 0 auto;
-    padding: 0 170px;
-    margin-top: 120px;
-    margin-bottom: 10px;
+    /* width: 730px;
+    margin: 0 auto; */
+    width: 70px;
+    margin-left: 200px;
+    margin-top: 50px;
+    margin-bottom: 8px;
     cursor: pointer;
 }
 
 .board_read_table td{
-    padding: 10px;
+    padding: 20px 20px 0 25px;
     white-space: pre-line;
+}
+.board_read_body tr:nth-child(2) td{
+    padding-top: 10px;
+    padding-bottom: 0px;
 }
 .board_read_part{
     width: 1130px;
@@ -109,12 +112,11 @@ a{
 }
 
 .board_read_main{
-    font-size: 19px;
+    font-size: 13px;
 }
 .board_read_hr{
     width: 685px;
     height: 1px;
-    margin: 0 auto;
     border: none;
     box-shadow: 1px 1px #784520;
 }
@@ -124,6 +126,11 @@ a{
 .board_read_footer{
     font-size: 40px;
     vertical-align: bottom;
+    
+}
+.board_read_footer td{
+    padding-bottom: 10px;
+    font-family: fantasy;
 }
 /* .board_read_body tr:nth-child(4) td{
     padding: 0;

@@ -140,7 +140,7 @@ hr {
 
 header{
     width: 1130px;
-    height: 120px;
+    height: 200px;
     padding: 0 30px;
     margin: 0 auto;
 }
@@ -202,13 +202,13 @@ header{
     margin-left: 6.5%;
 }
 .sub_nav ul:nth-child(2){
-    margin-left: 12.9%;
+    margin-left: 13.9%;
 }
 .sub_nav ul:nth-child(3){
     margin-left: 13.5%;
 }
 .sub_nav ul:nth-child(4){
-    margin-left: 12.9%;
+    margin-left: 13.1%;
 }
 .sub_nav ul:nth-child(5){
     margin-left: 9%;
