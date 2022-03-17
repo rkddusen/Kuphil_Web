@@ -1,20 +1,20 @@
 
- a{
+a{
     color: black;
     text-decoration: none;
 }
+.head3_board, .head3_board_a{
+    color: #784520;
+}
+.head3_album_a{
+    color: #f3e9e1;
+}
 
-.toBoard{
-    color: #BE7743;
-}
-.toAlbum{
-    color: darkgray;
-}
 .board_plus{
     width: 1130px;
     padding: 0 30px;
     margin: 0 auto;
-    margin-top: 120px;
+    margin-top: 50px;
 }
 .board_plus p{
     float: right;
@@ -26,6 +26,7 @@
     width: 1130px;
     padding: 0 30px;
     margin: 0 auto;
+    padding-top: 8px;
     text-align: center;
 }
 .board_table{
@@ -33,16 +34,25 @@
     border-collapse: collapse;/* 각 방 사이에 간격 없앰 */
 }
 .board_table thead tr td{
-    font-size: 20px;
-    height: 60px;
-    background-color: #DFD3C3;
-    border: 1px solid black;
+    font-size: 15px;
+    height: 40px;
+    background-color: #f8cf9a;
+
 }
 .board_table tbody tr td{
-    cursor: pointer;
+    
     padding: 10px;
     height: 30px;
-    border: 1px solid black;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+.board_table tbody tr td:nth-child(2){
+    text-align: left;
+    cursor: pointer;
+}
+.board_table tbody tr td:nth-child(2):hover{
+    font-size: 17px;
 }
 .board_number{
     font-size: 20px;
@@ -69,16 +79,22 @@
 
 
 .board_read_back{
-    width: 850px;
-    margin: 0 auto;
-    padding: 0 170px;
-    margin-top: 120px;
+    /* width: 730px;
+    margin: 0 auto; */
+    width: 70px;
+    margin-left: 200px;
+    margin-top: 50px;
+    margin-bottom: 8px;
     cursor: pointer;
 }
 
 .board_read_table td{
-    padding: 10px;
+    padding: 20px 20px 0 25px;
     white-space: pre-line;
+}
+.board_read_body tr:nth-child(2) td{
+    padding-top: 10px;
+    padding-bottom: 0px;
 }
 .board_read_part{
     width: 1130px;
@@ -87,23 +103,22 @@
     margin-bottom: 150px;
 }
 .board_read_table{
-    width: 850px;
     margin: 0 auto;
     border-collapse: collapse;
-    border: 2px solid black;
+    box-shadow: 1px 1px 5px #784520;
 }
 .board_read_table thead tr{
-    font-size: 25px;
+    font-size: 23px;
 }
 
 .board_read_main{
-    font-size: 20px;
+    font-size: 13px;
 }
 .board_read_hr{
-    width: 820px;
+    width: 685px;
     height: 1px;
-    margin: 0 auto;
-    background-color: black;
+    border: none;
+    box-shadow: 1px 1px #784520;
 }
 .board_read_cont{
     vertical-align: top;
@@ -111,4 +126,12 @@
 .board_read_footer{
     font-size: 40px;
     vertical-align: bottom;
+    
 }
+.board_read_footer td{
+    padding-bottom: 10px;
+    font-family: fantasy;
+}
+/* .board_read_body tr:nth-child(4) td{
+    padding: 0;
+} */

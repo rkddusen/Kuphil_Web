@@ -44,7 +44,7 @@
                         <li><a href="../album">사진첩</a></li>
                     </ul>
                     <ul>
-                        <li><a href="../game">악기심리테스트</a></li>
+                        <li><a href="../test">악기심리테스트</a></li>
                         <li><a href="../game">불협화음피하기</a></li>
                     </ul>
                 </div>
@@ -58,33 +58,35 @@
     </header>
 
     <!-- 메인으로 이전 다음 -->
-    <div onclick="history.back();" class="board_read_back">
-        목록으로
-    </div>
+    
     
     <section class="board_read_part">
+        <div onclick="history.back();" class="board_read_back">
+        목록으로
+    </div>
         <!-- 게시판 테이블 -->
         <table class="board_read_table">
             <thead>
                 <tr>
-                    <td class="read_td_title" style="width: 700px;"><%=title%> </td>
-                    <td style="width: 100px;"></td>
-                    <td class="read_td_etc" style="width: 50px;text-align: center;"> ⋯ </td>
+                    <td class="board_read_title_td" style="width: 600px;"><%=title%> </td>
+                    <td class="board_read_etc_td" style="width: 50px;text-align: center;"> ⋯ </td>
                 </tr>
             </thead>
             <tbody class="board_read_body">
                 <tr class="board_read_main">
-                    <td colspan="3" style="padding: 5px 30px;"><%=writer%></td>
+                    <td colspan="2"><%=writer%><br><%=date.substring(0,10)%></td>
                 </tr>
                 <tr>
+                    <td colspan="2"><hr class="board_read_hr"></td>
+                </tr>
+                <tr class="board_read_cont" style="height:400px;">
+                    <td colspan="2"><%=content%></td>
+                </tr>
+                <!-- <tr>
                     <td colspan="3"><hr class="board_read_hr"></td>
-                </tr>
-                <tr class="board_read_cont" style="height:500px;">
-                    <td colspan="3"><%=content%></td>
-                </tr>
+                </tr> -->
                 <tr class="board_read_footer">
-                    <td>🤍</td>
-                    <td colspan="2" style="font-size: 15px; text-align: right;">작성 날짜<br/><%=date.substring(0,16)%></td>
+                    <td colspan="2">🤍</td>
                 </tr>
             </tbody>
         </table>
