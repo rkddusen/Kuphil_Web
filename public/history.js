@@ -1,5 +1,3 @@
-const { YEAR } = require("mysql/lib/protocol/constants/types");
-
 //연혁 지우기->년도 이동시에 쓰임
 function removeHistory() {
     let previous_content=document.getElementById("story");
