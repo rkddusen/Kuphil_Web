@@ -16,15 +16,14 @@
 .posterbox_1 {
     width: 1130px;
     height: 380px;
-    margin: 0 auto;
-    margin-top: 100px;
+    margin: 130px 0 0 0;
     display: flex;
     justify-content: center;
 }
 .posterbox_2 {
     width: 1130px;
     height: 380px;
-    margin: 0 auto;
+    margin: 0 0 80px 0;
     display: flex;
     justify-content: center;
 }
@@ -67,12 +66,16 @@
     justify-content: space-between;
 }
 
-.loadposters {
-    margin: 0 10px;
-    padding: 13px 15px;
-    text-align: center;
+.fa fa-angle-double-right {
     font-weight: bold;
     border-radius: 20%;
     background: #DFD3C3;
-    border-color: #DFD3C3;
+
 }
+.fa fa-angle-double-left {
+    font-weight: bold;
+    border-radius: 20%;
+    background: #DFD3C3;
+
+}
+/* ddd */
