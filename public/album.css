@@ -1,0 +1,55 @@
+a{
+    color: black;
+    text-decoration: none;
+}
+#albumSection{
+    width: 1130px;
+    padding: 0 30px;
+    margin: 0 auto;
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25%,auto));
+}
+.album{
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    margin: 20px;
+}
+
+.albumCon{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.albumCon img{
+    position:absolute;
+    width: 100%;
+    top:50%; left:50%; transform: translate(-50%, -50%);
+}
+.albumTi{
+    display: inline-block;
+    width: 120px;
+    height: 20px;
+    
+}
+.albumTi p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.blank{
+    background-color: white;
+    border: 3px solid black;
+    width: 70%;
+    height: 95%;
+    margin: auto;
+    align-items: center;
+}
+.blank p{
+    padding: 40px 0;
+}

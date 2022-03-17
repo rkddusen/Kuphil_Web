@@ -1,0 +1,130 @@
+
+a{
+    color: black;
+    text-decoration: none;
+}
+.head3_board{
+    color: #784520;
+}
+.head3_album_a{
+    color: #f3e9e1;
+}
+.head3_board_a{
+    color: #784520;
+}
+
+.board_plus{
+    width: 1130px;
+    padding: 0 30px;
+    margin: 0 auto;
+    margin-top: 120px;
+}
+.board_plus p{
+    float: right;
+    cursor: pointer;
+    margin-right: 130px;
+}
+.board_part{
+    clear: both;
+    width: 1130px;
+    padding: 0 30px;
+    margin: 0 auto;
+    text-align: center;
+}
+.board_table{
+    margin: 0 auto;
+    border-collapse: collapse;/* 각 방 사이에 간격 없앰 */
+}
+.board_table thead tr td{
+    font-size: 15px;
+    height: 40px;
+    background-color: #f8cf9a;
+
+}
+.board_table tbody tr td{
+    
+    padding: 10px;
+    height: 30px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+.board_table tbody tr td:nth-child(2){
+    text-align: left;
+    cursor: pointer;
+}
+.board_table tbody tr td:nth-child(2):hover{
+    font-size: 17px;
+}
+.board_number{
+    font-size: 20px;
+    cursor: pointer;
+    margin: 20px auto;
+}
+.board_number tr td{
+    width: 40px;
+}
+/* .td_category select{
+    width: 50px;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance:none;
+    appearance:none;
+    background-color: #DFD3C3;
+    font-size: 20px;
+    background: url("./triangle.png") no-repeat 140% 10%/30px;
+}
+    /*IE 10, 11의 네이티브 화살표 숨기기 ( IE에서 디자인 적용안되는 현상 해결 )
+.td_category select::-ms-expand { 
+    display: none;
+} */
+
+
+.board_read_back{
+    width: 700px;
+    margin: 0 auto;
+    padding: 0 170px;
+    margin-top: 120px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.board_read_table td{
+    padding: 10px;
+    white-space: pre-line;
+}
+.board_read_part{
+    width: 1130px;
+    padding: 0 30px;
+    margin: 0 auto;
+    margin-bottom: 150px;
+}
+.board_read_table{
+    margin: 0 auto;
+    border-collapse: collapse;
+    box-shadow: 1px 1px 5px #784520;
+}
+.board_read_table thead tr{
+    font-size: 23px;
+}
+
+.board_read_main{
+    font-size: 19px;
+}
+.board_read_hr{
+    width: 685px;
+    height: 1px;
+    margin: 0 auto;
+    border: none;
+    box-shadow: 1px 1px #784520;
+}
+.board_read_cont{
+    vertical-align: top;
+}
+.board_read_footer{
+    font-size: 40px;
+    vertical-align: bottom;
+}
+/* .board_read_body tr:nth-child(4) td{
+    padding: 0;
+} */

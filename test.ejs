@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/test.css">
+    <link rel="stylesheet" type="text/css" href="/headfoot.css">
+</head>
+
+<body>
+    <!-- 헤더 -->
+    <header>
+        <div class="mainlogo">
+            <a href="./"><img src="kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
+        </div>
+        <div class="head1">
+            <div>
+                <a href="./login">로그인</a>
+                <!-- <a href="./myPage">마이페이지</a> | <a href="./logout">로그아웃</a> -->
+            </div>
+        </div>
+        <div class="head2">
+            <div class="dropdown">
+                <ul class="nav">
+                    <li><a href="./introduce">소개</a></li>
+                    <li><a href="./archive">아카이브</a></li>
+                    <li><a href="./calendar">달력</a></li>
+                    <li><a href="./board">게시판</a></li>
+                    <li><a href="./lab">실험실</a></li>
+                </ul>
+                <div class="sub_nav">
+                    <ul>
+                        <li><a href="./introduce">소개</a></li>
+                        <li><a href="./history">연혁</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="./archive">아카이브</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="./calendar">달력</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="./board">게시판</a></li>
+                        <li><a href="./album">사진첩</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="./game">악기심리테스트</a></li>
+                        <li><a href="./game">불협화음피하기</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <hr>
+        <article class="head3_game">
+            <hr class="front_hr"><p>악기 심리 테스트</p><hr class="back_hr_game">
+        </article>
+        
+    </header>
+
+    <!-- 내용 -->
+    <script>
+        let question = "<%=question%>".split(",");
+        let conductor = "<%=conductor%>".split(",");
+        let firstViolin = "<%=firstViolin%>".split(",");
+        let secondViolin = "<%=secondViolin%>".split(",");
+        let viola = "<%=viola%>".split(",");
+        let cello = "<%=cello%>".split(",");
+        let contra = "<%=contra%>".split(",");
+        let flute = "<%=flute%>".split(",");
+        let oboe = "<%=oboe%>".split(",");
+        let clarinet = "<%=clarinet%>".split(",");
+        let basson = "<%=basson%>".split(",");
+        let trumpet = "<%=trumpet%>".split(",");
+        let trombone = "<%=trombone%>".split(",");
+        let horn = "<%=horn%>".split(",");
+        let tuba = "<%=tuba%>".split(",");
+        let timpani = "<%=timpani%>".split(",");
+        let percussion = "<%=percussion%>".split(",");
+        let piano = "<%=piano%>".split(",");
+        let audience = "<%=audience%>".split(",");
+        let fanswer = "<%=fanswer%>".split(",");
+        let sanswer = "<%=sanswer%>".split(",");
+    </script>
+    <div class="gameContents">
+        <div class="question">
+            당신에게 어울리는 악기를 추천해 드려도 될까요?<br />
+            <span style="font-size: 12px; color: red;">(* 이 테스트는 오로지 재미를 위해 만들어진 테스트입니다.^^)</span>
+        </div>
+        <div class="answer">
+            <div class="firstAnswer">
+                <button onclick="startGame();">너무 좋아요 :)</button>
+            </div>
+            <div class="secondAnswer">
+                <button>다음에 봐요 :(</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div id="footer_left">
+            <p>Contact us! :)</p>
+            <div>
+                <a hr ef="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">
+                    <img src="kuphil_youtube.png" alt="쿠필 유튜브">
+                </a>
+            </div>
+            <div>
+                <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank">
+                    <img src="kuphil_instagram.png" alt="쿠필 인스타그램">
+                </a>
+            </div>
+            <div>
+                <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank">
+                    <img src="kuphil_facebook.png" alt="쿠필 페이스북">
+                </a>
+            </div>
+        </div>
+        <div id="footer_right">
+            <div id="terms">
+                <li><a href="#">이용 약관</a></li>
+                <li><a href="#">제휴 제안</a></li>
+                <li><a href="#">개인정보 처리방침</a></li>
+            </div>
+            <div id="address_n_right">
+                <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+                <p>copyright 2021 KUPHIL, All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script type="text/javascript" src="/test.js"></script>
+
+</html>

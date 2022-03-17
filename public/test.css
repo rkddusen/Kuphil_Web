@@ -1,0 +1,33 @@
+.gameContents{
+    padding: 0 30px;
+    width: 1130px;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+
+.question{
+    font-size: 30px;
+    text-align: center;
+}
+
+.answer{
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    font-size: 25px;
+    width: 400px;
+    height: 100px;
+    margin: 100px 50px;
+    background-color: white;
+}
+
+.firstAnswer button{
+    border: 2px solid blue;
+    background-color: #EFEFFB;
+}
+.secondAnswer button{
+    border: 2px solid red;
+    background-color: #FBEFEF;
+}

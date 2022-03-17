@@ -3,6 +3,12 @@ section {
     width: 1130px;
     padding: 0 30px;
     margin: 0 auto;
+    margin-top: 40px;
+}
+hr{
+    height: 2px;
+    border: none;
+    background-color: #BE7743;
 }
 
 /* position: relative로 인해 부모 태그가 자식 태그의 기준점이 됨 */
@@ -12,14 +18,15 @@ section {
     overflow: hidden;
     position: relative;
     margin: 8px 0;
+    text-align: center;
 }
 
 /* object-fit은 img같은 대체 콘텐츠의 크기를 어떤 방식으로 조절해 요소에 맞출 것인지 지정
 cover는 대체 콘텐츠의 가로세로비를 유지하면서 요소 콘텐츠 박스 가득 채움
 서로의 가로세로비가 일치하지 않으면 객체 일부가 잘려나감 */
-#main_welcome > img {
-    width: 1130px;
-    height: 505px;
+#main_welcome img {
+    width: 1129px;
+    margin: 0 auto;
     object-fit: cover;
 }
 
@@ -36,28 +43,30 @@ cover는 대체 콘텐츠의 가로세로비를 유지하면서 요소 콘텐츠
     font-family: 'Reenie Beanie', cursive;
 }
 
-#whatsnew {
+#d_day {
     background-color: #FFF4EA;
     height: 120px;
 }
 
-#whatsnew > p {
+#d_day > p {
     color:#864415;
     font-size: 32px;
-    font-family: 'Alegreya', serif;
+    padding: 5px 0 0 10px;
+    /* font-family: 'Alegreya', serif; */
 }
 
-#whatsnew a {
+/* #whatsnew a {
     color: #000000;
     font-size: 32px;
-}
+} */
 
 /* text-align 속성을 사용해서 text 위치 지정 가능
 height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
-#whatsnew > div {
+#d_day > div {
     height: 32px;
     text-align: center;
     line-height: 32px;
+    font-size: 25px;
 }
 
 .spelling_introduce span {
@@ -242,4 +251,3 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     display: block;
     content: '';
 }
-

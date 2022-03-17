@@ -7,6 +7,11 @@
 
 
 /* 아카이브 body css */
+.container {
+    width: 1130px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
 
 .posterbox_1 {
     width: 1130px;
@@ -25,6 +30,7 @@
 }
 
 .poster_img {
+    /* 포스터 사이즈가 규격에 맞지 않으면 잘려서 출력됨 */
     width: 244px;
     height: 345px;
     margin: 0 50px;
@@ -32,24 +38,27 @@
 
 }
 
-.poster_title {
-    margin: 0 auto;
-    margin-bottom: 50px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
+.thumbnail_1 {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.poster_title_text {
+.thumbnail_2 {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.poster_title {
+    cursor: pointer;
     margin: 0 50px;
     width: 244px;
 }
 
-.poster_img.portrait { 
-    /* 사진이 규격에 안맞으면 잘려서 출력 */
-    width: 100%; 
-    height: auto; 
-}
 
 .page_button {
     width: 1130px;
