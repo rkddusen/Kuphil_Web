@@ -1,70 +1,105 @@
 #game_notice{
     margin: 30px auto;
-    margin-top:100px;
-    margin-bottom: 150px;
+    margin-bottom: 80px;
     width:1130px;
-    font-size:20px;
+    padding:0 30px;
+    font-size:15px;
     line-height:200%;
     color: #5C3A1A;
 }
 
 .test{
     margin: 30px auto;
-    margin-bottom:100px;
+    padding: 0 30px;
+    width:1130px;
+    margin-bottom:80px;
     display:flex;
     flex-direction: column;
     align-items:center;
 }
 
 .test p:first-child{
-    font-size: 36px;
+    font-size: 25px;
     margin-bottom: 20px;
 }
 
 .test section{
-    margin: 0 auto;
-    width:1130px;
+    width:900px;
+    margin: 20px auto;
     margin-bottom: 10px;
     text-align:center;
 }
 
 #info_1{
-    font-size:17px;
+    font-size:15px;
 }
 
 .test img{
-    width: 500px;
-    height: 500px;
+    width: 300px;
+    height: 300px;
     margin-bottom: 10px;
 }
 
 .game{
     margin: 30px auto;
-    margin-bottom:100px;
+    padding: 0 30px;
+    width:1130px;
+    margin-bottom:80px;
     display:flex;
     flex-direction: column;
     align-items:center;
 }
 
 .game  p:first-child{
-    font-size: 36px;
+    font-size: 25px;
     margin-bottom: 20px;
 }
 
 .game section{
-    width:1130px;
+    width:900px;
     margin: 20px auto;
     margin-bottom: 10px;
     text-align:center;
 }
 
 #info_2{
-    font-size:17px;
+    font-size:15px;
 }
 
 .game img{
-    width: 500px;
-    height: 500px;
+    width: 300px;
+    height: 300px;
+}
+
+.snake_game{
+    margin: 30px auto;
+    padding: 0 30px;
+    width:1130px;
+    margin-bottom:80px;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.snake_game  p:first-child{
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.snake_game section{
+    width:900px;
+    margin: 20px auto;
+    margin-bottom: 10px;
+    text-align:center;
+}
+
+#info_3{
+    font-size:15px;
+}
+
+.snake_game img{
+    width: 300px;
+    height: 300px;
 }
 
 .selection{
