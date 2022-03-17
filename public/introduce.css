@@ -5,28 +5,25 @@ a{
     color: black;
     text-decoration: none;
 }
-
-.toIntroduce{
-    color: #BE7743;
+.head3_introduce, .head3_history_a{
+    color: #f3e9e1;
+}
+.head3_introduce_a{
+    color: #784520;
 }
 
-.toHistory{
-    color: darkgray;
-}
-
-#introduce_greeting {
-    width: 1130px;
+.greeting{
+    width:1130px;
     padding: 0 30px;
-    margin: 30px auto;
-    margin-top: 150px;
+    margin: 40px auto;
 }
 
 #introduce_greeting > span {
     margin: 20px auto;
     padding: 0 20px;
     height: 50px;
-    font-family:'Alegreya';
     font-size: 36px;
+    margin-top: 50px;
 }
 
 #introduce_welcome {
@@ -54,20 +51,19 @@ a{
     width: 1130px;
     margin: 30px auto;
     padding: 0 30px;
-    margin-bottom: 150px;
+    margin-bottom: 80px;
 }
 
 #path > p {
     margin-top: 250px;
     padding: 0 20px;
     height: 50px;
-    font-family:'Alegreya';
     font-size: 36px;
 }
 
 #how {
     width: 1130px; 
-    margin: 70px auto;
+    margin: 30px auto;
     display: flex;
     flex-direction: row;
 }
@@ -75,13 +71,13 @@ a{
 #how > img {
     width: 750px;
     height: 370px;
-    margin-right: 50px;
+    margin-right: 40px;
 }
 
 #how > span {
+    width: 750px;
     align-self: center;
-    font-family:'Alegreya';
-    font-size: 18px;
-    padding: 0 30px;
+    font-size: 15px;
+    padding: 0 20px;
     line-height:200%;
 }

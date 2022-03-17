@@ -279,6 +279,10 @@ server.get("/lab", (req, res) => {
     res.sendFile(__dirname + "/lab.html");
 });
 
+server.get("/snakegame", (req, res) => {
+
+    res.sendFile(__dirname + "/snake_game.html");
+});
 
 server.use((req, res) => {
     res.sendFile(__dirname + "/404.html");
