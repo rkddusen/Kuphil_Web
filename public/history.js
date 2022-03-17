@@ -28,7 +28,7 @@ function getHistory(btn){
         history+='</div>';
         history+='<div id="2021" class="history_content">';
         history+='<p>2021<br></p>';
-        history+='<p>2021.08.28. 제 37회 정기연주회</p>';
+        history+='<p>2021.08.28. 제 37회 정기연주회<br>2021.10.12 광진예술제(나루와 함께하는 Kuphil 영화 여행)</p>';
         history+='</div>';
         history+='</div>';
         story.innerHTML=history;
