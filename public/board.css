@@ -7,7 +7,7 @@ a{
     color: #784520;
 }
 .head3_album_a{
-    color: #f3e9e1;
+    color: #efe2d6;
 }
 
 .board_plus{
@@ -32,6 +32,7 @@ a{
 .board_table{
     margin: 0 auto;
     border-collapse: collapse;/* 각 방 사이에 간격 없앰 */
+    box-shadow: 1px 1px 5px #784520;
 }
 .board_table thead tr td{
     font-size: 15px;
@@ -52,7 +53,7 @@ a{
     cursor: pointer;
 }
 .board_table tbody tr td:nth-child(2):hover{
-    font-size: 17px;
+    color: #784520;
 }
 .board_number{
     font-size: 20px;
