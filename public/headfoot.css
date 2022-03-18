@@ -322,7 +322,7 @@ footer > div {
 
 
 .front_hr{
-    height: 1px;
+    height: 2px;
     margin-top: 50px;
     width: 70px;
 }
@@ -339,12 +339,12 @@ footer > div {
 }
 .back_hr_calendar{
     float: right;
-    height: 1px;
+    height: 2px;
     width: 940px;
 }
 .head3_introduce p{
     width: 180px;
-    height: 30px;
+    height: 40px;
     float: left;
     margin-left: 92px;
     font-size: 30px;
@@ -354,7 +354,7 @@ footer > div {
 }
 .back_hr_introduce{
     float: right;
-    height: 1px;
+    height: 2px;
     width: 840px;
 }
 .head3_archive p{
@@ -370,7 +370,7 @@ footer > div {
 }
 .back_hr_archive{
     float: right;
-    height: 1px;
+    height: 2px;
     width: 895px;
 }
 .head3_board p{
@@ -385,7 +385,7 @@ footer > div {
 }
 .back_hr_board{
     float: right;
-    height: 1px;
+    height: 2px;
     width: 785px;
 }
 .head3_login p{
@@ -401,10 +401,10 @@ footer > div {
 }
 .back_hr_login{
     float: right;
-    height: 1px;
+    height: 2px;
     width: 920px;
 }
-.head3_game p{
+.head3_test p{
     width: 200px;
     height: 30px;
     float: left;
@@ -415,9 +415,9 @@ footer > div {
     text-align: center;
     margin-top: -15px;
 }
-.back_hr_game{
+.back_hr_test{
     float: right;
-    height: 1px;
+    height: 2px;
     width: 800px;
 }
 
@@ -434,6 +434,6 @@ footer > div {
 }
 .back_hr_lab{
     float: right;
-    height: 1px;
+    height: 2px;
     width: 940px;
 }

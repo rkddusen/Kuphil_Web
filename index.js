@@ -22,6 +22,10 @@ server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
 
 //request 이벤트 리스너 설정//라우터 설정
+server.get("/", (req, res) => {
+
+    res.sendFile(__dirname + "/index.html");
+});
 server.get("/introduce", (req, res) => {
 
     res.sendFile(__dirname + "/introduce.html");
@@ -100,52 +104,49 @@ server.get("/calendar", (req, res) => {
         }
     );
 });
-const mainPage = fs.readFileSync('./index.ejs', 'utf8');
-server.get("/", (req, res) => {
-    let data = '';let text='';
-    connection.query('SELECT date,title FROM schedule WHERE main=1',
-        function (error, rows, fields) {
-            if (error) {
-                console.log(error);
-            }
-            else {
-                if (rows.length == 0) {
-                    data = '아직 특별한 일정이 없어요!';
-                }
-                else {
-                    data += rows[0].title;
-                    console.log(data);
-                    let today=new Date();
-                    let mainDay=new Date(rows[0].date.replace(/-/g,','));
-                    
-                    let gap=mainDay.getTime()-today.getTime();
-                    let result=Math.ceil(gap/(1000*60*60*24));
-                    
-                    if(result<0){
-                        text='D + '+Math.abs(result);
-                    }
-                    else if(result==0){
-                        text='D-day';
-                    }
-                    else if(result>0){
-                        text='D - '+result;
-                    }
-                }
-                //데이터 생성
-                var page = ejs.render(mainPage, {
-                    db: data,
-                    text:text,
-                });
-                //응답
-                res.send(page);
-            }
-        }
-    );
-});
+// const mainPage = fs.readFileSync('./index.ejs', 'utf8');
 // server.get("/", (req, res) => {
-
-//     res.sendFile(__dirname + "/index.html");
+//     let data = '';let text='';
+//     connection.query('SELECT date,title FROM schedule WHERE main=1',
+//         function (error, rows, fields) {
+//             if (error) {
+//                 console.log(error);
+//             }
+//             else {
+//                 if (rows.length == 0) {
+//                     data = '아직 특별한 일정이 없어요!';
+//                 }
+//                 else {
+//                     data += rows[0].title;
+//                     console.log(data);
+//                     let today=new Date();
+//                     let mainDay=new Date(rows[0].date.replace(/-/g,','));
+                    
+//                     let gap=mainDay.getTime()-today.getTime();
+//                     let result=Math.ceil(gap/(1000*60*60*24));
+                    
+//                     if(result<0){
+//                         text='D + '+Math.abs(result);
+//                     }
+//                     else if(result==0){
+//                         text='D-day';
+//                     }
+//                     else if(result>0){
+//                         text='D - '+result;
+//                     }
+//                 }
+//                 //데이터 생성
+//                 var page = ejs.render(mainPage, {
+//                     db: data,
+//                     text:text,
+//                 });
+//                 //응답
+//                 res.send(page);
+//             }
+//         }
+//     );
 // });
+
 server.get("/archive", (req, res) => {
 
     res.sendFile(__dirname + "/archive.html");
