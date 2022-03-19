@@ -43,18 +43,43 @@ cover는 대체 콘텐츠의 가로세로비를 유지하면서 요소 콘텐츠
     font-family: 'Reenie Beanie', cursive;
 }
 
-#kuphil_sns {
+.kuphil_sns {
     background-color: #FFF4EA;
     height: 120px;
 }
 
-#kuphil_sns > p {
+.kuphil_sns > p {
     color:#864415;
     font-size: 32px;
     padding: 5px 0 0 10px;
     /* font-family: 'Alegreya', serif; */
 }
-
+.show{
+    margin-top: -5px;
+    text-align: end;
+}
+.show div{
+    display: inline-block;
+}
+.show img{
+    height: 45px;
+    float: left;
+}
+.show a{
+    margin-left: 10px;
+    line-height: 45px;
+    float: left;
+    color: gray;
+    font-weight: bold;
+}
+.show div:nth-child(3) a{
+    line-height: 22px;
+    text-align: left;
+}
+.show a:hover{
+    text-decoration: underline;
+    color: black;
+}
 /* #whatsnew a {
     color: #000000;
     font-size: 32px;
@@ -62,12 +87,12 @@ cover는 대체 콘텐츠의 가로세로비를 유지하면서 요소 콘텐츠
 
 /* text-align 속성을 사용해서 text 위치 지정 가능
 height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
-#d_day > div {
+/* #d_day > div {
     height: 32px;
     text-align: center;
     line-height: 32px;
     font-size: 25px;
-}
+} */
 
 .spelling_introduce span {
     color: #FF8A00;
