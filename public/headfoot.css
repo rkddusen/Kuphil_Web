@@ -140,14 +140,19 @@ hr {
 
 header{
     width: 1130px;
-    height: 200px;
+    height: 180px;
     padding: 0 30px;
     margin: 0 auto;
+    margin-top: 10px;
+}
+.main_head{
+    height: 110px;
+    border-bottom: 3px solid #BE7743;
 }
 
 .head1{
     color: #BE7743;
-    margin: 10px 10px 0 0;
+    margin: 0 10px 0 0;
     height: 30px;
     position: relative;
 }
@@ -157,13 +162,7 @@ header{
 .head1 a{
     color: #BE7743;
 }
-.head2{
-    height: 80px;
-}
-.dropdown{
-    margin-top: 20px;
-    padding-left: 5px;
-    height: 60px;
+nav{
     float: right;
 }
 .mainlogo img{
@@ -171,61 +170,65 @@ header{
     width: 250px;
     float: left;
 }
-.nav{
-    height: 63px;
-    line-height: 60px;
-}
-.nav li{
+nav > ul{
     float: left;
-    margin: 0 40px;
-    font-size: 23px;
+    height: 81px;
+    line-height: 81px;
 }
-.nav li a{
+nav > ul > li{
+    float: left;
+    font-size: 23px;
+    padding: 2px 80px 0 0;
+    position: relative;
+}
+nav > ul > li:first-child{
+    padding-left: 25px;
+}
+nav > ul > li > a{
     color: #BE7743;
 }
-.sub_nav{
-    display: none;
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 150px;
-    background-color: #FFF4EA;
+nav > ul > li > a:hover{
+    color: #784520;
+    font-weight: bold;
+    
+}
+nav > ul > li ul{
+    height: 135px;
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+    transition: .2s ease-in-out;
+    transform: translateY(10px);
     font-size: 18px;
-    background:linear-gradient(to top, #FFF4EA,white);
-    /* border-top: 3px solid #BE7743; */
+    list-style: none;
+    color: #BE7743;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    background: linear-gradient(to bottom, white, #FFF4EA);
+    left: 0px;
 }
-.sub_nav ul{
-    float: left;
-    text-align: center;
+.sub1 li{
+    padding-left: 25px;
 }
-.sub_nav ul:nth-child(1){
-    margin-left: 6.5%;
+nav > ul > li > ul > li{
+    height: 50px;
 }
-.sub_nav ul:nth-child(2){
-    margin-left: 13.9%;
+
+nav > ul > li > ul > li > a{
+    color: #BE7743;
 }
-.sub_nav ul:nth-child(3){
-    margin-left: 13.5%;
+nav > ul > li > ul > li > a:hover{
+    color: #784520;
+    font-weight: bold;
 }
-.sub_nav ul:nth-child(4){
-    margin-left: 13.1%;
-}
-.sub_nav ul:nth-child(5){
-    margin-left: 9%;
-}
-.sub_nav ul li{
-    margin: 35px 0;
-}
-.sub_nav a{
-    color: #864415;
-}
-.dropdown:hover .sub_nav{
-    display: block;
-}
-header hr{
-    height: 3px;
-    border: none;
-    background-color: #BE7743;
+nav:hover ul {
+    /* display: block; */
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    position: absolute;
+    z-index: 1;
 }
 
 footer {
@@ -325,6 +328,8 @@ footer > div {
     height: 2px;
     margin-top: 50px;
     width: 70px;
+    border: none;
+    background-color: #BE7743;
 }
 .head3_calendar p{
     width: 100px;
@@ -341,6 +346,8 @@ footer > div {
     float: right;
     height: 2px;
     width: 940px;
+    border: none;
+    background-color: #BE7743;
 }
 .head3_introduce p{
     width: 180px;
@@ -356,6 +363,8 @@ footer > div {
     float: right;
     height: 2px;
     width: 840px;
+    border: none;
+    background-color: #BE7743;
 }
 .head3_archive p{
     width: 150px;
@@ -372,6 +381,8 @@ footer > div {
     float: right;
     height: 2px;
     width: 895px;
+    border: none;
+    background-color: #BE7743;
 }
 .head3_board p{
     width: 250px;
@@ -387,6 +398,8 @@ footer > div {
     float: right;
     height: 2px;
     width: 785px;
+    border: none;
+    background-color: #BE7743;
 }
 .head3_login p{
     width: 120px;
@@ -403,6 +416,8 @@ footer > div {
     float: right;
     height: 2px;
     width: 920px;
+    border: none;
+    background-color: #BE7743;
 }
 .head3_test p{
     width: 200px;
@@ -419,6 +434,8 @@ footer > div {
     float: right;
     height: 2px;
     width: 800px;
+    border: none;
+    background-color: #BE7743;
 }
 
 .head3_lab p{
@@ -436,4 +453,6 @@ footer > div {
     float: right;
     height: 2px;
     width: 940px;
+    border: none;
+    background-color: #BE7743;
 }
