@@ -194,11 +194,11 @@ nav > ul > li > a:hover{
 }
 nav > ul > li ul{
     height: 135px;
-    /* display: none; */
-    visibility: hidden;
+    display: none;
+    /* visibility: hidden;
     opacity: 0;
     transition: .2s ease-in-out;
-    transform: translateY(10px);
+    transform: translateY(10px); */
     font-size: 18px;
     list-style: none;
     color: #BE7743;
@@ -223,12 +223,12 @@ nav > ul > li > ul > li > a:hover{
     font-weight: bold;
 }
 nav:hover ul {
-    /* display: block; */
-    visibility: visible;
+    display: block;
+    /* visibility: visible;
     opacity: 1;
-    transform: translateY(0);
-    position: absolute;
-    z-index: 1;
+    transform: translateY(0); */
+    /* position: absolute;
+    z-index: 1; */
 }
 
 footer {
@@ -327,7 +327,7 @@ footer > div {
 .front_hr{
     height: 2px;
     margin-top: 50px;
-    width: 70px;
+    width: 65px;
     border: none;
     background-color: #BE7743;
 }
@@ -345,7 +345,7 @@ footer > div {
 .back_hr_calendar{
     float: right;
     height: 2px;
-    width: 940px;
+    width: 935px;
     border: none;
     background-color: #BE7743;
 }
@@ -362,7 +362,7 @@ footer > div {
 .back_hr_introduce{
     float: right;
     height: 2px;
-    width: 840px;
+    width: 835px;
     border: none;
     background-color: #BE7743;
 }
@@ -380,7 +380,7 @@ footer > div {
 .back_hr_archive{
     float: right;
     height: 2px;
-    width: 895px;
+    width: 890px;
     border: none;
     background-color: #BE7743;
 }
@@ -397,7 +397,7 @@ footer > div {
 .back_hr_board{
     float: right;
     height: 2px;
-    width: 785px;
+    width: 780px;
     border: none;
     background-color: #BE7743;
 }
@@ -415,7 +415,7 @@ footer > div {
 .back_hr_login{
     float: right;
     height: 2px;
-    width: 920px;
+    width: 915px;
     border: none;
     background-color: #BE7743;
 }
@@ -433,7 +433,7 @@ footer > div {
 .back_hr_test{
     float: right;
     height: 2px;
-    width: 800px;
+    width: 795px;
     border: none;
     background-color: #BE7743;
 }
@@ -452,7 +452,7 @@ footer > div {
 .back_hr_lab{
     float: right;
     height: 2px;
-    width: 940px;
+    width: 935px;
     border: none;
     background-color: #BE7743;
 }
