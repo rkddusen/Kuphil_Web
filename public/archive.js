@@ -9,36 +9,36 @@ function showPage(){
     let buildTwo = ``;
     if(num > 5){
         for (i=0; i<3; i++){
-        buildOne += '<div class="poster_img" id = "poster_' + (num-i) + '">' + '<img onclick = "popPoster(this.src)" class="thumbnail_1" src="./image/poster_'  + (num-i) + '.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title" onclick="popPoster(this.src)">제' + (num-i) + '회 정기 연주회</div></div>';
-        buildTwo += '<div class="poster_img" id = "poster_' + (num-3-i) + '">' + '<img onclick = "popPoster(this.src)" class="thumbnail_2" src="./image/poster_'  + (num-3-i) + '.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title" onclick="popPoster(this.src)">제' + (num-3-i) + '회 정기 연주회</div></div>';
+        buildOne += '<div class="poster_img" id = "poster_' + (num-i) + '">' + '<img onclick = "popPoster(this.src)" class="thumbnail_1" src="./image/poster_'  + (num-i) + '.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title">제' + (num-i) + '회 정기 연주회</div></div>';
+        buildTwo += '<div class="poster_img" id = "poster_' + (num-3-i) + '">' + '<img onclick = "popPoster(this.src)" class="thumbnail_2" src="./image/poster_'  + (num-3-i) + '.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title">제' + (num-3-i) + '회 정기 연주회</div></div>';
         }
     }
     else{
         switch(num){
             case 5: 
                 for (i=0; i<3; i++){
-                buildOne += '<div class="poster_img" id = "poster_' + (num-i) + '">' + '<img onclick = "popPoster()" class="thumbnail_1" src="./image/poster_'  + (num-i) + '.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title" onclick="popPoster()">제' + (num-i) + '회 정기 연주회</div></div>';
+                buildOne += '<div class="poster_img" id = "poster_' + (num-i) + '">' + '<img onclick = "popPoster(this.src)" class="thumbnail_1" src="./image/poster_'  + (num-i) + '.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title">제' + (num-i) + '회 정기 연주회</div></div>';
                 }
-                buildTwo += '<div class="poster_img" id = "poster_2">' + '<img onclick = "popPoster()" class="thumbnail_1" src="./image/poster_2.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title" onclick="popPoster()">제2회 정기 연주회</div></div>';
-                buildTwo += '<div class="poster_img" id = "poster_1">' + '<img onclick = "popPoster()" class="thumbnail_1" src="./image/poster_1.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title" onclick="popPoster()">제1회 정기 연주회</div></div>';
+                buildTwo += '<div class="poster_img" id = "poster_2">' + '<img onclick = "popPoster(this.src)" class="thumbnail_1" src="./image/poster_2.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title">제2회 정기 연주회</div></div>';
+                buildTwo += '<div class="poster_img" id = "poster_1">' + '<img onclick = "popPoster(this.src)" class="thumbnail_1" src="./image/poster_1.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title">제1회 정기 연주회</div></div>';
                 break;
             case 4:
                 for (i=0; i<3; i++){
-                buildOne += '<div class="poster_img" id = "poster_' + (num-i) + '">' + '<img onclick = "popPoster()" class="thumbnail_1" src="./image/poster_'  + (num-i) + '.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title" onclick="popPoster()">제' + (num-i) + '회 정기 연주회</div></div>';
+                buildOne += '<div class="poster_img" id = "poster_' + (num-i) + '">' + '<img onclick = "popPoster(this.src)" class="thumbnail_1" src="./image/poster_'  + (num-i) + '.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title"">제' + (num-i) + '회 정기 연주회</div></div>';
                 }
-                buildTwo += '<div class="poster_img" id = "poster_1">' + '<img onclick = "popPoster()" class="thumbnail_1" src="./image/poster_1.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title" onclick="popPoster()">제1회 정기 연주회</div></div>';
+                buildTwo += '<div class="poster_img" id = "poster_1">' + '<img onclick = "popPoster(this.src)" class="thumbnail_1" src="./image/poster_1.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title">제1회 정기 연주회</div></div>';
                 break;
             case 3:
                 for (i=0; i<3; i++){
-                buildOne += '<div class="poster_img" id = "poster_' + (num-i) + '">' + '<img onclick = "popPoster()" class="thumbnail_1" src="./image/poster_'  + (num-i) + '.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title" onclick="popPoster()">제' + (num-i) + '회 정기 연주회</div></div>';
+                buildOne += '<div class="poster_img" id = "poster_' + (num-i) + '">' + '<img onclick = "popPoster(this.src)" class="thumbnail_1" src="./image/poster_'  + (num-i) + '.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title">제' + (num-i) + '회 정기 연주회</div></div>';
                 }
                 break;
             case 2: 
-                buildOne += '<div class="poster_img" id = "poster_2">' + '<img onclick = "popPoster()" class="thumbnail_1" src="./image/poster_2.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title" onclick="popPoster()">제2회 정기 연주회</div></div>';
-                buildOne += '<div class="poster_img" id = "poster_1">' + '<img onclick = "popPoster()" class="thumbnail_1" src="./image/poster_1.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title" onclick="popPoster()">제1회 정기 연주회</div></div>';
+                buildOne += '<div class="poster_img" id = "poster_2">' + '<img onclick = "popPoster(this.src)" class="thumbnail_1" src="./image/poster_2.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title">제2회 정기 연주회</div></div>';
+                buildOne += '<div class="poster_img" id = "poster_1">' + '<img onclick = "popPoster(this.src)" class="thumbnail_1" src="./image/poster_1.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title">제1회 정기 연주회</div></div>';
                 break;
             case 1:
-                buildOne += '<div class="poster_img" id = "poster_1">' + '<img onclick = "popPoster()" class="thumbnail_1" src="./image/poster_1.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title" onclick="popPoster()">제1회 정기 연주회</div></div>';
+                buildOne += '<div class="poster_img" id = "poster_1">' + '<img onclick = "popPoster(this.src)" class="thumbnail_1" src="./image/poster_1.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title">제1회 정기 연주회</div></div>';
                 break;
             default:
                 buildOne += '<div></div>';
@@ -86,6 +86,8 @@ function popPoster(url) {
     var win_width=img.width+25;
     var img_height=img.height;
     var win=img.height+30;
-    const OpenWindow=window.open('','_blank', 'width='+img_width+', height='+img_height+', menubars=no, scrollbars=auto');
+    var popupWidth = 700;
+    var popupX = (window.screen.width / 2) - (popupWidth / 2);
+    const OpenWindow=window.open('','_blank', 'width=700, height=800, left = '+ popupX, 'menubars=no, scrollbars=auto');
     OpenWindow.document.write("<style>body{margin:0px;}</style><img src='"+url+"' width='"+win_width+"'>");
 }

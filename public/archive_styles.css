@@ -34,6 +34,7 @@
     height: 345px;
     margin: 0 50px;
     background-color: #c4c4c4;
+    box-shadow: 5px 5px 5px #999;
 
 }
 
@@ -53,29 +54,63 @@
 
 
 .poster_title {
-    cursor: pointer;
-    margin: 0 50px;
-    width: 244px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 10px;
 }
 
 
-.page_button {
+.loadposters {
     width: 1130px;
-    margin: 0 auto;
+    margin: 30px 0;
     display: flex;
     justify-content: space-between;
 }
 
-.fa fa-angle-double-right {
-    font-weight: bold;
-    border-radius: 20%;
-    background: #DFD3C3;
-
+.prev_btn {
+    cursor: pointer;
+    content: '';
+    display:inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    border-top: 2px solid #222;
+    border-right: 2px solid #222;
+    transform: rotate(-135deg);
 }
-.fa fa-angle-double-left {
-    font-weight: bold;
-    border-radius: 20%;
-    background: #DFD3C3;
-
+.prev_btn:hover {
+    cursor: pointer;
+    content: '';
+    display:inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    border-top: 1px solid #999;
+    border-right: 1px solid #999;
+    transform: rotate(-135deg);
 }
-/* ddd */
+
+.next_btn {
+    cursor: pointer;
+    content: '';
+    display:inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    border-top: 2px solid #222;
+    border-right: 2px solid #222;
+    transform: rotate(45deg);
+}
+
+.next_btn:hover {
+    cursor: pointer;
+    content: '';
+    display:inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    border-top: 1px solid #999;
+    border-right: 1px solid #999;
+    transform: rotate(45deg);
+}
