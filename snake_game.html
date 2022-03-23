@@ -4,22 +4,25 @@
         <title>KUPhil</title>
         <link rel="stylesheet" type="text/css" href="/headfoot.css">
         <style type="text/css">
-            #menuTable {border-collapse: collapse; display: inline-block; width: 340px;}
+            #menuTable {border-collapse: collapse; display: inline-block; width: 170px;}
             #menuTable td{width: 170px;}
             #menuTable td button{font-weight: bold; height: 30px; border: 1px solid blue;
                                     width: 70px; background: #5AAFFF; color: white; cursor: pointer;}
             #snakeTable {border-collapse: collapse; display: inline-block;}
-            #snakeTable td{border: 1px solid blue; width: 13px; height: 13px;}
+            #snakeTable td{border: 1px solid blue; width: 20px; height: 20px;}
             .snake{background-color: #5AAFFF;}
             .food{background-color: #CCCCCC;}
-            .center{text-align: center;}
+            #SnakeGame{display:flex; width:900px; padding:0 115px; margin: 70px auto; justify-content:space-evenly;}
             #controller {border-collapse: collapse; display: inline-block; margin-top: 20px;}
             #controller td{border: none; text-align: center; font-size: 20pt; color: white;}
             .btn{width: 80px; height: 80px; background: #CCCCCC; border-radius: 50px;}
             .alignLeft{text-align: left;}
             .alignRight{text-align: right;}
+            .Menu{display:flex; width:900px; padding:0 115px; margin: 70px auto; justify-content:space-evenly;}
+            .front_hr{height: 2px; margin-top: 50px; width: 65px; border: none; background-color: #BE7743;}
+            .center{margin-top:50px;}
             .head3_snake_game p{width:300px; height: 30px;float: left;color: #784520;margin-left: 100px;font-size: 30px;font-weight: bold;text-align: center;margin-top: -15px;}
-            .back_hr_snake_game{float: right;height: 1px;width: 700px;}
+            .back_hr_snake_game{float: right;height: 2px;width: 700px;background-color:#BE7743;}
  
         </style>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
@@ -76,6 +79,7 @@
                 $('#snakeTable td').removeClass('snake');
                 for(var i=0;i<snake.length;i++) {
                     $('#block'+snake[i][0]+'_'+snake[i][1]).addClass('snake');
+                    $('#block'+snake[i][0]+'_'+snake[i][1]).text("🏃‍♂️");
                     //먹이 먹었을 때
                     if($('#block'+snake[i][0]+'_'+snake[i][1]).hasClass('food')){
                         score++; // 점수 증가
@@ -109,6 +113,7 @@
                 $('#snakeTable td').removeClass('food');
                 for(var i=0;i<food.length;i++) {
                     $('#block'+food[i][0]+'_'+food[i][1]).addClass('food');
+                    $('#block'+food[i][0]+'_'+food[i][1]).text("@");
                 }
             }
  
@@ -246,7 +251,8 @@
             }
  
             function start(){
-                gameInterval = setInterval(move, 70);
+                //속도
+                gameInterval = setInterval(move, 300);
             }
  
             function end() {
@@ -306,8 +312,26 @@
                 <hr class="front_hr"><p>오케스트라 증식 게임</p><hr class="back_hr_snake_game">
             </article>
         </header>
-        <div class='center'>
-            <h2>Snake 게임</h2>
+        <div id="SnakeGame">
+            <div class='center'>
+                <table id='snakeTable'>
+                </table>
+            </div>
+            <div class='center'>
+                <table id='controller'>
+                    <tr>
+                        <td></td><td id='up_btn' class='btn' data-key='up'>△</td><td></td>
+                    </tr>
+                    <tr>
+                        <td id='left_btn' class='btn' data-key='left'>◁</td><td></td><td id='right_btn' class='btn' data-key='right'>▷</td>
+                    </tr>
+                    <tr>
+                        <td></td><td id='down_btn' class='btn' data-key='down'>▽</td><td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class='Menu'>
             <table id='menuTable'>
                 <tr>
                     <td class='alignLeft'>
@@ -316,23 +340,6 @@
                     <td class='alignRight'>
                         <span>점수 : <span id='score'>0</span></span>
                     </td>
-                </tr>
-            </table>
-        </div>
-        <div class='center'>
-            <table id='snakeTable'>
-            </table>
-        </div>
-        <div class='center'>
-            <table id='controller'>
-                <tr>
-                    <td></td><td id='up_btn' class='btn' data-key='up'>△</td><td></td>
-                </tr>
-                <tr>
-                    <td id='left_btn' class='btn' data-key='left'>◁</td><td></td><td id='right_btn' class='btn' data-key='right'>▷</td>
-                </tr>
-                <tr>
-                    <td></td><td id='down_btn' class='btn' data-key='down'>▽</td><td></td>
                 </tr>
             </table>
         </div>
