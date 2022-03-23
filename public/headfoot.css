@@ -231,7 +231,7 @@ nav:hover ul {
     z-index: 1; */
 }
 
-footer {
+/* footer {
     width: 1130px;
     height: 150px;
     margin: 0 auto;
@@ -296,7 +296,7 @@ footer {
 /* 공백(spacebar) width는 6px이었음 
 글자 크기가 1em일 때 공백 크기는 일반적으로 0.25em이나
 글꼴에 따라 0.2~0.5em이 됨 */
-#footer_right li {
+/* #footer_right li {
     width: 70px;
     height: 50px;
     float: left;
@@ -321,7 +321,7 @@ footer > div {
     text-align: right;
     font-size: 16px;
     margin-right: 20px;
-}
+}  */
 
 
 .front_hr{
@@ -455,4 +455,60 @@ footer > div {
     width: 935px;
     border: none;
     background-color: #BE7743;
+}
+
+
+footer{
+    background-color: #393939;
+    height: 250px;
+}
+.footer_first{
+    width: 1130px;
+    padding: 0 30px;
+    margin: 0 auto;
+    border-bottom: 2px solid #BBBBBB;
+    height: 60px;
+}
+.footer_first > li{
+    float: left;
+    padding: 20px 30px 20px 10px;
+}
+.footer_first > li > a{
+    color: #BBBBBB;
+}
+.footer_first > li > a:hover{
+    text-decoration: underline;
+    font-weight: bold;
+}
+.footer_second{
+    width: 1130px;
+    padding: 0 30px;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    height: 120px;
+}
+.footer_logo{
+    width: 320px;
+    margin-top: 15px;
+}
+.footer_explain{
+    width: 450px;
+    color: #BBBBBB;
+    margin-top: 30px;
+}
+.footer_sns{
+    margin-top: 25px;
+    width: 250px;
+}
+.footer_sns > p{
+    color: #BBBBBB;
+    font-size: 20px;
+}
+.footer_sns img{
+    margin: 10px 5px 0 5px;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
 }
