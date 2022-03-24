@@ -33,7 +33,7 @@ cover는 대체 콘텐츠의 가로세로비를 유지하면서 요소 콘텐츠
 #main_welcome > p {
     color: #FFFFFF;
     position: absolute;
-    top: 20%;
+    top: 15%;
     left: 25%;
     font-size: 96px;
     font-family: 'Reenie Beanie', cursive;
@@ -45,33 +45,28 @@ cover는 대체 콘텐츠의 가로세로비를 유지하면서 요소 콘텐츠
     height: 120px;
 }
 
-.kuphil_sns > p {
+.kuphil_sns_title {
     color:#864415;
     font-size: 32px;
     padding: 5px 0 0 10px;
     /* font-family: 'Alegreya', serif; */
 }
 .show{
-    margin-top: -5px;
-    text-align: end;
+    display: flex;
+    justify-content: space-evenly;
 }
 .show div{
-    display: inline-block;
+    display: flex;
 }
 .show img{
-    height: 45px;
-    float: left;
+    width: 45px;
 }
 .show a{
-    margin-left: 10px;
     line-height: 45px;
-    float: left;
+    font-size: 20px;
     color: gray;
     font-weight: bold;
-}
-.show div:nth-child(3) a{
-    line-height: 22px;
-    text-align: left;
+    margin-left: 10px;
 }
 .show a:hover{
     text-decoration: underline;
@@ -94,19 +89,19 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
 .spelling_introduce span {
     color: #FF8A00;
     font-size: 60px;
-    font-family: 'Alegreya', serif;
+    /* font-family: 'Alegreya', serif; */
     font-weight: bold;
 }
 
 .spell  p:first-child {
     font-size: 40px;
-    font-family: 'Alegreya', serif;
+    /* font-family: 'Alegreya', serif; */
     font-weight: bold;
 }
 
 .spell  p:last-child {
     font-size: 20px;
-    font-family: 'Basic', sans-serif;
+    /* font-family: 'Basic', sans-serif; */
 }
 
 .spell {
