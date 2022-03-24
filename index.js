@@ -185,7 +185,7 @@ server.get("/board", (req, res) => {
 const boaPage = fs.readFileSync('./board.ejs', 'utf8');
 server.get("/board/:page", (req, res) => {
     var paging=req.params.page;
-    let pageStart=(paging-1)*10;
+    let pageStart=(paging-1)*10?(paging-1)*10:0;
     // let sqlcnt='SELECT SQL_CALC_FOUND_ROWS * FROM board';
     let sql='SELECT title, writer, date FROM board ORDER BY date DESC LIMIT ?, 10;';
     // let sqll='SELECT table_rows FROM information_schema.tables WHERE table_name ="board";';
@@ -220,7 +220,7 @@ server.get("/board/:page", (req, res) => {
 const boaReaPage = fs.readFileSync('./board-read.ejs', 'utf8');
 server.get("/read/:idx", (req, res) => {
     var idx=req.params.idx;
-    connection.query('SELECT idx, title, content, writer, date FROM board WHERE idx=?;',[idx],
+    connection.query('SELECT id, title, content, writer, date FROM board WHERE id=?;',[idx],
         function (error, rows, fields) {
             if (error) {
                 console.log(error);
@@ -228,7 +228,7 @@ server.get("/read/:idx", (req, res) => {
             else {
                 //데이터 생성
                 page = ejs.render(boaReaPage, {
-                    idx:rows[0].idx,
+                    id:rows[0].id,
                     title:rows[0].title,
                     content:rows[0].content,
                     writer:rows[0].writer,
