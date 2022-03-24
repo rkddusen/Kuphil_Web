@@ -33,7 +33,7 @@ cover는 대체 콘텐츠의 가로세로비를 유지하면서 요소 콘텐츠
 #main_welcome > p {
     color: #FFFFFF;
     position: absolute;
-    top: 20%;
+    top: 15%;
     left: 25%;
     font-size: 96px;
     font-family: 'Reenie Beanie', cursive;
