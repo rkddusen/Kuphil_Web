@@ -39,9 +39,17 @@ a{
 }
 
 #introduce_welcome > p {
-    font-size: 20px;
+    font-size: 16px;
     margin-left: 50px;
-    background-color:#dfd3c3a2;
+    /* background-color:#dfd3c3a2; */
+    width: 1000px;
+    height: 700px;
+    line-height:180%;
+}
+#introduce_welcome > p > h3{
+    font-size: 16px;
+    margin-left: 50px;
+    /* background-color:#dfd3c3a2; */
     width: 1000px;
     height: 700px;
     line-height:180%;
