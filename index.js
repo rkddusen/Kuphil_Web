@@ -243,7 +243,7 @@ server.get("/read/:idx", (req, res) => {
 const gamePage = fs.readFileSync('./test.ejs', 'utf8');
 server.get("/test", (req, res) => {
 
-    connection.query('SELECT question, conductor, firstViolin,secondViolin,viola,cello,contra,flute,oboe,clarinet,basson,trumpet,trombone,horn,tuba,timpani,percussion ,piano ,audience ,answer,sanswer FROM game ORDER BY id',
+    connection.query('SELECT question, conductor, firstViolin,secondViolin,viola,cello,contra,flute,oboe,clarinet,basson,trumpet,trombone,horn,tuba,timpani,percussion ,piano ,answer,sanswer FROM game ORDER BY RAND()',
         function (error, rows, fields) {
             if (error) {
                 console.log(error);
@@ -251,21 +251,21 @@ server.get("/test", (req, res) => {
             else {
                 let question = []; let conductor = []; let firstViolin = []; let secondViolin = []; let viola = []; let cello = []; let contra = [];
                 let flute = []; let oboe = []; let clarinet = []; let basson = []; let trumpet = []; let trombone = []; let horn = []; let tuba = [];
-                let timpani = []; let percussion = []; let piano = []; let audience = []; let fanswer = []; let sanswer = [];
+                let timpani = []; let percussion = []; let piano = []; let fanswer = []; let sanswer = [];
                 for (var i in rows) {
                     question[i] = rows[i].question; conductor[i] = rows[i].conductor; firstViolin[i] = rows[i].firstViolin;
                     secondViolin[i] = rows[i].secondViolin; viola[i] = rows[i].viola; cello[i] = rows[i].cello; contra[i] = rows[i].contra;
                     flute[i] = rows[i].flute; oboe[i] = rows[i].oboe; clarinet[i] = rows[i].clarinet;
                     basson[i] = rows[i].basson; trumpet[i] = rows[i].trumpet; trombone[i] = rows[i].trombone; horn[i] = rows[i].horn;
                     tuba[i] = rows[i].tuba; timpani[i] = rows[i].timpani; percussion[i] = rows[i].percussion;
-                    piano[i] = rows[i].piano; audience[i] = rows[i].audience; fanswer[i] = rows[i].answer; sanswer[i] = rows[i].sanswer;
+                    piano[i] = rows[i].piano; fanswer[i] = rows[i].answer; sanswer[i] = rows[i].sanswer;
                 }//데이터 생성
                 var page = ejs.render(gamePage, {
                     question: question, conductor: conductor, firstViolin: firstViolin, secondViolin: secondViolin, viola: viola,
                     cello: cello, contra: contra, flute: flute, oboe: oboe,
                     clarinet: clarinet, basson: basson, trumpet: trumpet, trombone: trombone, horn: horn,
                     tuba: tuba, timpani: timpani, percussion: percussion, piano: piano,
-                    audience: audience, fanswer: fanswer,sanswer: sanswer,
+                    fanswer: fanswer,sanswer: sanswer,
                 });
                 //응답
                 console.log(question[0]);
