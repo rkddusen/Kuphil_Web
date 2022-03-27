@@ -15,7 +15,7 @@ a{
 .greeting{
     width:1130px;
     padding: 0 30px;
-    margin: 40px auto;
+    margin: 70px auto;
 }
 
 #introduce_greeting > span {
@@ -63,7 +63,6 @@ a{
 }
 
 #path > p {
-    margin-top: 250px;
     padding: 0 20px;
     height: 50px;
     font-size: 36px;
