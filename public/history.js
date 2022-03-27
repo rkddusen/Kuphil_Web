@@ -12,7 +12,7 @@ function removecolor() {
 }
 
 //새 연혁 가져오기
-function getHistory(btn){
+/*function getHistory(btn){
     removeHistory();
     removecolor();
     if (btn.value=="2021-현재"){
@@ -155,6 +155,17 @@ function getHistory(btn){
         let our_history=document.getElementById("our_history");
         our_history.appendChild(story);
     }
+}*/
+
+
+//버튼 누르면 스크롤 이동
+const buttonArr = document.getElementsByTagName('button');
+
+function OH(){
+    for(let i = 0; i < buttonArr.length; i++){
+    buttonArr[i].addEventListener('click',function(e){
+        e.preventDefault();
+        document.querySelector('.year' + (i + 1)).scrollIntoView(true);
+    });
+    }
 }
-
-
