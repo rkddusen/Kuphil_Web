@@ -47,11 +47,12 @@ cover는 대체 콘텐츠의 가로세로비를 유지하면서 요소 콘텐츠
 
 .kuphil_sns_title {
     color:#864415;
-    font-size: 32px;
+    font-size: 28px;
     padding: 5px 0 0 10px;
     /* font-family: 'Alegreya', serif; */
 }
 .show{
+    margin-top: 10px;
     display: flex;
     justify-content: space-evenly;
 }

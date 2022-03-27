@@ -14,7 +14,7 @@ a{
     width: 1130px;
     padding: 0 30px;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 70px;
 }
 .board_plus p{
     float: right;
@@ -84,7 +84,7 @@ a{
     margin: 0 auto; */
     width: 70px;
     margin-left: 200px;
-    margin-top: 50px;
+    margin-top: 70px;
     margin-bottom: 8px;
     cursor: pointer;
 }

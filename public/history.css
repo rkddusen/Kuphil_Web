@@ -13,7 +13,7 @@ a{
 #SelectYear {
     width: 900px;
     padding: 0 200px;
-    margin: 40px auto;
+    margin: 70px auto;
     display: flex;
     justify-content: space-evenly;
 }
