@@ -29,20 +29,20 @@ function bulidCalendar() {
     let myMonth_eng='';
     let prevNextMonth_eng='';
     switch(myMonth+1){
-        case 1: myMonth_eng='Jan';prevNextMonth_eng='Dec,Feb';break;
-        case 2: myMonth_eng='Feb';prevNextMonth_eng='Jan,Mar';break;
-        case 3: myMonth_eng='Mar';prevNextMonth_eng='Feb,Apr';break;
-        case 4: myMonth_eng='Apr';prevNextMonth_eng='Mar,May';break;
-        case 5: myMonth_eng='May';prevNextMonth_eng='Apr,Jun';break;
-        case 6: myMonth_eng='Jun';prevNextMonth_eng='May,Jul';break;
-        case 7: myMonth_eng='Jul';prevNextMonth_eng='Jun,Aug';break;
-        case 8: myMonth_eng='Aug';prevNextMonth_eng='Jul,Sep';break;
-        case 9: myMonth_eng='Sep';prevNextMonth_eng='Aug,Oct';break;
-        case 10: myMonth_eng='Oct';prevNextMonth_eng='Sep,Nov';break;
-        case 11: myMonth_eng='Nov';prevNextMonth_eng='Oct,Dec';break;
-        case 12: myMonth_eng='Dec';prevNextMonth_eng='Nov,Jan';break;
+        case 1: myMonth_eng='1월';prevNextMonth_eng='12월,2월';break;
+        case 2: myMonth_eng='2월';prevNextMonth_eng='1월,3월';break;
+        case 3: myMonth_eng='3월';prevNextMonth_eng='2월,4월';break;
+        case 4: myMonth_eng='4월';prevNextMonth_eng='3월,5월';break;
+        case 5: myMonth_eng='5월';prevNextMonth_eng='4월,6월';break;
+        case 6: myMonth_eng='6월';prevNextMonth_eng='5월,7월';break;
+        case 7: myMonth_eng='7월';prevNextMonth_eng='6월,8월';break;
+        case 8: myMonth_eng='8월';prevNextMonth_eng='7월,9월';break;
+        case 9: myMonth_eng='9월';prevNextMonth_eng='8월,10월';break;
+        case 10: myMonth_eng='10월';prevNextMonth_eng='9월,11월';break;
+        case 11: myMonth_eng='11월';prevNextMonth_eng='10월,12월';break;
+        case 12: myMonth_eng='12월';prevNextMonth_eng='11월,1월';break;
     }
-    let now_html='<p class="calendar_now_year">'+myYear+'</p>';
+    let now_html='<p class="calendar_now_year">'+myYear+'년</p>';
     now_html+='<p class="calendar_now_month">'+myMonth_eng+'</p>';
     now.innerHTML=now_html;
     document.getElementsByClassName("table_move")[0].innerHTML=prevNextMonth_eng.split(',')[0];
