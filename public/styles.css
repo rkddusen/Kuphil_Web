@@ -139,6 +139,7 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     z-index: 1;
     right: -505px;
     bottom: -150px;
+    background-color: #fef6f0;
 }
 
 #u > .spell_intro {
@@ -163,6 +164,7 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     z-index: 1;
     right: -60px;
     bottom: -20px;
+    background-color: #feece1;
 }
 
 #p > .spell_intro {
@@ -187,6 +189,7 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     z-index: 1;
     right: -820px;
     bottom: -80px;
+    background-color: #fce5d8;
 }
 
 #h > .spell_intro {
@@ -207,6 +210,7 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     z-index: 1;
     right: -395px;
     bottom: -115px;
+    background-color: #fed5bd;
 }
 
 #i > .spell_intro {
@@ -230,6 +234,7 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     z-index: 1;
     right: -590px;
     bottom: -20px;
+    background-color: #fdceb3;
 }
 
 #l > .spell_intro {
@@ -256,6 +261,7 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     transform: rotate(90deg);
     right: 79px;
     bottom: -100px;
+    background-color: #fec8a9;
 }
 
 .spell::after {
@@ -264,6 +270,6 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     content: '';
 }
 
-#circle1, #circle2, #circle3, #circle4, #circle5, #circle6{
+/* #circle1, #circle2, #circle3, #circle4, #circle5, #circle6{
     background-color: #FBE7D4;
-}
+} */

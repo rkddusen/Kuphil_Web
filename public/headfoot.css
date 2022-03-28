@@ -162,6 +162,10 @@ header{
 .head1 a{
     color: #BE7743;
 }
+.head1 a:hover{
+    color: #784520;
+    font-weight: bold;
+}
 nav{
     float: right;
 }
@@ -320,9 +324,34 @@ footer > div {
     font-size: 16px;
     margin-right: 20px;
 }  */
+header article{
+    height: 80px;
+    width: 1130px;
+    display: flex;
+    justify-content: space-between;
+}
+.head3_line_f{
+    width: 65px;
+    height: 50px;
+    border-bottom: 2px solid #BE7743;
+}
+.head3_name{
+    margin-top: 38px;
+    height: 38px;
+    font-size: 30px;
+    font-weight: bold;color: #784520;
+}
 
+.head3_line_s{
+    height: 50px;
+    width: 750px;
+    border-bottom: 2px solid #BE7743;
+}
+.head3_archive_a, .head3_calendar_a, .head3_lab_a, .head3_login_a, .head3_test_a{
+    color: #784520;
+} 
 
-.front_hr{
+/* .front_hr{
     height: 2px;
     margin-top: 50px;
     width: 65px;
@@ -453,7 +482,7 @@ footer > div {
     width: 935px;
     border: none;
     background-color: #BE7743;
-}
+} */
 
 
 footer{
