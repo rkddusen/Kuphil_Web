@@ -164,6 +164,53 @@ server.get("/album", (req, res) => {
 });
 
 
+server.get("/signup1", (req, res) => {
+    res.sendFile(__dirname + "/signup1.html");
+});
+
+server.get("/signup2", (req, res) => {
+    res.sendFile(__dirname + "/signup2.html");
+});
+
+server.post('/signup2/verify', function (req, res) {
+    let id_data = req.body.signup_id;
+    let pwd_data = req.body.signup_pwd;
+
+    let sql = 'INSERT INTO signupinformation (id_data, pwd_data) VALUES(?, ?)';
+    let params = [id_data, pwd_data];
+    
+    connection.query(sql, params, function(err, result, fields) {
+        if(err) console.log('query is not excuted. insert fail...\n' + err);
+        else res.redirect('/signup3');
+    });
+});
+
+const signup3Page = fs.readFileSync('./signup3.ejs', 'utf8');
+server.get('/signup3', function (req, res) {
+    let id_data = '';
+    let pwd_data = '';
+    var sql = 'SELECT id_data, pwd_data FROM signupinformation ORDER BY id_data, pwd_data';    
+    connection.query(sql, 
+        function (err, rows, fields) {
+        if (err) {
+            console.log('query is not excuted. select fail...\n' + err);
+        }
+        else {
+            let list = [];
+            let count = 0;
+            for (var i in rows) {
+                list[i] = rows[i].id_data + "/" + rows[i].pwd_data+"//";
+                count++;
+            }
+            console.log(rows);
+            var page = ejs.render(signup3Page, {
+                db:list,
+                count:count, 
+            });
+            res.send(page);
+        }
+    });
+});
 
 server.use((req, res) => {
     res.sendFile(__dirname + "/404.html");

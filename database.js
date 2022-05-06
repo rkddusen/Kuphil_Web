@@ -13,7 +13,7 @@ module.exports = function () {
                 multipleStatements : true//다중쿼리문 보낼수있음
             })
         },
-
+        
         db_open: function (con) {
             con.connect(function (err) {
                 if (err) {
