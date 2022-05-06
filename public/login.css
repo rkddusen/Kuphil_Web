@@ -75,24 +75,13 @@
 
 #main_back {
     width: 1130px;
-    height: 150px;
+    height: 316px;
 }
 
 #main_back > img {
     width: 1130px;
-    height: 150px;
+    height: 316px;
     object-fit: cover;
-    z-index: 1;
-}
-
-#main_back > img:nth-child(2) {
-    width: 1130px;
-    height: 150px;
-    object-fit: cover;
-    position: relative;
-    z-index: 2;
-    bottom: 150px;
-    filter: opacity(0.5) drop-shadow(0 0 0 white);
 }
 
 #signup_TOS_form, #PIA_form {
@@ -160,17 +149,23 @@
     padding: 5px;
 }
 
+#signup2_sec {
+    width: 1130px;
+    height: 900px;
+}
+
 #signup2_sec > h3 {
     margin: 50px 30px 20px 40px;
 }
 
 #signup_form {
     width: 1130px;
-    height: 650px;
+    height: 800px;
 }
 
 /* visibility 속성을 사용해서 메세지 부분을 가려도 grid는 그 영역을 계속 잡고 있기 때문에
 input을 받고 입력된 걸 검증한 뒤 동적으로 영역을 집어넣어주어야 할 거 같다 */
+
 
 #signup_form_div {
     display: grid;
@@ -209,7 +204,7 @@ input을 받고 입력된 걸 검증한 뒤 동적으로 영역을 집어넣어�
     grid-area: signup_id;
     background-color: rgba(223, 211, 195, 0.55);
     border: none;
-}
+}*/
 
 /* user agent stylesheet로 인해 border 대신 속성들 다 쪼개서 적음 */
 #duplicate_check_btn {
@@ -369,17 +364,17 @@ input을 받고 입력된 걸 검증한 뒤 동적으로 영역을 집어넣어�
     text-decoration: underline;
 }
 
-#given_signup_code_form {
+#given_signup_code {
     width: 1130px;
     height: 30px;
     margin-top: 20px;
 }
 
-#given_signup_code_form > div {
+/*#given_signup_code_form > div {
     width: fit-content;
     height: fit-content;
     margin: 0 auto;
-}
+}*/
 
 #gsc_cb {
     width: 21.33px;
@@ -388,12 +383,12 @@ input을 받고 입력된 걸 검증한 뒤 동적으로 영역을 집어넣어�
 
 #gsc_label > span {
     vertical-align: top;
+    padding-left: 215px;
 }
 
 #note {
     color: #FF0000;
-    text-align: right;
-    margin-right: 300px;
+    text-align: center;
 }
 
 #signup_personal_info_btn {
