@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/board.css">
+    <link rel="stylesheet" type="text/css" href="/headfoot.css">
+</head>
+
+<body>
+    <!-- 헤더 -->
+    <header>
+        <div class="main_head">
+            <div class="mainlogo">
+                <a href="../"><img src="../kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
+            </div>
+            <div class="head1">
+                <div>
+                    <a href="../login">로그인</a>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../introduce">소개</a></li>
+                    <li><a href="../archive">아카이브</a></li>
+                    <li><a href="../calendar">달력</a></li>
+                    <li><a href="../board">게시판</a></li>
+                    <li><a href="../lab">실험실</a></li>
+                </ul>
+            </nav>
+        </div>
+        <article>
+            <div class="head3_line_f"></div>
+            <div class="head3_name"><a class="head3_board_a" href="../board">게시판</a> &ensp;|&ensp; <a class="head3_album_a" href="../album">사진첩</a></div>
+            <div class="head3_line_s"></div>
+        </article>
+    </header>
+
+    <!-- 메인으로 이전 다음 -->
+    
+    
+    <section class="board_read_part">
+        <div onclick="history.back();" class="board_read_back">
+        목록으로
+    </div>
+        <!-- 게시판 테이블 -->
+        <table class="board_read_table">
+            <thead>
+                <tr>
+                    <td class="board_read_title_td" style="width: 600px;"><%=title%> </td>
+                    <td class="board_read_etc_td" style="width: 50px;text-align: center;"> ⋯ </td>
+                </tr>
+            </thead>
+            <tbody class="board_read_body">
+                <tr class="board_read_main">
+                    <td colspan="2"><%=writer%><br><%=date.substring(0,10)%></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><hr class="board_read_hr"></td>
+                </tr>
+                <tr class="board_read_cont" style="height:400px;">
+                    <td colspan="2"><%=content%></td>
+                </tr>
+                <!-- <tr>
+                    <td colspan="3"><hr class="board_read_hr"></td>
+                </tr> -->
+                <tr class="board_read_footer">
+                    <td colspan="2">🤍</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 푸터 -->
+    <footer>
+        <div class="footer_first">
+                <li><a href="#">오시는 길</a></li>
+                <li><a href="#">이용 약관</a></li>
+                <li><a href="#">제휴 제안</a></li>
+                <li><a href="#">개인정보 처리방침</a></li>
+        </div>
+        <div class="footer_second">
+            <div class="footer_logo">
+                <img src="../graylogo.png" height="100px">
+                <img src="../무제.png" height="100px">
+            </div>
+            <div class="footer_explain">
+                
+                <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+                <p>후원 | 국민은행 279601-04-157891</p><br>
+                <p>copyright 2021 KUPHIL, All rights reserved.</p>
+            </div>
+            <div class="footer_sns">
+                <p>Contact Us :)</p>
+                <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">
+                    <img src="../kuphil_youtube.png" alt="쿠필 유튜브">
+                </a>
+                <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank">
+                    <img src="../kuphil_instagram.png" alt="쿠필 인스타그램">
+                </a>
+                <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank">
+                    <img src="../kuphil_facebook.png" alt="쿠필 페이스북">
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+<script type="text/javascript" src="/board.js"></script>
+
+</html>

@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>KUPHIL</title>
     <link rel="stylesheet" type="text/css" href="/headfoot.css">
-    <link rel="stylesheet" type="text/css" href="/styles.css">
     <link rel="stylesheet" type="text/css" href="/archive_styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,89 +13,80 @@
 
 <body>
     <header>
-        <div id="head1">
-            <div id="mainlogo">
-                <a href="./"><img src="kuphil_logo.png" alt="KUPHIL 흰색로고"></a>
+        <div class="main_head">
+            <div class="mainlogo">
+                <a href="./"><img src="kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
             </div>
-            <div id="nav">
+            <div class="head1">
+                <div>
+                    <a href="./login">로그인</a>
+                </div>
+            </div>
+            <nav>
                 <ul>
                     <li><a href="./introduce">소개</a></li>
                     <li><a href="./archive">아카이브</a></li>
                     <li><a href="./calendar">달력</a></li>
-                    <li><a href="./album">사진첩</a></li>
-                    <li><a href="./myPage">마이페이지</a></li>
+                    <li><a href="./board">게시판</a></li>
+                    <li><a href="./lab">실험실</a></li>
                 </ul>
+            </nav>
+        </div>
+        <article>
+            <div class="head3_line_f"></div>
+            <div class="head3_name"><a class="head3_archive_a" href="./archive">아카이브</a></div>
+            <div class="head3_line_s"></div>
+        </article>
+    </header>
+    <div id="arc_notice">
+        <p>쿠필의 역대 정기 연주회 정보를 모아놓은 공간입니다. </p>
+    </div>
+    <div class="container">
+        <div class="posterbox_1">
+            <div class="modal hidden">
+                <div class="modal_overlay"></div>
+                <div class="modal_content">
+                    <h1>테스트테스트</h1>
+                    <button>Close</button>
+                </div>
             </div>
         </div>
-        <div id="head2">
-            <a href="./login">로그인</a>
+        <div class="loadposters">
+            <div onclick= "prevPage();" class="prev_btn"></div>
+            <div onclick="nextPage();" class="next_btn"></div>
         </div>
-        <hr>
-        <article id="archive_title" class="head3">
-            <p>아카이브</p>
-        </article>
-        <hr>
-    </header>
-    <div class="posterbox_1">
-        <!-- <div class="poster_img" id = "firstposter">
-            <img src="poster_sample.png" alt="제1회포스터" />
-                <div class="poster_title_text">제1회 정기 연주회</div>
-        </div>
-        <div class="poster_img" id = "secondposter">
-                <div class="poster_title_text">제2회 정기 연주회</div>
-        </div>
-        <div class="poster_img" id = "thirdposter">
-                <div class="poster_title_text">제3회 정기 연주회</div>
-        </div> -->
-    </div>
-
-    <div class="page_button">
-        <button onclick= "prevPage();" class="loadposters">◀</button>
-        <button onclick="nextPage();" class="loadposters">▶</button>
-    </div>
-    <div class="posterbox_2">
-        <!-- <div class="poster_img" id = "fourthposter">
-            <img src="poster_sample.png" alt="제1회포스터" />
-                <div class="poster_title_text">제4회 정기 연주회</div>
-        </div>
-        <div class="poster_img" id = "fifthposter">
-            <img src="poster_sample.png" alt="제1회포스터" />
-                <div class="poster_title_text">제5회 정기 연주회</div>
-        </div>
-        <div class="poster_img" id = "sixthposter">
-            <img src="poster_sample.png" alt="제1회포스터" />
-                <div class="poster_title_text">제6회 정기 연주회</div>
-        </div> -->
+        <div class="posterbox_2"></div>
     </div>
 
     <footer>
-        <div id="footer_left">
-            <p>Contact us! :)</p>
-            <div>
-                <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">
-                    <img src="kuphil_youtube.png" alt="쿠필 유튜브">
-                </a>
-            </div>
-            <div>
-                <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank">
-                    <img src="kuphil_instagram.png" alt="쿠필 인스타그램">
-                </a>
-            </div>
-            <div>
-                <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank">
-                    <img src="kuphil_facebook.png" alt="쿠필 페이스북">
-                </a>
-            </div>
-        </div>
-        <div id="footer_right">
-            <div id="terms">
+        <div class="footer_first">
+                <li><a href="#">오시는 길</a></li>
                 <li><a href="#">이용 약관</a></li>
                 <li><a href="#">제휴 제안</a></li>
                 <li><a href="#">개인정보 처리방침</a></li>
+        </div>
+        <div class="footer_second">
+            <div class="footer_logo">
+                <img src="graylogo.png" height="100px">
+                <img src="무제.png" height="100px">
             </div>
-            <div id="address_n_right">
+            <div class="footer_explain">
+                
                 <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+                <p>후원 | 국민은행 279601-04-157891</p><br>
                 <p>copyright 2021 KUPHIL, All rights reserved.</p>
+            </div>
+            <div class="footer_sns">
+                <p>Contact Us :)</p>
+                <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">
+                    <img src="kuphil_youtube.png" alt="쿠필 유튜브">
+                </a>
+                <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank">
+                    <img src="kuphil_instagram.png" alt="쿠필 인스타그램">
+                </a>
+                <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank">
+                    <img src="kuphil_facebook.png" alt="쿠필 페이스북">
+                </a>
             </div>
         </div>
     </footer>
