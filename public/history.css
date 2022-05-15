@@ -1,67 +1,117 @@
+
 a{
     color: black;
     text-decoration: none;
 }
-
-.toIntroduce{
-    color:darkgray;
+.head3_introduce_a{
+    color: #efe2de;
+}
+.head3_introduce, .head3_history_a{
+    color: #784520;
 }
 
-.toHistory{
-    color:#BE7743;
-}
-
-.year{
+#SelectYear {
     width: 900px;
+    padding: 0 200px;
+    margin: 70px auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Years{
     border: none;
     background-color: transparent;
-    display:flex;
-    justify-content: space-evenly;
-    margin: 0 auto;
-    margin-top: 40px;
     font-size: 20px;
-    color: darkgray;
+    color: #BE7743;
+    cursor:pointer;
 }
 
-.year:active{
-    color: #BE7743;
+.Years:hover{    
+    color:#5C3A1A;
+    font-weight: bold;
 }
 
 .back{
     position: relative;
     width: 1130px;
-    height: 1500px;
+    height: 100%;
     margin: 0 auto;
 }
 
 .back_image img{
     position: absolute;
-    width: 825.8px;
-    height: 735.6px;
+    width: 619.35px;
+    height: 551.7px;
     opacity: 0.2;
-    margin: 10px auto;
-    top: 10%;
-    left: 13%;
+    padding: 50% 255.325px;
 }
 
-
-.our_history{
+/*.our_history{
     width: 1130px;
     position: relative;
-    margin: 20px 0;
-    padding: 0 60px;
-    margin-top: 150px;
-    margin-bottom: 150px;
+    margin: 20px auto;
+    padding: 0 30px;
+    margin-top: 80px;
+    margin-bottom: 100px;
     z-index:1;
 }
+*/
 
-.history_content  p:first-child {
-    font-size: 48px;
+.year1  section {
+    font-size: 30px;
     margin: 10px 0;
 }
 
-.history_content  p:last-child {
-    font-size: 24px;
+.year1  p{
+    font-size: 15px;
+    margin: 80px 0;
+    margin-top: 30px;
+    line-height: 200%;
+}
+
+.year2  section {
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.year2  p{
+    font-size: 15px;
+    margin: 80px 0;
+    margin-top: 30px;
+    line-height: 200%;
+}
+
+.year3  section {
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.year3  p{
+    font-size: 15px;
+    margin: 80px 0;
+    margin-top: 30px;
+    line-height: 200%;
+}
+
+.year4  section {
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.year4  p{
+    font-size: 15px;
+    margin: 80px 0;
+    margin-top: 30px;
+    line-height: 200%;
+}
+
+.year5  section {
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.year5  p{
+    font-size: 15px;
     margin: 80px 0;
     margin-top: 30px;
     line-height: 200%;

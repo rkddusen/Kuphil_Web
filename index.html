@@ -16,67 +16,73 @@
 
 <body>
     <header>
-        <div class="mainlogo">
-            <a href="./"><img src="kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
-        </div>
-        <div class="head1">
-            <div>
-                <a href="./login">로그인</a>
-                <!-- <a href="./myPage">마이페이지</a> | <a href="./logout">로그아웃</a> -->
+        <div class="main_head">
+            <div class="mainlogo">
+                <a href="./"><img src="kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
             </div>
-        </div>
-        <div class="head2">
-            <div class="dropdown">
-                <ul class="nav">
-                    <li><a href="./introduce">소개</a></li>
-                    <li><a href="./archive">아카이브</a></li>
-                    <li><a href="./calendar">달력</a></li>
-                    <li><a href="./board">게시판</a></li>
-                    <li><a href="./lab">실험실</a></li>
-                </ul>
-                <div class="sub_nav">
-                    <ul>
-                        <li><a href="./introduce">소개</a></li>
-                        <li><a href="./history">연혁</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="./archive">아카이브</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="./calendar">달력</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="./board">게시판</a></li>
-                        <li><a href="./album">사진첩</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="./game">악기심리테스트</a></li>
-                        <li><a href="./game">불협화음피하기</a></li>
-                    </ul>
+            <div class="head1">
+                <div>
+                    <a href="./login">로그인</a>
+                    <!-- <a href="./myPage">마이페이지</a> | <a href="./logout">로그아웃</a> -->
                 </div>
             </div>
-
+            <nav>
+                <ul>
+                    <li><a href="./introduce">소개</a>
+                        <!-- <ul class="sub1">
+                            <li><a href="./introduce">소개</a></li>
+                            <li><a href="./history">연혁</a></li>
+                        </ul> -->
+                    </li>
+                    <li><a href="./archive">아카이브</a>
+                        <!-- <ul class="sub2">
+                            <li><a href="./archive">아카이브</a></li>
+                        </ul> -->
+                    </li>
+                    <li><a href="./calendar">달력</a>
+                        <!-- <ul class="sub3">
+                            <li><a href="./calendar">달력</a></li>
+                        </ul> -->
+                    </li>
+                    <li><a href="./board">게시판</a>
+                        <!-- <ul class="sub4">
+                            <li><a href="./board">게시판</a></li>
+                            <li><a href="./album">사진첩</a></li>
+                        </ul> -->
+                    </li>
+                    <li><a href="./lab">실험실</a>
+                        <!-- <ul class="sub5">
+                            <li><a href="./lab">실험실</a></li>
+                        </ul> -->
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <hr>
     </header>
 
     <section>
         <article>
             <div id="main_welcome">
-                <img src="mainimage-3-2-2.jpg" alt="제 37회 정기연주회 무대 단체사진">
+                <!-- <img src="mainimage-3-2-2.jpg" alt="제 37회 정기연주회 무대 단체사진"> -->
+                <img src="2022main.jpg" alt="제 38회 정기연주회 무대 단체사진">
                 <p>Welcome to KuPhil</p>
             </div>
-            <hr>
         </article>
-        <article id="d_day">
-            <p>디데이</p>
-            <div id="show">
-                <script>
-                    let data = "<%=db%>";
-                    let text = "<%=text%>";
-                    let show = document.getElementById("show");
-                    show.innerHTML = text + ' ' + data;
-                </script>
+        <article class="kuphil_sns">
+            <p class="kuphil_sns_title">쿠필 SNS</p>
+            <div class="show">
+                <div>
+                    <img src="유튜브2.png" alt="유튜브">
+                    <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">Youtube</a>
+                </div>
+                <div>
+                    <img src="인스타그램1.png" alt="인스타그램">
+                    <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank">Instagram</a>
+                </div>
+                <div>
+                    <img src="페이스북.png" alt="페이스북">
+                    <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank">Facebook</a>
+                </div>
             </div>
         </article>
         <article class="spelling_introduce">
@@ -141,7 +147,7 @@
             </div>
         </article>
     </section>
-    <footer>
+    <!-- <footer>
         <div id="footer_left">
             <p>Contact us! :)</p>
             <div>
@@ -169,6 +175,38 @@
             <div id="address_n_right">
                 <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
                 <p>copyright 2021 KUPHIL, All rights reserved.</p>
+            </div>
+        </div>
+    </footer> -->
+    <footer>
+        <div class="footer_first">
+                <li><a href="#">오시는 길</a></li>
+                <li><a href="#">이용 약관</a></li>
+                <li><a href="#">제휴 제안</a></li>
+                <li><a href="#">개인정보 처리방침</a></li>
+        </div>
+        <div class="footer_second">
+            <div class="footer_logo">
+                <img src="graylogo.png" height="100px">
+                <img src="무제.png" height="100px">
+            </div>
+            <div class="footer_explain">
+                
+                <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+                <p>후원 | 국민은행 279601-04-157891</p><br>
+                <p>copyright 2021 KUPHIL, All rights reserved.</p>
+            </div>
+            <div class="footer_sns">
+                <p>Contact Us :)</p>
+                <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">
+                    <img src="kuphil_youtube.png" alt="쿠필 유튜브">
+                </a>
+                <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank">
+                    <img src="kuphil_instagram.png" alt="쿠필 인스타그램">
+                </a>
+                <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank">
+                    <img src="kuphil_facebook.png" alt="쿠필 페이스북">
+                </a>
             </div>
         </div>
     </footer>

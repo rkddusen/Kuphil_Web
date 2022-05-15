@@ -3,13 +3,9 @@ section {
     width: 1130px;
     padding: 0 30px;
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: -30px;
 }
-hr{
-    height: 2px;
-    border: none;
-    background-color: #BE7743;
-}
+
 
 /* position: relative로 인해 부모 태그가 자식 태그의 기준점이 됨 */
 #main_welcome {
@@ -37,24 +33,46 @@ cover는 대체 콘텐츠의 가로세로비를 유지하면서 요소 콘텐츠
 #main_welcome > p {
     color: #FFFFFF;
     position: absolute;
-    top: 20%;
+    top: 15%;
     left: 25%;
     font-size: 96px;
     font-family: 'Reenie Beanie', cursive;
 }
 
-#d_day {
+.kuphil_sns {
+    border-top: 2px solid #BE7743;
     background-color: #FFF4EA;
     height: 120px;
 }
 
-#d_day > p {
+.kuphil_sns_title {
     color:#864415;
-    font-size: 32px;
+    font-size: 28px;
     padding: 5px 0 0 10px;
     /* font-family: 'Alegreya', serif; */
 }
-
+.show{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.show div{
+    display: flex;
+}
+.show img{
+    width: 45px;
+}
+.show a{
+    line-height: 45px;
+    font-size: 20px;
+    color: gray;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.show a:hover{
+    text-decoration: underline;
+    color: black;
+}
 /* #whatsnew a {
     color: #000000;
     font-size: 32px;
@@ -62,29 +80,29 @@ cover는 대체 콘텐츠의 가로세로비를 유지하면서 요소 콘텐츠
 
 /* text-align 속성을 사용해서 text 위치 지정 가능
 height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
-#d_day > div {
+/* #d_day > div {
     height: 32px;
     text-align: center;
     line-height: 32px;
     font-size: 25px;
-}
+} */
 
 .spelling_introduce span {
     color: #FF8A00;
     font-size: 60px;
-    font-family: 'Alegreya', serif;
+    /* font-family: 'Alegreya', serif; */
     font-weight: bold;
 }
 
 .spell  p:first-child {
     font-size: 40px;
-    font-family: 'Alegreya', serif;
+    /* font-family: 'Alegreya', serif; */
     font-weight: bold;
 }
 
 .spell  p:last-child {
     font-size: 20px;
-    font-family: 'Basic', sans-serif;
+    /* font-family: 'Basic', sans-serif; */
 }
 
 .spell {
@@ -117,11 +135,11 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     width: 268px;
     height: 134px;
     border-radius: 134px 134px 0 0;
-    background-color: #FFD6B0;
     transform: rotate(90deg);
     z-index: 1;
     right: -505px;
     bottom: -150px;
+    background-color: #fef6f0;
 }
 
 #u > .spell_intro {
@@ -143,10 +161,10 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     width: 132px;
     height: 132px;
     border-radius: 66px;
-    background-color: #FFD6B0;
     z-index: 1;
     right: -60px;
     bottom: -20px;
+    background-color: #feece1;
 }
 
 #p > .spell_intro {
@@ -168,10 +186,10 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     width: 278px;
     height: 278px;
     border-radius: 139px;
-    background-color: #FFD6B0;
     z-index: 1;
     right: -820px;
     bottom: -80px;
+    background-color: #fce5d8;
 }
 
 #h > .spell_intro {
@@ -188,11 +206,11 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     width: 300px;
     height: 150px;
     border-radius: 150px 150px 0 0;
-    background-color: #FFD6B0;
     transform: rotate(-90deg);
     z-index: 1;
     right: -395px;
     bottom: -115px;
+    background-color: #fed5bd;
 }
 
 #i > .spell_intro {
@@ -213,10 +231,10 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     width: 200px;
     height: 200px;
     border-radius: 100px;
-    background-color: #FFD6B0;
     z-index: 1;
     right: -590px;
     bottom: -20px;
+    background-color: #fdceb3;
 }
 
 #l > .spell_intro {
@@ -241,9 +259,9 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     border-radius: 157px 157px 0 0;
     z-index: 1;
     transform: rotate(90deg);
-    background-color: #FFD6B0;
     right: 79px;
     bottom: -100px;
+    background-color: #fec8a9;
 }
 
 .spell::after {
@@ -251,3 +269,7 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     display: block;
     content: '';
 }
+
+/* #circle1, #circle2, #circle3, #circle4, #circle5, #circle6{
+    background-color: #FBE7D4;
+} */

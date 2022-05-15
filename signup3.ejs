@@ -3,12 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="/board.css">
+    <title>KUPHIL</title>
     <link rel="stylesheet" type="text/css" href="/headfoot.css">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <link rel="stylesheet" type="text/css" href="/login.css">
+    <link rel="stylesheet" type="text/css" href="/signup3.css">
+
+    <!--Google Web Font를 이용하기 위한 link들 삽입-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Basic&Alegreya&family=Reenie+Beanie&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <!-- 헤더 -->
     <header>
         <div class="main_head">
             <div class="mainlogo">
@@ -29,55 +37,49 @@
                 </ul>
             </nav>
         </div>
-        <article>
-            <div class="head3_line_f"></div>
-            <div class="head3_name"><a class="head3_board_a" href="../board">게시판</a> &ensp;|&ensp; <a class="head3_album_a" href="../album">사진첩</a></div>
-            <div class="head3_line_s"></div>
-        </article>
     </header>
+    <section>
+        <div id="dataSection">
+        </div>
 
-    <!-- 메인으로 이전 다음 -->
-    
-    
-    <section class="board_read_part">
-        <div onclick="history.back();" class="board_read_back">
-        목록으로
-    </div>
-        <!-- 게시판 테이블 -->
-        <table class="board_read_table">
-            <thead>
-                <tr>
-                    <td class="board_read_title_td" style="width: 600px;"><%=title%> </td>
-                    <td class="board_read_etc_td" style="width: 50px;text-align: center;"> ⋯ </td>
-                </tr>
-            </thead>
-            <tbody class="board_read_body">
-                <tr class="board_read_main">
-                    <td colspan="2"><%=writer%><br><%=date.substring(0,10)%></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><hr class="board_read_hr"></td>
-                </tr>
-                <tr class="board_read_cont" style="height:400px;">
-                    <td colspan="2"><%=content%></td>
-                </tr>
-                <!-- <tr>
-                    <td colspan="3"><hr class="board_read_hr"></td>
-                </tr> -->
-                <tr class="board_read_footer">
-                    <td colspan="2">🤍</td>
-                </tr>
-            </tbody>
-        </table>
+        <script>
+            let data = "<%=db%>"
+            let count= "<%=count%>"
+
+            /*for (let i=0; i<count; i++) {
+                data[i] = data.split('//');
+                console.log(data[0]);
+            
+            //id_data[i] = one_data[i].split('/')[0];
+            //pwd_data[i] = one_data[i].split('/')[1];
+        }*/
+        
+        console.log(data);
+        let html = document.getElementById("dataSection");
+
+        function showdataSection() {
+            let dataall = '';
+            
+            /*
+            for (let i=0; i<data.length; i++) {
+                //dataall = '<p>'+id_data[i]+pwd_data[i]+'</p>';
+                dataall = '<p>'+data[i]+'</p>';
+            }
+            */
+           dataall = '<p>'+data+'</p>';
+            html.innerHTML=dataall;
+
+        }
+
+        showdataSection();
+        </script>
     </section>
-
-    <!-- 푸터 -->
     <footer>
         <div class="footer_first">
-                <li><a href="#">오시는 길</a></li>
-                <li><a href="#">이용 약관</a></li>
-                <li><a href="#">제휴 제안</a></li>
-                <li><a href="#">개인정보 처리방침</a></li>
+            <li><a href="#">오시는 길</a></li>
+            <li><a href="#">이용 약관</a></li>
+            <li><a href="#">제휴 제안</a></li>
+            <li><a href="#">개인정보 처리방침</a></li>
         </div>
         <div class="footer_second">
             <div class="footer_logo">
@@ -105,6 +107,6 @@
         </div>
     </footer>
 </body>
-<script type="text/javascript" src="/board.js"></script>
+<!--<script type="text/javascript", src="/signup3.js"></script>-->
 
 </html>
