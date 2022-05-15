@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/board.css">
+    <link rel="stylesheet" type="text/css" href="/headfoot.css">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <link rel="stylesheet" href="/static/summernote-lite.css">
+</head>
+
+<body>
+    <!-- 헤더 -->
+    <header>
+        <div class="main_head">
+            <div class="mainlogo">
+                <a href="../"><img src="../kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
+            </div>
+            <div class="head1">
+                <div>
+                    <a href="../login">로그인</a>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../introduce">소개</a></li>
+                    <li><a href="../archive">아카이브</a></li>
+                    <li><a href="../calendar">달력</a></li>
+                    <li><a href="../board">게시판</a></li>
+                    <li><a href="../lab">실험실</a></li>
+                </ul>
+            </nav>
+        </div>
+        <article>
+            <div class="head3_line_f"></div>
+            <div class="head3_name"><a class="head3_board_a" href="../board">게시판</a></div>
+            <div class="head3_line_s"></div>
+        </article>
+    </header>
+
+    <section class="board_part">
+        <div onclick="history.back();" class="board_rw_back">
+            목록
+        </div>
+        <!-- 게시판 테이블 -->
+        <form class="form" id="board_write_form" action="/board/writing" method="post" onsubmit="doAction();">
+            <table class="board_rw_table">
+                <thead>
+                    <tr>
+
+                        <td class="board_rw_title_td" style="width: 600px;" colspan="2">
+                            <div class="select" data-role="selectBox">
+                                <span name="optValue" class="selected_option">카테고리</span>
+                                    <div style="float: right;">
+                                        <span class="board_write_select_angle"></span>
+                                    </div>
+                                <!-- 옵션 영역 -->
+                                <ul class="hide">
+                                    <li>공지</li>
+                                    <li>일정 공지</li>
+                                    <li>곡 공지</li>
+                                    <li>모집</li>
+                                    <li>곡 추천</li>
+                                    <li>기타</li>
+                                </ul>
+                            </div>
+                            <script>
+                                const body = document.querySelector('body');
+                                const select = document.querySelector(`[data-role="selectBox"]`);
+                                const values = select.querySelector(`[name="optValue"]`);
+                                const option = select.querySelector('ul');
+                                const opts = option.querySelectorAll('li');
+
+                                /* 셀렉트영역 클릭 시 옵션 숨기기, 보이기 */
+                                function selects(e) {
+                                    e.stopPropagation();
+                                    option.setAttribute('style', `top:${select.offsetHeight}px`)
+                                    if (option.classList.contains('hide')) {
+                                        option.classList.remove('hide');
+                                        option.classList.add('show_category');
+                                    } else {
+                                        option.classList.add('hide');
+                                        option.classList.remove('show_category');
+                                    }
+                                    selectOpt();
+                                }
+
+                                /* 옵션선택 */
+                                function selectOpt() {
+                                    opts.forEach(opts => {
+                                        const innerValue = opts.innerHTML;
+                                        function changeValue() {
+                                            values.innerHTML = innerValue;
+                                        }
+                                        opts.addEventListener('click', changeValue)
+                                    });
+                                }
+
+                                /* 옵션밖의 영역(=바디) 클릭 시 옵션 숨김 */
+                                function hideSelect() {
+                                    if (option.classList.contains('show_category')) {
+                                        option.classList.add('hide');
+                                        option.classList.remove('show_category');
+                                    }
+                                }
+                                select.addEventListener('click', selects);
+                                body.addEventListener('click', hideSelect);
+                            </script>
+
+                            <input type="text" style="height: 30px; width: 700px;float: left;margin-left: 10px;border: 1px solid #d1d1d1;">
+                        </td>
+                    </tr>
+                </thead>
+                <tbody class="board_rw_body">
+                    <tr class="board_rw_main">
+                        <td colspan="2" style="line-height: 30px;"><img src="../image/기본이미지.jpg" alt="ㅇ" style="width: 30px; height: 30px; float: left;margin-right: 10px;">개발자</td>
+                    </tr>
+                    <tr class="board_rw_cont" style="height:400px;">
+                        <td colspan="2" id="smarteditor">
+                            <textarea style="height: 360px;width: 100%;margin: -2px;"id="summernote" name="editordata"></textarea>
+                        </td>
+                    </tr>
+                    <tr class="board_rw_footer">
+                        <td colspan="2"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </section>
+
+    <!-- 푸터 -->
+    <footer>
+        <div class="footer_first">
+            <li><a href="#">오시는 길</a></li>
+            <li><a href="#">이용 약관</a></li>
+            <li><a href="#">제휴 제안</a></li>
+            <li><a href="#">개인정보 처리방침</a></li>
+        </div>
+        <div class="footer_second">
+            <div class="footer_logo">
+                <img src="../graylogo.png" height="100px">
+                <img src="../무제.png" height="100px">
+            </div>
+            <div class="footer_explain">
+
+                <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+                <p>후원 | 국민은행 279601-04-157891</p><br>
+                <p>copyright 2021 KUPHIL, All rights reserved.</p>
+            </div>
+            <div class="footer_sns">
+                <p>Contact Us :)</p>
+                <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">
+                    <img src="../kuphil_youtube.png" alt="쿠필 유튜브">
+                </a>
+                <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank">
+                    <img src="../kuphil_instagram.png" alt="쿠필 인스타그램">
+                </a>
+                <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank">
+                    <img src="../kuphil_facebook.png" alt="쿠필 페이스북">
+                </a>
+            </div>
+        </div>
+    </footer>
+    
+    <script type="text/javascript" src="/jquery.min.js"></script>
+    <script type="text/javascript" src="/board.js"></script>
+    <script src="/static/summernote-lite.js"></script>
+    <script src="/static/lang/summernote-ko-KR.js"></script>
+</body>
+
+</html>
