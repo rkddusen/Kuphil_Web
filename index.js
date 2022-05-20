@@ -152,34 +152,38 @@ server.get("/archive", (req, res) => {
     res.sendFile(__dirname + "/archive.html");
 });
 
-const albPage = fs.readFileSync('./album.ejs', 'utf8');
-server.get("/album", (req, res) => {
+// const albPage = fs.readFileSync('./album.ejs', 'utf8');
+// server.get("/album", (req, res) => {
 
-    connection.query('SELECT firstTitle, secondTitle, address FROM album ORDER BY firstTitle, secondTitle',
-        function (error, rows, fields) {
-            if (error) {
-                console.log(error);
-            }
-            else {
-                let imagealbum = [];
-                let count = 0;
-                for (var i in rows) {
-                    imagealbum[i] = rows[i].firstTitle + "//" + rows[i].secondTitle + "//";
-                    imagealbum[i] += rows[i].address;
-                    count++;
-                }//데이터 생성
-                var page = ejs.render(albPage, {
-                    db: imagealbum,
-                    count: count,
-                });
-                //응답
-                res.send(page);
-            }
-        }
-    );
-});
+//     connection.query('SELECT firstTitle, secondTitle, address FROM album ORDER BY firstTitle, secondTitle',
+//         function (error, rows, fields) {
+//             if (error) {
+//                 console.log(error);
+//             }
+//             else {
+//                 let imagealbum = [];
+//                 let count = 0;
+//                 for (var i in rows) {
+//                     imagealbum[i] = rows[i].firstTitle + "//" + rows[i].secondTitle + "//";
+//                     imagealbum[i] += rows[i].address;
+//                     count++;
+//                 }//데이터 생성
+//                 var page = ejs.render(albPage, {
+//                     db: imagealbum,
+//                     count: count,
+//                 });
+//                 //응답
+//                 res.send(page);
+//             }
+//         }
+//     );
+// });
 server.get("/board", (req, res) => {
     res.redirect("/board/1");
+});
+
+server.get("/board/write", (req, res) => {
+    res.sendFile(__dirname + "/board-write.html");
 });
 
 const boaPage = fs.readFileSync('./board.ejs', 'utf8');
