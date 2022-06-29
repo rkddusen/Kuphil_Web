@@ -1,0 +1,23 @@
+.game_area{
+    width: 1130px;
+    padding: 0 30px;
+    height: 700px;
+    margin: 0 auto;
+}
+.game_content{
+    margin: 0 auto;
+    margin-top: 100px;
+    border: 1px solid black;
+}
+.game_content td{
+    width: 130px;
+    height: 130px;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 20px;
+    line-height: 0px;
+}
+.game_content td img{
+    width: 130px;
+    height: 130px;
+}
