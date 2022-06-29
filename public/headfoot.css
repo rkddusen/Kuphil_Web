@@ -293,3 +293,9 @@ footer{
     height: 50px;
     object-fit: cover;
 }
+
+@media (max-width : 1190px) {
+    footer{
+        width: 1190px;
+    }
+}
