@@ -33,6 +33,7 @@
     </header>
 
     <div class="game_area">
+        <div>최고 기록 : <span class="game_best_score">0</span>점 | 현재 기록 : <span class="game_my_score">0</span>점</div>
             <table class="game_content">
                 <tr>
                     <td class="block11"></td>
@@ -48,8 +49,8 @@
                 </tr>
                 <tr>
                     <td class="block31"></td>
-                    <td class="block32" onclick="init();">시작하기</td>
-                    <td class="block33" onclick="history.back();">돌아가기</td></a>
+                    <td class="block32" onclick="init();" id="game_start">시작하기</td>
+                    <td class="block33" onclick="history.back();" id="game_end">돌아가기</td></a>
                     <td class="block34"></td>
                 </tr>
                 <tr>
