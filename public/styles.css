@@ -3,7 +3,7 @@ section {
     width: 1130px;
     padding: 0 30px;
     margin: 0 auto;
-    margin-top: -70px;
+    margin-top: -30px;
 }
 
 
@@ -12,16 +12,18 @@ section {
     width: 1130px;
     height: 505px;
     overflow: hidden;
+    position: relative;
     margin: 8px 0;
     text-align: center;
-    position: relative;
 }
 
 /* object-fit은 img같은 대체 콘텐츠의 크기를 어떤 방식으로 조절해 요소에 맞출 것인지 지정
 cover는 대체 콘텐츠의 가로세로비를 유지하면서 요소 콘텐츠 박스 가득 채움
 서로의 가로세로비가 일치하지 않으면 객체 일부가 잘려나감 */
 #main_welcome img {
-    width: 1130px;
+    width: 1129px;
+    margin: 0 auto;
+    object-fit: cover;
 }
 
 /* position: absolute로 인해 부모 태그를 기준으로 위치가 결정됨 */
@@ -29,14 +31,12 @@ cover는 대체 콘텐츠의 가로세로비를 유지하면서 요소 콘텐츠
 사용하고 싶은 글꼴을 불러오지 못하는 경우 웹 브라우저에 지정된 기본 글꼴로 대체됨 
 앞쪽부터 순서대로 불러오기 때문에 여러 개 지정해둘 수도 있음 */
 #main_welcome > p {
-    width: 700px;
     color: #FFFFFF;
+    position: absolute;
+    top: 15%;
+    left: 25%;
     font-size: 96px;
     font-family: 'Reenie Beanie', cursive;
-    position :absolute;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, 0);
 }
 
 .kuphil_sns {

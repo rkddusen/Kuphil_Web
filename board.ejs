@@ -35,17 +35,16 @@
         </article> -->
         <article>
             <div class="head3_line_f"></div>
-            <div class="head3_name"><a class="head3_board_a" href="../board">게시판</a></div>
+            <div class="head3_name"><a class="head3_board_a" href="../board">게시판</a> &ensp;|&ensp; <a class="head3_album_a" href="../album">사진첩</a></div>
             <div class="head3_line_s"></div>
         </article>
     </header>
     
     <!-- 글쓰기 -->
-    
+    <div class="board_plus">
+        <p>글쓰기</p>
+    </div>
     <section class="board_part">
-        <div class="board_plus"onclick="location.href='./write'">
-            글쓰기
-        </div>
         <!-- 게시판 테이블 -->
         <table class="board_table">
             <thead>
@@ -70,9 +69,9 @@
                 <%
                 }else{
                 %>
-                <tr onclick="location.href='../read/<%=number-((page-1)*10)-i%>'">
+                <tr >
                     <td><%= number-((page-1)*10)-i %></td>
-                    <td ><%= data[i].split("//")[0] %></td>
+                    <td onclick="location.href='../read/<%=number-((page-1)*10)-i%>'"><%= data[i].split("//")[0] %></td>
                     <td><%= data[i].split("//")[1] %></td>
                     <td><%= data[i].split("//")[2].split(" ")[0] %></td>
                 </tr>
