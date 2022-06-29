@@ -31,7 +31,7 @@
         </div>
         <article>
             <div class="head3_line_f"></div>
-            <div class="head3_name"><a class="head3_board_a" href="../board">게시판</a></div>
+            <div class="head3_name"><a class="head3_board_a" href="../board">게시판</a> &ensp;|&ensp; <a class="head3_album_a" href="../album">사진첩</a></div>
             <div class="head3_line_s"></div>
         </article>
     </header>
@@ -39,32 +39,32 @@
     <!-- 메인으로 이전 다음 -->
     
     
-    <section class="board_part">
-        <div onclick="history.back();" class="board_rw_back">
-            목록
-        </div>
+    <section class="board_read_part">
+        <div onclick="history.back();" class="board_read_back">
+        목록으로
+    </div>
         <!-- 게시판 테이블 -->
-        <table class="board_rw_table">
+        <table class="board_read_table">
             <thead>
                 <tr>
-                    <td class="board_rw_title_td" style="width: 600px;"><%=title%></td>
-                    <td class="board_rw_etc_td" style="width: 50px;text-align: center;"> ⋯ </td>
+                    <td class="board_read_title_td" style="width: 600px;"><%=title%> </td>
+                    <td class="board_read_etc_td" style="width: 50px;text-align: center;"> ⋯ </td>
                 </tr>
             </thead>
-            <tbody class="board_rw_body">
-                <tr class="board_rw_main">
-                    <td colspan="2"><img src="../image/기본이미지.jpg" alt="ㅇ" style="width: 30px; height: 30px; float: left;margin-right: 10px;"><%=writer%><br><%=date.substring(0,10)%></td>
+            <tbody class="board_read_body">
+                <tr class="board_read_main">
+                    <td colspan="2"><%=writer%><br><%=date.substring(0,10)%></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><hr class="board_rw_hr"></td>
+                    <td colspan="2"><hr class="board_read_hr"></td>
                 </tr>
-                <tr class="board_rw_cont" style="height:400px;">
+                <tr class="board_read_cont" style="height:400px;">
                     <td colspan="2"><%=content%></td>
                 </tr>
                 <!-- <tr>
                     <td colspan="3"><hr class="board_read_hr"></td>
                 </tr> -->
-                <tr class="board_rw_footer">
+                <tr class="board_read_footer">
                     <td colspan="2">🤍</td>
                 </tr>
             </tbody>

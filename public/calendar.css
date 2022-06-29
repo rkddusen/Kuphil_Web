@@ -11,7 +11,6 @@
 }
 
 .calendar_title{
-    display: flex;
     width: 420px;
     margin-top: 70px;
     height: 420px;
@@ -20,14 +19,12 @@
     border-right-width: 1px;
     border-bottom-width: 1px;
     text-align: center;
-    flex-direction: column;
-    justify-content: space-between;
 }
 /* #table_title input{
     cursor: pointer;
 } */
 .calendar_move{
-    margin-bottom: 10px;
+    margin-top: 100px;
     display: flex;
     justify-content: space-between;
 }
