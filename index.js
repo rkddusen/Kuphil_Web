@@ -267,6 +267,11 @@ server.get("/snakegame", (req, res) => {
     res.sendFile(__dirname + "/snake_game.html");
 });
 
+server.get("/2048game", (req, res) => {
+
+    res.sendFile(__dirname + "/2048.html");
+});
+
 server.use((req, res) => {
     res.sendFile(__dirname + "/404.html");
 });
