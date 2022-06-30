@@ -3,25 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>KUPHIL</title>
+    <link rel="stylesheet" type="text/css" href="/2048.css">
     <link rel="stylesheet" type="text/css" href="/headfoot.css">
-    <link rel="stylesheet" type="text/css" href="/archive_styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Reenie+Beanie&display=swap" rel="stylesheet">
+    
 </head>
 
 <body>
+    <!-- 헤더 -->
     <header>
         <div class="main_head">
             <div class="mainlogo">
                 <a href="./"><img src="kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
             </div>
-            <!-- <div class="head1">
-                <div>
-                    <a href="./login">로그인</a>
-                </div>
-            </div> -->
             <nav>
                 <ul>
                     <li><a href="./introduce">소개</a></li>
@@ -34,28 +27,39 @@
         </div>
         <article>
             <div class="head3_line_f"></div>
-            <div class="head3_name"><a class="head3_archive_a" href="./archive">아카이브</a></div>
+            <div class="head3_name"><a class="head3_test_a" href="./2048game">악기 2048</a></div>
             <div class="head3_line_s"></div>
         </article>
     </header>
-    <div id="arc_notice">
-        <p>쿠필의 역대 정기 연주회 정보를 모아놓은 공간입니다. </p>
-    </div>
-    <div class="container">
-        <div class="posterbox_1">
-            <div class="modal hidden">
-                <div class="modal_overlay"></div>
-                <div class="modal_content">
-                    <h1>테스트테스트</h1>
-                    <button>Close</button>
-                </div>
-            </div>
-        </div>
-        <div class="loadposters">
-            <div onclick= "prevPage();" class="prev_btn"></div>
-            <div onclick="nextPage();" class="next_btn"></div>
-        </div>
-        <div class="posterbox_2"></div>
+
+    <div class="game_area">
+        <div>최고 기록 : <span class="game_best_score">0</span>점 | 현재 기록 : <span class="game_my_score">0</span>점</div>
+            <table class="game_content">
+                <tr>
+                    <td class="block11"></td>
+                    <td class="block12"></td>
+                    <td class="block13"></td>
+                    <td class="block14"></td>
+                </tr>
+                <tr>
+                    <td class="block21"></td>
+                    <td class="block22"></td>
+                    <td class="block23"></td>
+                    <td class="block24"></td>
+                </tr>
+                <tr>
+                    <td class="block31"></td>
+                    <td class="block32" onclick="init();" id="game_start">시작하기</td>
+                    <td class="block33" onclick="history.back();" id="game_end">돌아가기</td></a>
+                    <td class="block34"></td>
+                </tr>
+                <tr>
+                    <td class="block41"></td>
+                    <td class="block42"></td>
+                    <td class="block43"></td>
+                    <td class="block44"></td>
+                </tr>
+            </table>
     </div>
 
     <footer>
@@ -91,5 +95,6 @@
         </div>
     </footer>
 </body>
-<script type = "text/javascript" src = "/archive.js"></script>
+<script type="text/javascript" src="/2048.js"></script>
+
 </html>
