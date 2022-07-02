@@ -267,9 +267,43 @@ server.get("/snakegame", (req, res) => {
     res.sendFile(__dirname + "/snake_game.html");
 });
 
+const game2048 = fs.readFileSync('./2048.ejs', 'utf8');
 server.get("/2048game", (req, res) => {
+    connection.query('SELECT name, score FROM 2048game ORDER BY score desc limit 15;',
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            }
+            else {
+                let name = [];
+                let score = [];
+                for (var i in rows) {
+                    name[i] = rows[i].name ? rows[i].name : "정보 없음";
+                    score[i] = rows[i].score ? rows[i].score : 0;
+                }//데이터 생성
+                var page = ejs.render(game2048, {
+                    name: name,
+                    bestscore: score,
+                });
+                //응답
+                console.log(name);
+                res.send(page);
+            }
+        }
+    );
+});
 
-    res.sendFile(__dirname + "/2048.html");
+server.post("/2048game/record", (req, res) => {
+    let name = req.body.name;
+    let score = req.body.score;
+    let sql = 'INSERT INTO 2048game (name, score) VALUES(?, ?)';
+    let params = [name, score];
+    connection.query(sql, params, function (err, result, fields) {
+        if (err) {
+            console.log(err);
+        }
+        return res.redirect('/2048game');
+    })
 });
 
 server.use((req, res) => {
