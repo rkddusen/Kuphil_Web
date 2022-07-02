@@ -22,6 +22,7 @@
                     <li><a href="./calendar">달력</a></li>
                     <!-- <li><a href="./board">게시판</a></li> -->
                     <li><a href="./lab">실험실</a></li>
+                    <li><a href="./lab">입단 문의</a></li>
                 </ul>
             </nav>
         </div>
@@ -31,10 +32,13 @@
             <div class="head3_line_s"></div>
         </article>
     </header>
-
+    <script>
+    let name = "<%=name%>".split(",");
+    let bestscore = "<%=bestscore%>".split(",");
+    </script>
     <div class="game_area">
-        <div>최고 기록 : <span class="game_best_score">0</span>점 | 현재 기록 : <span class="game_my_score">0</span>점</div>
-            <table class="game_content">
+        <div><div class="game_best">최고 기록 : <%=name[0]%> (<span class="game_best_score"><%=bestscore[0]%></span>점)</div><div class="game_my">현재 기록 : <span class="game_my_score">0</span>점</div></div>
+            <div class="game_content"><table>
                 <tr>
                     <td class="block11"></td>
                     <td class="block12"></td>
@@ -48,10 +52,10 @@
                     <td class="block24"></td>
                 </tr>
                 <tr>
-                    <td class="block31"></td>
+                    <td class="block31" onclick="how_to_game();" id="game_how">게임 방법</td>
                     <td class="block32" onclick="init();" id="game_start">시작하기</td>
-                    <td class="block33" onclick="history.back();" id="game_end">돌아가기</td></a>
-                    <td class="block34"></td>
+                    <td class="block33" onclick="history.back();" id="game_end">돌아가기</td>
+                    <td class="block34" onclick="top15();" id="game_top">Top 15</td>
                 </tr>
                 <tr>
                     <td class="block41"></td>
@@ -60,6 +64,7 @@
                     <td class="block44"></td>
                 </tr>
             </table>
+        </div>
     </div>
 
     <footer>
@@ -67,7 +72,6 @@
                 <li><a href="#">오시는 길</a></li>
                 <li><a href="#">이용 약관</a></li>
                 <li><a href="#">제휴 제안</a></li>
-                <li><a href="#">개인정보 처리방침</a></li>
         </div>
         <div class="footer_second">
             <div class="footer_logo">
@@ -95,6 +99,7 @@
         </div>
     </footer>
 </body>
+
 <script type="text/javascript" src="/2048.js"></script>
 
 </html>

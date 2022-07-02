@@ -5,23 +5,34 @@
     margin: 0 auto;
     
 }
-.game_area div{
-    width: 300px;
+.game_area > div:first-child{
+    width: 540px;
     height: 30px;
-    
-    margin: 0 auto;margin-top: 100px;
-    text-align: center;
+    margin: 0 auto;
+    margin-top: 100px;
+    display: flex;
 }
-.game_content{
+.game_best, .game_my{
+    width: 270px;
+}
+.game_best{
+    text-align: start;
+}
+.game_my{
+    text-align: end;
+}
+.game_content table{
     margin: 0 auto;
     border: 1px solid black;
 }
-.game_content td{
+td{
     width: 130px;
     height: 130px;
     border: 1px solid black;
     text-align: center;
     font-size: 20px;
+}
+.game_play_tr td{
     line-height: 0px;
 }
 .game_content td img{
@@ -29,7 +40,7 @@
     height: 100px;
 }
 
-#game_start:hover, #game_end:hover{
+#game_start:hover, #game_end:hover ,#game_how:hover, #game_top:hover{
     background-color: #ffd1ae;
     cursor: pointer;
 }
