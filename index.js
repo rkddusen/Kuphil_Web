@@ -286,7 +286,6 @@ server.get("/2048game", (req, res) => {
                     bestscore: score,
                 });
                 //응답
-                console.log(name);
                 res.send(page);
             }
         }
