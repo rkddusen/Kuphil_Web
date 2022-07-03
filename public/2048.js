@@ -1,12 +1,17 @@
+
 const block_size = 4;
 let score = 0;
+let upButton = document.getElementsByClassName("game_button_up")[0];
+let leftButton = document.getElementsByClassName("game_button_left")[0];
+let rightButton = document.getElementsByClassName("game_button_right")[0];
+let downButton = document.getElementsByClassName("game_button_down")[0];
 //시작 버튼 눌렀을 때 init
 function init() {
     let table = document.getElementsByClassName("game_content")[0];
-    initTable = '<tr><td class="block00"><img src="./image/test/빈결과.jpg"></td><td class="block01"><img src="./image/test/빈결과.jpg"></td><td class="block02"><img src="./image/test/빈결과.jpg"></td><td class="block03"><img src="./image/test/빈결과.jpg"></td></tr>';
-    initTable += '<tr><td class="block10"><img src="./image/test/빈결과.jpg"></td><td class="block11"><img src="./image/test/빈결과.jpg"></td><td class="block12"><img src="./image/test/빈결과.jpg"></td><td class="block13"><img src="./image/test/빈결과.jpg"></td></tr>';
-    initTable += '<tr><td class="block20"><img src="./image/test/빈결과.jpg"></td><td class="block21"><img src="./image/test/빈결과.jpg"></td><td class="block22"><img src="./image/test/빈결과.jpg"></td><td class="block23"><img src="./image/test/빈결과.jpg"></td></tr>';
-    initTable += '<tr><td class="block30"><img src="./image/test/빈결과.jpg"></td><td class="block31"><img src="./image/test/빈결과.jpg"></td><td class="block32"><img src="./image/test/빈결과.jpg"></td><td class="block33"><img src="./image/test/빈결과.jpg"></td></tr>';
+    initTable = '<table><tr class="game_start_tr"><td class="block00"><img src="./image/test/빈결과.jpg"></td><td class="block01"><img src="./image/test/빈결과.jpg"></td><td class="block02"><img src="./image/test/빈결과.jpg"></td><td class="block03"><img src="./image/test/빈결과.jpg"></td></tr>';
+    initTable += '<tr class="game_start_tr"><td class="block10"><img src="./image/test/빈결과.jpg"></td><td class="block11"><img src="./image/test/빈결과.jpg"></td><td class="block12"><img src="./image/test/빈결과.jpg"></td><td class="block13"><img src="./image/test/빈결과.jpg"></td></tr>';
+    initTable += '<tr class="game_start_tr"><td class="block20"><img src="./image/test/빈결과.jpg"></td><td class="block21"><img src="./image/test/빈결과.jpg"></td><td class="block22"><img src="./image/test/빈결과.jpg"></td><td class="block23"><img src="./image/test/빈결과.jpg"></td></tr>';
+    initTable += '<tr class="game_start_tr"><td class="block30"><img src="./image/test/빈결과.jpg"></td><td class="block31"><img src="./image/test/빈결과.jpg"></td><td class="block32"><img src="./image/test/빈결과.jpg"></td><td class="block33"><img src="./image/test/빈결과.jpg"></td></tr></table>';
     table.innerHTML = initTable;
 
     // 4*4배열
@@ -23,13 +28,45 @@ function init() {
         }
     }
     start(block);
-    score=0;
+    score = 0;
 }
 
 // 게임 진행 함수
 function start(block) {
     createBlock(block);
 
+    upButton.addEventListener("click",function(b){
+        if (upMove(block)) {
+            createBlock(block);
+            if (checkQuit(block) == 0) {
+                gameover(score);
+            }
+        }
+    });
+    leftButton.addEventListener("click",function(b){
+        if (leftMove(block)) {
+            createBlock(block);
+            if (checkQuit(block) == 0) {
+                gameover(score);
+            }
+        }
+    });
+    rightButton.addEventListener("click",function(b){
+        if (rightMove(block)) {
+            createBlock(block);
+            if (checkQuit(block) == 0) {
+                gameover(score);
+            }
+        }
+    });
+    downButton.addEventListener("click",function(b){
+        if (downMove(block)) {
+            createBlock(block);
+            if (checkQuit(block) == 0) {
+                gameover(score);
+            }
+        }
+    });
     //키보드 입력
     document.addEventListener("keydown", function (e) {
         let key = e.keyCode;
@@ -69,26 +106,27 @@ function start(block) {
     });
 }
 
+
 function checkQuit(block) {
     let quit = 0;
-    for (var i = 0; i < block_size-1; i++) {
-        for (var j = 0; j < block_size-1; j++) {
-            if (block[i][j] == block[i][j+1] || block[i][j]==block[i+1][j] || block[i][j]==0) {
+    for (var i = 0; i < block_size - 1; i++) {
+        for (var j = 0; j < block_size - 1; j++) {
+            if (block[i][j] == block[i][j + 1] || block[i][j] == block[i + 1][j] || block[i][j] == 0) {
                 quit++;
             }
         }
     }
-    for(var i=0;i<block_size-1;i++){
-        if(block[i][3] == block[i+1][3] || block[i][3]==0){
+    for (var i = 0; i < block_size - 1; i++) {
+        if (block[i][3] == block[i + 1][3] || block[i][3] == 0) {
             quit++;
         }
     }
-    for(var j=0;j<block_size-1;j++){
-        if(block[3][j] == block[3][j+1] || block[3][j]==0){
+    for (var j = 0; j < block_size - 1; j++) {
+        if (block[3][j] == block[3][j + 1] || block[3][j] == 0) {
             quit++;
         }
     }
-    if(block[3][3]==0){
+    if (block[3][3] == 0) {
         quit++;
     }
     return quit;
@@ -138,7 +176,7 @@ function leftMove(block) {
     for (var i = 0; i < block_size; i++) {
         for (var j = 0; j < block_size - 1; j++) {
             for (var k = j + 1; k < block_size; k++) {
-                if(block[i][j]==0) {
+                if (block[i][j] == 0) {
                     if (block[i][k] != 0) {
                         block[i][j] = block[i][k];
                         block[i][k] = 0;
@@ -151,18 +189,18 @@ function leftMove(block) {
     for (var i = 0; i < block_size; i++) {
         for (var j = 0; j < block_size - 1; j++) {
             if (block[i][j] != 0) {
-                    if (block[i][j] == block[i][j + 1]) {
-                        block[i][j] += block[i][j + 1];
-                        block[i][j + 1] = 0;
-                        check++;
-                    }
+                if (block[i][j] == block[i][j + 1]) {
+                    block[i][j] += block[i][j + 1];
+                    block[i][j + 1] = 0;
+                    check++;
                 }
+            }
         }
     }
     for (var i = 0; i < block_size; i++) {
         for (var j = 0; j < block_size - 1; j++) {
             for (var k = j + 1; k < block_size; k++) {
-                if(block[i][j]==0) {
+                if (block[i][j] == 0) {
                     if (block[i][k] != 0) {
                         block[i][j] = block[i][k];
                         block[i][k] = 0;
@@ -204,12 +242,12 @@ function rightMove(block) {
     for (var i = 0; i < block_size; i++) {
         for (var j = block_size - 1; j > 0; j--) {
             if (block[i][j] != 0) {
-                    if (block[i][j] == block[i][j - 1]) {
-                        block[i][j] += block[i][j - 1];
-                        block[i][j - 1] = 0;
-                        check++;
-                    }
+                if (block[i][j] == block[i][j - 1]) {
+                    block[i][j] += block[i][j - 1];
+                    block[i][j - 1] = 0;
+                    check++;
                 }
+            }
         }
     }
     for (var i = 0; i < block_size; i++) {
@@ -257,12 +295,12 @@ function upMove(block) {
     for (var j = 0; j < block_size; j++) {
         for (var i = 0; i < block_size - 1; i++) {
             if (block[i][j] != 0) {
-                    if (block[i][j] == block[i+1][j]) {
-                        block[i][j] += block[i+1][j];
-                        block[i+1][j] = 0;
-                        check++;
-                    }
+                if (block[i][j] == block[i + 1][j]) {
+                    block[i][j] += block[i + 1][j];
+                    block[i + 1][j] = 0;
+                    check++;
                 }
+            }
         }
     }
     for (var j = 0; j < block_size; j++) {
@@ -296,7 +334,7 @@ function downMove(block) {
     // 블록 이동 후, 이웃된 블록이 같은 경우 합치고, 다시 블록 이동
     for (var j = 0; j < block_size; j++) {
         for (var i = block_size - 1; i >= 0; i--) {
-            for (var k = 0; k < i; k++) {
+            for (var k = i - 1; k >= 0; k--) {
                 if (block[i][j] == 0) {
                     if (block[k][j] != 0) {
                         block[i][j] = block[k][j];
@@ -310,17 +348,17 @@ function downMove(block) {
     for (var j = 0; j < block_size; j++) {
         for (var i = block_size - 1; i > 0; i--) {
             if (block[i][j] != 0) {
-                    if (block[i][j] == block[i-1][j]) {
-                        block[i][j] += block[i-1][j];
-                        block[i-1][j] = 0;
-                        check++;
-                    }
+                if (block[i][j] == block[i - 1][j]) {
+                    block[i][j] += block[i - 1][j];
+                    block[i - 1][j] = 0;
+                    check++;
                 }
+            }
         }
     }
     for (var j = 0; j < block_size; j++) {
         for (var i = block_size - 1; i >= 0; i--) {
-            for (var k = 0; k < i; k++) {
+            for (var k = i - 1; k >= 0; k--) {
                 if (block[i][j] == 0) {
                     if (block[k][j] != 0) {
                         block[i][j] = block[k][j];
@@ -344,7 +382,7 @@ function downMove(block) {
 // 블록의 값 확인
 // 각 값별로 img태그 수정
 function checkBlock(block) {
-    score=0;
+    score = 0;
     for (var x = 0; x < 4; x++) {
         for (var y = 0; y < 4; y++) {
             if (block[x][y] == 0) {
@@ -356,7 +394,7 @@ function checkBlock(block) {
                 score = score + 10;
             } else if (block[x][y] == 2) {
                 document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/test/2_결과.jpg">';
-                document.getElementsByClassName("block" + x + y)[0].style.backgroundColor = '#FF0000';
+                document.getElementsByClassName("block" + x + y)[0].style.backgroundColor = '#FF7070';
                 score = score + 20;
             } else if (block[x][y] == 4) {
                 document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/test/3_결과.jpg">';
@@ -424,13 +462,14 @@ function checkBlock(block) {
     document.getElementsByClassName("game_my_score")[0].textContent = score;
 }
 
-function gameover(score){
-    let area = document.getElementsByClassName("game_area")[0];
+function gameover(score) {
+    let area = document.getElementsByClassName("game_content")[0];
     game_form = '<form class="form" id="rform" action="/2048game/record" method="post" onsubmit="return doAction();">';
-    game_form += '<div>기록 남기기</div>';
-    game_form += '<div>이름 : ' + '<input type="text" name="name" class="game_name"/><br>점수 : <span name="score">'+score+'</span>점 </div>';
-    game_form += '<div><input type="submit" name="submit" class="subCan" value="기록"/> ';
-    game_form += '<input type="button" name="cancel" onClick="history.back();" value="취소" class="subCan"/></div></form>';
+    game_form += '<table><tr><td></td><td></td><td></td><td></td></tr>';
+    game_form += '<tr><td></td><td colspan="2">이름 : ' + '<input type="text" name="name" class="game_name"><br>점수 : <input type="number" readonly name="score" class="game_score" value="' + score + '">점</td><td></td></tr>';
+    game_form += '<tr><td></td><td><input type="submit" name="submit" class="subCan" value="기록"/></td>';
+    game_form += '<td><input type="button" name="cancel" onClick="location.reload();" value="취소" class="subCan"/></td><td></td></tr>';
+    game_form += '<tr><td></td><td></td><td></td><td></td></tr></table></form>'
     area.innerHTML = game_form;
 }
 function doAction() {
@@ -442,6 +481,35 @@ function doAction() {
         alert('이름이 너무 깁니다.');
         return false;
     }
+    else if (document.getElementsByClassName("game_score")[0].value>131071){
+        alert('버그입니다. 개발자한테 연락주세요:)');
+        return false;
+    }
     else
         return true;
+}
+
+
+function how_to_game() {
+    let table = document.getElementsByClassName("game_content")[0];
+    initTable = '<table><tr><td colspan="4" >2048게임의 악기 버전입니다.<br>퍼스트바이올린부터 지휘자까지 17개의 타일이 존재합니다.</td></tr>';
+    initTable += '<tr><td colspan="4">웹에서의 방향키는 w(상 키), a(좌 키), s(하 키), d(우 키) 입니다.</td></tr>';
+    initTable += '<tr><td colspan="4">새로운 버그는 언제나 환영입니다.^^</td></tr>';d
+    initTable += '<tr><td></td><td class="block32" onclick="init();" id="game_start">시작하기</td><td class="block33" onclick="location.reload();" id="game_end">돌아가기</td><td></td></tr></table>';
+    table.innerHTML = initTable;
+
+}
+
+function top15() {
+    for (var i = 0; i < 15; i++) {
+        name[i] = name[i] ? name[i] : "";
+        bestscore[i] = bestscore[i] ? bestscore[i] + '점' : "";
+    }
+    let table = document.getElementsByClassName("game_content")[0];
+    initTable = '<table><tr><td style="font-size : 14px">' + name[0] + '<br>' + bestscore[0] + '</td><td style="font-size : 14px">' + name[1] + '<br>' + bestscore[1] + '</td><td style="font-size : 14px">' + name[2] + '<br>' + bestscore[2] + '</td><td style="font-size : 14px">' + name[3] + '<br>' + bestscore[3] + '</td></tr>';
+    initTable += '<tr><td style="font-size : 14px">' + name[4] + '<br>' + bestscore[4] + '</td><td style="font-size : 14px">' + name[5] + '<br>' + bestscore[5] + '</td><td style="font-size : 14px">' + name[6] + '<br>' + bestscore[6] + '</td><td style="font-size : 14px">' + name[7] + '<br>' + bestscore[7] + '</td></tr>';
+    initTable += '<tr><td style="font-size : 14px">' + name[8] + '<br>' + bestscore[8] + '</td><td style="font-size : 14px">' + name[9] + '<br>' + bestscore[9] + '</td><td style="font-size : 14px">' + name[10] + '<br>' + bestscore[10] + '</td><td style="font-size : 14px">' + name[11] + '<br>' + bestscore[11] + '</td></tr>';
+    initTable += '<tr><td style="font-size : 14px">' + name[12] + '<br>' + bestscore[12] + '</td><td style="font-size : 14px">' + name[13] + '<br>' + bestscore[13] + '</td><td style="font-size : 14px">' + name[14] + '<br>' + bestscore[14] + '</td><td class="block33" onclick="location.reload();" id="game_end">돌아가기</td></tr></table>';
+    table.innerHTML = initTable;
+
 }
