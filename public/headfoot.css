@@ -2,7 +2,9 @@
 헤더와 푸터 스타일 변경하고 싶을 때 여기서 하면 됩니다. */
 
 /* css 기본 세팅*/
-* {margin: 0;padding: 0;font-family: Arial, Helvetica, sans-serif;}
+/* font-size 62.5%인 이유 : font-size에 rem이라는 단위를 쓰려고 하는데, 브라우저가 지정해주는 기본 폰트 사이즈는 100% = 16px임. 그래서 62.5% = 10px로 바꿔주려고 함 */
+/* 10px로 둬도 되지만, 사용자가 화면 내에서 자체적으로 폰트 사이즈를 늘린 경우(글자 확대) 대비가 안되어서 %로 설정 */
+* {margin: 0;padding: 0;font-family: Arial, Helvetica, sans-serif;font-size: 62.5%;}
 ul, li {list-style: none;}
 a, p, span {text-decoration: none;}
 img {border: 0;}
@@ -139,14 +141,12 @@ hr {
 } */
 
 header{
-    width: 1130px;
-    height: 180px;
-    padding: 0 30px;
-    margin: 0 auto;
-    margin-top: 10px;
+    width: 90vw;
+    height: 200px;
+    padding: 0 5vw;
 }
 .main_head{
-    height: 105px;
+    height: 100px;
     border-bottom: 3px solid #BE7743;
 }
 
@@ -167,12 +167,12 @@ header{
     font-weight: bold;
 } */
 nav{
-    margin-top: 30px;
+    margin-top: 20px;
     float: right;
 }
 .mainlogo img{
-    margin-left: 10px;
-    width: 240px;
+    margin-left: 1vw;
+    height: 90px;
     float: left;
 }
 nav > ul{
@@ -182,8 +182,8 @@ nav > ul{
 }
 nav > ul > li{
     float: left;
-    font-size: 23px;
-    padding: 0 60px 0 10px;
+    font-size : 3.5rem;
+    padding: 0 3vw 0 1.2vw;
     position: relative;
 }
 nav > ul > li > a{
@@ -192,8 +192,12 @@ nav > ul > li > a{
 nav > ul > li > a:hover{
     color: #784520;
     font-weight: bold;
-    
 }
+
+.small_menu{
+    display: none;
+}
+/*
 .sub1 li{
     padding-left: 25px;
 }
@@ -210,28 +214,29 @@ nav > ul > li > ul > li > a:hover{
 }
 nav:hover ul {
     display: block;
-}
+} */
 header article{
-    height: 80px;
-    width: 1130px;
+    
+    width: 90vw;
     display: flex;
     justify-content: space-between;
 }
 .head3_line_f{
-    width: 65px;
+    width: 5vw;
     height: 50px;
     border-bottom: 2px solid #BE7743;
 }
 .head3_name{
-    margin-top: 38px;
-    height: 38px;
-    font-size: 30px;
-    font-weight: bold;color: #784520;
+    margin-top: 25px;
+    height: 60px;
+    font-size: 4rem;
+    font-weight: bold;
+    color: #784520;
 }
 
 .head3_line_s{
     height: 50px;
-    width: 750px;
+    width: 55vw;
     border-bottom: 2px solid #BE7743;
 }
 .head3_archive_a, .head3_calendar_a, .head3_lab_a, .head3_login_a, .head3_test_a{
@@ -241,18 +246,20 @@ header article{
 
 footer{
     background-color: #393939;
-    height: 250px;
+    height: 260px;
+    width: 100vw;
 }
 .footer_first{
-    width: 1130px;
-    padding: 0 30px;
-    margin: 0 auto;
+    width: 100vw;
     border-bottom: 2px solid #BBBBBB;
-    height: 60px;
+    height: 70px;
 }
 .footer_first > li{
     float: left;
-    padding: 20px 30px 20px 10px;
+    padding: 20px 0vw 20px 3vw;
+    height: 30px;
+    line-height: 30px;
+    font-size: 2rem;
 }
 .footer_first > li > a{
     color: #BBBBBB;
@@ -262,40 +269,93 @@ footer{
     font-weight: bold;
 }
 .footer_second{
-    width: 1130px;
-    padding: 0 30px;
-    margin: 0 auto;
-    margin-top: 20px;
+    width: 90vw;
+    padding: 0 5vw;
     display: flex;
     justify-content: space-between;
-    height: 120px;
+    height: 150px;
+    margin-top: 40px;
 }
 .footer_logo{
-    width: 320px;
-    margin-top: 15px;
+    height: 100%;
+    width: 35%;
+}
+.footer_logo img:first-child{
+    width: 10vw;
+}
+.footer_logo img:nth-child(2){
+    width: 20vw;
 }
 .footer_explain{
-    width: 450px;
+    width: 45%;
     color: #BBBBBB;
-    margin-top: 30px;
+    font-size: 2.2rem;
 }
 .footer_sns{
-    margin-top: 25px;
-    width: 250px;
+    width: 20%;
 }
 .footer_sns > p{
     color: #BBBBBB;
-    font-size: 20px;
+    font-size: 2rem;
 }
 .footer_sns img{
-    margin: 10px 5px 0 5px;
-    width: 50px;
-    height: 50px;
+    margin: 10px 5%;
+    width: 20%;
     object-fit: cover;
 }
+.small_footer_explain{
+    display: none;
+}
 
-@media (max-width : 1190px) {
+@media (max-width : 768px) {
+    *{
+        font-size: 50%;
+    }
+    .main_head{
+        height: 60px;
+    }
+    header nav{
+        display: none;
+    }
+    .small_menu{
+        display: block;
+        margin-right: 1vw;
+        float: right;
+        margin-top: 2px;
+    }
+    .small_menu p{
+        font-size: 5rem;
+        color: #BE7743;
+        
+    }
+    .mainlogo img{
+        height: 55px;
+    }
     footer{
-        width: 1190px;
+        height: 310px;
+    }
+    .footer_second{
+        height: 110px;
+    }
+    .footer_logo{
+        width: 60%;
+    }
+    .footer_logo img:first-child{
+        width: 16vw;
+    }
+    .footer_logo img:nth-child(2){
+        width: 26vw;
+    }
+    .footer_sns{
+        width: 40%;
+    }
+    .footer_explain{
+        display: none;
+    }
+    .small_footer_explain{
+        display: block;
+        font-size: 3rem;
+        color: #BBBBBB;
+        text-align: center;
     }
 }

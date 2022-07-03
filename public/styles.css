@@ -1,18 +1,15 @@
 /* section으로 사실상 body 영역 기본세팅 */
 section {
-    width: 1130px;
-    padding: 0 30px;
-    margin: 0 auto;
-    margin-top: -70px;
+    width: 90vw;
+    padding: 0 5vw;
 }
 
 
 /* position: relative로 인해 부모 태그가 자식 태그의 기준점이 됨 */
 #main_welcome {
-    width: 1130px;
-    height: 505px;
+    width: 90vw;
     overflow: hidden;
-    margin: 8px 0;
+    margin-top: -90px;
     text-align: center;
     position: relative;
 }
@@ -21,7 +18,7 @@ section {
 cover는 대체 콘텐츠의 가로세로비를 유지하면서 요소 콘텐츠 박스 가득 채움
 서로의 가로세로비가 일치하지 않으면 객체 일부가 잘려나감 */
 #main_welcome img {
-    width: 1130px;
+    width: 90vw;
 }
 
 /* position: absolute로 인해 부모 태그를 기준으로 위치가 결정됨 */
@@ -29,9 +26,9 @@ cover는 대체 콘텐츠의 가로세로비를 유지하면서 요소 콘텐츠
 사용하고 싶은 글꼴을 불러오지 못하는 경우 웹 브라우저에 지정된 기본 글꼴로 대체됨 
 앞쪽부터 순서대로 불러오기 때문에 여러 개 지정해둘 수도 있음 */
 #main_welcome > p {
-    width: 700px;
+    width: 80vw;
     color: #FFFFFF;
-    font-size: 96px;
+    font-size: 10rem;
     font-family: 'Reenie Beanie', cursive;
     position :absolute;
     top: 15%;
@@ -43,12 +40,13 @@ cover는 대체 콘텐츠의 가로세로비를 유지하면서 요소 콘텐츠
     border-top: 2px solid #BE7743;
     background-color: #FFF4EA;
     height: 120px;
+    margin-top: 5px;
 }
 
 .kuphil_sns_title {
     color:#864415;
-    font-size: 28px;
-    padding: 5px 0 0 10px;
+    font-size: 3rem;
+    padding: 5px 0 0 1vw;
     /* font-family: 'Alegreya', serif; */
 }
 .show{
@@ -86,43 +84,43 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
     line-height: 32px;
     font-size: 25px;
 } */
-
 .spelling_introduce span {
     color: #FF8A00;
-    font-size: 60px;
+    font-size: 6rem;
     /* font-family: 'Alegreya', serif; */
     font-weight: bold;
 }
 
-.spell  p:first-child {
-    font-size: 40px;
+.spell p:first-child {
+    font-size: 4rem;
     /* font-family: 'Alegreya', serif; */
     font-weight: bold;
 }
 
-.spell  p:last-child {
-    font-size: 20px;
+.spell p:last-child {
+    font-size: 1.8rem;
     /* font-family: 'Basic', sans-serif; */
 }
 
 .spell {
-    width: 1130px;
+    width: 90vw;
     overflow: hidden;
     margin-bottom: 60px;
+    height: 400px;
 }
 
 #k > .spell_intro {
-    width: 440px;
-    height: 400px;
+    width: 30vw;
+    margin: 30px 10vw;
     float: left;
-    margin: 90px 30px 30px;
     position: relative;
     z-index: 2;
 }
 
 #k > .spell_intro:nth-child(2) {
-    width: 490px;
-    margin-left: 80px;
+    width: 30vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
 }
 
 /* border-radius 속성을 사용해서 여러 부채꼴을 만들 수 있음
@@ -132,35 +130,34 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
 태그가 안쪽 방향으로 이동하기 때문에 -를 붙여야 바깥쪽 방향으로 이동하게 됨 */
 #circle1 {
     position: relative;
-    width: 268px;
-    height: 134px;
-    border-radius: 134px 134px 0 0;
+    width: 20vw;
+    height: 10vw;
+    border-radius: 20vw 20vw 0 0;
     transform: rotate(90deg);
     z-index: 1;
-    right: -505px;
-    bottom: -150px;
+    right: -45vw;
+    bottom: -10vw;
     background-color: #fef6f0;
 }
 
 #u > .spell_intro {
-    width: 400px;
-    height: 300px;
+    width: 30vw;
     float: right;
-    margin: 30px;
+    margin: 30px 5vw;
     position: relative;
     z-index: 2;
 }
 
 #u > .spell_intro:nth-child(2) {
-    width: 440px;
-    margin-right: 130px;
+    width: 30vw;
+    margin-right: 10vw;
 }
 
 #circle2 {
     position: relative;
-    width: 132px;
-    height: 132px;
-    border-radius: 66px;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 100%;
     z-index: 1;
     right: -60px;
     bottom: -20px;
@@ -168,99 +165,98 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
 }
 
 #p > .spell_intro {
-    width: 400px;
-    height: 300px;
+    width: 30vw;
     float: left;
-    margin: 30px;
+    margin: 30px 5vw;
     position: relative;
     z-index: 2;
 }
 
 #p > .spell_intro:nth-child(2) {
-    width: 500px;
-    margin-left: 130px;
+    width: 35vw;
+    margin-left: 10vw;
 }
 
 #circle3 {
     position: relative;
-    width: 278px;
-    height: 278px;
-    border-radius: 139px;
+    width: 18vw;
+    height: 18vw;
+    border-radius: 100%;
     z-index: 1;
-    right: -820px;
-    bottom: -80px;
+    right: -55vw;
+    bottom: -5vw;
     background-color: #fce5d8;
 }
 
 #h > .spell_intro {
-    width: 480px;
-    height: 320px;
+    width: 35vw;
     float: right;
-    margin: 30px;
+    margin: 30px 5vw;
     position: relative;
     z-index: 2;
+}
+#h > .spell_intro:nth-child(2) {
+    width: 30vw;
+    margin-right: 10vw;
 }
 
 #circle4 {
     position: relative;
-    width: 300px;
-    height: 150px;
+    width: 20vw;
+    height: 10vw;
     border-radius: 150px 150px 0 0;
     transform: rotate(-90deg);
     z-index: 1;
-    right: -395px;
-    bottom: -115px;
+    right: -35vw;
+    bottom: -10vw;
     background-color: #fed5bd;
 }
 
 #i > .spell_intro {
-    width: 480px;
-    height: 270px;
+    width: 35vw;
     float: left;
-    margin: 30px;
+    margin: 30px 5vw;
     position: relative;
     z-index: 2;
 }
 
 #i > .spell_intro:nth-child(2) {
-    margin-left: 80px;
+    width: 30vw;
+    margin-left: 10vw;
 }
 
 #circle5 {
     position: relative;
-    width: 200px;
-    height: 200px;
-    border-radius: 100px;
+    width: 15vw;
+    height: 15vw;
+    border-radius: 100%;
     z-index: 1;
-    right: -590px;
-    bottom: -20px;
+    right: -38vw;
+    bottom: -2vw;
     background-color: #fdceb3;
 }
 
 #l > .spell_intro {
-    width: 400px;
-    height: 300px;
+    width: 30vw;
     float: right;
-    margin: 30px;
+    margin: 30px 5vw;
     position: relative;
     z-index: 2;
 }
 
 #l > .spell_intro:nth-child(2) {
-    width: 550px;
-    margin-right: 50px;
-    margin-left: 0;
+    width: 35vw;
+    margin-right: 5vw;
 }
 
 #circle6 {
     position: relative;
-    width: 314px;
-    height: 157px;
-    border-radius: 157px 157px 0 0;
+    width: 20vw;
+    height: 10vw;
+    border-radius: 20vw 20vw 0 0;
     z-index: 1;
     transform: rotate(90deg);
-    right: 79px;
-    bottom: -100px;
+    bottom: -10vw;
     background-color: #fec8a9;
 }
 
@@ -273,3 +269,31 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
 /* #circle1, #circle2, #circle3, #circle4, #circle5, #circle6{
     background-color: #FBE7D4;
 } */
+
+@media (max-width : 768px) {
+    #main_welcome {
+        margin-top: -130px;
+    }
+    #main_welcome > p{
+        font-size: 5rem;
+    }
+    .spell {
+        margin-bottom: 30px;
+        height: 530px;
+    }
+    #k > .spell_intro, #u > .spell_intro, #p > .spell_intro, 
+    #h > .spell_intro, #i > .spell_intro, #l > .spell_intro {
+        float:none;
+        width: 60vw;
+        margin: 30px 15vw;
+    }
+    #k > .spell_intro:nth-child(2), #u > .spell_intro:nth-child(2), #p > .spell_intro:nth-child(2), 
+    #h > .spell_intro:nth-child(2), #i > .spell_intro:nth-child(2), #l > .spell_intro:nth-child(2) {
+        width: 70vw;
+        margin: 0 10vw;
+        
+    }
+    #circle1, #circle2, #circle3, #circle4, #circle5, #circle6{
+        display: none;
+    }
+}
