@@ -4,14 +4,31 @@
 /* css 기본 세팅*/
 /* font-size 62.5%인 이유 : font-size에 rem이라는 단위를 쓰려고 하는데, 브라우저가 지정해주는 기본 폰트 사이즈는 100% = 16px임. 그래서 62.5% = 10px로 바꿔주려고 함 */
 /* 10px로 둬도 되지만, 사용자가 화면 내에서 자체적으로 폰트 사이즈를 늘린 경우(글자 확대) 대비가 안되어서 %로 설정 */
-* {margin: 0;padding: 0;font-family: Arial, Helvetica, sans-serif;font-size: 62.5%;}
-ul, li {list-style: none;}
-a, p, span {text-decoration: none;}
-img {border: 0;}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 62.5%;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a,
+p,
+span {
+    text-decoration: none;
+}
+
+img {
+    border: 0;
+}
 
 /* 마우스를 더블클릭하거나 드래그하는와중에, button 속에 text 가 선택됨. 이것을 방지 */
-button{
-    user-select : none; 
+button {
+    user-select: none;
     cursor: pointer;
 }
 
@@ -140,12 +157,13 @@ hr {
     border: 0;
 } */
 
-header{
+header {
     width: 90vw;
     height: 200px;
     padding: 0 5vw;
 }
-.main_head{
+
+.main_head {
     height: 100px;
     border-bottom: 3px solid #BE7743;
 }
@@ -166,37 +184,85 @@ header{
     color: #784520;
     font-weight: bold;
 } */
-nav{
+.nav {
     margin-top: 20px;
     float: right;
 }
-.mainlogo img{
+
+.mainlogo img {
     margin-left: 1vw;
     height: 90px;
     float: left;
 }
-nav > ul{
+
+.nav>ul {
     float: left;
     height: 80px;
     line-height: 80px;
 }
-nav > ul > li{
+
+.nav>ul>li {
     float: left;
-    font-size : 3.5rem;
+    font-size: 3.5rem;
     padding: 0 3vw 0 1.2vw;
     position: relative;
 }
-nav > ul > li > a{
+
+.nav>ul>li>a {
     color: #BE7743;
 }
-nav > ul > li > a:hover{
+
+.nav>ul>li>a:hover {
     color: #784520;
     font-weight: bold;
 }
 
-.small_menu{
+.small_menu {
     display: none;
+    margin-right: 1vw;
+    float: right;
+    margin-top: 2px;
 }
+
+.small_menu p {
+    font-size: 5rem;
+    color: #BE7743;
+}
+.small_menu p:hover{
+    cursor: pointer;
+}
+
+.small_menu_open {
+    display: none;
+    position: fixed;
+    right: 0;
+    background-color: #BE7743;
+    height: 100%;
+    width: 40vw;
+    z-index: 3;
+}
+.small_menu_open p{
+    position: fixed;
+    font-size: 4rem;
+    right: 10px;
+    top: 10px;
+    color: white;
+}
+.small_menu_open p:hover{
+    cursor: pointer;
+}
+.small_menu_open nav{
+    text-align: center;
+    margin-top: 10vh;
+}
+.small_menu_open nav ul li{
+    font-size: 4.5rem;
+    
+}
+.small_menu_open nav ul li a{
+    color: white;
+}
+
 /*
 .sub1 li{
     padding-left: 25px;
@@ -215,18 +281,20 @@ nav > ul > li > ul > li > a:hover{
 nav:hover ul {
     display: block;
 } */
-header article{
-    
+header article {
+
     width: 90vw;
     display: flex;
     justify-content: space-between;
 }
-.head3_line_f{
+
+.head3_line_f {
     width: 5vw;
     height: 50px;
     border-bottom: 2px solid #BE7743;
 }
-.head3_name{
+
+.head3_name {
     margin-top: 25px;
     height: 60px;
     font-size: 4rem;
@@ -234,41 +302,51 @@ header article{
     color: #784520;
 }
 
-.head3_line_s{
+.head3_line_s {
     height: 50px;
     width: 55vw;
     border-bottom: 2px solid #BE7743;
 }
-.head3_archive_a, .head3_calendar_a, .head3_lab_a, .head3_login_a, .head3_test_a{
+
+.head3_archive_a,
+.head3_calendar_a,
+.head3_lab_a,
+.head3_login_a,
+.head3_test_a {
     color: #784520;
-} 
+}
 
 
-footer{
+footer {
     background-color: #393939;
     height: 260px;
     width: 100vw;
 }
-.footer_first{
+
+.footer_first {
     width: 100vw;
     border-bottom: 2px solid #BBBBBB;
     height: 70px;
 }
-.footer_first > li{
+
+.footer_first>li {
     float: left;
     padding: 20px 0vw 20px 3vw;
     height: 30px;
     line-height: 30px;
     font-size: 2rem;
 }
-.footer_first > li > a{
+
+.footer_first>li>a {
     color: #BBBBBB;
 }
-.footer_first > li > a:hover{
+
+.footer_first>li>a:hover {
     text-decoration: underline;
     font-weight: bold;
 }
-.footer_second{
+
+.footer_second {
     width: 90vw;
     padding: 0 5vw;
     display: flex;
@@ -276,83 +354,96 @@ footer{
     height: 150px;
     margin-top: 40px;
 }
-.footer_logo{
+
+.footer_logo {
     height: 100%;
     width: 35%;
 }
-.footer_logo img:first-child{
+
+.footer_logo img:first-child {
     width: 10vw;
 }
-.footer_logo img:nth-child(2){
+
+.footer_logo img:nth-child(2) {
     width: 20vw;
 }
-.footer_explain{
+
+.footer_explain {
     width: 45%;
     color: #BBBBBB;
     font-size: 2.2rem;
 }
-.footer_sns{
+
+.footer_sns {
     width: 20%;
 }
-.footer_sns > p{
+
+.footer_sns>p {
     color: #BBBBBB;
     font-size: 2rem;
 }
-.footer_sns img{
+
+.footer_sns img {
     margin: 10px 5%;
     width: 20%;
     object-fit: cover;
 }
-.small_footer_explain{
+
+.small_footer_explain {
     display: none;
 }
 
 @media (max-width : 768px) {
-    *{
+    * {
+        /* 8px */
         font-size: 50%;
     }
-    .main_head{
+
+    .main_head {
         height: 60px;
     }
-    header nav{
+
+    .nav {
         display: none;
     }
-    .small_menu{
+
+    .small_menu {
         display: block;
-        margin-right: 1vw;
-        float: right;
-        margin-top: 2px;
     }
-    .small_menu p{
-        font-size: 5rem;
-        color: #BE7743;
-        
-    }
-    .mainlogo img{
+
+    .mainlogo img {
         height: 55px;
     }
-    footer{
+
+    footer {
         height: 310px;
     }
-    .footer_second{
+
+    .footer_second {
         height: 110px;
     }
-    .footer_logo{
+
+    .footer_logo {
         width: 60%;
     }
-    .footer_logo img:first-child{
+
+    .footer_logo img:first-child {
         width: 16vw;
     }
-    .footer_logo img:nth-child(2){
+
+    .footer_logo img:nth-child(2) {
         width: 26vw;
     }
-    .footer_sns{
+
+    .footer_sns {
         width: 40%;
     }
-    .footer_explain{
+
+    .footer_explain {
         display: none;
     }
-    .small_footer_explain{
+
+    .small_footer_explain {
         display: block;
         font-size: 3rem;
         color: #BBBBBB;
