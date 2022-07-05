@@ -13,6 +13,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Basic&Alegreya&family=Reenie+Beanie&display=swap"
         rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+<link rel="manifest" href="./favicon/site.webmanifest">
+<link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#bf8256">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
@@ -26,7 +33,7 @@
                     <a href="./login">로그인</a>
                 </div>
             </div> -->
-            <nav>
+            <nav class="nav">
                 <ul>
                     <li><a href="./introduce">소개</a></li>
                     <li><a href="./archive">아카이브</a></li>
@@ -37,8 +44,34 @@
                 </ul>
             </nav>
             <div class="small_menu">
-                <p>≡</p>
+                <p onclick="smallOpen();">≡</p>
+
             </div>
+            <div class="small_menu_open">
+                <p onclick="smallClose();">X</p>
+                <nav>
+                    <ul>
+                        <li><a href="./introduce">소개</a></li>
+                        <li><a href="./archive">아카이브</a></li>
+                        <li><a href="./calendar">달력</a></li>
+                        <!-- <li><a href="./board">게시판</a></li> -->
+                        <li><a href="./lab">실험실</a></li>
+                        <li><a href="./lab">입단 문의</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <script>
+                let small_menu_open = document.getElementsByClassName("small_menu_open")[0];
+                function smallOpen() {
+                    small_menu_open.style.display = 'block';
+                }
+                function smallClose() {
+                    small_menu_open.style.display = 'none';
+                }
+                if (screen.width > 768) {
+                    small_menu_open.style.display = 'none';
+                }
+            </script>
         </div>
     </header>
 
@@ -131,10 +164,10 @@
     </section>
     <footer>
         <div class="footer_first">
-                <li><a href="#">오시는 길</a></li>
-                <li><a href="#">이용 약관</a></li>
-                <li><a href="#">제휴 제안</a></li>
-                <li><a href="#">개인정보 처리방침</a></li>
+            <li><a href="#">오시는 길</a></li>
+            <li><a href="#">이용 약관</a></li>
+            <li><a href="#">제휴 제안</a></li>
+            <li><a href="#">개인정보 처리방침</a></li>
         </div>
         <div class="footer_second">
             <div class="footer_logo">
@@ -142,7 +175,7 @@
                 <img src="무제.png">
             </div>
             <div class="footer_explain">
-                
+
                 <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
                 <p>후원 | ##은행 #####</p><br>
                 <p>copyright 2021 KUPHIL, All rights reserved.</p>
@@ -161,7 +194,7 @@
             </div>
         </div>
         <div class="small_footer_explain">
-                
+
             <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
             <p>후원 | ##은행 #####</p><br>
             <p>copyright 2021 KUPHIL, All rights reserved.</p>
