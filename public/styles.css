@@ -84,6 +84,26 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
     line-height: 32px;
     font-size: 25px;
 } */
+
+.nothing_and_weather {
+    margin-top: 1vw;
+    display: flex;
+}
+
+.nothing {
+    margin-right: 1vw;
+    background-color: burlywood;
+}
+
+.weather {
+    background-color: burlywood;
+}
+
+.nothing, .weather {
+    width: 44.5vw;
+    height: 100px;
+}
+
 .spelling_introduce span {
     color: #FF8A00;
     font-size: 6rem;
