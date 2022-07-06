@@ -171,19 +171,50 @@ button{
 
 .modal_content{
     background-color: white;
-    padding: 50px 100px;
+    width: 65%;
     text-align: center;
     position: relative;
     top: 0px;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    padding: 60px;
 
 }
 
-h1{
-    text-align: center;
-    margin: 0;
+.modal_content img{
+    float: right;
+    width: 292.8px;
+    height: 414px;
+    
+
 }
-/* .hidden{
+
+.modal_content .modal_text {
+    text-align: left;
+    margin: 0 auto;
+
+}
+
+.modal_content .modal_text h1{
+    text-align: left;
+
+
+}
+
+.modal_content .modal_text .modal_text_1{
+    text-align: left;
+    padding: 60px 0;
+}
+
+.modal_content .modal_text .modal_text_1 h3{
+    padding: 15px 0;
+}
+
+.modal_content .modal_text .modal_text_2 h3{
+    padding: 60px 0;
+}
+
+
+.hidden{
     display: none;
-} */
+}
