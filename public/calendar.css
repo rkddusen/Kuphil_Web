@@ -183,6 +183,7 @@ form{
         padding : 0;
         border: 2px solid #94613C;
         border-bottom-width: 1px;
+        height: 40vw;
     }
     .calendar_move{
         margin-bottom: 5px;
@@ -193,30 +194,33 @@ form{
         cursor: pointer;
     }
     .calendar_now{
-        font-size: 3rem;
+        font-size: 4rem;
     }
     .calendar_now_month{
-        font-size: 5rem;
+        font-size: 5.5rem;
     }
     .calendar_table{
         width: 90vw;
-        height: 50vw;
+        height: 70vw;
         padding: 0;
         border: 2px solid #94613C;
         border-top-width: 1px;
         border-bottom-width: 1px;
     }
     td{
-        width: 5vw;
-        height: 5vw;
-        padding: 0.5vw;
+        width: 7vw;
+        height: 7vw;
+        padding: 0.8vw;
     }
     thead td{
-        font-size: 2vw;
+        font-size: 3vw;
+    }
+    tbody td{
+        font-size: 2.5vw;
     }
     .schedule_box{
         width: 90vw;
-        height: 50vw;
+        height: 70vw;
         padding: 0;
     }
 }
