@@ -1,12 +1,14 @@
 .gameContents{
-    padding: 0 30px;
-    width: 1130px;
-    margin: 0 auto;
-    margin-top: 120px;
+    padding: 0 5vw;
+    width: 90vw;
+    margin-top: 100px;
+    height: auto;
+    min-height: 100%;
+    padding-bottom: 260px;
 }
 
 .question{
-    font-size: 30px;
+    font-size: 4vw;
     text-align: center;
 }
 
@@ -14,18 +16,19 @@
     display: flex;
     justify-content: center;
 }
-.firstAnswer button{font-size: 25px;
-    width: 400px;
-    height: 100px;
-    margin: 100px 50px 150px 50px;
+.firstAnswer button{
+    font-size: 2vw;
+    width: 40vw;
+    height: 10vw;
+    margin: 50px 2vw 50px 0;
     border: 2px solid blue;
     background-color: #EFEFFB;
 }
 .secondAnswer button{
-    font-size: 25px;
-    width: 400px;
-    height: 100px;
-    margin: 100px 50px 150px 50px;
+    font-size: 2vw;
+    width: 40vw;
+    height: 10vw;
+    margin: 50px 0 50px 2vw;
     border: 2px solid red;
     background-color: #FBEFEF;
 }
@@ -34,15 +37,38 @@
 }
 .resultText{
     text-align: center;
-    font-size: 20px;
-    margin: 30px 0 10px 0;
-    line-height: 40px;
+    font-size: 2rem;
 }
-.resultImg{
-    margin-bottom: 50px;
+.resultName{
+    font-size: 4rem;
+    padding: 10px;
+    color: brown;
+}
+.resultText p:nth-child(2), .resultText p:nth-child(3){
+    font-size: 2rem;
+    line-height: 3rem;
 }
 
-.resultName{
-    font-size: 40px;
-    color: brown;
+@media (max-width : 768px) {
+    .answer{
+        display: block;
+    }
+    .firstAnswer button{
+        font-size: 2.5vw;
+        width: 90vw;
+        margin: 0;
+        margin: 50px 0 10px 0;
+        height: 50px;
+    }
+    .secondAnswer button{
+        font-size: 2.5vw;
+        width: 90vw;
+        margin: 0;
+        margin: 10px 0;
+        height: 50px;
+    }
+    .resultText p:nth-child(2), .resultText p:nth-child(3){
+        font-size: 1.5rem;
+        line-height: 3rem;
+    }
 }

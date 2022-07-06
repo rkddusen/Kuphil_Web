@@ -30,7 +30,7 @@ function showResult(resultMax) {
             endText += "<p class='resultName'>Conductor</p><p>뛰어난 관찰력과 순발력이 돋보이는 당신!<br>어디를 가나 리더 자리를 맡을 일이 많으신가요?<br>리더십이 강하고 멋진 카리스마를 지닌 당신에게는, <br>오케스트라를 전두지휘하는 총사령관 '지휘자'가 어울려요!<br>지식을 바탕으로 독자적인 해석을 설득력있게 펼칠 수 있는 창의력이 정말 중요한 지휘자!<p>";
             break;
         case 1:
-            endText += "<p class='resultName'>1st Violin</p><p>지휘자</p><p>누구보다도 섬세한 감성과 날카로운 지성이 돋보이는 당신! <br>그래서인지 친구들에게 종종 '예민 보스' 라는 놀림을 받기도 하는데요? <br>뭐든 정확하지 않으면 참을 수 없는 당신에게는, <br>0.1mm의 오차도 허용될 수 없는 예민한 음감이 필수인 '퍼스트 바이올린'이 어울려요! <br>가장 많은 멜로디를 담당해 오케스트라의 꽃이라고도 불리는 퍼스트 바이올린!<p>";
+            endText += "<p class='resultName'>1st Violin</p><p>누구보다도 섬세한 감성과 날카로운 지성이 돋보이는 당신! <br>그래서인지 친구들에게 종종 '예민 보스' 라는 놀림을 받기도 하는데요? <br>뭐든 정확하지 않으면 참을 수 없는 당신에게는, <br>0.1mm의 오차도 허용될 수 없는 예민한 음감이 필수인 '퍼스트 바이올린'이 어울려요! <br>가장 많은 멜로디를 담당해 오케스트라의 꽃이라고도 불리는 퍼스트 바이올린!<p>";
             break;
         case 2:
             endText += "<p class='resultName'>2nd Violin</p><p>바이올린의 아름다운 음색은 좋지만 특유의 찢어지는 듯한 고음은 영 싫은 당신! <br>당신에게는, 오케스트라의 화음을 뒷받침 해주는 '세컨 바이올린'이 어울려요!<br>혹자는 바이올린을 잘하면 퍼스트, 못하면 세컨 바이올린을 간다고 하기도 하지만 그건 엄청난 오해라구요~!<br>제대로 연주하기 위해서는 뛰어난 박자감이 필수인 세컨 바이올린!<p>";
@@ -113,7 +113,7 @@ function startGame() {
 }
 function endGame() {
     let ques = document.getElementsByClassName("question")[0];
-    let quesText = '! 결과 !';
+    let quesText = '';
     ques.innerHTML = quesText;
     document.getElementsByClassName("firstAnswer")[0].innerHTML = '';
     document.getElementsByClassName("secondAnswer")[0].innerHTML = '';

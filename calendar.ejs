@@ -5,7 +5,15 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/calendar.css">
     <link rel="stylesheet" type="text/css" href="/headfoot.css">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#bf8257">
+    <meta name="msapplication-TileColor" content="#bf8257">
+    <meta name="theme-color" content="#ffffff">
+    <title>KUPHIL</title>
 </head>
 
 <body>
@@ -20,15 +28,45 @@
                     <a href="./login">로그인</a>
                 </div>
             </div> -->
-            <nav>
+            <nav class="nav">
                 <ul>
                     <li><a href="./introduce">소개</a></li>
                     <li><a href="./archive">아카이브</a></li>
                     <li><a href="./calendar">달력</a></li>
                     <!-- <li><a href="./board">게시판</a></li> -->
                     <li><a href="./lab">실험실</a></li>
+                    <li><a href="./lab">입단 문의</a></li>
                 </ul>
             </nav>
+            <div class="small_menu">
+                <p onclick="smallOpen();">≡</p>
+
+            </div>
+            <div class="small_menu_open">
+                <p onclick="smallClose();">X</p>
+                <nav>
+                    <ul>
+                        <li><a href="./introduce">소개</a></li>
+                        <li><a href="./archive">아카이브</a></li>
+                        <li><a href="./calendar">달력</a></li>
+                        <!-- <li><a href="./board">게시판</a></li> -->
+                        <li><a href="./lab">실험실</a></li>
+                        <li><a href="./lab">입단 문의</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <script>
+                let small_menu_open = document.getElementsByClassName("small_menu_open")[0];
+                function smallOpen() {
+                    small_menu_open.style.display = 'block';
+                }
+                function smallClose() {
+                    small_menu_open.style.display = 'none';
+                }
+                if (screen.width > 768) {
+                    small_menu_open.style.display = 'none';
+                }
+            </script>
         </div>
         <article>
             <div class="head3_line_f"></div>
@@ -76,7 +114,7 @@
             </script>
             <!-- 스케줄 적히는 공간 -->
             <div class="schedule_box">
-                <button id="sche_plus" onclick="showForm();">±</button>
+                <!-- <button id="sche_plus" onclick="showForm();">±</button> -->
                 <div class="sche_date"></div>
                 <div class="sche_date_output"></div>
                 <div class="sche_date"></div>
@@ -84,28 +122,28 @@
             </div>
         </section>
         <!-- 일정을 추가할 수 있는 영역 -->
-        <div id="add">
+        <!-- <div id="add">
             <div id="add_data"></div>
             <div id="delete_data"></div>
-        </div>
+        </div> -->
     </div>
     <!-- 푸터 -->
     <footer>
         <div class="footer_first">
-                <li><a href="#">오시는 길</a></li>
-                <li><a href="#">이용 약관</a></li>
-                <li><a href="#">제휴 제안</a></li>
-                <li><a href="#">개인정보 처리방침</a></li>
+            <li><a href="#">오시는 길</a></li>
+            <li><a href="#">이용 약관</a></li>
+            <li><a href="#">제휴 제안</a></li>
+            <li><a href="#">개인정보 처리방침</a></li>
         </div>
         <div class="footer_second">
             <div class="footer_logo">
-                <img src="graylogo.png" height="100px">
-                <img src="무제.png" height="100px">
+                <img src="graylogo.png">
+                <img src="무제.png">
             </div>
             <div class="footer_explain">
-                
+
                 <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
-                <p>후원 | 국민은행 279601-04-157891</p><br>
+                <p>후원 | ##은행 #####</p><br>
                 <p>copyright 2021 KUPHIL, All rights reserved.</p>
             </div>
             <div class="footer_sns">
@@ -120,6 +158,12 @@
                     <img src="kuphil_facebook.png" alt="쿠필 페이스북">
                 </a>
             </div>
+        </div>
+        <div class="small_footer_explain">
+
+            <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+            <p>후원 | ##은행 #####</p><br>
+            <p>copyright 2021 KUPHIL, All rights reserved.</p>
         </div>
     </footer>
 </body>

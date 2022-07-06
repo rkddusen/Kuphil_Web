@@ -1,9 +1,9 @@
 .calendar_page{
     display: flex;
     flex-direction: column;
-    width: 1130px;
-    padding: 0 30px;
-    margin: 0 auto;
+    width: 90vw;
+    padding: 0 5vw;
+    margin: 70px 0;
 }
 .calendar{
     display: flex;
@@ -12,9 +12,8 @@
 
 .calendar_title{
     display: flex;
-    width: 420px;
-    margin-top: 70px;
-    height: 420px;
+    width: 32vw;
+    height: 32vw;
     background-color: #FFF1E7;
     border: 2px solid #94613C;
     border-right-width: 1px;
@@ -22,6 +21,7 @@
     text-align: center;
     flex-direction: column;
     justify-content: space-between;
+    padding: 20px 10px 0 10px;
 }
 /* #table_title input{
     cursor: pointer;
@@ -33,24 +33,23 @@
 }
 .table_move{
     border: none;
-    font-size: 20px;
+    font-size: 2rem;
     color: #94613C;
     margin: 0 15px;
     cursor: pointer;
 }
 .calendar_now{
-    margin-top: 120px;
-    font-size: 36px;
+    margin: auto 0;
+    font-size: 3.6rem;
     text-align: center;
     color: #94613C;
 }
 .calendar_now_month{
-    font-size: 100px;
+    font-size: 10rem;
 }
 .calendar_table{
-    width: 500px;
-    height: 400px;
-    margin-top: 70px;
+    width: 40vw;
+    height: 32vw;
     padding: 20px 10px 0 10px;
     border: 2px solid #94613C;
     border-left-width: 1px;
@@ -62,16 +61,16 @@
     margin: 0 auto;text-align: center;
 }
 td{
-    width: 40px;
-    height: 40px;
-    padding: 5px;
+    width: 2.5vw;
+    height: 2.5vw;
+    padding: 0.6vw;
 }
 thead td{
-    font-size: 21px;
+    font-size: 1.6vw;
 }
 
 tbody td{
-    font-size: 20px;
+    font-size: 1.5vw;
     border-top-left-radius: 100%;
     border-top-right-radius: 100%;
     border-bottom-right-radius: 100%;
@@ -79,26 +78,27 @@ tbody td{
 }
 
 .schedule_box{
-    width: 942px;
-    height: 400px;
+    width: 72vw;
+    height: 35vw;
     border: 2px solid #94613C;
     border-top: 1px solid #94613C;
     margin: 0 auto;
+    padding: 0 21px;
 }
 .sche_date{
-    font-size: 30px;
-    margin: 40px 0 20px 40px;
+    font-size: 3rem;
+    margin: 2vw 0 1vw 2vw;
 }
 
 .sche_date_output{
-    font-size: 20px;
-    margin: 10px 10px 10px 80px;
+    font-size: 2.3rem;
+    margin: 10px 10px 10px 50px;
 }
 .schedule_data{
     margin: 5px auto;
 }
 
-#sche_plus{
+/* #sche_plus{
     text-align: center;
     margin: 5px;
     float: right;
@@ -111,7 +111,7 @@ tbody td{
     border: none;
     cursor: pointer;
     color: #94613C;
-}
+} */
 .cal{
     cursor: pointer;
 }
@@ -169,4 +169,58 @@ form{
     height: 20px;
     border: 1px solid black;
     background-color: white;
+}
+
+@media (max-width : 768px) {
+    .calendar_page{
+        margin: 40px 0;
+    }
+    .calendar{
+        display: block;
+    }
+    .calendar_title{
+        width: 90vw;
+        padding : 0;
+        border: 2px solid #94613C;
+        border-bottom-width: 1px;
+        height: 40vw;
+    }
+    .calendar_move{
+        margin-bottom: 5px;
+    }
+    .table_move{
+        font-size: 1.5rem;
+        margin: 0 10px;
+        cursor: pointer;
+    }
+    .calendar_now{
+        font-size: 4rem;
+    }
+    .calendar_now_month{
+        font-size: 5.5rem;
+    }
+    .calendar_table{
+        width: 90vw;
+        height: 70vw;
+        padding: 0;
+        border: 2px solid #94613C;
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+    }
+    td{
+        width: 7vw;
+        height: 7vw;
+        padding: 0.8vw;
+    }
+    thead td{
+        font-size: 3vw;
+    }
+    tbody td{
+        font-size: 2.5vw;
+    }
+    .schedule_box{
+        width: 90vw;
+        height: 70vw;
+        padding: 0;
+    }
 }

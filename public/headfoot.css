@@ -30,6 +30,7 @@ img {
 button {
     user-select: none;
     cursor: pointer;
+    color: black;
 }
 
 
@@ -304,7 +305,7 @@ header article {
 
 .head3_line_s {
     height: 50px;
-    width: 55vw;
+    width: 50vw;
     border-bottom: 2px solid #BE7743;
 }
 
@@ -319,8 +320,9 @@ header article {
 
 footer {
     background-color: #393939;
-    height: 260px;
+    height: 20vw;
     width: 100vw;
+    min-height: 260px;
 }
 
 .footer_first {
@@ -398,6 +400,23 @@ footer {
         /* 8px */
         font-size: 50%;
     }
+    header{
+        height: 140px;
+    }
+    .head3_line_f {
+        height: 40px;
+    }
+    
+    .head3_name {
+        margin-top: 15px;
+        font-size: 5rem;
+        font-weight: bold;
+        color: #784520;
+    }
+    
+    .head3_line_s {
+        height: 40px;
+    }
 
     .main_head {
         height: 60px;
@@ -448,5 +467,12 @@ footer {
         font-size: 3rem;
         color: #BBBBBB;
         text-align: center;
+    }
+}
+
+@media (max-width : 500px) {
+    .head3_name {
+        margin-top: 25px;
+        font-size: 3rem;
     }
 }

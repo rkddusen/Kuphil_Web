@@ -272,7 +272,7 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
 
 @media (max-width : 768px) {
     #main_welcome {
-        margin-top: -130px;
+        margin-top: -70px;
     }
     #main_welcome > p{
         font-size: 5rem;
@@ -299,5 +299,10 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     }
     #circle1, #circle2, #circle3, #circle4, #circle5, #circle6{
         display: none;
+    }
+}
+@media (max-width : 500px) {
+    .spell {
+        height: 400px;
     }
 }
