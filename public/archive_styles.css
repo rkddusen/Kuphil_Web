@@ -8,9 +8,16 @@
 
 /* 아카이브 body css */
 
+.archiveBox{
+    height: auto;
+    min-height: 90%;
+    padding-bottom: 100px;
+}
+
+
 #arc_notice{
     margin: 2vw auto;
-    width:90vw;
+    width:88vw;
     padding:0 6vw;
     font-size: 3rem;
     line-height:150%;
