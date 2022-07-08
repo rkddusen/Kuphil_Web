@@ -14,15 +14,48 @@ function removeColor() {
 // 소개 변경
 function getPath(btn){
     removePath();
-    removeColor();
     if (btn.value=="수의대"){
-        let where=document.getElementsByClassName("year")[1];
-        when.style.color="#BE7743";
         let Pathway;
         let Path = document.createElement('div');
         Path.setAttribute('class', 'path');
         Path.id='kuphil_room';
-        Pathway= '<img src="map_front.png" alt="수의대에서 동방 오는 길">';
+        Pathway= '<img src="map_front.jpg" alt="수의대에서 동방 오는 길">';
+        Pathway+='<p>1. 설명글입니다</p>';
+        Pathway+='</div>';
+        Path.innerHTML=Pathway;
+        let pathway=document.getElementById('pathway');
+        pathway.appendChild(Path);
+
+    } else if (btn.value=="경영대학 (후문)"){
+        let Pathway;
+        let Path = document.createElement('div');
+        Path.setAttribute('class', 'path');
+        Path.id='kuphil_room';
+        Pathway= '<img src="map_back.png" alt="경영대학 (후문)에서 동방 오는 길">';
+        Pathway+='<p>1. 설명글입니다</p>';
+        Pathway+='</div>';
+        Path.innerHTML=Pathway;
+        let pathway=document.getElementById('pathway');
+        pathway.appendChild(Path);
+
+    }   else if (btn.value=="도서관 (중문)"){
+        let Pathway;
+        let Path = document.createElement('div');
+        Path.setAttribute('class', 'path');
+        Path.id='kuphil_room';
+        Pathway= '<img src="map_library.jpg" alt="도서관 (중문)에서 동방 오는 길">';
+        Pathway+='<p>1. 설명글입니다</p>';
+        Pathway+='</div>';
+        Path.innerHTML=Pathway;
+        let pathway=document.getElementById('pathway');
+        pathway.appendChild(Path);
+
+    }   else if (btn.value=="신공학관"){
+        let Pathway;
+        let Path = document.createElement('div');
+        Path.setAttribute('class', 'path');
+        Path.id='kuphil_room';
+        Pathway= '<img src="#" alt="신공학관에서 동방 오는 길">';
         Pathway+='<p>1. 설명글입니다</p>';
         Pathway+='</div>';
         Path.innerHTML=Pathway;
