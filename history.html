@@ -3,15 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>KUPhil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/headfoot.css">
     <link rel="stylesheet" type="text/css" href="/history.css">
-    <!--link rel="preconnect" href="https://fonts.googleapis.com"-->
-    <!--link rel="preconnect" href="https://fonts.gstatic.com" crossorigin-->
-    <!--link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet"-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#bf8257">
+    <meta name="msapplication-TileColor" content="#bf8257">
+    <meta name="theme-color" content="#ffffff">
     <script src="history.js" type="text/javascript"></script>
+    <title>KUPHIL</title>
 </head>
-    
+
 <body>
     <header>
         <div class="main_head">
@@ -23,15 +28,45 @@
                     <a href="./login">로그인</a>
                 </div>
             </div> -->
-            <nav>
+            <nav class="nav">
                 <ul>
                     <li><a href="./introduce">소개</a></li>
                     <li><a href="./archive">아카이브</a></li>
                     <li><a href="./calendar">달력</a></li>
                     <!-- <li><a href="./board">게시판</a></li> -->
                     <li><a href="./lab">실험실</a></li>
+                    <li><a href="./lab">입단 문의</a></li>
                 </ul>
             </nav>
+            <div class="small_menu">
+                <p onclick="smallOpen();">≡</p>
+
+            </div>
+            <div class="small_menu_open">
+                <p onclick="smallClose();">X</p>
+                <nav>
+                    <ul>
+                        <li><a href="./introduce">소개</a></li>
+                        <li><a href="./archive">아카이브</a></li>
+                        <li><a href="./calendar">달력</a></li>
+                        <!-- <li><a href="./board">게시판</a></li> -->
+                        <li><a href="./lab">실험실</a></li>
+                        <li><a href="./lab">입단 문의</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <script>
+                let small_menu_open = document.getElementsByClassName("small_menu_open")[0];
+                function smallOpen() {
+                    small_menu_open.style.display = 'block';
+                }
+                function smallClose() {
+                    small_menu_open.style.display = 'none';
+                }
+                if (screen.width > 768) {
+                    small_menu_open.style.display = 'none';
+                }
+            </script>
         </div>
         <article>
             <div class="head3_line_f"></div>
@@ -57,9 +92,9 @@
     </div>-->
 
     <div id="historyyyyyyy" class="back">
-        <div id="background" class="back_image">
-            <img src="kuphil_black_logo.png" alt="바탕 로고">
-        </div>
+        <!--<div id="background" class="back_image">
+            <img src="kuphil_black_logo.png" id="back_logo" alt="바탕 로고">
+        </div>-->
 
         <!--<div class="our_history" id="our_history">
             <div id="story" class="kuphil_history">
@@ -74,109 +109,24 @@
             </div>
         </div>-->
 
-
-        <div class="year5">
-            <section>2022</section>
+        <div class="year1">
+            <section>2003</section>
             <p>
-                2022.02.27. 제 38회 정기 연주회<br>
+                2003.05.    창단 연주회<br>
+                2003.11.26. 제 2회 정기연주회<br>
             </p>
 
-            <section>2021</section>
+            <section>2004</section>
             <p>
-                2021.08.28. 제 37회 정기 연주회<br>
-                2021.10.12. 광진예술제 (나루와 함께 하는 Kuphil 영화 여행)<br>
-            </p>
-
-            <section>2020</section>
-            <p>
-                2020.02.28. (취소) 제 35회 정기 연주회<br>
-                2020.08.28. (취소) 제 36회 정기 연주회<br>
-            </p>
+                2004.05.27. 제 3회 정기연주회<br>
+                2004.11.24. 제 4회 정기연주회<br>
+            </p>       
         </div>
 
-        <div class="year4">
-            <section>2019</section>
-            <p>
-                2019.03.01. 제 33회 정기 연주회<br>
-                2019.05.16. 대동제 연주<br>
-                2019.08.30. 제 34회 정기 연주회<br>
-                2019.12.    제 1회 동아리 경진 대회 대상 수상<br>
-            </p>
-
-            <section>2018</section>
-            <p>
-                2018.03.08. 제 31회 정기 연주회<br>
-                2018.09.01. 제 32회 정기 연주회<br>
-            </p>
-
-            <section>2017</section>
-            <p>
-                2017.03.10. 제 29회 정기 연주회<br>
-                2017.09.08. 제 30회 정기 연주회<br>
-            </p> 
-
-            <section>2016</section>  
-            <p>
-                2016.03.03. 제 27회 정기 연주회<br>
-                2016.09.03. 제 28회 정기 연주회<br>
-            </p> 
-
-            <section>2015</section>
-            <p>
-                2015.02.27. 제 25회 정기 연주회<br>
-            </p>
-        </div>
-
-        <div class="year3">
-            <section>2014</section>
-            <p>
-                2014.03.06. 제 22회 정기 연주회<br>
-                2014.09.05. 제 23회 정기 연주회<br>
-                2014.11.16. 제 24회 정기 연주회<br>
-            </p> 
-
-            <section>2013</section>
-            <p>
-                2013.03.07. 제 20회 정기 연주회<br>
-                2013.09.03. 제 21회 정기 연주회<br>
-            </p>
-
-            <section>2012</section>
-            <p>
-                2012.03.18. 제 18회 정기 연주회<br>
-                2012.09.15. 제 19회 정기 연주회<br>
-            </p>   
-
-            <section>2011</section>
-            <p>
-                2011.03.18. 제 16회 정기 연주회<br>
-                2011.08.31. 제 17회 정기 연주회<br>
-            </p>   
-
-            <section>2010</section>
-            <p>
-                2010.03.05. 제 14회 정기 연주회<br>
-                2010.09.10. 제 15회 정기 연주회<br>
-            </p>     
-        </div>        
-            
         <div class="year2">
-            <section>2009</section>
+            <section>2005</section>
             <p>
-                2009.03.05. 제 12회 정기 연주회<br>
-                2009.09.11. 제 13회 정기 연주회<br>
-            </p> 
-
-            <section>2008</section>
-            <p>
-                2008.03.07. 제 10회 정기 연주회<br>
-                2008.09.04. 제 11회 정기 연주회<br>
-            </p>
-
-            <section>2007</section>
-            <p>
-                2007.03.09. 제 8회 정기 연주회<br>
-                2007.09.16. 제 9회 정기 연주회<br>
+                2005.09.08. 제 5회 정기 연주회<br>
             </p>
 
             <section>2006</section>
@@ -185,23 +135,111 @@
                 2006.09.22. 제 7회 정기 연주회<br>
             </p>
 
-            <section>2005</section>
+            <section>2007</section>
             <p>
-                2005.09.08. 제 5회 정기 연주회<br>
+                2007.03.09. 제 8회 정기 연주회<br>
+                2007.09.16. 제 9회 정기 연주회<br>
             </p>
+            
+            <section>2008</section>
+            <p>
+                2008.03.07. 제 10회 정기 연주회<br>
+                2008.09.04. 제 11회 정기 연주회<br>
+            </p>
+
+            <section>2009</section>
+            <p>
+                2009.03.05. 제 12회 정기 연주회<br>
+                2009.09.11. 제 13회 정기 연주회<br>
+            </p> 
         </div>
 
-        <div class="year1">
-            <section>2004</section>
+        <div class="year3">
+            <section>2010</section>
             <p>
-                2004.05.27. 제 3회 정기연주회<br>
-                2004.11.24. 제 4회 정기연주회<br>
-            </p>       
+                2010.03.05. 제 14회 정기 연주회<br>
+                2010.09.10. 제 15회 정기 연주회<br>
+            </p>  
+
+            
+            <section>2011</section>
+            <p>
+                2011.03.18. 제 16회 정기 연주회<br>
+                2011.08.31. 제 17회 정기 연주회<br>
+            </p>  
+
+            
+            <section>2012</section>
+            <p>
+                2012.03.18. 제 18회 정기 연주회<br>
+                2012.09.15. 제 19회 정기 연주회<br>
+            </p>   
+
+            <section>2013</section>
+            <p>
+                2013.03.07. 제 20회 정기 연주회<br>
+                2013.09.03. 제 21회 정기 연주회<br>
+            </p>
+
+            <section>2014</section>
+            <p>
+                2014.03.06. 제 22회 정기 연주회<br>
+                2014.09.05. 제 23회 정기 연주회<br>
+                2014.11.16. 제 24회 정기 연주회<br>
+            </p> 
+        </div>   
         
-            <section>2003</section>
+        <div class="year4">
+            <section>2015
             <p>
-                2003.05.    창단 연주회<br>
-                2003.11.26. 제 2회 정기연주회<br>
+                2015.02.27. 제 25회 정기 연주회<br> 
+                2015. 여름. 육회 먹고 싶다<br>
+            </p>
+            </section>
+            
+            <section>2016</section>  
+            <p>
+                2016.03.03. 제 27회 정기 연주회<br>
+                2016.09.03. 제 28회 정기 연주회<br>
+            </p> 
+
+            <section>2017</section>
+            <p>
+                2017.03.10. 제 29회 정기 연주회<br>
+                2017.09.08. 제 30회 정기 연주회<br>
+            </p> 
+
+            <section>2018</section>
+            <p>
+                2018.03.08. 제 31회 정기 연주회<br>
+                2018.09.01. 제 32회 정기 연주회<br>
+            </p>
+
+            <section>2019</section>
+            <p>
+                2019.03.01. 제 33회 정기 연주회<br>
+                2019.05.16. 대동제 연주<br>
+                2019.08.30. 제 34회 정기 연주회<br>
+                2019.12.    제 1회 동아리 경진 대회 대상 수상<br>
+            </p>
+        </div>
+        
+        <div class="year5">
+            <section>2020</section>
+            <p>
+                2020.02.28. (취소) 제 35회 정기 연주회<br>
+                2020.08.28. (취소) 제 36회 정기 연주회<br>
+            </p>
+
+            <section>2021</section>
+            <p>
+                2021.08.28. 제 37회 정기 연주회<br>
+                2021.10.12. 광진예술제 (나루와 함께 하는 Kuphil 영화 여행)<br>
+            </p>
+
+            <section>2022</section>
+            <p>
+                2022.02.27. 제 38회 정기 연주회<br>
             </p>
         </div>
     </div>
