@@ -24,6 +24,7 @@ a{
     font-size: 20px;
     color: #BE7743;
     cursor:pointer;
+    z-index:1000000;
 }
 
 .Years:hover{    
@@ -32,19 +33,23 @@ a{
 }
 
 .back{
+    background-color:transparent;
     position: relative;
     width: 1130px;
     height: 100%;
     margin: 0 auto;
 }
 
-.back_image img{
-    position: absolute;
+/*#back_logo{
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 619.35px;
     height: 551.7px;
     opacity: 0.2;
-    padding: 50% 255.325px;
-}
+    z-index:-1000;
+}*/
 
 /*.our_history{
     width: 1130px;

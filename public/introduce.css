@@ -89,14 +89,14 @@ a{
     font-size: 17px;
 }
 
-#start_location{
+.start_location{
     width: 1300px;
     margin: 30px auto;
     display: flex;
     justify-content: space-evenly;
 }
 
-.select_button{
+.start_location > input{
     border: none;
     background-color: transparent;
     font-size: 15px;
@@ -104,7 +104,7 @@ a{
     cursor:pointer;
 }
 
-.select_button:hover{    
+.start_location > input:hover{    
     color:#5C3A1A;
     font-weight: bold;
 }
