@@ -3,12 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>KUPhil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/headfoot.css">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
     <link rel="stylesheet" type="text/css" href="/introduce.css">
-    <!--link rel="preconnect" href="https://fonts.googleapis.com"-->
-    <!--link rel="preconnect" href="https://fonts.gstatic.com" crossorigin-->
-    <!--link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet"-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#bf8257">
+    <meta name="msapplication-TileColor" content="#bf8257">
+    <meta name="theme-color" content="#ffffff">
+    <title>KUPHIL</title>
 </head>
 
 <body>
@@ -22,7 +28,7 @@
                     <a href="./login">로그인</a>
                 </div>
             </div> -->
-            <nav>
+            <nav class="nav">
                 <ul>
                     <li><a href="./introduce">소개</a></li>
                     <li><a href="./archive">아카이브</a></li>
@@ -32,6 +38,35 @@
                     <li><a href="./lab">입단 문의</a></li>
                 </ul>
             </nav>
+            <div class="small_menu">
+                <p onclick="smallOpen();">≡</p>
+
+            </div>
+            <div class="small_menu_open">
+                <p onclick="smallClose();">X</p>
+                <nav>
+                    <ul>
+                        <li><a href="./introduce">소개</a></li>
+                        <li><a href="./archive">아카이브</a></li>
+                        <li><a href="./calendar">달력</a></li>
+                        <!-- <li><a href="./board">게시판</a></li> -->
+                        <li><a href="./lab">실험실</a></li>
+                        <li><a href="./lab">입단 문의</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <script>
+                let small_menu_open = document.getElementsByClassName("small_menu_open")[0];
+                function smallOpen() {
+                    small_menu_open.style.display = 'block';
+                }
+                function smallClose() {
+                    small_menu_open.style.display = 'none';
+                }
+                if (screen.width > 768) {
+                    small_menu_open.style.display = 'none';
+                }
+            </script>
         </div>
         <!-- <article class="head3_introduce">
             <hr class="front_hr"><p><a class="head3_introduce_a" href="./introduce">소개</a> &ensp;|&ensp; <a class="head3_history_a" href="./history">연혁</a></p><hr class="back_hr_introduce">
@@ -67,16 +102,23 @@
 
 
     <div id="path">
-        <p> 찾아오시는 길</p>
+        <span> 찾아오시는 길</span>
         <div id="how">
-            <img src="final_MAP.JPG" alt="동방 오는 길">
-            <span>
-                <br>1. 건대입구역 4번 출구 -> 건대병원 -> 상허문/일감문 
-                <br> -> 동물생명대학 -> 제2학생회관 지하로 내려오기 <br><br>
-                <br>2. 어린이대공원역 3번 출구 -> 건국대학교 건국문 
-                <br> -> 홍예교 -> 제2학생회관 지하로 내려오기
-                <br><br><br> 제2학생회관 내려오는 계단은 홍예교 앞, 공과대학 맞은편 노천극장 입구에 있습니다.
-            </span>
+            <div class="pathway" id="pathway">
+                <div class="start_location" id="start_location">
+                    <input class="start_location1" type="button" value="수의대" onclick="getPath(this);">
+                    <input class="start_location2" type="button" value="경영대학 (후문)" onclick="getPath(this);">
+                    <input class="start_location3"  type="button" value="도서관 (중문)" onclick="getPath(this);"> 
+                    <input class="start_location4" type="button" value="신공학관" onclick="getPath(this);">
+                </div>
+                <div class="path" id="kuphil_room"> 
+                    <img src="final_MAP.JPG" alt="동방 위치">
+                    <p>출발 지점을 선택하세요.</p>
+                </div>
+            </div>
+            <div id="stairs">
+                제 2 학생회관 지하로 내려오는 계단은 홍예교 앞 또는 공과대학 맞은편 노천극장 입구에 있습니다.
+            </div>
         </div>
     </div>
 
