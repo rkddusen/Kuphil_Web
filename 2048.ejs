@@ -5,7 +5,15 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/2048.css">
     <link rel="stylesheet" type="text/css" href="/headfoot.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#bf8257">
+    <meta name="msapplication-TileColor" content="#bf8257">
+    <meta name="theme-color" content="#ffffff">
+    <title>KUPHIL</title>
 </head>
 
 <body>
@@ -15,7 +23,12 @@
             <div class="mainlogo">
                 <a href="./"><img src="kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
             </div>
-            <nav>
+            <!-- <div class="head1">
+                <div>
+                    <a href="./login">로그인</a>
+                </div>
+            </div> -->
+            <nav class="nav">
                 <ul>
                     <li><a href="./introduce">소개</a></li>
                     <li><a href="./archive">아카이브</a></li>
@@ -25,6 +38,32 @@
                     <li><a href="./lab">입단 문의</a></li>
                 </ul>
             </nav>
+            <div class="small_menu">
+                <p onclick="smallOpen();">≡</p>
+
+            </div>
+            <div class="small_menu_open">
+                <p onclick="smallClose();">X</p>
+                <nav>
+                    <ul>
+                        <li><a href="./introduce">소개</a></li>
+                        <li><a href="./archive">아카이브</a></li>
+                        <li><a href="./calendar">달력</a></li>
+                        <!-- <li><a href="./board">게시판</a></li> -->
+                        <li><a href="./lab">실험실</a></li>
+                        <li><a href="./lab">입단 문의</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <script>
+                let small_menu_open = document.getElementsByClassName("small_menu_open")[0];
+                function smallOpen() {
+                    small_menu_open.style.display = 'block';
+                }
+                function smallClose() {
+                    small_menu_open.style.display = 'none';
+                }
+            </script>
         </div>
         <article>
             <div class="head3_line_f"></div>
@@ -36,61 +75,59 @@
         let name = "<%=name%>".split(",");
         let bestscore = "<%=bestscore%>".split(",");
     </script>
-    <div class="total_area">
-        <div class="game_area">
-            <div>
-                <div class="game_best">최고 기록 : <%=name[0]%> (<span class="game_best_score">
-                            <%=bestscore[0]%>
-                        </span>점)</div>
-                <div class="game_my">현재 기록 : <span class="game_my_score">0</span>점</div>
-            </div>
-            <div class="game_content">
-                <table>
-                    <tr>
-                        <td class="block11"></td>
-                        <td class="block12"></td>
-                        <td class="block13"></td>
-                        <td class="block14"></td>
-                    </tr>
-                    <tr>
-                        <td class="block21"></td>
-                        <td class="block22"></td>
-                        <td class="block23"></td>
-                        <td class="block24"></td>
-                    </tr>
-                    <tr>
-                        <td class="block31" onclick="how_to_game();" id="game_how">게임 방법</td>
-                        <td class="block32" onclick="init();" id="game_start">시작하기</td>
-                        <td class="block33" onclick="history.back();" id="game_end">돌아가기</td>
-                        <td class="block34" onclick="top15();" id="game_top">Top 15</td>
-                    </tr>
-                    <tr>
-                        <td class="block41"></td>
-                        <td class="block42"></td>
-                        <td class="block43"></td>
-                        <td class="block44"></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="game_button">
-                <table>
-                    <tr>
-                        <td></td>
-                        <td><button class="game_button_up">▲</button></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td><button class="game_button_left">◀︎</button></td>
-                        <td><button class="game_button_center">◎</button></td>
-                        <td><button class="game_button_right">▶︎</button></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><button class="game_button_down">▼</button></td>
-                        <td></td>
-                    </tr>
-                </table>
-            </div>
+    <div class="game_area">
+        <div>
+            <div class="game_best">최고 기록 : <%=name[0]%> (<span class="game_best_score">
+                        <%=bestscore[0]%>
+                    </span>점)</div>
+            <div class="game_my">현재 기록 : <span class="game_my_score">0</span>점</div>
+        </div>
+        <div class="game_content">
+            <table>
+                <tr>
+                    <td class="block11"></td>
+                    <td class="block12"></td>
+                    <td class="block13"></td>
+                    <td class="block14"></td>
+                </tr>
+                <tr>
+                    <td class="block21"></td>
+                    <td class="block22"></td>
+                    <td class="block23"></td>
+                    <td class="block24"></td>
+                </tr>
+                <tr>
+                    <td class="block31" onclick="how_to_game();" id="game_how">게임 방법</td>
+                    <td class="block32" onclick="init();" id="game_start">시작하기</td>
+                    <td class="block33" onclick="history.back();" id="game_end">돌아가기</td>
+                    <td class="block34" onclick="top15();" id="game_top">Top 15</td>
+                </tr>
+                <tr>
+                    <td class="block41"></td>
+                    <td class="block42"></td>
+                    <td class="block43"></td>
+                    <td class="block44"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="game_button">
+            <table>
+                <tr>
+                    <td></td>
+                    <td><button class="game_button_up">▲</button></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><button class="game_button_left">◀︎</button></td>
+                    <td><button class="game_button_center">◎</button></td>
+                    <td><button class="game_button_right">▶︎</button></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button class="game_button_down">▼</button></td>
+                    <td></td>
+                </tr>
+            </table>
         </div>
     </div>
 
@@ -99,16 +136,17 @@
             <li><a href="#">오시는 길</a></li>
             <li><a href="#">이용 약관</a></li>
             <li><a href="#">제휴 제안</a></li>
+            <li><a href="#">개인정보 처리방침</a></li>
         </div>
         <div class="footer_second">
             <div class="footer_logo">
-                <img src="graylogo.png" height="100px">
-                <img src="무제.png" height="100px">
+                <img src="graylogo.png">
+                <img src="무제.png">
             </div>
             <div class="footer_explain">
 
                 <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
-                <p>후원 | 국민은행 279601-04-157891</p><br>
+                <p>후원 | ##은행 #####</p><br>
                 <p>copyright 2021 KUPHIL, All rights reserved.</p>
             </div>
             <div class="footer_sns">
@@ -123,6 +161,12 @@
                     <img src="kuphil_facebook.png" alt="쿠필 페이스북">
                 </a>
             </div>
+        </div>
+        <div class="small_footer_explain">
+
+            <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+            <p>후원 | ##은행 #####</p><br>
+            <p>copyright 2021 KUPHIL, All rights reserved.</p>
         </div>
     </footer>
 </body>
