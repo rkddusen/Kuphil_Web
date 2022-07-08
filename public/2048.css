@@ -1,29 +1,21 @@
-.total_area {
-    width: 1130px;
-    padding: 60px 30px;
-    height: 1050px;
-    margin: 0 auto;
-    margin-bottom: 100px;
-}
-.game_area{
-    width: 700px;
-    height: 100%;
-    margin: 0 auto;
-    border: 1px solid #b0b0b0;
-    background-color: #b0b0b0;
+.game_area {
+    width: 90vw;
+    padding: 30px 5vw;
+    height: auto;
+    min-height: 100%;
 }
 
-.game_area>div:first-child {
-    width: 540px;
+.game_area>div:first-child{
+    width: 530px;
     height: 30px;
     margin: 0 auto;
     margin-top: 50px;
     display: flex;
 }
 
-.game_best,
-.game_my {
-    width: 270px;
+.game_best, .game_my {
+    width: 265px;
+    font-size: 1.5rem;
 }
 
 .game_best {
@@ -33,7 +25,9 @@
 .game_my {
     text-align: end;
 }
-
+.game_best span, .game_my span{
+    font-size: 1.8rem;
+}
 .game_content table {
     margin: 0 auto;
 }
@@ -43,7 +37,7 @@
     height: 130px;
     border: 1px solid black;
     text-align: center;
-    font-size: 20px;
+    font-size: 1.5rem;
     background-color: white;
 }
 
@@ -56,10 +50,7 @@
     height: 100px;
 }
 
-#game_start:hover,
-#game_end:hover,
-#game_how:hover,
-#game_top:hover {
+#game_start:hover, #game_end:hover, #game_how:hover, #game_top:hover {
     background-color: #ffd1ae;
     cursor: pointer;
 }
@@ -84,6 +75,7 @@
 }
 .game_button{
     margin: 100px 0;
+    display: none;
 }
 .game_button table{
     margin: 0 auto;
@@ -91,4 +83,74 @@
 .game_button td{
     width: 70px;
     height: 70px;
+}
+
+@media (max-width : 1023px){
+    .game_area>div:first-child{
+        width: 490px;
+    }
+    
+    .game_best, .game_my {
+        width: 245px;
+    }
+    
+    .game_content td {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .game_content td img {
+        width: 90px;
+        height: 90px;
+    }
+    .game_button{
+        display: block;
+    }
+}
+@media (max-width : 767px){
+    .game_area>div:first-child{
+        width: 370px;
+        height: 25px;
+    }
+    
+    .game_best, .game_my {
+        width: 185px;
+        font-size: 1.2rem;
+    }
+    .game_best span, .game_my span{
+        font-size: 1.5rem;
+    }
+    
+    .game_content td {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .game_content td img {
+        width: 60px;
+        height: 60px;
+    }
+}
+@media (max-width : 479px){
+    .game_area>div:first-child{
+        width: 290px;
+        height: 20px;
+    }
+    
+    .game_best, .game_my {
+        width: 145px;
+        font-size: 1rem;
+    }
+    .game_best span, .game_my span{
+        font-size: 1.5rem;
+    }
+    .game_content td {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .game_content td img {
+        width: 40px;
+        height: 40px;
+    }
 }

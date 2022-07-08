@@ -494,7 +494,7 @@ function how_to_game() {
     let table = document.getElementsByClassName("game_content")[0];
     initTable = '<table><tr><td colspan="4" >2048게임의 악기 버전입니다.<br>퍼스트바이올린부터 지휘자까지 17개의 타일이 존재합니다.</td></tr>';
     initTable += '<tr><td colspan="4">웹에서의 방향키는 w(상 키), a(좌 키), s(하 키), d(우 키) 입니다.</td></tr>';
-    initTable += '<tr><td colspan="4">새로운 버그는 언제나 환영입니다.^^</td></tr>';d
+    initTable += '<tr><td colspan="4">새로운 버그는 언제나 환영입니다.^^</td></tr>';
     initTable += '<tr><td></td><td class="block32" onclick="init();" id="game_start">시작하기</td><td class="block33" onclick="location.reload();" id="game_end">돌아가기</td><td></td></tr></table>';
     table.innerHTML = initTable;
 
