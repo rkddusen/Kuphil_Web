@@ -60,31 +60,58 @@ a{
     margin: 30px auto;
     padding: 0 30px;
     margin-bottom: 80px;
+    margin-top:150px;
 }
 
-#path > p {
+
+#path>span{
+    margin: 20px auto;
     padding: 0 20px;
     height: 50px;
     font-size: 36px;
+    margin-top: 50px;
 }
 
-#how {
-    width: 1130px; 
+#kuphil_room{
+    display:flex;
+    align-items:center;
+    justify-content: space-evenly;
+}
+
+#kuphil_room > img{
+    width:500px;
+    
+}
+
+#kuphil_room > p {
+    padding: 0 100px;
+    height: 50px;
+    font-size: 17px;
+}
+
+#start_location{
+    width: 1300px;
     margin: 30px auto;
     display: flex;
-    flex-direction: row;
+    justify-content: space-evenly;
 }
 
-#how > img {
-    width: 470px;
-    height: 460px;
-    margin-right: 40px;
-}
-
-#how > span {
-    width: 750px;
-    align-self: center;
+.select_button{
+    border: none;
+    background-color: transparent;
     font-size: 15px;
-    padding: 0 20px;
-    line-height:200%;
+    color: #d5bca3;
+    cursor:pointer;
+}
+
+.select_button:hover{    
+    color:#5C3A1A;
+    font-weight: bold;
+}
+
+#stairs{
+    margin: 30px auto;
+    font-size:15px;
+    font-weight:bold;
+    text-align:center;
 }
