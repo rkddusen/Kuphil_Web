@@ -3,16 +3,25 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/headfoot.css">
-    <link rel="stylesheet" type="text/css" href="/styles.css">
     <link rel="stylesheet" type="text/css" href="/introduce.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#bf8257">
-    <meta name="msapplication-TileColor" content="#bf8257">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <title>KUPHIL</title>
 </head>
@@ -23,17 +32,11 @@
             <div class="mainlogo">
                 <a href="./"><img src="kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
             </div>
-            <!-- <div class="head1">
-                <div>
-                    <a href="./login">로그인</a>
-                </div>
-            </div> -->
             <nav class="nav">
                 <ul>
                     <li><a href="./introduce">소개</a></li>
                     <li><a href="./archive">아카이브</a></li>
                     <li><a href="./calendar">달력</a></li>
-                    <!-- <li><a href="./board">게시판</a></li> -->
                     <li><a href="./lab">실험실</a></li>
                     <li><a href="./lab">입단 문의</a></li>
                 </ul>
@@ -49,7 +52,6 @@
                         <li><a href="./introduce">소개</a></li>
                         <li><a href="./archive">아카이브</a></li>
                         <li><a href="./calendar">달력</a></li>
-                        <!-- <li><a href="./board">게시판</a></li> -->
                         <li><a href="./lab">실험실</a></li>
                         <li><a href="./lab">입단 문의</a></li>
                     </ul>
@@ -63,14 +65,8 @@
                 function smallClose() {
                     small_menu_open.style.display = 'none';
                 }
-                if (screen.width > 768) {
-                    small_menu_open.style.display = 'none';
-                }
             </script>
         </div>
-        <!-- <article class="head3_introduce">
-            <hr class="front_hr"><p><a class="head3_introduce_a" href="./introduce">소개</a> &ensp;|&ensp; <a class="head3_history_a" href="./history">연혁</a></p><hr class="back_hr_introduce">
-        </article> -->
         <article>
             <div class="head3_line_f"></div>
             <div class="head3_name"><a class="head3_introduce_a" href="./introduce">소개</a> &ensp;|&ensp; <a class="head3_history_a" href="./history">연혁</a></div>
@@ -124,20 +120,20 @@
 
     <footer>
         <div class="footer_first">
-                <li><a href="#">오시는 길</a></li>
-                <li><a href="#">이용 약관</a></li>
-                <li><a href="#">제휴 제안</a></li>
-                <li><a href="#">개인정보 처리방침</a></li>
+            <li><a href="#">오시는 길</a></li>
+            <li><a href="#">이용 약관</a></li>
+            <li><a href="#">제휴 제안</a></li>
+            <li><a href="#">개인정보 처리방침</a></li>
         </div>
         <div class="footer_second">
             <div class="footer_logo">
-                <img src="graylogo.png" height="100px">
-                <img src="무제.png" height="100px">
+                <img src="graylogo.png">
+                <img src="무제.png">
             </div>
             <div class="footer_explain">
-                
+
                 <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
-                <p>후원 | 국민은행 279601-04-157891</p><br>
+                <p>후원 | ##은행 #####</p><br>
                 <p>copyright 2021 KUPHIL, All rights reserved.</p>
             </div>
             <div class="footer_sns">
@@ -152,6 +148,12 @@
                     <img src="kuphil_facebook.png" alt="쿠필 페이스북">
                 </a>
             </div>
+        </div>
+        <div class="small_footer_explain">
+
+            <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+            <p>후원 | ##은행 #####</p><br>
+            <p>copyright 2021 KUPHIL, All rights reserved.</p>
         </div>
     </footer>
 </body>

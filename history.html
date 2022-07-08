@@ -6,10 +6,26 @@
     <title>KUPhil</title>
     <link rel="stylesheet" type="text/css" href="/headfoot.css">
     <link rel="stylesheet" type="text/css" href="/history.css">
-    <!--link rel="preconnect" href="https://fonts.googleapis.com"-->
-    <!--link rel="preconnect" href="https://fonts.gstatic.com" crossorigin-->
-    <!--link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet"-->
-    <script src="history.js" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>KUPHIL</title>
+    
 </head>
     
 <body>
@@ -18,20 +34,40 @@
             <div class="mainlogo">
                 <a href="./"><img src="kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
             </div>
-            <!-- <div class="head1">
-                <div>
-                    <a href="./login">로그인</a>
-                </div>
-            </div> -->
-            <nav>
+            <nav class="nav">
                 <ul>
                     <li><a href="./introduce">소개</a></li>
                     <li><a href="./archive">아카이브</a></li>
                     <li><a href="./calendar">달력</a></li>
-                    <!-- <li><a href="./board">게시판</a></li> -->
                     <li><a href="./lab">실험실</a></li>
+                    <li><a href="./lab">입단 문의</a></li>
                 </ul>
             </nav>
+            <div class="small_menu">
+                <p onclick="smallOpen();">≡</p>
+
+            </div>
+            <div class="small_menu_open">
+                <p onclick="smallClose();">X</p>
+                <nav>
+                    <ul>
+                        <li><a href="./introduce">소개</a></li>
+                        <li><a href="./archive">아카이브</a></li>
+                        <li><a href="./calendar">달력</a></li>
+                        <li><a href="./lab">실험실</a></li>
+                        <li><a href="./lab">입단 문의</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <script>
+                let small_menu_open = document.getElementsByClassName("small_menu_open")[0];
+                function smallOpen() {
+                    small_menu_open.style.display = 'block';
+                }
+                function smallClose() {
+                    small_menu_open.style.display = 'none';
+                }
+            </script>
         </div>
         <article>
             <div class="head3_line_f"></div>
@@ -208,20 +244,20 @@
 
     <footer>
         <div class="footer_first">
-                <li><a href="#">오시는 길</a></li>
-                <li><a href="#">이용 약관</a></li>
-                <li><a href="#">제휴 제안</a></li>
-                <li><a href="#">개인정보 처리방침</a></li>
+            <li><a href="#">오시는 길</a></li>
+            <li><a href="#">이용 약관</a></li>
+            <li><a href="#">제휴 제안</a></li>
+            <li><a href="#">개인정보 처리방침</a></li>
         </div>
         <div class="footer_second">
             <div class="footer_logo">
-                <img src="graylogo.png" height="100px">
-                <img src="무제.png" height="100px">
+                <img src="graylogo.png">
+                <img src="무제.png">
             </div>
             <div class="footer_explain">
-                
+
                 <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
-                <p>후원 | 국민은행 279601-04-157891</p><br>
+                <p>후원 | ##은행 #####</p><br>
                 <p>copyright 2021 KUPHIL, All rights reserved.</p>
             </div>
             <div class="footer_sns">
@@ -237,8 +273,14 @@
                 </a>
             </div>
         </div>
+        <div class="small_footer_explain">
+
+            <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+            <p>후원 | ##은행 #####</p><br>
+            <p>copyright 2021 KUPHIL, All rights reserved.</p>
+        </div>
     </footer>
 </body>
-
+<script src="history.js" type="text/javascript"></script>
 </html>
 
