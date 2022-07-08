@@ -261,6 +261,10 @@ server.get("/lab", (req, res) => {
 
     res.sendFile(__dirname + "/lab.html");
 });
+server.get("/gamecenter", (req, res) => {
+
+    res.sendFile(__dirname + "/gamecenter.html");
+});
 
 server.get("/snakegame", (req, res) => {
 
