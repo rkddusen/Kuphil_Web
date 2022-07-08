@@ -24,19 +24,19 @@ server.use(bodyParser.json());
 //request 이벤트 리스너 설정//라우터 설정
 server.get("/", (req, res) => {
 
-    res.sendFile(__dirname + "/index.html");
+    res.sendFile(__dirname + "/public/html/index.html");
 });
 server.get("/introduce", (req, res) => {
 
-    res.sendFile(__dirname + "/introduce.html");
+    res.sendFile(__dirname + "/public/html/introduce.html");
 });
 server.get("/login", (req, res) => {
 
-    res.sendFile(__dirname + "/login.html");
+    res.sendFile(__dirname + "/public/html/login.html");
 });
 server.get("/history", (req, res) => {
 
-    res.sendFile(__dirname + "/history.html");
+    res.sendFile(__dirname + "/public/html/history.html");
 });
 
 server.post("/calendar/add_schedule", (req, res) => {
@@ -55,7 +55,7 @@ server.post("/calendar/add_schedule", (req, res) => {
         if (err) {
             console.log(err);
         }
-        return res.redirect('/calendar');
+        return res.redirect('/public/html/calendar');
     })
 });
 server.post("/calendar/delete_schedule", (req, res) => {
@@ -71,7 +71,7 @@ server.post("/calendar/delete_schedule", (req, res) => {
         if (err) {
             console.log(err);
         }
-        return res.redirect('/calendar');
+        return res.redirect('/public/html/calendar');
     })
 });
 const mysql = require('./database')();
@@ -81,7 +81,7 @@ const connection = mysql.init();
 mysql.db_open(connection);
 //db 데이터를 받을 변수
 
-const calPage = fs.readFileSync('./calendar.ejs', 'utf8');
+const calPage = fs.readFileSync('./public/html/calendar.ejs', 'utf8');
 server.get("/calendar", (req, res) => {
     let data = '';
     connection.query('SELECT date,starttime,endtime,title FROM schedule ORDER BY date',
@@ -107,7 +107,7 @@ server.get("/calendar", (req, res) => {
 
 server.get("/archive", (req, res) => {
 
-    res.sendFile(__dirname + "/archive.html");
+    res.sendFile(__dirname + "/public/html/archive.html");
 });
 
 // server.get("/board", (req, res) => {
@@ -222,7 +222,7 @@ server.get("/archive", (req, res) => {
 //     );
 // });
 
-const testPage = fs.readFileSync('./test.ejs', 'utf8');
+const testPage = fs.readFileSync('./public/html/test.ejs', 'utf8');
 server.get("/test", (req, res) => {
 
     connection.query('SELECT question, conductor, firstViolin,secondViolin,viola,cello,contra,flute,oboe,clarinet,basson,trumpet,trombone,horn,tuba,timpani,percussion ,piano ,answer,sanswer FROM game ORDER BY RAND()',
@@ -259,19 +259,19 @@ server.get("/test", (req, res) => {
 
 server.get("/lab", (req, res) => {
 
-    res.sendFile(__dirname + "/lab.html");
+    res.sendFile(__dirname + "/public/html/lab.html");
 });
 server.get("/gamecenter", (req, res) => {
 
-    res.sendFile(__dirname + "/gamecenter.html");
+    res.sendFile(__dirname + "/public/html/gamecenter.html");
 });
 
 server.get("/snakegame", (req, res) => {
 
-    res.sendFile(__dirname + "/snake_game.html");
+    res.sendFile(__dirname + "/public/html/snake_game.html");
 });
 
-const game2048 = fs.readFileSync('./2048.ejs', 'utf8');
+const game2048 = fs.readFileSync('./public/html/2048.ejs', 'utf8');
 server.get("/2048game", (req, res) => {
     connection.query('SELECT name, score FROM 2048game ORDER BY score desc limit 15;',
         function (error, rows, fields) {
@@ -305,12 +305,12 @@ server.post("/2048game/record", (req, res) => {
         if (err) {
             console.log(err);
         }
-        return res.redirect('/2048game');
+        return res.redirect('/public/html/2048game');
     })
 });
 
 server.use((req, res) => {
-    res.sendFile(__dirname + "/404.html");
+    res.sendFile(__dirname + "/public/html/404.html");
 });
 
 //서버를 실행

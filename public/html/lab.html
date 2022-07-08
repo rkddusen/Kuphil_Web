@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="./css/headfoot.css">
-    <link rel="stylesheet" type="text/css" href="./css/calendar.css">
+    <link rel="stylesheet" type="text/css" href="./css/lab.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
@@ -25,13 +25,12 @@
     <meta name="theme-color" content="#ffffff">
     <title>KUPHIL</title>
 </head>
-
+    
 <body>
-    <!-- 헤더 -->
     <header>
         <div class="main_head">
             <div class="mainlogo">
-                <a href="./"><img src="kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
+                <a href="./"><img src="./image/main/kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
             </div>
             <nav class="nav">
                 <ul>
@@ -70,64 +69,44 @@
         </div>
         <article>
             <div class="head3_line_f"></div>
-            <div class="head3_name"><a class="head3_calendar_a" href="./calendar">달력</a></div>
+            <div class="head3_name"><a class="head3_lab_a" href="./lab">실험실</a></div>
             <div class="head3_line_s"></div>
         </article>
-
+        
     </header>
-    <div class="calendar_page">
 
 
-        <!-- 달력이 그려지는 공간 -->
-        <!-- 년월을 표시 js에서 yyyy, mm부분을 새로 채움-->
-        <div class="calendar">
-            <div class="calendar_title">
-                <div class="calendar_now"></div>
-                <div class="calendar_move">
-                    <span class="table_move" onclick="prevCalendar()"></span>
-                    <span class="table_move" onclick="nextCalendar()"></span>
-                </div>
-                <!-- <input class="table_move" name="calendar_prev" type="button" value="◀" onclick="prevCalendar()">
-            <input class="table_move" name="calendar_next" type="button" value="▶" onclick="nextCalendar()"> -->
-            </div>
-            <div class="calendar_table">
-                <table>
-                    <thead>
-                        <tr>
-                            <td style="color: red;">일</td>
-                            <td>월</td>
-                            <td>화</td>
-                            <td>수</td>
-                            <td>목</td>
-                            <td>금</td>
-                            <td>토</td>
-                        </tr>
-                    </thead>
-                    <tbody class="body_calendar"></tbody>
-                </table>
-            </div>
-        </div>
-        <section class="schedule">
-            <!-- js에서 테이블 내에서 tr, td 를 추가해 줌-->
-            <script>
-                let data = "<%=db%>";
-            </script>
-            <!-- 스케줄 적히는 공간 -->
-            <div class="schedule_box">
-                <!-- <button id="sche_plus" onclick="showForm();">±</button> -->
-                <div class="sche_date"></div>
-                <div class="sche_date_output"></div>
-                <div class="sche_date"></div>
-                <div class="sche_date_output"></div>
-            </div>
-        </section>
-        <!-- 일정을 추가할 수 있는 영역 -->
-        <!-- <div id="add">
-            <div id="add_data"></div>
-            <div id="delete_data"></div>
-        </div> -->
+    <div id="game_notice">
+        <p> (BETA) 개발자들이 만들어본 소소한 즐길거리들입니다. 재밌게 즐겨주세요👾<br>[버그 제보 환영] </p>
     </div>
-    <!-- 푸터 -->
+    <div>
+        <div class="test">
+            <p>악기 심리 테스트</p>
+            <img src="thumbnail.JPG" alt="악기 심리 테스트">
+            <section>
+                <p id="info_1">새로운 악기를 시도해보고 싶다면?<br>당신에게 어울리는 악기를 추천해드립니다!</p>
+            </section>
+            <input class="selection" type="button" value="Go! =>" onclick="location.href='./test'">
+        </div>
+        <div class="game">
+            <p>악기 2048</p>
+            <img src="thumbnail.JPG" alt="불협화음 피하기 게임">
+            <section>
+                <p id="info_2">악기를 합쳐라!<br>최대한 다양한 악기를 만들어주세요!</p>
+            </section>
+            <input class="selection" type="button" value="Go! =>" onclick="location.href='./2048game'">
+        </div>
+        <div class="snake_game">
+            <p>오케스트라 증식 게임</p>
+            <img src="thumbnail.JPG" alt="오케스트라 증식 게임">
+            <section>
+                <p id="info_3">악기를 모아 오케스트라를 창단하라!<br>악기 간의 충돌을 피해 여기저기 흩어지는 악기들을 모아 오케스트라를 만들어주세요!</p>
+            </section>
+            <input class="selection" type="button" value="Go! =>" onclick="location.href='./snakegame'">
+        </div>
+    </div>
+
+
     <footer>
         <div class="footer_first">
             <li><a href="#">오시는 길</a></li>
@@ -137,8 +116,8 @@
         </div>
         <div class="footer_second">
             <div class="footer_logo">
-                <img src="graylogo.png">
-                <img src="무제.png">
+                <img src="./image/main/graylogo.png">
+                <img src="./image/main/무제.png">
             </div>
             <div class="footer_explain">
 
@@ -149,13 +128,13 @@
             <div class="footer_sns">
                 <p>Contact Us :)</p>
                 <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">
-                    <img src="kuphil_youtube.png" alt="쿠필 유튜브">
+                    <img src="./image/main/kuphil_youtube.png" alt="쿠필 유튜브">
                 </a>
                 <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank">
-                    <img src="kuphil_instagram.png" alt="쿠필 인스타그램">
+                    <img src="./image/main/kuphil_instagram.png" alt="쿠필 인스타그램">
                 </a>
                 <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank">
-                    <img src="kuphil_facebook.png" alt="쿠필 페이스북">
+                    <img src="./image/main/kuphil_facebook.png" alt="쿠필 페이스북">
                 </a>
             </div>
         </div>
@@ -167,6 +146,5 @@
         </div>
     </footer>
 </body>
-<script type="text/javascript" src="./js/calendar.js"></script>
 
 </html>
