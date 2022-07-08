@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="./css/headfoot.css">
-    <link rel="stylesheet" type="text/css" href="./css/archive_styles.css">
+    <link rel="stylesheet" type="text/css" href="./css/test.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
@@ -27,10 +27,11 @@
 </head>
 
 <body>
+    <!-- 헤더 -->
     <header>
         <div class="main_head">
             <div class="mainlogo">
-                <a href="./"><img src="kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
+                <a href="./"><img src="./image/main/kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
             </div>
             <nav class="nav">
                 <ul>
@@ -69,29 +70,49 @@
         </div>
         <article>
             <div class="head3_line_f"></div>
-            <div class="head3_name"><a class="head3_calendar_a" href="./archive">아카이브</a></div>
+            <div class="head3_name"><a class="head3_test_a" href="./test">너의 악기는?</a></div>
             <div class="head3_line_s"></div>
         </article>
-
     </header>
-    <div class="archiveBox">
-        <div id="arc_notice">
-            <p>쿠필의 역대 정기 연주회 정보를 모아놓은 공간입니다. </p>
+
+    <!-- 내용 -->
+    <script>
+        let question = "<%=question%>".split(",");
+        let conductor = "<%=conductor%>".split(",");
+        let firstViolin = "<%=firstViolin%>".split(",");
+        let secondViolin = "<%=secondViolin%>".split(",");
+        let viola = "<%=viola%>".split(",");
+        let cello = "<%=cello%>".split(",");
+        let contra = "<%=contra%>".split(",");
+        let flute = "<%=flute%>".split(",");
+        let oboe = "<%=oboe%>".split(",");
+        let clarinet = "<%=clarinet%>".split(",");
+        let basson = "<%=basson%>".split(",");
+        let trumpet = "<%=trumpet%>".split(",");
+        let trombone = "<%=trombone%>".split(",");
+        let horn = "<%=horn%>".split(",");
+        let tuba = "<%=tuba%>".split(",");
+        let timpani = "<%=timpani%>".split(",");
+        let percussion = "<%=percussion%>".split(",");
+        let piano = "<%=piano%>".split(",");
+        let fanswer = "<%=fanswer%>".split(",");
+        let sanswer = "<%=sanswer%>".split(",");
+    </script>
+    <div class="gameContents">
+        <div class="question">
+            악기 추천 받으러 가요~<br>
+            <span style="font-size: 1.8rem; color: red;">(* 이 테스트는 오로지 재미를 위해 만들어진 테스트입니다.^^)</span>
         </div>
-        <div class="container">
-            <div class="posterbox_1"></div>
-            <div class="loadposters">
-                <div onclick= "prevPage();" class="prev_btn"></div>
-                <div onclick="nextPage();" class="next_btn"></div>
+        <div class="answer">
+            <div class="firstAnswer">
+                <button onclick="startGame();">너무 좋아요 :)</button>
             </div>
-            <div class="posterbox_2"></div>
-            <!-- <button id="open">Open Modal</button> -->
-            <div class="modal hidden">
-                
+            <div class="secondAnswer">
+                <a href="./lab"><button>다음에 봐요 :(</button></a>
             </div>
         </div>
+        <div class="result"></div>
     </div>
-        
     <footer>
         <div class="footer_first">
             <li><a href="#">오시는 길</a></li>
@@ -101,8 +122,8 @@
         </div>
         <div class="footer_second">
             <div class="footer_logo">
-                <img src="graylogo.png">
-                <img src="무제.png">
+                <img src="./image/main/graylogo.png">
+                <img src="./image/main/무제.png">
             </div>
             <div class="footer_explain">
 
@@ -113,13 +134,13 @@
             <div class="footer_sns">
                 <p>Contact Us :)</p>
                 <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">
-                    <img src="kuphil_youtube.png" alt="쿠필 유튜브">
+                    <img src="./image/main/kuphil_youtube.png" alt="쿠필 유튜브">
                 </a>
                 <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank">
-                    <img src="kuphil_instagram.png" alt="쿠필 인스타그램">
+                    <img src="./image/main/kuphil_instagram.png" alt="쿠필 인스타그램">
                 </a>
                 <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank">
-                    <img src="kuphil_facebook.png" alt="쿠필 페이스북">
+                    <img src="./image/main/kuphil_facebook.png" alt="쿠필 페이스북">
                 </a>
             </div>
         </div>
@@ -131,5 +152,6 @@
         </div>
     </footer>
 </body>
-<script type = "text/javascript" src = "./js/archive.js"></script>
+<script type="text/javascript" src="./js/test.js"></script>
+
 </html>
