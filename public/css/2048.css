@@ -60,7 +60,10 @@
     height: 100%;
     background-color: white;
     border: none;
-    font-size: 20px;
+    font-size: 2rem;
+}
+.game_name, .game_score{
+    font-size: 1rem;
 }
 
 .game_button_up, .game_button_left, .game_button_right, .game_button_down, .game_button_center{
@@ -68,7 +71,7 @@
     height: 100%;
     background-color: white;
     border: 1px solid black;
-    font-size: 20px;
+    font-size: 2rem;
 }
 .game_button_up:hover, .game_button_left:hover, .game_button_right:hover, .game_button_down:hover{
     background-color: #ffd1ae;
@@ -124,9 +127,20 @@
     .game_content td {
         width: 90px;
         height: 90px;
+        font-size: 1.4rem;
     }
     
     .game_content td img {
+        width: 65px;
+        height: 65px;
+    }
+    .game_name, .game_score{
+        width: 90px;
+    }
+    .game_button{
+        margin: 50px 0;
+    }
+    .game_button td{
         width: 60px;
         height: 60px;
     }
@@ -147,10 +161,21 @@
     .game_content td {
         width: 70px;
         height: 70px;
+        font-size: 1.2rem;
     }
     
     .game_content td img {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
+    }
+    .game_name, .game_score{
+        width: 80px;
+    }
+    .game_button{
+        margin: 30px 0;
+    }
+    .game_button td{
+        width: 50px;
+        height: 50px;
     }
 }

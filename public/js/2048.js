@@ -477,8 +477,8 @@ function doAction() {
         alert('내용을 입력하세요.');
         return false;
     }
-    else if (document.getElementsByClassName("game_name")[0].value.length > 10) {
-        alert('이름이 너무 깁니다.');
+    else if (document.getElementsByClassName("game_name")[0].value.length > 8) {
+        alert('이름은 8자 이하여야 합니다.');
         return false;
     }
     else if (document.getElementsByClassName("game_score")[0].value>131071){
@@ -493,7 +493,7 @@ function doAction() {
 function how_to_game() {
     let table = document.getElementsByClassName("game_content")[0];
     initTable = '<table><tr><td colspan="4" >2048게임의 악기 버전입니다.<br>퍼스트바이올린부터 지휘자까지 17개의 타일이 존재합니다.</td></tr>';
-    initTable += '<tr><td colspan="4">웹에서의 방향키는 w(상 키), a(좌 키), s(하 키), d(우 키) 입니다.</td></tr>';
+    initTable += '<tr><td colspan="4">웹에서의 방향키는 w(상 키), a(좌 키), s(하 키), d(우 키) 입니다.<br>추가적으로 모바일에서도 가능하도록 하단에 방향키가 있습니다.</td></tr>';
     initTable += '<tr><td colspan="4">새로운 버그는 언제나 환영입니다.^^</td></tr>';
     initTable += '<tr><td></td><td class="block32" onclick="init();" id="game_start">시작하기</td><td class="block33" onclick="location.reload();" id="game_end">돌아가기</td><td></td></tr></table>';
     table.innerHTML = initTable;
@@ -506,10 +506,10 @@ function top15() {
         bestscore[i] = bestscore[i] ? bestscore[i] + '점' : "";
     }
     let table = document.getElementsByClassName("game_content")[0];
-    initTable = '<table><tr><td style="font-size : 14px">' + name[0] + '<br>' + bestscore[0] + '</td><td style="font-size : 14px">' + name[1] + '<br>' + bestscore[1] + '</td><td style="font-size : 14px">' + name[2] + '<br>' + bestscore[2] + '</td><td style="font-size : 14px">' + name[3] + '<br>' + bestscore[3] + '</td></tr>';
-    initTable += '<tr><td style="font-size : 14px">' + name[4] + '<br>' + bestscore[4] + '</td><td style="font-size : 14px">' + name[5] + '<br>' + bestscore[5] + '</td><td style="font-size : 14px">' + name[6] + '<br>' + bestscore[6] + '</td><td style="font-size : 14px">' + name[7] + '<br>' + bestscore[7] + '</td></tr>';
-    initTable += '<tr><td style="font-size : 14px">' + name[8] + '<br>' + bestscore[8] + '</td><td style="font-size : 14px">' + name[9] + '<br>' + bestscore[9] + '</td><td style="font-size : 14px">' + name[10] + '<br>' + bestscore[10] + '</td><td style="font-size : 14px">' + name[11] + '<br>' + bestscore[11] + '</td></tr>';
-    initTable += '<tr><td style="font-size : 14px">' + name[12] + '<br>' + bestscore[12] + '</td><td style="font-size : 14px">' + name[13] + '<br>' + bestscore[13] + '</td><td style="font-size : 14px">' + name[14] + '<br>' + bestscore[14] + '</td><td class="block33" onclick="location.reload();" id="game_end">돌아가기</td></tr></table>';
+    initTable = '<table><tr><td>' + name[0] + '<br>' + bestscore[0] + '</td><td>' + name[1] + '<br>' + bestscore[1] + '</td><td>' + name[2] + '<br>' + bestscore[2] + '</td><td>' + name[3] + '<br>' + bestscore[3] + '</td></tr>';
+    initTable += '<tr><td>' + name[4] + '<br>' + bestscore[4] + '</td><td>' + name[5] + '<br>' + bestscore[5] + '</td><td>' + name[6] + '<br>' + bestscore[6] + '</td><td>' + name[7] + '<br>' + bestscore[7] + '</td></tr>';
+    initTable += '<tr><td>' + name[8] + '<br>' + bestscore[8] + '</td><td>' + name[9] + '<br>' + bestscore[9] + '</td><td>' + name[10] + '<br>' + bestscore[10] + '</td><td>' + name[11] + '<br>' + bestscore[11] + '</td></tr>';
+    initTable += '<tr><td>' + name[12] + '<br>' + bestscore[12] + '</td><td>' + name[13] + '<br>' + bestscore[13] + '</td><td>' + name[14] + '<br>' + bestscore[14] + '</td><td class="block33" onclick="location.reload();" id="game_end">돌아가기</td></tr></table>';
     table.innerHTML = initTable;
 
 }
