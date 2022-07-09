@@ -305,7 +305,7 @@ server.post("/2048game/record", (req, res) => {
         if (err) {
             console.log(err);
         }
-        return res.redirect('/public/html/2048game');
+        return res.redirect('/2048game');
     })
 });
 
