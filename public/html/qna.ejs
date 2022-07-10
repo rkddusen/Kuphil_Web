@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/headfoot.css">
+    <link rel="stylesheet" type="text/css" href="../css/qna.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>KUPHIL</title>
+</head>
+
+<body>
+    <!-- 헤더 -->
+    <header>
+        <div class="main_head">
+            <div class="mainlogo">
+                <a href="../"><img src="../image/main/kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="../introduce">소개</a></li>
+                    <li><a href="../archive">아카이브</a></li>
+                    <li><a href="../calendar">달력</a></li>
+                    <li><a href="../gamecenter">놀이터</a></li>
+                    <li><a href="../lab">실험실</a></li>
+                </ul>
+            </nav>
+            <div class="small_menu">
+                <p onclick="smallOpen();">≡</p>
+
+            </div>
+            <div class="small_menu_open">
+                <p onclick="smallClose();">X</p>
+                <nav>
+                    <ul>
+                        <li><a href="../introduce">소개</a></li>
+                        <li><a href="../archive">아카이브</a></li>
+                        <li><a href="../calendar">달력</a></li>
+                        <li><a href="../gamecenter">놀이터</a></li>
+                        <li><a href="../lab">실험실</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <script>
+                let small_menu_open = document.getElementsByClassName("small_menu_open")[0];
+                function smallOpen() {
+                    small_menu_open.style.display = 'block';
+                }
+                function smallClose() {
+                    small_menu_open.style.display = 'none';
+                }
+            </script>
+        </div>
+        <article>
+            <div class="head3_line_f"></div>
+            <div class="head3_name"><a class="head3_qna_a" href="../qna">쿠필 지식인</a></div>
+            <div class="head3_line_s"></div>
+        </article>
+    </header>
+
+    <!-- 내용 -->
+    <div class="qna_section">
+        <div class="qna_write">
+            <button onclick="qna_question_add();">작성하기</button>
+        </div>
+        
+        <div class="qna_contents">
+            <div class="qna_question_add">
+                <form action="/qna/questionSubmit" method="post" onsubmit="return questionDoAction();">
+                    <strong>Q.</strong><br>
+                    <input type="text" class="qna_question_add_title" name="qna_title" placeholder="제목을 작성하세요."/><br>
+                    <textarea class="qna_question_add_textarea" placeholder="질문을 작성하세요." name="qna_question"></textarea><br>
+                    <div>
+                        <input type="submit" name="submit" class="qna_question_add_subCan" value="작성"/>
+                        <input type="button" name="cancel" onclick="qna_question_add_cancel();" value="취소" class="qna_question_add_subCan"/>
+                    </div>
+                </form>
+            </div>
+            <% for(var i=0; i < page_num; i++) { 
+                if(number-((page-1)*10)-i>0){ %>
+                    <div class="qna_entry" onclick="location.href='./read/<%=number-((page-1)*10)-i%>'">
+                        <div>  
+                            <span><%= qna_title[i] %></span>
+                            <p><%= qna_question[i] %></p>
+                        </div>
+                        <div>
+                            <span>답변 <%= qna_answer_num[i] %></span>&ensp;&ensp;
+                            <span>등록 <%= qna_date[i] %></span>
+                        </div>
+                    </div>
+                <% }
+            } %>
+        </div>
+    </div>
+
+    <!-- 페이지 넘길 수 있음 -->
+    <table class="qna_page">
+        <tr>
+            <td><a id="prev" href="/qna/<%= (page - 1) %>">이전</a></td>
+                <% let pageStartNum=Math.floor((page-1)/page_num);
+                let pageEndNum=(number/page_num-1)%10+1;
+                for(var j=pageStartNum*10; j <=pageStartNum*10+pageEndNum; j++){ %>
+                    <td><a id="num_<%= j + 1 %>" href="/qna/<%= j + 1 %>">
+                        <%= j + 1 %>
+                        </a></td>
+                <% } %>
+            <td><a id="next" href="/qna/<%= (parseInt(page)+1) %>">다음</a></td>
+        </tr>
+        </table>
+        <script>
+            document.getElementById("num_" + "<%= page %>").style.color = 'red';
+            if ("<%= page %>" <= 1) {
+                document.getElementById("prev").style.color = 'grey';
+                document.getElementById("prev").setAttribute("onclick", "return false;");
+            }
+            if ("<%= page %>">=parseInt("<%=number/page_num%>")) {
+                document.getElementById("next").style.color = 'grey';
+                document.getElementById("next").setAttribute("onclick", "return false;");
+            }
+        </script>
+    </div>
+
+    <footer>
+        <div class="footer_first">
+            <li><a href="#">오시는 길</a></li>
+            <li><a href="#">이용 약관</a></li>
+            <li><a href="#">제휴 제안</a></li>
+            <li><a href="#">개인정보 처리방침</a></li>
+        </div>
+        <div class="footer_second">
+            <div class="footer_logo">
+                <img src="../image/main/graylogo.png">
+                <img src="../image/main/무제.png">
+            </div>
+            <div class="footer_explain">
+
+                <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+                <p>후원 | ##은행 #####</p><br>
+                <p>copyright 2021 KUPHIL, All rights reserved.</p>
+            </div>
+            <div class="footer_sns">
+                <p>Contact Us :)</p>
+                <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">
+                    <img src="../image/main/kuphil_youtube.png" alt="쿠필 유튜브">
+                </a>
+                <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank">
+                    <img src="../image/main/kuphil_instagram.png" alt="쿠필 인스타그램">
+                </a>
+                <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank">
+                    <img src="../image/main/kuphil_facebook.png" alt="쿠필 페이스북">
+                </a>
+            </div>
+        </div>
+        <div class="small_footer_explain">
+
+            <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+            <p>후원 | ##은행 #####</p><br>
+            <p>copyright 2021 KUPHIL, All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+<script type="text/javascript" src="../js/qna.js"></script>
+
+</html>
