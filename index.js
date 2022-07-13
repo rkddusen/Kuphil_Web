@@ -5,7 +5,7 @@ const express = require("express"); http = require('http'), path = require('path
 var static = require('serve-static'), bodyParser = require('body-parser'); var session = require('express-session');
 const ejs = require('ejs');
 const fs = require('fs');
-const { rawListeners } = require("process");
+const { rawListeners, title } = require("process");
 const { text } = require("express");
 
 //서버를 생성, express 객체 생성
@@ -21,22 +21,29 @@ server.use(express.static(__dirname + "/public"));
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
 
+const mysql = require('./database')();
+
+const connection = mysql.init();
+
+mysql.db_open(connection);
+//db 데이터를 받을 변수
+
 //request 이벤트 리스너 설정//라우터 설정
 server.get("/", (req, res) => {
 
-    res.sendFile(__dirname + "/index.html");
+    res.sendFile(__dirname + "/public/html/index.html");
 });
 server.get("/introduce", (req, res) => {
 
-    res.sendFile(__dirname + "/introduce.html");
+    res.sendFile(__dirname + "/public/html/introduce.html");
 });
 server.get("/login", (req, res) => {
 
-    res.sendFile(__dirname + "/login.html");
+    res.sendFile(__dirname + "/public/html/login.html");
 });
 server.get("/history", (req, res) => {
 
-    res.sendFile(__dirname + "/history.html");
+    res.sendFile(__dirname + "/public/html/history.html");
 });
 
 server.post("/calendar/add_schedule", (req, res) => {
@@ -55,7 +62,7 @@ server.post("/calendar/add_schedule", (req, res) => {
         if (err) {
             console.log(err);
         }
-        return res.redirect('/calendar');
+        return res.redirect('/public/html/calendar');
     })
 });
 server.post("/calendar/delete_schedule", (req, res) => {
@@ -71,17 +78,12 @@ server.post("/calendar/delete_schedule", (req, res) => {
         if (err) {
             console.log(err);
         }
-        return res.redirect('/calendar');
+        return res.redirect('/public/html/calendar');
     })
 });
-const mysql = require('./database')();
 
-const connection = mysql.init();
 
-mysql.db_open(connection);
-//db 데이터를 받을 변수
-
-const calPage = fs.readFileSync('./calendar.ejs', 'utf8');
+const calPage = fs.readFileSync('./public/html/calendar.ejs', 'utf8');
 server.get("/calendar", (req, res) => {
     let data = '';
     connection.query('SELECT date,starttime,endtime,title FROM schedule ORDER BY date',
@@ -107,7 +109,7 @@ server.get("/calendar", (req, res) => {
 
 server.get("/archive", (req, res) => {
 
-    res.sendFile(__dirname + "/archive.html");
+    res.sendFile(__dirname + "/public/html/archive.html");
 });
 
 // server.get("/board", (req, res) => {
@@ -165,7 +167,7 @@ server.get("/archive", (req, res) => {
 
 //     let sql = 'INSERT INTO signupinformation (id_data, pwd_data) VALUES(?, ?)';
 //     let params = [id_data, pwd_data];
-    
+
 //     connection.query(sql, params, function(err, result, fields) {
 //         if(err) console.log('query is not excuted. insert fail...\n' + err);
 //         else res.redirect('/signup3');
@@ -222,10 +224,10 @@ server.get("/archive", (req, res) => {
 //     );
 // });
 
-const testPage = fs.readFileSync('./test.ejs', 'utf8');
+const testPage = fs.readFileSync('./public/html/test.ejs', 'utf8');
 server.get("/test", (req, res) => {
 
-    connection.query('SELECT question, conductor, firstViolin,secondViolin,viola,cello,contra,flute,oboe,clarinet,basson,trumpet,trombone,horn,tuba,timpani,percussion ,piano ,answer,sanswer FROM game ORDER BY RAND()',
+    connection.query('SELECT question, conductor, firstViolin,secondViolin,viola,cello,contra,flute,oboe,clarinet,basson,trumpet,trombone,horn,tuba,timpani,percussion ,piano ,answer,sanswer FROM test ORDER BY RAND()',
         function (error, rows, fields) {
             if (error) {
                 console.log(error);
@@ -247,10 +249,9 @@ server.get("/test", (req, res) => {
                     cello: cello, contra: contra, flute: flute, oboe: oboe,
                     clarinet: clarinet, basson: basson, trumpet: trumpet, trombone: trombone, horn: horn,
                     tuba: tuba, timpani: timpani, percussion: percussion, piano: piano,
-                    fanswer: fanswer,sanswer: sanswer,
+                    fanswer: fanswer, sanswer: sanswer,
                 });
                 //응답
-                console.log(question[0]);
                 res.send(page);
             }
         }
@@ -259,15 +260,19 @@ server.get("/test", (req, res) => {
 
 server.get("/lab", (req, res) => {
 
-    res.sendFile(__dirname + "/lab.html");
+    res.sendFile(__dirname + "/public/html/lab.html");
+});
+server.get("/gamecenter", (req, res) => {
+
+    res.sendFile(__dirname + "/public/html/gamecenter.html");
 });
 
 server.get("/snakegame", (req, res) => {
 
-    res.sendFile(__dirname + "/snake_game.html");
+    res.sendFile(__dirname + "/public/html/snake_game.html");
 });
 
-const game2048 = fs.readFileSync('./2048.ejs', 'utf8');
+const game2048 = fs.readFileSync('./public/html/2048.ejs', 'utf8');
 server.get("/2048game", (req, res) => {
     connection.query('SELECT name, score FROM 2048game ORDER BY score desc limit 15;',
         function (error, rows, fields) {
@@ -305,8 +310,127 @@ server.post("/2048game/record", (req, res) => {
     })
 });
 
+server.get("/qna", (req, res) => {
+    res.redirect("/qna/1");
+});
+const qnaPage = fs.readFileSync('./public/html/qna.ejs', 'utf8');
+server.get("/qna/:page", (req, res) => {
+    var paging = req.params.page;
+    let pageStart = (paging - 1) * 10 ? (paging - 1) * 10 : 0;
+    // let sql = 'SELECT title, question, answer_num, date FROM qna_question ORDER BY id desc LIMIT ?, 10;';
+    let sql = 'SELECT q.id, q.title, q.question, q.date, c.count FROM qna_question q left outer join (select a.id as id, count(*) as count from qna_answer a group by a.id) c on q.id = c.id ORDER BY q.id desc LIMIT ?, 10;'
+    let sqll = 'SELECT COUNT(*) AS number FROM qna_question;';
+    connection.query(sql + sqll, [pageStart],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            }
+            else {
+                let dataResult = rows[0];
+                let countResult = rows[1];
+                let qna_question = [];
+                let qna_answer_num = [];
+                let qna_date = [];
+                let number = countResult[0].number;
+                let qna_title = [];
+                let qna_id = [];
+                for (var i in rows[0]) {
+                    qna_id[i] = dataResult[i].id;
+                    qna_title[i] = dataResult[i].title;
+                    qna_question[i] = dataResult[i].question;
+                    qna_answer_num[i] = dataResult[i].count?dataResult[i].count:0;
+                    qna_date[i] = dataResult[i].date.substr(0,16);
+                }//데이터 생성
+                var page = ejs.render(qnaPage, {
+                    page_num:10,
+                    pass:true,
+                    page:paging,
+                    number:number,
+                    qna_id:qna_id,
+                    qna_title:qna_title,
+                    qna_question:qna_question,
+                    qna_answer_num:qna_answer_num,
+                    qna_date:qna_date,
+                });
+                //응답
+                res.send(page);
+            }
+        }
+    );
+});
+const qnaReadPage = fs.readFileSync('./public/html/qnaRead.ejs', 'utf8');
+server.get("/qna/read/:idx", (req, res) => {
+    var idx = req.params.idx;
+    let sql = 'SELECT q.id, q.title, q.question, q.date, c.count FROM qna_question q left outer join (select a.id as id, count(*) as count from qna_answer a group by a.id) c on q.id = c.id where q.id = ?;';
+    let sqll = 'SELECT answer, date FROM qna_answer WHERE id=? ORDER BY date desc;';
+    connection.query(sql + sqll, [idx, idx],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            }
+            else {
+                let question = rows[0];
+                let answer = rows[1];
+                let qna_id = question[0].id;
+                let qna_title = question[0].title;
+                let qna_question = question[0].question;
+                let qna_question_date = question[0].date.substr(0,16);
+                let qna_answer_num = question[0].count?question[0].count:0;
+                let qna_answer = [];
+                let qna_answer_date = [];
+                if (rows[1]) {
+                    for (var i in rows[1]) {
+                        qna_answer[i] = answer[i].answer;
+                        qna_answer_date[i] = answer[i].date.substr(0,16);
+                    }
+                }
+                else {
+                    qna_answer[i] = 'null';
+                    qna_answer_date[i] = 'null';
+                }
+                //데이터 생성
+                var page = ejs.render(qnaReadPage, {
+                    qna_id:qna_id,
+                    qna_title: qna_title,
+                    qna_question: qna_question,
+                    qna_answer_num: qna_answer_num,
+                    qna_question_date: qna_question_date,
+                    qna_answer: qna_answer,
+                    qna_answer_date: qna_answer_date,
+                });
+                //응답
+                res.send(page);
+            }
+        }
+    );
+});
+server.post("/qna/questionSubmit", (req, res) => {
+    let title = req.body.qna_title;
+    let question= req.body.qna_question;
+    let sql = 'INSERT INTO qna_question (title, question) VALUES(?, ?)';
+    let params = [title,question];
+    connection.query(sql, params, function (err, result, fields) {
+        if (err) {
+            console.log(err);
+        }
+        return res.redirect('/qna');
+    })
+});
+server.post("/qna/answerSubmit", (req, res) => {
+    let answer = req.body.qna_answer;
+    let id = req.body.qna_id;
+    let sql = 'INSERT INTO qna_answer (id, answer) VALUES(?, ?)';
+    let params = [id,answer];
+    connection.query(sql, params, function (err, result, fields) {
+        if (err) {
+            console.log(err);
+        }
+        return res.redirect('/qna/read/'+id);
+    })
+});
+
 server.use((req, res) => {
-    res.sendFile(__dirname + "/404.html");
+    res.sendFile(__dirname + "/public/html/404.html");
 });
 
 //서버를 실행
