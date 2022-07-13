@@ -3,6 +3,7 @@
     padding: 0 5vw;
     margin-top: 70px;
     margin-bottom: 30px;
+    min-height: 1350px;
 }
 .qna_write{
     width: 600px;
@@ -67,7 +68,19 @@
     width: 600px;
     margin: 0 auto;
 }
-
+.qna_entry_empty{
+    display: flex;
+    min-height: 100px;
+    /* border-bottom: 1px solid black; */
+    box-shadow: 1px 1px 2px #784520;
+    margin: 0 0 10px 0;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.qna_entry_empty span{
+    font-size: 2rem;
+}
 .qna_entry{
     min-height: 100px;
     /* border-bottom: 1px solid black; */
@@ -79,6 +92,7 @@
     justify-content: space-between;
 }
 .qna_entry:hover{
+    cursor: pointer;
     background-color: rgb(246, 246, 246);
 }
 /* .qna_entry:first-child{
@@ -108,10 +122,11 @@
     margin-bottom: 50px;
 }
 .qna_page tr td{
-    padding: 0 5px;
+    padding: 0 7px;
 }
 .qna_page tr td a{
     font-size: 1.7rem;
+    color: black;
 }
 
 /* qnaRead */
@@ -233,6 +248,7 @@
 @media (max-width : 767px) {
     .qna_section{
         margin-top: 30px;
+        min-height: 1150px;
     }
     .qna_write, .qna_question_add, .qna_contents{
         width: 90vw;
@@ -244,7 +260,7 @@
         min-height: 80px;
     }
     .qna_page tr td{
-        padding: 0 4px;
+        padding: 0 6px;
     }
     .qna_page tr td a{
         font-size: 1.5rem;

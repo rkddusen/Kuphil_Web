@@ -104,7 +104,14 @@
                 </form>
             </div>
             <div class="qna_read_answer">
-                <% for(var i=0; i < qna_answer_num; i++) { %>
+                <% if(qna_answer_num==0){ %>
+                    <div class="qna_read_entry">
+                        <div>
+                            <p>아직 답변이 없습니다.</p>
+                        </div>
+                    </div>
+                <% }else{
+                    for(var i=0; i < qna_answer_num; i++) { %>
                     <div class="qna_read_entry">
                         <div>
                             <strong>A<%=i+1%>.</strong>
@@ -114,7 +121,8 @@
                             <span>등록 <%= qna_answer_date[i] %></span>
                         </div>
                     </div>
-                <%}%>
+                    <% }
+                } %>
             </div>
         </div>
     </div>
