@@ -333,7 +333,9 @@ server.get("/qna/:page", (req, res) => {
                 let qna_date = [];
                 let number = countResult[0].number;
                 let qna_title = [];
+                let qna_id = [];
                 for (var i in rows[0]) {
+                    qna_id[i] = dataResult[i].id;
                     qna_title[i] = dataResult[i].title;
                     qna_question[i] = dataResult[i].question;
                     qna_answer_num[i] = dataResult[i].count?dataResult[i].count:0;
@@ -344,6 +346,7 @@ server.get("/qna/:page", (req, res) => {
                     pass:true,
                     page:paging,
                     number:number,
+                    qna_id:qna_id,
                     qna_title:qna_title,
                     qna_question:qna_question,
                     qna_answer_num:qna_answer_num,
