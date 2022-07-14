@@ -27,7 +27,7 @@
     cursor: pointer;
 } */
 .calendar_move{
-    margin-top: 100px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
 }
