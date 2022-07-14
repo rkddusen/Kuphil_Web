@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./css/headfoot.css">
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    <!--Google Web Font를 이용하기 위한 link들 삽입-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Basic&Alegreya&family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>KUPHIL</title>
+</head>
+
+<body>
+    <header>
+        <div class="main_head">
+            <div class="mainlogo">
+                <a href="./"><img src="./image/main/kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
+            </div>
+            <!-- <div class="head1">
+                <div>
+                    <a href="./login">로그인</a>
+                </div>
+            </div> -->
+            <nav class="nav">
+                <ul>
+                    <li><a href="./introduce">소개</a></li>
+                    <li><a href="./archive">아카이브</a></li>
+                    <li><a href="./calendar">달력</a></li>
+                    <!-- <li><a href="./board">게시판</a></li> -->
+                    <li><a href="./gamecenter">놀이터</a></li>
+                    <li><a href="./lab">실험실</a></li>
+                </ul>
+            </nav>
+            <div class="small_menu">
+                <p onclick="smallOpen();">≡</p>
+
+            </div>
+            <div class="small_menu_open">
+                <p onclick="smallClose();">X</p>
+                <nav>
+                    <ul>
+                        <li><a href="./introduce">소개</a></li>
+                        <li><a href="./archive">아카이브</a></li>
+                        <li><a href="./calendar">달력</a></li>
+                        <!-- <li><a href="./board">게시판</a></li> -->
+                        <li><a href="./gamecenter">놀이터</a></li>
+                        <li><a href="./lab">실험실</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <script>
+                let small_menu_open = document.getElementsByClassName("small_menu_open")[0];
+                function smallOpen() {
+                    small_menu_open.style.display = 'block';
+                }
+                function smallClose() {
+                    small_menu_open.style.display = 'none';
+                }
+            </script>
+        </div>
+    </header>
+
+    <section>
+        <article>
+            <div id="main_welcome">
+                <!-- <img src="mainimage-3-2-2.jpg" alt="제 37회 정기연주회 무대 단체사진"> -->
+                <img src="./image/main/2022main.jpg" alt="제 38회 정기연주회 무대 단체사진">
+                <p>Welcome to KuPhil</p>
+            </div>
+        </article>
+        <!-- <article class="kuphil_sns">
+            <p class="kuphil_sns_title">쿠필 SNS</p>
+            <div class="show">
+                <div>
+                    <img src="유튜브2.png" alt="유튜브">
+                    <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">Youtube</a>
+                </div>
+                <div>
+                    <img src="인스타그램1.png" alt="인스타그램">
+                    <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank">Instagram</a>
+                </div>
+                <div>
+                    <img src="페이스북.png" alt="페이스북">
+                    <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank">Facebook</a>
+                </div>
+            </div>
+        </article> -->
+        <article class="nothing_and_weather">
+            <div class="nothing"></div>
+            <div class="weather">
+                <p id="time"></p>
+                <p>현재 서울 날씨 정보</p>
+                <p id="weather_desc"></p>
+                <p id="weather_temp"></p>
+                <img id="weather_icon" width="10px" height="10px"></div>
+                
+            </div>
+        </article>
+        <script>
+            function getTime() {
+                let time = document.getElementById("time");
+                let date = new Date();
+                let todayYear = date.getFullYear();
+                let todayMonth = date.getMonth() + 1;
+                let todayDate = date.getDate();
+                const week = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
+                let dayOfWeek = week[date.getDay()];
+                let hour = date.getHours();
+                let minute = date.getMinutes();
+                //let second = date.getSeconds();
+
+                time.innerHTML = String(todayYear) + "년 " + String(todayMonth) + "월 " + String(todayDate) + "일 " + dayOfWeek + " " + String(hour) + "시 " + String(minute) + "분 ";
+                
+            }
+            function getWeather() {
+                fetch(
+                    'https://api.openweathermap.org/data/2.5/weather?lat=37.5683&lon=126.9778&lang=kr&appid=c7f2c867ba8c30eb3e96bc0236f31cdf'
+                )
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (json){
+                    console.log(json);
+                    let weather_icon = document.getElementById('weather_icon');
+                    let weather_desc = document.getElementById('weather_desc');
+                    let weather_temp = document.getElementById('weather_temp');
+                    
+                    let weatherDesc = json.weather[0].main;
+                    const weatherIcon = json.weather[0].icon;
+                    let weatherTemp = json.main.temp;
+                    weatherTemp = (weatherTemp - 273.15);
+                    
+                    //늘 일정하게 소수 첫째 자리까지 출력하도록 한다. 일단은 반올림을 고려하지 않는다. (if 문 내에서 문자열과 숫자를 왔다갔다하면 코드만 복잡해지기 때문)
+                    if((weatherTemp >= 10.0) || ((weatherTemp < 0.0) && (weatherTemp > -10.0))) {
+                        weatherTemp = String(weatherTemp).slice(0, 4);
+                    }
+                    else if(weatherTemp <= -10.0) {
+                        weatherTemp = String(weatherTemp).slice(0, 5);
+                    }
+                    else {
+                        weatherTemp = String(weatherTemp).slice(0, 3);
+                    }
+
+                    //lang=kr를 사용했을 때 받아온 weather[0].description이 흔히 쓰는 말이 아니므로(ex:온흐림) 그냥 영어를 번역한다.
+                    //아주 세세하게 할 필요는 없으므로 weather[0].main을 번역.
+                    switch(weatherDesc) {
+                        case 'Thunderstorm':
+                        weatherDesc = "뇌우(천둥번개를 동반한 비)";
+                        break;
+
+                        case 'Drizzle':
+                        weatherDesc = "이슬비";
+                        break;
+
+                        case 'Rain':
+                        weatherDesc = "비";
+                        break;
+                        
+                        case 'Snow':
+                        weatherDesc = "눈";
+                        break;
+
+                        case 'Mist':
+                        weatherDesc = "엷은 안개(박무)";
+                        break;
+
+                        case 'Smoke':
+                        weatherDesc = "연기로 가득 참";
+                        break;
+
+                        case 'Haze':
+                        weatherDesc = "대기가 나빠서 생기는 안개(연무)";
+                        break;
+
+                        case 'Dust':
+                        weatherDesc = "먼지 날림";
+                        break;
+
+                        case 'Fog':
+                        weatherDesc = "짙은 안개";
+                        break;
+
+                        case 'Sand':
+                        weatherDesc = "황사";
+                        break;
+
+                        case 'Ash':
+                        weatherDesc = "재로 가득 참";
+                        break;
+
+                        case 'Squall':
+                        weatherDesc = "스콜";
+                        break;
+                        
+                        case 'Tornado':
+                        weatherDesc = "토네이도";
+                        break;
+
+                        case 'Clear':
+                        weatherDesc = "맑음";
+                        break;
+
+                        case 'Clouds':
+                        weatherDesc = "흐림";
+                        break;
+                    }
+                    const weatherIconAdrs = 'http://openweathermap.org/img/wn/'+weatherIcon+'@2x.png';
+                    weather_icon.setAttribute('src', weatherIconAdrs);
+                    weather_desc.innerHTML = weatherDesc;
+                    weather_temp.innerHTML = weatherTemp + "도";
+                })
+            }
+
+            //최초 시간, 날씨 정보 받아오기
+            getTime();
+            getWeather();
+
+            //timer 돌리기. 굳이 초까지 출력할 필요는 없고 대신 시간은 정확하게 받아와야 하므로 1초마다 다시 실행해준다.
+            //weather도 초 단위로 받아오면 서버에 부담이 갈 수 있으므로 1분마다 받아오도록 만든다. 하지만 정확성은 아주 약간 떨어질 수 있음.
+            //서버만 괜찮으면 초 단위로 받아오는 게 가장 좋을 거 같다.
+            var i = 0;
+            setInterval(function() {
+                getTime();
+                i = i + 1;
+                if(i == 60) {
+                    i = 0;
+                    getWeather();
+                }
+            }, 1000);
+            
+        </script>
+        <article class="spelling_introduce">
+            <div id="k" class="spell">
+                <img src="./image/main/remarkable.png" alt="KUPHIL 검정로고" class="spell_intro">
+                <div class="spell_intro">
+                    <p>remar<span>K</span>able</p>
+                    <p>KUPHIL(Konkuk University Philharmonic)은<br>
+                        건국대학교 아마추어 오케스트라 동아리를<br>
+                        매년 50명 이상의 대규모 연주회를 개최하고 있습니다.</p>
+                </div>
+                <div id="circle1"></div>
+            </div>
+            <div id="u" class="spell">
+                <img src="./image/main/voluntary-1.jpg" alt="병원연주 사진" class="spell_intro">
+                <div class="spell_intro">
+                    <p>vol<span>U</span>ntary</p>
+                    <p>봉사활동의 일환으로<br>
+                        건국대학교 병원 암병동에서 월 1회 연주하면서<br>
+                        음악을 통한 행복을 나누고 있습니다.</p>
+                </div>
+                <div id="circle2"></div>
+            </div>
+            <div id="p" class="spell">
+                <img src="./image/main/accomplishment-1.jpg" alt="2021년 창립제 단체사진" class="spell_intro">
+                <div class="spell_intro">
+                    <p>accom<span>P</span>lishment</p>
+                    <p>봄, 가을에는 정기연주회, 11월에는 창립제를 통해<br>
+                        연습으로 갈고 닦아온 자신의 기량을 마음껏 드러내며<br>
+                        성취감을 느낄 수 있습니다.</p>
+                </div>
+                <div id="circle3"></div>
+            </div>
+            <div id="h" class="spell">
+                <img src="./image/main/together-1.jpg" alt="제 37회 정기연주회 리허설" class="spell_intro">
+                <div class="spell_intro">
+                    <p>toget<span>H</span>er</p>
+                    <p>아름다운 음악을 만든다는 공동의 목표를 가지고<br>
+                        함께 연습하는 과정 자체를 즐길 수 있습니다.</p>
+                </div>
+                <div id="circle4"></div>
+            </div>
+            <div id="i" class="spell">
+                <img src="./image/main/exciting-1.jpg" alt="2019년 여름 음캠 단체사진" class="spell_intro">
+                <div class="spell_intro">
+                    <p>exc<span>I</span>ting</p>
+                    <p>음악캠프, 파트별 회식, 단체 회식,<br>
+                        각종 소모임과 비정기 이벤트를 통해<br>
+                        단원 간 친목을 활발히 하고 있습니다.</p>
+                </div>
+                <div id="circle5"></div>
+            </div>
+            <div id="l" class="spell">
+                <img src="./image/main/friendly-1.jpg" alt="제 34회 정기연주회 남자 대기실 단체사진" class="spell_intro">
+                <div class="spell_intro">
+                    <p>friend<span>L</span>y</p>
+                    <p>그룹레슨 및 개인레슨 연결, 단원 간 앙상블 등을 지원하며<br>
+                        초심자들도 부담없이 클래식과 친해질 수 있도록<br>
+                        적극 지원하고 있습니다.</p>
+                </div>
+                <div id="circle6"></div>
+            </div>
+        </article>
+    </section>
+    <footer>
+        <div class="footer_first">
+            <li><a href="#">오시는 길</a></li>
+            <li><a href="#">이용 약관</a></li>
+            <li><a href="#">제휴 제안</a></li>
+            <li><a href="#">개인정보 처리방침</a></li>
+        </div>
+        <div class="footer_second">
+            <div class="footer_logo">
+                <img src="./image/main/graylogo.png">
+                <img src="./image/main/무제.png">
+            </div>
+            <div class="footer_explain">
+
+                <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+                <p>후원 | ##은행 #####</p><br>
+                <p>copyright 2021 KUPHIL, All rights reserved.</p>
+            </div>
+            <div class="footer_sns">
+                <p>Contact Us :)</p>
+                <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">
+                    <img src="./image/main/kuphil_youtube.png" alt="쿠필 유튜브">
+                </a>
+                <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank">
+                    <img src="./image/main/kuphil_instagram.png" alt="쿠필 인스타그램">
+                </a>
+                <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank">
+                    <img src="./image/main/kuphil_facebook.png" alt="쿠필 페이스북">
+                </a>
+            </div>
+        </div>
+        <div class="small_footer_explain">
+
+            <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+            <p>후원 | ##은행 #####</p><br>
+            <p>copyright 2021 KUPHIL, All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

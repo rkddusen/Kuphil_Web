@@ -1,0 +1,79 @@
+.gameContents{
+    padding: 0 5vw;
+    width: 90vw;
+    margin-top: 100px;
+    height: auto;
+    min-height: 100%;
+    padding-bottom: 260px;
+}
+
+.question{
+    font-size: 3rem;
+    text-align: center;
+}
+
+.answer{
+    display: flex;
+    justify-content: center;
+}
+.firstAnswer button{
+    font-size: 2rem;
+    width: 400px;
+    height: 100px;
+    margin: 50px 2vw 50px 0;
+    border: 2px solid blue;
+    background-color: #EFEFFB;
+}
+.secondAnswer button{
+    font-size: 2rem;
+    width: 400px;
+    height: 100px;
+    margin: 50px 0 50px 2vw;
+    border: 2px solid red;
+    background-color: #FBEFEF;
+}
+.result{
+    text-align: center;
+}
+.resultText{
+    text-align: center;
+    font-size: 2rem;
+}
+.resultName{
+    font-size: 4rem;
+    padding: 10px;
+    color: brown;
+}
+.resultText p:nth-child(2), .resultText p:nth-child(3){
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+@media (max-width : 1023px) {
+    .firstAnswer button, .secondAnswer button{
+        width: 300px;
+        height: 75px;
+    }
+}
+
+@media (max-width : 768px) {
+    .answer{
+        display: block;
+    }
+    .firstAnswer button{
+        width: 90vw;
+        margin: 0;
+        margin: 50px 0 10px 0;
+        height: 50px;
+    }
+    .secondAnswer button{
+        width: 90vw;
+        margin: 0;
+        margin: 10px 0;
+        height: 50px;
+    }
+    .resultText p:nth-child(2), .resultText p:nth-child(3){
+        font-size: 1.5rem;
+        line-height: 3rem;
+    }
+}

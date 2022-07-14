@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./css/headfoot.css">
+    <link rel="stylesheet" type="text/css" href="./css/history.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>KUPHIL</title>
+    
+</head>
+
+<body>
+    <header>
+        <div class="main_head">
+            <div class="mainlogo">
+                <a href="./"><img src="./image/main/kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
+            </div>
+<<<<<<< HEAD:history.html
+            <div class="head1">
+                <div>
+                    <a href="./login">로그인</a>
+                </div>
+            </div>
+            <nav>
+=======
+            <nav class="nav">
+>>>>>>> develop:public/html/history.html
+                <ul>
+                    <li><a href="./introduce">소개</a></li>
+                    <li><a href="./archive">아카이브</a></li>
+                    <li><a href="./calendar">달력</a></li>
+<<<<<<< HEAD:history.html
+                    <li><a href="./board">게시판</a></li>
+=======
+                    <li><a href="./gamecenter">놀이터</a></li>
+>>>>>>> develop:public/html/history.html
+                    <li><a href="./lab">실험실</a></li>
+                </ul>
+            </nav>
+            <div class="small_menu">
+                <p onclick="smallOpen();">≡</p>
+
+            </div>
+            <div class="small_menu_open">
+                <p onclick="smallClose();">X</p>
+                <nav>
+                    <ul>
+                        <li><a href="./introduce">소개</a></li>
+                        <li><a href="./archive">아카이브</a></li>
+                        <li><a href="./calendar">달력</a></li>
+                        <li><a href="./gamecenter">놀이터</a></li>
+                        <li><a href="./lab">실험실</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <script>
+                let small_menu_open = document.getElementsByClassName("small_menu_open")[0];
+                function smallOpen() {
+                    small_menu_open.style.display = 'block';
+                }
+                function smallClose() {
+                    small_menu_open.style.display = 'none';
+                }
+            </script>
+        </div>
+        <article>
+            <div class="head3_line_f"></div>
+            <div class="head3_name"><a class="head3_introduce_a" href="./introduce">소개</a> &ensp;|&ensp; <a class="head3_history_a" href="./history">연혁</a></div>
+            <div class="head3_line_s"></div>
+        </article>
+        
+    </header>
+            
+    <p id="SelectYear">
+        <button class=Years id="year1" type="button" onclick="OH()">2003~</button>
+        <button class=Years id="year2" type="button">2005~</button>
+        <button class=Years id="year3" type="button">2010~</button>
+        <button class=Years id="year4" type="button">2015~</button>
+        <button class=Years id="year5" type="button">2020~</button>
+    </p>
+    <!--<div class="year" id="SelectYear">
+        <input class="year1" id="first" name="2003-2005" type="button" value="2003-2005" onclick="getHistory(this);">
+        <input class="year2" id="second" name="2006-2010" type="button" value="2006-2010" onclick="getHistory(this);">
+        <input class="year3" id="third" name="2011-2015" type="button" value="2011-2015" onclick="getHistory(this);">
+        <input class="year4" id="fourth" name="2016-2020" type="button" value="2016-2020" onclick="getHistory(this);">
+        <input class="year5" id="fifth" name="2021-현재" type="button" value="2021-현재" onclick="getHistory(this);">
+    </div>-->
+
+    <div id="historyyyyyyy" class="back">
+        <!--<div id="background" class="back_image">
+            <img src="kuphil_black_logo.png" id="back_logo" alt="바탕 로고">
+        </div>-->
+
+        <!--<div class="our_history" id="our_history">
+            <div id="story" class="kuphil_history">
+                <div id="2022" class="history_content">
+                    <p>2022<br></p>
+                    <p>2022.02.27. 제 38회 정기연주회</p>
+                </div>
+                <div id="2021" class="history_content">
+                    <p>2021<br></p>
+                    <p>2021.08.28. 제 37회 정기연주회<br>2021.10.12 광진예술제(나루와 함께하는 Kuphil 영화 여행)</p>
+                </div>
+            </div>
+        </div>-->
+
+        <div class="year1">
+            <section>2003</section>
+            <p>
+                2003.05.    창단 연주회<br>
+                2003.11.26. 제 2회 정기연주회<br>
+            </p>
+
+            <section>2004</section>
+            <p>
+                2004.05.27. 제 3회 정기연주회<br>
+                2004.11.24. 제 4회 정기연주회<br>
+            </p>       
+        </div>
+
+        <div class="year2">
+            <section>2005</section>
+            <p>
+                2005.09.08. 제 5회 정기 연주회<br>
+            </p>
+
+            <section>2006</section>
+            <p>
+                2006.03.25. 제 6회 정기 연주회<br>
+                2006.09.22. 제 7회 정기 연주회<br>
+            </p>
+
+            <section>2007</section>
+            <p>
+                2007.03.09. 제 8회 정기 연주회<br>
+                2007.09.16. 제 9회 정기 연주회<br>
+            </p>
+            
+            <section>2008</section>
+            <p>
+                2008.03.07. 제 10회 정기 연주회<br>
+                2008.09.04. 제 11회 정기 연주회<br>
+            </p>
+
+            <section>2009</section>
+            <p>
+                2009.03.05. 제 12회 정기 연주회<br>
+                2009.09.11. 제 13회 정기 연주회<br>
+            </p> 
+        </div>
+
+        <div class="year3">
+            <section>2010</section>
+            <p>
+                2010.03.05. 제 14회 정기 연주회<br>
+                2010.09.10. 제 15회 정기 연주회<br>
+            </p>  
+
+            
+            <section>2011</section>
+            <p>
+                2011.03.18. 제 16회 정기 연주회<br>
+                2011.08.31. 제 17회 정기 연주회<br>
+            </p>  
+
+            
+            <section>2012</section>
+            <p>
+                2012.03.18. 제 18회 정기 연주회<br>
+                2012.09.15. 제 19회 정기 연주회<br>
+            </p>   
+
+            <section>2013</section>
+            <p>
+                2013.03.07. 제 20회 정기 연주회<br>
+                2013.09.03. 제 21회 정기 연주회<br>
+            </p>
+
+            <section>2014</section>
+            <p>
+                2014.03.06. 제 22회 정기 연주회<br>
+                2014.09.05. 제 23회 정기 연주회<br>
+                2014.11.16. 제 24회 정기 연주회<br>
+            </p> 
+        </div>   
+        
+        <div class="year4">
+            <section>2015
+            <p>
+                2015.02.27. 제 25회 정기 연주회<br> 
+                2015. 여름. 육회 먹고 싶다<br>
+            </p>
+            </section>
+            
+            <section>2016</section>  
+            <p>
+                2016.03.03. 제 27회 정기 연주회<br>
+                2016.09.03. 제 28회 정기 연주회<br>
+            </p> 
+
+            <section>2017</section>
+            <p>
+                2017.03.10. 제 29회 정기 연주회<br>
+                2017.09.08. 제 30회 정기 연주회<br>
+            </p> 
+
+            <section>2018</section>
+            <p>
+                2018.03.08. 제 31회 정기 연주회<br>
+                2018.09.01. 제 32회 정기 연주회<br>
+            </p>
+
+            <section>2019</section>
+            <p>
+                2019.03.01. 제 33회 정기 연주회<br>
+                2019.05.16. 대동제 연주<br>
+                2019.08.30. 제 34회 정기 연주회<br>
+                2019.12.    제 1회 동아리 경진 대회 대상 수상<br>
+            </p>
+        </div>
+        
+        <div class="year5">
+            <section>2020</section>
+            <p>
+                2020.02.28. (취소) 제 35회 정기 연주회<br>
+                2020.08.28. (취소) 제 36회 정기 연주회<br>
+            </p>
+
+            <section>2021</section>
+            <p>
+                2021.08.28. 제 37회 정기 연주회<br>
+                2021.10.12. 광진예술제 (나루와 함께 하는 Kuphil 영화 여행)<br>
+            </p>
+
+            <section>2022</section>
+            <p>
+                2022.02.27. 제 38회 정기 연주회<br>
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer_first">
+            <li><a href="#">오시는 길</a></li>
+            <li><a href="#">이용 약관</a></li>
+            <li><a href="#">제휴 제안</a></li>
+            <li><a href="#">개인정보 처리방침</a></li>
+        </div>
+        <div class="footer_second">
+            <div class="footer_logo">
+                <img src="./image/main/graylogo.png">
+                <img src="./image/main/무제.png">
+            </div>
+            <div class="footer_explain">
+
+                <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+                <p>후원 | ##은행 #####</p><br>
+                <p>copyright 2021 KUPHIL, All rights reserved.</p>
+            </div>
+            <div class="footer_sns">
+                <p>Contact Us :)</p>
+                <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">
+                    <img src="./image/main/kuphil_youtube.png" alt="쿠필 유튜브">
+                </a>
+                <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank">
+                    <img src="./image/main/kuphil_instagram.png" alt="쿠필 인스타그램">
+                </a>
+                <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank">
+                    <img src="./image/main/kuphil_facebook.png" alt="쿠필 페이스북">
+                </a>
+            </div>
+        </div>
+        <div class="small_footer_explain">
+
+            <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+            <p>후원 | ##은행 #####</p><br>
+            <p>copyright 2021 KUPHIL, All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+<script src="./js/history.js" type="text/javascript"></script>
+</html>
