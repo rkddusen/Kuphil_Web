@@ -52,6 +52,7 @@
     background-color: #c4c4c4;
 
     transition: all 0.2s linear;
+    float: left;
 
 }
 
@@ -88,6 +89,7 @@
     font-weight: 500;
     font-size: 1.7rem;
     margin: 1vw;
+    clear: left;
 }
 
 
@@ -125,6 +127,19 @@
     transform: rotate(-135deg);
 }
 
+.prev_btn[disabled]:hover {
+    cursor: pointer;
+    content: '';
+    display:inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    border-top: 1px solid #222;
+    border-right: 1px solid #222;
+    transform: rotate(-135deg);
+    pointer-events: none;
+}
+
 .next_btn {
     cursor: pointer;
     content: '';
@@ -149,7 +164,20 @@
     transform: rotate(45deg);
 }
 
-button{
+.next_btn[disabled]:hover {
+    cursor: pointer;
+    content: '';
+    display:inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    border-top: 1px solid #222;
+    border-right: 1px solid #222;
+    transform: rotate(-135deg);
+    pointer-events: none;
+}
+
+#close{
     all: unset;
     background-color: #DFC7B4;
     color: white;
@@ -157,11 +185,9 @@ button{
     border-radius: 5%;
     border:5px;
     cursor:pointer;
-}
-
-#close{
     font-size: 1.6rem;
 }
+
 
 .modal{
     position: fixed;

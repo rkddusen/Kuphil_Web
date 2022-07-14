@@ -121,6 +121,11 @@ function prevPage() {
     }
     else {
         alert("마지막 페이지 입니다.");
+        function btn_disabled(){
+            let target = document.getElementsByClassName("next_btn");
+            target.disabled = true;
+        }
+        btn_disabled();
         showPage();
     }
 };
@@ -132,6 +137,11 @@ function nextPage() {
     }
     else {
         alert("첫 페이지 입니다.");
+        function btn_disabled(){
+            let target = document.getElementsByClassName("prev_btn");
+            target.disabled = true;
+        }
+        btn_disabled();
         showPage();
     }
 };
