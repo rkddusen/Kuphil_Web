@@ -106,91 +106,25 @@ server.get("/calendar", (req, res) => {
         }
     );
 });
-// const mainPage = fs.readFileSync('./index.ejs', 'utf8');
-// server.get("/", (req, res) => {
-//     let data = '';let text='';
-//     connection.query('SELECT date,title FROM schedule WHERE main=1',
-//         function (error, rows, fields) {
-//             if (error) {
-//                 console.log(error);
-//             }
-//             else {
-//                 if (rows.length == 0) {
-//                     data = '아직 특별한 일정이 없어요!';
-//                 }
-//                 else {
-//                     data += rows[0].title;
-//                     console.log(data);
-//                     let today=new Date();
-//                     let mainDay=new Date(rows[0].date.replace(/-/g,','));
-                    
-//                     let gap=mainDay.getTime()-today.getTime();
-//                     let result=Math.ceil(gap/(1000*60*60*24));
-                    
-//                     if(result<0){
-//                         text='D + '+Math.abs(result);
-//                     }
-//                     else if(result==0){
-//                         text='D-day';
-//                     }
-//                     else if(result>0){
-//                         text='D - '+result;
-//                     }
-//                 }
-//                 //데이터 생성
-//                 var page = ejs.render(mainPage, {
-//                     db: data,
-//                     text:text,
-//                 });
-//                 //응답
-//                 res.send(page);
-//             }
-//         }
-//     );
-// });
 
 server.get("/archive", (req, res) => {
 
     res.sendFile(__dirname + "/public/html/archive.html");
 });
 
-// const albPage = fs.readFileSync('./album.ejs', 'utf8');
-// server.get("/album", (req, res) => {
-
-//     connection.query('SELECT firstTitle, secondTitle, address FROM album ORDER BY firstTitle, secondTitle',
-//         function (error, rows, fields) {
-//             if (error) {
-//                 console.log(error);
-//             }
-//             else {
-//                 let imagealbum = [];
-//                 let count = 0;
-//                 for (var i in rows) {
-//                     imagealbum[i] = rows[i].firstTitle + "//" + rows[i].secondTitle + "//";
-//                     imagealbum[i] += rows[i].address;
-//                     count++;
-//                 }//데이터 생성
-//                 var page = ejs.render(albPage, {
-//                     db: imagealbum,
-//                     count: count,
-//                 });
-//                 //응답
-//                 res.send(page);
-//             }
-//         }
-//     );
-// });
 // server.get("/board", (req, res) => {
 //     res.redirect("/board/1");
+// });
+
+// server.get("/board/write", (req, res) => {
+//     res.sendFile(__dirname + "/board-write.html");
 // });
 
 // const boaPage = fs.readFileSync('./board.ejs', 'utf8');
 // server.get("/board/:page", (req, res) => {
 //     var paging=req.params.page;
 //     let pageStart=(paging-1)*10?(paging-1)*10:0;
-//     // let sqlcnt='SELECT SQL_CALC_FOUND_ROWS * FROM board';
 //     let sql='SELECT title, writer, date FROM board ORDER BY date DESC LIMIT ?, 10;';
-//     // let sqll='SELECT table_rows FROM information_schema.tables WHERE table_name ="board";';
 //     let sqll='SELECT COUNT(*) AS number FROM board;';
 //     connection.query(sql+sqll,[pageStart],
 //         function (error, rows, fields) {
@@ -240,55 +174,55 @@ server.get("/archive", (req, res) => {
 //     });
 // });
 
-const signup3Page = fs.readFileSync('./signup3.ejs', 'utf8');
-server.get('/signup3', function (req, res) {
-    let id_data = '';
-    let pwd_data = '';
-    var sql = 'SELECT id_data, pwd_data FROM signupinformation ORDER BY id_data, pwd_data';    
-    connection.query(sql, 
-        function (err, rows, fields) {
-        if (err) {
-            console.log('query is not excuted. select fail...\n' + err);
-        }
-        else {
-            let list = [];
-            let count = 0;
-            for (var i in rows) {
-                list[i] = rows[i].id_data + "/" + rows[i].pwd_data+"//";
-                count++;
-            }
-            console.log(rows);
-            var page = ejs.render(signup3Page, {
-                db:list,
-                count:count, 
-            });
-            res.send(page);
-        }
-    });
-});
+// const signup3Page = fs.readFileSync('./signup3.ejs', 'utf8');
+// server.get('/signup3', function (req, res) {
+//     let id_data = '';
+//     let pwd_data = '';
+//     var sql = 'SELECT id_data, pwd_data FROM signupinformation ORDER BY id_data, pwd_data';    
+//     connection.query(sql, 
+//         function (err, rows, fields) {
+//         if (err) {
+//             console.log('query is not excuted. select fail...\n' + err);
+//         }
+//         else {
+//             let list = [];
+//             let count = 0;
+//             for (var i in rows) {
+//                 list[i] = rows[i].id_data + "/" + rows[i].pwd_data+"//";
+//                 count++;
+//             }
+//             console.log(rows);
+//             var page = ejs.render(signup3Page, {
+//                 db:list,
+//                 count:count, 
+//             });
+//             res.send(page);
+//         }
+//     });
+// });
 
-const boaReaPage = fs.readFileSync('./board-read.ejs', 'utf8');
-server.get("/read/:idx", (req, res) => {
-    var idx=req.params.idx;
-    connection.query('SELECT id, title, content, writer, date FROM board WHERE id=?;',[idx],
-        function (error, rows, fields) {
-            if (error) {
-                console.log(error);
-            }
-            else {
-                //데이터 생성
-                page = ejs.render(boaReaPage, {
-                    id:rows[0].id,
-                    title:rows[0].title,
-                    content:rows[0].content,
-                    writer:rows[0].writer,
-                    date:rows[0].date,
-                });
-                res.send(page);
-            }
-        }
-    );
-});
+// const boaReaPage = fs.readFileSync('./board-read.ejs', 'utf8');
+// server.get("/read/:idx", (req, res) => {
+//     var idx=req.params.idx;
+//     connection.query('SELECT id, title, content, writer, date FROM board WHERE id=?;',[idx],
+//         function (error, rows, fields) {
+//             if (error) {
+//                 console.log(error);
+//             }
+//             else {
+//                 //데이터 생성
+//                 page = ejs.render(boaReaPage, {
+//                     id:rows[0].id,
+//                     title:rows[0].title,
+//                     content:rows[0].content,
+//                     writer:rows[0].writer,
+//                     date:rows[0].date,
+//                 });
+//                 res.send(page);
+//             }
+//         }
+//     );
+// });
 
 const testPage = fs.readFileSync('./public/html/test.ejs', 'utf8');
 server.get("/test", (req, res) => {
@@ -310,7 +244,7 @@ server.get("/test", (req, res) => {
                     tuba[i] = rows[i].tuba; timpani[i] = rows[i].timpani; percussion[i] = rows[i].percussion;
                     piano[i] = rows[i].piano; fanswer[i] = rows[i].answer; sanswer[i] = rows[i].sanswer;
                 }//데이터 생성
-                var page = ejs.render(gamePage, {
+                var page = ejs.render(testPage, {
                     question: question, conductor: conductor, firstViolin: firstViolin, secondViolin: secondViolin, viola: viola,
                     cello: cello, contra: contra, flute: flute, oboe: oboe,
                     clarinet: clarinet, basson: basson, trumpet: trumpet, trombone: trombone, horn: horn,
@@ -500,10 +434,6 @@ server.use((req, res) => {
 });
 
 //서버를 실행
-// server.listen(3000, (err) => {
-//     if (err) return console.log(err);
-//     console.log("The server is listening on port 3000");
-// });
 http.createServer(server).listen(server.get('port'), server.get('host'), () => {
     console.log('Express server running at ' + server.get('hostname') + ':' + server.get('port'));
 });
