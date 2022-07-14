@@ -11,17 +11,26 @@
 }
 
 .calendar_title{
+<<<<<<< HEAD:public/calendar.css
+    width: 420px;
+    margin-top: 70px;
+    height: 420px;
+=======
     display: flex;
     width: 360px;
     height: 360px;
+>>>>>>> develop:public/css/calendar.css
     background-color: #FFF1E7;
     border: 2px solid #94613C;
     border-right-width: 1px;
     border-bottom-width: 1px;
     text-align: center;
+<<<<<<< HEAD:public/calendar.css
+=======
     flex-direction: column;
     justify-content: space-between;
     padding: 20px 10px 0 10px;
+>>>>>>> develop:public/css/calendar.css
 }
 /* #table_title input{
     cursor: pointer;
