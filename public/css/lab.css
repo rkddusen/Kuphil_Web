@@ -114,109 +114,81 @@
     color:#5C3A1A;
     font-weight: bold;
 } */
-#game_notice{
-    margin: 70px auto;
-    margin-bottom: 80px;
-    width:1130px;
-    padding:0 30px;
-    font-size:15px;
-    line-height:200%;
+#lab_notice{
+    margin-top: 70px;
+    margin-bottom: 50px;
+    width: 90vw;
+    padding: 0 5vw;
+    font-size: 2.5rem;
     color: #5C3A1A;
 }
 
-.test{
-    margin: 30px auto;
-    padding: 0 30px;
-    width:1130px;
-    margin-bottom:80px;
+.lab_content{
+    padding: 0 5vw;
+    width: 90vw;
+    margin-top: 100px;
+    margin-bottom: 50px;
     display:flex;
     flex-direction: column;
     align-items:center;
 }
 
-.test p:first-child{
-    font-size: 25px;
+.lab_title{
+    font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
-.test section{
-    width:900px;
-    margin: 20px auto;
-    margin-bottom: 10px;
-    text-align:center;
-}
-
-#info_1{
-    font-size:15px;
-}
-
-.thumbnail{
+.lab_thumbnail{
     width: 300px;
     height: 300px;
-    margin-bottom: 10px;
     border: 1px solid black;
-}
-
-.game{
-    margin: 30px auto;
-    padding: 0 30px;
-    width:1130px;
-    margin-bottom:80px;
-    display:flex;
-    flex-direction: column;
-    align-items:center;
-}
-
-.game p:first-child{
-    font-size: 25px;
     margin-bottom: 20px;
 }
 
-.game section{
-    width:900px;
-    margin: 20px auto;
-    margin-bottom: 10px;
+.lab_content section{
     text-align:center;
-}
-
-#info_2{
-    font-size:15px;
-}
-.snake_game{
-    margin: 30px auto;
-    padding: 0 30px;
-    width:1130px;
-    margin-bottom:80px;
-    display:flex;
-    flex-direction: column;
-    align-items:center;
-}
-
-.snake_game  p:first-child{
-    font-size: 25px;
     margin-bottom: 20px;
 }
 
-.snake_game section{
-    width:900px;
-    margin: 20px auto;
-    margin-bottom: 10px;
-    text-align:center;
+.lab_info{
+    font-size: 1.5rem;
 }
 
-#info_3{
-    font-size:15px;
-}
-
-.selection{
+.lab_selection{
     align-self:center;
     border: none;
     background-color: transparent;
     color:#BE7743;
-    font-size: 20px;
+    font-size: 2rem;
 }
 
-.selection:hover{
+.lab_selection:hover{
     color:#5C3A1A;
     font-weight: bold;
+}
+
+@media (max-width: 1023px) {
+    #lab_notice{
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 767px) {
+    #lab_notice{
+        margin-top: 30px;
+    }
+    .lab_thumbnail{
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 479px) {
+    #lab_notice{
+        margin-top: 10px;
+    }
+    .lab_thumbnail{
+        width: 200px;
+        height: 200px;
+    }
 }
