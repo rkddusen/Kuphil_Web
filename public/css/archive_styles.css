@@ -16,11 +16,11 @@
 
 
 #arc_notice{
-    margin: 2vw auto;
-    width:88vw;
-    padding:0 6vw;
-    font-size: 3rem;
-    line-height:150%;
+    margin-top: 70px;
+    margin-bottom: 50px;
+    width: 90vw;
+    padding: 0 5vw;
+    font-size: 2.5rem;
     color: #5C3A1A;
 }
 
@@ -52,6 +52,7 @@
     background-color: #c4c4c4;
 
     transition: all 0.2s linear;
+    float: left;
 
 }
 
@@ -88,25 +89,10 @@
     font-weight: 500;
     font-size: 1.7rem;
     margin: 1vw;
+    clear: left;
 }
 
-@media (max-width: 880px) {
-    .poster_title {
-        text-align: center;
-        font-weight: 500;
-        font-size: 1.2rem;
-        margin: 1vw;
-    }
-}
 
-/* @media (max-width: 500px) {
-    .poster_title {
-        text-align: center;
-        font-weight: 500;
-        font-size: 8rem;
-        margin: 1vw;
-    }
-} */
 
 
 
@@ -141,6 +127,19 @@
     transform: rotate(-135deg);
 }
 
+.prev_btn[disabled]:hover {
+    cursor: pointer;
+    content: '';
+    display:inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    border-top: 1px solid #222;
+    border-right: 1px solid #222;
+    transform: rotate(-135deg);
+    pointer-events: none;
+}
+
 .next_btn {
     cursor: pointer;
     content: '';
@@ -165,7 +164,20 @@
     transform: rotate(45deg);
 }
 
-button{
+.next_btn[disabled]:hover {
+    cursor: pointer;
+    content: '';
+    display:inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    border-top: 1px solid #222;
+    border-right: 1px solid #222;
+    transform: rotate(-135deg);
+    pointer-events: none;
+}
+
+#close{
     all: unset;
     background-color: #DFC7B4;
     color: white;
@@ -173,11 +185,9 @@ button{
     border-radius: 5%;
     border:5px;
     cursor:pointer;
-}
-
-#close{
     font-size: 1.6rem;
 }
+
 
 .modal{
     position: fixed;
@@ -251,4 +261,37 @@ button{
 
 .hidden{
     display: none;
+}
+
+@media (max-width: 1023px) {
+    .poster_title {
+        text-align: center;
+        font-weight: 500;
+        font-size: 1.7rem;
+        margin: 1vw;
+    }
+    #arc_notice{
+        margin-top: 50px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .poster_title {
+        font-size: 0.7rem;
+        margin: 1vw;
+    }
+    #arc_notice{
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 479px) {
+    .poster_title {
+        font-size: rem;
+        margin: 1vw;
+    }
+    #arc_notice{
+        margin-top: 10px;
+    }
 }
