@@ -9,10 +9,13 @@ a{
 .head3_introduce, .head3_history_a{
     color: #784520;
 }
+.head3_name>span{
+    font-size:2.7rem;
+}
 
 #SelectYear {
-    width: 900px;
-    padding: 0 200px;
+    width: 69vw;
+    padding: 0 15vw;
     margin: 70px auto;
     display: flex;
     justify-content: space-evenly;
@@ -21,7 +24,7 @@ a{
 .Years{
     border: none;
     background-color: transparent;
-    font-size: 20px;
+    font-size: 2rem;
     color: #BE7743;
     cursor:pointer;
     z-index:1000000;
@@ -35,9 +38,9 @@ a{
 .back{
     background-color:transparent;
     position: relative;
-    width: 1130px;
+    width: 90vw;
     height: 100%;
-    margin: 0 auto;
+    margin: 0 10vw;
 }
 
 /*#back_logo{
@@ -63,60 +66,60 @@ a{
 */
 
 .year1  section {
-    font-size: 30px;
+    font-size: 3rem;
     margin: 10px 0;
 }
 
 .year1  p{
-    font-size: 15px;
+    font-size: 1.5rem;
     margin: 80px 0;
     margin-top: 30px;
     line-height: 200%;
 }
 
 .year2  section {
-    font-size: 30px;
+    font-size: 3rem;
     margin: 10px 0;
 }
 
 .year2  p{
-    font-size: 15px;
+    font-size: 1.5rem;
     margin: 80px 0;
     margin-top: 30px;
     line-height: 200%;
 }
 
 .year3  section {
-    font-size: 30px;
+    font-size: 3rem;
     margin: 10px 0;
 }
 
 .year3  p{
-    font-size: 15px;
+    font-size: 1.5rem;
     margin: 80px 0;
     margin-top: 30px;
     line-height: 200%;
 }
 
 .year4  section {
-    font-size: 30px;
+    font-size: 3rem;
     margin: 10px 0;
 }
 
 .year4  p{
-    font-size: 15px;
+    font-size: 1.5rem;
     margin: 80px 0;
     margin-top: 30px;
     line-height: 200%;
 }
 
 .year5  section {
-    font-size: 30px;
+    font-size: 3rem;
     margin: 10px 0;
 }
 
 .year5  p{
-    font-size: 15px;
+    font-size: 1.5rem;
     margin: 80px 0;
     margin-top: 30px;
     line-height: 200%;
