@@ -11,6 +11,9 @@ a{
 .head3_introduce, .head3_introduce_a{
     color: #784520;
 }
+.head3_name>span{
+    font-size:2.7rem;
+}
 
 .greeting{
     width:78.5vw;

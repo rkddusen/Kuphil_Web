@@ -14,7 +14,7 @@ function removeColor() {
 // 소개 변경
 function getPath(btn){
     removePath();
-    if (btn.value=="수의대"){
+    if (btn.value=="수의과대학 (정문)"){
         let Pathway;
         let Path = document.createElement('div');
         Path.setAttribute('class', 'path');
