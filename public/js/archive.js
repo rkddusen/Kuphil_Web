@@ -108,21 +108,25 @@ function showPage(){
         document.getElementsByClassName( 'prev_btn' )[0].removeAttribute( 'onClick' );
         document.getElementsByClassName('prev_btn')[0].style.borderRight = '2px solid #999';
         document.getElementsByClassName('prev_btn')[0].style.borderTop = '2px solid #999';
+        document.getElementsByClassName('prev_btn')[0].style.cursor = 'default';
 
     }
     else if (num<7) {
         document.getElementsByClassName( 'next_btn' )[0].removeAttribute( 'onClick' );
         document.getElementsByClassName('next_btn')[0].style.borderRight = '2px solid #999';
         document.getElementsByClassName('next_btn')[0].style.borderTop = '2px solid #999';
+        document.getElementsByClassName('next_btn')[0].style.cursor = 'default';
     }
 
     else {
         document.getElementsByClassName('prev_btn')[0].setAttribute('onClick', "prevPage()");
         document.getElementsByClassName('next_btn')[0].setAttribute('onClick', "nextPage()");
-        document.getElementsByClassName('prev_btn')[0].style.borderRight = '2px solid #222';
-        document.getElementsByClassName('prev_btn')[0].style.borderTop = '2px solid #222';
-        document.getElementsByClassName('next_btn')[0].style.borderRight = '2px solid #222';
-        document.getElementsByClassName('next_btn')[0].style.borderTop = '2px solid #222';
+        document.getElementsByClassName('prev_btn')[0].style.borderRight = '3px solid #222';
+        document.getElementsByClassName('prev_btn')[0].style.borderTop = '3px solid #222';
+        document.getElementsByClassName('prev_btn')[0].style.cursor = 'pointer';
+        document.getElementsByClassName('next_btn')[0].style.borderRight = '3px solid #222';
+        document.getElementsByClassName('next_btn')[0].style.borderTop = '3px solid #222';
+        document.getElementsByClassName('next_btn')[0].style.cursor = 'pointer';
     }
 };
 
