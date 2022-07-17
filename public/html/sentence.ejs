@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/headfoot.css">
+    <link rel="stylesheet" type="text/css" href="../css/sentence.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>KUPHIL</title>
+</head>
+
+<body>
+    <!-- 헤더 -->
+    <header>
+        <div class="main_head">
+            <div class="mainlogo">
+                <a href="../"><img src="../image/main/kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="../introduce">소개</a></li>
+                    <li><a href="../archive">아카이브</a></li>
+                    <li><a href="../calendar">달력</a></li>
+                    <li><a href="../qna">Q&A</a></li>
+                    <li><a href="../lab">실험실</a></li>
+                </ul>
+            </nav>
+            <div class="small_menu">
+                <p onclick="smallOpen();">≡</p>
+
+            </div>
+            <div class="small_menu_open">
+                <p onclick="smallClose();">X</p>
+                <nav>
+                    <ul>
+                        <li><a href="../introduce">소개</a></li>
+                        <li><a href="../archive">아카이브</a></li>
+                        <li><a href="../calendar">달력</a></li>
+                        <li><a href="../qna">Q&A</a></li>
+                        <li><a href="../lab">실험실</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <script>
+                let small_menu_open = document.getElementsByClassName("small_menu_open")[0];
+                function smallOpen() {
+                    small_menu_open.style.display = 'block';
+                }
+                function smallClose() {
+                    small_menu_open.style.display = 'none';
+                }
+            </script>
+        </div>
+        <article>
+            <div class="head3_line_f"></div>
+            <div class="head3_name"><a class="head3_sentence_a" href="../sentence">쿠필의 한마디</a></div>
+            <div class="head3_line_s"></div>
+        </article>
+    </header>
+
+
+    <div id="stc_notice">
+        <p> 쿠필인들이 전하고 싶은 말을 적은 공간입니다:)</p>
+    </div>
+    <div class="stc_content">
+        <div class="stc_sentence">
+            <div class="stc_title_entry">
+                <p class="stc_title_nickname">이름</p>
+                <p class="stc_title_text">한 문장</p>
+            </div>
+            <% for (var i = 0; i < page_num; i++){ 
+                if(!stc_nickname[i]){
+                    break;
+                } else{ %>
+                <div class="stc_entry">
+                    <p class="stc_nickname"><%= stc_nickname[i] %></p>
+                    <p class="stc_text"><%= stc_sentence[i] %></p>
+                </div>
+                <% }
+            } %>
+        </div>
+        <!-- 페이지 넘길 수 있음 -->
+        <table class="stc_page">
+            <tr>
+                <!-- 이전 페이지 구간의 마지막 페이지 -->
+                <!-- ex) 15페이지에서 '이전' 버튼 누르면 10페이지로 감 -->
+
+                <td><a id="prev" href="/stc/<%= parseInt((page - 1) / 10) * 10 %>">이전</a></td>
+                <% <!-- 마지막 페이지 -->
+                    <!-- 1~10이므로 1을 뺀 후에, 10으로 나누기 -->
+                    let last_page = ((number-1) / page_num) + 1;
+                    <!-- 현재 페이지가 있는 구간의 시작 -->
+                    let now_page_first = parseInt((page-1) / 10) * 10 + 1;
+                    let now_page_last = now_page_first + 9;
+                    for (var i = now_page_first; i <= now_page_last; i++) { if(i <=last_page) {%>
+                        <td>
+                            <a id="num_<%= i %>" href="/stc/<%= i %>">
+                                <%= i %>
+                            </a>
+                        </td>
+                        <% } else { break; } } %>
+                            <td><a id="next" href="/stc/<%= (parseInt((page - 1) / 10) + 1) * 10 + 1%>">다음</a></td>
+            </tr>
+        </table>
+        <script>
+        // 1~10페이지 구간에 현재 페이지가 존재하면, '이전' 버튼 비활성화
+        // ex) 현재 페이지가 5페이지이면 1~10 사이에 존재하므로 '이전' 버튼 비활성화
+        document.getElementById("num_" + "<%= page %>").style.color = 'red';
+        if ("<%= parseInt(page) %>" <= 10) {
+            document.getElementById("prev").style.color = 'rgb(200, 200, 200)';
+            document.getElementById("prev").setAttribute("onclick", "return false;");
+            document.getElementById("prev").style.cursor = 'default';
+        }
+        // 마지막 페이지가 있는 페이징구간 내에 현재 페이지가 존재하면, '다음' 버튼 비활성화
+        // ex) 마지막 페이지는 19페이지이고 현재 15페이지면
+        // 마지막 페이지인 19페이지가 있는 구간인 11~20 사이에 현재 15페이지가 존재하므로, '다음' 비활성화
+        if ("<%= parseInt((page - 1) / 10) %>" == "<%= parseInt((last_page - 1) / 10) %>") {
+            document.getElementById("next").style.color = 'rgb(200, 200, 200)';
+            document.getElementById("next").setAttribute("onclick", "return false;");
+            document.getElementById("next").style.cursor = 'default';
+        }
+        </script>
+    </div>
+
+
+    <footer>
+        <div class="footer_first">
+            <li><a href="#">오시는 길</a></li>
+            <li><a href="#">이용 약관</a></li>
+            <li><a href="#">제휴 제안</a></li>
+            <li><a href="#">개인정보 처리방침</a></li>
+        </div>
+        <div class="footer_second">
+            <div class="footer_logo">
+                <img src="../image/main/graylogo.png">
+                <img src="../image/main/무제.png">
+            </div>
+            <div class="footer_explain">
+
+                <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+                <p>후원 | ##은행 #####</p><br>
+                <p>copyright 2021 KUPHIL, All rights reserved.</p>
+            </div>
+            <div class="footer_sns">
+                <p>Contact Us :)</p>
+                <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">
+                    <img src="../image/main/kuphil_youtube.png" alt="쿠필 유튜브">
+                </a>
+                <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank">
+                    <img src="../image/main/kuphil_instagram.png" alt="쿠필 인스타그램">
+                </a>
+                <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank">
+                    <img src="../image/main/kuphil_facebook.png" alt="쿠필 페이스북">
+                </a>
+            </div>
+        </div>
+        <div class="small_footer_explain">
+
+            <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+            <p>후원 | ##은행 #####</p><br>
+            <p>copyright 2021 KUPHIL, All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+<script type="text/javascript" src="../js/sentence.js"></script>
+
+</html>

@@ -429,6 +429,49 @@ server.post("/qna/answerSubmit", (req, res) => {
     })
 });
 
+server.get("/sentence", (req, res) => {
+    res.redirect("/sentence/1");
+});
+
+const stcPage = fs.readFileSync('./public/html/sentence.ejs', 'utf8');
+server.get("/sentence/:page", (req, res) => {
+    var paging = req.params.page;
+    let pageStart = (paging - 1) * 40 ? (paging - 1) * 40 : 0;
+    let sql = 'SELECT id, nickname, sentence FROM sentence ORDER BY id desc LIMIT ?, 40;'
+    let sqll = 'SELECT COUNT(*) AS number FROM sentence;';
+    connection.query(sql + sqll, [pageStart],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            }
+            else {
+                let dataResult = rows[0];
+                let countResult = rows[1];
+                let number = countResult[0].number;
+                let stc_id = [];
+                let stc_nickname = [];
+                let stc_sentence = [];
+                for (var i in rows[0]) {
+                    stc_id[i] = dataResult[i].id;
+                    stc_nickname[i] = dataResult[i].nickname;
+                    stc_sentence[i] = dataResult[i].sentence;
+                }//데이터 생성
+                var page = ejs.render(stcPage, {
+                    page_num:40,
+                    pass:true,
+                    page:paging,
+                    number:number,
+                    stc_id:stc_id,
+                    stc_nickname:stc_nickname,
+                    stc_sentence:stc_sentence,
+                });
+                //응답
+                res.send(page);
+            }
+        }
+    );
+});
+
 server.use((req, res) => {
     res.sendFile(__dirname + "/public/html/404.html");
 });
