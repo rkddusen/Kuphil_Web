@@ -31,7 +31,7 @@ function getPath(btn){
         let Path = document.createElement('div');
         Path.setAttribute('class', 'path');
         Path.id='kuphil_room';
-        Pathway= '<img src="./image/map/map_back.png" alt="경영대학 (후문)에서 동방 오는 길">';
+        Pathway= '<img src="./image/map/map_back.jpg" alt="경영대학 (후문)에서 동방 오는 길">';
         Pathway+='<p>1. 설명글입니다</p>';
         Pathway+='</div>';
         Path.innerHTML=Pathway;
@@ -55,7 +55,7 @@ function getPath(btn){
         let Path = document.createElement('div');
         Path.setAttribute('class', 'path');
         Path.id='kuphil_room';
-        Pathway= '<img src="#" alt="신공학관에서 동방 오는 길">';
+        Pathway= '<img src="./image/map/map_far.jpg" alt="신공학관에서 동방 오는 길">';
         Pathway+='<p>1. 설명글입니다</p>';
         Pathway+='</div>';
         Path.innerHTML=Pathway;

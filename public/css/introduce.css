@@ -13,52 +13,51 @@ a{
 }
 
 .greeting{
-    width:1130px;
-    padding: 0 30px;
+    width:78.5vw;
+    padding: 0 2.1vw;
     margin: 70px auto;
 }
 
 #introduce_greeting > span {
     margin: 20px auto;
-    padding: 0 20px;
+    padding: 0 1.5vw;
     height: 50px;
-    font-size: 36px;
+    font-size: 3.6rem;
     margin-top: 50px;
 }
 
 #introduce_welcome {
     margin: 30px auto;
-    padding: 0 20px;
+    padding: 0 1.5vw;
     display: flex;
     align-items: flex-start;
 }
 
 #introduce_welcome > img {
-    width:250px;
-    height: 250px;
+    width:17vw;
+    width:17vw;
 }
 
 #introduce_welcome > p {
-    font-size: 16px;
+    font-size: 1.6rem;
     margin-left: 50px;
     /* background-color:#dfd3c3a2; */
-    width: 1000px;
-    height: 700px;
+    width: 70vw;
     line-height:180%;
 }
 #introduce_welcome > p > h3{
-    font-size: 16px;
-    margin-left: 50px;
+    font-size: 1.6rem;
+    margin-left: 3.84vw;
     /* background-color:#dfd3c3a2; */
-    width: 1000px;
+    width: 70vw;
     height: 700px;
     line-height:180%;
 }
 
 #path {
-    width: 1130px;
+    width: 78.5vw;
     margin: 30px auto;
-    padding: 0 30px;
+    padding: 0 2.3vw;
     margin-bottom: 80px;
     margin-top:150px;
 }
@@ -66,9 +65,9 @@ a{
 
 #path>span{
     margin: 20px auto;
-    padding: 0 20px;
+    padding: 0 1.5vw;
     height: 50px;
-    font-size: 36px;
+    font-size: 3.6rem;
     margin-top: 50px;
 }
 
@@ -79,18 +78,17 @@ a{
 }
 
 #kuphil_room > img{
-    width:500px;
-    
+    width:34.7vw;
 }
 
 #kuphil_room > p {
-    padding: 0 100px;
+    padding: 0 7.7vw;
     height: 50px;
-    font-size: 17px;
+    font-size: 1.7rem;
 }
 
 .start_location{
-    width: 1300px;
+    width: 90vw;
     margin: 30px auto;
     display: flex;
     justify-content: space-evenly;
@@ -99,7 +97,7 @@ a{
 .start_location > input{
     border: none;
     background-color: transparent;
-    font-size: 15px;
+    font-size: 1.5rem;
     color: #d5bca3;
     cursor:pointer;
 }
@@ -111,7 +109,7 @@ a{
 
 #stairs{
     margin: 30px auto;
-    font-size:15px;
+    font-size:1.5rem;
     font-weight:bold;
     text-align:center;
 }
