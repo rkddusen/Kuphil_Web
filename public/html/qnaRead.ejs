@@ -38,7 +38,7 @@
                     <li><a href="../../introduce">소개</a></li>
                     <li><a href="../../archive">아카이브</a></li>
                     <li><a href="../../calendar">달력</a></li>
-                    <li><a href="../../gamecenter">놀이터</a></li>
+                    <li><a href="../../qna">Q&A</a></li>
                     <li><a href="../../lab">실험실</a></li>
                 </ul>
             </nav>
@@ -53,7 +53,7 @@
                         <li><a href="../../introduce">소개</a></li>
                         <li><a href="../../archive">아카이브</a></li>
                         <li><a href="../../calendar">달력</a></li>
-                        <li><a href="../../gamecenter">놀이터</a></li>
+                        <li><a href="../../qna">Q&A</a></li>
                         <li><a href="../../lab">실험실</a></li>
                     </ul>
                 </nav>
@@ -70,15 +70,17 @@
         </div>
         <article>
             <div class="head3_line_f"></div>
-            <div class="head3_name"><a class="head3_qna_a" href="../../qna">쿠필 지식인</a></div>
+            <div class="head3_name"><a class="head3_qna_a" href="../../qna">Q & A</a></div>
             <div class="head3_line_s"></div>
         </article>
     </header>
 
     <!-- 내용 -->
+    <script>let qna_id = "<%=qna_id%>";</script>
     <div class="qna_section">
-        <div class="qna_back">
-            <button onclick="history.back();">뒤로 가기</button>
+        <div class="qna_nav">
+            <button onclick="history.back();" class="qna_back">뒤로 가기</button>
+            <button onclick="qna_delete();" class="qna_delete">글 삭제</button>
         </div>
         <div class="qna_read_contents">
             <div class="qna_read_question">
@@ -132,7 +134,6 @@
             <li><a href="#">오시는 길</a></li>
             <li><a href="#">이용 약관</a></li>
             <li><a href="#">제휴 제안</a></li>
-            <li><a href="#">개인정보 처리방침</a></li>
         </div>
         <div class="footer_second">
             <div class="footer_logo">
