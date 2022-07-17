@@ -161,11 +161,9 @@ function removecolor() {
 //버튼 누르면 스크롤 이동
 const buttonArr = document.getElementsByTagName('button');
 
-function OH(){
-    for(let i = 0; i < buttonArr.length; i++){
+for(let i = 0; i < buttonArr.length; i++){
     buttonArr[i].addEventListener('click',function(e){
         e.preventDefault();
         document.querySelector('.year' + (i + 1)).scrollIntoView(true);
     });
-    }
 }
