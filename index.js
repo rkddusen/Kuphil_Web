@@ -339,7 +339,7 @@ server.get("/qna/:page", (req, res) => {
                     qna_title[i] = dataResult[i].title;
                     qna_question[i] = dataResult[i].question;
                     qna_answer_num[i] = dataResult[i].count?dataResult[i].count:0;
-                    qna_date[i] = dataResult[i].date.substr(0,16);
+                    qna_date[i] = dataResult[i].date;
                 }//데이터 생성
                 var page = ejs.render(qnaPage, {
                     page_num:10,
@@ -374,14 +374,14 @@ server.get("/qna/read/:idx", (req, res) => {
                 let qna_id = question[0].id;
                 let qna_title = question[0].title;
                 let qna_question = question[0].question;
-                let qna_question_date = question[0].date.substr(0,16);
+                let qna_question_date = question[0].date;
                 let qna_answer_num = question[0].count?question[0].count:0;
                 let qna_answer = [];
                 let qna_answer_date = [];
                 if (rows[1]) {
                     for (var i in rows[1]) {
                         qna_answer[i] = answer[i].answer;
-                        qna_answer_date[i] = answer[i].date.substr(0,16);
+                        qna_answer_date[i] = answer[i].date;
                     }
                 }
                 else {
@@ -408,8 +408,9 @@ server.post("/qna/questionSubmit", (req, res) => {
     let title = req.body.qna_title;
     let question= req.body.qna_question;
     let password= req.body.qna_password;
-    let sql = 'INSERT INTO qna_question (title, question, password) VALUES(?, ?, password("?"))';
-    let params = [title, question, password];
+    let date= req.body.qna_date;
+    let sql = 'INSERT INTO qna_question (title, question, password, date) VALUES(?, ?, password("?"), ?)';
+    let params = [title, question, password, date];
     connection.query(sql, params, function (err, result, fields) {
         if (err) {
             console.log(err);
@@ -420,8 +421,9 @@ server.post("/qna/questionSubmit", (req, res) => {
 server.post("/qna/answerSubmit", (req, res) => {
     let answer = req.body.qna_answer;
     let id = req.body.qna_id;
-    let sql = 'INSERT INTO qna_answer (id, answer) VALUES(?, ?)';
-    let params = [id,answer];
+    let date = req.body.qna_date;
+    let sql = 'INSERT INTO qna_answer (id, answer, date) VALUES(?, ?, ?)';
+    let params = [id,answer,date];
     connection.query(sql, params, function (err, result, fields) {
         if (err) {
             console.log(err);

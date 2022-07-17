@@ -1,3 +1,5 @@
+let today = new Date();
+
 function qna_question_add(){
     document.getElementsByClassName('qna_question_add')[0].style.display = 'flex';
 }
@@ -15,6 +17,7 @@ function qna_answer_add_cancel(){
     document.getElementsByClassName('qna_read_answer_add')[0].style.display = 'none';
 }
 function questionDoAction() {
+    document.getElementsByClassName('qna_question_add_date')[0].value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
     if(document.getElementsByClassName('qna_question_add_title')[0].value == ""){
         alert('제목을 입력하세요.');
         return false;
@@ -35,6 +38,7 @@ function questionDoAction() {
         return true;
 }
 function answerDoAction() {
+    document.getElementsByClassName('qna_read_answer_add_date')[0].value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
     if (document.getElementsByClassName("qna_read_answer_add_textarea")[0].value == "") {
         alert('내용을 입력하세요.');
         return false;

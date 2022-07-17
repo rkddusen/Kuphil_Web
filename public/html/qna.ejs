@@ -76,6 +76,9 @@
     </header>
 
     <!-- 내용 -->
+    <div id="qna_notice">
+        <p>누구나 평소 궁금했던 것을 질문하고 답변을 받을 수 있는 공간입니다.🧐<br>네티켓은 꼭 지켜주세요! (부적절하다고 판단되는 글은 무통보 삭제됩니다.)</p>
+    </div>
     <div class="qna_section">
         <div class="qna_write">
             <button onclick="qna_question_add();">작성하기</button>
@@ -88,6 +91,7 @@
                     <input type="text" class="qna_question_add_title" name="qna_title" placeholder="제목을 작성하세요."/><br>
                     <input type="text" class="qna_question_add_textarea" placeholder="질문을 작성하세요." name="qna_question" /><br>
                     <input type="password" class="qna_question_add_password" placeholder="비밀번호를 작성하세요." name="qna_password" /><br>
+                    <input type="text" class="qna_question_add_date" name="qna_date" value="0000-00-00" style="display: none;"/>
                     <div>
                         <button name="submit" class="qna_question_add_subCan">작성</button>
                         <button type="button" name="cancel" onclick="qna_question_add_cancel();" class="qna_question_add_subCan">취소</button>
