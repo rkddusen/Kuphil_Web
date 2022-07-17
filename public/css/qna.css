@@ -1,3 +1,12 @@
+#qna_notice{
+    margin-top: 70px;
+    margin-bottom: 50px;
+    width: 90vw;
+    padding: 0 5vw;
+    font-size: 2.5rem;
+    color: #5C3A1A;
+}
+
 .qna_section{
     width: 90vw;
     padding: 0 5vw;
@@ -258,9 +267,14 @@
 }
 
 @media (max-width : 1023px) {
-    
+    #qna_notice{
+        margin-top: 50px;
+    }
 }
 @media (max-width : 767px) {
+    #qna_notice{
+        margin-top: 30px;
+    }
     .qna_section{
         margin-top: 30px;
         min-height: 1150px;
@@ -268,7 +282,7 @@
     .qna_write, .qna_question_add, .qna_contents{
         width: 90vw;
     }
-    .qna_question_add form span, .qna_question_add_title, .qna_question_add_textarea{
+    .qna_question_add form span, .qna_question_add_title, .qna_question_add_textarea, .qna_question_add_password{
         width: 80vw;
     }
     .qna_entry{
@@ -281,7 +295,7 @@
         font-size: 1.5rem;
     }
 
-    .qna_back, .qna_read_contents, .qna_read_answer_add{
+    .qna_nav, .qna_read_contents, .qna_read_answer_add{
         width: 90vw;
     }
     .qna_read_answer_add_textarea{
@@ -293,5 +307,7 @@
 
 }
 @media (max-width : 479px) {
-    
+    #qna_notice{
+        margin-top: 10px;
+    }
 }
