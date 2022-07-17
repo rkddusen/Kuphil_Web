@@ -93,10 +93,6 @@
 }
 
 
-
-
-
-
 .loadposters {
     width: 90vw;
     margin: 0 auto;
@@ -115,30 +111,20 @@
     border-right: 2px solid #222;
     transform: rotate(-135deg);
 }
-.prev_btn:hover {
-    cursor: pointer;
-    content: '';
-    display:inline-block;
-    width: 20px;
-    height: 20px;
-    margin-left: 5px;
-    border-top: 1px solid #999;
-    border-right: 1px solid #999;
-    transform: rotate(-135deg);
-}
 
-.prev_btn[disabled]:hover {
+/* .prev_btn[onclick="prevPage();"]:hover {
     cursor: pointer;
     content: '';
     display:inline-block;
     width: 20px;
     height: 20px;
     margin-left: 5px;
-    border-top: 1px solid #222;
-    border-right: 1px solid #222;
+    border-top: 2px solid #999;
+    border-right: 2px solid #999;
     transform: rotate(-135deg);
-    pointer-events: none;
-}
+} */
+
+
 
 .next_btn {
     cursor: pointer;
@@ -152,30 +138,19 @@
     transform: rotate(45deg);
 }
 
-.next_btn:hover {
+/* .next_btn[onclick="nextPage();"]:hover {
     cursor: pointer;
     content: '';
     display:inline-block;
     width: 20px;
     height: 20px;
     margin-left: 5px;
-    border-top: 1px solid #999;
-    border-right: 1px solid #999;
+    border-top: 2px solid #999;
+    border-right: 2px solid #999;
     transform: rotate(45deg);
-}
+} */
 
-.next_btn[disabled]:hover {
-    cursor: pointer;
-    content: '';
-    display:inline-block;
-    width: 20px;
-    height: 20px;
-    margin-left: 5px;
-    border-top: 1px solid #222;
-    border-right: 1px solid #222;
-    transform: rotate(-135deg);
-    pointer-events: none;
-}
+
 
 #close{
     all: unset;
@@ -187,7 +162,6 @@
     cursor:pointer;
     font-size: 1.6rem;
 }
-
 
 .modal{
     position: fixed;
@@ -221,8 +195,9 @@
 
 .modal_content img{
     float: right;
-    width: 25%;
-    height: 40%;
+    width: 18.4vw;
+    height: 25.9vw;
+    margin: 15px 30px;
     /* width: 292.8px;
     height: 414px; */
     
@@ -249,12 +224,13 @@
 }
 
 .modal_content .modal_text .modal_text_1 h3{
-    font-size: 1.5rem;
+    height: 5.9vw;
+    font-size: 1.8rem;
     padding: 1vw 0;
 }
 
 .modal_content .modal_text .modal_text_2 h3{
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     padding: 1vw 0;
 }
 
@@ -269,9 +245,17 @@
     }
     .poster_title {
         font-size: 1.5rem;
-
     }
-
+    .modal_content .modal_text h1{
+        font-size: 2rem;
+    }
+    .modal_content .modal_text .modal_text_1 h3{
+        height: 6vw;
+        font-size: 1.5rem;
+    }
+    .modal_content .modal_text .modal_text_2 h3{
+        font-size: 1.5rem;
+    }
 }
 
 
@@ -282,11 +266,31 @@
     .poster_title {
         font-size: 1rem;
     }
+    .modal_content .modal_text h1{
+        font-size: 1.2rem;
+    }
+    .modal_content .modal_text .modal_text_1 h3{
+        height: 6.5vw;
+        font-size: 0.9rem;
+    }
+    .modal_content .modal_text .modal_text_2 h3{
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 479px) {
     #arc_notice{
         margin-top: 10px;
+    }
+    .modal_content .modal_text h1{
+        font-size: 1rem;
+    }
+    .modal_content .modal_text .modal_text_1 h3{
+        height: 7vw;
+        font-size: 0.7rem;
+    }
+    .modal_content .modal_text .modal_text_2 h3{
+        font-size: 0.7rem;
     }
 
 }
