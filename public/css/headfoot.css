@@ -415,10 +415,8 @@ footer {
     }
     
     .head3_name {
-        margin-top: 15px;
-        font-size: 5rem;
-        font-weight: bold;
-        color: #784520;
+        margin-top: 20px;
+        font-size: 3.5rem;
     }
     
     .head3_line_s {
@@ -483,7 +481,6 @@ footer {
         font-size: 45%;
     }
     .head3_name {
-        margin-top: 20px;
-        font-size: 3.5rem;
+        margin-top: 22px;
     }
 }
