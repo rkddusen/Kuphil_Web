@@ -46,7 +46,13 @@
 .qna_question_add_textarea{
     width: 570px;
     height: 120px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    margin-top: 10px;
+    border: 1px solid black;
+}
+.qna_question_add_password{
+    width: 570px;
+    font-size: 1.5rem;
     margin-top: 10px;
     border: 1px solid black;
 }
@@ -130,13 +136,22 @@
 }
 
 /* qnaRead */
-.qna_back{
+.qna_nav{
     width: 600px;
     height: 30px;
     margin: 0 auto;
     margin-bottom: 5px;
 }
-.qna_back button{
+.qna_back{
+    width: 60px;
+    height: 25px;
+    font-size: 1.2rem;
+    border: none;
+    background-color: white;
+    box-shadow: 1px 1px 2px #784520;
+}
+.qna_delete{
+    float: right;
     width: 60px;
     height: 25px;
     font-size: 1.2rem;

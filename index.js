@@ -407,8 +407,9 @@ server.get("/qna/read/:idx", (req, res) => {
 server.post("/qna/questionSubmit", (req, res) => {
     let title = req.body.qna_title;
     let question= req.body.qna_question;
-    let sql = 'INSERT INTO qna_question (title, question) VALUES(?, ?)';
-    let params = [title,question];
+    let password= req.body.qna_password;
+    let sql = 'INSERT INTO qna_question (title, question, password) VALUES(?, ?, password("?"))';
+    let params = [title, question, password];
     connection.query(sql, params, function (err, result, fields) {
         if (err) {
             console.log(err);
@@ -426,6 +427,25 @@ server.post("/qna/answerSubmit", (req, res) => {
             console.log(err);
         }
         return res.redirect('/qna/read/'+id);
+    })
+});
+server.post("/qna/deleteSubmit", (req, res) => {
+    let password = req.body.qna_password;
+    let id = req.body.qna_id;
+    let sql1 = 'SELECT count(*) as count FROM qna_question WHERE id=? and password=password("?");';
+    let sql = 'DELETE FROM qna_question WHERE id=? and password=password("?");';
+    let params = [id,password, id, password];
+    connection.query(sql1+sql, params, function (err, rows, fields) {
+        if (err) {
+            console.log(err);
+        }
+        let count = rows[0][0].count;
+        if (count == 0){
+            return res.redirect('/qna/read/'+id);
+        }
+        else{
+            return res.redirect('/qna');
+        }
     })
 });
 
