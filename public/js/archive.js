@@ -19,11 +19,11 @@ let openModal = (i) => {
             <div class="modal_text_1">
                 <h3>장소 : </h3>
                 <h3>시간 : </h3>
-                <h3>지휘 :</h3>
+                <h3>프로그램 :</h3>
             </div>
             <hr/>
             <div class="modal_text_2">
-                <h3>프로그램 : </h3>
+                <h3>지휘 : </h3>
             </div>
         </div>
         <button id="close" onclick="closeModal();">Close</button>
