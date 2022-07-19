@@ -41,6 +41,13 @@ a{
     width:17vw;
 }
 
+#introduce_welcome > p >span {
+    margin-top:20px;
+    font-size: 1.9rem;
+    line-height:180%;
+    font-weight: 550;
+}
+
 #introduce_welcome > p {
     font-size: 1.6rem;
     margin-left: 50px;
@@ -91,7 +98,6 @@ a{
 }
 
 .start_location{
-    width: 90vw;
     margin: 30px auto;
     display: flex;
     justify-content: space-evenly;
@@ -115,4 +121,90 @@ a{
     font-size:1.5rem;
     font-weight:bold;
     text-align:center;
+}
+
+
+@media (max-width : 1023px){
+    
+#introduce_welcome > p {
+    font-size: 1.6rem;
+    margin-left: 50px;
+    /* background-color:#dfd3c3a2; */
+    width: 70vw;
+    line-height:180%;
+}
+    
+}
+@media (max-width : 767px) {
+    #introduce_greeting{
+        display: flex;
+        align-items:center;
+        flex-direction:column;
+    }
+
+    #introduce_greeting > span {
+        margin:20px auto;
+        font-size: 4rem;
+    }
+    
+    #introduce_welcome {
+        margin: 30px auto;
+        padding: 0 1.5vw;
+        display: flex;
+        align-items:center;
+        flex-direction:column;
+    }
+    
+    #introduce_welcome > p {
+        font-size: 1.6rem;
+        width: 70vw;
+        line-height: 180%;
+        margin-left:0;
+    }
+
+    #introduce_welcome > img {
+        width:25vw;
+        width:25vw;
+        padding-bottom:40px;
+    }
+    
+    #path {
+        margin: 50px auto;
+        margin-bottom: 80px;
+        margin-top:80px;
+        display:flex;
+        flex-direction:column;
+    }
+    
+    #path>span{
+        margin: 15px auto;
+        padding: 0 1.5vw;
+        font-size: 3.6rem;
+        margin-top: 50px;
+    }
+
+    #kuphil_room {
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #kuphil_room > img{
+        width:55vw;
+    }
+    
+    #kuphil_room > p {
+        margin-top:30px;
+        font-size: 1.7rem;
+    }
+
+    #stairs{
+        margin: 30px auto;
+        font-size:1.5rem;
+        font-weight:bold;
+        text-align:center;
+    }
+}
+
+@media (max-width : 479px) {
 }
