@@ -1,13 +1,12 @@
 /* section으로 사실상 body 영역 기본세팅 */
 section {
-    width: 90vw;
-    padding: 0 5vw;
+    width: 100%;
 }
 
 
 /* position: relative로 인해 부모 태그가 자식 태그의 기준점이 됨 */
 #main_welcome {
-    width: 90vw;
+    width: 100%;
     overflow: hidden;
     margin-top: -90px;
     text-align: center;
@@ -17,8 +16,8 @@ section {
 /* object-fit은 img같은 대체 콘텐츠의 크기를 어떤 방식으로 조절해 요소에 맞출 것인지 지정
 cover는 대체 콘텐츠의 가로세로비를 유지하면서 요소 콘텐츠 박스 가득 채움
 서로의 가로세로비가 일치하지 않으면 객체 일부가 잘려나감 */
-#main_welcome img {
-    width: 90vw;
+#main_welcome > img {
+    width: 90%;
 }
 
 /* position: absolute로 인해 부모 태그를 기준으로 위치가 결정됨 */
@@ -26,16 +25,16 @@ cover는 대체 콘텐츠의 가로세로비를 유지하면서 요소 콘텐츠
 사용하고 싶은 글꼴을 불러오지 못하는 경우 웹 브라우저에 지정된 기본 글꼴로 대체됨 
 앞쪽부터 순서대로 불러오기 때문에 여러 개 지정해둘 수도 있음 */
 #main_welcome > p {
-    width: 80vw;
+    width: 80%;
     color: #FFFFFF;
-    font-size: 5.5vw;
+    font-size: 6rem;
     font-family: 'Poiret One', cursive;
     position :absolute;
     top: 15%;
     left: 50%;
     transform: translate(-50%, 0);
     font-weight: bold;
-    letter-spacing: 0.5vw
+    letter-spacing: 1rem;
 }
 
 .kuphil_sns {
@@ -48,7 +47,7 @@ cover는 대체 콘텐츠의 가로세로비를 유지하면서 요소 콘텐츠
 .kuphil_sns_title {
     color:#864415;
     font-size: 3rem;
-    padding: 5px 0 0 1vw;
+    padding: 5px 0 0 1%;
     /* font-family: 'Alegreya', serif; */
 }
 .show{
@@ -93,7 +92,7 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
 }
 
 .nothing {
-    margin-right: 1vw;
+    margin-right: 1%;
     background-color: burlywood;
 }
 
@@ -102,7 +101,7 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
 }
 
 .nothing, .weather {
-    width: 44.5vw;
+    width: 44.5%;
     height: 100px;
 }
 
@@ -125,22 +124,22 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
 }
 
 .spell {
-    width: 90vw;
+    width: 90%;
     overflow: hidden;
     margin-bottom: 60px;
     height: 550px;
 }
 
 #k > .spell_intro {
-    width: 30vw;
-    margin: 30px 10vw;
+    width: 30%;
+    margin: 30px 10%;
     float: left;
     position: relative;
     z-index: 2;
 }
 
 #k > .spell_intro:nth-child(2) {
-    width: 30vw;
+    width: 30%;
     margin-left: 5vw;
     margin-right: 5vw;
 }
@@ -152,27 +151,27 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
 태그가 안쪽 방향으로 이동하기 때문에 -를 붙여야 바깥쪽 방향으로 이동하게 됨 */
 #circle1 {
     position: relative;
-    width: 20vw;
-    height: 10vw;
-    border-radius: 20vw 20vw 0 0;
+    width: 20%;
+    height: 10%;
+    border-radius: 20% 20% 0 0;
     transform: rotate(90deg);
     z-index: 1;
-    right: -45vw;
-    bottom: -10vw;
+    right: -45%;
+    bottom: -10%;
     background-color: #fef6f0;
 }
 
 #u > .spell_intro {
-    width: 30vw;
+    width: 30%;
     float: right;
-    margin: 30px 5vw;
+    margin: 30px 5%;
     position: relative;
     z-index: 2;
 }
 
 #u > .spell_intro:nth-child(2) {
-    width: 30vw;
-    margin-right: 10vw;
+    width: 30%;
+    margin-right: 10%;
 }
 
 #circle2 {
@@ -187,16 +186,16 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
 }
 
 #p > .spell_intro {
-    width: 30vw;
+    width: 30%;
     float: left;
-    margin: 30px 5vw;
+    margin: 30px 5%;
     position: relative;
     z-index: 2;
 }
 
 #p > .spell_intro:nth-child(2) {
-    width: 35vw;
-    margin-left: 10vw;
+    width: 35%;
+    margin-left: 10%;
 }
 
 #circle3 {
@@ -211,15 +210,15 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
 }
 
 #h > .spell_intro {
-    width: 35vw;
+    width: 35%;
     float: right;
-    margin: 30px 5vw;
+    margin: 30px 5%;
     position: relative;
     z-index: 2;
 }
 #h > .spell_intro:nth-child(2) {
-    width: 30vw;
-    margin-right: 10vw;
+    width: 30%;
+    margin-right: 10%;
 }
 
 #circle4 {
@@ -235,16 +234,16 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
 }
 
 #i > .spell_intro {
-    width: 35vw;
+    width: 35%;
     float: left;
-    margin: 30px 5vw;
+    margin: 30px 5%;
     position: relative;
     z-index: 2;
 }
 
 #i > .spell_intro:nth-child(2) {
-    width: 30vw;
-    margin-left: 10vw;
+    width: 30%;
+    margin-left: 10%;
 }
 
 #circle5 {
@@ -259,16 +258,16 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
 }
 
 #l > .spell_intro {
-    width: 30vw;
+    width: 30%;
     float: right;
-    margin: 30px 5vw;
+    margin: 30px 5%;
     position: relative;
     z-index: 2;
 }
 
 #l > .spell_intro:nth-child(2) {
-    width: 35vw;
-    margin-right: 5vw;
+    width: 35%;
+    margin-right: 5%;
 }
 
 #circle6 {
