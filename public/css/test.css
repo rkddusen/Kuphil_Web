@@ -1,6 +1,6 @@
 .gameContents{
-    padding: 0 5vw;
-    width: 90vw;
+    padding: 0 5%;
+    width: 90%;
     margin-top: 100px;
     height: auto;
     min-height: 100%;
@@ -16,11 +16,14 @@
     display: flex;
     justify-content: center;
 }
+.firstAnswer, .secondAnswer{
+    margin: 50px 2%;
+}
 .firstAnswer button{
     font-size: 2rem;
     width: 400px;
     height: 100px;
-    margin: 50px 2vw 50px 0;
+    
     border: 2px solid blue;
     background-color: #EFEFFB;
 }
@@ -28,7 +31,6 @@
     font-size: 2rem;
     width: 400px;
     height: 100px;
-    margin: 50px 0 50px 2vw;
     border: 2px solid red;
     background-color: #FBEFEF;
 }
@@ -60,14 +62,17 @@
     .answer{
         display: block;
     }
+    .firstAnswer, .secondAnswer{
+        margin: 0px;
+    }
     .firstAnswer button{
-        width: 90vw;
+        width: 100%;
         margin: 0;
         margin: 50px 0 10px 0;
         height: 50px;
     }
     .secondAnswer button{
-        width: 90vw;
+        width: 100%;
         margin: 0;
         margin: 10px 0;
         height: 50px;
