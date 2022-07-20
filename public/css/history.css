@@ -14,8 +14,7 @@ a{
 }
 
 #SelectYear {
-    width: 69vw;
-    padding: 0 15vw;
+    padding: 0 15%;
     margin: 70px auto;
     display: flex;
     justify-content: space-evenly;
@@ -35,12 +34,12 @@ a{
     font-weight: bold;
 }
 
-.back{
-    background-color:transparent;
+.back {
+    background-color: transparent;
     position: relative;
-    width: 90vw;
+    width: 70%;
     height: 100%;
-    margin: 0 10vw;
+    margin-left: 12%;
 }
 
 /*#back_logo{
@@ -124,3 +123,62 @@ a{
     margin-top: 30px;
     line-height: 200%;
 }
+
+@media (max-width : 1023px){       
+}
+
+@media (max-width : 767px) {
+    #SelectYear {
+        padding: 0 5%;
+        margin-top: 30px;
+    }
+
+    .back{
+        width: 90%;
+        margin: 0 5%;
+        text-align:Center;
+    }
+
+    .year1  section {
+        font-weight:500;
+    }
+    
+    .year1  p{
+        font-size: 1.8rem;
+    }
+
+    .year2  section {
+        font-weight:500;
+    }
+    
+    .year2  p{
+        font-size: 1.8rem;
+    }    
+    
+    .year3  section {
+        font-weight:500;
+    }
+    
+    .year3  p{
+        font-size: 1.8rem;
+    }    
+    
+    .year4  section {
+        font-weight:500;
+    }
+    
+    .year4  p{
+        font-size: 1.8rem;
+    }
+
+    .year5  section {
+        font-weight:500;
+    }
+    
+    .year5  p{
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width : 479px) {
+
