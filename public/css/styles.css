@@ -85,23 +85,70 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
     font-size: 25px;
 } */
 
-.nothing_and_weather {
-    margin-top: 1vw;
-    display: flex;
-}
-
-.nothing {
-    margin-right: 1vw;
-    background-color: burlywood;
-}
-
 .weather {
-    background-color: burlywood;
+    box-sizing: border-box;
+    width: 100%;
+    height: 15%;
+    border: solid 1px #BE7743;
+    display: flex;
+    justify-content: center;
 }
 
-.nothing, .weather {
-    width: 44.5vw;
-    height: 100px;
+#time {
+    font-size: 20px;
+}
+
+#weather_spans > span {
+    font-size: 25px;
+}
+
+#weather_desc {
+    font-weight: bold;
+}
+
+#left_weather, #right_weather {
+    margin: 2vw 3vw;
+    display: flex;
+    align-items: center;
+}
+
+#weather_tape {
+    position: relative;
+    transform: rotate(-45deg);
+    top: -40px;
+    left: 30px;
+    width: 50px;
+    height: 20px;
+    background-color: rgba(255, 184, 0, 0.47);
+    box-shadow: rgba(0, 0, 0, 0.15) -2.4px 2.4px 3.2px;
+}
+
+#weather_board {
+    display: flex;
+    background-color: rgba(235, 224, 204, 0.22);
+    padding: 10px;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+
+#left_weather_board > span {
+    font-size: 20px;
+    margin: 1vw;
+}
+
+#weather_temp {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 3px;
+    font-weight: bold;
+}
+
+#weather_icon {
+    width: 7vw;
+    height: 7vw;
+    display: block;
+    margin: 0 auto;
 }
 
 .spelling_introduce span {
@@ -322,6 +369,15 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     }
     #circle1, #circle2, #circle3, #circle4, #circle5, #circle6{
         display: none;
+    }
+
+    .weather {
+        height: 20%;
+        flex-direction: column;
+    }
+
+    #weather_info {
+        display: block;
     }
 }
 @media (max-width : 479px) {
