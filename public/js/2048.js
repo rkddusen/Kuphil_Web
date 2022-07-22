@@ -386,7 +386,7 @@ function checkBlock(block) {
     for (var x = 0; x < 4; x++) {
         for (var y = 0; y < 4; y++) {
             if (block[x][y] == 0) {
-                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/2048block/00.jpg">';
+                document.getElementsByClassName("block" + x + y)[0].innerHTML = '';
                 document.getElementsByClassName("block" + x + y)[0].style.backgroundColor = 'white';
             } else if (block[x][y] == 1) {
                 document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/2048block/1.jpg">';
@@ -466,9 +466,9 @@ function gameover(score) {
     let area = document.getElementsByClassName("game_content")[0];
     game_form = '<form class="form" id="rform" action="/2048game/record" method="post" onsubmit="return doAction();">';
     game_form += '<table><tr><td></td><td></td><td></td><td></td></tr>';
-    game_form += '<tr><td></td><td colspan="2">이름 : ' + '<input type="text" name="name" class="game_name"><br>점수 : <input type="number" readonly name="score" class="game_score" value="' + score + '">점</td><td></td></tr>';
-    game_form += '<tr><td></td><td><input type="submit" name="submit" class="subCan" value="기록"/></td>';
-    game_form += '<td><input type="button" name="cancel" onClick="location.reload();" value="취소" class="subCan"/></td><td></td></tr>';
+    game_form += '<tr><td></td><td colspan="2">이름 : ' + '<input type="text" name="name" class="game_name"><input type="hidden" name="score" class="game_score" value="' + score + '"></td><td></td></tr>';
+    game_form += '<tr><td></td><td><button name="submit" class="subCan"/>기록</td>';
+    game_form += '<td><button type="button" name="cancel" onClick="location.reload();" class="subCan" />취소</td><td></td></tr>';
     game_form += '<tr><td></td><td></td><td></td><td></td></tr></table></form>'
     area.innerHTML = game_form;
 }
@@ -506,10 +506,10 @@ function top15() {
         bestscore[i] = bestscore[i] ? bestscore[i] + '점' : "";
     }
     let table = document.getElementsByClassName("game_content")[0];
-    initTable = '<table><tr><td>' + name[0] + '<br>' + bestscore[0] + '</td><td>' + name[1] + '<br>' + bestscore[1] + '</td><td>' + name[2] + '<br>' + bestscore[2] + '</td><td>' + name[3] + '<br>' + bestscore[3] + '</td></tr>';
-    initTable += '<tr><td>' + name[4] + '<br>' + bestscore[4] + '</td><td>' + name[5] + '<br>' + bestscore[5] + '</td><td>' + name[6] + '<br>' + bestscore[6] + '</td><td>' + name[7] + '<br>' + bestscore[7] + '</td></tr>';
-    initTable += '<tr><td>' + name[8] + '<br>' + bestscore[8] + '</td><td>' + name[9] + '<br>' + bestscore[9] + '</td><td>' + name[10] + '<br>' + bestscore[10] + '</td><td>' + name[11] + '<br>' + bestscore[11] + '</td></tr>';
-    initTable += '<tr><td>' + name[12] + '<br>' + bestscore[12] + '</td><td>' + name[13] + '<br>' + bestscore[13] + '</td><td>' + name[14] + '<br>' + bestscore[14] + '</td><td class="block33" onclick="location.reload();" id="game_end">돌아가기</td></tr></table>';
+    initTable = '<table><tr><td class="block33" onclick="location.reload();" id="game_end" style="font-weight: 900">돌아가기</td><td>' + name[0] + '<br>' + bestscore[0] + '</td><td>' + name[1] + '<br>' + bestscore[1] + '</td><td>' + name[2] + '<br>' + bestscore[2] + '</td></tr>';
+    initTable += '<tr><td>' + name[3] + '<br>' + bestscore[3] + '</td><td>' + name[4] + '<br>' + bestscore[4] + '</td><td>' + name[5] + '<br>' + bestscore[5] + '</td><td>' + name[6] + '<br>' + bestscore[6] + '</td></tr>';
+    initTable += '<tr><td>' + name[7] + '<br>' + bestscore[7] + '</td><td>' + name[8] + '<br>' + bestscore[8] + '</td><td>' + name[9] + '<br>' + bestscore[9] + '</td><td>' + name[10] + '<br>' + bestscore[10] + '</td></tr>';
+    initTable += '<tr><td>' + name[11] + '<br>' + bestscore[11] + '</td><td>' + name[12] + '<br>' + bestscore[12] + '</td><td>' + name[13] + '<br>' + bestscore[13] + '</td><td>' + name[14] + '<br>' + bestscore[14] + '</td></tr></table>';
     table.innerHTML = initTable;
 
 }
