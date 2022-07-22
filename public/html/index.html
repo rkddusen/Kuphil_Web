@@ -105,17 +105,29 @@
                 </div>
             </div>
         </article> -->
-        <article class="nothing_and_weather">
-            <div class="nothing"></div>
-            <div class="weather">
-                <p id="time"></p>
-                <p>현재 서울 날씨 정보</p>
-                <p id="weather_desc"></p>
-                <p id="weather_temp"></p>
-                <img id="weather_icon" width="10px" height="10px"></div>
-                
+        <div class="weather">
+            <div id="left_weather">
+                <div id="weather_spans">
+                    <p id="time"></p>
+                    <span id="weather_info">건국대학교 현재 날씨 :</span>
+                    <span id="weather_desc"></span>
+                </div>
             </div>
-        </article>
+            <div id="right_weather">
+                <div id="weather_tape"></div>
+                <div id="weather_board">
+                    <div id="left_weather_board">
+                        <p id="weather_temp"></p>
+                        <span id="weather_humidity"></span>
+                        <span id="weather_precipitation"></span>
+                    </div>
+                    <div id="right_weather_board">
+                        <img id="weather_icon"></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
         <script>
             function getTime() {
                 let time = document.getElementById("time");
@@ -129,12 +141,12 @@
                 let minute = date.getMinutes();
                 //let second = date.getSeconds();
 
-                time.innerHTML = String(todayYear) + "년 " + String(todayMonth) + "월 " + String(todayDate) + "일 " + dayOfWeek + " " + String(hour) + "시 " + String(minute) + "분 ";
+                time.innerHTML = String(todayYear) + "년 " + String(todayMonth) + "월 " + String(todayDate) + "일 ";
                 
             }
             function getWeather() {
                 fetch(
-                    'https://api.openweathermap.org/data/2.5/weather?lat=37.5683&lon=126.9778&lang=kr&appid=c7f2c867ba8c30eb3e96bc0236f31cdf'
+                    'https://api.openweathermap.org/data/2.5/weather?lat=37.543786&lon=127.073463&lang=kr&appid=c7f2c867ba8c30eb3e96bc0236f31cdf'
                 )
                 .then(function (response) {
                     return response.json();
@@ -144,11 +156,15 @@
                     let weather_icon = document.getElementById('weather_icon');
                     let weather_desc = document.getElementById('weather_desc');
                     let weather_temp = document.getElementById('weather_temp');
+                    let weather_humidity = document.getElementById('weather_humidity');
+                    let weather_precipitation = document.getElementById('weather_precipitation');
                     
                     let weatherDesc = json.weather[0].main;
                     const weatherIcon = json.weather[0].icon;
                     let weatherTemp = json.main.temp;
                     weatherTemp = (weatherTemp - 273.15);
+                    let weatherHumidity = json.main.humidity;
+                    let weatherPrecipitation;
                     
                     //늘 일정하게 소수 첫째 자리까지 출력하도록 한다. 일단은 반올림을 고려하지 않는다. (if 문 내에서 문자열과 숫자를 왔다갔다하면 코드만 복잡해지기 때문)
                     if((weatherTemp >= 10.0) || ((weatherTemp < 0.0) && (weatherTemp > -10.0))) {
@@ -224,10 +240,25 @@
                         weatherDesc = "흐림";
                         break;
                     }
+
+                    if(weatherDesc == '비') {
+                        weatherPrecipitation = json.rain["1h"];
+                    }
+
+                    else if(weatherDesc == '눈') {
+                        weatherPrecipitation = json.snow["1h"];
+                    }
+
+                    else {
+                        weatherPrecipitation = 0;
+                    }
+
                     const weatherIconAdrs = 'http://openweathermap.org/img/wn/'+weatherIcon+'@2x.png';
                     weather_icon.setAttribute('src', weatherIconAdrs);
                     weather_desc.innerHTML = weatherDesc;
-                    weather_temp.innerHTML = weatherTemp + "도";
+                    weather_temp.innerHTML = weatherTemp + " °C ";
+                    weather_humidity.innerHTML = "습도 " + weatherHumidity + "%";
+                    weather_precipitation.innerHTML = "강수량 " + weatherPrecipitation + "mm";
                 })
             }
 
@@ -247,7 +278,6 @@
                     getWeather();
                 }
             }, 1000);
-            
         </script>
         <article class="spelling_introduce">
             <div id="k" class="spell">
