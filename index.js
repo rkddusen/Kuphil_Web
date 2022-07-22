@@ -338,19 +338,19 @@ server.get("/qna/:page", (req, res) => {
                     qna_id[i] = dataResult[i].id;
                     qna_title[i] = dataResult[i].title;
                     qna_question[i] = dataResult[i].question;
-                    qna_answer_num[i] = dataResult[i].count?dataResult[i].count:0;
+                    qna_answer_num[i] = dataResult[i].count ? dataResult[i].count : 0;
                     qna_date[i] = dataResult[i].date;
                 }//데이터 생성
                 var page = ejs.render(qnaPage, {
-                    page_num:10,
-                    pass:true,
-                    page:paging,
-                    number:number,
-                    qna_id:qna_id,
-                    qna_title:qna_title,
-                    qna_question:qna_question,
-                    qna_answer_num:qna_answer_num,
-                    qna_date:qna_date,
+                    page_num: 10,
+                    pass: true,
+                    page: paging,
+                    number: number,
+                    qna_id: qna_id,
+                    qna_title: qna_title,
+                    qna_question: qna_question,
+                    qna_answer_num: qna_answer_num,
+                    qna_date: qna_date,
                 });
                 //응답
                 res.send(page);
@@ -375,7 +375,7 @@ server.get("/qna/read/:idx", (req, res) => {
                 let qna_title = question[0].title;
                 let qna_question = question[0].question;
                 let qna_question_date = question[0].date;
-                let qna_answer_num = question[0].count?question[0].count:0;
+                let qna_answer_num = question[0].count ? question[0].count : 0;
                 let qna_answer = [];
                 let qna_answer_date = [];
                 if (rows[1]) {
@@ -390,7 +390,7 @@ server.get("/qna/read/:idx", (req, res) => {
                 }
                 //데이터 생성
                 var page = ejs.render(qnaReadPage, {
-                    qna_id:qna_id,
+                    qna_id: qna_id,
                     qna_title: qna_title,
                     qna_question: qna_question,
                     qna_answer_num: qna_answer_num,
@@ -406,9 +406,9 @@ server.get("/qna/read/:idx", (req, res) => {
 });
 server.post("/qna/questionSubmit", (req, res) => {
     let title = req.body.qna_title;
-    let question= req.body.qna_question;
-    let password= req.body.qna_password;
-    let date= req.body.qna_date;
+    let question = req.body.qna_question;
+    let password = req.body.qna_password;
+    let date = req.body.qna_date;
     let sql = 'INSERT INTO qna_question (title, question, password, date) VALUES(?, ?, password("?"), ?)';
     let params = [title, question, password, date];
     connection.query(sql, params, function (err, result, fields) {
@@ -423,12 +423,12 @@ server.post("/qna/answerSubmit", (req, res) => {
     let id = req.body.qna_id;
     let date = req.body.qna_date;
     let sql = 'INSERT INTO qna_answer (id, answer, date) VALUES(?, ?, ?)';
-    let params = [id,answer,date];
+    let params = [id, answer, date];
     connection.query(sql, params, function (err, result, fields) {
         if (err) {
             console.log(err);
         }
-        return res.redirect('/qna/read/'+id);
+        return res.redirect('/qna/read/' + id);
     })
 });
 server.post("/qna/deleteSubmit", (req, res) => {
@@ -436,16 +436,16 @@ server.post("/qna/deleteSubmit", (req, res) => {
     let id = req.body.qna_id;
     let sql1 = 'SELECT count(*) as count FROM qna_question WHERE id=? and password=password("?");';
     let sql = 'DELETE FROM qna_question WHERE id=? and password=password("?");';
-    let params = [id,password, id, password];
-    connection.query(sql1+sql, params, function (err, rows, fields) {
+    let params = [id, password, id, password];
+    connection.query(sql1 + sql, params, function (err, rows, fields) {
         if (err) {
             console.log(err);
         }
         let count = rows[0][0].count;
-        if (count == 0){
-            return res.redirect('/qna/read/'+id);
+        if (count == 0) {
+            return res.redirect('/qna/read/' + id);
         }
-        else{
+        else {
             return res.redirect('/qna');
         }
     })
@@ -479,13 +479,54 @@ server.get("/sentence/:page", (req, res) => {
                     stc_sentence[i] = dataResult[i].sentence;
                 }//데이터 생성
                 var page = ejs.render(stcPage, {
-                    page_num:40,
-                    pass:true,
-                    page:paging,
-                    number:number,
-                    stc_id:stc_id,
-                    stc_nickname:stc_nickname,
-                    stc_sentence:stc_sentence,
+                    page_num: 40,
+                    pass: true,
+                    page: paging,
+                    number: number,
+                    stc_id: stc_id,
+                    stc_nickname: stc_nickname,
+                    stc_sentence: stc_sentence,
+                });
+                //응답
+                res.send(page);
+            }
+        }
+    );
+});
+
+const arcReadPage = fs.readFileSync('./public/html/arcConcert.ejs', 'utf8');
+server.get("/archive/concert/:idx", (req, res) => {
+    var idx = req.params.idx;
+    let sql = 'SELECT * FROM concert_info WHERE id=?';
+    connection.query(sql, [idx],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            }
+            else {
+                let concert_id = '';
+                let concert_title = '';
+                let concert_place = '';
+                let concert_date = '';
+                let concert_conductor = '';
+                let concert_link = '';
+                for (var i in rows) {
+                    concert_id = rows[i].id;
+                    concert_title = rows[i].title;
+                    concert_place = rows[i].place;
+                    concert_date = rows[i].date;
+                    concert_conductor = rows[i].conductor;
+                    concert_link = rows[i].link;
+                    
+                }
+                //데이터 생성
+                var page = ejs.render(arcReadPage, {
+                    concert_id: concert_id,
+                    concert_title: concert_title,
+                    concert_place: concert_place,
+                    concert_date: concert_date,
+                    concert_conductor: concert_conductor,
+                    concert_link: concert_link
                 });
                 //응답
                 res.send(page);
