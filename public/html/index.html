@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- <link href="https://fonts.googleapis.com/css2?family=Basic&Alegreya&family=Reenie+Beanie&display=swap" rel="stylesheet"> -->
-    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Poiret+One&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
@@ -20,7 +20,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="./favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
@@ -122,11 +122,12 @@
                         <span id="weather_precipitation"></span>
                     </div>
                     <div id="right_weather_board">
-                        <img id="weather_icon"></div>
+                        <img id="weather_icon">
                     </div>
                 </div>
             </div>
-            
+        </div>
+
         </div>
         <script>
             function getTime() {
@@ -142,124 +143,124 @@
                 //let second = date.getSeconds();
 
                 time.innerHTML = String(todayYear) + "년 " + String(todayMonth) + "월 " + String(todayDate) + "일 ";
-                
+
             }
             function getWeather() {
                 fetch(
                     'https://api.openweathermap.org/data/2.5/weather?lat=37.543786&lon=127.073463&lang=kr&appid=c7f2c867ba8c30eb3e96bc0236f31cdf'
                 )
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function (json){
-                    console.log(json);
-                    let weather_icon = document.getElementById('weather_icon');
-                    let weather_desc = document.getElementById('weather_desc');
-                    let weather_temp = document.getElementById('weather_temp');
-                    let weather_humidity = document.getElementById('weather_humidity');
-                    let weather_precipitation = document.getElementById('weather_precipitation');
-                    
-                    let weatherDesc = json.weather[0].main;
-                    const weatherIcon = json.weather[0].icon;
-                    let weatherTemp = json.main.temp;
-                    weatherTemp = (weatherTemp - 273.15);
-                    let weatherHumidity = json.main.humidity;
-                    let weatherPrecipitation;
-                    
-                    //늘 일정하게 소수 첫째 자리까지 출력하도록 한다. 일단은 반올림을 고려하지 않는다. (if 문 내에서 문자열과 숫자를 왔다갔다하면 코드만 복잡해지기 때문)
-                    if((weatherTemp >= 10.0) || ((weatherTemp < 0.0) && (weatherTemp > -10.0))) {
-                        weatherTemp = String(weatherTemp).slice(0, 4);
-                    }
-                    else if(weatherTemp <= -10.0) {
-                        weatherTemp = String(weatherTemp).slice(0, 5);
-                    }
-                    else {
-                        weatherTemp = String(weatherTemp).slice(0, 3);
-                    }
+                    .then(function (response) {
+                        return response.json();
+                    })
+                    .then(function (json) {
+                        console.log(json);
+                        let weather_icon = document.getElementById('weather_icon');
+                        let weather_desc = document.getElementById('weather_desc');
+                        let weather_temp = document.getElementById('weather_temp');
+                        let weather_humidity = document.getElementById('weather_humidity');
+                        let weather_precipitation = document.getElementById('weather_precipitation');
 
-                    //lang=kr를 사용했을 때 받아온 weather[0].description이 흔히 쓰는 말이 아니므로(ex:온흐림) 그냥 영어를 번역한다.
-                    //아주 세세하게 할 필요는 없으므로 weather[0].main을 번역.
-                    switch(weatherDesc) {
-                        case 'Thunderstorm':
-                        weatherDesc = "뇌우(천둥번개를 동반한 비)";
-                        break;
+                        let weatherDesc = json.weather[0].main;
+                        const weatherIcon = json.weather[0].icon;
+                        let weatherTemp = json.main.temp;
+                        weatherTemp = (weatherTemp - 273.15);
+                        let weatherHumidity = json.main.humidity;
+                        let weatherPrecipitation;
 
-                        case 'Drizzle':
-                        weatherDesc = "이슬비";
-                        break;
+                        //늘 일정하게 소수 첫째 자리까지 출력하도록 한다. 일단은 반올림을 고려하지 않는다. (if 문 내에서 문자열과 숫자를 왔다갔다하면 코드만 복잡해지기 때문)
+                        if ((weatherTemp >= 10.0) || ((weatherTemp < 0.0) && (weatherTemp > -10.0))) {
+                            weatherTemp = String(weatherTemp).slice(0, 4);
+                        }
+                        else if (weatherTemp <= -10.0) {
+                            weatherTemp = String(weatherTemp).slice(0, 5);
+                        }
+                        else {
+                            weatherTemp = String(weatherTemp).slice(0, 3);
+                        }
 
-                        case 'Rain':
-                        weatherDesc = "비";
-                        break;
-                        
-                        case 'Snow':
-                        weatherDesc = "눈";
-                        break;
+                        //lang=kr를 사용했을 때 받아온 weather[0].description이 흔히 쓰는 말이 아니므로(ex:온흐림) 그냥 영어를 번역한다.
+                        //아주 세세하게 할 필요는 없으므로 weather[0].main을 번역.
+                        switch (weatherDesc) {
+                            case 'Thunderstorm':
+                                weatherDesc = "뇌우(천둥번개를 동반한 비)";
+                                break;
 
-                        case 'Mist':
-                        weatherDesc = "엷은 안개(박무)";
-                        break;
+                            case 'Drizzle':
+                                weatherDesc = "이슬비";
+                                break;
 
-                        case 'Smoke':
-                        weatherDesc = "연기로 가득 참";
-                        break;
+                            case 'Rain':
+                                weatherDesc = "비";
+                                break;
 
-                        case 'Haze':
-                        weatherDesc = "대기가 나빠서 생기는 안개(연무)";
-                        break;
+                            case 'Snow':
+                                weatherDesc = "눈";
+                                break;
 
-                        case 'Dust':
-                        weatherDesc = "먼지 날림";
-                        break;
+                            case 'Mist':
+                                weatherDesc = "엷은 안개(박무)";
+                                break;
 
-                        case 'Fog':
-                        weatherDesc = "짙은 안개";
-                        break;
+                            case 'Smoke':
+                                weatherDesc = "연기로 가득 참";
+                                break;
 
-                        case 'Sand':
-                        weatherDesc = "황사";
-                        break;
+                            case 'Haze':
+                                weatherDesc = "대기가 나빠서 생기는 안개(연무)";
+                                break;
 
-                        case 'Ash':
-                        weatherDesc = "재로 가득 참";
-                        break;
+                            case 'Dust':
+                                weatherDesc = "먼지 날림";
+                                break;
 
-                        case 'Squall':
-                        weatherDesc = "스콜";
-                        break;
-                        
-                        case 'Tornado':
-                        weatherDesc = "토네이도";
-                        break;
+                            case 'Fog':
+                                weatherDesc = "짙은 안개";
+                                break;
 
-                        case 'Clear':
-                        weatherDesc = "맑음";
-                        break;
+                            case 'Sand':
+                                weatherDesc = "황사";
+                                break;
 
-                        case 'Clouds':
-                        weatherDesc = "흐림";
-                        break;
-                    }
+                            case 'Ash':
+                                weatherDesc = "재로 가득 참";
+                                break;
 
-                    if(weatherDesc == '비') {
-                        weatherPrecipitation = json.rain["1h"];
-                    }
+                            case 'Squall':
+                                weatherDesc = "스콜";
+                                break;
 
-                    else if(weatherDesc == '눈') {
-                        weatherPrecipitation = json.snow["1h"];
-                    }
+                            case 'Tornado':
+                                weatherDesc = "토네이도";
+                                break;
 
-                    else {
-                        weatherPrecipitation = 0;
-                    }
+                            case 'Clear':
+                                weatherDesc = "맑음";
+                                break;
 
-                    const weatherIconAdrs = 'http://openweathermap.org/img/wn/'+weatherIcon+'@2x.png';
-                    weather_icon.setAttribute('src', weatherIconAdrs);
-                    weather_desc.innerHTML = weatherDesc;
-                    weather_temp.innerHTML = weatherTemp + " °C ";
-                    weather_humidity.innerHTML = "습도 " + weatherHumidity + "%";
-                    weather_precipitation.innerHTML = "강수량 " + weatherPrecipitation + "mm";
-                })
+                            case 'Clouds':
+                                weatherDesc = "흐림";
+                                break;
+                        }
+
+                        if (weatherDesc == '비') {
+                            weatherPrecipitation = json.rain["1h"];
+                        }
+
+                        else if (weatherDesc == '눈') {
+                            weatherPrecipitation = json.snow["1h"];
+                        }
+
+                        else {
+                            weatherPrecipitation = 0;
+                        }
+
+                        const weatherIconAdrs = 'http://openweathermap.org/img/wn/' + weatherIcon + '@2x.png';
+                        weather_icon.setAttribute('src', weatherIconAdrs);
+                        weather_desc.innerHTML = weatherDesc;
+                        weather_temp.innerHTML = weatherTemp + " °C ";
+                        weather_humidity.innerHTML = "습도 " + weatherHumidity + "%";
+                        weather_precipitation.innerHTML = "강수량 " + weatherPrecipitation + "mm";
+                    })
             }
 
             //최초 시간, 날씨 정보 받아오기
@@ -270,71 +271,96 @@
             //weather도 초 단위로 받아오면 서버에 부담이 갈 수 있으므로 1분마다 받아오도록 만든다. 하지만 정확성은 아주 약간 떨어질 수 있음.
             //서버만 괜찮으면 초 단위로 받아오는 게 가장 좋을 거 같다.
             var i = 0;
-            setInterval(function() {
+            setInterval(function () {
                 getTime();
                 i = i + 1;
-                if(i == 60) {
+                if (i == 60) {
                     i = 0;
                     getWeather();
                 }
             }, 1000);
         </script>
-        <article class="spelling_introduce">
-            <div id="k" class="spell">
-                <img src="./image/main/remarkable.png" alt="KUPHIL 검정로고" class="spell_intro">
-                <div class="spell_intro">
-                    <p>remar<span>K</span>able</p>
-                    <p>KUPHIL은 건국대학교 아마추어 오케스트라 동아리를
-                        매년 50명 이상의 대규모 연주회를 개최하고 있습니다.</p>
+        <article class="main_content">
+            <div id="k" class="main_spell">
+                
+                <div class="main_spell_box">
+                    <div class="main_spell_image">
+                    <img src="./image/main/remarkable.jpg" alt="KUPHIL 검정로고"></div>
+                    <div class="main_spell_intro">
+                        <p class="main_spell_intro_title">remar<span>K</span>able</p>
+                        <p class="main_spell_intro_text">KUPHIL은 건국대학교 아마추어 오케스트라 동아리를
+                            매년 50명 이상의 대규모 연주회를 개최하고 있습니다.</p>
+                    </div>
                 </div>
                 <!-- <div id="circle1"></div> -->
             </div>
-            <div id="u" class="spell">
-                <img src="./image/main/voluntary-1.jpg" alt="병원연주 사진" class="spell_intro">
-                <div class="spell_intro">
-                    <p>vol<span>U</span>ntary</p>
-                    <p>봉사활동의 일환으로
-                        건국대학교 병원 암병동에서 월 1회 연주하면서
-                        음악을 통한 행복을 나누고 있습니다.</p>
+            <div id="u" class="main_spell">
+                
+                <div class="main_spell_box">
+                    
+                    <div class="main_spell_intro">
+                        <p class="main_spell_intro_title">vol<span>U</span>ntary</p>
+                        <p class="main_spell_intro_text">봉사활동의 일환으로
+                            건국대학교 병원 암병동에서 월 1회 연주하면서
+                            음악을 통한 행복을 나누고 있습니다.</p>
+                    </div>
+                    <div class="main_spell_image">
+                    <img src="./image/main/voluntary-1.jpg" alt="병원연주 사진"></div>
                 </div>
                 <!-- <div id="circle2"></div> -->
             </div>
-            <div id="p" class="spell">
-                <img src="./image/main/accomplishment-1.jpg" alt="2021년 창립제 단체사진" class="spell_intro">
-                <div class="spell_intro">
-                    <p>accom<span>P</span>lishment</p>
-                    <p>봄, 가을에는 정기연주회, 11월에는 창립제를 통해
-                        연습으로 갈고 닦아온 자신의 기량을 마음껏 드러내며
-                        성취감을 느낄 수 있습니다.</p>
+            <div id="p" class="main_spell">
+                
+                <div class="main_spell_box">
+                    <div class="main_spell_image">
+                    <img src="./image/main/accomplishment-1.jpg" alt="2021년 창립제 단체사진"></div>
+                    <div class="main_spell_intro">
+                        <p class="main_spell_intro_title">accom<span>P</span>lishment</p>
+                        <p class="main_spell_intro_text">봄, 가을에는 정기연주회, 11월에는 창립제를 통해
+                            연습으로 갈고 닦아온 자신의 기량을 마음껏 드러내며
+                            성취감을 느낄 수 있습니다.</p>
+                    </div>
                 </div>
                 <!-- <div id="circle3"></div> -->
             </div>
-            <div id="h" class="spell">
-                <img src="./image/main/together-1.jpg" alt="제 37회 정기연주회 리허설" class="spell_intro">
-                <div class="spell_intro">
-                    <p>toget<span>H</span>er</p>
-                    <p>아름다운 음악을 만든다는 공동의 목표를 가지고
-                        함께 연습하는 과정 자체를 즐길 수 있습니다.</p>
+            <div id="h" class="main_spell">
+                
+                <div class="main_spell_box">
+                    <div class="main_spell_intro">
+                        <p class="main_spell_intro_title">toget<span>H</span>er</p>
+                        <p class="main_spell_intro_text">아름다운 음악을 만든다는 공동의 목표를 가지고
+                            함께 연습하는 과정 자체를 즐길 수 있습니다.</p>
+                    </div>
+                    <div class="main_spell_image">
+                    <img src="./image/main/together-1.jpg" alt="제 37회 정기연주회 리허설"></div>
+                    <!-- <div id="circle4"></div> -->
                 </div>
-                <!-- <div id="circle4"></div> -->
             </div>
-            <div id="i" class="spell">
-                <img src="./image/main/exciting-1.jpg" alt="2019년 여름 음캠 단체사진" class="spell_intro">
-                <div class="spell_intro">
-                    <p>exc<span>I</span>ting</p>
-                    <p>음악캠프, 파트별 회식, 단체 회식,
-                        각종 소모임과 비정기 이벤트를 통해
-                        단원 간 친목을 활발히 하고 있습니다.</p>
+            <div id="i" class="main_spell">
+                
+                <div class="main_spell_box">
+                    <div class="main_spell_image">
+                    <img src="./image/main/exciting-1.jpg" alt="2019년 여름 음캠 단체사진"></div>
+                    <div class="main_spell_intro">
+                        <p class="main_spell_intro_title">exc<span>I</span>ting</p>
+                        <p class="main_spell_intro_text">음악캠프, 파트별 회식, 단체 회식,
+                            각종 소모임과 비정기 이벤트를 통해
+                            단원 간 친목을 활발히 하고 있습니다.</p>
+                    </div>
                 </div>
                 <!-- <div id="circle5"></div> -->
             </div>
-            <div id="l" class="spell">
-                <img src="./image/main/friendly-1.jpg" alt="제 34회 정기연주회 남자 대기실 단체사진" class="spell_intro">
-                <div class="spell_intro">
-                    <p>friend<span>L</span>y</p>
-                    <p>그룹레슨 및 개인레슨 연결, 단원 간 앙상블 등을 지원하며
-                        초심자들도 부담없이 클래식과 친해질 수 있도록
-                        적극 지원하고 있습니다.</p>
+            <div id="l" class="main_spell">
+                
+                <div class="main_spell_box">
+                    <div class="main_spell_intro">
+                        <p class="main_spell_intro_title">friend<span>L</span>y</p>
+                        <p class="main_spell_intro_text">그룹레슨 및 개인레슨 연결, 단원 간 앙상블 등을 지원하며
+                            초심자들도 부담없이 클래식과 친해질 수 있도록
+                            적극 지원하고 있습니다.</p>
+                    </div>
+                    <div class="main_spell_image">
+                    <img src="./image/main/friendly-1.jpg" alt="제 34회 정기연주회 남자 대기실 단체사진"></div>
                 </div>
                 <!-- <div id="circle6"></div> -->
             </div>

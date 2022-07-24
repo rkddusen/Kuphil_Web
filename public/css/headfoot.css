@@ -7,7 +7,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 62.5%;
 }
 ul,
@@ -214,7 +214,8 @@ header {
 
 .nav>ul>li>a:hover {
     color: #784520;
-    font-weight: bold;
+    /* font-weight: bold; */
+    border-bottom: 2px solid #784520;
 }
 
 .small_menu {
@@ -439,6 +440,7 @@ footer {
 
     .mainlogo img {
         height: 55px;
+        margin-top: 0px;
     }
 
     footer {
