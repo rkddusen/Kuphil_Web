@@ -1,8 +1,4 @@
 
-a{
-    color: black;
-    text-decoration: none;
-}
 .head3_introduce_a{
     color: #efe2de;
 }
@@ -124,6 +120,18 @@ a{
     line-height: 200%;
 }
 
+#top_btn{
+    position:fixed;
+    right:5%;
+    bottom:50px;
+    /*display:none;*/
+    z-index:999;
+}
+
+#topButtonImg{
+    width:50px;
+}
+
 @media (max-width : 1023px){       
 }
 
@@ -177,6 +185,14 @@ a{
     
     .year5  p{
         font-size: 1.8rem;
+    }
+
+    #year2{
+        display:none;
+    }
+
+    #year4{
+        display:none;
     }
 }
 
