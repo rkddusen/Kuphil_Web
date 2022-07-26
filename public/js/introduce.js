@@ -6,7 +6,7 @@ function removePath() {
 
 //버튼 색 지우기 -> 새로운 색 넣기 전 지우기
 function removeColor() {
-    for (let i=1;i<5;i++){
+    for (let i=1;i<4;i++){
         document.getElementsByClassName('start_location')[i].style.color='#efe2d6';
     }
 }
@@ -14,7 +14,10 @@ function removeColor() {
 // 소개 변경
 function getPath(btn){
     removePath();
+    removeColor();
     if (btn.value=="수의과대학 (정문)"){
+        let where=document.getElementsByClassName("start_location")[1];
+        where.style.color="#5C3A1A";
         let Pathway;
         let Path = document.createElement('div');
         Path.setAttribute('class', 'path');
