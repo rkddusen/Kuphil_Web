@@ -454,8 +454,17 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
         flex-direction: column;
     }
 
-    #weather_info {
+    #left_weather, #right_weather {
+        justify-content: center;
+    }
+
+    #time {
+        text-align: center;
+    }
+
+    #weather_info, #weather_desc {
         display: block;
+        text-align: center;
     }
 }
 @media (max-width : 479px) {
