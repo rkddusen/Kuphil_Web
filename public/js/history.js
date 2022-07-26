@@ -167,3 +167,14 @@ for(let i = 0; i < buttonArr.length; i++){
         document.querySelector('.year' + (i + 1)).scrollIntoView(true);
     });
 }
+
+
+//top 버튼
+//버튼 등장!
+$(window).scroll(function(){
+    if ($(this).scrollTop()>0){
+        $('#top_btn').fadeIn();
+    }else{
+        $('#top_btn').fadeOut();
+    }
+});
