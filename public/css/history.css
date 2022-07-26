@@ -186,6 +186,14 @@
     .year5  p{
         font-size: 1.8rem;
     }
+
+    #year2{
+        display:none;
+    }
+
+    #year4{
+        display:none;
+    }
 }
 
 @media (max-width : 479px) {
