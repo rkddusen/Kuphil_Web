@@ -1,5 +1,16 @@
 
 /* 소개 */
+
+.head3_history_a{
+    color: #efe2de;
+}
+.head3_introduce, .head3_introduce_a{
+    color: #784520;
+}
+.head3_name>span{
+    font-size:2.7rem;
+}
+
 .greeting {
     width: 75%;
     padding: 0 11%;
@@ -97,11 +108,16 @@
     border: none;
     background-color: transparent;
     font-size: 1.5rem;
-    color: #d5bca3;
+    color: #BE7743;
     cursor:pointer;
 }
 
 .start_location > input:hover{    
+    color:#5C3A1A;
+    font-weight: bold;
+}
+
+.start_location1{
     color:#5C3A1A;
     font-weight: bold;
 }
