@@ -362,7 +362,7 @@ const qnaReadPage = fs.readFileSync('./public/html/qnaRead.ejs', 'utf8');
 server.get("/qna/read/:idx", (req, res) => {
     var idx = req.params.idx;
     let sql = 'SELECT q.id, q.title, q.question, q.date, c.count FROM qna_question q left outer join (select a.id as id, count(*) as count from qna_answer a group by a.id) c on q.id = c.id where q.id = ?;';
-    let sqll = 'SELECT answer, date FROM qna_answer WHERE id=? ORDER BY date desc;';
+    let sqll = 'SELECT answer, date FROM qna_answer WHERE id=? ORDER BY date;';
     connection.query(sql + sqll, [idx, idx],
         function (error, rows, fields) {
             if (error) {

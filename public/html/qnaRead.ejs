@@ -37,8 +37,8 @@
                 <ul>
                     <li><a href="../../introduce">소개</a></li>
                     <li><a href="../../archive">아카이브</a></li>
-                    <li><a href="../../calendar">달력</a></li>
                     <li><a href="../../qna">Q&A</a></li>
+                    <li><a href="../../gamecenter">놀이터</a></li>
                     <li><a href="../../lab">실험실</a></li>
                 </ul>
             </nav>
@@ -52,8 +52,8 @@
                     <ul>
                         <li><a href="../../introduce">소개</a></li>
                         <li><a href="../../archive">아카이브</a></li>
-                        <li><a href="../../calendar">달력</a></li>
                         <li><a href="../../qna">Q&A</a></li>
+                        <li><a href="../../gamecenter">놀이터</a></li>
                         <li><a href="../../lab">실험실</a></li>
                     </ul>
                 </nav>
@@ -100,7 +100,7 @@
             <div class="qna_read_answer_add">
                 <form action="/qna/answerSubmit" method="post" onsubmit="return answerDoAction();">
                     <strong>A.</strong><br>
-                    <input type="text" class="qna_read_answer_add_textarea" placeholder="답변을 작성하세요." name="qna_answer" /><br>
+                    <input type="text" class="qna_read_answer_add_textarea" placeholder="답변을 작성하세요." name="qna_answer" autocomplete='off'/><br>
                     <input type="text" name="qna_id" value="<%= qna_id %>" style="display: none;"/>
                     <input type="text" class="qna_read_answer_add_date" name="qna_date" value="0000-00-00" style="display: none;"/>
                     <div>
