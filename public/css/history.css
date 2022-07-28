@@ -22,7 +22,6 @@
     font-size: 2rem;
     color: #BE7743;
     cursor:pointer;
-    z-index:1000000;
 }
 
 .Years:hover{    
@@ -120,16 +119,24 @@
     line-height: 200%;
 }
 
+#circle {
+    width: 4rem;
+    border-radius: 100%;
+    position: fixed;
+    right: 5.3%;
+    height: 4.5rem;
+    bottom: 340px;
+    background: rgba(255, 237, 195, 9);
+    filter: blur(4px);
+}
+
 #top_btn{
     position:fixed;
     right:5%;
-    bottom:50px;
-    /*display:none;*/
-    z-index:999;
-}
-
-#topButtonImg{
-    width:50px;
+    bottom:350px;
+    font-size:1.7rem;
+    font-family:'Mochiy Pop One', sans-serif;
+    color:#BE7743;
 }
 
 @media (max-width : 1023px){       
@@ -198,3 +205,4 @@
 
 @media (max-width : 479px) {
 
+}
