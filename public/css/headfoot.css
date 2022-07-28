@@ -311,7 +311,7 @@ header article {
 .head3_calendar_a,
 .head3_lab_a,
 .head3_test_a,
-.head3_sentence_a,
+.head3_gamecenter_a,
 .head3_qna_a {
     color: #784520;
 }
@@ -349,16 +349,16 @@ footer {
 
 .footer_second {
     width: 90%;
-    padding: 0 5%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     height: 150px;
     margin-top: 40px;
+    max-width: 1300px;
 }
 
 .footer_logo {
-    height: 100%;
-    width: 35%;
+    width: 30%;
 }
 
 .footer_logo img:first-child {
@@ -370,13 +370,14 @@ footer {
 }
 
 .footer_explain {
-    width: 45%;
+    width: 30%;
     color: #BBBBBB;
-    font-size: 2.2rem;
+    font-size: 2rem;
+    text-align: center;
 }
 
 .footer_sns {
-    width: 20%;
+    width: 30%;
 }
 
 .footer_sns>p {
@@ -386,7 +387,7 @@ footer {
 
 .footer_sns img {
     margin: 10px 5%;
-    width: 20%;
+    width: 15%;
     object-fit: cover;
 }
 
