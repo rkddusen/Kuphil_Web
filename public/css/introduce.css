@@ -98,26 +98,26 @@
     font-size: 1.7rem;
 }
 
-.start_location{
+.location{
     margin: 30px auto;
     display: flex;
     justify-content: space-evenly;
 }
 
-.start_location > input{
+.location > input:first-child{
+    color:#5C3A1A;
+}
+
+.location > input{
     border: none;
     background-color: transparent;
     font-size: 1.5rem;
     color: #BE7743;
     cursor:pointer;
+    font-weight:bold;
 }
 
-.start_location > input:hover{    
-    color:#5C3A1A;
-    font-weight: bold;
-}
-
-.start_location1{
+.location > input:hover{    
     color:#5C3A1A;
     font-weight: bold;
 }
