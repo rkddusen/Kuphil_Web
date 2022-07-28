@@ -111,7 +111,7 @@
 .location > input{
     border: none;
     background-color: transparent;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #BE7743;
     cursor:pointer;
     font-weight:bold;
@@ -172,6 +172,10 @@
     
     #path>span{
         margin: 15px auto;
+    }
+
+    .location > input{
+        font-size: 1.5rem;
     }
 
     #kuphil_room {
