@@ -167,3 +167,31 @@ for(let i = 0; i < buttonArr.length; i++){
         document.querySelector('.year' + (i + 1)).scrollIntoView(true);
     });
 }
+
+//탑버튼 위치
+$(function() {
+
+    var $w = $(window),
+      footerHei = $('footer').outerHeight(),
+      $banner = $('#top_btn');
+      $topCircle = $('#circle');
+
+    $w.on('scroll', function() {
+
+      var sT = $w.scrollTop();
+      var val = $(document).height() - $w.height() - footerHei;
+
+      if (sT >= val){
+          $banner.addClass('on')
+          $topCircle.addClass('on')
+      }else{
+          $banner.removeClass('on')
+          $topCircle.removeClass('on')
+    }
+    });
+
+  });
+
+
+  
+

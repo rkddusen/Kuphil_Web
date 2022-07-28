@@ -125,19 +125,33 @@
     position: fixed;
     right: 5.3%;
     height: 4.5rem;
-    bottom: 340px;
+    bottom: 40px;
     background: rgba(255, 237, 195, 9);
     filter: blur(4px);
 }
 
+#circle.on {
+    position: absolute;
+    bottom: 340px;
+  }
+
 #top_btn{
     position:fixed;
     right:5%;
-    bottom:350px;
+    bottom:50px;
     font-size:1.7rem;
     font-family:'Mochiy Pop One', sans-serif;
     color:#BE7743;
 }
+
+body{
+    position: relative;
+}
+
+#top_btn.on {
+    position: absolute;
+    bottom: 350px;
+  }
 
 @media (max-width : 1023px){       
 }
