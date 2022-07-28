@@ -497,28 +497,27 @@ server.get("/sentence/:page", (req, res) => {
 const arcReadPage = fs.readFileSync('./public/html/arcConcert.ejs', 'utf8');
 server.get("/archive/concert/:idx", (req, res) => {
     var idx = req.params.idx;
-    let sql = 'SELECT * FROM concert_info WHERE id=?';
-    connection.query(sql, [idx],
+    let sql_info = 'SELECT * FROM concert_info WHERE id=?;';//첫번째 sql -> rows[0]
+    let sql_program = 'SELECT * FROM concert_program WHERE id=?;';//두번째 sql -> rows[1]
+    connection.query(sql_info + sql_program, [idx, idx], 
         function (error, rows, fields) {
             if (error) {
                 console.log(error);
             }
             else {
-                let concert_id = '';
-                let concert_title = '';
-                let concert_place = '';
-                let concert_date = '';
-                let concert_conductor = '';
-                let concert_link = '';
-                for (var i in rows) {
-                    concert_id = rows[i].id;
-                    concert_title = rows[i].title;
-                    concert_place = rows[i].place;
-                    concert_date = rows[i].date;
-                    concert_conductor = rows[i].conductor;
-                    concert_link = rows[i].link;
-                    
+                let concert_id = rows[0][0].id;
+                let concert_title = rows[0][0].title;
+                let concert_place = rows[0][0].place;
+                let concert_date = rows[0][0].date;
+                let concert_conductor = rows[0][0].conductor;
+                let concert_link = rows[0][0].link;
+                let concert_composer = [];
+                let concert_program =[];
+                for(var i in rows[1]){
+                    concert_composer[i] = rows[1][i].composer;
+                    concert_program[i] = rows[1][i].program;
                 }
+
                 //데이터 생성
                 var page = ejs.render(arcReadPage, {
                     concert_id: concert_id,
@@ -526,7 +525,9 @@ server.get("/archive/concert/:idx", (req, res) => {
                     concert_place: concert_place,
                     concert_date: concert_date,
                     concert_conductor: concert_conductor,
-                    concert_link: concert_link
+                    concert_link: concert_link,
+                    concert_program: concert_program,
+                    concert_composer: concert_composer
                 });
                 //응답
                 res.send(page);
