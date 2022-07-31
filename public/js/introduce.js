@@ -23,7 +23,6 @@ function getPath(btn){
         Path.setAttribute('class', 'path');
         Path.id='kuphil_room';
         Pathway= '<img src="./image/map/map_front.jpg" alt="수의대에서 동방 오는 길">';
-        Pathway+='<p>1. 설명글입니다</p>';
         Pathway+='</div>';
         Path.innerHTML=Pathway;
         let pathway=document.getElementById('pathway');
@@ -37,7 +36,6 @@ function getPath(btn){
         Path.setAttribute('class', 'path');
         Path.id='kuphil_room';
         Pathway= '<img src="./image/map/map_library.jpg" alt="도서관 (중문)에서 동방 오는 길">';
-        Pathway+='<p>1. 설명글입니다</p>';
         Pathway+='</div>';
         Path.innerHTML=Pathway;
         let pathway=document.getElementById('pathway');
@@ -51,7 +49,6 @@ function getPath(btn){
         Path.setAttribute('class', 'path');
         Path.id='kuphil_room';
         Pathway= '<img src="./image/map/map_back.jpg" alt="경영대학 (후문)에서 동방 오는 길">';
-        Pathway+='<p>1. 설명글입니다</p>';
         Pathway+='</div>';
         Path.innerHTML=Pathway;
         let pathway=document.getElementById('pathway');
