@@ -92,12 +92,6 @@
     width:45%;
 }
 
-#kuphil_room > p {
-    padding: 0 15%;
-    height: 50px;
-    font-size: 1.7rem;
-}
-
 .location{
     margin: 30px auto;
     display: flex;
