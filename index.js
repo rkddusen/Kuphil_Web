@@ -46,66 +46,66 @@ server.get("/history", (req, res) => {
     res.sendFile(__dirname + "/public/html/history.html");
 });
 
-server.post("/calendar/add_schedule", (req, res) => {
-    let title = req.body.title;
-    let startDate = req.body.year + '-' + req.body.month + '-' + req.body.day;
-    let startTime = req.body.startHour + ':' + req.body.startMin;
-    let endTime = req.body.endHour + ':' + req.body.endMin;
-    let main = (req.body.maincheck == 'on') ? 1 : 0;
-    if (req.body.allDay) {
-        startTime = '00:00';
-        endTime = '23:59';
-    }
-    let sql = 'UPDATE schedule SET main=0 ; INSERT INTO schedule (title, date, startTime, endTime, main) VALUES(?, ?, ?, ?, ?)';
-    let params = [title, startDate, startTime + ":00", endTime + ":00", main];
-    connection.query(sql, params, function (err, result, fields) {
-        if (err) {
-            console.log(err);
-        }
-        return res.redirect('/public/html/calendar');
-    })
-});
-server.post("/calendar/delete_schedule", (req, res) => {
-    let data = req.body.deleteData;
-    let spli = '';
-    let array = [];
-    for (let i = 0; i < 4; i++) {
-        spli = data.split('/');
-        array[i] = spli[i];
-    }
-    let sql = "DELETE FROM schedule WHERE date='" + array[0] + "' and starttime='" + array[1] + "' and endtime='" + array[2] + "' and title='" + array[3] + "'";
-    connection.query(sql, function (err, result) {
-        if (err) {
-            console.log(err);
-        }
-        return res.redirect('/public/html/calendar');
-    })
-});
+// server.post("/calendar/add_schedule", (req, res) => {
+//     let title = req.body.title;
+//     let startDate = req.body.year + '-' + req.body.month + '-' + req.body.day;
+//     let startTime = req.body.startHour + ':' + req.body.startMin;
+//     let endTime = req.body.endHour + ':' + req.body.endMin;
+//     let main = (req.body.maincheck == 'on') ? 1 : 0;
+//     if (req.body.allDay) {
+//         startTime = '00:00';
+//         endTime = '23:59';
+//     }
+//     let sql = 'UPDATE schedule SET main=0 ; INSERT INTO schedule (title, date, startTime, endTime, main) VALUES(?, ?, ?, ?, ?)';
+//     let params = [title, startDate, startTime + ":00", endTime + ":00", main];
+//     connection.query(sql, params, function (err, result, fields) {
+//         if (err) {
+//             console.log(err);
+//         }
+//         return res.redirect('/public/html/calendar');
+//     })
+// });
+// server.post("/calendar/delete_schedule", (req, res) => {
+//     let data = req.body.deleteData;
+//     let spli = '';
+//     let array = [];
+//     for (let i = 0; i < 4; i++) {
+//         spli = data.split('/');
+//         array[i] = spli[i];
+//     }
+//     let sql = "DELETE FROM schedule WHERE date='" + array[0] + "' and starttime='" + array[1] + "' and endtime='" + array[2] + "' and title='" + array[3] + "'";
+//     connection.query(sql, function (err, result) {
+//         if (err) {
+//             console.log(err);
+//         }
+//         return res.redirect('/public/html/calendar');
+//     })
+// });
 
 
-const calPage = fs.readFileSync('./public/html/calendar.ejs', 'utf8');
-server.get("/calendar", (req, res) => {
-    let data = '';
-    connection.query('SELECT date,starttime,endtime,title FROM schedule ORDER BY date',
-        function (error, rows, fields) {
-            if (error) {
-                console.log(error);
-            }
-            else {
-                for (var i in rows) {
-                    data += rows[i].date + "/" + rows[i].starttime + "/";
-                    data += rows[i].endtime + "/";
-                    data += rows[i].title + "//";
-                }//데이터 생성
-                var page = ejs.render(calPage, {
-                    db: data,
-                });
-                //응답
-                res.send(page);
-            }
-        }
-    );
-});
+// const calPage = fs.readFileSync('./public/html/calendar.ejs', 'utf8');
+// server.get("/calendar", (req, res) => {
+//     let data = '';
+//     connection.query('SELECT date,starttime,endtime,title FROM schedule ORDER BY date',
+//         function (error, rows, fields) {
+//             if (error) {
+//                 console.log(error);
+//             }
+//             else {
+//                 for (var i in rows) {
+//                     data += rows[i].date + "/" + rows[i].starttime + "/";
+//                     data += rows[i].endtime + "/";
+//                     data += rows[i].title + "//";
+//                 }//데이터 생성
+//                 var page = ejs.render(calPage, {
+//                     db: data,
+//                 });
+//                 //응답
+//                 res.send(page);
+//             }
+//         }
+//     );
+// });
 
 server.get("/archive", (req, res) => {
 
@@ -267,10 +267,10 @@ server.get("/gamecenter", (req, res) => {
     res.sendFile(__dirname + "/public/html/gamecenter.html");
 });
 
-server.get("/snakegame", (req, res) => {
+// server.get("/snakegame", (req, res) => {
 
-    res.sendFile(__dirname + "/public/html/snake_game.html");
-});
+//     res.sendFile(__dirname + "/public/html/snake_game.html");
+// });
 
 const game2048 = fs.readFileSync('./public/html/2048.ejs', 'utf8');
 server.get("/2048game", (req, res) => {
@@ -451,48 +451,48 @@ server.post("/qna/deleteSubmit", (req, res) => {
     })
 });
 
-server.get("/sentence", (req, res) => {
-    res.redirect("/sentence/1");
-});
+// server.get("/sentence", (req, res) => {
+//     res.redirect("/sentence/1");
+// });
 
-const stcPage = fs.readFileSync('./public/html/sentence.ejs', 'utf8');
-server.get("/sentence/:page", (req, res) => {
-    var paging = req.params.page;
-    let pageStart = (paging - 1) * 40 ? (paging - 1) * 40 : 0;
-    let sql = 'SELECT id, nickname, sentence FROM sentence ORDER BY id desc LIMIT ?, 40;'
-    let sqll = 'SELECT COUNT(*) AS number FROM sentence;';
-    connection.query(sql + sqll, [pageStart],
-        function (error, rows, fields) {
-            if (error) {
-                console.log(error);
-            }
-            else {
-                let dataResult = rows[0];
-                let countResult = rows[1];
-                let number = countResult[0].number;
-                let stc_id = [];
-                let stc_nickname = [];
-                let stc_sentence = [];
-                for (var i in rows[0]) {
-                    stc_id[i] = dataResult[i].id;
-                    stc_nickname[i] = dataResult[i].nickname;
-                    stc_sentence[i] = dataResult[i].sentence;
-                }//데이터 생성
-                var page = ejs.render(stcPage, {
-                    page_num: 40,
-                    pass: true,
-                    page: paging,
-                    number: number,
-                    stc_id: stc_id,
-                    stc_nickname: stc_nickname,
-                    stc_sentence: stc_sentence,
-                });
-                //응답
-                res.send(page);
-            }
-        }
-    );
-});
+// const stcPage = fs.readFileSync('./public/html/sentence.ejs', 'utf8');
+// server.get("/sentence/:page", (req, res) => {
+//     var paging = req.params.page;
+//     let pageStart = (paging - 1) * 40 ? (paging - 1) * 40 : 0;
+//     let sql = 'SELECT id, nickname, sentence FROM sentence ORDER BY id desc LIMIT ?, 40;'
+//     let sqll = 'SELECT COUNT(*) AS number FROM sentence;';
+//     connection.query(sql + sqll, [pageStart],
+//         function (error, rows, fields) {
+//             if (error) {
+//                 console.log(error);
+//             }
+//             else {
+//                 let dataResult = rows[0];
+//                 let countResult = rows[1];
+//                 let number = countResult[0].number;
+//                 let stc_id = [];
+//                 let stc_nickname = [];
+//                 let stc_sentence = [];
+//                 for (var i in rows[0]) {
+//                     stc_id[i] = dataResult[i].id;
+//                     stc_nickname[i] = dataResult[i].nickname;
+//                     stc_sentence[i] = dataResult[i].sentence;
+//                 }//데이터 생성
+//                 var page = ejs.render(stcPage, {
+//                     page_num: 40,
+//                     pass: true,
+//                     page: paging,
+//                     number: number,
+//                     stc_id: stc_id,
+//                     stc_nickname: stc_nickname,
+//                     stc_sentence: stc_sentence,
+//                 });
+//                 //응답
+//                 res.send(page);
+//             }
+//         }
+//     );
+// });
 
 const arcReadPage = fs.readFileSync('./public/html/arcConcert.ejs', 'utf8');
 server.get("/archive/concert/:idx", (req, res) => {
@@ -528,6 +528,38 @@ server.get("/archive/concert/:idx", (req, res) => {
                     concert_link: concert_link,
                     concert_program: concert_program,
                     concert_composer: concert_composer
+                });
+                //응답
+                res.send(page);
+            }
+        }
+    );
+});
+
+// server.get("/worldcup", (req, res) => {
+
+//     res.sendFile(__dirname + "/public/html/worldcup.html");
+// });
+const worldcupPage = fs.readFileSync('./public/html/worldcup.ejs', 'utf8');
+server.get("/worldcup", (req, res) => {
+
+    connection.query('SELECT * FROM worldcup',
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            }
+            else {
+                let composer = [];
+                for (var i in rows) {
+                    composer[i] = {
+                        en: rows[i].composer_en,
+                        kr: rows[i].composer_kr,
+                        img: rows[i].img,
+                    }
+                    // entry = "en: '" + rows[i].composer_en + "', kr: '" + rows[i].composer_kr + "', img: '" + rows[i].img + "'";
+                }//데이터 생성
+                var page = ejs.render(worldcupPage, {
+                    composer:composer
                 });
                 //응답
                 res.send(page);

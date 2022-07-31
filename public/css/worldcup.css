@@ -1,0 +1,233 @@
+.worldcup_area {
+    width: 90%;
+    margin: 0 5%;
+    height: auto;
+    min-height: 100%;
+    padding-bottom: 260px;
+}
+
+.worldcup_explain {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.worldcup_explain p {
+    font-size: 3rem;
+}
+
+.worldcup_button{
+    margin-top: 30px;
+}
+
+
+.custom-btn {
+    margin: 20px;
+    outline: none;
+    width: 130px;
+    height: 60px;
+    padding: 10px 25px;
+    border: 2px solid #000;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    font-size: 1.5rem;
+    background-color: rgb(255, 244, 223);
+}
+
+.btn {
+    position: relative;
+    color: #000;
+    z-index: 2;
+    line-height: 60px;
+    padding: 0;
+}
+
+.btn:hover {
+    border: none;
+}
+
+.btn:before,
+.btn:after {
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 0%;
+    border: 2px solid;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.btn:before {
+    top: 0;
+    left: 0;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-top-color: rgb(0, 0, 0);
+    border-left-color: #000;
+}
+
+.btn:after {
+    bottom: 0;
+    right: 0;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: #000;
+    border-right-color: #000;
+}
+
+.btn:hover:before,
+.btn:hover:after {
+    border-color: #000;
+    height: 100%;
+    width: 100%;
+}
+
+
+.round{
+    font-size: 4rem;
+}
+.now, .total{
+    font-size: 3rem;
+}
+
+.worldcup_start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.worldcup_one, .worldcup_two{
+    width: 350px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+    text-align: center;
+}
+.worldcup_one_img, .worldcup_two_img{
+    max-width: 350px;
+    max-height: 400px;
+    min-width: 350px;
+    min-height: 400px;
+    object-fit: cover;
+}
+.worldcup_one_en, .worldcup_two_en{
+    font-size: 2.5rem;
+}
+.worldcup_one_kr, .worldcup_two_kr{
+    font-size: 2rem;
+    color: rgb(133, 133, 133);
+}
+.worldcup_vs span{
+    line-height: 60px;
+    font-size: 3rem;
+}
+
+.worldcup_end{
+    margin-top: 100px;
+    width: 100%;
+    text-align: center;
+}
+.worldcup_end_explain{
+    font-size: 4rem;
+    margin-bottom: 30px;
+}
+.worldcup_end_img{
+    max-width: 400px;
+    max-height: 450px;
+    min-width: 400px;
+    min-height: 450px;
+    object-fit: cover;
+}
+.worldcup_end_en{
+    font-size: 4rem;
+}
+.worldcup_end_kr{
+    font-size: 3rem;
+    color: rgb(133, 133, 133);
+}
+
+@media (max-width : 1023px){
+    .worldcup_one, .worldcup_two{
+        width: 250px;
+        height: 400px;
+    }
+    .worldcup_one_img, .worldcup_two_img{
+        max-width: 250px;
+        max-height: 300px;
+        min-width: 250px;
+        min-height: 300px;
+    }
+    .worldcup_vs span{
+        line-height: 50px;
+        font-size: 2.5rem;
+    }
+    .worldcup_end_img{
+        max-width: 300px;
+        max-height: 350px;
+        min-width: 300px;
+        min-height: 350px;
+    }
+}
+
+@media (max-width : 767px){
+    .worldcup_explain {
+        margin-top: 50px;
+    }
+    .worldcup_start{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .worldcup_one, .worldcup_two{
+        width: auto;
+        height: auto;
+    }
+    .worldcup_one_img, .worldcup_two_img{
+        max-width: 250px;
+        max-height: 270px;
+        min-width: 250px;
+        min-height: 270px;
+    }
+    .worldcup_vs span{
+        line-height: 30px;
+        font-size: 2.5rem;
+    }
+    .worldcup_end{
+        margin-top: 50px;
+    }
+    .worldcup_end_img{
+        max-width: 250px;
+        max-height: 300px;
+        min-width: 250px;
+        min-height: 300px;
+    }
+}
+@media (max-width : 767px){
+    .worldcup_explain {
+        margin-top: 20px;
+    }
+    .worldcup_one_img, .worldcup_two_img{
+        max-width: 200px;
+        max-height: 230px;
+        min-width: 200px;
+        min-height: 230px;
+    }
+    .worldcup_vs span{
+        line-height: 20px;
+        font-size: 2rem;
+    }
+    .worldcup_end{
+        margin-top: 50px;
+    }
+    .worldcup_end_img{
+        max-width: 200px;
+        max-height: 250px;
+        min-width: 200px;
+        min-height: 250px;
+    }
+}
