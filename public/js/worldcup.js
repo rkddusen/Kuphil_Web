@@ -1,5 +1,5 @@
 //작곡가 전체 수
-const totalnum = 42;
+const totalnum = 67;
 
 //선정된 작곡가의 인덱스 번호 저장할 배열
 //처음에 number배열에 16개(16강)의 인덱스를 담은 다음
@@ -85,7 +85,21 @@ function start_thirtytwo(){
     }
     rotation_thirtytwo(count);
 }
-
+function start_sixtyfour(){
+    initPage();
+    //숫자 32개를 number배열에 담기
+    for(let i = 0; i < 64; i++){
+        //난수 생성 0~totalnum
+        x = Math.floor(Math.random() * totalnum);
+        //중복 제거
+        if(number.find(data => data === x)>=0){
+            i--;
+        }else{
+            number[i] = x;
+        }
+    }
+    rotation_sixtyfour(count);
+}
 
 //number에서 shift하고 push하는 과정을 반복
 function setting(){
@@ -105,6 +119,12 @@ function setting(){
 
 
 //number에서 shift하고 push하는 과정을 반복
+function rotation_sixtyfour(count){//64강
+    document.getElementsByClassName('round')[0].innerHTML = "64강";
+    document.getElementsByClassName('now')[0].innerHTML = count;
+    document.getElementsByClassName('total')[0].innerHTML = "32";
+    setting();
+}
 function rotation_thirtytwo(count){//32강
     document.getElementsByClassName('round')[0].innerHTML = "32강";
     document.getElementsByClassName('now')[0].innerHTML = count;
@@ -180,6 +200,12 @@ function check(num) {
     }else if(nextnum<=32 && prevnum<=32){//32강 유지
         count++;
         rotation_thirtytwo(count);
+    }else if(nextnum<=32 && prevnum>32){//64강->32강
+        count=1;
+        rotation_thirtytwo(count);
+    }else if(nextnum<=64 && prevnum<=64){//64강 유지
+        count++;
+        rotation_sixtyfour(count);
     }
     
 }
