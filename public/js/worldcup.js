@@ -215,10 +215,13 @@ function gameEnd(number_win){
     let endDiv = 
     `<div>
         <div class="worldcup_end">
-            <p class="worldcup_end_explain">당신의 최애 작곡가는?!🫣</p>
+            <p class="worldcup_end_explain">당신의 최애 작곡가는?!</p>
             <img class="worldcup_end_img" src="" alt="end">
             <p class="worldcup_end_en"></p>
             <p class="worldcup_end_kr"><p/>
+            <div class="worldcup_re">
+                <p onclick="location.reload()">다시하기</p>
+            </div>
         </div>
     </div>`;
     document.getElementsByClassName('worldcup_area')[0].innerHTML = endDiv;
