@@ -19,73 +19,21 @@
     margin-top: 30px;
 }
 
-
-.custom-btn {
-    margin: 20px;
-    outline: none;
-    width: 130px;
-    height: 60px;
-    padding: 10px 25px;
-    border: 2px solid #000;
-    font-weight: 500;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-    font-size: 1.5rem;
-    background-color: rgb(255, 244, 223);
-}
-
 .btn {
-    position: relative;
-    color: #000;
-    z-index: 2;
-    line-height: 60px;
-    padding: 0;
+    color: #BE7743;
+    border: none;
+    background: none;
+    font-size: 2rem;
+    margin: 10px 30px;
 }
 
 .btn:hover {
-    border: none;
+    color: #784520;
+    text-decoration: underline;
 }
-
-.btn:before,
-.btn:after {
-    position: absolute;
-    content: "";
-    width: 0%;
-    height: 0%;
-    border: 2px solid;
-    z-index: -1;
-    transition: all 0.3s ease;
+.worldcup_now{
+    color: #62381b;
 }
-
-.btn:before {
-    top: 0;
-    left: 0;
-    border-bottom-color: transparent;
-    border-right-color: transparent;
-    border-top-color: rgb(0, 0, 0);
-    border-left-color: #000;
-}
-
-.btn:after {
-    bottom: 0;
-    right: 0;
-    border-top-color: transparent;
-    border-left-color: transparent;
-    border-bottom-color: #000;
-    border-right-color: #000;
-}
-
-.btn:hover:before,
-.btn:hover:after {
-    border-color: #000;
-    height: 100%;
-    width: 100%;
-}
-
-
 .round{
     font-size: 4rem;
 }
@@ -99,15 +47,10 @@
     align-items: center;
 }
 .worldcup_one, .worldcup_two{
-    width: 350px;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 10px;
     text-align: center;
 }
 .worldcup_one_img, .worldcup_two_img{
+    margin: 10px;
     max-width: 350px;
     max-height: 400px;
     min-width: 350px;
@@ -116,14 +59,16 @@
 }
 .worldcup_one_en, .worldcup_two_en{
     font-size: 2.5rem;
+    color: #784520;
 }
 .worldcup_one_kr, .worldcup_two_kr{
     font-size: 2rem;
-    color: rgb(133, 133, 133);
+    color: #BE7743;
 }
 .worldcup_vs span{
     line-height: 60px;
     font-size: 3rem;
+    color: #62381b;
 }
 
 .worldcup_end{
@@ -151,10 +96,6 @@
 }
 
 @media (max-width : 1023px){
-    .worldcup_one, .worldcup_two{
-        width: 250px;
-        height: 400px;
-    }
     .worldcup_one_img, .worldcup_two_img{
         max-width: 250px;
         max-height: 300px;
@@ -183,10 +124,6 @@
         justify-content: center;
         align-items: center;
     }
-    .worldcup_one, .worldcup_two{
-        width: auto;
-        height: auto;
-    }
     .worldcup_one_img, .worldcup_two_img{
         max-width: 250px;
         max-height: 270px;
@@ -211,6 +148,11 @@
     .worldcup_explain {
         margin-top: 20px;
     }
+    .btn {
+        display: block;
+        margin: 30px auto;
+    }
+
     .worldcup_one_img, .worldcup_two_img{
         max-width: 200px;
         max-height: 230px;
