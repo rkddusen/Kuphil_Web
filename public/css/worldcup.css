@@ -94,6 +94,20 @@
     font-size: 3rem;
     color: rgb(133, 133, 133);
 }
+.worldcup_re{
+    
+    margin: 30px;
+}
+.worldcup_re p{
+    color: #BE7743;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.worldcup_re p:hover{
+    color: #784520;
+    text-decoration: underline;
+
+}
 
 @media (max-width : 1023px){
     .worldcup_one_img, .worldcup_two_img{

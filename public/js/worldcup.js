@@ -219,6 +219,9 @@ function gameEnd(number_win){
             <img class="worldcup_end_img" src="" alt="end">
             <p class="worldcup_end_en"></p>
             <p class="worldcup_end_kr"><p/>
+            <div class="worldcup_re">
+                <p onclick="location.reload()">다시하기</p>
+            </div>
         </div>
     </div>`;
     document.getElementsByClassName('worldcup_area')[0].innerHTML = endDiv;
