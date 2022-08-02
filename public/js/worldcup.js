@@ -13,6 +13,7 @@ function initPage(){
     let initDiv = 
     `<div class="worldcup_explain">
         <p class="worldcup_now"><span class="round">##강</span> ( <span class="now">#</span> / <span class="total">##</span> )</p>
+        <span style="font-size: 1.5rem; color: red;">(* 환경에 따라 이미지 로딩 속도가 느릴 수 있습니다.)</span>
     </div>
     <div class="worldcup_start">
         <div class="worldcup_one">
