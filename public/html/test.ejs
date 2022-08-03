@@ -37,7 +37,7 @@
                 <ul>
                     <li><a href="./introduce">소개</a></li>
                     <li><a href="./archive">아카이브</a></li>
-                    <li><a href="./calendar">달력</a></li>
+                    <li><a href="./qna">Q&A</a></li>
                     <li><a href="./gamecenter">놀이터</a></li>
                     <li><a href="./lab">실험실</a></li>
                 </ul>
@@ -52,7 +52,7 @@
                     <ul>
                         <li><a href="./introduce">소개</a></li>
                         <li><a href="./archive">아카이브</a></li>
-                        <li><a href="./calendar">달력</a></li>
+                        <li><a href="./qna">Q&A</a></li>
                         <li><a href="./gamecenter">놀이터</a></li>
                         <li><a href="./lab">실험실</a></li>
                     </ul>
@@ -77,38 +77,20 @@
 
     <!-- 내용 -->
     <script>
-        let question = "<%=question%>".split(",");
-        let conductor = "<%=conductor%>".split(",");
-        let firstViolin = "<%=firstViolin%>".split(",");
-        let secondViolin = "<%=secondViolin%>".split(",");
-        let viola = "<%=viola%>".split(",");
-        let cello = "<%=cello%>".split(",");
-        let contra = "<%=contra%>".split(",");
-        let flute = "<%=flute%>".split(",");
-        let oboe = "<%=oboe%>".split(",");
-        let clarinet = "<%=clarinet%>".split(",");
-        let basson = "<%=basson%>".split(",");
-        let trumpet = "<%=trumpet%>".split(",");
-        let trombone = "<%=trombone%>".split(",");
-        let horn = "<%=horn%>".split(",");
-        let tuba = "<%=tuba%>".split(",");
-        let timpani = "<%=timpani%>".split(",");
-        let percussion = "<%=percussion%>".split(",");
-        let piano = "<%=piano%>".split(",");
-        let fanswer = "<%=fanswer%>".split(",");
-        let sanswer = "<%=sanswer%>".split(",");
+        let testArray = JSON.parse('<%- JSON.stringify(testArray) %>');
     </script>
+    
     <div class="gameContents">
         <div class="question">
-            악기 추천 받으러 가요~<br>
-            <span style="font-size: 1.8rem; color: red;">(* 이 테스트는 오로지 재미를 위해 만들어진 테스트입니다.^^)</span>
+            <p>악기 추천 받으러 가요~</p>
+            <span style="font-size: 1.5rem; color: red;">(* 이 테스트는 오로지 재미를 위해 만들어진 테스트입니다.^^)</span>
         </div>
         <div class="answer">
             <div class="firstAnswer">
                 <button onclick="startGame();">너무 좋아요 :)</button>
             </div>
             <div class="secondAnswer">
-                <a href="./lab"><button>다음에 봐요 :(</button></a>
+                <a onclick="location.replace('./gamecenter');"><button>다음에 봐요 :(</button></a>
             </div>
         </div>
         <div class="result"></div>

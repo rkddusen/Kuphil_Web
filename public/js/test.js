@@ -1,25 +1,7 @@
 let resultArray = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 let count = 0;
 let num = 0;
-for (let i = 0; i < 20; i++) {
-    conductor[i] = parseInt(conductor[i]);
-    firstViolin[i] = parseInt(firstViolin[i]);
-    secondViolin[i] = parseInt(secondViolin[i]);
-    viola[i] = parseInt(viola[i]);
-    cello[i] = parseInt(cello[i]);
-    contra[i] = parseInt(contra[i]);
-    flute[i] = parseInt(flute[i]);
-    oboe[i] = parseInt(oboe[i]);
-    clarinet[i] = parseInt(clarinet[i]);
-    basson[i] = parseInt(basson[i]);
-    trumpet[i] = parseInt(trumpet[i]);
-    trombone[i] = parseInt(trombone[i]);
-    horn[i] = parseInt(horn[i]);
-    tuba[i] = parseInt(tuba[i]);
-    timpani[i] = parseInt(timpani[i]);
-    percussion[i] = parseInt(percussion[i]);
-    piano[i] = parseInt(piano[i]);
-}
+
 let resultMax = 0;
 let endText = '';
 let end = document.getElementsByClassName("result")[0];
@@ -86,7 +68,7 @@ function showResult(resultMax) {
 
 function game(num) {
     let ques = document.getElementsByClassName("question")[0];
-    ques.innerHTML = (num + 1) + ') ' + question[num];
+    ques.innerHTML = '<p>'+(num + 1) + ') ' + testArray[num].question+'</p>';
 
     let fAnsw = document.getElementsByClassName("firstAnswer")[0];
     let sAnsw = document.getElementsByClassName("secondAnswer")[0];
@@ -95,15 +77,14 @@ function game(num) {
     let random = Math.floor(Math.random() * 2);
 
     if(random){
-        fText += '<button onclick="answer_0();">' + fanswer[num] + '</button>';
-        sText += '<button onclick="answer_1();">' + sanswer[num] + '</button>';
+        fText += '<button onclick="answer_0();">' + testArray[num].fanswer + '</button>';
+        sText += '<button onclick="answer_1();">' + testArray[num].sanswer + '</button>';
     }
     else{
-        fText += '<button onclick="answer_1();">' + sanswer[num] + '</button>';
-        sText += '<button onclick="answer_0();">' + fanswer[num] + '</button>';
+        fText += '<button onclick="answer_1();">' + testArray[num].sanswer + '</button>';
+        sText += '<button onclick="answer_0();">' + testArray[num].fanswer + '</button>';
     }
 
-    
     fAnsw.innerHTML = fText;
     sAnsw.innerHTML = sText;
 }
@@ -115,8 +96,7 @@ function endGame() {
     let ques = document.getElementsByClassName("question")[0];
     let quesText = '';
     ques.innerHTML = quesText;
-    document.getElementsByClassName("firstAnswer")[0].innerHTML = '';
-    document.getElementsByClassName("secondAnswer")[0].innerHTML = '';
+    document.getElementsByClassName("answer")[0].innerHTML = '';
     
     //최대값 찾기
     for (let i = 0; i < 17; i++) {
@@ -131,49 +111,28 @@ function endGame() {
             resultMax = random ? resultMax : i;
         }
     }
-showResult(resultMax);
-    
-    // endText += '지휘자'+resultArray[0] + ',';
-    // endText += '퍼바'+resultArray[1] + ',';
-    // endText += '세바'+resultArray[2] + ',';
-    // endText += '비올라'+resultArray[3] + ',';
-    // endText += '첼로'+resultArray[4] + ',';
-    // endText += '콘베'+resultArray[5] + ',';
-    // endText += '플룻'+resultArray[6] + ',';
-    // endText += '오보에'+resultArray[7] + ',';
-    // endText += '클라'+resultArray[8] + ',';
-    // endText += '바순'+resultArray[9] + ',';
-    // endText += '트럼펫'+resultArray[10] + ',';
-    // endText += '트롬본'+resultArray[11] + ',';
-    // endText += '호른'+resultArray[12] + ',';
-    // endText += '튜바'+resultArray[13] + ',';
-    // endText += '팀파니'+resultArray[14] + ',';
-    // endText += '퍼커션'+resultArray[15] + ',';
-    // endText += '피아노'+resultArray[16] + ',';
-    // endText += resultMax+'<br>';
-    
-
-    
+    showResult(resultMax);
 }
 function answer_0() {
-    resultArray[0] += conductor[num];
-    resultArray[1] += firstViolin[num];
-    resultArray[2] += secondViolin[num];
-    resultArray[3] += viola[num];
-    resultArray[4] += cello[num];
-    resultArray[5] += contra[num];
-    resultArray[6] += flute[num];
-    resultArray[7] += oboe[num];
-    resultArray[8] += clarinet[num];
-    resultArray[9] += basson[num];
-    resultArray[10] += trumpet[num];
-    resultArray[11] += trombone[num];
-    resultArray[12] += horn[num];
-    resultArray[13] += tuba[num];
-    resultArray[14] += timpani[num];
-    resultArray[15] += percussion[num];
-    resultArray[16] += piano[num];
+    resultArray[0] += testArray[num].conductor;
+    resultArray[1] += testArray[num].firstViolin;
+    resultArray[2] += testArray[num].secondViolin;
+    resultArray[3] += testArray[num].viola;
+    resultArray[4] += testArray[num].cello;
+    resultArray[5] += testArray[num].contra;
+    resultArray[6] += testArray[num].flute;
+    resultArray[7] += testArray[num].oboe;
+    resultArray[8] += testArray[num].clarinet;
+    resultArray[9] += testArray[num].basson;
+    resultArray[10] += testArray[num].trumpet;
+    resultArray[11] += testArray[num].trombone;
+    resultArray[12] += testArray[num].horn;
+    resultArray[13] += testArray[num].tuba;
+    resultArray[14] += testArray[num].timpani;
+    resultArray[15] += testArray[num].percussion;
+    resultArray[16] += testArray[num].piano;
     if (count == 19) {
+        
         endGame();
     }
     else {
@@ -183,25 +142,25 @@ function answer_0() {
     }
 }
 function answer_1() {
-    resultArray[0] += (6 - conductor[num]);
-    resultArray[1] += (6 - firstViolin[num]);
-    resultArray[2] += (6 - secondViolin[num]);
-    resultArray[3] += (6 - viola[num]);
-    resultArray[4] += (6 - cello[num]);
-    resultArray[5] += (6 - contra[num]);
-    resultArray[6] += (6 - flute[num]);
-    resultArray[7] += (6 - oboe[num]);
-    resultArray[8] += (6 - clarinet[num]);
-    resultArray[9] += (6 - basson[num]);
-    resultArray[10] += (6 - trumpet[num]);
-    resultArray[11] += (6 - trombone[num]);
-    resultArray[12] += (6 - horn[num]);
-    resultArray[13] += (6 - tuba[num]);
-    resultArray[14] += (6 - timpani[num]);
-    resultArray[15] += (6 - percussion[num]);
-    resultArray[16] += (6 - piano[num]);
-
+    resultArray[0] += (6-testArray[num].conductor);
+    resultArray[1] += (6-testArray[num].firstViolin);
+    resultArray[2] += (6-testArray[num].secondViolin);
+    resultArray[3] += (6-testArray[num].viola);
+    resultArray[4] += (6-testArray[num].cello);
+    resultArray[5] += (6-testArray[num].contra);
+    resultArray[6] += (6-testArray[num].flute);
+    resultArray[7] += (6-testArray[num].oboe);
+    resultArray[8] += (6-testArray[num].clarinet);
+    resultArray[9] += (6-testArray[num].basson);
+    resultArray[10] += (6-testArray[num].trumpet);
+    resultArray[11] += (6-testArray[num].trombone);
+    resultArray[12] += (6-testArray[num].horn);
+    resultArray[13] += (6-testArray[num].tuba);
+    resultArray[14] += (6-testArray[num].timpani);
+    resultArray[15] += (6-testArray[num].percussion);
+    resultArray[16] += (6-testArray[num].piano);
     if (count == 19) {
+        
         endGame();
     }
     else {

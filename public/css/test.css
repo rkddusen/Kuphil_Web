@@ -6,10 +6,11 @@
     min-height: 100%;
     padding-bottom: 260px;
 }
-
-.question{
-    font-size: 3rem;
+.question {
     text-align: center;
+}
+.question p{
+    font-size: 2.8rem;
 }
 
 .answer{
@@ -20,19 +21,18 @@
     margin: 50px 2%;
 }
 .firstAnswer button{
-    font-size: 2rem;
+    font-size: 1.5rem;
     width: 400px;
     height: 100px;
-    
-    border: 2px solid blue;
-    background-color: #EFEFFB;
+    border: 2px solid #BE7743;
+    background-color: #fffcfb;
 }
 .secondAnswer button{
-    font-size: 2rem;
+    font-size: 1.5rem;
     width: 400px;
     height: 100px;
-    border: 2px solid red;
-    background-color: #FBEFEF;
+    border: 2px solid #BE7743;
+    background-color: #fffcfb;
 }
 .result{
     text-align: center;
@@ -44,7 +44,8 @@
 .resultName{
     font-size: 4rem;
     padding: 10px;
-    color: brown;
+    color: #64391a;
+    font-weight: bold;
 }
 .resultText p:nth-child(2), .resultText p:nth-child(3){
     font-size: 2rem;

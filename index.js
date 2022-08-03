@@ -227,29 +227,53 @@ server.get("/archive", (req, res) => {
 const testPage = fs.readFileSync('./public/html/test.ejs', 'utf8');
 server.get("/test", (req, res) => {
 
-    connection.query('SELECT question, conductor, firstViolin,secondViolin,viola,cello,contra,flute,oboe,clarinet,basson,trumpet,trombone,horn,tuba,timpani,percussion ,piano ,answer,sanswer FROM test ORDER BY RAND()',
+    connection.query('SELECT * FROM test ORDER BY RAND()',
         function (error, rows, fields) {
             if (error) {
                 console.log(error);
             }
             else {
-                let question = []; let conductor = []; let firstViolin = []; let secondViolin = []; let viola = []; let cello = []; let contra = [];
-                let flute = []; let oboe = []; let clarinet = []; let basson = []; let trumpet = []; let trombone = []; let horn = []; let tuba = [];
-                let timpani = []; let percussion = []; let piano = []; let fanswer = []; let sanswer = [];
+                // let question = []; let conductor = []; let firstViolin = []; let secondViolin = []; let viola = []; let cello = []; let contra = [];
+                // let flute = []; let oboe = []; let clarinet = []; let basson = []; let trumpet = []; let trombone = []; let horn = []; let tuba = [];
+                // let timpani = []; let percussion = []; let piano = []; let fanswer = []; let sanswer = [];
+                let testArray = [];
                 for (var i in rows) {
-                    question[i] = rows[i].question; conductor[i] = rows[i].conductor; firstViolin[i] = rows[i].firstViolin;
-                    secondViolin[i] = rows[i].secondViolin; viola[i] = rows[i].viola; cello[i] = rows[i].cello; contra[i] = rows[i].contra;
-                    flute[i] = rows[i].flute; oboe[i] = rows[i].oboe; clarinet[i] = rows[i].clarinet;
-                    basson[i] = rows[i].basson; trumpet[i] = rows[i].trumpet; trombone[i] = rows[i].trombone; horn[i] = rows[i].horn;
-                    tuba[i] = rows[i].tuba; timpani[i] = rows[i].timpani; percussion[i] = rows[i].percussion;
-                    piano[i] = rows[i].piano; fanswer[i] = rows[i].answer; sanswer[i] = rows[i].sanswer;
+                    testArray[i] = {
+                        question: rows[i].question,
+                        conductor: rows[i].conductor,
+                        firstViolin: rows[i].firstViolin,
+                        secondViolin: rows[i].secondViolin,
+                        viola: rows[i].viola,
+                        cello: rows[i].cello,
+                        contra: rows[i].contra,
+                        flute: rows[i].flute,
+                        oboe: rows[i].oboe,
+                        clarinet: rows[i].clarinet,
+                        basson: rows[i].basson,
+                        trumpet: rows[i].trumpet,
+                        trombone: rows[i].trombone,
+                        horn: rows[i].horn,
+                        tuba: rows[i].tuba,
+                        timpani: rows[i].timpani,
+                        percussion: rows[i].percussion,
+                        piano: rows[i].piano,
+                        fanswer: rows[i].answer,
+                        sanswer: rows[i].sanswer
+                    }
+                    // question[i] = rows[i].question; conductor[i] = rows[i].conductor; firstViolin[i] = rows[i].firstViolin;
+                    // secondViolin[i] = rows[i].secondViolin; viola[i] = rows[i].viola; cello[i] = rows[i].cello; contra[i] = rows[i].contra;
+                    // flute[i] = rows[i].flute; oboe[i] = rows[i].oboe; clarinet[i] = rows[i].clarinet;
+                    // basson[i] = rows[i].basson; trumpet[i] = rows[i].trumpet; trombone[i] = rows[i].trombone; horn[i] = rows[i].horn;
+                    // tuba[i] = rows[i].tuba; timpani[i] = rows[i].timpani; percussion[i] = rows[i].percussion;
+                    // piano[i] = rows[i].piano; fanswer[i] = rows[i].answer; sanswer[i] = rows[i].sanswer;
                 }//데이터 생성
                 var page = ejs.render(testPage, {
-                    question: question, conductor: conductor, firstViolin: firstViolin, secondViolin: secondViolin, viola: viola,
-                    cello: cello, contra: contra, flute: flute, oboe: oboe,
-                    clarinet: clarinet, basson: basson, trumpet: trumpet, trombone: trombone, horn: horn,
-                    tuba: tuba, timpani: timpani, percussion: percussion, piano: piano,
-                    fanswer: fanswer, sanswer: sanswer,
+                    // question: question, conductor: conductor, firstViolin: firstViolin, secondViolin: secondViolin, viola: viola,
+                    // cello: cello, contra: contra, flute: flute, oboe: oboe,
+                    // clarinet: clarinet, basson: basson, trumpet: trumpet, trombone: trombone, horn: horn,
+                    // tuba: tuba, timpani: timpani, percussion: percussion, piano: piano,
+                    // fanswer: fanswer, sanswer: sanswer,
+                    testArray: testArray
                 });
                 //응답
                 res.send(page);
