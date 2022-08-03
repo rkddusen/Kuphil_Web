@@ -88,19 +88,21 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
 
 .weather {
     box-sizing: border-box;
-    width: 100%;
+    margin: 4px 5% 0;
+    width: 90%;
     height: 15%;
-    border: solid 1px #BE7743;
+    border-top: solid 3px #BE7743;
+    border-bottom: solid 3px #BE7743;
     display: flex;
     justify-content: center;
 }
 
 #time {
-    font-size: 20px;
+    font-size: 2rem;
 }
 
 #weather_spans > span {
-    font-size: 25px;
+    font-size: 2.5rem;
 }
 
 #weather_desc {
@@ -113,23 +115,11 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
     align-items: center;
 }
 
-#weather_tape {
-    position: relative;
-    transform: rotate(-45deg);
-    top: -40px;
-    left: 30px;
-    width: 50px;
-    height: 20px;
-    background-color: rgba(255, 184, 0, 0.47);
-    box-shadow: rgba(0, 0, 0, 0.15) -2.4px 2.4px 3.2px;
-}
-
 #weather_board {
     display: flex;
-    background-color: #e5e5f7;
+    background-color: #fffeda;
     opacity: 0.8;
     background-size: 20px 20px;
-    background-image:  repeating-linear-gradient(0deg, #000000, #e0e2ff 1px, #fffeef 1px, #fffeda);
     padding: 10px;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
@@ -137,25 +127,23 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
 
 
 #left_weather_board > span {
-    font-size: 20px;
+    font-size: 1.2rem;
     margin: 1vw;
 }
 
 #weather_temp {
-    font-size: 30px;
+    font-size: 3rem;
     text-align: center;
     margin-bottom: 3px;
     font-weight: bold;
 }
 
 #weather_icon {
-    width: 7vw;
-    height: 7vw;
+    width: 5rem;
+    height: 5rem;
     display: block;
     margin: 0 auto;
 }
-
-
 
 /* main content부분 */
 
@@ -411,6 +399,28 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
         width: 300px;
         margin: 0 5px;
     }
+
+    #time {
+        font-size: 1.5rem;
+    }
+
+    #weather_spans > span {
+        font-size: 2rem;
+    }
+    
+    #left_weather_board > span {
+        font-size: 1.5rem;
+        margin: 1vw;
+    }
+    
+    #weather_temp {
+        font-size: 2.5rem;
+    }
+    
+    #weather_icon {
+        width: 7.5rem;
+        height: 7.5rem;
+    }
 }
 @media (max-width : 767px) {
     #main_welcome {
@@ -447,24 +457,6 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
         display: none;
     } */
 
-    .weather {
-        height: 20%;
-        flex-direction: column;
-    }
-
-    #left_weather, #right_weather {
-        justify-content: center;
-    }
-
-    #time {
-        text-align: center;
-    }
-
-    #weather_info, #weather_desc {
-        display: block;
-        text-align: center;
-    }
-
     .main_spell{
         height: 250px;
     }
@@ -477,6 +469,28 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     .main_spell_intro{
         width: 250px;
     }
+
+    #time {
+        font-size: 1.2rem;
+    }
+    
+    #weather_spans > span {
+        font-size: 1.7rem;
+    }
+    
+    #left_weather_board > span {
+        font-size: 1.2rem;
+        margin: 0.7vw;
+    }
+    
+    #weather_temp {
+        font-size: 2.2rem;
+    }
+    
+    #weather_icon {
+        width: 7.2rem;
+        height: 7.2rem;
+    }
 }
 @media (max-width : 479px) {
     /* .spell {
@@ -484,5 +498,27 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     } */
     #main_welcome > p{
         font-size: 2.5rem;
+    }
+
+    #time {
+        font-size: 1rem;
+    }
+    
+    #weather_spans > span {
+        font-size: 1.5rem;
+    }
+    
+    #left_weather_board > span {
+        font-size: 1rem;
+        margin: 0.5vw;
+    }
+    
+    #weather_temp {
+        font-size: 2rem;
+    }
+    
+    #weather_icon {
+        width: 7rem;
+        height: 7rem;
     }
 }
