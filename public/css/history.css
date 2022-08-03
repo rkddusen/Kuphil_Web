@@ -59,66 +59,27 @@
 }
 */
 
-.year1  section {
+.year1 section, .year2 section, .year3 section, .year4 section, .year5 section{
     font-size: 3rem;
     margin: 10px 0;
 }
 
-.year1  p{
-    font-size: 1.5rem;
-    margin: 80px 0;
-    margin-top: 30px;
+.year1 p, .year2 p, .year3 p, .year4 p, .year5 p{
+    margin: 30px 0 80px 20px;
+    border-left: 3px solid #BE7743;
+    padding-left: 10px;
+}
+.date{
+    display: inline-block;
+    font-size: 2rem;
+    width: 100px;
+    font-weight: bold;
+    margin: 0 10px 0 20px;
+}
+.context{
+    font-size: 1.7rem;
     line-height: 200%;
 }
-
-.year2  section {
-    font-size: 3rem;
-    margin: 10px 0;
-}
-
-.year2  p{
-    font-size: 1.5rem;
-    margin: 80px 0;
-    margin-top: 30px;
-    line-height: 200%;
-}
-
-.year3  section {
-    font-size: 3rem;
-    margin: 10px 0;
-}
-
-.year3  p{
-    font-size: 1.5rem;
-    margin: 80px 0;
-    margin-top: 30px;
-    line-height: 200%;
-}
-
-.year4  section {
-    font-size: 3rem;
-    margin: 10px 0;
-}
-
-.year4  p{
-    font-size: 1.5rem;
-    margin: 80px 0;
-    margin-top: 30px;
-    line-height: 200%;
-}
-
-.year5  section {
-    font-size: 3rem;
-    margin: 10px 0;
-}
-
-.year5  p{
-    font-size: 1.5rem;
-    margin: 80px 0;
-    margin-top: 30px;
-    line-height: 200%;
-}
-
 #circle {
     width: 4rem;
     border-radius: 100%;

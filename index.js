@@ -41,10 +41,10 @@ server.get("/login", (req, res) => {
 
     res.sendFile(__dirname + "/public/html/login.html");
 });
-server.get("/history", (req, res) => {
+// server.get("/history", (req, res) => {
 
-    res.sendFile(__dirname + "/public/html/history.html");
-});
+//     res.sendFile(__dirname + "/public/html/history.html");
+// });
 
 // server.post("/calendar/add_schedule", (req, res) => {
 //     let title = req.body.title;
@@ -568,6 +568,33 @@ server.get("/worldcup", (req, res) => {
     );
 });
 
+const historyPage = fs.readFileSync('./public/html/history.ejs', 'utf8');
+server.get("/history", (req, res) => {
+
+    connection.query('SELECT year, month, day, context FROM history ORDER BY year, month, day',
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            }
+            else {
+                let activity = [];
+                for (var i in rows) {
+                    activity[i] = {
+                        year: rows[i].year,
+                        month: rows[i].month+'월',
+                        day: rows[i].day?rows[i].day+'일':'',
+                        context: rows[i].context
+                    }
+                }//데이터 생성
+                var page = ejs.render(historyPage, {
+                    activity: activity
+                });
+                //응답
+                res.send(page);
+            }
+        }
+    );
+});
 server.use((req, res) => {
     res.sendFile(__dirname + "/public/html/404.html");
 });
