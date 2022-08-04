@@ -91,8 +91,8 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
     margin: 4px 5% 0;
     width: 90%;
     height: 15%;
-    border-top: solid 3px #BE7743;
-    border-bottom: solid 3px #BE7743;
+    border-top: solid 2px #BE7743;
+    border-bottom: solid 2px #BE7743;
     display: flex;
     justify-content: center;
 }
