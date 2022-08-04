@@ -409,7 +409,7 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     }
     
     #left_weather_board > span {
-        font-size: 1.5rem;
+        font-size: 1rem;
         margin: 1vw;
     }
     
@@ -418,8 +418,8 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     }
     
     #weather_icon {
-        width: 7.5rem;
-        height: 7.5rem;
+        width: 4.5rem;
+        height: 4.5rem;
     }
 }
 @media (max-width : 767px) {
@@ -479,7 +479,7 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     }
     
     #left_weather_board > span {
-        font-size: 1.2rem;
+        font-size: 0.7rem;
         margin: 0.7vw;
     }
     
@@ -488,8 +488,8 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     }
     
     #weather_icon {
-        width: 7.2rem;
-        height: 7.2rem;
+        width: 4.2rem;
+        height: 4.2rem;
     }
 }
 @media (max-width : 479px) {
@@ -509,7 +509,7 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     }
     
     #left_weather_board > span {
-        font-size: 1rem;
+        font-size: 0.5rem;
         margin: 0.5vw;
     }
     
@@ -518,7 +518,7 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     }
     
     #weather_icon {
-        width: 7rem;
-        height: 7rem;
+        width: 4rem;
+        height: 4rem;
     }
 }
