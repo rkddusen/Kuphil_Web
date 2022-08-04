@@ -24,15 +24,18 @@
     font-size: 1.5rem;
     width: 400px;
     height: 100px;
-    border: 2px solid #BE7743;
+    border: 2px solid #75492a;
+    
     background-color: #fffcfb;
+    border-radius: 10px;
 }
 .secondAnswer button{
     font-size: 1.5rem;
     width: 400px;
     height: 100px;
-    border: 2px solid #BE7743;
+    border: 2px solid #e6955b;
     background-color: #fffcfb;
+    border-radius: 10px;
 }
 .result{
     text-align: center;
