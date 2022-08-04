@@ -470,6 +470,11 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
         width: 250px;
     }
 
+    .weather {
+        border-top: solid 1px #BE7743;
+        border-bottom: solid 1px #BE7743;
+    }
+
     #time {
         font-size: 1.2rem;
     }
@@ -500,6 +505,11 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
         font-size: 2.5rem;
     }
 
+    .weather {
+        border-top: solid 1px #BE7743;
+        border-bottom: solid 1px #BE7743;
+    }
+
     #time {
         font-size: 1rem;
     }
@@ -509,8 +519,8 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     }
     
     #left_weather_board > span {
-        font-size: 0.5rem;
-        margin: 0.5vw;
+        font-size: 1rem;
+        margin: 1vw;
     }
     
     #weather_temp {
