@@ -75,8 +75,10 @@
     width: 100px;
     font-weight: bold;
     margin: 0 10px 0 20px;
+    text-align: start;
 }
 .context{
+    display: inline-block;
     font-size: 1.7rem;
     line-height: 200%;
 }
@@ -93,7 +95,6 @@
 
 #circle.on {
     position: absolute;
-    bottom: 340px;
   }
 
 #top_btn{
@@ -111,7 +112,6 @@ body{
 
 #top_btn.on {
     position: absolute;
-    bottom: 350px;
   }
 
 @media (max-width : 1023px){       
@@ -129,44 +129,24 @@ body{
         text-align:Center;
     }
 
-    .year1  section {
+    .year1  section, .year2  section, .year3  section, .year4  section, .year5  section {
         font-weight:500;
     }
     
-    .year1  p{
+    .year1 p, .year2 p, .year3 p, .year4 p, .year5 p{
         font-size: 1.8rem;
-    }
-
-    .year2  section {
-        font-weight:500;
-    }
-    
-    .year2  p{
-        font-size: 1.8rem;
-    }    
-    
-    .year3  section {
-        font-weight:500;
+        border: none;
+        padding-left: 0;
+        margin-left: 0;
     }
     
-    .year3  p{
-        font-size: 1.8rem;
-    }    
-    
-    .year4  section {
-        font-weight:500;
+    .year1 p span, .year2 p span, .year3 p span, .year4 p span, .year5  p spa{
+        display: block;
     }
-    
-    .year4  p{
-        font-size: 1.8rem;
-    }
-
-    .year5  section {
-        font-weight:500;
-    }
-    
-    .year5  p{
-        font-size: 1.8rem;
+    .date{
+        width: 90%;
+        text-align: center;
+        margin: 0 auto;
     }
 
     #year2{
