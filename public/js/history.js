@@ -1,13 +1,13 @@
 //연혁 지우기->년도 이동시에 쓰임
 function removeHistory() {
-    let previous_content=document.getElementById("story");
+    let previous_content = document.getElementById("story");
     previous_content.remove();
 }
 
 //버튼 색 지우기 -> 새로운 색 넣기 전 지우기
 function removecolor() {
-    for (let i=1;i<6;i++){
-        document.getElementsByClassName('year')[i].style.color='darkgray';
+    for (let i = 1; i < 6; i++) {
+        document.getElementsByClassName("year")[i].style.color = "darkgray";
     }
 }
 
@@ -157,41 +157,37 @@ function removecolor() {
     }
 }*/
 
-
 //버튼 누르면 스크롤 이동
-const buttonArr = document.getElementsByTagName('button');
+const buttonArr = document.getElementsByTagName("button");
 
-for(let i = 0; i < buttonArr.length; i++){
-    buttonArr[i].addEventListener('click',function(e){
+for (let i = 0; i < buttonArr.length; i++) {
+    buttonArr[i].addEventListener("click", function (e) {
         e.preventDefault();
-        document.querySelector('.year' + (i + 1)).scrollIntoView(true);
+        document.querySelector(".year" + (i + 1)).scrollIntoView(true);
     });
 }
 
 //탑버튼 위치
-$(function() {
-
+$(function () {
     var $w = $(window),
-      footerHei = $('footer').outerHeight(),
-      $banner = $('#top_btn');
-      $topCircle = $('#circle');
+        footerHei = $("footer").outerHeight(),
+        $banner = $("#top_btn"),
+        $topCircle = $("#circle");
 
-    $w.on('scroll', function() {
+    $w.on("scroll", function () {
+        var sT = $w.scrollTop();
+        var val = $(document).height() - $w.height() - footerHei;
 
-      var sT = $w.scrollTop();
-      var val = $(document).height() - $w.height() - footerHei;
-
-      if (sT >= val){
-          $banner.addClass('on')
-          $topCircle.addClass('on')
-      }else{
-          $banner.removeClass('on')
-          $topCircle.removeClass('on')
-    }
+        if (sT >= val) {
+            $topCircle.addClass("on");
+            $banner.addClass("on");
+            $topCircle.css("bottom", footerHei + 50);
+            $banner.css("bottom", footerHei + 60);
+        } else {
+            $topCircle.removeClass("on");
+            $banner.removeClass("on");
+            $topCircle.css("bottom", 50);
+            $banner.css("bottom", 60);
+        }
     });
-
-  });
-
-
-  
-
+});
