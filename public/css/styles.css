@@ -1,6 +1,7 @@
 /* section으로 사실상 body 영역 기본세팅 */
 section {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
 }
 
 
@@ -17,7 +18,7 @@ section {
 cover는 대체 콘텐츠의 가로세로비를 유지하면서 요소 콘텐츠 박스 가득 채움
 서로의 가로세로비가 일치하지 않으면 객체 일부가 잘려나감 */
 #main_welcome > img {
-    width: 90%;
+    width: 100%;
 }
 
 /* position: absolute로 인해 부모 태그를 기준으로 위치가 결정됨 */
@@ -50,28 +51,7 @@ cover는 대체 콘텐츠의 가로세로비를 유지하면서 요소 콘텐츠
     padding: 5px 0 0 1%;
     /* font-family: 'Alegreya', serif; */
 }
-.show{
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-evenly;
-}
-.show div{
-    display: flex;
-}
-.show img{
-    width: 45px;
-}
-.show a{
-    line-height: 45px;
-    font-size: 20px;
-    color: gray;
-    font-weight: bold;
-    margin-left: 10px;
-}
-.show a:hover{
-    text-decoration: underline;
-    color: black;
-}
+
 /* #whatsnew a {
     color: #000000;
     font-size: 32px;
@@ -88,8 +68,8 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
 
 .weather {
     box-sizing: border-box;
-    margin: 4px 5% 0;
-    width: 90%;
+    margin: 4px 0;
+    width: 100%;
     height: 15%;
     border-top: solid 2px #BE7743;
     border-bottom: solid 2px #BE7743;
@@ -197,192 +177,221 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
     margin: 15px 0;
 }
 
-/* .spelling_introduce span {
-    color: #FF8A00;
-    font-size: 6rem;
-    font-weight: bold;
-}
 
-.spell p:first-child {
-    font-size: 4rem;
-    font-weight: bold;
+.row_1st{
+    width: 100%;
 }
-
-.spell p:last-child {
-    font-size: 1.8rem;
-}
-
-.spell {
-    width: 90%;
-    overflow: hidden;
-    margin-bottom: 60px;
-    height: 550px;
-}
-
-#k > .spell_intro {
-    width: 30%;
-    margin: 30px 10%;
+.main_recent{
+    position: relative;
+    width:50%;
+    height: 0;
+    padding-top: 35%;
+    background-color: #fff9f4;
     float: left;
+}
+.main_recent .title{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-size: 3rem;
+}
+.main_recent .content{
+    position: absolute;
+    left: 10%;
+    bottom: 10%;
+    width: 80%;
+}
+.main_recent .content div{
     position: relative;
-    z-index: 2;
+    width: 100%;
+    height: auto;
+    padding-top: 56.3%;
 }
-
-#k > .spell_intro:nth-child(2) {
-    width: 30%;
-    margin-left: 5vw;
-    margin-right: 5vw;
+.main_recent .content iframe{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
 }
-
-border-radius 속성을 사용해서 여러 부채꼴을 만들 수 있음
-transform: rotate()을 이용해 회전 가능
-z-index는 겹쳐진 요소들 사이에서 front, back을 정하는 우선순위, 숫자가 클수록 front에 위치
-right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 방향을 기준으로
-태그가 안쪽 방향으로 이동하기 때문에 -를 붙여야 바깥쪽 방향으로 이동하게 됨
-#circle1 {
+.main_weather{
     position: relative;
-    width: 20%;
-    height: 10%;
-    border-radius: 20% 20% 0 0;
-    transform: rotate(90deg);
-    z-index: 1;
-    right: -45%;
-    bottom: -10%;
-    background-color: #fef6f0;
-}
-
-#u > .spell_intro {
-    width: 30%;
-    float: right;
-    margin: 30px 5%;
-    position: relative;
-    z-index: 2;
-}
-
-#u > .spell_intro:nth-child(2) {
-    width: 30%;
-    margin-right: 10%;
-}
-
-#circle2 {
-    position: relative;
-    width: 10vw;
-    height: 10vw;
-    border-radius: 100%;
-    z-index: 1;
-    right: -60px;
-    bottom: -20px;
-    background-color: #feece1;
-}
-
-#p > .spell_intro {
-    width: 30%;
+    width:50%;
+    height: 0;
+    padding-top: 30%;
     float: left;
-    margin: 30px 5%;
-    position: relative;
-    z-index: 2;
 }
 
-#p > .spell_intro:nth-child(2) {
-    width: 35%;
-    margin-left: 10%;
-}
 
-#circle3 {
-    position: relative;
-    width: 18vw;
-    height: 18vw;
-    border-radius: 100%;
-    z-index: 1;
-    right: -55vw;
-    bottom: -5vw;
-    background-color: #fce5d8;
-}
-
-#h > .spell_intro {
-    width: 35%;
-    float: right;
-    margin: 30px 5%;
-    position: relative;
-    z-index: 2;
-}
-#h > .spell_intro:nth-child(2) {
-    width: 30%;
-    margin-right: 10%;
-}
-
-#circle4 {
-    position: relative;
-    width: 20vw;
-    height: 10vw;
-    border-radius: 150px 150px 0 0;
-    transform: rotate(-90deg);
-    z-index: 1;
-    right: -35vw;
-    bottom: -10vw;
-    background-color: #fed5bd;
-}
-
-#i > .spell_intro {
-    width: 35%;
-    float: left;
-    margin: 30px 5%;
-    position: relative;
-    z-index: 2;
-}
-
-#i > .spell_intro:nth-child(2) {
-    width: 30%;
-    margin-left: 10%;
-}
-
-#circle5 {
-    position: relative;
-    width: 15vw;
-    height: 15vw;
-    border-radius: 100%;
-    z-index: 1;
-    right: -38vw;
-    bottom: -2vw;
-    background-color: #fdceb3;
-}
-
-#l > .spell_intro {
-    width: 30%;
-    float: right;
-    margin: 30px 5%;
-    position: relative;
-    z-index: 2;
-}
-
-#l > .spell_intro:nth-child(2) {
-    width: 35%;
-    margin-right: 5%;
-}
-
-#circle6 {
-    position: relative;
-    width: 20vw;
-    height: 10vw;
-    border-radius: 20vw 20vw 0 0;
-    z-index: 1;
-    transform: rotate(90deg);
-    bottom: -10vw;
-    background-color: #fec8a9;
-}
-
-.spell::after {
-    clear: both;
-    display: block;
+.row_1st::after{
     content: '';
-} */
+    display: block;
+    clear: both;
+}
 
-/* #circle1, #circle2, #circle3, #circle4, #circle5, #circle6{
-    background-color: #FBE7D4;
-} */
+.row_2nd{
+    width: 100%;
+}
+.main_introduce{
+    width:100%;
+    position: relative;
+    height: 0;
+    padding-top: 40%;
+    background-color: #ffeee0;
+}
+.main_introduce .explain{
+    position: absolute;
+    width: 40%;
+    left: 2.5%;
+    top: 5%;
+}
+.main_introduce .explain div{
+    font-size: 1.5rem;
+}
+.main_introduce .explain div p{
+    font-size: 3rem;
+    margin-bottom: 5%;
+}
+.main_introduce a{
+    position: absolute;
+    left: 2.5%;
+    bottom: 5%;
+}
+.main_introduce a div{
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 10% 30%;
+    border: 2px double rgb(131, 67, 0);
+    cursor: pointer;
+}
+.main_introduce .image{
+    position: absolute;
+    width: 30%;
+    text-align: center;
+    right: 10%;
+    top: 50%;
+    transform:translate(0%,-50%);
+}
+.main_introduce .image img{
+    width: 90%;
+}
+.row_2nd::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+.row_3rd{
+    width: 100%;
+}
+.main_next{
+    position: relative;
+    width:100%;
+    height: 0;
+    padding-top: 8%;
+    background-color: #ffe7d4;
+}
+.main_next .next{
+    position: absolute;
+    width: 100%;
+    left: 52.5%;
+    top: 50%;
+    transform:translate(-50%,-50%);
+}
+.main_next .next span{
+    font-size: 2rem;
+    height: 100%;
+}
+.main_next::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.row_4th{
+    width: 100%;
+}
+.main_suggest{
+    position: relative;
+    width: 50%;
+    height: 0;
+    padding-top: 20%;
+    background-color: #ffcca1;
+    float: left;
+}
+.main_suggest .suggest{
+    position: absolute;
+    top: 10%;
+    left: 5%;
+}
+.main_suggest .suggest p{
+    font-size: 3rem;
+}
+.main_suggest a{
+    position: absolute;
+    left: 5%;
+    bottom: 10%;
+}
+.main_suggest a div{
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 10% 30%;
+    border: 2px double rgb(131, 67, 0);
+    cursor: pointer;
+}
+.main_suggest .suggest_image{
+    width: 50%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform:translate(-10%,-50%);
+}
+.main_suggest .suggest_image img{
+    width: 100%;
+}
+.main_sns{
+    position: relative;
+    width: 50%;
+    height: 0;
+    padding-top: 20%;
+    background-color: #ffb67b;
+    float: left;
+}
+
+.main_sns .sns {
+    position: absolute;
+    font-size: 3rem;
+    top: 10%;
+    left: 5%;
+}
+.main_sns .sns p{
+    font-size: 3rem;
+}
+.main_sns .show{
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    transform:translate(-50%,-50%);
+}
+.show a{
+    width: 12%;
+}
+.show a img{
+    width: 100%;
+}
+.row_4th::after{
+    content: '';
+    display: block;
+    clear: both;
+}
 
 @media (max-width : 1023px){
     #main_welcome > p{
-        letter-spacing: 0.8rem;
+        letter-spacing: 0.7rem;
+        font-size: 5rem;
     }
 
     .main_spell{
@@ -421,6 +430,10 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
         width: 4.5rem;
         height: 4.5rem;
     }
+    .main_next .next span{
+        font-size: 1.7rem;
+    }
+    
 }
 @media (max-width : 767px) {
     #main_welcome {
@@ -430,32 +443,6 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
         font-size: 4rem;
         letter-spacing: 0.5rem;
     }
-    /* #main_welcome > p{
-        font-size: 4.5vw;
-    } */
-    /* .spell {
-        margin-bottom: 30px;
-        height: 550px;
-    }
-    #k > .spell_intro, #u > .spell_intro, #p > .spell_intro, 
-    #h > .spell_intro, #i > .spell_intro, #l > .spell_intro {
-        float:none;
-        width: 60vw;
-        margin: 30px 15vw;
-    }
-    #k > .spell_intro{
-        width: 50vw;
-        margin: 30px 20vw;
-    }
-    #k > .spell_intro:nth-child(2), #u > .spell_intro:nth-child(2), #p > .spell_intro:nth-child(2), 
-    #h > .spell_intro:nth-child(2), #i > .spell_intro:nth-child(2), #l > .spell_intro:nth-child(2) {
-        width: 70vw;
-        margin: 0 10vw;
-        
-    }
-    #circle1, #circle2, #circle3, #circle4, #circle5, #circle6{
-        display: none;
-    } */
 
     .main_spell{
         height: 250px;
@@ -497,6 +484,50 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
         width: 4.2rem;
         height: 4.2rem;
     }
+
+    .main_recent{
+        width: 100%;
+        padding-top: 65%;
+    }
+    .main_recent .title{
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        font-size: 2.5rem;
+    }
+    .main_weather{
+        width: 100%;
+        padding-top: 65%;
+    }
+    .main_introduce .explain div{
+        font-size: 1rem;
+    }
+    .main_introduce .explain div p{
+        font-size: 2.5rem;
+    }
+    .main_introduce a div{
+        font-size: 1rem;
+    }
+    .main_next .next span{
+        font-size: 1.3rem;
+    }
+    .main_suggest{
+        width: 100%;
+        padding-top: 40%;
+    }
+    .main_suggest .suggest p{
+        font-size: 2.5rem;
+    }
+    .main_suggest a div{
+        font-size: 1rem;
+    }
+    .main_sns{
+        width: 100%;
+        padding-top: 40%;
+    }
+    .show a{
+        width: 10%;
+    }
 }
 @media (max-width : 479px) {
     /* .spell {
@@ -531,5 +562,8 @@ right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 
     #weather_icon {
         width: 4rem;
         height: 4rem;
+    }
+    .main_next .next span{
+        font-size: 1rem;
     }
 }
