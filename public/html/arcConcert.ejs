@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Poiret+One&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
@@ -35,12 +38,17 @@
             <div class="mainlogo">
                 <a href="./"><img src="../../image/main/kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
             </div>
+            <!-- <div class="head1">
+                <div>
+                    <a href="./login">로그인</a>
+                </div>
+            </div> -->
             <nav class="nav">
                 <ul>
                     <li><a href="../../introduce">소개</a></li>
                     <li><a href="../../archive">아카이브</a></li>
-                    <li><a href="../../calendar">달력</a></li>
                     <li><a href="../../qna">Q&A</a></li>
+                    <li><a href="../../gamecenter">놀이터</a></li>
                     <li><a href="../../lab">실험실</a></li>
                 </ul>
             </nav>
@@ -54,8 +62,8 @@
                     <ul>
                         <li><a href="../../introduce">소개</a></li>
                         <li><a href="../../archive">아카이브</a></li>
-                        <li><a href="../../calendar">달력</a></li>
                         <li><a href="../../qna">Q&A</a></li>
+                        <li><a href="../../gamecenter">놀이터</a></li>
                         <li><a href="../../lab">실험실</a></li>
                     </ul>
                 </nav>
@@ -72,54 +80,52 @@
         </div>
         <article>
             <div class="head3_line_f"></div>
-            <div class="head3_name"><a class="head3_calendar_a" href="../../archive">아카이브</a></div>
+            <div class="head3_name"><a class="head3_archive_a" href="../../archive">아카이브</a></div>
             <div class="head3_line_s"></div>
         </article>
-
     </header>
     <div class="archiveBox">
         <div id="arc_notice">
             <p>쿠필의 역대 정기 연주회 정보를 모아놓은 공간입니다. </p>
         </div>
+
         <div class="container_2">
 
-            <img class="arc_concert_poster" src="../../image/poster/poster_<%=concert_id%>.jpg"
+            <img class="arc_concert_poster" onclick="popPoster()" src="../../image/poster/poster_<%=concert_id%>.jpg"
                 alt="제<%=concert_id%>회 정기 연주회" />
 
-            <div class="arc_concert_info">
-                <div class="arc_concert1">
-                    <p class="arc_concert_title">제<%=concert_id%>회 정기 연주회</p>
-                    <div class="'arc_concert_text1">
-                        <p class="arc_concert_place">장소:<%=concert_place%>
+            <div class="concert_info">
+                <p class="arc_concert_title">제<%=concert_id%>회 정기 연주회</p>
+                <div class="concert_detail">
+                    <div class="concert_text1">
+                        <p class="arc_concert_place">장소 : <%=concert_place%>
                         </p>
-                        <p class="arc_concert_date">일시:<%=concert_date%>
+                        <p class="arc_concert_date">일시 : <%=concert_date%>
                         </p>
-                        <p class="arc_concert_conductor">지휘:<%=concert_conductor%>
+                        <p class="arc_concert_conductor">지휘 : <%=concert_conductor%>
                         </p>
                     </div>
-                </div>
-                <hr/>
-                <div class="arc_concert2">
-                    <div class="arc_concert_text2">
-                        <p class="arc_concert_program">
-                            프로그램:
+                    <hr />
+                    <div class="concert_text2">
+                        <p class="concert_program">
+                            프로그램 :
                             <% for(let i=0 ; i < concert_composer.length; i++){ %>
-                                <br><span>
+                                <br><span class="concert_program_composer">
                                     <%=concert_composer[i]%>
-                                </span>-
-                                <span>
+                                </span> - 
+                                <span class="concert_program_song">
                                     <%=concert_program[i]%>
                                 </span><br>
-                                <% } %>
+                            <% } %>
                         </p>
-                        <a href="<%=concert_link%>">연주링크: <%=concert_link%></a>
+                        <p class="arc_concert_link">
+                            연주링크 : <a href="<%=concert_link%>">
+                                <%=concert_link%>
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>
-
-
-
-
         </div>
     </div>
     <footer>
