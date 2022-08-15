@@ -257,11 +257,17 @@
 
 .archiveBox .container_2 .concert_info .arc_concert_title {
     font-size: 30px;
+    font-weight: 500;
     margin-bottom: 2vw;
 }
 
 .archiveBox .container_2 .concert_info .concert_detail{
     text-align: left;
+}
+
+.archiveBox .container_2 .concert_info .concert_detail .arc_info_bold{
+    font-weight: 500;
+    font-size: 20px;
 }
 
 .archiveBox .container_2 .concert_info .concert_detail .concert_text1{
