@@ -134,98 +134,6 @@
     transform: rotate(45deg);
 }
 
-/* .next_btn[onclick="nextPage();"]:hover {
-    cursor: pointer;
-    content: '';
-    display:inline-block;
-    width: 20px;
-    height: 20px;
-    margin-left: 5px;
-    border-top: 2px solid #999;
-    border-right: 2px solid #999;
-    transform: rotate(45deg);
-} */
-
-
-
-/* #close{
-    all: unset;
-    background-color: #DFC7B4;
-    color: white;
-    padding: 1vw 2vw;
-    border-radius: 5%;
-    border:5px;
-    cursor:pointer;
-    font-size: 1.6rem;
-} */
-
-/* .modal{
-    position: fixed;
-    top: 0;
-    left:0;
-    width:100%;
-    height:100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal_overlay{
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-}
-
-.modal_content{
-    background-color: white;
-    width: 65%;
-    text-align: center;
-    position: relative;
-    top: 0;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    padding: 3vw;
-
-}
-
-.modal_content img{
-    float: right;
-    width: 18.4vw;
-    height: 25.9vw;
-    margin: 15px 30px;
-    
-} */
-
-/* .modal_content .modal_text {
-    text-align: left;
-    margin: 0 auto;
-
-}
-
-.modal_content .modal_text h1{
-    font-size: 2.5rem;
-    text-align: left;
-
-
-}
-
-.modal_content .modal_text .modal_text_1{
-
-    text-align: left;
-    padding: 3vw 0;
-}
-
-.modal_content .modal_text .modal_text_1 h3{
-    height: 5.9vw;
-    font-size: 1.8rem;
-    padding: 1vw 0;
-}
-
-.modal_content .modal_text .modal_text_2 h3{
-    font-size: 1.8rem;
-    padding: 1vw 0;
-} */
 
 
 .hidden{
@@ -248,59 +156,62 @@
 }
 
 
-.archiveBox .container_2 .concert_info {
+.concert_info {
     display: flex;
     flex-direction: column;
     font-size: 1rem;
     margin: 0 2vw;
 }
 
-.archiveBox .container_2 .concert_info .arc_concert_title {
-    font-size: 30px;
+.arc_concert_title {
+    font-size: 3rem;
     font-weight: 500;
     margin-bottom: 2vw;
 }
 
-.archiveBox .container_2 .concert_info .concert_detail{
+.concert_detail{
     text-align: left;
 }
 
-.archiveBox .container_2 .concert_info .concert_detail .arc_info_bold{
+.arc_info_bold{
     font-weight: 500;
-    font-size: 20px;
+    font-size: 2.5rem;
 }
 
-.archiveBox .container_2 .concert_info .concert_detail .concert_text1{
-    font-size: 25px;
+.concert_text1{
+    font-size: 2.5rem;
 }
 
-.archiveBox .container_2 .concert_info .concert_detail .concert_text1 .arc_concert_place{
+.arc_concert_place{
     margin-bottom: 1vw;
 }
 
-.archiveBox .container_2 .concert_info .concert_detail .concert_text1 .arc_concert_date{
+.arc_concert_date{
     margin-bottom: 1vw;
 }
 
-.archiveBox .container_2 .concert_info .concert_detail .concert_text1 .arc_concert_conductor{
+.arc_concert_conductor{
     margin-bottom: 1vw;
 }
 
-.archiveBox .container_2 .concert_info .concert_detail .concert_text2{
-    font-size: 25px;
+.concert_text2{
+    font-size: 2.5rem;
 }
 
-.archiveBox .container_2 .concert_info .concert_detail .concert_text2 .concert_program .concert_program_composer{
-    margin: 1vw 0 0 1vw;
-    font-size: 15px;
+.concert_program_list{
+    margin: 1vw 1vw;
 }
 
-.archiveBox .container_2 .concert_info .concert_detail .concert_text2 .concert_program .concert_program_song{
-    margin: 1vw 0;
-    font-size: 15px;
+.concert_program_composer{
+    font-size: 1.5rem;
 }
 
-.archiveBox .container_2 .concert_info .concert_detail .concert_text2 .arc_concert_link{
+.concert_program_song{
+    font-size: 1.5rem;
+}
+
+
+.arc_concert_link{
     margin: 1vw 0;
 
 }
@@ -317,8 +228,8 @@ hr{
     #arc_notice{
         margin-top: 50px;
     }
-    .archiveBox .container_2 .concert_info .concert_detail .concert_text1{
-        font-size: 25px;
+    .concert_text1{
+        font-size: 2.5rem;
     }
 
 }
@@ -343,8 +254,8 @@ hr{
         margin: 0 auto;
     }
 
-    .archiveBox .container_2 .concert_info .arc_concert_title {
-        font-size: 15px;
+    .arc_concert_title {
+        font-size: 2.5rem;
         margin: 3vw;
     }
 
@@ -352,22 +263,28 @@ hr{
         align-self: center;
     }
 
-    .archiveBox .container_2 .concert_info .concert_detail .concert_text1{
-        font-size: 13px;
+    .arc_info_bold{
+        font-size: 1rem;
     }
 
-    .archiveBox .container_2 .concert_info .concert_detail .concert_text2{
-        font-size: 10px;
+    .concert_text1{
+        font-size: 1rem;
     }
 
-    .archiveBox .container_2 .concert_info .concert_detail .concert_text2 .concert_program .concert_program_composer{
+    .concert_text2{
+        font-size: 1rem;
+    }
+
+    .concert_program_list{
         margin: 1vw 0 0 1vw;
-        font-size: 10px;
     }
 
-    .archiveBox .container_2 .concert_info .concert_detail .concert_text2 .concert_program .concert_program_song{
-        margin: 1vw 0;
-        font-size: 10px;
+    .concert_program_composer{
+        font-size: 1rem;
+    }
+
+    .concert_program_song{
+        font-size: 1rem;
     }
 
 

@@ -110,16 +110,18 @@
                         <p class="concert_program">
                             <span class="arc_info_bold">프로그램</span>
                             <% for(let i=0 ; i < concert_composer.length; i++){ %>
-                                <br><span class="concert_program_composer">
+                                <p class="concert_program_list">
+                                    <span class="concert_program_composer">
                                     <%=concert_composer[i]%>
-                                </span> - 
-                                <span class="concert_program_song">
-                                    <%=concert_program[i]%>
-                                </span><br>
+                                    </span> - 
+                                    <span class="concert_program_song">
+                                        <%=concert_program[i]%>
+                                    </span>
+                                </p>
                             <% } %>
                         </p>
                         <p class="arc_concert_link">
-                            <span class="arc_info_bold">연주링크 : </span>
+                            <span class="arc_info_bold">연주링크  </span>
                             <a href="<%=concert_link%>">
                                 <%=concert_link%>
                             </a>
