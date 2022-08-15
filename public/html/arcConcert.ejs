@@ -36,7 +36,7 @@
     <header>
         <div class="main_head">
             <div class="mainlogo">
-                <a href="./"><img src="../../image/main/kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
+                <a href="../../"><img src="../../image/main/kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
             </div>
             <!-- <div class="head1">
                 <div>
@@ -98,17 +98,17 @@
                 <p class="arc_concert_title">제<%=concert_id%>회 정기 연주회</p>
                 <div class="concert_detail">
                     <div class="concert_text1">
-                        <p class="arc_concert_place">장소 : <%=concert_place%>
+                        <p class="arc_concert_place"><span class="arc_info_bold">장소 : </span><%=concert_place%>
                         </p>
-                        <p class="arc_concert_date">일시 : <%=concert_date%>
+                        <p class="arc_concert_date"><span class="arc_info_bold">일시 : </span><%=concert_date%>
                         </p>
-                        <p class="arc_concert_conductor">지휘 : <%=concert_conductor%>
+                        <p class="arc_concert_conductor"><span class="arc_info_bold">지휘 : </span><%=concert_conductor%>
                         </p>
                     </div>
                     <hr />
                     <div class="concert_text2">
                         <p class="concert_program">
-                            프로그램 :
+                            <span class="arc_info_bold">프로그램</span>
                             <% for(let i=0 ; i < concert_composer.length; i++){ %>
                                 <br><span class="concert_program_composer">
                                     <%=concert_composer[i]%>
@@ -119,7 +119,8 @@
                             <% } %>
                         </p>
                         <p class="arc_concert_link">
-                            연주링크 : <a href="<%=concert_link%>">
+                            <span class="arc_info_bold">연주링크 : </span>
+                            <a href="<%=concert_link%>">
                                 <%=concert_link%>
                             </a>
                         </p>
@@ -141,7 +142,7 @@
             </div>
             <div class="footer_explain">
 
-                <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+                <p>서울특별시 광진구 능동로 120 제2학생회관 B117호</p>
                 <p>후원 | ##은행 #####</p><br>
                 <p>copyright 2021 KUPHIL, All rights reserved.</p>
             </div>
@@ -160,7 +161,7 @@
         </div>
         <div class="small_footer_explain">
 
-            <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+            <p>서울특별시 광진구 능동로 120 제2학생회관 B117호</p>
             <p>후원 | ##은행 #####</p><br>
             <p>copyright 2021 KUPHIL, All rights reserved.</p>
         </div>
