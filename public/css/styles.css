@@ -181,18 +181,82 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
 .row_1st{
     width: 100%;
 }
+.main_introduce{
+    width: 50%;
+    position: relative;
+    height: 0;
+    padding-top: 30%;
+    background-color: #fff8f3;
+    
+    float: left;
+}
+.explain{
+    position: absolute;
+    width: 40%;
+    left: 5%;
+    top: 5%;
+}
+.explain div{
+    font-size: 1.5rem;
+}
+.explain div p{
+    font-size: 3rem;
+    margin-bottom: 5%;
+}
+.main_introduce a{
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+}
+.main_introduce a div{
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 10% 30%;
+    border: 2px double rgb(131, 67, 0);
+    cursor: pointer;
+}
+.main_introduce .image{
+    position: absolute;
+    width: 50%;
+    text-align: center;
+    right: 50%;
+    top: 50%;
+    transform:translate(50%,-50%);
+}
+.main_introduce .image img{
+    width: 100%;
+    opacity: 15%;
+}
+.main_honey{
+    position: relative;
+    width: 50%;
+    height: 0;
+    padding-top: 30%;
+    background-color: #fff5ec;
+    float: left;
+}
+
+.row_1st::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.row_2nd{
+    width: 100%;
+}
 .main_recent{
     position: relative;
-    width:50%;
+    width: 100%;
     height: 0;
-    padding-top: 35%;
-    background-color: #fff9f4;
+    padding-top: 70%;
+    background-color: #ffeee0;
     float: left;
 }
 .main_recent .title{
     position: absolute;
     top: 5%;
-    left: 5%;
+    left: 2.5%;
     font-size: 3rem;
 }
 .main_recent .content{
@@ -213,67 +277,7 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
     width: 100%;
     height: 100%;
 }
-.main_weather{
-    position: relative;
-    width:50%;
-    height: 0;
-    padding-top: 30%;
-    float: left;
-}
 
-
-.row_1st::after{
-    content: '';
-    display: block;
-    clear: both;
-}
-
-.row_2nd{
-    width: 100%;
-}
-.main_introduce{
-    width:100%;
-    position: relative;
-    height: 0;
-    padding-top: 40%;
-    background-color: #ffeee0;
-}
-.main_introduce .explain{
-    position: absolute;
-    width: 40%;
-    left: 2.5%;
-    top: 5%;
-}
-.main_introduce .explain div{
-    font-size: 1.5rem;
-}
-.main_introduce .explain div p{
-    font-size: 3rem;
-    margin-bottom: 5%;
-}
-.main_introduce a{
-    position: absolute;
-    left: 2.5%;
-    bottom: 5%;
-}
-.main_introduce a div{
-    width: 100%;
-    font-size: 1.5rem;
-    padding: 10% 30%;
-    border: 2px double rgb(131, 67, 0);
-    cursor: pointer;
-}
-.main_introduce .image{
-    position: absolute;
-    width: 30%;
-    text-align: center;
-    right: 10%;
-    top: 50%;
-    transform:translate(0%,-50%);
-}
-.main_introduce .image img{
-    width: 90%;
-}
 .row_2nd::after{
     content: '';
     display: block;
@@ -485,28 +489,38 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
         height: 4.2rem;
     }
 
-    .main_recent{
+    .main_introduce{
         width: 100%;
-        padding-top: 65%;
+        padding-top: 30%;
+    }
+    .explain div{
+        font-size: 1rem;
+    }
+    .explain div p{
+        font-size: 2.5rem;
+    }
+    .main_introduce a div{
+        font-size: 1rem;
+    }
+    .main_introduce .image{
+        width: 25%;
+        right: 5%;
+        top: 50%;
+        transform:translate(0,-50%);
+    }
+    .main_introduce .image img{
+        opacity: 100%;
+    }
+
+    .main_honey{
+        width: 100%;
+        padding-top: 30%;
     }
     .main_recent .title{
         position: absolute;
         top: 5%;
         left: 5%;
         font-size: 2.5rem;
-    }
-    .main_weather{
-        width: 100%;
-        padding-top: 65%;
-    }
-    .main_introduce .explain div{
-        font-size: 1rem;
-    }
-    .main_introduce .explain div p{
-        font-size: 2.5rem;
-    }
-    .main_introduce a div{
-        font-size: 1rem;
     }
     .main_next .next span{
         font-size: 1.3rem;
