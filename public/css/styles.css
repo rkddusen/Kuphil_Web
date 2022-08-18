@@ -192,7 +192,7 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
 }
 .explain{
     position: absolute;
-    width: 40%;
+    width: 90%;
     left: 5%;
     top: 5%;
 }
