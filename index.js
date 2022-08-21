@@ -303,7 +303,9 @@ server.get("/lab", (req, res) => {
 server.get("/gamecenter", (req, res) => {
     res.sendFile(__dirname + "/public/html/gamecenter.html");
 });
-
+server.get("/cooperation", (req, res) => {
+    res.sendFile(__dirname + "/public/html/cooperation.html");
+});
 // server.get("/snakegame", (req, res) => {
 
 //     res.sendFile(__dirname + "/public/html/snake_game.html");

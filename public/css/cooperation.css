@@ -1,0 +1,73 @@
+.cooperate_with_KUPhil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#handshake{
+    width:25%;
+}
+
+.please_call>p{
+    text-align:center;
+    font-size:2rem;
+}
+
+.please_call{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    margin-bottom:5%;
+}
+
+.contact1{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:10px;
+}
+
+.contact1>img{
+    width:4%;
+    margin-right:2px;
+}
+
+.contact1>p{
+    font-size: 1.5rem;
+    margin-left:23px;
+}
+
+.contact2{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:10px;
+}
+
+.contact2>img{
+    width:4%;
+    margin-right:25px;
+}
+
+.contact2>p{
+    font-size: 1.5rem;
+    margin-right:15px;
+}
+
+.contact3{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:10px;
+}
+
+.contact3>img{
+    width:36.6%;
+    margin-right:16px;
+}
+
+.contact3>p{
+    font-size: 1.5rem;
+    margin-right:36px;
+}
