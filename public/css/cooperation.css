@@ -5,7 +5,7 @@
 }
 
 #handshake{
-    width:25%;
+    width:40%;
 }
 
 .please_call>p{
@@ -21,53 +21,45 @@
     margin-bottom:5%;
 }
 
-.contact1{
+ul{
+    list-style: none;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom:5px;
+    margin-top:15px;
+}
+
+li{
+    font-size:1.5rem;
+    margin-bottom:3px;
+}
+
+.contact{
     display:flex;
     align-items:center;
-    justify-content:center;
     margin-bottom:10px;
+    margin-left:42.5%;
 }
 
-.contact1>img{
-    width:4%;
-    margin-right:2px;
-}
-
-.contact1>p{
-    font-size: 1.5rem;
-    margin-left:23px;
-}
-
-.contact2{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-bottom:10px;
-}
-
-.contact2>img{
-    width:4%;
+.contact>a>img{
+    width:50px;
     margin-right:25px;
 }
 
-.contact2>p{
+.contact>img{
+    width:50px;
+    margin-right:25px;
+}
+
+.contact>a>p{
     font-size: 1.5rem;
-    margin-right:15px;
+    color:black;
+    font-weight:bold;
 }
 
-.contact3{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-bottom:10px;
+.contact>p{
+    font-size:1.5rem;
+    color:black;
+    font-weight:bold;
 }
 
-.contact3>img{
-    width:36.6%;
-    margin-right:16px;
-}
-
-.contact3>p{
-    font-size: 1.5rem;
-    margin-right:36px;
-}
