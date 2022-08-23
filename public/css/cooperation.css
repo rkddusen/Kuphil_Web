@@ -63,3 +63,61 @@ li{
     font-weight:bold;
 }
 
+@media (max-width : 1023px){       
+    .contact{
+        display:flex;
+        align-items:center;
+        margin-bottom:10px;
+        margin-left:42.5%;
+    }
+    
+    .contact>a>img{
+        width:50px;
+        margin-right:25px;
+    }
+    
+    .contact>img{
+        width:50px;
+        margin-right:25px;
+    }
+    
+    .contact>a>p{
+        font-size: 1.5rem;
+        color:black;
+        font-weight:bold;
+    }
+    
+    .contact>p{
+        font-size:1.5rem;
+        color:black;
+        font-weight:bold;
+    }
+}
+
+@media (max-width : 767px){  
+    .contact{
+        margin-left:37%;
+    }     
+
+    .contact>a>img{
+        width:45px;
+    }
+    
+    .contact>img{
+        width:45px;
+    }
+}
+
+@media (max-width : 479px){   
+    .contact{
+        margin-left:30%;
+    }     
+
+    .contact>a>img{
+        width:40px;
+    }
+    
+    .contact>img{
+        width:40px;
+    }    
+}
