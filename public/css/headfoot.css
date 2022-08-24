@@ -183,11 +183,24 @@ footer {
     top: 50%;
     left: 10%;
     width: 50%;
-    color: #BBBBBB;
+    
     transform:translate(0,-50%);
 }
 .footer_explain p{
     font-size: 1.5rem;
+    color: #BBBBBB;
+}
+.footer_explain p:nth-child(2){
+    margin-top: 5px;
+}
+.footer_use{
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    color: #BBBBBB;
+    
+}
+.footer_use:hover{
+    text-decoration: underline;
 }
 .footer_explain .footer_use{
     font-weight: bold;
