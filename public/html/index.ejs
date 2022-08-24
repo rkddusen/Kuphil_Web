@@ -103,8 +103,8 @@
                 </div>
             </div>
         </article> -->
-        
-            <div class="weather">
+
+        <!-- <div class="weather">
                 <div id="left_weather">
                     <div id="weather_spans">
                         <p id="time"></p>
@@ -124,7 +124,130 @@
                         </div>
                     </div>
                 </div>
+            </div> -->
+        
+        <div class="row_3rd">
+            <div class="main_wea">
+                <div class="wea">
+                    <img id="weather_icon">
+                </div>
+                <p class="wea_detail">
+                    <span id="weather_temp"></span>
+                    <span id="weather_desc"></span>
+                    <span id="weather_humidity"></span>
+                    <span id="weather_precipitation"></span>
+                    <span id="weather_info">건국대학교 기준</span>
+                </p>
             </div>
+        </div>
+        <div class="row_1st">
+            <div class="main_intro">
+                <div class="intro_explain">
+                    <p class="intro_title">About KUPHIL</p>
+                </div>
+                <div class="intro_center">
+                    <p>건국대학교 아마추어 오케스트라입니다.</p>
+                    <p>쿠필에 대해 더 알고 싶다면...</p>
+                </div>
+                <a href="./introduce">
+                    자세히 보기 >>
+                </a>
+                <div class="intro_image">
+                    <img src="./image/kuphil_black_logo.png" alt="쿠필로고">
+                </div>
+            </div>
+            <div class="main_coming">
+                <div class="coming_explain">
+                    <p class="coming_title">Coming Soon</p>
+                </div>
+                <div class="coming_img">
+                    <img src="./image/poster/poster_ready.png" alt="준비 중" />
+                </div>
+                <div class="coming_detail">
+                    <p>제40회 정기연주회</p>
+                    <p>날짜 : 2023년</p>
+                    <p>장소 : 미정</p>
+                    <p>시간 : 미정</p>
+                </div>
+            </div>
+            <!-- <div class="main_weather">
+                <div class="weather_explain">
+                        <p class="weather_title">Today's Weather</p>
+                        <span id="weather_info">(서울특별시 광진구 화양동 기준)</span>
+                        <p class="weather_detail">
+                            <span id="weather_desc"></span> <span id="weather_temp"></span>
+                        </p>
+                        <p>
+                            <span id="weather_humidity"></span>
+                            <span id="weather_precipitation"></span>
+                        </p>
+                </div>
+                <div id="weather_board">
+                        <img id="weather_icon">
+                </div>
+            </div> -->
+        </div>
+        <div class="row_2nd">
+            <div class="main_recent">
+                <div class="recent_explain">
+                    <p class="recent_title">Recent Concert</p>
+                </div>
+                <div class="recent_content">
+                    <div>
+                        <iframe src="https://www.youtube.com/embed/qlydoTS6_NY" title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row_0">
+            <div class="main_tip">
+                <div class="tip_explain">
+                    <div>
+                        <p class="tip_contents">
+                            Tip) <%= tip %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row_3rd">
+            <div class="main_next">
+                <p class="next">
+                    <span>다음 연주회</span>
+                    <span class="next_info">08월 27일 제39회 정기연주회 ( 장소 : 건국대학교 새천년관 지하1층 )</span>
+                </p>
+            </div>
+        </div> -->
+        <div class="row_4th">
+            <div class="main_suggest">
+                <div class="suggest_explain">
+                    <p class="suggest_title">제휴 제안</p>
+                </div>
+                <a href="./cooperation">
+                    바로 가기 >>
+                </a>
+                <div class="suggest_image">
+                    <img src="./image/suggest.jpg" alt="제휴제안">
+                </div>
+            </div>
+            <div class="main_sns">
+                <div class="sns_explain">
+                    <p class="sns_title">쿠필 sns</p>
+                </div>
+                <div class="show">
+                    <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA"><img src="./image/유튜브2.png"
+                            alt="유튜브"></a>
+                    <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank"><img
+                            src="./image/인스타그램1.png" alt="인스타그램"></a>
+                    <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank"><img src="./image/페이스북.png"
+                            alt="페이스북"></a>
+                </div>
+            </div>
+        </div>
         <script>
             function getTime() {
                 let time = document.getElementById("time");
@@ -138,7 +261,7 @@
                 let minute = date.getMinutes();
                 //let second = date.getSeconds();
 
-                time.innerHTML = String(todayYear) + "년 " + String(todayMonth) + "월 " + String(todayDate) + "일 ";
+                // time.innerHTML = String(todayYear) + "년 " + String(todayMonth) + "월 " + String(todayDate) + "일 ";
 
             }
             function getWeather() {
@@ -276,7 +399,7 @@
                         //const weatherIconAdrs = 'http://openweathermap.org/img/wn/' + weatherIcon + '@2x.png';
                         weather_icon.setAttribute('src', weatherIconAdrs);
                         weather_desc.innerHTML = weatherDesc;
-                        weather_temp.innerHTML = weatherTemp + " °C ";
+                        weather_temp.innerHTML = weatherTemp + "°";
                         weather_humidity.innerHTML = "습도 " + weatherHumidity + "%";
                         weather_precipitation.innerHTML = "강수량 " + weatherPrecipitation + "mm";
                     })
@@ -299,75 +422,6 @@
                 }
             }, 1000);
         </script>
-        <div class="row_1st">
-            <div class="main_introduce">
-                <div class="explain">
-                    <div>
-                        <p>KUPHIL</p>
-                        지금 당장 멋진 쿠필을 보러 갈까요?
-                    </div>
-                    
-                </div>
-                <a href="./introduce">
-                    <div>
-                        자세히 보기
-                    </div>
-                </a>
-                <div class="image"><img src="./image/kuphil_black_logo.png" alt="KUPHIL 검정로고"></div>
-            </div>
-            <div class="main_honey">
-                <div class="explain">
-                    <div>
-                        <p>Today's tip</p>
-                    </div>
-                    <div>
-                        <%= tip %>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row_2nd">
-            <div class="main_recent">
-                <div class="title">Played by KUPHIL</div>
-                <div class="content">
-                    <div>
-                    <iframe src="https://www.youtube.com/embed/qlydoTS6_NY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div></div>
-            </div>
-            
-        </div>
-        <div class="row_3rd">
-            <div class="main_next">
-                <p class="next">
-                    <span>다음 연주</span>
-                    <span class="next_line">|</span>
-                    <span class="next_info">##월 ##일 제##회 정기연주회 ( 장소 : 건국대학교 새천년관 지하1층 )</span>
-                </p>
-            </div>
-        </div>
-        <div class="row_4th">
-            <div class="main_suggest">
-                <div class="suggest">
-                    <p>제휴 제안</p>
-                </div>
-                <a href="./cooperation">
-                    <div>바로 가기</div>
-                </a>
-                <div class="suggest_image">
-                    <img src="./image/제안.jpg" alt="제휴제안">
-                </div>
-            </div>
-            <div class="main_sns">
-                <div class="sns">
-                    <p>쿠필 sns</p>
-                </div>
-                <div class="show">
-                        <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA"><img src="./image/유튜브2.png" alt="유튜브" ></a>
-                        <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank"><img src="./image/인스타그램1.png" alt="인스타그램"></a>
-                        <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank"><img src="./image/페이스북.png" alt="페이스북"></a>
-                </div>
-            </div>
-        </div>
         <!-- <article class="main_content">
             <div id="k" class="main_spell">
                 
@@ -461,7 +515,7 @@
                     <p>후원 | ##은행 #####</p><br>
                     <p>copyright 2021 KUPHIL, All rights reserved.</p>
                 </div>
-                
+
             </div>
         </div>
     </footer>
