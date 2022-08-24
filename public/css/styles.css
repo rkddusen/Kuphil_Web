@@ -321,14 +321,13 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
     width: 60%;
     position: absolute;
     left: 5%;
-    top: 30%;
+    top: 25%;
 }
 .coming_detail p{
     font-size: 1.5rem;
-    margin: 5% 0;
+    margin: 8% 0;
 }
 .coming_detail p:first-child{
-    margin-top: 0;
     font-weight: bold;
     font-size: 1.7rem;
 }
