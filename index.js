@@ -629,6 +629,11 @@ server.get("/history", (req, res) => {
         }
     );
 });
+
+server.get("/policy", (req, res) => {
+    res.sendFile(__dirname + "/public/html/policy.html");
+});
+
 server.use((req, res) => {
     res.sendFile(__dirname + "/public/html/404.html");
 });
