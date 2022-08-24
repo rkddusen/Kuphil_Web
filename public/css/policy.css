@@ -12,14 +12,14 @@
     font-weight: bold;
 }
 .policy_hi{
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 .policy_explain{
     width: 80%;
-    background-color: #fff7e2;
+    background-color: #F5EFE7;
     margin: 0 auto;
     padding: 5%;
-    border: 3px solid #e0902d;
+    border: 2px solid #C2B9AE;
 }
 .policy_contents{
     margin: 30px 0;
