@@ -319,10 +319,11 @@ server.get("/2048game", (req, res) => {
             if (error) {
                 console.log(error);
             } else {
-                let name = [];
+                let name = "";
                 let score = [];
                 for (var i in rows) {
-                    name[i] = rows[i].name ? rows[i].name : "정보 없음";
+                    name += rows[i].name ? rows[i].name : "정보 없음";
+                    name += "//나누는구간//";
                     score[i] = rows[i].score ? rows[i].score : 0;
                 } //데이터 생성
                 var page = ejs.render(game2048, {
