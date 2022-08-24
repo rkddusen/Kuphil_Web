@@ -16,11 +16,12 @@
 }
 .policy_explain{
     width: 80%;
-    background-color: #F5EFE7;
+    background-color: #FFFDFD;
     margin: 0 auto;
     padding: 5%;
-    border: 2px solid #C2B9AE;
+    border: 1px solid #94613C;
 }
+
 .policy_contents{
     margin: 30px 0;
 }
