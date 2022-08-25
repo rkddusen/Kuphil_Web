@@ -4,38 +4,6 @@ let showsecond = document.getElementsByClassName("posterbox_2")[0];
 //38 >> 전체 포스터의 수
 let num = 38;
 
-// 모달창 폐업합니다^^;;,,
-// let modal = document.querySelector(".modal");
-// let openButton = document.getElementById("open");
-// let overlay = modal.querySelector(".modal_overlay");
-// let closeBtn = modal.querySelector("button");
-// let openModal = (i) => {
-//     modal.classList.remove("hidden");
-//     let classmodal = document.getElementsByClassName("modal")[0];
-//     let modaldiv = `<div class="modal_overlay"></div>
-//     <div class="modal_content">
-//         <div class="modal_text">
-//             <h1>제36회 정기 연주회</h1>
-//             <img src="./image/poster/poster_`+i+`.jpg" alt="정보가 없습니다.">
-//             <div class="modal_text_1">
-//                 <h3>장소 : </h3>
-//                 <h3>시간 : </h3>
-//                 <h3>프로그램 :</h3>
-//             </div>
-//             <hr/>
-//             <div class="modal_text_2">
-//                 <h3>지휘 : </h3>
-//             </div>
-//         </div>
-//         <button id="close" onclick="closeModal();">Close</button>
-//     </div>`;
-//     classmodal.innerHTML = modaldiv;
-
-    
-// }
-// let closeModal = () => {
-//         modal.classList.add("hidden");
-//     }
 
 function showPage(){
     let buildOne = ``;
@@ -162,16 +130,16 @@ function nextPage() {
 
 showPage();
 
-function popPoster() {
-    window.open('windowopen.html','window팝업','width = 400, height = 200, status = no, toolbar = no');
-function popPoster(url) {
-    const img = new Image();
-    img.src=url;
-    var img_width=img.width;
-    var win_width=img.width+25;
-    var img_height=img.height;
-    var win=img.height+30;
-    const OpenWindow=window.open('','_blank', 'width='+img_width+', height='+img_height+', menubars=no, scrollbars=auto');
-    OpenWindow.document.write("<style>body{margin:0px;}</style><img src='"+url+"' width='"+win_width+"'>");
-    }
-};
+// function popPoster() {
+//     window.open('windowopen.html','window팝업','width = 400, height = 200, status = no, toolbar = no');
+// function popPoster(url) {
+//     const img = new Image();
+//     img.src=url;
+//     var img_width=img.width;
+//     var win_width=img.width+25;
+//     var img_height=img.height;
+//     var win=img.height+30;
+//     const OpenWindow=window.open('','_blank', 'width='+img_width+', height='+img_height+', menubars=no, scrollbars=auto');
+//     OpenWindow.document.write("<style>body{margin:0px;}</style><img src='"+url+"' width='"+win_width+"'>");
+//     }
+// };
