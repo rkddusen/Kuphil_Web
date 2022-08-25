@@ -65,9 +65,18 @@
     width: 100%;
     line-height:180%;
 }
-
+#introduce_image > span {
+    margin: 20px auto;
+    font-size: 3.6rem;
+    margin-top: 50px;
+}
+#introduce_image{
+    width: 75%;
+    padding: 0 11%;
+    margin: 70px auto;
+}
 #introduce_image > img {
-    width: 70%;
+    width: 100%;
     display: flex;
     margin: 0 auto;
 }
