@@ -9,7 +9,7 @@
 /* 아카이브 body css */
 
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif 'Noto Sans';
 }
 
 
@@ -232,6 +232,10 @@ hr{
         font-size: 2.5rem;
     }
 
+    .arc_concert_poster{
+        width: 300px;
+    }
+
 }
 
 
@@ -246,6 +250,16 @@ hr{
         margin: 0 auto;
         justify-content: center;
         text-align: center;
+    }
+
+    .prev_btn {
+        width: 15px;
+        height: 15px;
+    }
+
+    .next_btn {
+        width: 15px;
+        height: 15px;
     }
 
     .arc_concert_poster{
@@ -295,6 +309,16 @@ hr{
 @media (max-width: 479px) {
     #arc_notice{
         margin-top: 15px;
+    }
+
+    .prev_btn {
+        width: 10px;
+        height: 10px;
+    }
+
+    .next_btn {
+        width: 10px;
+        height: 10px;
     }
 
 
