@@ -278,8 +278,6 @@
 
     .start_location{
         margin: 20px auto;
-    }
-
-    #kuphil_room > img{
+        font-size:5px;
     }
 }
