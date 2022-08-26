@@ -108,16 +108,36 @@ li{
     }
 }
 
-@media (max-width : 479px){   
-    .contact{
-        margin-left:30%;
-    }     
-
-    .contact>a>img{
-        width:40px;
+@media (max-width : 479px){ 
+    #handshake{
+        width:70%;
     }
     
+    .please_call>p{
+        font-size:1.7rem;
+    }
+
+    ul{
+        font-size: 1.4rem;
+    }
+    
+    li{
+        font-size:1.2rem;
+    }
+
+    .contact{
+        margin-left:35%;
+    }     
+    
     .contact>img{
-        width:40px;
+        width:30px;
     }    
+
+    .please_call{
+        margin-bottom:10%;
+    }
+
+    .contact>p{
+        font-size:1.3rem;
+    }
 }
