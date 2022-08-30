@@ -12,6 +12,10 @@
     font-family: Arial, Helvetica, sans-serif 'Noto Sans';
 }
 
+header {
+    width: 80%;
+}
+
 
 
 
@@ -163,6 +167,7 @@
     margin: 0 2vw;
 }
 
+
 .arc_concert_title {
     font-size: 3rem;
     font-weight: 500;
@@ -171,11 +176,17 @@
 
 .concert_detail{
     text-align: left;
+    display: inline-block;
 }
 
 .arc_info_bold{
     font-weight: 500;
-    font-size: 2.5rem;
+    font-size: 2rem;
+}
+
+.arc_info_bold  .detail{
+    font-weight: 100;
+    font-size: 2rem;
 }
 
 .concert_text1{
@@ -195,7 +206,10 @@
 }
 
 .concert_text2{
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin: 2vw 0;
+    padding-top: 2vw;
+    border-top: 1px solid #BE7743;
 }
 
 .concert_program_list{
@@ -216,10 +230,6 @@
 
 }
 
-hr{
-    margin: 2vw 0;
-    border: 1px solid #BE7743;
-}
 
 
 
@@ -235,6 +245,11 @@ hr{
     .arc_concert_poster{
         width: 300px;
     }
+
+    header {
+        width: 80%;
+    }
+    
 
 }
 
@@ -301,7 +316,10 @@ hr{
         font-size: 1rem;
     }
 
-
+    header {
+        width: 90%;
+    }
+    
 
 
 }
@@ -312,13 +330,13 @@ hr{
     }
 
     .prev_btn {
-        width: 10px;
-        height: 10px;
+        width: 6px;
+        height: 6px;
     }
 
     .next_btn {
-        width: 10px;
-        height: 10px;
+        width: 6px;
+        height: 6px;
     }
 
 
