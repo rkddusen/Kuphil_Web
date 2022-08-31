@@ -24,7 +24,6 @@ span {
 img {
     border: 0;
 }
-
 /* 마우스를 더블클릭하거나 드래그하는와중에, button 속에 text 가 선택됨. 이것을 방지 */
 button {
     user-select: none;
@@ -33,9 +32,10 @@ button {
 }
 
 header {
-    width: 90%;
+    width: 80%;
     height: 200px;
     padding: 0 5%;
+    margin: 0 auto;
 }
 
 .main_head {
@@ -161,7 +161,38 @@ header article {
     color: #784520;
 }
 
+header{
+    height: 200px;
+}
+.main_head{
+    height: 100px;
+}
+.mainlogo img{
+    margin-top: 5px;
+    height: 85px;
+}
+.nav>ul{
+    height: 80px;
+    line-height: 80px;
+}
+.nav>ul>li {
+    float: left;
+    font-size: 2.7rem;
+    padding: 0 3vw 0 1.2vw;
+    position: relative;
+}
+.head3_line_f {
+    height: 40px;
+}
 
+.head3_name {
+    margin-top: 20px;
+    height: 60px;
+}
+
+.head3_line_s {
+    height: 40px;
+}
 footer {
     position: relative;
     background-color: #393939;
@@ -246,6 +277,9 @@ footer {
         height: 60px;
         line-height: 60px;
     }
+    .nav>ul>li {
+        font-size: 3rem;
+    }
     .head3_line_f {
         height: 40px;
     }
@@ -266,6 +300,7 @@ footer {
         font-size: 50%;
     }
     header{
+        width: 90%;
         height: 140px;
     }
     .main_head{
