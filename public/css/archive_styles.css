@@ -1,28 +1,11 @@
 
 
-
-/* 아카이브header css */
-
-
-
-
-/* 아카이브 body css */
-
-* {
-    font-family: Arial, Helvetica, sans-serif 'Noto Sans';
-}
-
-header {
-    width: 80%;
-}
-
-
-
-
 .archiveBox{
+    width: 80%;
     height: auto;
     min-height: 90%;
     padding-bottom: 100px;
+    margin: 0 auto;
 }
 
 
@@ -30,13 +13,11 @@ header {
     margin-top: 70px;
     margin-bottom: 50px;
     width: 90%;
-    padding: 0 5%;
     font-size: 2.5rem;
     color: #5C3A1A;
 }
 
 .container {
-    width: 100%;
     margin: 0 auto;
 }
 
@@ -106,8 +87,8 @@ header {
 
 
 .loadposters {
-    width: 90%;
-    margin: 0 5%;
+    width: 100%;
+    /* margin: 0 5%; */
     display: flex;
     justify-content: space-between;
 }
@@ -156,7 +137,7 @@ header {
     /* 포스터 사이즈가 규격에 맞지 않으면 잘려서 출력됨 */
     width: 29.4vw;
     height: 41.4vw;
-    margin: 0 5vw;
+    margin: 0 3% 0 0 ;
 }
 
 
@@ -170,7 +151,7 @@ header {
 
 .arc_concert_title {
     font-size: 3rem;
-    font-weight: 500;
+    font-weight: bold;
     margin-bottom: 2vw;
 }
 
@@ -180,11 +161,11 @@ header {
 }
 
 .arc_info_bold{
-    font-weight: 500;
+    font-weight: bold;
     font-size: 2rem;
 }
 
-.arc_info_bold  .detail{
+.detail{
     font-weight: 100;
     font-size: 2rem;
 }
@@ -226,7 +207,7 @@ header {
 
 
 .arc_concert_link{
-    margin: 1vw 0;
+    margin: 3vw 0;
 
 }
 
@@ -235,26 +216,43 @@ header {
 
 
 @media (max-width: 1023px) {
+
+    .archiveBox{
+        width: 80%;
+    }
+    
     #arc_notice{
         margin-top: 50px;
     }
     .concert_text1{
-        font-size: 2.5rem;
+        font-size: 1.5rem;
     }
 
     .arc_concert_poster{
-        width: 300px;
+        max-width: 300px;
+        height: 100%;
     }
 
-    header {
-        width: 80%;
+    .arc_info_bold{
+        font-weight: bold;
+        font-size: 1.5rem;
     }
+
+    .detail {
+        font-size: 1.5rem;
+    }
+
     
 
 }
 
 
 @media (max-width: 767px) {
+
+    .archiveBox{
+        width: 80%;
+    }
+    
     #arc_notice{
         margin-top: 30px;
     }
@@ -293,8 +291,9 @@ header {
     }
 
     .arc_info_bold{
-        font-size: 1rem;
+        font-weight: bold;
     }
+
 
     .concert_text1{
         font-size: 1rem;
@@ -316,10 +315,6 @@ header {
         font-size: 1rem;
     }
 
-    header {
-        width: 90%;
-    }
-    
 
 
 }
