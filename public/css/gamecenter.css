@@ -1,17 +1,15 @@
 #game_notice{
-    margin-top: 70px;
-    margin-bottom: 50px;
-    width: 90%;
+    margin: 70px 5% 50px 5%;
+    width: 80%;
     padding: 0 5%;
     font-size: 2.5rem;
     color: #5C3A1A;
 }
 
 .game_content{
+    margin:100px 5% 50px 5%;
     padding: 0 5%;
-    width: 90%;
-    margin-top: 100px;
-    margin-bottom: 50px;
+    width: 80%;
     display:flex;
     flex-direction: column;
     align-items:center;
@@ -59,8 +57,23 @@
 
 @media (max-width: 767px) {
     #game_notice{
-        margin-top: 30px;
+        margin:30px 0 50px 0;
+        width: 90%;
+        padding: 0 5%;
+        font-size: 2.5rem;
+        color: #5C3A1A;
     }
+    
+    .game_content{
+        padding: 0 5%;
+        width: 90%;
+        margin-top: 100px;
+        margin-bottom: 50px;
+        display:flex;
+        flex-direction: column;
+        align-items:center;
+    }
+    
     .game_thumbnail{
         width: 250px;
         height: 250px;
