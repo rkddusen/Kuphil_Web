@@ -1,6 +1,6 @@
 /* section으로 사실상 body 영역 기본세팅 */
 section {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -27,9 +27,9 @@ cover는 대체 콘텐츠의 가로세로비를 유지하면서 요소 콘텐츠
 사용하고 싶은 글꼴을 불러오지 못하는 경우 웹 브라우저에 지정된 기본 글꼴로 대체됨 
 앞쪽부터 순서대로 불러오기 때문에 여러 개 지정해둘 수도 있음 */
 #main_welcome > p {
-    width: 80%;
+    width: 100%;
     color: #FFFFFF;
-    font-size: 6rem;
+    font-size: 4.5rem;
     font-family: 'Poiret One', cursive;
     position :absolute;
     top: 15%;
@@ -196,7 +196,7 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
 }
 
 .intro_title, .coming_title, .recent_title, .suggest_title, .sns_title{
-    font-size: 3rem;
+    font-size: 2.3rem;
 }
 
 /* 날씨 */
@@ -204,7 +204,7 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
     position: relative;
     width:100%;
     height: 0;
-    padding-top: 8%;
+    padding-top: 6%;
     border-top: 1px solid #BE7743;
     border-bottom: 1px solid #BE7743;
 }
@@ -227,24 +227,24 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
 }
 #weather_temp, #weather_desc{
     font-weight: bolder;
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin-right: 5px;
 }
 #weather_humidity, #weather_precipitation{
     color: rgb(49, 49, 49);
     margin-left: 5px;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 400;
 }
 #weather_info{
     color: grey;
     margin-left: 10px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 /* 소개 */
 .main_intro{
-    width: 50%;
+    width: 40%;
     position: relative;
     height: 0;
     padding-top: 30%;
@@ -261,20 +261,23 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
     top: 5%;
     left: 5%;
 }
+.intro_title span{
+    color: #864415;
+    font-size: 2.6rem;
+}
 .intro_center{
     position: absolute;
-    left: 50%;
+    left: 5%;
     top: 50%;
-    transform:translate(-50%,-50%);
+    transform:translate(0,-50%);
     width: 90%;
 }
 .intro_center p{
-    text-align: center;
     font-size: 1.7rem;
 }
 .main_intro a{
     position: absolute;
-    left: 5%;
+    right: 10%;
     bottom: 10%;
     font-size: 1.7rem;
     color: #BE7743;
@@ -294,7 +297,7 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
 
 /* 커밍순 */
 .main_coming{
-    width: 50%;
+    width: 60%;
     position: relative;
     height: 0;
     padding-top: 30%;
@@ -303,21 +306,21 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
     border-left: 0.5px solid #BE7743;
 }
 .coming_explain{
-    height: 100%;
     position: absolute;
     left: 5%;
     top: 5%;
 }
 .coming_img{
     position: absolute;
-    right: 5%;
-    top: 25%;
-    height: 70%;
+    left: 50%;
+    top: 27%;
+    width: 80%;
+    transform:translate(-50%,0);
 }
 .coming_img img{
-    height: 100%;
+    width: 100%;
 }
-.coming_detail{
+/* .coming_detail{
     width: 60%;
     position: absolute;
     left: 5%;
@@ -330,7 +333,7 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
 .coming_detail p:first-child{
     font-weight: bold;
     font-size: 1.7rem;
-}
+} */
 
 /* 최근연주회 */
 
@@ -394,7 +397,7 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
     position: relative;
     width: 50%;
     height: 0;
-    padding-top: 20%;
+    padding-top: 15%;
     float: left;
     box-sizing: border-box;
     border-right: 0.5px solid #BE7743;
@@ -413,7 +416,7 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
     color: #BE7743;
 }
 .main_suggest .suggest_image{
-    width: 50%;
+    width: 30%;
     position: absolute;
     right: 10%;
     top: 50%;
@@ -428,7 +431,7 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
     position: relative;
     width: 50%;
     height: 0;
-    padding-top: 20%;
+    padding-top: 15%;
     float: left;
     box-sizing: border-box;
     border-left: 0.5px solid #BE7743;
@@ -440,12 +443,12 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
 }
 .main_sns .show{
     position: absolute;
-    bottom: 5%;
+    top: 50%;
     left: 50%;
     width: 100%;
     display: flex;
     justify-content: space-around;
-    transform:translate(-50%,-50%);
+    transform:translate(-50%,0);
 }
 .show a{
     max-width: 70px;
@@ -453,15 +456,14 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
     width: 12%;
 }
 .show a img{
-    
     width: 100%;
 }
 
 
 @media (max-width : 1023px){
+    
     #main_welcome > p{
-        letter-spacing: 0.7rem;
-        font-size: 5rem;
+        letter-spacing: 0.6rem;
     }
 
     .main_spell{
@@ -478,13 +480,22 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
         width: 300px;
         margin: 0 5px;
     }
+    .intro_title, .coming_title, .recent_title, .suggest_title, .sns_title{
+        font-size: 2.1rem;
+    }
+    .intro_title span{
+        font-size: 2.1rem;
+    }
 }
 @media (max-width : 767px) {
+    section {
+        width: 90%;
+    }
     #main_welcome {
         margin-top: -75px;
     }
     #main_welcome > p{
-        font-size: 4rem;
+        font-size: 3.5rem;
         letter-spacing: 0.5rem;
     }
 
@@ -501,11 +512,11 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
         width: 250px;
     }
 
-    .intro_title, .coming_title, .recent_title, .suggest_title, .sns_title{
-        font-size: 2.5rem;
+    .main_intro a, .main_suggest a{
+        font-size: 1.5rem;
     }
     #weather_temp, #weather_desc{
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     #weather_humidity, #weather_precipitation{
         font-size: 1rem;
@@ -513,7 +524,31 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
     #weather_info{
         font-size: 1rem;
     }
-
+    .main_intro{
+        width: 100%;
+        border: none;
+        margin-top: -5%;
+    }
+    .main_coming{
+        width: 100%;
+        padding-top: 50%;
+        border: none;
+        margin-top: 5%;
+        border-top: 1px solid #BE7743;
+    }
+    .intro_explain{
+        left: 2.5%;
+    }
+    .coming_explain{
+        left: 2.5%;
+    }
+    .main_intro a{
+        right: 5%;
+        bottom: 5%;
+    }
+    .main_recent{
+        padding-top: 60%;
+    }
     .main_tip{
         padding-top: 10%;
     }
@@ -529,74 +564,23 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
     .coming_detail p:first-child{
         font-size: 1.5rem;
     }
-
-    /* .weather {
-        border-top: solid 1px #BE7743;
-        border-bottom: solid 1px #BE7743;
-        margin-top: 1px;
+    .main_suggest, .main_sns{
+        padding-top: 25%;
     }
-
-    #time {
-        font-size: 1.2rem;
-    }
-    
-    #weather_spans > span {
-        font-size: 1.7rem;
-    }
-    
-    #left_weather_board > span {
-        font-size: 0.7rem;
-        margin: 0.7vw;
-    }
-    
-    #weather_temp {
-        font-size: 2.2rem;
-    }
-    
-    #weather_icon {
-        width: 4.2rem;
-        height: 4.2rem;
-    } */
-
 }
 @media (max-width : 479px) {
-    /* .spell {
-        height: 400px;
-    } */
     #main_welcome > p{
-        font-size: 2.5rem;
-    }
-
-    /* .weather {
-        border-top: solid 1px #BE7743;
-        border-bottom: solid 1px #BE7743;
-    }
-
-    #time {
-        font-size: 1rem;
-    }
-    
-    #weather_spans > span {
-        font-size: 1.5rem;
-    }
-    
-    #left_weather_board > span {
-        font-size: 1rem;
-        margin: 1vw;
-    }
-    
-    #weather_temp {
         font-size: 2rem;
     }
-    
-    #weather_icon {
-        width: 4rem;
-        height: 4rem;
+    .intro_title, .coming_title, .recent_title, .suggest_title, .sns_title{
+        font-size: 1.8rem;
     }
-    .main_next .next span{
+    .intro_title span{
+        font-size: 1.8rem;
+    }
+    .main_intro a, .main_suggest a{
         font-size: 1rem;
-    } */
-
+    }
     .main_tip{
         padding-top: 15%;
     }

@@ -18,37 +18,38 @@
     justify-content:center;
     align-items:center;
     flex-direction:column;
-    margin-bottom:5%;
+    margin-bottom:8%;
 }
 
-ul{
+.please_call>ul{
     list-style: none;
     font-size: 2rem;
     font-weight: bold;
     margin-bottom:5px;
-    margin-top:15px;
+    margin-top:50px;
 }
 
-li{
+.please_call>li{
     font-size:1.5rem;
     margin-bottom:3px;
+}
+
+#contact_how{
+    width:90%;
+    margin:0 auto;
 }
 
 .contact{
     display:flex;
     align-items:center;
-    margin-bottom:10px;
-    margin-left:42.5%;
-}
-
-.contact>a>img{
-    width:50px;
-    margin-right:25px;
+    justify-content:center;
+    margin-bottom:30px;
 }
 
 .contact>img{
     width:50px;
     margin-right:25px;
+    margin-left:50px;
 }
 
 .contact>a>p{
@@ -65,10 +66,7 @@ li{
 
 @media (max-width : 1023px){       
     .contact{
-        display:flex;
-        align-items:center;
-        margin-bottom:10px;
-        margin-left:42.5%;
+        margin-bottom:30px;
     }
     
     .contact>a>img{
@@ -96,8 +94,8 @@ li{
 
 @media (max-width : 767px){  
     .contact{
-        margin-left:37%;
-    }     
+        margin-bottom:20px;
+    }
 
     .contact>a>img{
         width:45px;
@@ -105,6 +103,10 @@ li{
     
     .contact>img{
         width:45px;
+    }
+
+    .please_call>ul{
+        margin-top:35px;
     }
 }
 
@@ -114,23 +116,20 @@ li{
     }
     
     .please_call>p{
-        font-size:1.7rem;
+        font-size:1.6rem;
     }
 
-    ul{
+    .please_call>ul{
         font-size: 1.4rem;
     }
     
-    li{
+    .please_call>li{
         font-size:1.2rem;
     }
-
-    .contact{
-        margin-left:35%;
-    }     
     
     .contact>img{
         width:30px;
+        margin-left:20px;
     }    
 
     .please_call{
@@ -138,6 +137,6 @@ li{
     }
 
     .contact>p{
-        font-size:1.3rem;
+        font-size:1.1rem;
     }
 }
