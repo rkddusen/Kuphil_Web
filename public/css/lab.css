@@ -167,6 +167,40 @@
     font-weight: bold;
 }
 
+#wrap_restaurant_area {
+    display: flex;
+}
+
+.restaurant_area {
+    font-size: 3rem;
+    margin: 10px;
+}
+
+.restaurant_area:hover {
+    cursor: pointer;
+}
+
+#wrap_restaurant_type {
+    display: flex;
+}
+
+.restaurant_type {
+    font-size: 2rem;
+    margin: 10px;
+}
+
+.restaurant_type:hover {
+    cursor: pointer;
+}
+
+#wrap_restaurant_map_n_info {
+    display: flex;
+}
+
+.restaurant_info_n_btn {
+    display: flex;
+}
+
 @media (max-width: 1023px) {
     #lab_notice{
         margin-top: 50px;

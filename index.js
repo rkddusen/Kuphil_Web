@@ -300,6 +300,11 @@ server.get("/test", (req, res) => {
 server.get("/lab", (req, res) => {
     res.sendFile(__dirname + "/public/html/lab.html");
 });
+
+server.get("/restaurant", (req, res) => {
+    res.sendFile(__dirname + "/public/html/restaurant.html");
+});
+
 server.get("/gamecenter", (req, res) => {
     res.sendFile(__dirname + "/public/html/gamecenter.html");
 });
