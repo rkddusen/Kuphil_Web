@@ -1,7 +1,7 @@
 .policy_area{
-    width: 90%;
+    width: 80%;
+    margin: 70px auto;
     padding: 0 5%;
-    margin: 70px 0;
 }
 .policy{
     width: 90%;
@@ -51,6 +51,7 @@
 
 @media (max-width: 767px) {
     .policy_area{
+        width: 90%;
         margin-top: 30px;
     }
 }

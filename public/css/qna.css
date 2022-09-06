@@ -1,14 +1,16 @@
 #qna_notice{
+    margin: 0 auto;
     margin-top: 70px;
     margin-bottom: 50px;
-    width: 90%;
+    width: 80%;
     padding: 0 5%;
     font-size: 2.5rem;
     color: #5C3A1A;
 }
 
 .qna_section{
-    width: 90%;
+    margin: 0 auto;
+    width: 80%;
     padding: 0 5%;
     margin-top: 70px;
     margin-bottom: 30px;
@@ -274,6 +276,11 @@
 @media (max-width : 767px) {
     #qna_notice{
         margin-top: 30px;
+        width: 90%;
+    }
+    
+    .qna_section{
+        width: 90%;
     }
     .qna_section{
         margin-top: 30px;
