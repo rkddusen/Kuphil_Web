@@ -183,7 +183,7 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
     margin-top: 5%;
     width: 100%;
 }
-.row_3rd, .row_0{
+.row_3rd, .row_1st, .row_0{
     margin-top: 0;
 }
 .row_3rd::after, .row_1st::after, .row_2nd::after, .row_0::after, .row_4th::after{
@@ -195,7 +195,7 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
     margin-bottom: 5%;
 }
 
-.intro_title, .coming_title, .recent_title, .suggest_title, .sns_title{
+.coming_title, .recent_title, .suggest_title, .sns_title{
     font-size: 2.3rem;
 }
 
@@ -242,72 +242,18 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
     font-size: 1.3rem;
 }
 
-/* 소개 */
-.main_intro{
-    width: 40%;
-    position: relative;
-    height: 0;
-    padding-top: 30%;
-    float: left;
-    box-sizing: border-box;
-    border-right: 0.5px solid #BE7743;
-}
-
-.intro_text{
-    font-size: 1.7rem;
-}
-.intro_explain{
-    position: absolute;
-    top: 5%;
-    left: 5%;
-}
-.intro_title span{
-    color: #864415;
-    font-size: 2.6rem;
-}
-.intro_center{
-    position: absolute;
-    left: 5%;
-    top: 50%;
-    transform:translate(0,-50%);
-    width: 90%;
-}
-.intro_center p{
-    font-size: 1.7rem;
-}
-.main_intro a{
-    position: absolute;
-    right: 10%;
-    bottom: 10%;
-    font-size: 1.7rem;
-    color: #BE7743;
-}
-.intro_image{
-    position: absolute;
-    width: 50%;
-    text-align: center;
-    left: 50%;
-    top: 50%;
-    transform:translate(-50%,-50%);
-}
-.intro_image img{
-    width: 100%;
-    opacity: 5%;
-}
-
 /* 커밍순 */
 .main_coming{
-    width: 60%;
+    width: 100%;
     position: relative;
     height: 0;
-    padding-top: 30%;
+    padding-top: 40%;
     float: left;
     box-sizing: border-box;
-    border-left: 0.5px solid #BE7743;
 }
 .coming_explain{
     position: absolute;
-    left: 5%;
+    left: 2.5%;
     top: 5%;
 }
 .coming_img{
