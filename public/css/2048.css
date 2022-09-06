@@ -1,6 +1,7 @@
 .game_area {
-    width: 90%;
+    width: 80%;
     padding: 30px 5%;
+    margin: 0 auto;
     height: auto;
     min-height: 100%;
 }
@@ -111,6 +112,9 @@
     }
 }
 @media (max-width : 767px){
+    .game_area {
+        width: 90%;
+    }
     .game_area>div:first-child{
         width: 370px;
         height: 25px;

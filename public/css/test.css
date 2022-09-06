@@ -1,6 +1,7 @@
 .gameContents{
     padding: 0 5%;
-    width: 90%;
+    width: 80%;
+    margin: 0 auto;
     margin-top: 100px;
     height: auto;
     min-height: 100%;
@@ -63,6 +64,9 @@
 }
 
 @media (max-width : 768px) {
+    .gameContents{
+        width: 90%;
+    }
     .answer{
         display: block;
     }

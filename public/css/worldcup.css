@@ -1,6 +1,7 @@
 .worldcup_area {
-    width: 90%;
-    margin: 0 5%;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 5%;
     height: auto;
     min-height: 100%;
     padding-bottom: 260px;
@@ -130,6 +131,9 @@
 }
 
 @media (max-width : 767px){
+    .worldcup_area {
+        width: 90%;
+    }
     .worldcup_explain {
         margin-top: 50px;
     }
