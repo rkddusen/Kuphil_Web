@@ -4,187 +4,164 @@ section {
     margin: 0 auto;
 }
 
-
-/* position: relative로 인해 부모 태그가 자식 태그의 기준점이 됨 */
-#main_welcome {
-    width: 100%;
-    overflow: hidden;
-    margin-top: -93px;
-    text-align: center;
+.main_slide{
     position: relative;
-    padding-bottom: 3px;
+    width:100%;
+    height: 0;
+    padding-top: 45%;
+    margin-top: -93px;
+    margin-bottom: 7px;
 }
-
-/* object-fit은 img같은 대체 콘텐츠의 크기를 어떤 방식으로 조절해 요소에 맞출 것인지 지정
-cover는 대체 콘텐츠의 가로세로비를 유지하면서 요소 콘텐츠 박스 가득 채움
-서로의 가로세로비가 일치하지 않으면 객체 일부가 잘려나감 */
-#main_welcome > img {
+.slide_area{
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
-/* position: absolute로 인해 부모 태그를 기준으로 위치가 결정됨 */
-/* font-family는 앞쪽이 사용하고 싶은 글꼴이고 뒤쪽은 기본 글꼴임
-사용하고 싶은 글꼴을 불러오지 못하는 경우 웹 브라우저에 지정된 기본 글꼴로 대체됨 
-앞쪽부터 순서대로 불러오기 때문에 여러 개 지정해둘 수도 있음 */
-#main_welcome > p {
-    width: 100%;
-    color: #FFFFFF;
-    font-size: 4.5rem;
-    font-family: 'Poiret One', cursive;
-    position :absolute;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    font-weight: 900;
-    letter-spacing: 1rem;
-}
-
-.kuphil_sns {
-    border-top: 2px solid #BE7743;
-    background-color: #FFF4EA;
-    height: 120px;
-    margin-top: 5px;
-}
-
-.kuphil_sns_title {
-    color:#864415;
-    font-size: 3rem;
-    padding: 5px 0 0 1%;
-    /* font-family: 'Alegreya', serif; */
-}
-
-/* #whatsnew a {
-    color: #000000;
-    font-size: 32px;
-} */
-
-/* text-align 속성을 사용해서 text 위치 지정 가능
-height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
-/* #d_day > div {
-    height: 32px;
-    text-align: center;
-    line-height: 32px;
-    font-size: 25px;
-} */
-
-/* .weather {
-    box-sizing: border-box;
-    margin: 4px 0;
-    width: 100%;
-    height: 15%;
-    border-top: solid 1px #BE7743;
-    border-bottom: solid 1px #BE7743;
-    display: flex;
-    justify-content: center;
-}
-
-#time {
-    font-size: 2rem;
-}
-
-#weather_spans > span {
-    font-size: 2.5rem;
-}
-
-#weather_desc {
+.prev{
+    cursor: pointer;
+    content: '';
+    display:inline-block;
+    width: 25px;
+    height: 25px;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(-135deg);
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    font-size: 4rem;
     font-weight: bold;
 }
-
-#left_weather, #right_weather {
-    margin: 2vw 3vw;
-    display: flex;
-    align-items: center;
-}
-
-#weather_board {
-    display: flex;
-    background-color: #fffeda;
-    opacity: 0.8;
-    background-size: 20px 20px;
-    padding: 10px;
-    align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
-}
-
-
-#left_weather_board > span {
-    font-size: 1.2rem;
-    margin: 1vw;
-}
-
-#weather_temp {
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 3px;
+.next{
+    cursor: pointer;
+    content: '';
+    display:inline-block;
+    width: 25px;
+    height: 25px;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    font-size: 4rem;
     font-weight: bold;
 }
-
-#weather_icon {
-    width: 5rem;
-    height: 5rem;
-    display: block;
-    margin: 0 auto;
-} */
-
-/* main content부분 */
-
-.main_content{
-    width: 90%;
-    padding: 0 5%;
-    margin-top: 50px;
-}
-.main_spell{
+.slide_area ul{
+    position: relative;
     width: 100%;
-    height: 450px;
-    padding: 5% 0;
+    height: 100%;
 }
-.main_spell_box{
-    background-color: #FFF9F4;
-    height: 300px;
+.slide_area ul li{
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 1s all;
+}
+.slide_area ul li:first-child{
+    z-index: 1;
+    opacity: 1;
+}
+.slide_main img{
+    width: 100%;
+}
+
+.slide_archive{
+    width: 100%;
+    height: 100%;
+    background-image: url("../image/main/main_archive_back.png");
+    background-size: cover;
+}
+
+.slide_archive div{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+.slide_archive div:first-child{
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
 }
-.main_spell_image{
-    width: 400px;
-    height: auto;
-    border: 1px solid #FFF9F4;
-    box-sizing: border-box;
-    max-width: 580px;
-    margin: -40px 10px 0 10px;
+.slide_archive img{
+    height: 60%;
 }
-.main_spell_image img{
-    width: 100%;
-}
-
-.main_spell_intro{
-    width: 400px;
-    height: 100%;
-    margin: 0 10px;
+.slide_archive div:last-child{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
 }
-.main_spell_intro_title{
-    font-size: 4rem;
-    font-weight: 900;
+.slide_archive div .slide_archive_title{
+    font-size: 3rem;
+    color: white;
+    font-weight: bold;
 }
-.main_spell_intro_title span{
-    font-size: 5rem;
-    color: #c15e17;
+.slide_archive div .slide_archive_text{
+    text-align: end;
+    padding: 0 20%;
 }
-.main_spell_intro_text{
-    font-size: 1.5rem;
-    margin: 15px 0;
+.slide_archive div .slide_archive_text a{
+    font-size: 2rem;
+    color: white;
 }
 
-
-.row_3rd, .row_1st, .row_2nd, .row_0, .row_4th{
-    margin-top: 5%;
+.slide_gamecenter{
     width: 100%;
+    height: 100%;
+    background-color: #f3e1d5;
 }
-.row_3rd, .row_1st, .row_0{
+.slide_gamecenter div{
+    float: left;
+}
+.slide_gamecenter div:first-child{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.slide_gamecenter div .slide_gamecenter_title{
+    font-size: 3rem;
+    color: black;
+    font-weight: bold;
+    padding: 0 10%;
+}
+.slide_gamecenter div .slide_gamecenter_text{
+    text-align: end;
+    padding: 0 20%;
+    
+}
+.slide_gamecenter div .slide_gamecenter_text a{
+    font-size: 2rem;
+    color: black;
+}
+
+.slide_gamecenter div:last-child{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.slide_gamecenter img{
+    width: 90%;
+}
+
+
+.row_3rd, .row_1st, .row_2nd, .row_0{
+    width: 100%;
     margin-top: 0;
+}
+.row_4th{
+    margin-top: 5%;
 }
 .row_3rd::after, .row_1st::after, .row_2nd::after, .row_0::after, .row_4th::after{
     content: '';
@@ -247,7 +224,7 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
     width: 100%;
     position: relative;
     height: 0;
-    padding-top: 40%;
+    padding-top: 50%;
     float: left;
     box-sizing: border-box;
 }
@@ -256,30 +233,36 @@ height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
     left: 2.5%;
     top: 5%;
 }
-.coming_img{
+.coming_area{
     position: absolute;
+    top: 50%;
     left: 50%;
-    top: 27%;
-    width: 80%;
-    transform:translate(-50%,0);
+    transform: translate(-50%,-50%);
 }
-.coming_img img{
-    width: 100%;
+.coming_area article{
+    width: 700px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
 }
-/* .coming_detail{
-    width: 60%;
-    position: absolute;
-    left: 5%;
-    top: 25%;
+.coming_article_title{
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
-.coming_detail p{
-    font-size: 1.5rem;
-    margin: 8% 0;
-}
-.coming_detail p:first-child{
+.coming_article_sub{
+    font-size: 2rem;
     font-weight: bold;
-    font-size: 1.7rem;
-} */
+    margin-top: 10px;
+}
+.coming_article_text{
+    font-size: 2rem;
+    color: gray;
+}
+.coming_area article img{
+    height: 300px;
+    margin-right: 20px;
+}
 
 /* 최근연주회 */
 
