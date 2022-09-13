@@ -32,26 +32,26 @@ button {
 }
 
 header {
-    width: 80%;
-    height: 200px;
-    padding: 0 5%;
+    width: 90%;
+    /* height: 200px; */
+    /* padding: 0 5%; */
     margin: 0 auto;
 }
 
 .main_head {
     position: relative;
     height: 100px;
-    border-bottom: 2px solid #BE7743;
+    border-bottom: 1px solid rgb(200, 200, 200);
 }
 
 .nav {
-    margin-top: 20px;
+    margin-top: 30px;
     float: right;
 }
 
 .mainlogo img {
-    margin-left: 1%;
-    height: 90px;
+    margin-left: 10px;
+    height: 50px;
     float: left;
 }
 
@@ -69,13 +69,11 @@ header {
 }
 
 .nav>ul>li>a {
-    color: #BE7743;
+    color: black;
 }
 
 .nav>ul>li>a:hover {
-    color: #784520;
-    /* font-weight: bold; */
-    border-bottom: 2px solid #784520;
+    border-bottom: 2px solid black;
 }
 
 .small_menu {
@@ -163,26 +161,35 @@ header article {
 }
 
 header{
-    height: 200px;
+    /* height: 180px; */
+    
 }
 .main_head{
-    height: 100px;
+    height: 80px;
+    z-index: 999;
 }
 .mainlogo img{
-    margin-top: 10px;
-    height: 75px;
+    margin-top: 20px;
+    height: 40px;
 }
 .nav>ul{
-    height: 80px;
-    line-height: 80px;
+    height: 30px;
+    line-height: 30px;
 }
 .nav>ul>li {
     float: left;
-    font-size: 2.7rem;
-    padding: 0 3vw 0 1.2vw;
+    
+    padding: 0 2vw 0 2.2vw;
     position: relative;
 }
-.head3_line_f {
+.nav>ul>li>a {
+    font-size: 16px;
+    display: block;
+    line-height: 30px;
+    padding-left: 2px;
+    letter-spacing: 2px;
+}
+/* .head3_line_f {
     height: 40px;
 }
 
@@ -193,7 +200,27 @@ header{
 
 .head3_line_s {
     height: 40px;
+} */
+
+.nav_notice{
+    height: 200px;
+    margin-top: 5px;
+    background: linear-gradient(to right, rgba(245, 207, 172, 1), rgba(255, 250, 205, 1));
 }
+.notice_title{
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 50px 0 25px 0;
+}
+.notice_title a{
+    font-size: 2.5rem;
+    color: black;
+}
+.notice_exp{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
 footer {
     position: relative;
     background-color: #393939;
@@ -261,11 +288,18 @@ footer {
 }
 
 
+
+
+
+
+
+
+
 @media (max-width : 1023px){
     * {
         font-size: 55%;
     }
-    header{
+    /* header{
         height: 180px;
     }
     .main_head{
@@ -280,7 +314,7 @@ footer {
     }
     .nav>ul>li {
         font-size: 3rem;
-    }
+    } */
     .head3_line_f {
         height: 40px;
     }
