@@ -34,7 +34,7 @@
     <header>
         <div class="main_head">
             <div class="mainlogo">
-                <a href="./"><img src="./image/main/kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
+                <a href="./"><img src="./image/main/page_logo_white.png" alt="KUPHIL 흰색로고"></a>
             </div>
             <nav class="nav">
                 <ul>
@@ -72,44 +72,36 @@
             </script>
         </div>
     </header>
-
-    <section>
-        <div class="main_slide">
-            <div class="slide_area">
-                <ul>
-                    <li class="slide_list slide_main">
-                        <img src="./image/main/mainimg.png" alt="제 38회 정기연주회 무대 단체사진">
-                    </li>
-                    <li class="slide_list">
-                        <div class="slide_archive">
-                            <div>
-                                <img src="./image/poster/poster_<%=id_one%>.jpg" alt="제<%=id_one%>회 정기연주회 포스터">
-                                <img src="./image/poster/poster_<%=id_two%>.jpg" alt="제<%=id_two%>회 정기연주회 포스터">
-                            </div>
-                            <div>
-                                <p class="slide_archive_title">쿠필의 역대 연주회가<br>궁금하다면?!</p>
-                                <p class="slide_archive_text"><a href="./archive">보러 가기 >></a></p>
-                            </div>
+            <!-- 메인 이미지 슬라이드 -->
+    <div class="main_slide">
+        <div class="slide_area">
+            <ul>
+                <li class="slide_list slide_main">
+                    <img src="./image/main/mainslide.png" alt="제 38회 정기연주회 무대 단체사진">
+                </li>
+                <li class="slide_list">
+                    <div class="slide_archive">
+                        <div>
+                            <img src="./image/poster/poster_<%=id_one%>.jpg" alt="제<%=id_one%>회 정기연주회 포스터">
+                            <img src="./image/poster/poster_<%=id_two%>.jpg" alt="제<%=id_two%>회 정기연주회 포스터">
                         </div>
-                    </li>
-                    <li class="slide_list">
-                        <div class="slide_gamecenter">
-                            <div>
-                                <p class="slide_gamecenter_title">강두연 최고</p>
-                                <p class="slide_gamecenter_text"><a href="./gamecenter">놀러 가기 >></a></p>
-                            </div>
-                            <div>
-                                <img src="./image/main/main_gamecenter.png" alt="Game Center 썸네일">
-                            </div>
+                        <div>
+                            <p class="slide_archive_title">쿠필의 역대 연주회가<br>궁금하다면?!</p>
+                            <p class="slide_archive_text"><a href="./archive">보러 가기 >></a></p>
                         </div>
-                    </li>
-                </ul>
-            </div>
-            <div onclick="prevSlide();" class="prev" ></div>
-            <div onclick="nextSlide();" class="next"></div>
+                    </div>
+                </li>
+                <li class="slide_list">
+    
+                </li>
+            </ul>
         </div>
+        <!-- <div onclick="prevSlide();" class="prev" ></div>
+                <div onclick="nextSlide();" class="next"></div> -->
+    </div>
+    
+    <section>
 
-        <!-- 메인 이미지 슬라이드 -->
         <script>
             let index = 0;//이미지에 접근하는 인덱스
             window.onload = function () {
