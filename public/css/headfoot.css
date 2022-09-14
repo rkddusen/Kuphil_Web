@@ -1,5 +1,4 @@
-/* 헤더와 푸터를 위한 css
-헤더와 푸터 스타일 변경하고 싶을 때 여기서 하면 됩니다. */
+/* 헤더와 푸터를 위한 css */
 
 /* css 기본 세팅*/
 /* font-size 62.5%인 이유 : font-size에 rem이라는 단위를 쓰려고 하는데, 브라우저가 지정해주는 기본 폰트 사이즈는 100% = 16px임. 그래서 62.5% = 10px로 바꿔주려고 함 */
@@ -24,8 +23,10 @@ span {
 img {
     border: 0;
 }
-/* 마우스를 더블클릭하거나 드래그하는와중에, button 속에 text 가 선택됨. 이것을 방지 */
+
 button {
+    /* 마우스를 더블클릭하거나 드래그하는와중에, 
+    button 속에 text 가 선택됨. 이것을 방지 */
     user-select: none;
     cursor: pointer;
     color: black;
@@ -33,14 +34,13 @@ button {
 
 header {
     width: 90%;
-    /* height: 200px; */
-    /* padding: 0 5%; */
     margin: 0 auto;
 }
 
 .main_head {
     position: relative;
-    height: 100px;
+    height: 80px;
+    z-index: 999;
     border-bottom: 1px solid rgb(200, 200, 200);
 }
 
@@ -51,30 +51,57 @@ header {
 
 .mainlogo img {
     margin-left: 10px;
-    height: 50px;
+    margin-top: 20px;
+    height: 40px;
     float: left;
 }
 
 .nav>ul {
     float: left;
-    height: 80px;
-    line-height: 80px;
+    height: 30px;
+    line-height: 30px;
 }
 
 .nav>ul>li {
     float: left;
-    font-size: 3rem;
-    padding: 0 3vw 0 1.2vw;
+    padding: 0 2vw 0 2.2vw;
     position: relative;
 }
 
 .nav>ul>li>a {
     color: black;
+    font-size: 18px;
+    display: block;
+    line-height: 30px;
+    letter-spacing: 2px;
+    /* letter-spacing으로 오른쪽 부분이 2px더 늘어나게 되어 
+    padding-left로 2px늘려줘서 대칭을 맞춤*/
+    padding-left: 2px;
 }
 
 .nav>ul>li>a:hover {
     border-bottom: 2px solid black;
 }
+
+.nav_notice{
+    height: 200px;
+    margin-top: 5px;
+    background: linear-gradient(to right, rgba(245, 207, 172, 1), rgba(255, 250, 205, 1));
+}
+.notice_title{
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 50px 0 25px 0;
+}
+.notice_title a{
+    font-size: 2.5rem;
+    color: black;
+}
+.notice_exp{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
 
 .small_menu {
     position: absolute;
@@ -124,55 +151,15 @@ header {
     color: white;
 }
 
-header article {
-    display: flex;
-    justify-content: space-between;
-}
-
-.head3_line_f {
-    width: 5%;
-    height: 50px;
-    border-bottom: 2px solid #BE7743;
-}
-
-.head3_name {
-    margin-top: 25px;
-    height: 60px;
-    font-size: 3rem;
-    font-weight: bold;
-    color: #784520;
-}
-
-.head3_line_s {
-    height: 50px;
-    width: 65%;
-    border-bottom: 2px solid #BE7743;
-}
-
-.head3_archive_a,
-.head3_calendar_a,
-.head3_lab_a,
-.head3_test_a,
-.head3_gamecenter_a,
-.head3_qna_a,
-.head3_tos_a,
-.head3_cooperation_a {
-    color: #784520;
-}
-
-header{
-    /* height: 180px; */
-    
-}
-.main_head{
+/* .main_head{
     height: 80px;
     z-index: 999;
-}
-.mainlogo img{
+} */
+/* .mainlogo img{
     margin-top: 20px;
     height: 40px;
-}
-.nav>ul{
+} */
+/* .nav>ul{
     height: 30px;
     line-height: 30px;
 }
@@ -188,39 +175,15 @@ header{
     line-height: 30px;
     padding-left: 2px;
     letter-spacing: 2px;
-}
-/* .head3_line_f {
-    height: 40px;
-}
-
-.head3_name {
-    margin-top: 20px;
-    height: 60px;
-}
-
-.head3_line_s {
-    height: 40px;
 } */
 
-.nav_notice{
-    height: 200px;
-    margin-top: 5px;
-    background: linear-gradient(to right, rgba(245, 207, 172, 1), rgba(255, 250, 205, 1));
-}
-.notice_title{
-    text-align: center;
-    font-size: 2.5rem;
-    padding: 50px 0 25px 0;
-}
-.notice_title a{
-    font-size: 2.5rem;
-    color: black;
-}
-.notice_exp{
-    text-align: center;
-    font-size: 1.5rem;
-}
 
+
+
+
+
+
+/* footer */
 footer {
     position: relative;
     background-color: #393939;
