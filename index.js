@@ -601,6 +601,10 @@ server.get("/policy", (req, res) => {
     res.sendFile(__dirname + "/public/html/policy.html");
 });
 
+server.get("/audio", (req, res) => {
+    res.sendFile(__dirname + "/public/html/audio.html");
+});
+
 server.use((req, res) => {
     res.sendFile(__dirname + "/public/html/404.html");
 });
@@ -614,3 +618,5 @@ http.createServer(server).listen(server.get("port"), server.get("host"), () => {
             server.get("port")
     );
 });
+
+
