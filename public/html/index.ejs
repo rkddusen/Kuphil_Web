@@ -76,7 +76,7 @@
         <div class="slide_area">
             <ul>
                 <li class="slide_list slide_main">
-                    <img src="./image/main/mainslide.png" alt="제 38회 정기연주회 무대 단체사진">
+                    <img src="./image/main/mainimg2.jpg" alt="제 38회 정기연주회 무대 단체사진">
                 </li>
                 <li class="slide_list">
                     <div class="slide_archive">
@@ -97,13 +97,8 @@
                 </li>
             </ul>
         </div>
-        <!-- <div onclick="prevSlide();" class="prev" ></div>
-                <div onclick="nextSlide();" class="next"></div> -->
     </div>
-    
-    <section>
-
-        <script>
+    <script>
             let index = 0;//이미지에 접근하는 인덱스
             window.onload = function () {
                 slideShow();
@@ -133,122 +128,110 @@
                 }
 
             }
-            // const TimeoutId = setTimeout(() => console.log('timeout'), 1000);
-
-
-            // function prevSlide(){
-            //     for (let i = 0; i < TimeoutId; i++) {
-            //         clearTimeout(i);
-            //     }
-            //     if(index == 0){
-            //         index = 1;
-            //         slideNext();
-            //     }
-            //     else{
-            //         index--;
-            //         slideNext();
-            //     }
-            // }
-            // function nextSlide(){
-            //     for (let i = 0; i < TimeoutId; i++) {
-            //         clearTimeout(i);
-            //     }
-            //     if(index == slide.length - 1){
-            //         index = 0;
-            //         slideShow();
-            //     }
-            //     else{
-            //         slideNext();
-            //     }
-                
-            // }
         </script>
-        
+
+
+    <section>
         <div class="row_3rd">
+            
             <div class="main_wea">
-                <div class="wea">
-                    <img id="weather_icon">
-                </div>
-                <p class="wea_detail">
-                    <span id="weather_temp"></span>
-                    <span id="weather_desc"></span>
-                    <span id="weather_humidity"></span>
-                    <span id="weather_precipitation"></span>
-                    <span id="weather_info">건국대학교 기준</span>
-                </p>
-            </div>
-        </div>
-        <div class="row_1st">
-            <div class="main_coming">
-                <div class="coming_explain">
-                    <p class="coming_title">Upcoming Event</p>
-                </div>
-                <div class="coming_area">
-                    <article>
-                        <img src="./image/main/이벤트준비중.png" alt="준비중">
-                        <div>
-                            <p class="coming_article_title">2022년 창립제</p>
-                            <p class="coming_article_sub">일시</p>
-                            <p class="coming_article_text">2022.11.03 18:00</p>
-                            <p class="coming_article_sub">장소</p>
-                            <p class="coming_article_text">건국대학교 학관 2층 PRIME홀</p>
-                            <p class="coming_article_sub">내용</p>
-                            <p class="coming_article_text">쿠필의 창립일을 기념하여 학생들이 팀을 꾸려 연주하는 행사입니다!</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </div>
-        <div class="row_2nd">
-            <div class="main_recent">
-                <div class="recent_explain">
-                    <p class="recent_title">Recent Concert</p>
-                </div>
-                <div class="recent_content">
-                    <div>
-                        <iframe src="https://www.youtube.com/embed/qlydoTS6_NY" title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+                <div class="main_wea_content">
+                    <div class="wea">
+                        <img id="weather_icon">
+                        <span id="weather_temp"></span>
+                        <span id="weather_desc"></span>
+                        (<span id="weather_humidity"></span>
+                        <span id="weather_precipitation"></span>)
+                        <span id="weather_info">건국대학교 기준</span>
                     </div>
                 </div>
             </div>
-
+            <div class="main_recru">
+                <div class="main_recru_content">
+                    <div class="recru_explain">
+                        <p class="recru_title">Recruitment</p>
+                    </div>
+                    <div class="recru_area">
+                        <p>쿠필과 함께할<br>신입 부원을<br>모집합니다.🌱</p>
+                    </div>
+                </div>
+            </div>
+        <div class="main_arcade">
+                <div class="main_arcade_content">
+                    <div class="arcade_explain">
+                        <p class="arcade_title">Arcade</p>
+                    </div>
+                    <div class="arcade_area">
+                            <p>클래식을 놀이로 즐겨봐~</p>
+                    </div>
+                    <div class="arcade_img">
+                        <img src="./image/arcade.png" alt="arcade">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row_1st">
+        
+        </div>
+        <div class="row_2nd">
+            <div class="main_recent">
+                <div class="main_recent_content">
+                    <div class="recent_explain">
+                        <p class="recent_title">Recent Concert</p>
+                    </div>
+                    <div class="recent_content">
+                        <div>
+                            <iframe src="https://www.youtube.com/embed/qlydoTS6_NY" title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
         </div>
         <div class="row_0">
+            
+        </div>
+        <div class="row_4th">
             <div class="main_tip">
-                <div class="tip_explain">
-                    <div>
-                        <p class="tip_contents">
-                            Tip) <%= tip %>
+                <div class="main_tip_content">
+                    <div class="tip_explain">
+                        <p class="tip_title">Today's TIP</p>
+                    </div>
+                    <div class="tip_contents">
+                        <p>
+                            <%= tip %>
                         </p>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row_4th">
             <div class="main_suggest">
-                <div class="suggest_explain">
-                    <p class="suggest_title">제휴 제안</p>
-                </div>
-                <a href="./cooperation">
-                    바로 가기 >>
-                </a>
-                <div class="suggest_image">
-                    <img src="./image/suggest.jpg" alt="제휴제안">
+                <div class="main_suggest_content">
+                    <div class="suggest_explain">
+                        <p class="suggest_title">제휴 제안</p>
+                    </div>
+                    <!-- <a href="./cooperation">
+                        바로 가기 >>
+                    </a> -->
+                    <div class="suggest_image">
+                        <img src="./image/suggest.jpg" alt="제휴제안">
+                    </div>
                 </div>
             </div>
             <div class="main_sns">
-                <div class="sns_explain">
-                    <p class="sns_title">쿠필 sns</p>
-                </div>
-                <div class="show">
-                    <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA"><img src="./image/유튜브2.png"
-                            alt="유튜브"></a>
-                    <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank"><img
-                            src="./image/인스타그램1.png" alt="인스타그램"></a>
-                    <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank"><img src="./image/페이스북.png"
-                            alt="페이스북"></a>
+                <div class="main_sns_content">
+                    <div class="sns_explain">
+                        <div class="sns_contents">
+                            <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA"><img src="./image/유튜브2.png"
+                                alt="유튜브"></a>
+                            <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank"><img src="./image/인스타그램1.png"
+                                alt="인스타그램"></a>
+                            <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank"><img src="./image/페이스북.png"
+                                alt="페이스북"></a>
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
         </div>
