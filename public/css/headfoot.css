@@ -98,32 +98,6 @@ header {
     font-size: 1.5rem;
 }
 
-.small_menu_open {
-    display: none;
-    position: fixed;
-    left: 100%;
-    background-color: rgb(255, 255, 255);
-    height: 100%;
-    width: 50%;
-    z-index: 5;
-    transition: all 0.3s linear;
-}
-.small_menu_open.active{
-    left: 50%;
-    
-}
-.small_menu_open nav{
-    text-align: center;
-    margin-top: 10vh;
-}
-.small_menu_open nav ul li{
-    font-size: 4.5rem;
-    
-}
-.small_menu_open nav ul li a{
-    color: black;
-}
-
 
 /* footer */
 footer {
@@ -203,36 +177,62 @@ footer {
     z-index: 6;
     width: 30px;
     height: 25px;
-  }
-  .ham span {
+}
+.ham span {
     display: block;
     background: #000;
     width: 30px;
     height: 4px;
     border-radius: 3px;
     transition: margin 0.25s 0.25s, transform 0.25s ;
-  }
-  .ham .bar1 {margin-bottom: 6px;}
-  .ham .bar2 {}
-  .ham .bar3 {margin-top: 6px;}
+}
+.ham .bar1 {margin-bottom: 6px;}
+.ham .bar2 {}
+.ham .bar3 {margin-top: 6px;}
   
-  .ham.active span {
+.ham.active span {
     transition: margin 0.25s, transform 0.25s 0.25s;
-  }
+}
   
-  .ham.active .bar1 {
+.ham.active .bar1 {
     margin-top: 12px;
     margin-bottom: -4px;
     transform: rotate(45deg);
-  }
-  .ham.active .bar2 {
+}
+.ham.active .bar2 {
     transform: rotate(45deg);
     
-  }
-  .ham.active .bar3 {
+}
+.ham.active .bar3 {
     margin-top: -4px;
     transform: rotate(135deg);
-  }
+}
+
+.small_menu_open {
+    display: none;
+    position: fixed;
+    left: 100%;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 50%;
+    z-index: 5;
+    transition: all 0.3s linear;
+}
+.small_menu_open.active{
+    left: 50%;
+    
+}
+.small_menu_open nav{
+    text-align: center;
+    margin-top: 10vh;
+}
+.small_menu_open nav ul li{
+    font-size: 4.5rem;
+    
+}
+.small_menu_open nav ul li a{
+    color: black;
+}
 
 
 @media (max-width : 1023px){
@@ -277,34 +277,6 @@ footer {
     * {
         /* 8px */
         font-size: 45%;
-    }
-    header{
-        height: 125px;
-    }
-    .main_head{
-        height: 45px;
-    }
-    .mainlogo img{
-        height: 35px;
-    }
-    .nav {
-        display: none;
-    }
-    .small_menu {
-        display: block;
-    }
-    .head3_line_f {
-        height: 25px;
-    }
-    
-    .head3_name {
-        margin-top: 5px;
-        font-size: 3rem;
-    }
-    
-    .head3_line_s {
-        height: 25px;
-        width: 55%;
     }
 
     footer {
