@@ -9,14 +9,11 @@
     font-family: 'Noto Sans', sans-serif;
     font-size: 62.5%;
 }
-ul,
-li {
+ul, li {
     list-style: none;
 }
 
-a,
-p,
-span {
+a, p, span {
     text-decoration: none;
 }
 
@@ -44,16 +41,16 @@ header {
     border-bottom: 1px solid rgb(200, 200, 200);
 }
 
-.nav {
-    margin-top: 30px;
-    float: right;
-}
-
 .mainlogo img {
     margin-left: 10px;
     margin-top: 20px;
     height: 40px;
     float: left;
+}
+
+.nav {
+    margin-top: 30px;
+    float: right;
 }
 
 .nav>ul {
@@ -65,7 +62,6 @@ header {
 .nav>ul>li {
     float: left;
     padding: 0 2vw 0 2.2vw;
-    position: relative;
 }
 
 .nav>ul>li>a {
@@ -90,11 +86,11 @@ header {
 }
 .notice_title{
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3rem;
     padding: 50px 0 25px 0;
 }
 .notice_title a{
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: black;
 }
 .notice_exp{
@@ -102,42 +98,19 @@ header {
     font-size: 1.5rem;
 }
 
-
-.small_menu {
-    position: absolute;
-    display: none;
-    top: 50%;
-    right: 5%;
-    height: 100%;
-    transform:translate(0,-50%);
-}
-
-.small_menu p {
-    font-size: 5rem;
-    color: #BE7743;
-}
-.small_menu p:hover{
-    cursor: pointer;
-}
-
 .small_menu_open {
     display: none;
     position: fixed;
-    right: 0;
-    background-color: #BE7743;
+    left: 100%;
+    background-color: rgb(255, 255, 255);
     height: 100%;
     width: 50%;
-    z-index: 3;
+    z-index: 5;
+    transition: all 0.3s linear;
 }
-.small_menu_open p{
-    position: fixed;
-    font-size: 4rem;
-    right: 10%;
-    top: 10px;
-    color: white;
-}
-.small_menu_open p:hover{
-    cursor: pointer;
+.small_menu_open.active{
+    left: 50%;
+    
 }
 .small_menu_open nav{
     text-align: center;
@@ -148,39 +121,8 @@ header {
     
 }
 .small_menu_open nav ul li a{
-    color: white;
+    color: black;
 }
-
-/* .main_head{
-    height: 80px;
-    z-index: 999;
-} */
-/* .mainlogo img{
-    margin-top: 20px;
-    height: 40px;
-} */
-/* .nav>ul{
-    height: 30px;
-    line-height: 30px;
-}
-.nav>ul>li {
-    float: left;
-    
-    padding: 0 2vw 0 2.2vw;
-    position: relative;
-}
-.nav>ul>li>a {
-    font-size: 16px;
-    display: block;
-    line-height: 30px;
-    padding-left: 2px;
-    letter-spacing: 2px;
-} */
-
-
-
-
-
 
 
 /* footer */
@@ -250,45 +192,52 @@ footer {
     float: right;
 }
 
-
-
-
-
-
-
+/* hamberger menu */
+.ham {
+    display: none;
+    position: absolute;
+    top: 50%; right: 0%;
+    margin-right: 10px;
+    transform: translate(0, -50%);
+    cursor:pointer;
+    z-index: 6;
+    width: 30px;
+    height: 25px;
+  }
+  .ham span {
+    display: block;
+    background: #000;
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    transition: margin 0.25s 0.25s, transform 0.25s ;
+  }
+  .ham .bar1 {margin-bottom: 6px;}
+  .ham .bar2 {}
+  .ham .bar3 {margin-top: 6px;}
+  
+  .ham.active span {
+    transition: margin 0.25s, transform 0.25s 0.25s;
+  }
+  
+  .ham.active .bar1 {
+    margin-top: 12px;
+    margin-bottom: -4px;
+    transform: rotate(45deg);
+  }
+  .ham.active .bar2 {
+    transform: rotate(45deg);
+    
+  }
+  .ham.active .bar3 {
+    margin-top: -4px;
+    transform: rotate(135deg);
+  }
 
 
 @media (max-width : 1023px){
     * {
         font-size: 55%;
-    }
-    /* header{
-        height: 180px;
-    }
-    .main_head{
-        height: 80px;
-    }
-    .mainlogo img{
-        height: 60px;
-    }
-    .nav>ul{
-        height: 60px;
-        line-height: 60px;
-    }
-    .nav>ul>li {
-        font-size: 3rem;
-    } */
-    .head3_line_f {
-        height: 40px;
-    }
-    
-    .head3_name {
-        margin-top: 20px;
-        height: 60px;
-    }
-    
-    .head3_line_s {
-        height: 40px;
     }
 }
 
@@ -297,39 +246,8 @@ footer {
         /* 8px */
         font-size: 50%;
     }
-    header{
-        width: 90%;
-        height: 140px;
-    }
-    .main_head{
-        height: 60px;
-        border-bottom: 1px solid #BE7743;
-    }
-    .mainlogo img{
-        margin-top: 5px;
-        height: 50px;
-    }
-    .nav{
-        margin-top: 10px;
-    }
-    .nav>ul{
-        height: 50px;
-        line-height: 50px;
-    }
-    .head3_line_f {
-        height: 35px;
-        border-bottom: 1px solid #BE7743;
-    }
-    
-    .head3_name {
-        margin-top: 10px;
-        font-size: 3.5rem;
-    }
-    
-    .head3_line_s {
-        height: 35px;
-        border-bottom: 1px solid #BE7743;
-        width: 60%;
+    .nav {
+        display: none;
     }
 
     footer {
@@ -345,6 +263,13 @@ footer {
     }
     .footer_logo {
         display: none;
+    }
+
+    .ham {
+        display: block;
+    }
+    .small_menu_open{
+        display: block;
     }
 }
 
