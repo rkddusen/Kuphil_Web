@@ -1,0 +1,61 @@
+#stc_notice{
+    margin-top: 70px;
+    margin-bottom: 50px;
+    width: 90vw;
+    padding: 0 5vw;
+    font-size: 2.5rem;
+    color: #5C3A1A;
+}
+
+.stc_content{
+    width: 90vw;
+    padding: 0 5vw;
+    min-height: 500px;
+}
+.stc_title_entry, .stc_entry{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px auto;
+}
+.stc_title_entry{
+    margin-bottom: 30px;
+}
+.stc_title_nickname{
+    width: 250px;
+    font-size: 2rem;
+    text-align: center;
+    color: #5C3A1A;
+    font-weight: bold;
+}
+.stc_title_text{
+    width: 500px;
+    font-size: 2rem;
+    text-align: center;
+    color: #5C3A1A;
+    font-weight: bold;
+}
+.stc_nickname{
+    width: 250px;
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: 500;
+}
+.stc_text{
+    width: 500px;
+    font-size: 1.6rem;
+    text-align: center;
+    color: rgb(84, 84, 84);
+}
+
+.stc_page{
+    margin: 30px auto;
+    margin-bottom: 50px;
+}
+.stc_page tr td{
+    padding: 0 7px;
+}
+.stc_page tr td a{
+    font-size: 1.7rem;
+    color: black;
+}

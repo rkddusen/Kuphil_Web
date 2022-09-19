@@ -1,8 +1,8 @@
 .calendar_page{
     display: flex;
     flex-direction: column;
-    width: 90vw;
-    padding: 0 5vw;
+    width: 90%;
+    padding: 0 5%;
     margin: 70px 0;
 }
 .calendar{
@@ -211,11 +211,11 @@ form{
         display: block;
     }
     .calendar_title{
-        width: 90vw;
+        width: 100%;
         padding : 0;
         border: 2px solid #94613C;
         border-bottom-width: 1px;
-        height: 40vw;
+        height: auto;
     }
     .calendar_move{
         margin-bottom: 5px;
@@ -227,17 +227,21 @@ form{
     }
     .calendar_now{
         font-size: 4rem;
+        padding: 15% 0;
     }
     .calendar_now_month{
         font-size: 5.5rem;
     }
     .calendar_table{
-        width: 90vw;
-        height: 70vw;
+        width: 100%;
+        height: auto;
         padding: 0;
         border: 2px solid #94613C;
         border-top-width: 1px;
         border-bottom-width: 1px;
+    }
+    .calendar_table table{
+        padding: 5% 0;
     }
     td{
         width: 7vw;
@@ -251,8 +255,10 @@ form{
         font-size: 2.5vw;
     }
     .schedule_box{
-        width: 90vw;
-        height: 70vw;
+        width: 100%;
+        height: auto;
         padding: 0;
+        min-height: 200px;
+        padding-bottom: 10%;
     }
 }

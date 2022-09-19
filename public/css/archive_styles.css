@@ -1,43 +1,35 @@
 
 
-
-/* 아카이브header css */
-
-
-
-
-/* 아카이브 body css */
-
 .archiveBox{
+    width: 80%;
     height: auto;
     min-height: 90%;
     padding-bottom: 100px;
+    margin: 0 auto;
 }
 
 
 #arc_notice{
-    margin: 2vw auto;
-    width:88vw;
-    padding:0 6vw;
-    font-size: 3rem;
-    line-height:150%;
+    margin-top: 70px;
+    margin-bottom: 50px;
+    width: 90%;
+    font-size: 2.5rem;
     color: #5C3A1A;
 }
 
 .container {
-    width: 90vw;
     margin: 0 auto;
 }
 
 .posterbox_1 {
-    width: 90vw;
+    width: 100%;
     height: 26vw;
     margin: 0 0 5vw 0;
     display: flex;
     justify-content: center;
 }
 .posterbox_2 {
-    width: 90vw;
+    width: 100%;
     height: 26vw;
     margin: 2vw 0 10vw 0;
     display: flex;
@@ -52,6 +44,7 @@
     background-color: #c4c4c4;
 
     transition: all 0.2s linear;
+    float: left;
 
 }
 
@@ -87,33 +80,15 @@
     text-align: center;
     font-weight: 500;
     font-size: 1.7rem;
+    color: #222;
     margin: 1vw;
+    clear: left;
 }
-
-@media (max-width: 880px) {
-    .poster_title {
-        text-align: center;
-        font-weight: 500;
-        font-size: 1.2rem;
-        margin: 1vw;
-    }
-}
-
-/* @media (max-width: 500px) {
-    .poster_title {
-        text-align: center;
-        font-weight: 500;
-        font-size: 8rem;
-        margin: 1vw;
-    }
-} */
-
-
 
 
 .loadposters {
-    width: 90vw;
-    margin: 0 auto;
+    width: 100%;
+    /* margin: 0 5%; */
     display: flex;
     justify-content: space-between;
 }
@@ -122,133 +97,243 @@
     cursor: pointer;
     content: '';
     display:inline-block;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     margin-left: 5px;
-    border-top: 2px solid #222;
-    border-right: 2px solid #222;
+    border-top: 3px solid #BE7743;
+    border-right: 3px solid #BE7743;
     transform: rotate(-135deg);
 }
-.prev_btn:hover {
-    cursor: pointer;
-    content: '';
-    display:inline-block;
-    width: 20px;
-    height: 20px;
-    margin-left: 5px;
-    border-top: 1px solid #999;
-    border-right: 1px solid #999;
-    transform: rotate(-135deg);
-}
+
+
 
 .next_btn {
     cursor: pointer;
     content: '';
     display:inline-block;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     margin-left: 5px;
-    border-top: 2px solid #222;
-    border-right: 2px solid #222;
+    border-top: 3px solid #BE7743;
+    border-right: 3px solid #BE7743;
     transform: rotate(45deg);
 }
 
-.next_btn:hover {
-    cursor: pointer;
-    content: '';
-    display:inline-block;
-    width: 20px;
-    height: 20px;
-    margin-left: 5px;
-    border-top: 1px solid #999;
-    border-right: 1px solid #999;
-    transform: rotate(45deg);
-}
-
-button{
-    all: unset;
-    background-color: #DFC7B4;
-    color: white;
-    padding: 1vw 2vw;
-    border-radius: 5%;
-    border:5px;
-    cursor:pointer;
-}
-
-#close{
-    font-size: 1.6rem;
-}
-
-.modal{
-    position: fixed;
-    top: 0;
-    left:0;
-    width:100%;
-    height:100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal_overlay{
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-}
-
-.modal_content{
-    background-color: white;
-    width: 65%;
-    text-align: center;
-    position: relative;
-    top: 0;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    padding: 3vw;
-
-}
-
-.modal_content img{
-    float: right;
-    width: 25%;
-    height: 40%;
-    /* width: 292.8px;
-    height: 414px; */
-    
-
-}
-
-.modal_content .modal_text {
-    text-align: left;
-    margin: 0 auto;
-
-}
-
-.modal_content .modal_text h1{
-    font-size: 2.5rem;
-    text-align: left;
-
-
-}
-
-.modal_content .modal_text .modal_text_1{
-
-    text-align: left;
-    padding: 3vw 0;
-}
-
-.modal_content .modal_text .modal_text_1 h3{
-    font-size: 1.5rem;
-    padding: 1vw 0;
-}
-
-.modal_content .modal_text .modal_text_2 h3{
-    font-size: 1.5rem;
-    padding: 1vw 0;
-}
 
 
 .hidden{
     display: none;
+}
+
+
+/* 아카이브 상세 페이지 CSS */
+
+.archiveBox .container_2{
+    display: flex;
+    flex-direction: row;
+}
+
+.arc_concert_poster{
+    /* 포스터 사이즈가 규격에 맞지 않으면 잘려서 출력됨 */
+    width: 29.4vw;
+    height: 41.4vw;
+    margin: 0 3% 0 0 ;
+}
+
+
+.concert_info {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    margin: 0 2vw;
+}
+
+
+.arc_concert_title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 2vw;
+}
+
+.concert_detail{
+    text-align: left;
+    display: inline-block;
+}
+
+.arc_info_bold{
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.detail{
+    font-weight: 100;
+    font-size: 2rem;
+}
+
+.concert_text1{
+    font-size: 2.5rem;
+}
+
+.arc_concert_place{
+    margin-bottom: 1vw;
+}
+
+.arc_concert_date{
+    margin-bottom: 1vw;
+}
+
+.arc_concert_conductor{
+    margin-bottom: 1vw;
+}
+
+.concert_text2{
+    font-size: 2rem;
+    margin: 2vw 0;
+    padding-top: 2vw;
+    border-top: 1px solid #BE7743;
+}
+
+.concert_program_list{
+    margin: 1vw 1vw;
+}
+
+.concert_program_composer{
+    font-size: 1.5rem;
+}
+
+.concert_program_song{
+    font-size: 1.5rem;
+}
+
+
+.arc_concert_link{
+    margin: 3vw 0;
+
+}
+
+
+
+
+
+@media (max-width: 1023px) {
+
+    .archiveBox{
+        width: 80%;
+    }
+    
+    #arc_notice{
+        margin-top: 50px;
+    }
+    .concert_text1{
+        font-size: 1.5rem;
+    }
+
+    .arc_concert_poster{
+        max-width: 300px;
+        height: 100%;
+    }
+
+    .arc_info_bold{
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .detail {
+        font-size: 1.5rem;
+    }
+
+    
+
+}
+
+
+@media (max-width: 767px) {
+
+    .archiveBox{
+        width: 80%;
+    }
+    
+    #arc_notice{
+        margin-top: 30px;
+    }
+
+    .archiveBox .container_2{
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .prev_btn {
+        width: 15px;
+        height: 15px;
+    }
+
+    .next_btn {
+        width: 15px;
+        height: 15px;
+    }
+
+    .arc_concert_poster{
+        width: 40%;
+        height: 40%;
+        margin: 0 auto;
+    }
+
+    .arc_concert_title {
+        font-size: 2.5rem;
+        margin: 3vw;
+    }
+
+    .concert_detail{
+        align-self: center;
+    }
+
+    .arc_info_bold{
+        font-weight: bold;
+    }
+
+
+    .concert_text1{
+        font-size: 1rem;
+    }
+
+    .concert_text2{
+        font-size: 1rem;
+    }
+
+    .concert_program_list{
+        margin: 1vw 0 0 1vw;
+    }
+
+    .concert_program_composer{
+        font-size: 1rem;
+    }
+
+    .concert_program_song{
+        font-size: 1rem;
+    }
+
+
+
+}
+
+@media (max-width: 479px) {
+    #arc_notice{
+        margin-top: 15px;
+    }
+
+    .prev_btn {
+        width: 6px;
+        height: 6px;
+    }
+
+    .next_btn {
+        width: 6px;
+        height: 6px;
+    }
+
+
+
 }

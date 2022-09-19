@@ -1,6 +1,7 @@
 .game_area {
-    width: 90vw;
-    padding: 30px 5vw;
+    width: 80%;
+    padding: 30px 5%;
+    margin: 0 auto;
     height: auto;
     min-height: 100%;
 }
@@ -111,6 +112,9 @@
     }
 }
 @media (max-width : 767px){
+    .game_area {
+        width: 90%;
+    }
     .game_area>div:first-child{
         width: 370px;
         height: 25px;
@@ -143,6 +147,9 @@
     .game_button td{
         width: 60px;
         height: 60px;
+    }
+    .subCan{
+        font-size: 1.4rem;
     }
 }
 @media (max-width : 479px){
@@ -177,5 +184,8 @@
     .game_button td{
         width: 50px;
         height: 50px;
+    }
+    .subCan{
+        font-size: 1.2rem;
     }
 }

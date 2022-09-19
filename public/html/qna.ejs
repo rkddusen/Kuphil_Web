@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../css/headfoot.css">
     <link rel="stylesheet" type="text/css" href="../css/qna.css">
+    <!--Google Web Font를 이용하기 위한 link들 삽입-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Poiret+One&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
@@ -31,13 +35,13 @@
     <header>
         <div class="main_head">
             <div class="mainlogo">
-                <a href="../"><img src="../image/main/kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
+                <a href="../"><img src="../image/main/page_logo_black.png" alt="KUPHIL 흰색로고"></a>
             </div>
             <nav class="nav">
                 <ul>
                     <li><a href="../introduce">소개</a></li>
                     <li><a href="../archive">아카이브</a></li>
-                    <li><a href="../calendar">달력</a></li>
+                    <li><a href="../qna">Q&A</a></li>
                     <li><a href="../gamecenter">놀이터</a></li>
                     <li><a href="../lab">실험실</a></li>
                 </ul>
@@ -52,7 +56,7 @@
                     <ul>
                         <li><a href="../introduce">소개</a></li>
                         <li><a href="../archive">아카이브</a></li>
-                        <li><a href="../calendar">달력</a></li>
+                        <li><a href="../qna">Q&A</a></li>
                         <li><a href="../gamecenter">놀이터</a></li>
                         <li><a href="../lab">실험실</a></li>
                     </ul>
@@ -68,11 +72,15 @@
                 }
             </script>
         </div>
-        <article>
-            <div class="head3_line_f"></div>
-            <div class="head3_name"><a class="head3_qna_a" href="../qna">쿠필 지식인</a></div>
-            <div class="head3_line_s"></div>
-        </article>
+        <div class="nav_notice">
+            <p class="notice_title">
+                <a href="../qna">Q & A</a>
+            </p>
+            <p class="notice_exp">
+                소개하고 연혁입니다.<br>
+                소개하고 연혁입니다.
+            </p>
+        </div>
     </header>
 
     <!-- 내용 -->
@@ -85,8 +93,10 @@
             <div class="qna_question_add">
                 <form action="/qna/questionSubmit" method="post" onsubmit="return questionDoAction();">
                     <strong>Q.</strong><br>
-                    <input type="text" class="qna_question_add_title" name="qna_title" placeholder="제목을 작성하세요."/><br>
-                    <input type="text" class="qna_question_add_textarea" placeholder="질문을 작성하세요." name="qna_question" /><br>
+                    <input type="text" class="qna_question_add_title" name="qna_title" placeholder="제목을 작성하세요." autocomplete='off'/><br>
+                    <input type="text" class="qna_question_add_textarea" placeholder="질문을 작성하세요." name="qna_question" autocomplete='off'/><br>
+                    <input type="password" class="qna_question_add_password" placeholder="비밀번호를 작성하세요." name="qna_password" autocomplete='off'/><br>
+                    <input type="text" class="qna_question_add_date" name="qna_date" value="0000-00-00" style="display: none;"/>
                     <div>
                         <button name="submit" class="qna_question_add_subCan">작성</button>
                         <button type="button" name="cancel" onclick="qna_question_add_cancel();" class="qna_question_add_subCan">취소</button>
@@ -168,7 +178,6 @@
             <li><a href="#">오시는 길</a></li>
             <li><a href="#">이용 약관</a></li>
             <li><a href="#">제휴 제안</a></li>
-            <li><a href="#">개인정보 처리방침</a></li>
         </div>
         <div class="footer_second">
             <div class="footer_logo">
@@ -177,7 +186,7 @@
             </div>
             <div class="footer_explain">
 
-                <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+                <p>서울특별시 광진구 능동로 120 제2학생회관 B117호</p>
                 <p>후원 | ##은행 #####</p><br>
                 <p>copyright 2021 KUPHIL, All rights reserved.</p>
             </div>
@@ -196,7 +205,7 @@
         </div>
         <div class="small_footer_explain">
 
-            <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
+            <p>서울특별시 광진구 능동로 120 제2학생회관 B117호</p>
             <p>후원 | ##은행 #####</p><br>
             <p>copyright 2021 KUPHIL, All rights reserved.</p>
         </div>

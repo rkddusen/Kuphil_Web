@@ -5,7 +5,12 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="./css/headfoot.css">
     <link rel="stylesheet" type="text/css" href="./css/archive_styles.css">
+    <!--Google Web Font를 이용하기 위한 link들 삽입-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Poiret+One&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
@@ -30,13 +35,18 @@
     <header>
         <div class="main_head">
             <div class="mainlogo">
-                <a href="./"><img src="./image/main/kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
+                <a href="./"><img src="./image/main/page_logo_black.png" alt="KUPHIL 흰색로고"></a>
             </div>
+            <!-- <div class="head1">
+                <div>
+                    <a href="./login">로그인</a>
+                </div>
+            </div> -->
             <nav class="nav">
                 <ul>
                     <li><a href="./introduce">소개</a></li>
                     <li><a href="./archive">아카이브</a></li>
-                    <li><a href="./calendar">달력</a></li>
+                    <li><a href="./qna">Q&A</a></li>
                     <li><a href="./gamecenter">놀이터</a></li>
                     <li><a href="./lab">실험실</a></li>
                 </ul>
@@ -51,7 +61,7 @@
                     <ul>
                         <li><a href="./introduce">소개</a></li>
                         <li><a href="./archive">아카이브</a></li>
-                        <li><a href="./calendar">달력</a></li>
+                        <li><a href="./qna">Q&A</a></li>
                         <li><a href="./gamecenter">놀이터</a></li>
                         <li><a href="./lab">실험실</a></li>
                     </ul>
@@ -67,21 +77,21 @@
                 }
             </script>
         </div>
-        <article>
-            <div class="head3_line_f"></div>
-            <div class="head3_name"><a class="head3_calendar_a" href="./archive">아카이브</a></div>
-            <div class="head3_line_s"></div>
-        </article>
-
+        <div class="nav_notice">
+            <p class="notice_title">
+                <a href="./archive">아카이브</a>
+            </p>
+            <p class="notice_exp">
+                소개하고 연혁입니다.<br>
+                소개하고 연혁입니다.
+            </p>
+        </div>
     </header>
     <div class="archiveBox">
-        <div id="arc_notice">
-            <p>쿠필의 역대 정기 연주회 정보를 모아놓은 공간입니다. </p>
-        </div>
         <div class="container">
             <div class="posterbox_1"></div>
             <div class="loadposters">
-                <div onclick= "prevPage();" class="prev_btn"></div>
+                <div onclick= "prevPage();" class="prev_btn" ></div>
                 <div onclick="nextPage();" class="next_btn"></div>
             </div>
             <div class="posterbox_2"></div>
@@ -91,13 +101,11 @@
             </div>
         </div>
     </div>
-        
     <footer>
         <div class="footer_first">
             <li><a href="#">오시는 길</a></li>
             <li><a href="#">이용 약관</a></li>
             <li><a href="#">제휴 제안</a></li>
-            <li><a href="#">개인정보 처리방침</a></li>
         </div>
         <div class="footer_second">
             <div class="footer_logo">
