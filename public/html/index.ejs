@@ -110,7 +110,7 @@
                 index=0;
                 slide[0].style.opacity = '1';
                 slide[0].style.zIndex = "1";
-                setTimeout(slideNext, 1000);//함수를 4초마다 호출
+                setTimeout(slideNext, 4000);//함수를 4초마다 호출
             }
             function slideNext(){
                 
@@ -121,10 +121,10 @@
                 index++;
                 if(index == slide.length - 1){
                     
-                    setTimeout(slideShow, 1000);//함수를 4초마다 호출
+                    setTimeout(slideShow, 4000);//함수를 4초마다 호출
                 }
                 else{
-                    setTimeout(slideNext, 1000);//함수를 4초마다 호출
+                    setTimeout(slideNext, 4000);//함수를 4초마다 호출
                 }
 
             }
