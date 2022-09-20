@@ -81,10 +81,14 @@ header {
 }
 
 .nav_notice{
+    background: linear-gradient(91.48deg, #FFF2E7 0%, rgba(254, 204, 190, 0.57) 100%);
+    box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.1);
+border-radius: 20px;
+
     height: 200px;
-    margin-top: 5px;
-    background: linear-gradient(to right, rgba(245, 207, 172, 1), rgba(255, 250, 205, 1));
-}
+    margin-top: 3%;
+    }
+
 .notice_title{
     text-align: center;
     font-size: 3rem;

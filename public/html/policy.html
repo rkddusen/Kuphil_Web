@@ -47,12 +47,13 @@
                     <li><a href="./lab">실험실</a></li>
                 </ul>
             </nav>
-            <div class="small_menu">
-                <p onclick="smallOpen();">≡</p>
-
+            <div class="ham">
+                <span class="bar1"></span>
+                <span class="bar2"></span>
+                <span class="bar3"></span>
             </div>
+            
             <div class="small_menu_open">
-                <p onclick="smallClose();">X</p>
                 <nav>
                     <ul>
                         <li><a href="./introduce">소개</a></li>
@@ -64,13 +65,10 @@
                 </nav>
             </div>
             <script>
-                let small_menu_open = document.getElementsByClassName("small_menu_open")[0];
-                function smallOpen() {
-                    small_menu_open.style.display = 'block';
-                }
-                function smallClose() {
-                    small_menu_open.style.display = 'none';
-                }
+                $(".ham").click(function(){
+                    $(this).toggleClass("active");
+                    $(".small_menu_open").toggleClass("active");
+                });
             </script>
         </div>
         <div class="nav_notice">
@@ -78,20 +76,14 @@
                 <a href="./policy">이용 약관</a>
             </p>
             <p class="notice_exp">
-                소개하고 연혁입니다.<br>
-                소개하고 연혁입니다.
+                환영합니다.<br>
+                KUPhil 홈페이지를 이용해 주셔서 감사합니다.
             </p>
         </div>
     </header>
     <div class="policy_area">
         <div class="policy">
-            <div class="policy_title">
-                쿠필 이용 약관
-            </div>
-            <br><br><br>
             <div class="policy_hi">
-                환영합니다.<br><br>
-                쿠필 홈페이지를 이용해 주셔서 고맙습니다.<br><br>
                 쿠필 홈페이지는 여러분들이 쿠필과 관련된 정보를 쉽게 이용할 수 있도록 다양한 기능, 서비스(이하 "서비스")를 제공합니다. 이 약관에는 쿠필 홈페이지 서비스 이용에 필요한 중요한 내용이
                 담겨 있습니다.
             </div>

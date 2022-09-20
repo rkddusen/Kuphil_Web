@@ -1,3 +1,7 @@
+.nav_notice{
+
+    background: linear-gradient(91.48deg, rgba(255, 224, 196, 0.44) 0%, #FFFBD9 100%);
+        }
 .notice_title{
     color: #9C8773;
     font-weight:bold;
@@ -17,12 +21,6 @@
     margin: 70px auto;
     display: flex;
     justify-content: space-evenly;
-}
-
-.nav_notice{
-    height: 200px;
-    margin-top: 5px;
-    background: linear-gradient(91.48deg, #FFF8D3 0%, rgba(225, 238, 173, 0.31) 100%);
 }
 
 .Years{

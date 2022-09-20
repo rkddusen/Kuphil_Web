@@ -1,3 +1,7 @@
+.nav_notice{
+    background: linear-gradient(91.48deg, #EFF2FF 0%, rgba(252, 225, 225, 0.31) 100%);
+}
+
 .gameContents{
     padding: 0 5%;
     width: 80%;

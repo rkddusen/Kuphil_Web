@@ -37,11 +37,6 @@
             <div class="mainlogo">
                 <a href="../../"><img src="../../image/main/page_logo_black.png" alt="KUPHIL 흰색로고"></a>
             </div>
-            <!-- <div class="head1">
-                <div>
-                    <a href="./login">로그인</a>
-                </div>
-            </div> -->
             <nav class="nav">
                 <ul>
                     <li><a href="../../introduce">소개</a></li>
@@ -51,12 +46,13 @@
                     <li><a href="../../lab">실험실</a></li>
                 </ul>
             </nav>
-            <div class="small_menu">
-                <p onclick="smallOpen();">≡</p>
-
+            <div class="ham">
+                <span class="bar1"></span>
+                <span class="bar2"></span>
+                <span class="bar3"></span>
             </div>
+
             <div class="small_menu_open">
-                <p onclick="smallClose();">X</p>
                 <nav>
                     <ul>
                         <li><a href="../../introduce">소개</a></li>
@@ -68,13 +64,10 @@
                 </nav>
             </div>
             <script>
-                let small_menu_open = document.getElementsByClassName("small_menu_open")[0];
-                function smallOpen() {
-                    small_menu_open.style.display = 'block';
-                }
-                function smallClose() {
-                    small_menu_open.style.display = 'none';
-                }
+                $(".ham").click(function () {
+                    $(this).toggleClass("active");
+                    $(".small_menu_open").toggleClass("active");
+                });
             </script>
         </div>
         <div class="nav_notice">
@@ -82,8 +75,7 @@
                 <a href="../../archive">아카이브</a>
             </p>
             <p class="notice_exp">
-                소개하고 연혁입니다.<br>
-                소개하고 연혁입니다.
+                KUPhil의 역대 연주회 정보를 모아놓은 공간입니다.
             </p>
         </div>
     </header>

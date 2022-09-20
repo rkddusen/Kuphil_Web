@@ -1,9 +1,18 @@
-.error{
-    vertical-align:middle;
+.nav_notice{
+
+background: linear-gradient(91.48deg, #FFD7CA 0%, rgba(255, 245, 224, 0.899375) 16.67%,
+ rgba(255, 253, 215, 0.773594) 32.81%, rgba(231, 255, 246, 0.633438) 48.96%, 
+ rgba(213, 245, 255, 0.522031) 65.1%, rgba(218, 224, 255, 0.31) 81.25%, 
+ rgba(241, 230, 255, 0.31) 97.92%);
 }
 
-.error>img{
+.error{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.error img{
     width:60%;
-    margin: auto;
-    display:block;
 }
