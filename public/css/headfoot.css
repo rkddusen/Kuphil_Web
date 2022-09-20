@@ -15,6 +15,7 @@ ul, li {
 
 a, p, span {
     text-decoration: none;
+    color: black;
 }
 
 img {

@@ -110,7 +110,7 @@
                 index=0;
                 slide[0].style.opacity = '1';
                 slide[0].style.zIndex = "1";
-                setTimeout(slideNext, 4000);//함수를 4초마다 호출
+                setTimeout(slideNext, 1000);//함수를 4초마다 호출
             }
             function slideNext(){
                 
@@ -121,10 +121,10 @@
                 index++;
                 if(index == slide.length - 1){
                     
-                    setTimeout(slideShow, 4000);//함수를 4초마다 호출
+                    setTimeout(slideShow, 1000);//함수를 4초마다 호출
                 }
                 else{
-                    setTimeout(slideNext, 4000);//함수를 4초마다 호출
+                    setTimeout(slideNext, 1000);//함수를 4초마다 호출
                 }
 
             }
@@ -207,17 +207,19 @@
                 </div>
             </div>
             <div class="main_suggest">
-                <div class="main_suggest_content">
-                    <div class="suggest_explain">
-                        <p class="suggest_title">제휴 제안</p>
+                <a href="./cooperation">
+                    <div class="main_suggest_content">
+                        <div class="suggest_explain">
+                            <p class="suggest_title">제휴 제안</p>
+                        </div>
+                        <!-- 
+                                    바로 가기 >>
+                                </a> -->
+                        <div class="suggest_image">
+                            <img src="./image/suggest.jpg" alt="제휴제안">
+                        </div>
                     </div>
-                    <!-- <a href="./cooperation">
-                        바로 가기 >>
-                    </a> -->
-                    <div class="suggest_image">
-                        <img src="./image/suggest.jpg" alt="제휴제안">
-                    </div>
-                </div>
+                </a>
             </div>
             <div class="main_sns">
                 <div class="main_sns_content">

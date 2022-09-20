@@ -71,9 +71,10 @@
     justify-content: space-evenly;
 }
 .slide_archive div .slide_archive_title{
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: white;
     font-weight: bold;
+    padding-left: 10%;
 }
 .slide_archive div .slide_archive_text{
     text-align: end;
@@ -260,16 +261,15 @@ section {
 }
 .arcade_img{
     position: absolute;
-    width: 50%;
-    right: 10%;
-    bottom: 10%;
+    width: 60%;
+    right: 5%;
+    bottom: 5%;
 }
 .arcade_img img{
     width: 100%;
 }
 
 /* 최근연주회 */
-
 .main_recent{
     position: relative;
     width: 100%;
@@ -377,14 +377,6 @@ section {
     left: 0;
     margin: 25px 0 0 30px;
 }
-
-.main_suggest a{
-    position: absolute;
-    left: 5%;
-    bottom: 10%;
-    font-size: 1.7rem;
-    color: #BE7743;
-}
 .main_suggest .suggest_image{
     width: 70%;
     position: absolute;
@@ -441,7 +433,9 @@ section {
 
 
 @media (max-width : 1023px){
-
+.recru_area p{
+        letter-spacing: 6px;
+    }
 }
 @media (max-width : 767px) {
     #weather_temp, #weather_desc{
@@ -450,7 +444,67 @@ section {
     #weather_humidity, #weather_precipitation{
         font-size: 1rem;
     }
+    .main_wea{
+        width: 100%;
+        height: 0;
+        padding-top: 10%;
+        margin-top: 5%;
+        float: left;
+    }
+    .main_recru{
+        width: 100%;
+        height: 0;
+        padding-top: 40%;
+        margin-top: 5%;
+        float: left;
+    }
     
+    .main_arcade{
+        width: 100%;
+        height: 0;
+        padding-top: 50%;
+        margin-top: 7%;
+        float: left;
+    }
+    .main_recent{
+        width: 100%;
+        height: 0;
+        padding-top: 70%;
+        margin-top: 7%;
+        float: left;
+    }
+    .recent_content{
+        left: 10%;
+        width: 80%;
+    }
+    .recent_content div{
+        padding-top: 60%;
+    }
+    .main_tip{
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-top: 40%;
+        float: left;
+        margin-top: 7%;
+    }
+    .main_suggest{
+        margin-top: 7%;
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-top: 30%;
+        float: left;
+        box-sizing: border-box;
+    }
+    .main_sns{
+        margin-top: 7%;
+        width: 100%;
+        height: 0;
+        padding-top: 20%;
+        float: left;
+        box-sizing: border-box;
+    }
 }
 @media (max-width : 479px) {
 }
