@@ -1,7 +1,13 @@
+
+
+
 .cooperate_with_KUPhil{
+    width: 90%;
+    padding: 0 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 30px;
 }
 
 
@@ -20,7 +26,7 @@
 
 
 .plz1 {
-    width: 80%;
+    width: 90%;
 }
 
 .plz2 {
@@ -112,7 +118,7 @@
 
     .plz2{
         display: flex;
-        width: 80%;
+        width: 90%;
     }
 }
 
@@ -139,7 +145,7 @@
 
     .plz3{
         display: flex;
-        width: 66%;
+        width: 100%;
     }
     
     .contact>img{

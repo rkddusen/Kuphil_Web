@@ -1,6 +1,9 @@
 
 /* 소개 */
+.nav_notice{
 
+    background: linear-gradient(91.48deg, rgba(255, 224, 196, 0.44) 0%, #FFFBD9 100%);
+        }
 .notice_title{
     color: #9C8773;
     font-weight:bold;

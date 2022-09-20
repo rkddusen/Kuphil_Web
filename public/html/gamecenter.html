@@ -45,12 +45,13 @@
                     <li><a href="./lab">실험실</a></li>
                 </ul>
             </nav>
-            <div class="small_menu">
-                <p onclick="smallOpen();">≡</p>
-
+            <div class="ham">
+                <span class="bar1"></span>
+                <span class="bar2"></span>
+                <span class="bar3"></span>
             </div>
+            
             <div class="small_menu_open">
-                <p onclick="smallClose();">X</p>
                 <nav>
                     <ul>
                         <li><a href="./introduce">소개</a></li>
@@ -62,13 +63,10 @@
                 </nav>
             </div>
             <script>
-                let small_menu_open = document.getElementsByClassName("small_menu_open")[0];
-                function smallOpen() {
-                    small_menu_open.style.display = 'block';
-                }
-                function smallClose() {
-                    small_menu_open.style.display = 'none';
-                }
+                $(".ham").click(function(){
+                    $(this).toggleClass("active");
+                    $(".small_menu_open").toggleClass("active");
+                });
             </script>
         </div>
         <div class="nav_notice">
@@ -76,8 +74,8 @@
                 <a href="./gamecenter">놀이터</a>
             </p>
             <p class="notice_exp">
-                소개하고 연혁입니다.<br>
-                소개하고 연혁입니다.
+                개발자들이 이것저것 만들어본 즐길거리들입니다. 재밌게 즐겨주세요 :)<br>
+                [버그 제보 환영]
             </p>
         </div>
     </header>
