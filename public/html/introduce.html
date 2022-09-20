@@ -34,7 +34,7 @@
     <header>
         <div class="main_head">
             <div class="mainlogo">
-                <a href="./"><img src="./image/main/kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
+                <a href="./"><img src="./image/main/page_logo_black.png" alt="KUPHIL 흰색로고"></a>
             </div>
             <nav class="nav">
                 <ul>
@@ -71,17 +71,21 @@
                 }
             </script>
         </div>
-        <article>
-            <div class="head3_line_f"></div>
-            <div class="head3_name"><a class="head3_introduce_a" href="./introduce">소개</a>&ensp;<span>|</span>&ensp;<a class="head3_history_a" href="./history">연혁</a></div>
-            <div class="head3_line_s"></div>
-        </article>
+        <div class="nav_notice">
+            <p class="notice_title">
+                <a href="./introduce" id="introduce_nav">소개</a>&ensp;ㅣ&ensp;<a href="./history" id="history_nav">연혁</a>
+            </p>
+            <p class="notice_exp">
+                담당 교수님 인사말 및 쿠필 소개<br>
+                쿠필 동방 찾아오시는 길 안내
+            </p>
+        </div>
     </header>
 
     <div class="greeting" id="introduce_greeting">
         <span>인사말</span>
         <div id="introduce_welcome">
-            <img src="./image/professor.jpg" alt="교수님 사진">
+            <img src="./image/introduce/professor.jpg" alt="교수님 사진">
             <!--인사말이랑 교수님/임원진/동아리 사진 받아서 넣기-->
             <!--<div id="square"></div>-->
             <p><span>"건국인들의 열정이 모여 만들어진 오케스트라, KUPhil을 소개합니다."</span><br><br>
@@ -103,7 +107,7 @@
 
     <div id="introduce_image">
         <span>About KUPHIL</span>
-        <img src="./image/소개.jpeg" alt="쿠필 소개 이미지">
+        <img src="./image/introduce/소개.jpeg" alt="쿠필 소개 이미지">
     </div>
 
     <div id="path">
@@ -116,7 +120,7 @@
                     <input class="location location3" type="button" value="경영대학 (후문)" onclick="getPath(this);">
                 </div>
                 <div class="path" id="kuphil_room"> 
-                    <img src="./image/map/map_front.jpg" alt="수의대에서 동방 오는 길">
+                    <img src="./image/introduce/map_front.jpg" alt="수의대에서 동방 오는 길">
                 </div>
             </div>
             <div id="stairs">

@@ -1,12 +1,15 @@
+.notice_title{
+    color: #9C8773;
+    font-weight:bold;
+}
 
-.head3_introduce_a{
-    color: #efe2de;
+.notice_title>a{
+    color:#9C8773;
+    font-weight:bold;
 }
-.head3_introduce, .head3_history_a{
-    color: #784520;
-}
-.head3_name>span{
-    font-size:2.7rem;
+
+#history_nav{
+    color:#000000;
 }
 
 #SelectYear {
@@ -14,6 +17,12 @@
     margin: 70px auto;
     display: flex;
     justify-content: space-evenly;
+}
+
+.nav_notice{
+    height: 200px;
+    margin-top: 5px;
+    background: linear-gradient(91.48deg, #FFF8D3 0%, rgba(225, 238, 173, 0.31) 100%);
 }
 
 .Years{
@@ -60,8 +69,9 @@
 */
 
 .year1 section, .year2 section, .year3 section, .year4 section, .year5 section{
-    font-size: 3rem;
+    font-size: 2.8rem;
     margin: 10px 0;
+    font-weight:bold;
 }
 
 .year1 p, .year2 p, .year3 p, .year4 p, .year5 p{
@@ -71,7 +81,7 @@
 }
 .date{
     display: inline-block;
-    font-size: 2rem;
+    font-size: 1.7rem;
     width: 100px;
     font-weight: bold;
     margin: 0 10px 0 20px;
@@ -130,7 +140,7 @@ body{
     }
 
     .year1  section, .year2  section, .year3  section, .year4  section, .year5  section {
-        font-weight:500;
+        font-weight:bold;
     }
     
     .year1 p, .year2 p, .year3 p, .year4 p, .year5 p{

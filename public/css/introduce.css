@@ -1,15 +1,22 @@
 
 /* 소개 */
 
-.head3_history_a{
-    color: #efe2de;
+.notice_title{
+    color: #9C8773;
+    font-weight:bold;
 }
-.head3_introduce, .head3_introduce_a{
-    color: #784520;
+
+#introduce_nav{
+    color: #000000;
+    font-weight:bold;
 }
-.head3_name>span{
-    font-size:2.7rem;
+
+#history_nav{
+    color:#9C8773;
+    font-weight:bold;
 }
+
+
 
 .greeting {
     width: 75%;
@@ -46,7 +53,7 @@
     margin-top:20px;
     font-size: 1.9rem;
     line-height:180%;
-    font-weight: 550;
+    font-weight: bold;
     z-index:2;
 }
 

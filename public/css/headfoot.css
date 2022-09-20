@@ -1,5 +1,4 @@
-/* 헤더와 푸터를 위한 css
-헤더와 푸터 스타일 변경하고 싶을 때 여기서 하면 됩니다. */
+/* 헤더와 푸터를 위한 css */
 
 /* css 기본 세팅*/
 /* font-size 62.5%인 이유 : font-size에 rem이라는 단위를 쓰려고 하는데, 브라우저가 지정해주는 기본 폰트 사이즈는 100% = 16px임. 그래서 62.5% = 10px로 바꿔주려고 함 */
@@ -10,190 +9,97 @@
     font-family: 'Noto Sans', sans-serif;
     font-size: 62.5%;
 }
-ul,
-li {
+ul, li {
     list-style: none;
 }
 
-a,
-p,
-span {
+a, p, span {
     text-decoration: none;
 }
 
 img {
     border: 0;
 }
-/* 마우스를 더블클릭하거나 드래그하는와중에, button 속에 text 가 선택됨. 이것을 방지 */
+
 button {
+    /* 마우스를 더블클릭하거나 드래그하는와중에, 
+    button 속에 text 가 선택됨. 이것을 방지 */
     user-select: none;
     cursor: pointer;
     color: black;
 }
 
 header {
-    width: 80%;
-    height: 200px;
-    padding: 0 5%;
+    width: 90%;
     margin: 0 auto;
 }
 
 .main_head {
     position: relative;
-    height: 100px;
-    border-bottom: 2px solid #BE7743;
-}
-
-.nav {
-    margin-top: 20px;
-    float: right;
+    height: 80px;
+    z-index: 999;
+    border-bottom: 1px solid rgb(200, 200, 200);
 }
 
 .mainlogo img {
-    margin-left: 1%;
-    height: 90px;
+    margin-left: 10px;
+    margin-top: 20px;
+    height: 40px;
     float: left;
+}
+
+.nav {
+    margin-top: 30px;
+    float: right;
 }
 
 .nav>ul {
     float: left;
-    height: 80px;
-    line-height: 80px;
+    height: 30px;
+    line-height: 30px;
 }
 
 .nav>ul>li {
     float: left;
-    font-size: 3rem;
-    padding: 0 3vw 0 1.2vw;
-    position: relative;
+    padding: 0 2vw 0 2.2vw;
 }
 
 .nav>ul>li>a {
-    color: #BE7743;
+    color: black;
+    font-size: 18px;
+    display: block;
+    line-height: 30px;
+    letter-spacing: 2px;
+    /* letter-spacing으로 오른쪽 부분이 2px더 늘어나게 되어 
+    padding-left로 2px늘려줘서 대칭을 맞춤*/
+    padding-left: 2px;
 }
 
 .nav>ul>li>a:hover {
-    color: #784520;
-    /* font-weight: bold; */
-    border-bottom: 2px solid #784520;
+    border-bottom: 2px solid black;
 }
 
-.small_menu {
-    position: absolute;
-    display: none;
-    top: 50%;
-    right: 5%;
-    height: 100%;
-    transform:translate(0,-50%);
-}
-
-.small_menu p {
-    font-size: 5rem;
-    color: #BE7743;
-}
-.small_menu p:hover{
-    cursor: pointer;
-}
-
-.small_menu_open {
-    display: none;
-    position: fixed;
-    right: 0;
-    background-color: #BE7743;
-    height: 100%;
-    width: 50%;
-    z-index: 3;
-}
-.small_menu_open p{
-    position: fixed;
-    font-size: 4rem;
-    right: 10%;
-    top: 10px;
-    color: white;
-}
-.small_menu_open p:hover{
-    cursor: pointer;
-}
-.small_menu_open nav{
-    text-align: center;
-    margin-top: 10vh;
-}
-.small_menu_open nav ul li{
-    font-size: 4.5rem;
-    
-}
-.small_menu_open nav ul li a{
-    color: white;
-}
-
-header article {
-    display: flex;
-    justify-content: space-between;
-}
-
-.head3_line_f {
-    width: 5%;
-    height: 50px;
-    border-bottom: 2px solid #BE7743;
-}
-
-.head3_name {
-    margin-top: 25px;
-    height: 60px;
-    font-size: 3rem;
-    font-weight: bold;
-    color: #784520;
-}
-
-.head3_line_s {
-    height: 50px;
-    width: 65%;
-    border-bottom: 2px solid #BE7743;
-}
-
-.head3_archive_a,
-.head3_calendar_a,
-.head3_lab_a,
-.head3_test_a,
-.head3_gamecenter_a,
-.head3_qna_a,
-.head3_tos_a,
-.head3_cooperation_a {
-    color: #784520;
-}
-
-header{
+.nav_notice{
     height: 200px;
+    margin-top: 5px;
+    background: linear-gradient(to right, rgba(245, 207, 172, 1), rgba(255, 250, 205, 1));
 }
-.main_head{
-    height: 100px;
+.notice_title{
+    text-align: center;
+    font-size: 3rem;
+    padding: 50px 0 25px 0;
 }
-.mainlogo img{
-    margin-top: 10px;
-    height: 75px;
+.notice_title a{
+    font-size: 3rem;
+    color: black;
 }
-.nav>ul{
-    height: 80px;
-    line-height: 80px;
-}
-.nav>ul>li {
-    float: left;
-    font-size: 2.7rem;
-    padding: 0 3vw 0 1.2vw;
-    position: relative;
-}
-.head3_line_f {
-    height: 40px;
+.notice_exp{
+    text-align: center;
+    font-size: 1.5rem;
 }
 
-.head3_name {
-    margin-top: 20px;
-    height: 60px;
-}
 
-.head3_line_s {
-    height: 40px;
-}
+/* footer */
 footer {
     position: relative;
     background-color: #393939;
@@ -260,38 +166,78 @@ footer {
     float: right;
 }
 
+/* hamberger menu */
+.ham {
+    display: none;
+    position: absolute;
+    top: 50%; right: 0%;
+    margin-right: 10px;
+    transform: translate(0, -50%);
+    cursor:pointer;
+    z-index: 6;
+    width: 30px;
+    height: 25px;
+}
+.ham span {
+    display: block;
+    background: #000;
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    transition: margin 0.25s 0.25s, transform 0.25s ;
+}
+.ham .bar1 {margin-bottom: 6px;}
+.ham .bar2 {}
+.ham .bar3 {margin-top: 6px;}
+  
+.ham.active span {
+    transition: margin 0.25s, transform 0.25s 0.25s;
+}
+  
+.ham.active .bar1 {
+    margin-top: 12px;
+    margin-bottom: -4px;
+    transform: rotate(45deg);
+}
+.ham.active .bar2 {
+    transform: rotate(45deg);
+    
+}
+.ham.active .bar3 {
+    margin-top: -4px;
+    transform: rotate(135deg);
+}
+
+.small_menu_open {
+    display: none;
+    position: fixed;
+    left: 100%;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 50%;
+    z-index: 5;
+    transition: all 0.3s linear;
+}
+.small_menu_open.active{
+    left: 50%;
+    
+}
+.small_menu_open nav{
+    text-align: center;
+    margin-top: 10vh;
+}
+.small_menu_open nav ul li{
+    font-size: 4.5rem;
+    
+}
+.small_menu_open nav ul li a{
+    color: black;
+}
+
 
 @media (max-width : 1023px){
     * {
         font-size: 55%;
-    }
-    header{
-        height: 180px;
-    }
-    .main_head{
-        height: 80px;
-    }
-    .mainlogo img{
-        height: 60px;
-    }
-    .nav>ul{
-        height: 60px;
-        line-height: 60px;
-    }
-    .nav>ul>li {
-        font-size: 3rem;
-    }
-    .head3_line_f {
-        height: 40px;
-    }
-    
-    .head3_name {
-        margin-top: 20px;
-        height: 60px;
-    }
-    
-    .head3_line_s {
-        height: 40px;
     }
 }
 
@@ -300,39 +246,8 @@ footer {
         /* 8px */
         font-size: 50%;
     }
-    header{
-        width: 90%;
-        height: 140px;
-    }
-    .main_head{
-        height: 60px;
-        border-bottom: 1px solid #BE7743;
-    }
-    .mainlogo img{
-        margin-top: 5px;
-        height: 50px;
-    }
-    .nav{
-        margin-top: 10px;
-    }
-    .nav>ul{
-        height: 50px;
-        line-height: 50px;
-    }
-    .head3_line_f {
-        height: 35px;
-        border-bottom: 1px solid #BE7743;
-    }
-    
-    .head3_name {
-        margin-top: 10px;
-        font-size: 3.5rem;
-    }
-    
-    .head3_line_s {
-        height: 35px;
-        border-bottom: 1px solid #BE7743;
-        width: 60%;
+    .nav {
+        display: none;
     }
 
     footer {
@@ -349,40 +264,19 @@ footer {
     .footer_logo {
         display: none;
     }
+
+    .ham {
+        display: block;
+    }
+    .small_menu_open{
+        display: block;
+    }
 }
 
 @media (max-width : 479px) {
     * {
         /* 8px */
         font-size: 45%;
-    }
-    header{
-        height: 125px;
-    }
-    .main_head{
-        height: 45px;
-    }
-    .mainlogo img{
-        height: 35px;
-    }
-    .nav {
-        display: none;
-    }
-    .small_menu {
-        display: block;
-    }
-    .head3_line_f {
-        height: 25px;
-    }
-    
-    .head3_name {
-        margin-top: 5px;
-        font-size: 3rem;
-    }
-    
-    .head3_line_s {
-        height: 25px;
-        width: 55%;
     }
 
     footer {
