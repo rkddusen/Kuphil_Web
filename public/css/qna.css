@@ -2,29 +2,39 @@
 background: linear-gradient(91.48deg, #E5FAFD 0%, rgba(189, 193, 236, 0.31) 100%);
 }
 
-#qna_notice{
-    margin: 0 auto;
-    margin-top: 70px;
-    margin-bottom: 50px;
-    width: 80%;
-    padding: 0 5%;
-    font-size: 2.5rem;
-    color: #5C3A1A;
-}
-
 .qna_section{
     margin: 0 auto;
-    width: 80%;
+    width: 90%;
     padding: 0 5%;
     margin-top: 70px;
     margin-bottom: 30px;
     min-height: 500px;
 }
+.float{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+    text-align: center;
+    background-color: white;
+}
+.float_button{
+    width: 100%;
+    height: 100%;
+    border: 0;
+    font-size: 30px;
+    background: none;
+    border-radius: 50px;
+}
 .qna_write{
     width: 600px;
     height: 30px;
     margin: 0 auto;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 .qna_write button{
     float: right;
@@ -33,43 +43,60 @@ background: linear-gradient(91.48deg, #E5FAFD 0%, rgba(189, 193, 236, 0.31) 100%
     font-size: 1.2rem;
     border: none;
     background-color: white;
-    box-shadow: 1px 1px 2px #784520;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
 }
 .qna_question_add{
     display: none;
     justify-content: center;
-    margin: 0 0 20px 0;
-    box-shadow: 1px 1px 2px #784520;
+    margin: 0 0 30px 0;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
     width: 600px;
 }
 .qna_question_add form{
-    margin: 20px 0;
+    margin: 30px 0;
 }
 .qna_question_add form span{
     width: 570px;
 }
 .qna_question_add form strong{
     font-size: 3rem;
-    color: rgb(255, 160, 66);
 }
 .qna_question_add_title{
-    width: 570px;
+    width: 540px;
+    padding: 0 20px;
+    height: 50px;
     font-size: 1.5rem;
     margin-top: 20px;
-    border: 1px solid black;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
 }
 .qna_question_add_textarea{
-    width: 570px;
-    height: 120px;
-    font-size: 1.3rem;
-    margin-top: 10px;
-    border: 1px solid black;
+    width: 540px;
+    padding: 20px;
+    height: 180px;
+    font-size: 1.5rem;
+    margin-top: 30px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    /* textarea의 크기 조절 기능 막기 */
+    resize: none;
 }
 .qna_question_add_password{
-    width: 570px;
+    width: 540px;
+    padding: 0 20px;
+    height: 50px;
     font-size: 1.5rem;
-    margin-top: 10px;
-    border: 1px solid black;
+    margin-top: 30px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
 }
 .qna_question_add form div{
     float: right;
@@ -78,10 +105,12 @@ background: linear-gradient(91.48deg, #E5FAFD 0%, rgba(189, 193, 236, 0.31) 100%
     float: left;
     width: 70px;
     height: 30px;
-    margin-top: 10px;
+    margin-top: 30px;
     margin-left: 5px;
     font-size: 1.2rem;
-    border: 1px solid black;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
     background-color: white;
 }
 
@@ -92,25 +121,25 @@ background: linear-gradient(91.48deg, #E5FAFD 0%, rgba(189, 193, 236, 0.31) 100%
 .qna_entry_empty{
     display: flex;
     min-height: 100px;
-    /* border-bottom: 1px solid black; */
-    box-shadow: 1px 1px 2px #784520;
-    margin: 0 0 10px 0;
+    margin: 0 0 30px 0;
     padding: 10px;
     justify-content: center;
     align-items: center;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
 }
 .qna_entry_empty span{
     font-size: 2rem;
 }
 .qna_entry{
     min-height: 100px;
-    /* border-bottom: 1px solid black; */
-    box-shadow: 1px 1px 2px #784520;
-    margin: 0 0 10px 0;
+    margin: 0 0 30px 0;
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
 }
 .qna_entry:hover{
     cursor: pointer;
@@ -153,23 +182,24 @@ background: linear-gradient(91.48deg, #E5FAFD 0%, rgba(189, 193, 236, 0.31) 100%
 /* qnaRead */
 .qna_nav{
     width: 600px;
-    height: 30px;
+    height: 40px;
     margin: 0 auto;
-    margin-bottom: 5px;
+    margin-bottom: 30px;
 }
 .qna_back{
-    width: 60px;
-    height: 25px;
-    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+    font-size: 2rem;
     border: none;
     background-color: white;
-    box-shadow: 1px 1px 2px #784520;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
 }
 .qna_delete{
     float: right;
-    width: 60px;
-    height: 25px;
-    font-size: 1.2rem;
+    width: 30px;
+    height: 30px;
+    font-size: 2rem;
     border: none;
     background-color: white;
     box-shadow: 1px 1px 2px #784520;
@@ -179,9 +209,10 @@ background: linear-gradient(91.48deg, #E5FAFD 0%, rgba(189, 193, 236, 0.31) 100%
     margin: 0 auto;
 }
 .qna_read_question{
-    height: 200px;
+    min-height: 200px;
     padding: 20px;
-    box-shadow: 1px 1px 2px #784520;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -193,12 +224,15 @@ background: linear-gradient(91.48deg, #E5FAFD 0%, rgba(189, 193, 236, 0.31) 100%
     font-size: 2rem;
 }
 .qna_read_question div:first-child span strong{
+    margin-right: 10px;
     font-size: 3rem;
-    color: rgb(213, 106, 0);
+    color: black
 }
-.qna_read_question div:first-child p{
-    font-size: 1.5rem;
+.qna_read_question div:first-child div{
+    font-size: 2.5rem;
     padding-top: 20px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 .qna_read_question div:last-child span{
     font-size: 1.2rem;
@@ -209,12 +243,16 @@ background: linear-gradient(91.48deg, #E5FAFD 0%, rgba(189, 193, 236, 0.31) 100%
     color: black;
     cursor: pointer;
 }
-
+.qna_read_contents form div{
+    font-size: 1.5rem;
+}
 .qna_read_answer_add{
     display: none;
     justify-content: center;
     margin: 20px 0;
-    box-shadow: 1px 1px 2px #784520;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
     width: 600px;
 }
 .qna_read_answer_add form{
@@ -222,14 +260,20 @@ background: linear-gradient(91.48deg, #E5FAFD 0%, rgba(189, 193, 236, 0.31) 100%
 }
 .qna_read_answer_add form strong{
     font-size: 3rem;
-    color: rgb(255, 160, 66);
+    color: black;
 }
 .qna_read_answer_add_textarea{
-    width: 570px;
-    height: 120px;
+    width: 540px;
+    padding: 20px;
+    height: 180px;
     font-size: 1.5rem;
-    margin-top: 10px;
-    border: 1px solid black;
+    margin-top: 30px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    /* textarea의 크기 조절 기능 막기 */
+    resize: none;
 }
 .qna_read_answer_add form div{
     float: right;
@@ -238,34 +282,43 @@ background: linear-gradient(91.48deg, #E5FAFD 0%, rgba(189, 193, 236, 0.31) 100%
     float: left;
     width: 70px;
     height: 30px;
-    margin-top: 10px;
+    margin-top: 30px;
     margin-left: 5px;
     font-size: 1.2rem;
-    border: 1px solid black;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
     background-color: white;
 }
 .qna_read_answer{
-    margin-top: 20px;
+    margin-top: 30px;
 }
 .qna_read_entry{
-    margin: 10px 0;
+    margin: 30px 0;
     min-height: 150px;
-    box-shadow: 1px 1px 2px #784520;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+.qna_read_entry div:first-child p{
+    font-size: 1.5rem;
 }
 .qna_read_entry div:first-child{
     margin-bottom: 20px;
 }
 .qna_read_entry div:first-child strong{
     font-size: 3rem;
-    color: rgb(255, 160, 66);
+    color: black;
 }
-.qna_read_entry div:first-child p{
+.qna_read_entry div:first-child div{
+    margin: 0 auto;
     font-size: 1.5rem;
-    margin-top: 10px;
+    padding-top: 20px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 .qna_read_entry div:last-child span{
     font-size: 1.2rem;
@@ -294,7 +347,7 @@ background: linear-gradient(91.48deg, #E5FAFD 0%, rgba(189, 193, 236, 0.31) 100%
         width: 100%;
     }
     .qna_question_add form{
-        width: 90%;
+        width: 80%;
     }
     .qna_question_add form span, .qna_question_add_title, .qna_question_add_textarea, .qna_question_add_password{
         width: 100%;
