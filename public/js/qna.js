@@ -92,4 +92,4 @@ function qna_delete(){
     form += '<input type="button" name="cancel" onclick="location.reload()" value="취소" class="qna_read_answer_add_subCan"/></div></form>';
 
     formarea.innerHTML = form;
-}2
+}
