@@ -84,29 +84,32 @@
 
     <!-- 내용 -->
     <div class="qna_section">
-        <div class="qna_write">
+        <!-- <div class="qna_write">
             <button onclick="qna_question_add();">작성하기</button>
+        </div> -->
+        <div class="float">
+            <button class="float_button" onclick="qna_question_add();">+</button>
         </div>
-
         <div class="qna_contents">
             <div class="qna_question_add">
                 <form action="/qna/questionSubmit" method="post" onsubmit="return questionDoAction();">
                     <strong>Q.</strong><br>
-                    <input type="text" class="qna_question_add_title" name="qna_title" placeholder="제목을 작성하세요."
-                        autocomplete='off' /><br>
-                    <input type="text" class="qna_question_add_textarea" placeholder="질문을 작성하세요." name="qna_question"
-                        autocomplete='off' /><br>
-                    <input type="password" class="qna_question_add_password" placeholder="비밀번호를 작성하세요."
+                    <input type="text" class="qna_question_add_title" name="qna_title" placeholder="제목을 작성하세요. (최대 30자)"
+                        autocomplete='off' maxlength='30'/><br>
+                    <textarea class="qna_question_add_textarea" placeholder="질문을 작성하세요. (최대 500자)" name="qna_question"
+                        autocomplete='off' maxlength='500' wrap="soft"></textarea><br>
+                    <input type="password" class="qna_question_add_password" placeholder="비밀번호를 작성하세요. (글 삭제 시 필요)"
                         name="qna_password" autocomplete='off' /><br>
                     <input type="text" class="qna_question_add_date" name="qna_date" value="0000-00-00"
                         style="display: none;" />
                     <div>
                         <button name="submit" class="qna_question_add_subCan">작성</button>
-                        <button type="button" name="cancel" onclick="qna_question_add_cancel();"
-                            class="qna_question_add_subCan">취소</button>
+                        <!-- <button type="button" name="cancel" onclick="qna_question_add_cancel();"
+                            class="qna_question_add_subCan">취소</button> -->
                     </div>
                 </form>
             </div>
+            <div class="qna_part">
             <% for(var i=0; i < page_num; i++) { if(number==0){ %>
                 <div class="qna_entry_empty">
                     <span>아직 질문이 없습니다.</span>
@@ -127,6 +130,7 @@
                         </div>
                     </div>
                     <% } } %>
+                </div>
         </div>
     </div>
 
@@ -136,7 +140,7 @@
             <!-- 이전 페이지 구간의 마지막 페이지 -->
             <!-- ex) 15페이지에서 '이전' 버튼 누르면 10페이지로 감 -->
 
-            <td><a id="prev" href="/qna/<%= parseInt((page - 1) / 10) * 10 %>">이전</a></td>
+            <td><a id="prev" href="/qna/<%= parseInt((page - 1) / 10) * 10 %>"><<</a></td>
             <% <!-- 마지막 페이지 -->
                 <!-- 1~10이므로 1을 뺀 후에, 10으로 나누기 -->
                 let last_page = ((number-1) / page_num) + 1;
@@ -150,7 +154,7 @@
                         </a>
                     </td>
                     <% } else { break; } } %>
-                        <td><a id="next" href="/qna/<%= (parseInt((page - 1) / 10) + 1) * 10 + 1%>">다음</a></td>
+                        <td><a id="next" href="/qna/<%= (parseInt((page - 1) / 10) + 1) * 10 + 1%>">>></a></td>
         </tr>
     </table>
     <script>
@@ -158,7 +162,7 @@
         // ex) 현재 페이지가 5페이지이면 1~10 사이에 존재하므로 '이전' 버튼 비활성화
         document.getElementById("num_" + "<%= page %>").style.color = 'red';
         if ("<%= parseInt(page) %>" <= 10) {
-            document.getElementById("prev").style.color = 'rgb(200, 200, 200)';
+            document.getElementById("prev").style.color = 'rgb(230, 230, 230)';
             document.getElementById("prev").setAttribute("onclick", "return false;");
             document.getElementById("prev").style.cursor = 'default';
         }
@@ -166,7 +170,7 @@
         // ex) 마지막 페이지는 19페이지이고 현재 15페이지면
         // 마지막 페이지인 19페이지가 있는 구간인 11~20 사이에 현재 15페이지가 존재하므로, '다음' 비활성화
         if ("<%= parseInt((page - 1) / 10) %>" == "<%= parseInt((last_page - 1) / 10) %>") {
-            document.getElementById("next").style.color = 'rgb(200, 200, 200)';
+            document.getElementById("next").style.color = 'rgb(230, 230, 230)';
             document.getElementById("next").setAttribute("onclick", "return false;");
             document.getElementById("next").style.cursor = 'default';
         }
@@ -174,40 +178,20 @@
     </div>
 
     <footer>
-        <div class="footer_first">
-            <li><a href="#">오시는 길</a></li>
-            <li><a href="#">이용 약관</a></li>
-            <li><a href="#">제휴 제안</a></li>
-        </div>
-        <div class="footer_second">
-            <div class="footer_logo">
-                <img src="../image/main/graylogo.png">
-                <img src="../image/main/무제.png">
-            </div>
-            <div class="footer_explain">
+        <div class="footer_section">
+            <div class="footer_area">
+                <div class="footer_logo">
+                    <img src="../image/main/graylogo.png">
+                    <img src="../image/main/무제.png">
+                </div>
+                <div class="footer_explain">
+                    <a class="footer_use" href="../policy">이용 약관</a>
+                    <p>서울특별시 광진구 능동로 120, 제2학생회관 B117호</p>
+                    <p>후원 | ##은행 #####</p><br>
+                    <p>copyright 2021 KUPHIL, All rights reserved.</p>
+                </div>
 
-                <p>서울특별시 광진구 능동로 120 제2학생회관 B117호</p>
-                <p>후원 | ##은행 #####</p><br>
-                <p>copyright 2021 KUPHIL, All rights reserved.</p>
             </div>
-            <div class="footer_sns">
-                <p>Contact Us :)</p>
-                <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">
-                    <img src="../image/main/kuphil_youtube.png" alt="쿠필 유튜브">
-                </a>
-                <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank">
-                    <img src="../image/main/kuphil_instagram.png" alt="쿠필 인스타그램">
-                </a>
-                <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank">
-                    <img src="../image/main/kuphil_facebook.png" alt="쿠필 페이스북">
-                </a>
-            </div>
-        </div>
-        <div class="small_footer_explain">
-
-            <p>서울특별시 광진구 능동로 120 제2학생회관 B117호</p>
-            <p>후원 | ##은행 #####</p><br>
-            <p>copyright 2021 KUPHIL, All rights reserved.</p>
         </div>
     </footer>
 </body>

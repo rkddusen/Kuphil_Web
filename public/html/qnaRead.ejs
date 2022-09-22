@@ -87,8 +87,10 @@
     <!-- 내용 -->
     <div class="qna_section">
         <div class="qna_nav">
-            <button onclick="history.back();" class="qna_back">뒤로 가기</button>
-            <button onclick="qna_delete();" class="qna_delete">글 삭제</button>
+            <button onclick="history.back();" class="qna_back">←</button>
+        </div>
+        <div class="float">
+            <button class="float_button" onclick="qna_answer_add();">+</button>
         </div>
         <div class="qna_read_contents">
             <div class="qna_read_question">
@@ -96,28 +98,26 @@
                     <span><strong>Q.</strong>
                         <%= qna_title %>
                     </span>
-                    <p>
-                        <%= qna_question %>
-                    </p>
+                    <div><%= qna_question %></div>
                 </div>
                 <div>
                     <span>답변 <%= qna_answer_num %></span>&ensp;&ensp;
                     <span>등록 <%= qna_question_date %></span>
-                    <span onclick="qna_answer_add();">답변 남기기</span>
+                    <span onclick="qna_delete();">글 삭제</span>
                 </div>
             </div>
             <div class="qna_read_answer_add">
                 <form action="/qna/answerSubmit" method="post" onsubmit="return answerDoAction();">
                     <strong>A.</strong><br>
-                    <input type="text" class="qna_read_answer_add_textarea" placeholder="답변을 작성하세요." name="qna_answer"
-                        autocomplete='off' /><br>
+                    <textarea class="qna_read_answer_add_textarea" placeholder="답변을 작성하세요." name="qna_answer"
+                        autocomplete='off' maxlength='500' wrap="soft"></textarea><br>
                     <input type="text" name="qna_id" value="<%= qna_id %>" style="display: none;" />
                     <input type="text" class="qna_read_answer_add_date" name="qna_date" value="0000-00-00"
                         style="display: none;" />
                     <div>
-                        <input type="submit" name="submit" class="qna_read_answer_add_subCan" value="작성" />
-                        <input type="button" name="cancel" onclick="qna_answer_add_cancel();" value="취소"
-                            class="qna_read_answer_add_subCan" />
+                        <input type="submit" name="submit" class="qna_read_answer_add_subCan" value="작성"/>
+                        <!-- <input type="button" name="cancel" onclick="qna_answer_add_cancel();" value="취소"
+                            class="qna_read_answer_add_subCan" /> -->
                     </div>
                 </form>
             </div>
@@ -132,9 +132,7 @@
                         <div class="qna_read_entry">
                             <div>
                                 <strong>A<%=i+1%>.</strong>
-                                <p>
-                                    <%=qna_answer[i]%>
-                                </p>
+                                <div><%=qna_answer[i]%></div>
                             </div>
                             <div>
                                 <span>등록 <%= qna_answer_date[i] %></span>
@@ -146,40 +144,20 @@
     </div>
 
     <footer>
-        <div class="footer_first">
-            <li><a href="#">오시는 길</a></li>
-            <li><a href="#">이용 약관</a></li>
-            <li><a href="#">제휴 제안</a></li>
-        </div>
-        <div class="footer_second">
-            <div class="footer_logo">
-                <img src="../../image/main/graylogo.png">
-                <img src="../../image/main/무제.png">
-            </div>
-            <div class="footer_explain">
+        <div class="footer_section">
+            <div class="footer_area">
+                <div class="footer_logo">
+                    <img src="../../image/main/graylogo.png">
+                    <img src="../../image/main/무제.png">
+                </div>
+                <div class="footer_explain">
+                    <a class="footer_use" href="../../policy">이용 약관</a>
+                    <p>서울특별시 광진구 능동로 120, 제2학생회관 B117호</p>
+                    <p>후원 | ##은행 #####</p><br>
+                    <p>copyright 2021 KUPHIL, All rights reserved.</p>
+                </div>
 
-                <p>서울특별시 광진구 능동로 120 제2학생회관 B117호</p>
-                <p>후원 | ##은행 #####</p><br>
-                <p>copyright 2021 KUPHIL, All rights reserved.</p>
             </div>
-            <div class="footer_sns">
-                <p>Contact Us :)</p>
-                <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">
-                    <img src="../../image/main/kuphil_youtube.png" alt="쿠필 유튜브">
-                </a>
-                <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank">
-                    <img src="../../image/main/kuphil_instagram.png" alt="쿠필 인스타그램">
-                </a>
-                <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank">
-                    <img src="../../image/main/kuphil_facebook.png" alt="쿠필 페이스북">
-                </a>
-            </div>
-        </div>
-        <div class="small_footer_explain">
-
-            <p>서울특별시 광진구 능동로 120 제2학생회관 B117호</p>
-            <p>후원 | ##은행 #####</p><br>
-            <p>copyright 2021 KUPHIL, All rights reserved.</p>
         </div>
     </footer>
 </body>
