@@ -53,7 +53,19 @@ function questionDoAction() {
     else{
         //submit 버튼이 한번만 실행되게끔
         document.getElementsByClassName('qna_question_add_subCan')[0].disabled = 'true';
-        return true;
+        let result = confirm("작성하시겠습니까?");
+        
+        if(result)
+        {
+            return true;
+        }
+        else
+        {
+            //submit 버튼이 다시 동작
+            document.getElementsByClassName('qna_question_add_subCan')[0].disabled = '';
+            return false;
+        }
+        
     }
 }
 function answerDoAction() {
@@ -70,7 +82,18 @@ function answerDoAction() {
     else{
         //submit 버튼이 한번만 실행되게끔
         document.getElementsByClassName('qna_read_answer_add_subCan')[0].disabled = 'true';
-        return true;
+        let result = confirm("작성하시겠습니까?");
+        
+        if(result)
+        {
+            return true;
+        }
+        else
+        {
+            //submit 버튼이 다시 동작
+            document.getElementsByClassName('qna_read_answer_add_subCan')[0].disabled = '';
+            return false;
+        }
     }
 }
 function deleteDoAction(){
@@ -86,10 +109,10 @@ function deleteDoAction(){
 }
 function qna_delete(){
     let formarea = document.getElementsByClassName('qna_read_question')[0];
-    let form = '<form action="/qna/deleteSubmit" method="post" onsubmit="return deleteDoAction();"><div>글 작성 시 설정한 비밀 번호가 아니면 삭제되지 않습니다.<br>비밀 번호가 틀리면 삭제되지 않고 본문에 머무르게 됩니다.<br>';
+    let form = '<form action="/qna/deleteSubmit" method="post" onsubmit="return deleteDoAction();"><div>글을 삭제하려면 비밀번호를 입력하세요.<br>글 작성 시 설정한 비밀 번호가 아니면 삭제되지 않습니다.<br>';
     form += '비밀 번호 : <input type="password" name="qna_password" class="qna_delete_password"/><input type="text" name="qna_id" value="'+qna_id+'" style="display: none;"/></div>';
     form += '<div><input type="submit" name="submit" class="qna_read_answer_add_subCan" value="삭제"/>';
-    form += '<input type="button" name="cancel" onclick="location.reload()" value="취소" class="qna_read_answer_add_subCan"/></div></form>';
+    form += '<input type="button" name="cancel" onclick="location.reload()" value="취소" class="qna_read_answer_add_subCan qna_read_answer_add_can"/></div></form>';
 
     formarea.innerHTML = form;
 }
