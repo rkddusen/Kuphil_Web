@@ -4,12 +4,8 @@
 
 .gameContents{
     padding: 0 5%;
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 100px;
-    height: auto;
-    min-height: 100%;
-    padding-bottom: 260px;
+    width: 90%;
+    margin: 100px auto;
 }
 .question {
     text-align: center;
@@ -73,6 +69,7 @@
 @media (max-width : 768px) {
     .gameContents{
         width: 90%;
+        margin: 50px auto;
     }
     .answer{
         display: block;

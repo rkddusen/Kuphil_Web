@@ -9,6 +9,15 @@
     font-family: 'Noto Sans', sans-serif;
     font-size: 62.5%;
 }
+html, body{
+    height: 100%;
+}
+/* 콘텐츠의 길이가 짧을 때 푸터가 위로 올라오는 현상을 막음 */
+/* 헤더를 포함한 콘텐츠 높이를 최소 100으로 두고 그 이하를 푸터 영역으로 두면 */
+/* 콘텐츠가 짧아도 푸터가 하단에 고정됨 */
+.total_div{
+    min-height: 100%;
+}
 ul, li {
     list-style: none;
 }
