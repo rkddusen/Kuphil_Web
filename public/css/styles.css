@@ -139,7 +139,7 @@ section {
 .main_wea{
     float: left;
     position: relative;
-    width:52%;
+    width:57%;
     height: 0;
     padding-top: 6%;
     margin-top: 3%;
@@ -198,9 +198,9 @@ section {
 .main_recru{
     float: left;
     position: relative;
-    width:52%;
+    width:57%;
     height: 0;
-    padding-top: 25%;
+    padding-top: 30%;
     margin-top: 3%;
 }
 .main_recru_content{
@@ -211,29 +211,41 @@ section {
     position: absolute;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    background-image: url("../image/main/recruitment.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-color: #FAFFEE;
 }
-.recru_explain{
+.recru_img{
     position: absolute;
-    top: 0;
-    left: 0;
-    margin: 25px 0 0 30px;
+    left: 5%;
+    bottom: 5%;
+    width: 40%;
+}
+.recru_img img{
+    width: 100%;
 }
 .recru_area{
     position: absolute;
-    right: 30px;
-    bottom: 25px;
+    right: 5%;
+    top: 50%;
+    transform: translate(0%,-50%);
 }
-.recru_area p{
-    width: 100;
+.recru_area div{
     text-align: end;
     font-size: 2rem;
-    font-weight: bold;
-    letter-spacing: 8px;
     line-height: 150%;
+    letter-spacing: 1rem;
+}
+.recru_btn{
+    display: inline-block;
+    box-sizing: border-box;
+    margin-top: 10%;
+    padding: 5%;
+    font-size: 1.5rem;
+    color: white;
+    background-color: rgb(105, 105, 105);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 10px;
+    letter-spacing: 0.2rem;
 }
 
 
@@ -241,9 +253,9 @@ section {
 .main_arcade{
     float: right;
     position: relative;
-    width:45%;
+    width:40%;
     height: 0;
-    padding-top: 34%;
+    padding-top: 39%;
     margin-top: -6%;
 }
 
@@ -265,22 +277,28 @@ section {
 }
 .arcade_btn{
     position: absolute;
-    width: 130px;
-    height: 40px;
-    top: 50%;
+    width: 200px;
+    height: 140px;
+    top: 12%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    background-color: black;
-    color: white;
+    transform: translate(-50%,0);
+    background-color: #FFF3FB;
     border: none;
     border-radius: 20px;
-    font-size: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 16px;
     cursor: pointer;
     z-index: 2;
 }
+.arcade_btn span{
+    display: block;
+    margin-top: 10px;
+    color: rgb(189, 189, 189);
+    font-size: 18px;
+}
 .arcade_img{
     position: absolute;
-    width: 90%;
+    width: 60%;
     z-index: 1;
     left: 50%;
     transform:translate(-50%,0);
@@ -457,6 +475,10 @@ section {
 .recru_area p{
         letter-spacing: 6px;
     }
+    .arcade_btn{
+        width: 180px;
+        height: 120px;
+    }
 }
 @media (max-width : 767px) {
     #weather_temp, #weather_desc{
@@ -516,17 +538,20 @@ section {
         float: left;
     }
     
+    
     .main_arcade{
         width: 100%;
         padding-top: 60%;
         margin-top: 7%;
         float: left;
     }
-    .arcade_img{
-        width: 70%
+    .arcade_btn{
+        width: 160px;
+        height: 100px;
+        font-size: 14px;
     }
-    .arcade_img img{
-        width: 100%
+    .arcade_btn span{
+        font-size: 14px;
     }
 
     .main_recent{
@@ -587,5 +612,19 @@ section {
     #weather_info{
         font-size: 1rem;
         margin: 0 20px;
+    }
+    .recru_area div{
+        letter-spacing: 0.5rem;
+    }
+    .recru_btn{
+        margin-top: 5%;
+    }
+    .arcade_btn{
+        width: 140px;
+        height: 80px;
+        font-size: 12px;
+    }
+    .arcade_btn span{
+        font-size: 12px;
     }
 }
