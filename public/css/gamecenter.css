@@ -33,6 +33,7 @@
     height: 300px;
     border: 1px solid rgb(204, 204, 204);
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .game_content section{
@@ -51,6 +52,7 @@
     color: black;
     font-size: 2rem;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .game_selection:hover{
