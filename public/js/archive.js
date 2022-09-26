@@ -91,11 +91,11 @@ function showPage(){
     else {
         document.getElementsByClassName('prev_btn')[0].setAttribute('onClick', "prevPage()");
         document.getElementsByClassName('next_btn')[0].setAttribute('onClick', "nextPage()");
-        document.getElementsByClassName('prev_btn')[0].style.borderRight = '3px solid #BE7743';
-        document.getElementsByClassName('prev_btn')[0].style.borderTop = '3px solid #BE7743';
+        document.getElementsByClassName('prev_btn')[0].style.borderRight = '3px solid #222';
+        document.getElementsByClassName('prev_btn')[0].style.borderTop = '3px solid #222';
         document.getElementsByClassName('prev_btn')[0].style.cursor = 'pointer';
-        document.getElementsByClassName('next_btn')[0].style.borderRight = '3px solid #BE7743';
-        document.getElementsByClassName('next_btn')[0].style.borderTop = '3px solid #BE7743';
+        document.getElementsByClassName('next_btn')[0].style.borderRight = '3px solid #222';
+        document.getElementsByClassName('next_btn')[0].style.borderTop = '3px solid #222';
         document.getElementsByClassName('next_btn')[0].style.cursor = 'pointer';
     }
 };

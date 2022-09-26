@@ -104,8 +104,8 @@ background: linear-gradient(91.48deg, #ECFDE5 0%, rgba(189, 222, 236, 0.31) 100%
     width: 25px;
     height: 25px;
     margin-left: 5px;
-    border-top: 3px solid #BE7743;
-    border-right: 3px solid #BE7743;
+    border-top: 3px solid #222;
+    border-right: 3px solid #222;
     transform: rotate(-135deg);
 }
 
@@ -118,8 +118,8 @@ background: linear-gradient(91.48deg, #ECFDE5 0%, rgba(189, 222, 236, 0.31) 100%
     width: 25px;
     height: 25px;
     margin-left: 5px;
-    border-top: 3px solid #BE7743;
-    border-right: 3px solid #BE7743;
+    border-top: 3px solid #222;
+    border-right: 3px solid #222;
     transform: rotate(45deg);
 }
 
@@ -154,7 +154,7 @@ background: linear-gradient(91.48deg, #ECFDE5 0%, rgba(189, 222, 236, 0.31) 100%
 
 
 .arc_concert_title {
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: bold;
     margin-bottom: 2vw;
 }
@@ -166,16 +166,16 @@ background: linear-gradient(91.48deg, #ECFDE5 0%, rgba(189, 222, 236, 0.31) 100%
 
 .arc_info_bold{
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 .detail{
-    font-weight: 100;
-    font-size: 2rem;
+    font-weight: initial;
+    font-size: 1.6rem;
 }
 
 .concert_text1{
-    font-size: 2.5rem;
+    font-size: 2.3rem;
 }
 
 .arc_concert_place{
@@ -191,10 +191,10 @@ background: linear-gradient(91.48deg, #ECFDE5 0%, rgba(189, 222, 236, 0.31) 100%
 }
 
 .concert_text2{
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin: 2vw 0;
     padding-top: 2vw;
-    border-top: 1px solid #BE7743;
+    border-top: 1px solid #222;
 }
 
 .concert_program_list{
@@ -202,11 +202,11 @@ background: linear-gradient(91.48deg, #ECFDE5 0%, rgba(189, 222, 236, 0.31) 100%
 }
 
 .concert_program_composer{
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
 
 .concert_program_song{
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
 
 
