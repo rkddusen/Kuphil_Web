@@ -491,9 +491,11 @@ server.post("/qna/deleteSubmit", (req, res) => {
             console.log(err);
         }
         let count = rows[0][0].count;
+        //sql1로 부터 해당 테이블에 (id=id && password=password)가 없으면 count가 0이고 해당 게시글에 머무르게 됨
         if (count == 0) {
-            return res.redirect("/qna/read/" + id);
-        } else {
+            res.send("<script>alert('비밀번호가 틀렸습니다.');location.href='/qna/read/" + id+"';</script>");
+            // return res.redirect("/qna/read/" + id);
+        } else {//(id=id && password=password)가 있으면 해당 게시글을 지우고 qna첫 페이지로 넘어감
             return res.redirect("/qna");
         }
     });

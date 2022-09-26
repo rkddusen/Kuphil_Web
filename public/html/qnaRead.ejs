@@ -108,8 +108,8 @@
             </div>
             <div class="qna_read_answer_add">
                 <form action="/qna/answerSubmit" method="post" onsubmit="return answerDoAction();">
-                    <strong>A.</strong><br>
-                    <textarea class="qna_read_answer_add_textarea" placeholder="답변을 작성하세요." name="qna_answer"
+                    <strong>새로운 답변 작성</strong><br>
+                    <textarea class="qna_read_answer_add_textarea" placeholder="답변을 작성하세요. (최대 500자)" name="qna_answer"
                         autocomplete='off' maxlength='500' wrap="soft"></textarea><br>
                     <input type="text" name="qna_id" value="<%= qna_id %>" style="display: none;" />
                     <input type="text" class="qna_read_answer_add_date" name="qna_date" value="0000-00-00"
