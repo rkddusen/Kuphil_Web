@@ -1,0 +1,62 @@
+#wrap_restaurant_area {
+    display: flex;
+    gap: 0 5vw;
+}
+
+.restaurant_area {
+    font-size: 3rem;
+    margin: 10px;
+    color: #784520;
+}
+
+.restaurant_area:hover {
+    cursor: pointer;
+}
+
+#wrap_restaurant_type {
+    display: flex;
+    gap: 0 3vw;
+}
+
+.restaurant_name {
+    font-size: 1.25rem;
+}
+
+.restaurant_menu {
+    font-size: 1.25rem;
+    color: #BE7743;
+}
+
+.restaurant_type {
+    font-size: 2rem;
+    margin: 1vw 0;
+    color: #986C18;
+}
+
+.restaurant_type:hover {
+    cursor: pointer;
+}
+
+#wrap_restaurant_map_n_info {
+    display: flex;
+    gap: 0 3vw;
+}
+
+.restaurant_info_n_btn {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 5vw;
+    border-bottom: solid 1px #BE7743;
+}
+
+.restaurant_address {
+    background: #1D2063;
+    border-radius: 5px;
+    color: #FFFFFF;
+}
+
+#wrap_restaurant_info_n_btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
