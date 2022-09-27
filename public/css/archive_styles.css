@@ -4,21 +4,9 @@ background: linear-gradient(91.48deg, #ECFDE5 0%, rgba(189, 222, 236, 0.31) 100%
     }
 
 .archiveBox{
-    width: 80%;
-    height: auto;
-    min-height: 90%;
-    padding-bottom: 100px;
+    width: 90%;
     margin: 0 auto;
     margin-top: 70px;
-}
-
-
-#arc_notice{
-    margin-top: 70px;
-    margin-bottom: 50px;
-    width: 90%;
-    font-size: 2.5rem;
-    color: #5C3A1A;
 }
 
 .container {
@@ -220,14 +208,7 @@ background: linear-gradient(91.48deg, #ECFDE5 0%, rgba(189, 222, 236, 0.31) 100%
 
 
 @media (max-width: 1023px) {
-
-    .archiveBox{
-        width: 80%;
-    }
     
-    #arc_notice{
-        margin-top: 50px;
-    }
     .concert_text1{
         font-size: 1.5rem;
     }
@@ -245,22 +226,11 @@ background: linear-gradient(91.48deg, #ECFDE5 0%, rgba(189, 222, 236, 0.31) 100%
     .detail {
         font-size: 1.5rem;
     }
-
-    
-
 }
 
 
 @media (max-width: 767px) {
-
-    .archiveBox{
-        width: 80%;
-    }
     
-    #arc_notice{
-        margin-top: 30px;
-    }
-
     .archiveBox .container_2{
         display: flex;
         flex-direction: column;
@@ -318,15 +288,9 @@ background: linear-gradient(91.48deg, #ECFDE5 0%, rgba(189, 222, 236, 0.31) 100%
     .concert_program_song{
         font-size: 1rem;
     }
-
-
-
 }
 
 @media (max-width: 479px) {
-    #arc_notice{
-        margin-top: 15px;
-    }
 
     .prev_btn {
         width: 6px;
@@ -337,7 +301,4 @@ background: linear-gradient(91.48deg, #ECFDE5 0%, rgba(189, 222, 236, 0.31) 100%
         width: 6px;
         height: 6px;
     }
-
-
-
 }
