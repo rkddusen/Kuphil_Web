@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="./css/archive_styles.css">
     <!--Google Web Font를 이용하기 위한 link들 삽입-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Poiret+One&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="./favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
@@ -33,28 +33,13 @@
 </head>
 
 <body>
-    <header>
-        <div class="main_head">
-            <div class="mainlogo">
-                <a href="./"><img src="./image/main/page_logo_black.png" alt="KUPHIL 흰색로고"></a>
-            </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="./introduce">소개</a></li>
-                    <li><a href="./archive">아카이브</a></li>
-                    <li><a href="./qna">Q&A</a></li>
-                    <li><a href="./gamecenter">놀이터</a></li>
-                    <li><a href="./lab">실험실</a></li>
-                </ul>
-            </nav>
-            <div class="ham">
-                <span class="bar1"></span>
-                <span class="bar2"></span>
-                <span class="bar3"></span>
-            </div>
-            
-            <div class="small_menu_open">
-                <nav>
+    <div class="total_div">
+        <header>
+            <div class="main_head">
+                <div class="mainlogo">
+                    <a href="./"><img src="./image/main/page_logo_black.png" alt="KUPHIL 흰색로고"></a>
+                </div>
+                <nav class="nav">
                     <ul>
                         <li><a href="./introduce">소개</a></li>
                         <li><a href="./archive">아카이브</a></li>
@@ -63,34 +48,51 @@
                         <li><a href="./lab">실험실</a></li>
                     </ul>
                 </nav>
+                <div class="ham">
+                    <span class="bar1"></span>
+                    <span class="bar2"></span>
+                    <span class="bar3"></span>
+                </div>
+
+                <div class="small_menu_open">
+                    <nav>
+                        <ul>
+                            <li><a href="./introduce">소개</a></li>
+                            <li><a href="./archive">아카이브</a></li>
+                            <li><a href="./qna">Q&A</a></li>
+                            <li><a href="./gamecenter">놀이터</a></li>
+                            <li><a href="./lab">실험실</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <script>
+                    $(".ham").click(function () {
+                        $(this).toggleClass("active");
+                        $(".small_menu_open").toggleClass("active");
+                    });
+                </script>
             </div>
-            <script>
-                $(".ham").click(function(){
-                    $(this).toggleClass("active");
-                    $(".small_menu_open").toggleClass("active");
-                });
-            </script>
-        </div>
-        <div class="nav_notice">
-            <p class="notice_title">
-                <a href="./archive">아카이브</a>
-            </p>
-            <p class="notice_exp">
-                KUPhil의 역대 연주회 정보를 모아놓은 공간입니다.
-            </p>
-        </div>
-    </header>
-    <div class="archiveBox">
-        <div class="container">
-            <div class="posterbox_1"></div>
-            <div class="loadposters">
-                <div onclick= "prevPage();" class="prev_btn" ></div>
-                <div onclick="nextPage();" class="next_btn"></div>
+            <div class="nav_notice">
+                <p class="notice_title">
+                    <a href="./archive">아카이브</a>
+                </p>
+                <p class="notice_exp">
+                    KUPhil의 역대 연주회 정보를 모아놓은 공간입니다.
+                </p>
             </div>
-            <div class="posterbox_2"></div>
-            <!-- <button id="open">Open Modal</button> -->
-            <div class="modal hidden">
-                
+        </header>
+        <div class="archiveBox">
+            <div class="container">
+                <div class="posterbox_1"></div>
+                <div class="loadposters">
+                    <div onclick="prevPage();" class="prev_btn"></div>
+                    <div onclick="nextPage();" class="next_btn"></div>
+                </div>
+                <div class="posterbox_2"></div>
+                <!-- <button id="open">Open Modal</button> -->
+                <div class="modal hidden">
+
+                </div>
             </div>
         </div>
     </div>
@@ -111,5 +113,6 @@
         </div>
     </footer>
 </body>
-<script type = "text/javascript" src = "./js/archive.js"></script>
+<script type="text/javascript" src="./js/archive.js"></script>
+
 </html>
