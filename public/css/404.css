@@ -16,3 +16,7 @@ background: linear-gradient(91.48deg, #FFD7CA 0%, rgba(255, 245, 224, 0.899375) 
 .error img{
     width:60%;
 }
+
+.blank{
+    height:20px;
+}
