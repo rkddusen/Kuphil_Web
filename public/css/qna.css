@@ -114,7 +114,7 @@ background: linear-gradient(91.48deg, #E5FAFD 0%, rgba(189, 193, 236, 0.31) 100%
     display: flex;
     min-height: 100px;
     margin: 0 0 30px 0;
-    padding: 10px;
+    padding: 20px;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
@@ -126,7 +126,7 @@ background: linear-gradient(91.48deg, #E5FAFD 0%, rgba(189, 193, 236, 0.31) 100%
 .qna_entry{
     min-height: 100px;
     margin: 0 0 30px 0;
-    padding: 10px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -202,7 +202,7 @@ background: linear-gradient(91.48deg, #E5FAFD 0%, rgba(189, 193, 236, 0.31) 100%
 }
 .qna_read_question{
     min-height: 200px;
-    padding: 20px;
+    padding: 25px;
     border-radius: 20px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
     display: flex;
@@ -238,7 +238,7 @@ background: linear-gradient(91.48deg, #E5FAFD 0%, rgba(189, 193, 236, 0.31) 100%
 .qna_read_answer_add{
     display: none;
     justify-content: center;
-    margin: 20px 0;
+    margin: 30px 0;
     border: none;
     border-radius: 20px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
@@ -288,7 +288,7 @@ background: linear-gradient(91.48deg, #E5FAFD 0%, rgba(189, 193, 236, 0.31) 100%
     min-height: 150px;
     border-radius: 20px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
-    padding: 20px;
+    padding: 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

@@ -82,7 +82,7 @@ function answerDoAction() {
     else{
         //submit 버튼이 한번만 실행되게끔
         document.getElementsByClassName('qna_read_answer_add_subCan')[0].disabled = 'true';
-        let result = confirm("작성하시겠습니까?");
+        let result = confirm("답변은 삭제가 불가능합니다. 작성하시겠습니까?");
         
         if(result)
         {
