@@ -18,8 +18,8 @@
 
 
 .greeting {
-    width: 80%;
-    padding: 0 11%;
+    width: 84%;
+    padding: 0 8%;
     margin: 70px auto;
 }
 
@@ -77,8 +77,8 @@
     margin-top: 50px;
 }
 #introduce_image{
-    width: 80%;
-    padding: 0 11%;
+    width: 84%;
+    padding: 0 8%;
     margin: 70px auto;
     margin-top:100px;
 }
@@ -89,9 +89,9 @@
 }
 
 #path {
-    width: 80%;
+    width: 84%;
     margin: 70px auto;
-    padding: 0 11%;
+    padding: 0 8%;
 }
 
 
@@ -136,11 +136,16 @@
     font-weight: bold;
 }
 
-#stairs{
+.stairs{
     margin: 30px auto;
     font-size:1.5rem;
-    font-weight:bold;
     text-align:center;
+    line-height:25px;
+}
+
+.stairs>span{
+    font-size:1.5rem;
+    font-weight:bold;
 }
 
 
@@ -227,7 +232,11 @@
         margin-top:30px;
     }
 
-    #stairs{
+    .stairs{
+        font-size:1rem;
+    }
+   
+    .stairs>span{
         font-size:1rem;
     }
 
@@ -284,5 +293,9 @@
 
     .start_location{
         margin: 20px auto;
+    }
+
+    .stairs{
+        line-height:15px;
     }
 }
