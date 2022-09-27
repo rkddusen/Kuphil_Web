@@ -9,12 +9,22 @@
     font-family: 'Noto Sans', sans-serif;
     font-size: 62.5%;
 }
+html, body{
+    height: 100%;
+}
+/* 콘텐츠의 길이가 짧을 때 푸터가 위로 올라오는 현상을 막음 */
+/* 헤더를 포함한 콘텐츠 높이를 최소 100으로 두고 그 이하를 푸터 영역으로 두면 */
+/* 콘텐츠가 짧아도 푸터가 하단에 고정됨 */
+.total_div{
+    min-height: 100%;
+}
 ul, li {
     list-style: none;
 }
 
 a, p, span {
     text-decoration: none;
+    color: black;
 }
 
 img {
@@ -80,10 +90,14 @@ header {
 }
 
 .nav_notice{
+    background: linear-gradient(91.48deg, #FFF2E7 0%, rgba(254, 204, 190, 0.57) 100%);
+    box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.1);
+border-radius: 20px;
+
     height: 200px;
-    margin-top: 5px;
-    background: linear-gradient(to right, rgba(245, 207, 172, 1), rgba(255, 250, 205, 1));
-}
+    margin-top: 3%;
+    }
+
 .notice_title{
     text-align: center;
     font-size: 3rem;
@@ -102,10 +116,10 @@ header {
 /* footer */
 footer {
     position: relative;
-    background-color: #393939;
     width: 100%;
     height: 0;
     padding-top: 15%;
+    border-top: 1px solid rgb(203, 203, 203);
 }
 
 .footer_section {
@@ -129,7 +143,7 @@ footer {
 }
 .footer_explain p{
     font-size: 1.2rem;
-    color: #BBBBBB;
+    color: #000000;
 }
 .footer_explain p:nth-child(2){
     margin-top: 5px;
@@ -137,7 +151,7 @@ footer {
 .footer_use{
     margin-bottom: 5px;
     font-size: 1.2rem;
-    color: #BBBBBB;
+    color: #000000;
     
 }
 .footer_use:hover{

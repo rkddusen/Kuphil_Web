@@ -1,12 +1,15 @@
+
+
+
 .cooperate_with_KUPhil{
+    width: 90%;
+    padding: 0 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 30px;
 }
 
-#handshake{
-    width:40%;
-}
 
 .please_call>p{
     text-align:center;
@@ -18,20 +21,20 @@
     justify-content:center;
     align-items:center;
     flex-direction:column;
-    margin-bottom:8%;
+    margin-bottom:2%;
 }
 
-.please_call>ul{
-    list-style: none;
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom:5px;
-    margin-top:50px;
+
+.plz1 {
+    width: 90%;
 }
 
-.please_call>li{
-    font-size:1.5rem;
-    margin-bottom:3px;
+.plz2 {
+    display: none;
+}
+
+.plz3 {
+    display: none;
 }
 
 #contact_how{
@@ -108,6 +111,15 @@
     .please_call>ul{
         margin-top:35px;
     }
+
+    .plz1{
+        display: none;
+    }
+
+    .plz2{
+        display: flex;
+        width: 90%;
+    }
 }
 
 @media (max-width : 479px){ 
@@ -125,6 +137,15 @@
     
     .please_call>li{
         font-size:1.2rem;
+    }
+
+    .plz2{
+        display: none;
+    }
+
+    .plz3{
+        display: flex;
+        width: 100%;
     }
     
     .contact>img{

@@ -221,7 +221,7 @@ function gameEnd(number_win){
             <p class="worldcup_end_en"></p>
             <p class="worldcup_end_kr"><p/>
             <div class="worldcup_re">
-                <p onclick="location.reload()">다시하기</p>
+                <p onclick="location.reload()">다시하기 >></p>
             </div>
         </div>
     </div>`;

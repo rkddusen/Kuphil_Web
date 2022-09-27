@@ -1,5 +1,5 @@
 .policy_area{
-    width: 80%;
+    width: 90%;
     margin: 70px auto;
     padding: 0 5%;
 }
@@ -16,10 +16,10 @@
 }
 .policy_explain{
     width: 80%;
-    background-color: #FFFDFD;
+    background-color: #fff;
     margin: 0 auto;
     padding: 5%;
-    border: 1px solid #94613C;
+    border: 1px solid #222;
 }
 
 .policy_contents{

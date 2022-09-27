@@ -1,20 +1,12 @@
+.nav_notice{
+background: linear-gradient(91.48deg, #ECFDE5 0%, rgba(189, 222, 236, 0.31) 100%);
 
+    }
 
 .archiveBox{
-    width: 80%;
-    height: auto;
-    min-height: 90%;
-    padding-bottom: 100px;
-    margin: 0 auto;
-}
-
-
-#arc_notice{
-    margin-top: 70px;
-    margin-bottom: 50px;
     width: 90%;
-    font-size: 2.5rem;
-    color: #5C3A1A;
+    margin: 0 auto;
+    margin-top: 70px;
 }
 
 .container {
@@ -100,8 +92,8 @@
     width: 25px;
     height: 25px;
     margin-left: 5px;
-    border-top: 3px solid #BE7743;
-    border-right: 3px solid #BE7743;
+    border-top: 3px solid #222;
+    border-right: 3px solid #222;
     transform: rotate(-135deg);
 }
 
@@ -114,8 +106,8 @@
     width: 25px;
     height: 25px;
     margin-left: 5px;
-    border-top: 3px solid #BE7743;
-    border-right: 3px solid #BE7743;
+    border-top: 3px solid #222;
+    border-right: 3px solid #222;
     transform: rotate(45deg);
 }
 
@@ -150,7 +142,7 @@
 
 
 .arc_concert_title {
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: bold;
     margin-bottom: 2vw;
 }
@@ -162,16 +154,16 @@
 
 .arc_info_bold{
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 .detail{
-    font-weight: 100;
-    font-size: 2rem;
+    font-weight: initial;
+    font-size: 1.6rem;
 }
 
 .concert_text1{
-    font-size: 2.5rem;
+    font-size: 2.3rem;
 }
 
 .arc_concert_place{
@@ -187,10 +179,10 @@
 }
 
 .concert_text2{
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin: 2vw 0;
     padding-top: 2vw;
-    border-top: 1px solid #BE7743;
+    border-top: 1px solid #222;
 }
 
 .concert_program_list{
@@ -198,11 +190,11 @@
 }
 
 .concert_program_composer{
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
 
 .concert_program_song{
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
 
 
@@ -216,14 +208,7 @@
 
 
 @media (max-width: 1023px) {
-
-    .archiveBox{
-        width: 80%;
-    }
     
-    #arc_notice{
-        margin-top: 50px;
-    }
     .concert_text1{
         font-size: 1.5rem;
     }
@@ -241,22 +226,11 @@
     .detail {
         font-size: 1.5rem;
     }
-
-    
-
 }
 
 
 @media (max-width: 767px) {
-
-    .archiveBox{
-        width: 80%;
-    }
     
-    #arc_notice{
-        margin-top: 30px;
-    }
-
     .archiveBox .container_2{
         display: flex;
         flex-direction: column;
@@ -314,15 +288,9 @@
     .concert_program_song{
         font-size: 1rem;
     }
-
-
-
 }
 
 @media (max-width: 479px) {
-    #arc_notice{
-        margin-top: 15px;
-    }
 
     .prev_btn {
         width: 6px;
@@ -333,7 +301,4 @@
         width: 6px;
         height: 6px;
     }
-
-
-
 }

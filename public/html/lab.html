@@ -19,7 +19,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="./favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
@@ -27,10 +27,12 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <title>KUPHIL</title>
-    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=we7e7zisui&submodules=geocoder"></script>
+    <script type="text/javascript"
+        src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=we7e7zisui&submodules=geocoder"></script>
 </head>
-    
+
 <body>
     <header>
         <div class="main_head">
@@ -46,12 +48,13 @@
                     <li><a href="./lab">실험실</a></li>
                 </ul>
             </nav>
-            <div class="small_menu">
-                <p onclick="smallOpen();">≡</p>
-
+            <div class="ham">
+                <span class="bar1"></span>
+                <span class="bar2"></span>
+                <span class="bar3"></span>
             </div>
+
             <div class="small_menu_open">
-                <p onclick="smallClose();">X</p>
                 <nav>
                     <ul>
                         <li><a href="./introduce">소개</a></li>
@@ -63,13 +66,10 @@
                 </nav>
             </div>
             <script>
-                let small_menu_open = document.getElementsByClassName("small_menu_open")[0];
-                function smallOpen() {
-                    small_menu_open.style.display = 'block';
-                }
-                function smallClose() {
-                    small_menu_open.style.display = 'none';
-                }
+                $(".ham").click(function () {
+                    $(this).toggleClass("active");
+                    $(".small_menu_open").toggleClass("active");
+                });
             </script>
         </div>
         <div class="nav_notice">
@@ -77,8 +77,8 @@
                 <a href="./lab">실험실</a>
             </p>
             <p class="notice_exp">
-                소개하고 연혁입니다.<br>
-                소개하고 연혁입니다.
+                (BETA) 개발자들이 새롭게 준비 중인 기능들입니다.<br>
+                [피드백 환영]
             </p>
         </div>
     </header>

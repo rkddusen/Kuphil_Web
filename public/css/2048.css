@@ -1,16 +1,17 @@
+.nav_notice{
+    background: linear-gradient(91.48deg, #EFF2FF 0%, rgba(252, 225, 225, 0.31) 100%);
+}
+
 .game_area {
-    width: 80%;
-    padding: 30px 5%;
-    margin: 0 auto;
-    height: auto;
-    min-height: 100%;
+    width: 90%;
+    padding: 0 5%;
+    margin: 100px auto;
 }
 
 .game_area>div:first-child{
     width: 530px;
     height: 30px;
     margin: 0 auto;
-    margin-top: 50px;
     display: flex;
 }
 
@@ -47,8 +48,8 @@
 }
 
 .game_content td img {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
 }
 
 #game_start:hover, #game_end:hover, #game_how:hover, #game_top:hover {
@@ -114,6 +115,7 @@
 @media (max-width : 767px){
     .game_area {
         width: 90%;
+        margin: 50px auto;
     }
     .game_area>div:first-child{
         width: 370px;

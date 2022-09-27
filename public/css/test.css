@@ -1,11 +1,11 @@
+.nav_notice{
+    background: linear-gradient(91.48deg, #EFF2FF 0%, rgba(252, 225, 225, 0.31) 100%);
+}
+
 .gameContents{
     padding: 0 5%;
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 100px;
-    height: auto;
-    min-height: 100%;
-    padding-bottom: 260px;
+    width: 90%;
+    margin: 100px auto;
 }
 .question {
     text-align: center;
@@ -25,18 +25,21 @@
     font-size: 1.5rem;
     width: 400px;
     height: 100px;
-    border: 2px solid #75492a;
-    
-    background-color: #fffcfb;
-    border-radius: 10px;
+    border: none;
+
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
 }
 .secondAnswer button{
     font-size: 1.5rem;
     width: 400px;
     height: 100px;
-    border: 2px solid #e6955b;
-    background-color: #fffcfb;
-    border-radius: 10px;
+    border: none;
+    background-color: #ffffff;
+    
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
 }
 .result{
     text-align: center;
@@ -66,6 +69,7 @@
 @media (max-width : 768px) {
     .gameContents{
         width: 90%;
+        margin: 50px auto;
     }
     .answer{
         display: block;
@@ -76,13 +80,13 @@
     .firstAnswer button{
         width: 100%;
         margin: 0;
-        margin: 50px 0 10px 0;
+        margin: 50px 0 0 0;
         height: 50px;
     }
     .secondAnswer button{
         width: 100%;
         margin: 0;
-        margin: 10px 0;
+        margin-top: 30px;
         height: 50px;
     }
     .resultText p:nth-child(2), .resultText p:nth-child(3){

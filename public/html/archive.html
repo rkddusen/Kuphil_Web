@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="./css/archive_styles.css">
     <!--Google Web Font를 이용하기 위한 link들 삽입-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Poiret+One&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="./favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
@@ -28,36 +28,18 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <title>KUPHIL</title>
 </head>
 
 <body>
-    <header>
-        <div class="main_head">
-            <div class="mainlogo">
-                <a href="./"><img src="./image/main/page_logo_black.png" alt="KUPHIL 흰색로고"></a>
-            </div>
-            <!-- <div class="head1">
-                <div>
-                    <a href="./login">로그인</a>
+    <div class="total_div">
+        <header>
+            <div class="main_head">
+                <div class="mainlogo">
+                    <a href="./"><img src="./image/main/page_logo_black.png" alt="KUPHIL 흰색로고"></a>
                 </div>
-            </div> -->
-            <nav class="nav">
-                <ul>
-                    <li><a href="./introduce">소개</a></li>
-                    <li><a href="./archive">아카이브</a></li>
-                    <li><a href="./qna">Q&A</a></li>
-                    <li><a href="./gamecenter">놀이터</a></li>
-                    <li><a href="./lab">실험실</a></li>
-                </ul>
-            </nav>
-            <div class="small_menu">
-                <p onclick="smallOpen();">≡</p>
-
-            </div>
-            <div class="small_menu_open">
-                <p onclick="smallClose();">X</p>
-                <nav>
+                <nav class="nav">
                     <ul>
                         <li><a href="./introduce">소개</a></li>
                         <li><a href="./archive">아카이브</a></li>
@@ -66,78 +48,69 @@
                         <li><a href="./lab">실험실</a></li>
                     </ul>
                 </nav>
+                <div class="ham">
+                    <span class="bar1"></span>
+                    <span class="bar2"></span>
+                    <span class="bar3"></span>
+                </div>
+
+                <div class="small_menu_open">
+                    <nav>
+                        <ul>
+                            <li><a href="./introduce">소개</a></li>
+                            <li><a href="./archive">아카이브</a></li>
+                            <li><a href="./qna">Q&A</a></li>
+                            <li><a href="./gamecenter">놀이터</a></li>
+                            <li><a href="./lab">실험실</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <script>
+                    $(".ham").click(function () {
+                        $(this).toggleClass("active");
+                        $(".small_menu_open").toggleClass("active");
+                    });
+                </script>
             </div>
-            <script>
-                let small_menu_open = document.getElementsByClassName("small_menu_open")[0];
-                function smallOpen() {
-                    small_menu_open.style.display = 'block';
-                }
-                function smallClose() {
-                    small_menu_open.style.display = 'none';
-                }
-            </script>
-        </div>
-        <div class="nav_notice">
-            <p class="notice_title">
-                <a href="./archive">아카이브</a>
-            </p>
-            <p class="notice_exp">
-                소개하고 연혁입니다.<br>
-                소개하고 연혁입니다.
-            </p>
-        </div>
-    </header>
-    <div class="archiveBox">
-        <div class="container">
-            <div class="posterbox_1"></div>
-            <div class="loadposters">
-                <div onclick= "prevPage();" class="prev_btn" ></div>
-                <div onclick="nextPage();" class="next_btn"></div>
+            <div class="nav_notice">
+                <p class="notice_title">
+                    <a href="./archive">아카이브</a>
+                </p>
+                <p class="notice_exp">
+                    KUPhil의 역대 연주회 정보를 모아놓은 공간입니다.
+                </p>
             </div>
-            <div class="posterbox_2"></div>
-            <!-- <button id="open">Open Modal</button> -->
-            <div class="modal hidden">
-                
+        </header>
+        <div class="archiveBox">
+            <div class="container">
+                <div class="posterbox_1"></div>
+                <div class="loadposters">
+                    <div onclick="prevPage();" class="prev_btn"></div>
+                    <div onclick="nextPage();" class="next_btn"></div>
+                </div>
+                <div class="posterbox_2"></div>
+                <!-- <button id="open">Open Modal</button> -->
+                <!-- <div class="modal hidden"></div> -->
             </div>
         </div>
     </div>
     <footer>
-        <div class="footer_first">
-            <li><a href="#">오시는 길</a></li>
-            <li><a href="#">이용 약관</a></li>
-            <li><a href="#">제휴 제안</a></li>
-        </div>
-        <div class="footer_second">
-            <div class="footer_logo">
-                <img src="./image/main/graylogo.png">
-                <img src="./image/main/무제.png">
+        <div class="footer_section">
+            <div class="footer_area">
+                <div class="footer_logo">
+                    <img src="./image/main/graylogo.png">
+                    <img src="./image/main/무제.png">
+                </div>
+                <div class="footer_explain">
+                    <a class="footer_use" href="./policy">이용 약관</a>
+                    <p>서울특별시 광진구 능동로 120, 제2학생회관 B117호</p>
+                    <p>후원 | ##은행 #####</p><br>
+                    <p>copyright 2021 KUPHIL, All rights reserved.</p>
+                </div>
             </div>
-            <div class="footer_explain">
-
-                <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
-                <p>후원 | ##은행 #####</p><br>
-                <p>copyright 2021 KUPHIL, All rights reserved.</p>
-            </div>
-            <div class="footer_sns">
-                <p>Contact Us :)</p>
-                <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">
-                    <img src="./image/main/kuphil_youtube.png" alt="쿠필 유튜브">
-                </a>
-                <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank">
-                    <img src="./image/main/kuphil_instagram.png" alt="쿠필 인스타그램">
-                </a>
-                <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank">
-                    <img src="./image/main/kuphil_facebook.png" alt="쿠필 페이스북">
-                </a>
-            </div>
-        </div>
-        <div class="small_footer_explain">
-
-            <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
-            <p>후원 | ##은행 #####</p><br>
-            <p>copyright 2021 KUPHIL, All rights reserved.</p>
         </div>
     </footer>
 </body>
-<script type = "text/javascript" src = "./js/archive.js"></script>
+<script type="text/javascript" src="./js/archive.js"></script>
+
 </html>

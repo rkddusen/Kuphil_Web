@@ -28,6 +28,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <title>KUPHIL</title>
 </head>
 
@@ -47,12 +48,13 @@
                     <li><a href="./lab">실험실</a></li>
                 </ul>
             </nav>
-            <div class="small_menu">
-                <p onclick="smallOpen();">≡</p>
-
+            <div class="ham">
+                <span class="bar1"></span>
+                <span class="bar2"></span>
+                <span class="bar3"></span>
             </div>
+            
             <div class="small_menu_open">
-                <p onclick="smallClose();">X</p>
                 <nav>
                     <ul>
                         <li><a href="./introduce">소개</a></li>
@@ -64,13 +66,10 @@
                 </nav>
             </div>
             <script>
-                let small_menu_open = document.getElementsByClassName("small_menu_open")[0];
-                function smallOpen() {
-                    small_menu_open.style.display = 'block';
-                }
-                function smallClose() {
-                    small_menu_open.style.display = 'none';
-                }
+                $(".ham").click(function(){
+                    $(this).toggleClass("active");
+                    $(".small_menu_open").toggleClass("active");
+                });
             </script>
         </div>
         <div class="nav_notice">
@@ -78,35 +77,17 @@
                 <a href="./cooperation">제휴 제안</a>
             </p>
             <p class="notice_exp">
-                소개하고 연혁입니다.<br>
-                소개하고 연혁입니다.
+                쿠필과 함께할 수 있는 다양한 제안들을 기다립니다.
             </p>
         </div>
     </header>
 
 
     <div class="cooperate_with_KUPhil">
-        <img src="./image/제안.jpg" id="handshake">
         <div class="please_call">
-            <p>쿠필과 함께 할 수 있는 다양한 제안들을 기다립니다.<br><br>
-
-                <ul>악기사</ul>
-                  <li>현/금관/목관악기 대여 사업</li>
-                  <li>악기 부속품 제휴 사업</li>
-                
-                <ul>장소 대여</ul>
-                  <li>식당</li>
-                  <li>합주 연습실</li>
-                
-                <ul>연주 봉사</ul>
-                  <li>공공시설 연주 봉사(병원 등)</li>
-                
-                <ul>합동 공연</ul>
-                  <li>타 단체와의 합동 공연</li>
-                  <li>플래시몹, 버스킹 등</li>
-                
-                <ul>기타 제휴제안</ul>
-                  <li>공연문화 지원 사업 등</li>
+            <img src="./image/plz1.jpg" class="plz1">
+            <img src="./image/plz2.jpg" class="plz2">
+            <img src="./image/plz3.jpg" class="plz3">
         </div>
     </div>
     <div id="contact_how">

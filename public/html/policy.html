@@ -15,7 +15,7 @@
     <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="114x114" href=".git /favicon/apple-icon-114x114.png">
     <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
     <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
@@ -28,6 +28,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <title>KUPHIL</title>
 </head>
 
@@ -42,35 +43,33 @@
                 <ul>
                     <li><a href="./introduce">소개</a></li>
                     <li><a href="./archive">아카이브</a></li>
-                    <li><a href="./qna">Q&A</a></li>
+                    <li><a href="./Q&A">Q&A</a></li>
                     <li><a href="./gamecenter">놀이터</a></li>
                     <li><a href="./lab">실험실</a></li>
                 </ul>
             </nav>
-            <div class="small_menu">
-                <p onclick="smallOpen();">≡</p>
-
+            <div class="ham">
+                <span class="bar1"></span>
+                <span class="bar2"></span>
+                <span class="bar3"></span>
             </div>
+            
             <div class="small_menu_open">
-                <p onclick="smallClose();">X</p>
                 <nav>
                     <ul>
                         <li><a href="./introduce">소개</a></li>
                         <li><a href="./archive">아카이브</a></li>
-                        <li><a href="./qna">Q&A</a></li>
+                        <li><a href="./Q&A">Q&A</a></li>
                         <li><a href="./gamecenter">놀이터</a></li>
                         <li><a href="./lab">실험실</a></li>
                     </ul>
                 </nav>
             </div>
             <script>
-                let small_menu_open = document.getElementsByClassName("small_menu_open")[0];
-                function smallOpen() {
-                    small_menu_open.style.display = 'block';
-                }
-                function smallClose() {
-                    small_menu_open.style.display = 'none';
-                }
+                $(".ham").click(function(){
+                    $(this).toggleClass("active");
+                    $(".small_menu_open").toggleClass("active");
+                });
             </script>
         </div>
         <div class="nav_notice">
@@ -78,20 +77,14 @@
                 <a href="./policy">이용 약관</a>
             </p>
             <p class="notice_exp">
-                소개하고 연혁입니다.<br>
-                소개하고 연혁입니다.
+                환영합니다.<br>
+                KUPhil 홈페이지를 이용해 주셔서 감사합니다.
             </p>
         </div>
     </header>
     <div class="policy_area">
         <div class="policy">
-            <div class="policy_title">
-                쿠필 이용 약관
-            </div>
-            <br><br><br>
             <div class="policy_hi">
-                환영합니다.<br><br>
-                쿠필 홈페이지를 이용해 주셔서 고맙습니다.<br><br>
                 쿠필 홈페이지는 여러분들이 쿠필과 관련된 정보를 쉽게 이용할 수 있도록 다양한 기능, 서비스(이하 "서비스")를 제공합니다. 이 약관에는 쿠필 홈페이지 서비스 이용에 필요한 중요한 내용이
                 담겨 있습니다.
             </div>
@@ -99,14 +92,14 @@
             <div class="policy_explain">
                 <div class="policy_contents">
                     <b>제1조 (목적)</b>
-                    <p>본 약관은 쿠필(이하 ‘단체(?)’)가 제공하는 쿠필 및 쿠필 관련 제반 서비스(이하 '서비스')의 이용과 관련하여 단체와 이용자의 권리, 의무 및 책임사항, 기타 필요한
+                    <p>본 약관은 쿠필(이하 ‘단체’)가 제공하는 쿠필 및 쿠필 관련 제반 서비스(이하 '서비스')의 이용과 관련하여 단체와 이용자의 권리, 의무 및 책임사항, 기타 필요한
                         사항을
                         규정함을 목적으로 합니다.</p>
                 </div>
                 <div class="policy_contents">
                     <b>제2조 (이용자의 정의)</b>
                     <p>
-                        ① '이용자'란 본 약관에 동의하고 단체가 제공하는 서비스를 이용하는 ?를 통칭합니다.
+                        ① '이용자'란 본 약관에 동의하고 단체가 제공하는 서비스를 이용하는 자를 통칭합니다.
                     </p>
                 </div>
                 <div class="policy_contents">
@@ -115,7 +108,7 @@
                         ① 단체는 이용자에게 아래와 같은 서비스를 제공합니다.
                     </p>
                     <ul>
-                        <li>커뮤니티 서비스 (QnA 등)</li>
+                        <li>커뮤니티 서비스 (Q&A 등)</li>
                         <li>쿠필 활동 기록 서비스 (연혁, 아카이브 등)</li>
                         <li>기타 단체가 자체 개발하거나 다른 단체와의 협력 계약 등을 통해 이용자들에게 제공할 일체의 서비스</li>
                     </ul>
@@ -141,7 +134,7 @@
                 <div class="policy_contents">
                     <b>제5조 (이용자에 대한 통지)</b>
                     <p>
-                        단체가 전체 이용자에 대한 통지를 하는 경우 7일 이상 공지사항 게시판에 게시함으로써 개별 통지에 갈음할 수 있습니다.
+                        단체가 전체 이용자에 대한 통지를 하는 경우 7일 이상 메인 페이지에 게시함으로써 개별 통지에 갈음할 수 있습니다.
                     </p>
                 </div>
                 <div class="policy_contents">
@@ -157,16 +150,16 @@
                     </p>
                 </div>
                 <div class="policy_contents">
-                    <b>제7조 (QnA 이용자의 게시글 비밀번호에 대한 의무)</b>
+                    <b>제7조 (Q&A 이용자의 게시글 비밀번호에 대한 의무)</b>
                     <p>
-                        ① 단체가 관계법령, ‘개인정보보호 정책’에 의해서 그 책임을 지는 경우를 제외하고, QnA 질문 등록 시 기입한 자신의 비밀번호에 관한 관리 책임은 각 이용자에게
+                        ① 단체가 관계법령, ‘개인정보보호 정책’에 의해서 그 책임을 지는 경우를 제외하고, Q&A 질문 등록 시 기입한 자신의 비밀번호에 관한 관리 책임은 각 이용자에게
                         있습니다.
                     </p>
                     <p>
-                        ② QnA 이용자는 자신의 게시글 비밀번호를 제3자에게 이용하게 해서는 안 됩니다.
+                        ② Q&A 이용자는 자신의 게시글 비밀번호를 제3자에게 이용하게 해서는 안 됩니다.
                     </p>
                     <p>
-                        ③ QnA 이용자는 자신의 게시글 비밀번호를 도난당하거나 제3자가 사용하고 있음을 인지한 경우에는 바로 단체에 통보하고 단체의 안내가 있는 경우에는 그에 따라야 합니다.
+                        ③ Q&A 이용자는 자신의 게시글 비밀번호를 도난당하거나 제3자가 사용하고 있음을 인지한 경우에는 바로 단체에 통보하고 단체의 안내가 있는 경우에는 그에 따라야 합니다.
                     </p>
                 </div>
                 <div class="policy_contents">
@@ -188,9 +181,8 @@
                         <li>불특정 다수의 자를 대상으로 하여 광고 또는 선전을 게시하거나 음란물, 청소년 유해매체물, 불법촬영물 등을 게시하는 행위</li>
                     </ul>
                     <p>
-                        ② 제1항에 해당하는 행위를 한 이용자가 있을 경우 단체는 본 약관 제6조 제3항에서 정한 바에 따라 이용자의 서비스 이용 자격을 적절한 방법으로 제한 및 정지, 상실시킬
-                        수
-                        있습니다. => 우리가? 어떻게…?
+                        ② 비밀번호가 게시글 비밀번호로 명확하게 제1항에 해당하는 행위를 한 이용자가 있을 경우 단체는 이용자의 서비스 이용 자격을 적절한 방법으로 제한시킬 수 있습니다.
+                        이용자는 자신의 귀책사유로 인하여 단체나 다른 이용자가 입은 손해에 대하여 민형사상 책임을 질 수 있습니다.
                     </p>
                     <p>
                         ③ 이용자는 그 귀책사유로 인하여 단체나 다른 이용자가 입은 손해를 배상할 책임이 있습니다.
@@ -268,13 +260,13 @@
                 <div class="policy_contents">
                     <b>제13조 (재판관할)</b>
                     <p>
-                        와 이용자 간에 발생한 서비스 이용에 관한 분쟁에 대하여는 대한민국 법을 적용하며, 본 분쟁으로 인한 소는 민사소송법상의 관할을 가지는 대한민국의 법원에 제기합니다.
+                        ③ 단체와 이용자 간에 발생한 서비스 이용에 관한 분쟁에 대하여는 대한민국 법을 적용하며, 본 분쟁으로 인한 소는 민사소송법상의 관할을 가지는 대한민국의 법원에 제기합니다.
                     </p>
                 </div>
                 <div class="policy_contents">
                     <b>제14조 (개정 전 고지의무)</b>
                     <p>
-                        본 이용약관의 내용 추가, 삭제 및 수정이 있을 경우 개정 최소 7일 전에 단체 서비스 내의 메인 페이지 팝업창을 통하여 사전 공지를 할 것입니다.
+                        ③ 본 이용약관의 내용 추가, 삭제 및 수정이 있을 경우 개정 최소 7일 전에 단체 서비스 내의 메인 페이지를 통하여 사전 공지를 할 것입니다.
                     </p>
                 </div>
             </div>
