@@ -48,8 +48,8 @@
 }
 
 .game_content td img {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
 }
 
 #game_start:hover, #game_end:hover, #game_how:hover, #game_top:hover {
