@@ -607,6 +607,10 @@ server.get("/recruitment", (req, res) => {
     res.sendFile(__dirname + "/public/html/recruitment.html");
 });
 
+server.get("/audio", (req, res) => {
+    res.sendFile(__dirname + "/public/html/audio.html");
+});
+
 server.use((req, res) => {
     res.sendFile(__dirname + "/public/html/404.html");
 });
