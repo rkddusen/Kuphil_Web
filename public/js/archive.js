@@ -15,22 +15,22 @@ function showPage(){
         buildOne += '<div class="poster_img" id = "poster_' 
                     + (num-i)  
                     + '">' 
-                    + '<a href = "/archive/concert/'+(num-i)+'"></a><img class="thumbnail_1" src="./image/poster/poster_'  
+                    + '<a href = "/archive/concert/'+(num-i)+'"><img class="thumbnail_1" src="./image/poster/poster_'  
                     + (num-i) 
                     + '.jpg" alt="정보가 없습니다." .>' 
                     + '<div class="poster_title">제' 
                     + (num-i) 
-                    + '회</div></div>';
+                    + '회</div></div></a>';
 
         buildTwo += '<div class="poster_img" id = "poster_' 
                     + (num-3-i) 
                     + '">' 
-                    + '<a href = "/archive/concert/'+(num-3-i)+'"></a><img class="thumbnail_2" src="./image/poster/poster_'  
+                    + '<a href = "/archive/concert/'+(num-3-i)+'"><img class="thumbnail_2" src="./image/poster/poster_'  
                     + (num-3-i) 
                     + '.jpg" alt="정보가 없습니다." .>' 
                     + '<div class="poster_title">제' 
                     + (num-3-i) 
-                    + '회</div></div>';
+                    + '회</div></div></a>';
         }
     }
     else{
@@ -40,32 +40,32 @@ function showPage(){
                 buildOne += '<div class="poster_img" id = "poster_' 
                 + (num-i) 
                 + '">' 
-                + '<a href = "/archive/concert/'+(num-i)+'"></a><img class="thumbnail_1" src="./image/poster/poster_'  
+                + '<a href = "/archive/concert/'+(num-i)+'"><img class="thumbnail_1" src="./image/poster/poster_'  
                 + (num-i) 
                 + '.jpg" alt="정보가 없습니다." .>' 
                 + '<div class="poster_title">제' 
-                + (num-i) + '회</div></div>';
+                + (num-i) + '회</div></div></a>';
                 }
-                buildTwo += '<div class="poster_img" id = "poster_2">' + '<a href = "/archive/concert/2"></a><img class="thumbnail_1" src="./image/poster/poster_2.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title">제2회</div></div>';
-                buildTwo += '<div class="poster_img" id = "poster_1">' + '<a href = "/archive/concert/1"></a><img class="thumbnail_1" src="./image/poster/poster_1.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title">제1회</div></div>';
+                buildTwo += '<div class="poster_img" id = "poster_2">' + '<a href = "/archive/concert/2"><img class="thumbnail_1" src="./image/poster/poster_2.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title">제2회</div></div></a>';
+                buildTwo += '<div class="poster_img" id = "poster_1">' + '<a href = "/archive/concert/1"><img class="thumbnail_1" src="./image/poster/poster_1.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title">제1회</div></div></a>';
                 break;
             case 4:
                 for (i=0; i<3; i++){
-                buildOne += '<div class="poster_img" id = "poster_' + (num-i) + '">' + '<a href = "/archive/concert/'+(num-i)+'"></a><img class="thumbnail_1" src="./image/poster/poster_'  + (num-i) + '.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title"">제' + (num-i) + '회</div></div>';
+                buildOne += '<div class="poster_img" id = "poster_' + (num-i) + '">' + '<a href = "/archive/concert/'+(num-i)+'"><img class="thumbnail_1" src="./image/poster/poster_'  + (num-i) + '.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title"">제' + (num-i) + '회</div></div></a>';
                 }
-                buildTwo += '<div class="poster_img" id = "poster_1">' + '<a href = "/archive/concert/1"></a><img class="thumbnail_1" src="./image/poster/poster_1.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title">제1회 정기 연주회</div></div>';
+                buildTwo += '<div class="poster_img" id = "poster_1">' + '<a href = "/archive/concert/1"><img class="thumbnail_1" src="./image/poster/poster_1.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title">제1회 정기 연주회</div></div></a>';
                 break;
             case 3:
                 for (i=0; i<3; i++){
-                buildOne += '<div class="poster_img" id = "poster_' + (num-i) + '">' + '<a href = "/archive/concert/'+(num-i)+'"></a><img class="thumbnail_1" src="./image/poster/poster_'  + (num-i) + '.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title">제' + (num-i) + '회 정기 연주회</div></div>';
+                buildOne += '<div class="poster_img" id = "poster_' + (num-i) + '">' + '<a href = "/archive/concert/'+(num-i)+'"><img class="thumbnail_1" src="./image/poster/poster_'  + (num-i) + '.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title">제' + (num-i) + '회 정기 연주회</div></div></a>';
                 }
                 break;
             case 2: 
-                buildOne += '<div class="poster_img" id = "poster_2">' + '<a href = "/archive/concert/2"></a><img class="thumbnail_1" src="./image/poster/poster_2.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title">제2회</div></div>';
-                buildOne += '<div class="poster_img" id = "poster_1">' + '<a href = "/archive/concert/1"></a><img class="thumbnail_1" src="./image/poster/poster_1.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title">제1회</div></div>';
+                buildOne += '<div class="poster_img" id = "poster_2">' + '<a href = "/archive/concert/2"><img class="thumbnail_1" src="./image/poster/poster_2.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title">제2회</div></div></a>';
+                buildOne += '<div class="poster_img" id = "poster_1">' + '<a href = "/archive/concert/1"><img class="thumbnail_1" src="./image/poster/poster_1.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title">제1회</div></div></a>';
                 break;
             case 1:
-                buildOne += '<div class="poster_img" id = "poster_1">' + '<a href = "/archive/concert/1"></a><img class="thumbnail_1" src="./image/poster/poster_1.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title">제1회</div></div>';
+                buildOne += '<div class="poster_img" id = "poster_1">' + '<a href = "/archive/concert/1"><img class="thumbnail_1" src="./image/poster/poster_1.jpg" alt="정보가 없습니다." .>' + '<div class="poster_title">제1회</div></div></a>';
                 break;
             default:
                 buildOne += '<div></div>';

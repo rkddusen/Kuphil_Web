@@ -6,37 +6,35 @@ background: linear-gradient(91.48deg, #ECFDE5 0%, rgba(189, 222, 236, 0.31) 100%
 .archiveBox{
     width: 90%;
     margin: 0 auto;
-    margin-top: 70px;
+    margin-top: 50px;
 }
 
 .container {
     margin: 0 auto;
 }
 
+
 .posterbox_1 {
     width: 100%;
-    height: 26vw;
-    margin: 0 0 5vw 0;
+    padding: 2vw 0 0  0;
+
     display: flex;
     justify-content: center;
 }
 .posterbox_2 {
     width: 100%;
-    height: 26vw;
-    margin: 2vw 0 10vw 0;
+    padding: 2vw 0 10vw 0;
     display: flex;
     justify-content: center;
 }
 
 .poster_img {
     /* 포스터 사이즈가 규격에 맞지 않으면 잘려서 출력됨 */
-    width: 18.375vw;
-    height: 25.875vw;
+    width: 22.05vw;
+    height: 31.05vw;
     margin: 0 3.5vw;
-    background-color: #c4c4c4;
-
+    text-align: center;
     transition: all 0.2s linear;
-    float: left;
 
 }
 
@@ -44,8 +42,8 @@ background: linear-gradient(91.48deg, #ECFDE5 0%, rgba(189, 222, 236, 0.31) 100%
 .thumbnail_1 {
     box-shadow: 5px 5px 5px #999;
     cursor: pointer;
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     object-fit: cover;
 }
 
@@ -58,9 +56,9 @@ background: linear-gradient(91.48deg, #ECFDE5 0%, rgba(189, 222, 236, 0.31) 100%
 .thumbnail_2 {
     box-shadow: 5px 5px 5px #999;
     cursor: pointer;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 80%;
+    height: 80%;
+    object-fit:cover;
 }
 
 
@@ -80,7 +78,7 @@ background: linear-gradient(91.48deg, #ECFDE5 0%, rgba(189, 222, 236, 0.31) 100%
 
 .loadposters {
     width: 100%;
-    /* margin: 0 5%; */
+    margin: 2% auto;
     display: flex;
     justify-content: space-between;
 }
@@ -96,7 +94,6 @@ background: linear-gradient(91.48deg, #ECFDE5 0%, rgba(189, 222, 236, 0.31) 100%
     border-right: 3px solid #222;
     transform: rotate(-135deg);
 }
-
 
 
 .next_btn {
@@ -123,7 +120,9 @@ background: linear-gradient(91.48deg, #ECFDE5 0%, rgba(189, 222, 236, 0.31) 100%
 .archiveBox .container_2{
     display: flex;
     flex-direction: row;
+    padding: 3% 5% 10% 5%;
 }
+
 
 .arc_concert_poster{
     /* 포스터 사이즈가 규격에 맞지 않으면 잘려서 출력됨 */
@@ -293,12 +292,13 @@ background: linear-gradient(91.48deg, #ECFDE5 0%, rgba(189, 222, 236, 0.31) 100%
 @media (max-width: 479px) {
 
     .prev_btn {
-        width: 6px;
-        height: 6px;
+        width: 10px;
+        height: 10px;
     }
 
     .next_btn {
-        width: 6px;
-        height: 6px;
+        width: 10px;
+        height: 10px;
     }
+
 }
