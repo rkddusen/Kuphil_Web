@@ -35,7 +35,6 @@
     transition: 2s all;
 }
 .slide_area ul li:first-child{
-    z-index: 1;
     opacity: 1;
 }
 .slide_main{
@@ -111,6 +110,28 @@
     border-radius: 20px;
     background-position: center;
 }
+
+.slide_num{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    z-index: 10;
+}
+.slide_num div{
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+    margin: 2px;
+    float: left;
+    border-radius: 20px;
+    background-color: white;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
 
 
 section {
@@ -241,7 +262,7 @@ section {
     padding: 5%;
     font-size: 1.5rem;
     color: white;
-    background-color: rgb(105, 105, 105);
+    background-color: rgb(165, 165, 165);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border: none;
     border-radius: 10px;
@@ -268,13 +289,6 @@ section {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
 }
-.arcade_explain{
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 25px 0 0 30px;
-    z-index: 2;
-}
 .arcade_btn{
     position: absolute;
     width: 200px;
@@ -296,16 +310,57 @@ section {
     color: rgb(105, 105, 105);
     font-size: 18px;
 }
+
+.arcade_explain{
+    position: absolute;
+    height: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #FFF3FB;
+    border-radius: 20px 20px 0 0;
+}
+.arcade_explain div{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.arcade_explain div p{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 2rem;
+    transform: translate(-50%,-50%);
+    letter-spacing: 0.5rem;
+    line-height: 120%;
+}
+.arcade_explain div p button{
+    display: inline-block;
+    box-sizing: border-box;
+    margin-top: 5%;
+    padding: 2% 5%;
+    font-size: 1.5rem;
+    color: white;
+    background-color: rgb(165, 165, 165);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 10px;
+    letter-spacing: 0.2rem;
+}
 .arcade_img{
     position: absolute;
-    width: 60%;
+    width: 100%;
+    height: 50%;
     z-index: 1;
     left: 50%;
     transform:translate(-50%,0);
     bottom: 0;
+    text-align: center;
 }
 .arcade_img img{
-    width: 100%;
+    height: 100%;
 }
 
 /* 최근연주회 */
@@ -409,7 +464,6 @@ section {
     position: absolute;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    background-color: #e6e8ff;
 }
 .suggest_explain{
     position: absolute;
@@ -534,7 +588,7 @@ section {
 
     .main_recru{
         width: 100%;
-        padding-top: 55%;
+        padding-top: 60%;
         margin-top: 7%;
         float: left;
     }
@@ -542,7 +596,7 @@ section {
     
     .main_arcade{
         width: 100%;
-        padding-top: 60%;
+        padding-top: 75%;
         margin-top: 7%;
         float: left;
     }

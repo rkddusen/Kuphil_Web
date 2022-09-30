@@ -99,37 +99,38 @@
                     </li>
                 </ul>
             </div>
+            <div class="slide_num">
+                <div onclick="slideShow(0);">1</div>
+                <div onclick="slideShow(1);">2</div>
+                <div onclick="slideShow(2);">3</div>
+            </div>
         </div>
         <script>
+            let timeid;
             let index = 0;//이미지에 접근하는 인덱스
             window.onload = function () {
-                slideShow();
+                slideShow(0);
             }
             let slide = document.getElementsByClassName("slide_list");
-            function slideShow() {
-                slide[index].style.opacity = "0";
-                slide[index].style.zIndex = "0";
-                index = 0;
-                slide[0].style.opacity = '1';
-                slide[0].style.zIndex = "1";
-                setTimeout(slideNext, 4000);//함수를 4초마다 호출
-            }
-            function slideNext() {
+            function slideShow(index) {
+                for(let i = 0; i < slide.length; i++){
+                    slide[i].style.opacity = "0";
+                }
+                slide[index].style.opacity = '1';
+                //현재 차례의 슬라이드를 보여줌
+                
 
-                slide[index].style.opacity = "0"; //해당 인덱스는 opacity 0
-                slide[index + 1].style.opacity = "1";
-                slide[index].style.zIndex = "0";
-                slide[index + 1].style.zIndex = "1";
-                index++;
                 if (index == slide.length - 1) {
-
-                    setTimeout(slideShow, 4000);//함수를 4초마다 호출
+                    index = 0;
                 }
-                else {
-                    setTimeout(slideNext, 4000);//함수를 4초마다 호출
+                else{
+                    index++;
                 }
-
+                
+                clearTimeout(timeid);
+                timeid = setTimeout("slideShow("+index+")", 4000);//함수를 4초마다 호출
             }
+
         </script>
 
 
@@ -163,7 +164,7 @@
                         </div>
                         <div class="recru_area">
                             <div>
-                                쿠필과 연주할<br>신입 부원을<br>모집합니다.
+                                쿠필과 연주할<br>신입 부원을<br>모집합니다.<br>
                                 <button class="recru_btn" onclick="location.href='./recruitment'">자세히 보기 ></button>
                             </div>
                         </div>
@@ -171,11 +172,16 @@
                 </div>
                 <div class="main_arcade">
                     <div class="main_arcade_content">
-                        <!-- <div class="arcade_explain">
-                        <p class="arcade_title">Arcade</p>
-                    </div> -->
-                        <button class="arcade_btn" onclick="location.href='./gamecenter'">쿠웹에서 즐기는<br>미니게임 한
-                            판!<br><span>Go >></span></button>
+                        <!-- <button class="arcade_btn" onclick="location.href='./gamecenter'">쿠웹에서 즐기는<br>미니게임 한
+                            판!<br><span>Go >></span></button> -->
+                        <div class="arcade_explain">
+                            <div>
+                                <p>
+                                    쿠웹에서 즐기는<br>미니게임 한 판!<br>
+                                    <button onclick="location.href='./gamecenter'">Go ></button>
+                                </p>
+                            </div>
+                        </div>
                         <div class="arcade_img">
                             <img src="./image/main/arcade.png" alt="arcade">
                         </div>
