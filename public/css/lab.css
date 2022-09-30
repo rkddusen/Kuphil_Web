@@ -49,17 +49,14 @@
 }
 
 .lab_selection{
-    align-self:center;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
     border: none;
-    background-color: transparent;
-    color: black;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
     font-size: 2rem;
-    font-weight: bold;
     cursor: pointer;
-}
-
-.lab_selection:hover{
-    color:gray
+    padding: 2% 5%;
 }
 
 @media (max-width: 1023px) {
