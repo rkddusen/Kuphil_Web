@@ -44,7 +44,7 @@
                         <li><a href="./archive">아카이브</a></li>
                         <li><a href="./qna">Q&A</a></li>
                         <li><a href="./gamecenter">놀이터</a></li>
-                        <li><a href="./lab">실험실</a></li>
+                        <li><a href="./lab">체험실</a></li>
                     </ul>
                 </nav>
                 <div class="ham">
@@ -60,7 +60,7 @@
                             <li><a href="./archive">아카이브</a></li>
                             <li><a href="./qna">Q&A</a></li>
                             <li><a href="./gamecenter">놀이터</a></li>
-                            <li><a href="./lab">실험실</a></li>
+                            <li><a href="./lab">콘텐츠</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -87,7 +87,7 @@
                                 <img src="./image/poster/poster_<%=id_two%>.jpg" alt="제<%=id_two%>회 정기연주회 포스터">
                             </div>
                             <div>
-                                <p class="slide_archive_title">쿠필의 역대 연주회가<br>궁금하다면?!</p>
+                                <p class="slide_archive_title">쿠필의 역대 연주회가<br>궁금하다면?</p>
                                 <p class="slide_archive_text"><a href="./archive">보러 가기 >></a></p>
                             </div>
                         </div>
@@ -100,43 +100,42 @@
                 </ul>
             </div>
             <div class="slide_num">
-                <div onclick="slideShow(0);">1</div>
-                <div onclick="slideShow(1);">2</div>
-                <div onclick="slideShow(2);">3</div>
+                <div class="slide_btn" onclick="slideShow(0);"></div>
+                <div class="slide_btn" onclick="slideShow(1);"></div>
+                <div class="slide_btn" onclick="slideShow(2);"></div>
             </div>
         </div>
         <script>
-            let timeid;
+            //메인 이미지 슬라이드
+            let timeid;//clearTimeout을 위한 변수
             let index = 0;//이미지에 접근하는 인덱스
             window.onload = function () {
                 slideShow(0);
             }
             let slide = document.getElementsByClassName("slide_list");
             function slideShow(index) {
-                for(let i = 0; i < slide.length; i++){
+                for (let i = 0; i < slide.length; i++) {
                     slide[i].style.opacity = "0";
+                    document.getElementsByClassName('slide_btn')[i].style.backgroundColor = 'black';
                 }
                 slide[index].style.opacity = '1';
                 //현재 차례의 슬라이드를 보여줌
-                
+
+                document.getElementsByClassName('slide_btn')[index].style.backgroundColor = 'white';
 
                 if (index == slide.length - 1) {
                     index = 0;
                 }
-                else{
+                else {
                     index++;
                 }
-                
+
                 clearTimeout(timeid);
-                timeid = setTimeout("slideShow("+index+")", 4000);//함수를 4초마다 호출
+                timeid = setTimeout("slideShow(" + index + ")", 1000);//함수를 4초마다 호출
             }
-
         </script>
-
-
         <section>
-            <div class="row_3rd">
-
+            <div class="row_1st">
                 <div class="main_wea">
                     <div class="main_wea_content">
                         <div class="wea">
@@ -153,32 +152,24 @@
                 </div>
                 <div class="main_recru">
                     <div class="main_recru_content">
-                        <!-- <div class="recru_explain">
-                        <p class="recru_title">Recruitment</p>
-                    </div>
-                    <div class="recru_area">
-                        <p>쿠필과 함께할<br>신입 부원을<br>모집합니다.🌱</p>
-                    </div> -->
                         <div class="recru_img">
                             <img src="./image/main/recruitment.png" alt="recruitment">
                         </div>
                         <div class="recru_area">
                             <div>
                                 쿠필과 연주할<br>신입 부원을<br>모집합니다.<br>
-                                <button class="recru_btn" onclick="location.href='./recruitment'">자세히 보기 ></button>
+                                <button class="recru_btn" onclick="location.href='./recruitment'">자세히 보기</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="main_arcade">
                     <div class="main_arcade_content">
-                        <!-- <button class="arcade_btn" onclick="location.href='./gamecenter'">쿠웹에서 즐기는<br>미니게임 한
-                            판!<br><span>Go >></span></button> -->
                         <div class="arcade_explain">
                             <div>
                                 <p>
                                     쿠웹에서 즐기는<br>미니게임 한 판!<br>
-                                    <button onclick="location.href='./gamecenter'">Go ></button>
+                                    <button onclick="location.href='./gamecenter'">Go</button>
                                 </p>
                             </div>
                         </div>
@@ -188,20 +179,13 @@
                     </div>
                 </div>
             </div>
-            <div class="row_1st">
-
-            </div>
             <div class="row_2nd">
                 <div class="main_recent">
-                    <div class="main_recent_content">
+                    <div class="recent_content">
                         <div class="recent_explain">
-                            <p class="recent_title">Recent Concert</p>
-                        </div>
-                        <div class="recent_content">
-                            <div>
-                                <iframe src="https://www.youtube.com/embed/qlydoTS6_NY" title="YouTube video player"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            <div class="recent_iframe">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/woR7WaYK91Y" title="YouTube video player"
+                                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen></iframe>
                             </div>
                         </div>
@@ -209,33 +193,15 @@
                 </div>
 
             </div>
-            <div class="row_0">
-
-            </div>
-            <div class="row_4th">
-                <div class="main_tip">
-                    <div class="main_tip_content">
-                        <div class="tip_explain">
-                            <p class="tip_title">Today's TIP</p>
-                        </div>
-                        <div class="tip_contents">
-                            <p>
-                                <%= tip %>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            <div class="row_3rd">
                 <div class="main_suggest">
                     <a href="./cooperation">
                         <div class="main_suggest_content">
-                            <div class="suggest_explain">
-                                <p class="suggest_title">제휴 제안</p>
-                            </div>
-                            <!-- 
-                                    바로 가기 >>
-                                </a> -->
                             <div class="suggest_image">
                                 <img src="./image/suggest.png" alt="제휴제안">
+                            </div>
+                            <div class="suggest_p">
+                                <p>쿠필과의 제휴 안내</p>
                             </div>
                         </div>
                     </a>
@@ -251,7 +217,17 @@
                                 <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank"><img
                                         src="./image/페이스북.png" alt="페이스북"></a>
                             </div>
-
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row_4th">
+                <div class="main_tip">
+                    <div class="main_tip_content">
+                        <div class="tip_contents">
+                            <p>
+                                tmi) <%= tip %>
+                            </p>
                         </div>
                     </div>
                 </div>

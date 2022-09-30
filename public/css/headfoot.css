@@ -263,6 +263,19 @@ footer {
     .nav {
         display: none;
     }
+    .nav_notice{
+        height: 110px;
+        }
+        .notice_title{
+            font-size: 2.5rem;
+            padding: 25px 0 10px 0;
+        }
+        .notice_title a{
+            font-size: 2.5rem;
+        }
+        .notice_exp{
+            font-size: 1rem;
+        }
 
     footer {
         padding-top: 30%;
