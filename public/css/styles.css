@@ -584,6 +584,9 @@ section {
         margin-top: 7%;
         float: left;
     }
+    .arcade_explain div p button{
+        padding: 2% 5%;
+    }
     .main_recent{
         width: 100%;
         padding-top: 60%;
