@@ -1,6 +1,25 @@
-document.querySelector(".audio1").addEventListener("click",function(){
-    let play1 = new Audio("./image/442hz.mp3");
-    play1.loop = true;
-    play1.volume = 0.8;
-    play1.play();
-})
+let audio = new Audio('../image/442hz.mp3');
+
+    audio.addEventListener('ended', function(){
+        this.currentTime = 0;
+        this.play();
+    }, false);
+
+$(document).ready(function(){
+    $("#play").show();
+    $("#pause").hide();
+
+    // moai1을 클릭하면 moai2를 보여줌
+    $("#play").click(function(){
+        $("#play").hide();
+        $("#pause").show();
+        audio.play();
+    });
+
+    // moai2을 클릭하면 moai1를 보여줌
+    $("#pause").click(function(){
+        $("#play").show();
+        $("#pause").hide();
+        audio.pause();
+    });
+});
