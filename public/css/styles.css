@@ -83,7 +83,7 @@
     justify-content: space-evenly;
 }
 .slide_archive div .slide_archive_title{
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: white;
     font-weight: bold;
     padding-left: 10%;
@@ -113,23 +113,26 @@
 
 .slide_num{
     position: absolute;
-    right: 10px;
+    right: 20px;
     bottom: 10px;
     z-index: 10;
 }
 .slide_num div{
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     font-size: 15px;
-    margin: 2px;
+    margin: 5px;
     float: left;
     border-radius: 20px;
-    background-color: white;
+    background-color: black;
     line-height: 20px;
     text-align: center;
     cursor: pointer;
+    opacity: 50%;
 }
-
+.slide_num div:first-child{
+    background-color: white;
+}
 
 
 
@@ -138,22 +141,18 @@ section {
     width: 90%;
     margin: 0 auto;
 }
-.row_3rd, .row_1st, .row_2nd, .row_0{
+.row_1st, .row_2nd, .row_3rd, .row_4th{
     width: 100%;
     margin-top: 0;
 }
 
-.row_3rd::after, .row_1st::after, .row_2nd::after, .row_0::after, .row_4th::after{
+.row_1st::after, .row_2nd::after, .row_3rd::after, .row_4th::after{
     content: '';
     display: block;
     clear: both;
 }
 .row_4th::after{
     margin-bottom: 3%;
-}
-
-.arcade_title, .recru_title, .recent_title, .tip_title, .suggest_title, .sns_title{
-    font-size: 2.3rem;
 }
 
 /* 날씨 */
@@ -232,7 +231,7 @@ section {
     position: absolute;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    background-color: #FAFFEE;
+    background-color: #FAFFEF;
 }
 .recru_img{
     position: absolute;
@@ -259,14 +258,14 @@ section {
     display: inline-block;
     box-sizing: border-box;
     margin-top: 10%;
-    padding: 5%;
+    padding: 5% 10%;
     font-size: 1.5rem;
     color: white;
-    background-color: rgb(165, 165, 165);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #377903;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
     border: none;
     border-radius: 10px;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.1rem;
 }
 
 
@@ -289,35 +288,13 @@ section {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
 }
-.arcade_btn{
-    position: absolute;
-    width: 200px;
-    height: 140px;
-    top: 12%;
-    left: 50%;
-    transform: translate(-50%,0);
-    background-color: #FFF3FB;
-    border: none;
-    border-radius: 20px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 16px;
-    cursor: pointer;
-    z-index: 2;
-}
-.arcade_btn span{
-    display: block;
-    margin-top: 10px;
-    color: rgb(105, 105, 105);
-    font-size: 18px;
-}
-
 .arcade_explain{
     position: absolute;
     height: 50%;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #FFF3FB;
+    background-color: #fef0f0;
     border-radius: 20px 20px 0 0;
 }
 .arcade_explain div{
@@ -340,11 +317,11 @@ section {
     display: inline-block;
     box-sizing: border-box;
     margin-top: 5%;
-    padding: 2% 5%;
+    padding: 3% 5%;
     font-size: 1.5rem;
     color: white;
-    background-color: rgb(165, 165, 165);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #930000;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
     border: none;
     border-radius: 10px;
     letter-spacing: 0.2rem;
@@ -370,53 +347,8 @@ section {
     height: 0;
     padding-top: 50%;
     margin-top: 3%;
-    float: left;
-}
-.main_recent_content{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    right: 0;
-    position: absolute;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-}
-.recent_explain{
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 25px 0 0 30px;
 }
 .recent_content{
-    position: absolute;
-    left: 20%;
-    bottom: 10%;
-    width: 60%;
-}
-.recent_content div{
-    position: relative;
-    width: 100%;
-    height: auto;
-    padding-top: 56.3%;
-}
-.recent_content iframe{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-}
-
-
-/* 팁 */
-.main_tip{
-    position: relative;
-    width: 60%;
-    height: 0;
-    padding-top: 40%;
-    float: left;
-    margin-top: 3%;
-}
-.main_tip_content{
     width: 100%;
     height: 100%;
     top: 0;
@@ -424,36 +356,38 @@ section {
     position: absolute;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
+    background-color: #111111;
 }
-.tip_explain{
+.recent_explain{
+    margin: 0 auto;
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.recent_iframe{
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.3%;
+}
+.recent_iframe iframe{
     position: absolute;
     top: 0;
     left: 0;
-    margin: 25px 0 0 30px;
-}
-.tip_contents{
-    position: absolute;
-    width: 95%;
-    left: 2.5%;
-    top: 50%;
-    transform:translate(0%,-50%);
-    
-}
-.tip_contents p{
-    width: 80%;
-    font-size: 1.8rem;
-    text-align: center;
-    padding: 0 10%;
+    width: 100%;
+    height: 100%;
 }
 
 /* 제휴제안 */
 .main_suggest{
     margin-top: 3%;
     position: relative;
-    width: 37%;
+    width: 60%;
     height: 0;
-    padding-top: 27%;
-    float: right;
+    padding-top: 15%;
+    float: left;
     box-sizing: border-box;
 }
 .main_suggest_content{
@@ -465,30 +399,37 @@ section {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
 }
-.suggest_explain{
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 25px 0 0 30px;
+.suggest_image, .suggest_p{
+    width: 50%;
+    height: 100%;
+    float: left;
+    position: relative;
 }
-.main_suggest .suggest_image{
+.suggest_image img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
     width: 70%;
-    position: absolute;
-    right: 15%;
-    bottom: 10%;
 }
-.main_suggest .suggest_image img{
+.suggest_p p{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
     width: 100%;
+    text-align: center;
+    font-size: 2rem;
 }
 
 /* 컨택 */
 .main_sns{
-    margin-top: 3%;
+    margin: 3% 0 0 3%;
     position: relative;
     width: 37%;
     height: 0;
-    padding-top: 10%;
-    float: right;
+    padding-top: 15%;
+    float: left;
     box-sizing: border-box;
 }
 .main_sns_content{
@@ -505,9 +446,8 @@ section {
     top: 50%;
     left: 0;
     transform:translate(0%,-50%);
-    /* margin: 25px 0 0 30px; */
     width: 100%;
-    height: 50%;
+    height: 40%;
 }
 .sns_contents{
     width: 100%;
@@ -525,17 +465,59 @@ section {
     height: 100%;
 }
 
+/* 팁 */
+.main_tip{
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 20%;
+    margin-top: 3%;
+}
+.main_tip_content{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    position: absolute;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    background-color: #eef3FF;
+}
+.tip_contents{
+    position: absolute;
+    width: 95%;
+    left: 2.5%;
+    top: 50%;
+    transform:translate(0%,-50%);
+    
+}
+.tip_contents p{
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+}
+
 
 @media (max-width : 1023px){
-.recru_area p{
-        letter-spacing: 6px;
-    }
-    .arcade_btn{
-        width: 180px;
-        height: 120px;
+    .recru_area div, .arcade_explain div p, .suggest_p p, .tip_contents p{
+        font-size: 1.8rem;
     }
 }
 @media (max-width : 767px) {
+    .slide_archive div .slide_archive_title{
+        font-size: 2.3rem;
+    }
+    .slide_archive div .slide_archive_text a{
+        font-size: 1.5rem;
+    }
+    /* 슬라이드 넘기는 번호는 767px부터 없애기 */
+    .slide_num{
+        display: none;
+    }
+
+    .row_4th::after{
+        margin-bottom: 7%;
+    }
     #weather_temp, #weather_desc{
         font-size: 1.1rem;
     }
@@ -543,9 +525,6 @@ section {
         font-size: 1rem;
     }
 
-    .row_4th::after{
-        margin-bottom: 7%;
-    }
 
     .main_wea{
         width: 100%;
@@ -586,72 +565,64 @@ section {
         margin: 0 30px;
     }
 
+    .recru_area div, .arcade_explain div p, .suggest_p p, .tip_contents p{
+        font-size: 2rem;
+    }
     .main_recru{
         width: 100%;
         padding-top: 60%;
         margin-top: 7%;
         float: left;
     }
-    
-    
+    .recru_btn{
+        margin-top: 20%;
+        padding: 8% 20%;
+    }
     .main_arcade{
         width: 100%;
         padding-top: 75%;
         margin-top: 7%;
         float: left;
     }
-    .arcade_btn{
-        width: 160px;
-        height: 100px;
-        font-size: 14px;
-    }
-    .arcade_btn span{
-        font-size: 14px;
-    }
-
     .main_recent{
         width: 100%;
-        padding-top: 75%;
-        margin-top: 7%;
-        float: left;
-    }
-    .recent_content{
-        left: 10%;
-        width: 80%;
-    }
-    .recent_content div{
         padding-top: 60%;
-    }
-    .main_tip{
-        width: 100%;
-        padding-top: 50%;
-        float: left;
         margin-top: 7%;
+    }
+    .recent_explain{
+        width: 90%;
     }
     .main_suggest{
         margin-top: 7%;
         width: 100%;
-        padding-top: 35%;
+        padding-top: 25%;
         float: left;
-    }
-    .main_suggest .suggest_image{
-        width: auto;
-        height: 80%;
-        right: 10%;
-        bottom: 10%;
-    }
-    .main_suggest .suggest_image img{
-        width: auto;
-        height: 100%;
     }
     .main_sns{
         margin-top: 7%;
+        margin-left: 0;
         width: 100%;
         padding-top: 20%;
-        float: left;
     }
+    .sns_contents a
+    {
+        width: 15%;
+    }
+    .main_tip{
+        width: 100%;
+        padding-top: 30%;
+        float: left;
+        margin-top: 7%;
+    }
+
 }
 @media (max-width : 479px) {
+    .slide_archive div .slide_archive_title{
+        font-size: 1.8rem;
+    }
+    .slide_archive div .slide_archive_text a{
+        font-size: 1.3rem;
+    }
     #weather_icon{
         margin-left: 20px;
 
@@ -668,18 +639,7 @@ section {
         font-size: 1rem;
         margin: 0 20px;
     }
-    .recru_area div{
-        letter-spacing: 0.5rem;
-    }
-    .recru_btn{
-        margin-top: 5%;
-    }
-    .arcade_btn{
-        width: 140px;
-        height: 80px;
-        font-size: 12px;
-    }
-    .arcade_btn span{
-        font-size: 12px;
+    .recru_area div, .arcade_explain div p, .suggest_p p, .tip_contents p{
+        font-size: 1.6rem;
     }
 }
