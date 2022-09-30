@@ -1,4 +1,4 @@
-let audio = new Audio('../image/442hz.mp3');
+let audio = new Audio('../image/442hz_30s.mp4');
 
     audio.addEventListener('ended', function(){
         this.currentTime = 0;
@@ -13,6 +13,7 @@ $(document).ready(function(){
     $("#play").click(function(){
         $("#play").hide();
         $("#pause").show();
+        audio.currentTime=0;
         audio.play();
     });
 
