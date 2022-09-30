@@ -187,15 +187,11 @@ background: linear-gradient(91.48deg, #E5FAFD 0%, rgba(189, 193, 236, 0.31) 100%
     border-radius: 20px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
 }
-.qna_delete{
-    float: right;
-    width: 30px;
-    height: 30px;
-    font-size: 2rem;
-    border: none;
-    background-color: white;
-    box-shadow: 1px 1px 2px #784520;
+.ng-star-inserted{
+    transform: rotate(-90deg);
+    margin-top: 7px;
 }
+
 .qna_read_contents{
     width: 600px;
     margin: 0 auto;
@@ -316,22 +312,10 @@ background: linear-gradient(91.48deg, #E5FAFD 0%, rgba(189, 193, 236, 0.31) 100%
 }
 
 @media (max-width : 1023px) {
-    #qna_notice{
-        margin-top: 50px;
-    }
 }
 @media (max-width : 767px) {
-    #qna_notice{
-        margin-top: 30px;
-        width: 90%;
-    }
-    
-    .qna_section{
-        width: 90%;
-    }
     .qna_section{
         margin-top: 30px;
-        min-height: 700px;
     }
     .qna_write, .qna_question_add, .qna_contents{
         width: 100%;
@@ -367,7 +351,4 @@ background: linear-gradient(91.48deg, #E5FAFD 0%, rgba(189, 193, 236, 0.31) 100%
 
 }
 @media (max-width : 479px) {
-    #qna_notice{
-        margin-top: 10px;
-    }
 }
