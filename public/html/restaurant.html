@@ -30,31 +30,18 @@
     <meta name="theme-color" content="#ffffff">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <title>KUPHIL</title>
-    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=we7e7zisui&submodules=geocoder"></script>
+    <script type="text/javascript"
+        src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=we7e7zisui&submodules=geocoder"></script>
 </head>
-    
-<body>
-    <header>
-        <div class="main_head">
-            <div class="mainlogo">
-                <a href="./"><img src="./image/main/page_logo_black.png" alt="KUPHIL 흰색로고"></a>
-            </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="./introduce">소개</a></li>
-                    <li><a href="./archive">아카이브</a></li>
-                    <li><a href="./qna">Q&A</a></li>
-                    <li><a href="./gamecenter">놀이터</a></li>
-                    <li><a href="./lab">실험실</a></li>
-                </ul>
-            </nav>
-            <div class="small_menu">
-                <p onclick="smallOpen();">≡</p>
 
-            </div>
-            <div class="small_menu_open">
-                <p onclick="smallClose();">X</p>
-                <nav>
+<body>
+    <div class="total_div">
+        <header>
+            <div class="main_head">
+                <div class="mainlogo">
+                    <a href="./"><img src="./image/main/page_logo_black.png" alt="KUPHIL 흰색로고"></a>
+                </div>
+                <nav class="nav">
                     <ul>
                         <li><a href="./introduce">소개</a></li>
                         <li><a href="./archive">아카이브</a></li>
@@ -63,130 +50,126 @@
                         <li><a href="./lab">실험실</a></li>
                     </ul>
                 </nav>
-            </div>
-            <script>
-                let small_menu_open = document.getElementsByClassName("small_menu_open")[0];
-                function smallOpen() {
-                    small_menu_open.style.display = 'block';
-                }
-                function smallClose() {
-                    small_menu_open.style.display = 'none';
-                }
-            </script>
-        </div>
-        <div class="nav_notice">
-            <p class="notice_title">
-                <a href="./restaurant">쿠필 맛집</a>
-            </p>
-            <p class="notice_exp">
-                소개하고 연혁입니다.<br>
-                소개하고 연혁입니다.
-            </p>
-        </div>
-    </header>
+                <div class="small_menu">
+                    <p onclick="smallOpen();">≡</p>
 
-    <div class="lab_content">
-        <div id="wrap_restaurant_area">
-            <div class="restaurant_area" id="konkuk_univ_subway_area" onclick="restaurant_area_check(id);" style="color: #361F0F">건입</div>
-            <div class="restaurant_area" id="middle_gate_area" onclick="restaurant_area_check(id);">중문</div>
-            <div class="restaurant_area" id="back_gate_area" onclick="restaurant_area_check(id);">후문</div>
-        </div>
-        <div id="wrap_restaurant_type">
-            <div class="restaurant_type" id="ku_subway_area_meal" onclick="restaurant_type_check(id);">밥집</div>
-            <div class="restaurant_type" id="ku_subway_area_bar_or_pub" onclick="restaurant_type_check(id);">술집</div>
-            <div class="restaurant_type" id="ku_subway_area_cafe" onclick="restaurant_type_check(id);">카페</div>
-        </div>
-        <div id="wrap_restaurant_map_n_info">
-            <div id="map" style="width:300px;height:300px;"></div>
-            <div id="wrap_restaurant_info_n_btn">
-                <div class="restaurant_info_n_btn">
-                    <div class="wrap_restaurant_info">
-                        <div class="restaurant_name" value='아차산로30길 33'>송화산시도삭면 2호점</div>
-                        <div class="restaurant_menu">추천 : 도삭면, 쇼마이, 가지튀김</div>
-                    </div>
-                    <button class="restaurant_address" onclick="restaurant_click('아차산로30길 33')">위치 보기</button>
                 </div>
-                <div class="restaurant_info_n_btn">
-                    <div class="wrap_restaurant_info">
-                        <div class="restaurant_name" value='능동로 111'>겐로쿠우동 건대점</div>
-                        <div class="restaurant_menu">추천 : 니쿠우동, 자루소바</div>
-                    </div>
-                    <button class="restaurant_address" onclick="restaurant_click('능동로 111');">위치 보기</button>
+                <div class="small_menu_open">
+                    <p onclick="smallClose();">X</p>
+                    <nav>
+                        <ul>
+                            <li><a href="./introduce">소개</a></li>
+                            <li><a href="./archive">아카이브</a></li>
+                            <li><a href="./qna">Q&A</a></li>
+                            <li><a href="./gamecenter">놀이터</a></li>
+                            <li><a href="./lab">실험실</a></li>
+                        </ul>
+                    </nav>
                 </div>
-                <div class="restaurant_info_n_btn">
-                    <div class="wrap_restaurant_info">
-                        <div class="restaurant_name" value='동일로20길 113'>보영만두 건대점</div>
-                        <div class="restaurant_menu">추천 : 고기군만두, 쫄면</div>
-                    </div>
-                    <button class="restaurant_address" onclick="restaurant_click('동일로20길 113');">위치 보기</button>
+                <script>
+                    let small_menu_open = document.getElementsByClassName("small_menu_open")[0];
+                    function smallOpen() {
+                        small_menu_open.style.display = 'block';
+                    }
+                    function smallClose() {
+                        small_menu_open.style.display = 'none';
+                    }
+                </script>
+            </div>
+            <div class="nav_notice">
+                <p class="notice_title">
+                    <a href="./restaurant">쿠필 맛집</a>
+                </p>
+                <p class="notice_exp">
+                    소개하고 연혁입니다.<br>
+                    소개하고 연혁입니다.
+                </p>
+            </div>
+        </header>
+
+        <div class="lab_content">
+            <div id="wrap_restaurant_area">
+                <div class="restaurant_area" id="konkuk_univ_subway_area" onclick="restaurant_area_check(id);"
+                    style="color: #361F0F">건입</div>
+                <div class="restaurant_area" id="middle_gate_area" onclick="restaurant_area_check(id);">중문</div>
+                <div class="restaurant_area" id="back_gate_area" onclick="restaurant_area_check(id);">후문</div>
+            </div>
+            <div id="wrap_restaurant_type">
+                <div class="restaurant_type" id="ku_subway_area_meal" onclick="restaurant_type_check(id);">밥집</div>
+                <div class="restaurant_type" id="ku_subway_area_bar_or_pub" onclick="restaurant_type_check(id);">술집
                 </div>
-                <div class="restaurant_info_n_btn">
-                    <div class="wrap_restaurant_info">
-                        <div class="restaurant_name" value='동일로22길 117-16'>포크포크 건대점</div>
-                        <div class="restaurant_menu">추천 : 돈냉면</div>
+                <div class="restaurant_type" id="ku_subway_area_cafe" onclick="restaurant_type_check(id);">카페</div>
+            </div>
+            <div id="wrap_restaurant_map_n_info">
+                <div id="map" style="width:300px;height:300px;"></div>
+                <div id="wrap_restaurant_info_n_btn">
+                    <div class="restaurant_info_n_btn">
+                        <div class="wrap_restaurant_info">
+                            <div class="restaurant_name" value='아차산로30길 33'>송화산시도삭면 2호점</div>
+                            <div class="restaurant_menu">추천 : 도삭면, 쇼마이, 가지튀김</div>
+                        </div>
+                        <button class="restaurant_address" onclick="restaurant_click('아차산로30길 33')">위치 보기</button>
                     </div>
-                    <button class="restaurant_address" onclick="restaurant_click('동일로22길 117-16');">위치 보기</button>
-                </div>
-                <div class="restaurant_info_n_btn">
-                    <div class="wrap_restaurant_info">
-                        <div class="restaurant_name" value='아차산로31길 28'>건대포항막회</div>
-                        <div class="restaurant_menu">추천 : 막회, 물회</div>
+                    <div class="restaurant_info_n_btn">
+                        <div class="wrap_restaurant_info">
+                            <div class="restaurant_name" value='능동로 111'>겐로쿠우동 건대점</div>
+                            <div class="restaurant_menu">추천 : 니쿠우동, 자루소바</div>
+                        </div>
+                        <button class="restaurant_address" onclick="restaurant_click('능동로 111');">위치 보기</button>
                     </div>
-                    <button class="restaurant_address" onclick="restaurant_click('아차산로31길 28');">위치 보기</button>
+                    <div class="restaurant_info_n_btn">
+                        <div class="wrap_restaurant_info">
+                            <div class="restaurant_name" value='동일로20길 113'>보영만두 건대점</div>
+                            <div class="restaurant_menu">추천 : 고기군만두, 쫄면</div>
+                        </div>
+                        <button class="restaurant_address" onclick="restaurant_click('동일로20길 113');">위치 보기</button>
+                    </div>
+                    <div class="restaurant_info_n_btn">
+                        <div class="wrap_restaurant_info">
+                            <div class="restaurant_name" value='동일로22길 117-16'>포크포크 건대점</div>
+                            <div class="restaurant_menu">추천 : 돈냉면</div>
+                        </div>
+                        <button class="restaurant_address" onclick="restaurant_click('동일로22길 117-16');">위치 보기</button>
+                    </div>
+                    <div class="restaurant_info_n_btn">
+                        <div class="wrap_restaurant_info">
+                            <div class="restaurant_name" value='아차산로31길 28'>건대포항막회</div>
+                            <div class="restaurant_menu">추천 : 막회, 물회</div>
+                        </div>
+                        <button class="restaurant_address" onclick="restaurant_click('아차산로31길 28');">위치 보기</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
     <footer>
-        <div class="footer_first">
-            <li><a href="#">오시는 길</a></li>
-            <li><a href="#">이용 약관</a></li>
-            <li><a href="#">제휴 제안</a></li>
-        </div>
-        <div class="footer_second">
-            <div class="footer_logo">
-                <img src="./image/main/graylogo.png">
-                <img src="./image/main/무제.png">
+        <div class="footer_section">
+            <div class="footer_area">
+                <div class="footer_logo">
+                    <img src="./image/main/logo.png">
+                    <img src="./image/main/무제.png">
+                </div>
+                <div class="footer_explain">
+                    <a class="footer_use" href="./policy">이용 약관</a>
+                    <p>서울특별시 광진구 능동로 120, 제2학생회관 B117호</p>
+                    <p>후원 | 카카오뱅크 3333180300967</p><br>
+                    <p>copyright 2021 KUPHIL, All rights reserved.</p>
+                </div>
             </div>
-            <div class="footer_explain">
-
-                <p>서울특별시 광진구 능동로 120 제2학생회관 B117호</p>
-                <p>후원 | ##은행 #####</p><br>
-                <p>copyright 2021 KUPHIL, All rights reserved.</p>
-            </div>
-            <div class="footer_sns">
-                <p>Contact Us :)</p>
-                <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">
-                    <img src="./image/main/kuphil_youtube.png" alt="쿠필 유튜브">
-                </a>
-                <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank">
-                    <img src="./image/main/kuphil_instagram.png" alt="쿠필 인스타그램">
-                </a>
-                <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank">
-                    <img src="./image/main/kuphil_facebook.png" alt="쿠필 페이스북">
-                </a>
-            </div>
-        </div>
-        <div class="small_footer_explain">
-
-            <p>서울특별시 광진구 능동로 120 제2학생회관 B117호</p>
-            <p>후원 | ##은행 #####</p><br>
-            <p>copyright 2021 KUPHIL, All rights reserved.</p>
         </div>
     </footer>
 
     <script>
 
         function searchAddressToCoordinate(address) {
-            
+
             var map = new naver.maps.Map('map', {
                 center: new naver.maps.LatLng(37.3595704, 127.105399),
                 zoom: 15,
                 minZoom: 13, //지도의 최소 줌 레벨
                 zoomControl: true, //줌 컨트롤의 표시 여부
                 zoomControlOptions: { //줌 컨트롤의 옵션
-                position: naver.maps.Position.TOP_RIGHT
+                    position: naver.maps.Position.TOP_RIGHT
                 }
 
             });
@@ -198,21 +181,21 @@
 
             naver.maps.Service.geocode({
                 query: address
-              }, function(status, response) {
+            }, function (status, response) {
                 if (status === naver.maps.Service.Status.ERROR) {
-                  if (!address) {
-                    return alert('Geocode Error, Please check address');
-                  }
-                  return alert('Geocode Error, address:' + address);
+                    if (!address) {
+                        return alert('Geocode Error, Please check address');
+                    }
+                    return alert('Geocode Error, address:' + address);
                 }
-            
+
                 if (response.v2.meta.totalCount === 0) {
-                  return alert('No result.');
+                    return alert('No result.');
                 }
-            
+
                 var htmlAddresses = [],
-                  item = response.v2.addresses[0],
-                  point = new naver.maps.Point(item.x, item.y);
+                    item = response.v2.addresses[0],
+                    point = new naver.maps.Point(item.x, item.y);
 
                 var ir = item.roadAddress;
 
@@ -224,12 +207,12 @@
 
                 var restaurant_address = subir[2] + " " + subir[3];
 
-                
-                for(let i = 0; i < 5; i++) {
+
+                for (let i = 0; i < 5; i++) {
                     var restaurant_name_address = document.getElementsByClassName("restaurant_name")[i].getAttribute('value');
-                    if(restaurant_address === restaurant_name_address) {
+                    if (restaurant_address === restaurant_name_address) {
                         var restaurant_name = document.getElementsByClassName("restaurant_name")[i].innerHTML;
-                        
+
                         var contentString = [
                             "<div style='padding: 5px'>",
                             '<h3>' + restaurant_name + '</h3>',
@@ -239,7 +222,7 @@
                         var infowindow = new naver.maps.InfoWindow({
                             content: contentString
                         });
-                        
+
                         infowindow.open(map, marker);
                         break;
                     }
@@ -247,7 +230,7 @@
 
             });
         }
-        
+
         function initGeocoder() {
 
             searchAddressToCoordinate('아차산로30길 33');
@@ -294,48 +277,48 @@
         }
 
         function restaurant_type_check(type) {
-            const ku_subway_area_meal_array = 
-            [['송화산시도삭면 2호점', '추천 : 도삭면, 쇼마이, 가지튀김', '아차산로30길 33'], ['겐로쿠우동 건대점', '추천 : 니쿠우동, 자루소바', '능동로 111'], 
-            ['보영만두 건대점', '추천 : 고기군만두, 쫄면', '동일로20길 113'], ['포크포크 건대점', '추천 : 돈냉면', '동일로22길 117-16'], ['건대포항막회', '추천 : 막회, 물회', '아차산로31길 28']];
+            const ku_subway_area_meal_array =
+                [['송화산시도삭면 2호점', '추천 : 도삭면, 쇼마이, 가지튀김', '아차산로30길 33'], ['겐로쿠우동 건대점', '추천 : 니쿠우동, 자루소바', '능동로 111'],
+                ['보영만두 건대점', '추천 : 고기군만두, 쫄면', '동일로20길 113'], ['포크포크 건대점', '추천 : 돈냉면', '동일로22길 117-16'], ['건대포항막회', '추천 : 막회, 물회', '아차산로31길 28']];
 
             const ku_subway_area_bar_or_pub_array =
-            [['코후쿠', '추천 : 밀푀유나베', '아차산로29길 24'], ['악당', '추천 : 숙성모둠한판, 짜계치', '동일로24길 23'], ['그 주막', '추천: 감자전', '동일로22길 59'], 
-            ['토리광', '추천 : 모듬꼬치', '동일로22길 33'], ['심야식당 후타리', '추천 : 모츠나베', '동일로22길 32']];
-            
-            const ku_subway_area_cafe_array = 
-            [['북카페세모', '추천 : 티라미수', '아차산로31길 20'], ['브이오오오피커피 건대점', '추천 : 베트남 커피', '아차산로26길 13'], 
-            ['걈', '추천 : 리얼쵸코케이크', '동일로22길 117-9'], ['팬더스윗 건대점', '추천 : 크림브륄레, 수플레', '동일로22길 117-17'], ['그리네', '추천 : 소금커피', '동일로22길 117-7']];
-        
-            const middle_gate_area_meal_array = 
-            [['미분당 건대점', '추천 : 힘줄쌀국수', '군자로3길 27'], ['감성타코 건대점', '추천 : 감성그릴파히타', '능동로13길 39'], ['최신족발', '추천 : 숯불왕족발', '아차산로29길 63'], 
-            ['아찌떡볶이', '추천 : 떡볶이', '아차산로29길 53'], ['오포케', '추천 : 클래식 오포케, 유부두부 포케', '능동로 117']];
+                [['코후쿠', '추천 : 밀푀유나베', '아차산로29길 24'], ['악당', '추천 : 숙성모둠한판, 짜계치', '동일로24길 23'], ['그 주막', '추천: 감자전', '동일로22길 59'],
+                ['토리광', '추천 : 모듬꼬치', '동일로22길 33'], ['심야식당 후타리', '추천 : 모츠나베', '동일로22길 32']];
+
+            const ku_subway_area_cafe_array =
+                [['북카페세모', '추천 : 티라미수', '아차산로31길 20'], ['브이오오오피커피 건대점', '추천 : 베트남 커피', '아차산로26길 13'],
+                ['걈', '추천 : 리얼쵸코케이크', '동일로22길 117-9'], ['팬더스윗 건대점', '추천 : 크림브륄레, 수플레', '동일로22길 117-17'], ['그리네', '추천 : 소금커피', '동일로22길 117-7']];
+
+            const middle_gate_area_meal_array =
+                [['미분당 건대점', '추천 : 힘줄쌀국수', '군자로3길 27'], ['감성타코 건대점', '추천 : 감성그릴파히타', '능동로13길 39'], ['최신족발', '추천 : 숯불왕족발', '아차산로29길 63'],
+                ['아찌떡볶이', '추천 : 떡볶이', '아차산로29길 53'], ['오포케', '추천 : 클래식 오포케, 유부두부 포케', '능동로 117']];
 
             const middle_gate_area_bar_or_pub_array =
-            [['조선주막', '추천 : 꿀바딸막걸리', '아차산로33길 28-4'], ['엘루이피자', '추천 : 직화불고기피자', '아차산로33길 35'], ['단골손님', '추천 : 꼬막육회비빔밥', '아차산로33길 34'], 
-            ['쟈즈', '추천 : 피치 크러쉬', '능동로 151'], ['카페22', '추천 : 마르게리타, 알리오 올리오', '아차산로31길 54']];
+                [['조선주막', '추천 : 꿀바딸막걸리', '아차산로33길 28-4'], ['엘루이피자', '추천 : 직화불고기피자', '아차산로33길 35'], ['단골손님', '추천 : 꼬막육회비빔밥', '아차산로33길 34'],
+                ['쟈즈', '추천 : 피치 크러쉬', '능동로 151'], ['카페22', '추천 : 마르게리타, 알리오 올리오', '아차산로31길 54']];
 
             const middle_gate_area_cafe_array =
-            [['꼬메노', '추천 : 퐁당오쇼콜라', '군자로7길 29'], ['최가커피', '추천 : 아메리카노, 와플', '능동로13길 23'], ['아오스요거트', '추천 : 레옹, 싱가폴카야', '능동로 153'], 
-            ['도쿄빙수 건대점', '추천 : 방울방울 토마토 빙수', '아차산로31길 45'], ['카페 그자체', '추천 : 얼그레이 밀크티, 딸기케이크', '능동로13길 65']];
+                [['꼬메노', '추천 : 퐁당오쇼콜라', '군자로7길 29'], ['최가커피', '추천 : 아메리카노, 와플', '능동로13길 23'], ['아오스요거트', '추천 : 레옹, 싱가폴카야', '능동로 153'],
+                ['도쿄빙수 건대점', '추천 : 방울방울 토마토 빙수', '아차산로31길 45'], ['카페 그자체', '추천 : 얼그레이 밀크티, 딸기케이크', '능동로13길 65']];
 
-            const back_gate_area_meal_array = 
-            [['깍뚝', '추천 : 숙성 삼겹살', '능동로19길 36'], ['래빗홀', '추천 : 머쉬룸버거', '광나루로 424'], ['가츠시', '추천 : 소바정식', '광나루로 418'], 
-            ['시홍쓰', '추천 : 토마토계란 덮밥, 마파가지튀김', '능동로17길 5'], ['빠오즈푸', '추천 : 훈둔면', '광나루로 373']];
+            const back_gate_area_meal_array =
+                [['깍뚝', '추천 : 숙성 삼겹살', '능동로19길 36'], ['래빗홀', '추천 : 머쉬룸버거', '광나루로 424'], ['가츠시', '추천 : 소바정식', '광나루로 418'],
+                ['시홍쓰', '추천 : 토마토계란 덮밥, 마파가지튀김', '능동로17길 5'], ['빠오즈푸', '추천 : 훈둔면', '광나루로 373']];
 
             const back_gate_area_bar_or_pub_array =
-            [['숨비소리', '추천 : 고등어회', '능동로19길 17'], ['폼프리츠 세종대점', '추천 : 감자튀김, 자몽 생맥주', '능동로19길 41'], ['이층', '추천 : 제육볶음', '광나루로24길 13'], 
-            ['도심지', '추천 : 심플 치즈 세트', '능동로 165'], ['마실거리', '추천 : 헤이 카카오', '광나루로20길 13-8']];
+                [['숨비소리', '추천 : 고등어회', '능동로19길 17'], ['폼프리츠 세종대점', '추천 : 감자튀김, 자몽 생맥주', '능동로19길 41'], ['이층', '추천 : 제육볶음', '광나루로24길 13'],
+                ['도심지', '추천 : 심플 치즈 세트', '능동로 165'], ['마실거리', '추천 : 헤이 카카오', '광나루로20길 13-8']];
 
             const back_gate_area_cafe_array =
-            [['코코300', '추천 : 크로플', '광나루로24길 37'], ['벨롱에스프레소', '추천 : 티라미수', '능동로17길 34'], ['애드앤드', '추천 : 산딸기스콘', '광나루로26길 28'], 
-            ['환원당', '추천 : 당근케이크', '능동로 166'], ['카페롬곡', '추천 : 수제와플', '광나루로17길 18']];
+                [['코코300', '추천 : 크로플', '광나루로24길 37'], ['벨롱에스프레소', '추천 : 티라미수', '능동로17길 34'], ['애드앤드', '추천 : 산딸기스콘', '광나루로26길 28'],
+                ['환원당', '추천 : 당근케이크', '능동로 166'], ['카페롬곡', '추천 : 수제와플', '광나루로17길 18']];
 
             if (type == 'ku_subway_area_meal') {
                 restaurant_click('아차산로30길 33');
 
-                for(let i = 0; i < 5; i++) {
+                for (let i = 0; i < 5; i++) {
                     document.getElementsByClassName('restaurant_name')[i].innerHTML = ku_subway_area_meal_array[i][0];
-                    document.getElementsByClassName('restaurant_menu')[i].innerHTML = ku_subway_area_meal_array[i][1]; 
+                    document.getElementsByClassName('restaurant_menu')[i].innerHTML = ku_subway_area_meal_array[i][1];
                 }
 
                 document.getElementsByClassName('restaurant_name')[0].setAttribute("value", '아차산로30길 33');
@@ -353,9 +336,9 @@
             if (type == 'ku_subway_area_bar_or_pub') {
                 restaurant_click('아차산로29길 24');
 
-                for(let i = 0; i < 5; i++) {
+                for (let i = 0; i < 5; i++) {
                     document.getElementsByClassName('restaurant_name')[i].innerHTML = ku_subway_area_bar_or_pub_array[i][0];
-                    document.getElementsByClassName('restaurant_menu')[i].innerHTML = ku_subway_area_bar_or_pub_array[i][1]; 
+                    document.getElementsByClassName('restaurant_menu')[i].innerHTML = ku_subway_area_bar_or_pub_array[i][1];
                 }
                 document.getElementsByClassName('restaurant_name')[0].setAttribute("value", '아차산로29길 24');
                 document.getElementsByClassName('restaurant_name')[1].setAttribute("value", '동일로24길 23');
@@ -372,9 +355,9 @@
             if (type == 'ku_subway_area_cafe') {
                 restaurant_click('아차산로31길 20');
 
-                for(let i = 0; i < 5; i++) {
+                for (let i = 0; i < 5; i++) {
                     document.getElementsByClassName('restaurant_name')[i].innerHTML = ku_subway_area_cafe_array[i][0];
-                    document.getElementsByClassName('restaurant_menu')[i].innerHTML = ku_subway_area_cafe_array[i][1]; 
+                    document.getElementsByClassName('restaurant_menu')[i].innerHTML = ku_subway_area_cafe_array[i][1];
                 }
                 document.getElementsByClassName('restaurant_name')[0].setAttribute("value", '아차산로31길 20');
                 document.getElementsByClassName('restaurant_name')[1].setAttribute("value", '아차산로26길 13');
@@ -391,9 +374,9 @@
             if (type == 'middle_gate_area_meal') {
                 restaurant_click('군자로3길 27');
 
-                for(let i = 0; i < 5; i++) {
+                for (let i = 0; i < 5; i++) {
                     document.getElementsByClassName('restaurant_name')[i].innerHTML = middle_gate_area_meal_array[i][0];
-                    document.getElementsByClassName('restaurant_menu')[i].innerHTML = middle_gate_area_meal_array[i][1]; 
+                    document.getElementsByClassName('restaurant_menu')[i].innerHTML = middle_gate_area_meal_array[i][1];
                 }
                 document.getElementsByClassName('restaurant_name')[0].setAttribute("value", '군자로3길 27');
                 document.getElementsByClassName('restaurant_name')[1].setAttribute("value", '능동로13길 39');
@@ -410,9 +393,9 @@
             if (type == 'middle_gate_area_bar_or_pub') {
                 restaurant_click('아차산로33길 28-4');
 
-                for(let i = 0; i < 5; i++) {
+                for (let i = 0; i < 5; i++) {
                     document.getElementsByClassName('restaurant_name')[i].innerHTML = middle_gate_area_bar_or_pub_array[i][0];
-                    document.getElementsByClassName('restaurant_menu')[i].innerHTML = middle_gate_area_bar_or_pub_array[i][1]; 
+                    document.getElementsByClassName('restaurant_menu')[i].innerHTML = middle_gate_area_bar_or_pub_array[i][1];
                 }
                 document.getElementsByClassName('restaurant_name')[0].setAttribute("value", '아차산로33길 28-4');
                 document.getElementsByClassName('restaurant_name')[1].setAttribute("value", '아차산로33길 35');
@@ -429,9 +412,9 @@
             if (type == 'middle_gate_area_cafe') {
                 restaurant_click('군자로7길 29');
 
-                for(let i = 0; i < 5; i++) {
+                for (let i = 0; i < 5; i++) {
                     document.getElementsByClassName('restaurant_name')[i].innerHTML = middle_gate_area_cafe_array[i][0];
-                    document.getElementsByClassName('restaurant_menu')[i].innerHTML = middle_gate_area_cafe_array[i][1]; 
+                    document.getElementsByClassName('restaurant_menu')[i].innerHTML = middle_gate_area_cafe_array[i][1];
                 }
                 document.getElementsByClassName('restaurant_name')[0].setAttribute("value", '군자로7길 29');
                 document.getElementsByClassName('restaurant_name')[1].setAttribute("value", '능동로13길 23');
@@ -448,9 +431,9 @@
             if (type == 'back_gate_area_meal') {
                 restaurant_click('능동로19길 36');
 
-                for(let i = 0; i < 5; i++) {
+                for (let i = 0; i < 5; i++) {
                     document.getElementsByClassName('restaurant_name')[i].innerHTML = back_gate_area_meal_array[i][0];
-                    document.getElementsByClassName('restaurant_menu')[i].innerHTML = back_gate_area_meal_array[i][1]; 
+                    document.getElementsByClassName('restaurant_menu')[i].innerHTML = back_gate_area_meal_array[i][1];
                 }
                 document.getElementsByClassName('restaurant_name')[0].setAttribute("value", '능동로19길 36');
                 document.getElementsByClassName('restaurant_name')[1].setAttribute("value", '광나루로 424');
@@ -467,9 +450,9 @@
             if (type == 'back_gate_area_bar_or_pub') {
                 restaurant_click('능동로19길 17');
 
-                for(let i = 0; i < 5; i++) {
+                for (let i = 0; i < 5; i++) {
                     document.getElementsByClassName('restaurant_name')[i].innerHTML = back_gate_area_bar_or_pub_array[i][0];
-                    document.getElementsByClassName('restaurant_menu')[i].innerHTML = back_gate_area_bar_or_pub_array[i][1]; 
+                    document.getElementsByClassName('restaurant_menu')[i].innerHTML = back_gate_area_bar_or_pub_array[i][1];
                 }
                 document.getElementsByClassName('restaurant_name')[0].setAttribute("value", '능동로19길 17');
                 document.getElementsByClassName('restaurant_name')[1].setAttribute("value", '능동로13길 23');
@@ -486,9 +469,9 @@
             if (type == 'back_gate_area_cafe') {
                 restaurant_click('광나루로24길 37');
 
-                for(let i = 0; i < 5; i++) {
+                for (let i = 0; i < 5; i++) {
                     document.getElementsByClassName('restaurant_name')[i].innerHTML = back_gate_area_cafe_array[i][0];
-                    document.getElementsByClassName('restaurant_menu')[i].innerHTML = back_gate_area_cafe_array[i][1]; 
+                    document.getElementsByClassName('restaurant_menu')[i].innerHTML = back_gate_area_cafe_array[i][1];
                 }
                 document.getElementsByClassName('restaurant_name')[0].setAttribute("value", '광나루로24길 37');
                 document.getElementsByClassName('restaurant_name')[1].setAttribute("value", '능동로17길 34');
@@ -504,4 +487,5 @@
         }
     </script>
 </body>
+
 </html>

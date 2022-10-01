@@ -33,28 +33,12 @@
 
 <body>
     <div class="total_div">
-    <header>
-        <div class="main_head">
-            <div class="mainlogo">
-                <a href="../../"><img src="../../image/main/page_logo_black.png" alt="KUPHIL 흰색로고"></a>
-            </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="../../introduce">소개</a></li>
-                    <li><a href="../../archive">아카이브</a></li>
-                    <li><a href="../../qna">Q&A</a></li>
-                    <li><a href="../../gamecenter">놀이터</a></li>
-                    <li><a href="../../lab">실험실</a></li>
-                </ul>
-            </nav>
-            <div class="ham">
-                <span class="bar1"></span>
-                <span class="bar2"></span>
-                <span class="bar3"></span>
-            </div>
-
-            <div class="small_menu_open">
-                <nav>
+        <header>
+            <div class="main_head">
+                <div class="mainlogo">
+                    <a href="../../"><img src="../../image/main/page_logo_black.png" alt="KUPHIL 흰색로고"></a>
+                </div>
+                <nav class="nav">
                     <ul>
                         <li><a href="../../introduce">소개</a></li>
                         <li><a href="../../archive">아카이브</a></li>
@@ -63,98 +47,114 @@
                         <li><a href="../../lab">실험실</a></li>
                     </ul>
                 </nav>
+                <div class="ham">
+                    <span class="bar1"></span>
+                    <span class="bar2"></span>
+                    <span class="bar3"></span>
+                </div>
+
+                <div class="small_menu_open">
+                    <nav>
+                        <ul>
+                            <li><a href="../../introduce">소개</a></li>
+                            <li><a href="../../archive">아카이브</a></li>
+                            <li><a href="../../qna">Q&A</a></li>
+                            <li><a href="../../gamecenter">놀이터</a></li>
+                            <li><a href="../../lab">실험실</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <script>
+                    $(".ham").click(function () {
+                        $(this).toggleClass("active");
+                        $(".small_menu_open").toggleClass("active");
+                    });
+                </script>
             </div>
-            <script>
-                $(".ham").click(function () {
-                    $(this).toggleClass("active");
-                    $(".small_menu_open").toggleClass("active");
-                });
-            </script>
-        </div>
-        <div class="nav_notice">
-            <p class="notice_title">
-                <a href="../../archive">아카이브</a>
-            </p>
-            <p class="notice_exp">
-                KUPhil의 역대 연주회 정보를 모아놓은 공간입니다.
-            </p>
-        </div>
-    </header>
-    <div class="archiveBox">
+            <div class="nav_notice">
+                <p class="notice_title">
+                    <a href="../../archive">아카이브</a>
+                </p>
+                <p class="notice_exp">
+                    KUPhil의 역대 연주회 정보를 모아놓은 공간입니다.
+                </p>
+            </div>
+        </header>
+        <div class="archiveBox">
 
-        <div class="container_2">
+            <div class="container_2">
 
-            <img class="arc_concert_poster" src="../../image/poster/poster_<%=concert_id%>.jpg"
-                alt="제<%=concert_id%>회 정기 연주회" />
+                <img class="arc_concert_poster" src="../../image/poster/poster_<%=concert_id%>.jpg"
+                    alt="제<%=concert_id%>회 정기 연주회" />
 
-            <div class="concert_info">
-                <p class="arc_concert_title">제<%=concert_id%>회 정기 연주회</p>
-                <div class="concert_detail">
-                    <div class="concert_text1">
-                        <p class="arc_concert_place">
-                        <span class="arc_info_bold">장소 : 
-                            <span class="detail">
-                                <%=concert_place%>
-                            </span>
-                        </span>
-                        </p>
-                        <p class="arc_concert_date">
-                        <span class="arc_info_bold">일시 : 
-                            <span class="detail">
-                                <%=concert_date%>
-                            </span>
-                        </span>
-                        </p>
-                        <p class="arc_concert_conductor">
-                            <span class="arc_info_bold">지휘 : 
-                                <span class="detail">
-                                    <%=concert_conductor%>
-                                </span>
-                            </span>
-                        </p>
-                    </div>
-                    <div class="concert_text2">
-                        <p class="concert_program">
-                            <span class="arc_info_bold">프로그램</span>
-                            <% for(let i=0 ; i < concert_composer.length; i++){ %>
-                                <p class="concert_program_list">
-                                    <span class="concert_program_composer">
-                                    <%=concert_composer[i]%>
-                                    </span> - 
-                                    <span class="concert_program_song">
-                                        <%=concert_program[i]%>
+                <div class="concert_info">
+                    <p class="arc_concert_title">제<%=concert_id%>회 정기 연주회</p>
+                    <div class="concert_detail">
+                        <div class="concert_text1">
+                            <p class="arc_concert_place">
+                                <span class="arc_info_bold">장소 :
+                                    <span class="detail">
+                                        <%=concert_place%>
                                     </span>
-                                </p>
-                            <% } %>
-                        </p>
-                        <p class="arc_concert_link">
-                            <span class="arc_info_bold">연주링크  </span>
-                            <a href="<%=concert_link%>">
-                                <%=concert_link%>
-                            </a>
-                        </p>
+                                </span>
+                            </p>
+                            <p class="arc_concert_date">
+                                <span class="arc_info_bold">일시 :
+                                    <span class="detail">
+                                        <%=concert_date%>
+                                    </span>
+                                </span>
+                            </p>
+                            <p class="arc_concert_conductor">
+                                <span class="arc_info_bold">지휘 :
+                                    <span class="detail">
+                                        <%=concert_conductor%>
+                                    </span>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="concert_text2">
+                            <p class="concert_program">
+                                <span class="arc_info_bold">프로그램</span>
+                                <% for(let i=0 ; i < concert_composer.length; i++){ %>
+                                    <p class="concert_program_list">
+                                        <span class="concert_program_composer">
+                                            <%=concert_composer[i]%>
+                                        </span> -
+                                        <span class="concert_program_song">
+                                            <%=concert_program[i]%>
+                                        </span>
+                                    </p>
+                                    <% } %>
+                            </p>
+                            <p class="arc_concert_link">
+                                <span class="arc_info_bold">연주링크 </span>
+                                <a href="<%=concert_link%>">
+                                    <%=concert_link%>
+                                </a>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<footer>
-    <div class="footer_section">
-        <div class="footer_area">
-            <div class="footer_logo">
-                <img src="../../image/main/graylogo.png">
-                <img src="../../image/main/무제.png">
-            </div>
-            <div class="footer_explain">
-                <a class="footer_use" href="../../policy">이용 약관</a>
-                <p>서울특별시 광진구 능동로 120, 제2학생회관 B117호</p>
-                <p>후원 | ##은행 #####</p><br>
-                <p>copyright 2021 KUPHIL, All rights reserved.</p>
+    <footer>
+        <div class="footer_section">
+            <div class="footer_area">
+                <div class="footer_logo">
+                    <img src="../../image/main/logo.png">
+                    <img src="../../image/main/무제.png">
+                </div>
+                <div class="footer_explain">
+                    <a class="footer_use" href="../../policy">이용 약관</a>
+                    <p>서울특별시 광진구 능동로 120, 제2학생회관 B117호</p>
+                    <p>후원 | 카카오뱅크 3333180300967</p><br>
+                    <p>copyright 2021 KUPHIL, All rights reserved.</p>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 </body>
 <script type="text/javascript" src="../../js/archive.js"></script>
 
