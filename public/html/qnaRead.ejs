@@ -32,29 +32,14 @@
 </head>
 
 <body>
-    <!-- 헤더 -->
-    <header>
-        <div class="main_head">
-            <div class="mainlogo">
-                <a href="../../"><img src="../../image/main/page_logo_black.png" alt="KUPHIL 흰색로고"></a>
-            </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="../../introduce">소개</a></li>
-                    <li><a href="../../archive">아카이브</a></li>
-                    <li><a href="../../qna">Q&A</a></li>
-                    <li><a href="../../gamecenter">놀이터</a></li>
-                    <li><a href="../../lab">실험실</a></li>
-                </ul>
-            </nav>
-            <div class="ham">
-                <span class="bar1"></span>
-                <span class="bar2"></span>
-                <span class="bar3"></span>
-            </div>
-
-            <div class="small_menu_open">
-                <nav>
+    <div class="total_div">
+        <!-- 헤더 -->
+        <header>
+            <div class="main_head">
+                <div class="mainlogo">
+                    <a href="../../"><img src="../../image/main/page_logo_black.png" alt="KUPHIL 흰색로고"></a>
+                </div>
+                <nav class="nav">
                     <ul>
                         <li><a href="../../introduce">소개</a></li>
                         <li><a href="../../archive">아카이브</a></li>
@@ -63,86 +48,105 @@
                         <li><a href="../../lab">실험실</a></li>
                     </ul>
                 </nav>
+                <div class="ham">
+                    <span class="bar1"></span>
+                    <span class="bar2"></span>
+                    <span class="bar3"></span>
+                </div>
+
+                <div class="small_menu_open">
+                    <nav>
+                        <ul>
+                            <li><a href="../../introduce">소개</a></li>
+                            <li><a href="../../archive">아카이브</a></li>
+                            <li><a href="../../qna">Q&A</a></li>
+                            <li><a href="../../gamecenter">놀이터</a></li>
+                            <li><a href="../../lab">실험실</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <script>
+                    $(".ham").click(function () {
+                        $(this).toggleClass("active");
+                        $(".small_menu_open").toggleClass("active");
+                    });
+                </script>
             </div>
-            <script>
-                $(".ham").click(function () {
-                    $(this).toggleClass("active");
-                    $(".small_menu_open").toggleClass("active");
-                });
-            </script>
-        </div>
-        <div class="nav_notice">
-            <p class="notice_title">
-                <a href="../../qna">Q & A</a>
-            </p>
-            <p class="notice_exp">
+            <div class="nav_notice">
+                <p class="notice_title">
+                    <a href="../../qna">Q & A</a>
+                </p>
+                <p class="notice_exp">
                 <p class="notice_exp">
                     누구나 평소 궁금했던 것을 질문하고 답변을 받을 수 있는 공간입니다.<br>
                     네티켓은 꼭 지켜주세요! (부적절하다고 판단되는 글은 무통보 삭제됩니다.)
                 </p>
-            </p>
-        </div>
-    </header>
-    <script>let qna_id = "<%=qna_id%>";</script>
-    <!-- 내용 -->
-    <div class="qna_section">
-        <div class="qna_nav">
-            <button onclick="history.back();" class="qna_back">
-                <svg xmlns:xlink="http://www.w3.org/1999/xlink" _ngcontent-rui-c10="" width="26" height="26" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="ng-star-inserted">
-                    <path _ngcontent-rui-c10="" d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z" fill="#9AA0A6"></path>
-                </svg>
-            </button>
-        </div>
-        <div class="float">
-            <button class="float_button" onclick="qna_answer_add();">+</button>
-        </div>
-        <div class="qna_read_contents">
-            <div class="qna_read_question">
-                <div>
-                    <span><strong>Q.</strong>
-                        <%= qna_title %>
-                    </span>
-                    <div><%= qna_question %></div>
-                </div>
-                <div>
-                    <span>답변 <%= qna_answer_num %></span>&ensp;&ensp;
-                    <span>등록 <%= qna_question_date %></span>
-                    <span onclick="qna_delete();">글 삭제</span>
-                </div>
+                </p>
             </div>
-            <div class="qna_read_answer_add">
-                <form action="/qna/answerSubmit" method="post" onsubmit="return answerDoAction();">
-                    <strong>새로운 답변 작성</strong><br>
-                    <textarea class="qna_read_answer_add_textarea" placeholder="답변을 작성하세요. (최대 500자)" name="qna_answer"
-                        autocomplete='off' maxlength='500' wrap="soft"></textarea><br>
-                    <input type="text" name="qna_id" value="<%= qna_id %>" style="display: none;" />
-                    <input type="text" class="qna_read_answer_add_date" name="qna_date" value="0000-00-00"
-                        style="display: none;" />
+        </header>
+        <script>let qna_id = "<%=qna_id%>";</script>
+        <!-- 내용 -->
+        <div class="qna_section">
+            <div class="qna_nav">
+                <button onclick="history.back();" class="qna_back">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" _ngcontent-rui-c10="" width="26" height="26"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="ng-star-inserted">
+                        <path _ngcontent-rui-c10="" d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+                            fill="#9AA0A6"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="float">
+                <button class="float_button" onclick="qna_answer_add();">+</button>
+            </div>
+            <div class="qna_read_contents">
+                <div class="qna_read_question">
                     <div>
-                        <input type="submit" name="submit" class="qna_read_answer_add_subCan" value="작성"/>
-                        <!-- <input type="button" name="cancel" onclick="qna_answer_add_cancel();" value="취소"
-                            class="qna_read_answer_add_subCan" /> -->
+                        <span><strong>Q.</strong>
+                            <%= qna_title %>
+                        </span>
+                        <div><%= qna_question %></div>
                     </div>
-                </form>
-            </div>
-            <div class="qna_read_answer">
-                <% if(qna_answer_num==0){ %>
-                    <div class="qna_read_entry">
+                    <div>
+                        <span>답변 <%= qna_answer_num %></span>&ensp;&ensp;
+                        <span>등록 <%= qna_question_date %></span>
+                        <span onclick="qna_delete();">글 삭제</span>
+                    </div>
+                </div>
+                <div class="qna_read_answer_add">
+                    <form action="/qna/answerSubmit" method="post" onsubmit="return answerDoAction();">
+                        <strong>새로운 답변 작성</strong><br>
+                        <textarea class="qna_read_answer_add_textarea" placeholder="답변을 작성하세요. (최대 500자)"
+                            name="qna_answer" autocomplete='off' maxlength='500' wrap="soft"></textarea><br>
+                        <input type="text" name="qna_id" value="<%= qna_id %>" style="display: none;" />
+                        <input type="text" class="qna_read_answer_add_date" name="qna_date" value="0000-00-00"
+                            style="display: none;" />
                         <div>
-                            <p>아직 답변이 없습니다.</p>
+                            <input type="submit" name="submit" class="qna_read_answer_add_subCan" value="작성" />
+                            <!-- <input type="button" name="cancel" onclick="qna_answer_add_cancel();" value="취소"
+                            class="qna_read_answer_add_subCan" /> -->
                         </div>
-                    </div>
-                    <% }else{ for(var i=0; i < qna_answer_num; i++) { %>
+                    </form>
+                </div>
+                <div class="qna_read_answer">
+                    <% if(qna_answer_num==0){ %>
                         <div class="qna_read_entry">
                             <div>
-                                <strong>A<%=i+1%>.</strong>
-                                <div><%=qna_answer[i]%></div>
-                            </div>
-                            <div>
-                                <span>등록 <%= qna_answer_date[i] %></span>
+                                <p>아직 답변이 없습니다.</p>
                             </div>
                         </div>
-                        <% } } %>
+                        <% }else{ for(var i=0; i < qna_answer_num; i++) { %>
+                            <div class="qna_read_entry">
+                                <div>
+                                    <strong>A<%=i+1%>.</strong>
+                                    <div><%=qna_answer[i]%></div>
+                                </div>
+                                <div>
+                                    <span>등록 <%= qna_answer_date[i] %></span>
+                                </div>
+                            </div>
+                            <% } } %>
+                </div>
             </div>
         </div>
     </div>
@@ -151,16 +155,15 @@
         <div class="footer_section">
             <div class="footer_area">
                 <div class="footer_logo">
-                    <img src="../../image/main/graylogo.png">
+                    <img src="../../image/main/logo.png">
                     <img src="../../image/main/무제.png">
                 </div>
                 <div class="footer_explain">
                     <a class="footer_use" href="../../policy">이용 약관</a>
                     <p>서울특별시 광진구 능동로 120, 제2학생회관 B117호</p>
-                    <p>후원 | ##은행 #####</p><br>
+                    <p>후원 | 카카오뱅크 3333180300967</p><br>
                     <p>copyright 2021 KUPHIL, All rights reserved.</p>
                 </div>
-
             </div>
         </div>
     </footer>

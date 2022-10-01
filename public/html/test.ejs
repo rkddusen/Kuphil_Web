@@ -33,29 +33,13 @@
 
 <body>
     <div class="total_div">
-    <!-- 헤더 -->
-    <header>
-        <div class="main_head">
-            <div class="mainlogo">
-                <a href="./"><img src="./image/main/page_logo_black.png" alt="KUPHIL 흰색로고"></a>
-            </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="./introduce">소개</a></li>
-                    <li><a href="./archive">아카이브</a></li>
-                    <li><a href="./qna">Q&A</a></li>
-                    <li><a href="./gamecenter">놀이터</a></li>
-                    <li><a href="./lab">실험실</a></li>
-                </ul>
-            </nav>
-            <div class="ham">
-                <span class="bar1"></span>
-                <span class="bar2"></span>
-                <span class="bar3"></span>
-            </div>
-            
-            <div class="small_menu_open">
-                <nav>
+        <!-- 헤더 -->
+        <header>
+            <div class="main_head">
+                <div class="mainlogo">
+                    <a href="./"><img src="./image/main/page_logo_black.png" alt="KUPHIL 흰색로고"></a>
+                </div>
+                <nav class="nav">
                     <ul>
                         <li><a href="./introduce">소개</a></li>
                         <li><a href="./archive">아카이브</a></li>
@@ -64,60 +48,75 @@
                         <li><a href="./lab">실험실</a></li>
                     </ul>
                 </nav>
-            </div>
-            <script>
-                $(".ham").click(function(){
-                    $(this).toggleClass("active");
-                    $(".small_menu_open").toggleClass("active");
-                });
-            </script>
-        </div>
-        <div class="nav_notice">
-            <p class="notice_title">
-                <a href="./test">너의 악기는?</a>
-            </p>
-            <p class="notice_exp">
-                새로운 악기를 시도해보고 싶다면?<br>
-                당신에게 어울리는 악기를 추천해드립니다!
-            </p>
-        </div>
-    </header>
+                <div class="ham">
+                    <span class="bar1"></span>
+                    <span class="bar2"></span>
+                    <span class="bar3"></span>
+                </div>
 
-    <!-- 내용 -->
-    <script>
-        let testArray = JSON.parse('<%- JSON.stringify(testArray) %>');
-    </script>
-    
-    <div class="gameContents">
-        <div class="question">
-            <p>악기 추천 받으러 갈까요?</p>
-            <span style="font-size: 1.5rem; color: red;">(* 이 테스트는 오로지 재미를 위해 만들어진 테스트입니다.^^)</span>
-        </div>
-        <div class="answer">
-            <div class="firstAnswer">
-                <button onclick="startGame();">너무 좋아요 :)</button>
+                <div class="small_menu_open">
+                    <nav>
+                        <ul>
+                            <li><a href="./introduce">소개</a></li>
+                            <li><a href="./archive">아카이브</a></li>
+                            <li><a href="./qna">Q&A</a></li>
+                            <li><a href="./gamecenter">놀이터</a></li>
+                            <li><a href="./lab">실험실</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <script>
+                    $(".ham").click(function () {
+                        $(this).toggleClass("active");
+                        $(".small_menu_open").toggleClass("active");
+                    });
+                </script>
             </div>
-            <div class="secondAnswer">
-                <a onclick="location.replace('./gamecenter');"><button>다음에 봐요 :(</button></a>
+            <div class="nav_notice">
+                <p class="notice_title">
+                    <a href="./test">너의 악기는?</a>
+                </p>
+                <p class="notice_exp">
+                    새로운 악기를 시도해보고 싶다면?<br>
+                    당신에게 어울리는 악기를 추천해드립니다!
+                </p>
             </div>
+        </header>
+
+        <!-- 내용 -->
+        <script>
+            let testArray = JSON.parse('<%- JSON.stringify(testArray) %>');
+        </script>
+
+        <div class="gameContents">
+            <div class="question">
+                <p>악기 추천 받으러 갈까요?</p>
+                <span style="font-size: 1.5rem; color: red;">(* 이 테스트는 오로지 재미를 위해 만들어진 테스트입니다.^^)</span>
+            </div>
+            <div class="answer">
+                <div class="firstAnswer">
+                    <button onclick="startGame();">너무 좋아요 :)</button>
+                </div>
+                <div class="secondAnswer">
+                    <a onclick="location.replace('./gamecenter');"><button>다음에 봐요 :(</button></a>
+                </div>
+            </div>
+            <div class="result"></div>
         </div>
-        <div class="result"></div>
     </div>
-</div>
     <footer>
         <div class="footer_section">
             <div class="footer_area">
                 <div class="footer_logo">
-                    <img src="./image/main/graylogo.png">
+                    <img src="./image/main/logo.png">
                     <img src="./image/main/무제.png">
                 </div>
                 <div class="footer_explain">
                     <a class="footer_use" href="./policy">이용 약관</a>
                     <p>서울특별시 광진구 능동로 120, 제2학생회관 B117호</p>
-                    <p>후원 | ##은행 #####</p><br>
+                    <p>후원 | 카카오뱅크 3333180300967</p><br>
                     <p>copyright 2021 KUPHIL, All rights reserved.</p>
                 </div>
-
             </div>
         </div>
     </footer>
