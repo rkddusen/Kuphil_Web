@@ -5,7 +5,7 @@
     background: linear-gradient(91.48deg, rgba(255, 224, 196, 0.44) 0%, #FFFBD9 100%);
         }
 .notice_title{
-    color: #9C8773;
+    color: #d2bba5;
 }
 
 #introduce_nav{
@@ -13,7 +13,7 @@
 }
 
 #history_nav{
-    color:#9C8773;
+    color:#d2bba5;
 }
 
 
@@ -45,10 +45,11 @@
 }
 
 #introduce_welcome > img {
-    width:30%;
+    width:20%;
+    border-radius:70%;
 }
 
-#introduce_welcome > p >span {
+article {
     margin-top:20px;
     font-size: 1.9rem;
     line-height:180%;
@@ -64,13 +65,20 @@
     z-index:1;
 }*/
 
-#introduce_welcome > p {
+.professor_welcome {
     font-size: 1.6rem;
     margin-left: 50px;
-    /* background-color:#dfd3c3a2; */
     width: 100%;
     line-height:180%;
 }
+
+.professor_welcome > p{
+    font-size: 1.7rem;
+    width: 100%;
+    line-height:180%;
+    text-align:right;
+}
+
 #introduce_image > span {
     margin: 20px auto;
     font-size: 3.6rem;
@@ -112,6 +120,10 @@
     width:45%;
 }
 
+#locations{
+    display:none;
+}
+
 .location{
     margin: 30px auto;
     display: flex;
@@ -119,20 +131,20 @@
 }
 
 .location > input:first-child{
-    color:#5C3A1A;
+    color:#000000;
 }
 
 .location > input{
     border: none;
     background-color: transparent;
     font-size: 1.8rem;
-    color: #BE7743;
+    color: #989898;
     cursor:pointer;
     font-weight:bold;
 }
 
 .location > input:hover{    
-    color:#5C3A1A;
+    color:#000000;
     font-weight: bold;
 }
 
@@ -150,8 +162,9 @@
 
 
 @media (max-width : 1023px){       
-
-    
+    #introduce_welcome > img {
+        width:25%;
+    }
 }
 @media (max-width : 767px) {
 
@@ -159,12 +172,13 @@
         display: flex;
         align-items:center;
         flex-direction:column;
-        margin-top:20px;
+        margin-top:30px;
     }
 
     #introduce_greeting > span {
         font-size: 3.5rem;
         margin:0 auto;
+        margin-bottom:10px;
     }
     
     #introduce_welcome {
@@ -178,8 +192,16 @@
     }
 
     #introduce_welcome > img {
-        width:45%;
-        padding-bottom:30px;
+        width:35%;
+    }
+
+    article{
+        margin-top:0;
+    }
+    
+    .professor_welcome{
+        margin-top:30px;
+        margin-left:0;
     }
 
     #introduce_image {
@@ -189,8 +211,7 @@
     }
 
     #introduce_image > img {
-        width:130%;
-        margin-left:-15%;
+        width:100%;
     }
 
     #introduce_image > span{
@@ -210,14 +231,31 @@
         font-size:3.5rem;
     }
 
-    .location{
+    #locations{
+        display:inline-block;
+        margin:0 35%;
+        margin-bottom:15px;
+        border:1px;
+        border-radius:7px;
+        width:30%;
+        text-align:center;
+        font-size:1.3rem;
+        height:30px;
+        background-color:#fffaf7;
+    }
+
+    
+    #start_location{
+        display:none;
+    }
+    /*.location{
         margin-top:5px;
         margin-bottom:20px;
     }
 
     .location > input{
         font-size: 1.5rem;
-    }
+    }*/
 
     #kuphil_room {
         flex-direction:column;
@@ -251,10 +289,11 @@
 
     #introduce_greeting {
         margin-bottom:30px;
+        margin-top:30px;
     }
 
     #introduce_greeting {
-        margin-top: 10px;
+        margin-top: 20px;
     }
 
     #introduce_welcome{
@@ -265,15 +304,10 @@
         font-size: 3rem;
     }
 
-
     #introduce_welcome > img {
         padding-bottom:0;
     }
-
-    #introduce_welcome > p >span {
-        font-size: 1.45rem;
-    }
-
+    
     #introduce_welcome > p {
         font-size: 1rem;
     }

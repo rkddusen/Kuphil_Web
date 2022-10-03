@@ -7,7 +7,7 @@ function removePath() {
 //버튼 색 지우기 -> 새로운 색 넣기 전 지우기
 function removeColor() {
     for (let i=1;i<4;i++){
-        document.getElementsByClassName('location')[i].style.color='#BE7743';
+        document.getElementsByClassName('location')[i].style.color='#989898';
     }
 }
 
@@ -17,7 +17,7 @@ function getPath(btn){
     removeColor();    
     if (btn.value=="수의과대학 (정문)"){
         let where=document.getElementsByClassName("location")[1];
-        where.style.color="#5C3A1A";
+        where.style.color="#000000";
         let Pathway;
         let Path = document.createElement('div');
         Path.setAttribute('class', 'path');
@@ -30,7 +30,7 @@ function getPath(btn){
 
     }   else if (btn.value=="도서관 (중문)"){
         let where=document.getElementsByClassName("location")[2];
-        where.style.color="#5C3A1A";
+        where.style.color="#000000";
         let Pathway;
         let Path = document.createElement('div');
         Path.setAttribute('class', 'path');
@@ -43,7 +43,7 @@ function getPath(btn){
 
     } else if (btn.value=="경영대학 (후문)"){
         let where=document.getElementsByClassName("location")[3];
-        where.style.color="#5C3A1A";
+        where.style.color="#000000";
         let Pathway;
         let Path = document.createElement('div');
         Path.setAttribute('class', 'path');
