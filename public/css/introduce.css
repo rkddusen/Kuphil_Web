@@ -343,4 +343,8 @@ article {
     .stairs{
         line-height:15px;
     }
+
+    article{
+        font-size:1.6rem;
+    }
 }
