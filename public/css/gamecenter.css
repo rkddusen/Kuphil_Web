@@ -36,9 +36,9 @@
     cursor: pointer;
 }
 /* '준비 중' 썸네일에는 커서 초기화 */
-.game_content:last-child .game_thumbnail{
+/* .game_content:last-child .game_thumbnail{
     cursor: auto;
-}
+} */
 .game_content section{
     text-align:center;
     margin-bottom: 20px;

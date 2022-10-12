@@ -323,6 +323,10 @@ server.get("/lab", (req, res) => {
     res.sendFile(__dirname + "/public/html/lab.html");
 });
 
+server.get("/laboratory", (req, res) => {
+    res.sendFile(__dirname + "/public/html/laboratory.html");
+});
+
 server.get("/restaurant", (req, res) => {
     res.sendFile(__dirname + "/public/html/restaurant.html");
 });
