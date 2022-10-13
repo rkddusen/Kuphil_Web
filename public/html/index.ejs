@@ -78,10 +78,9 @@
                 <ul>
                     <li class="slide_list">
                         <div class="slide_main" title="main_img"></div>
-
                     </li>
                     <li class="slide_list">
-                        <div class="slide_archive">
+                        <div class="slide_archive" onclick="location.href='./archive';">
                             <div class="archive_left">
                                 <div>
                                     <img src="./image/poster/poster_<%=id_one%>.jpg" alt="제<%=id_one%>회 정기연주회 포스터">
@@ -92,13 +91,11 @@
                             </div>
                             <div class="archive_right">
                                 <p class="slide_archive_title">쿠필의 역대 연주회가<br>궁금하다면?</p>
-                                <p class="slide_archive_text"><a href="./archive">보러 가기 >></a></p>
                             </div>
                         </div>
                     </li>
                     <li class="slide_list">
-                        <div class="slide_recru">
-
+                        <div class="slide_qna" onclick="location.href='./qna';">
                         </div>
                     </li>
                 </ul>
@@ -119,10 +116,12 @@
             let slide = document.getElementsByClassName("slide_list");
             function slideShow(index) {
                 for (let i = 0; i < slide.length; i++) {
+                    slide[i].style.zIndex = "0";
                     slide[i].style.opacity = "0";
                     document.getElementsByClassName('slide_btn')[i].style.backgroundColor = 'black';
                 }
                 slide[index].style.opacity = '1';
+                slide[index].style.zIndex = "1";
                 //현재 차례의 슬라이드를 보여줌
 
                 document.getElementsByClassName('slide_btn')[index].style.backgroundColor = 'white';

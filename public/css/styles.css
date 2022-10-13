@@ -32,7 +32,8 @@
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: 2s all;
+    z-index: 0;
+    transition: opacity 2s, z-index 0.5s 1s;
 }
 .slide_area ul li:first-child{
     opacity: 1;
@@ -109,7 +110,19 @@
     font-weight: bold;
 }
 
-.slide_recru{
+.slide_qna_text{
+    text-align: end;
+    padding: 34% 10%;
+}
+.slide_qna_text a{
+    font-size: 2rem;
+    color: white;
+}
+.slide_qna_text a:hover{
+    font-weight: bold;
+}
+
+.slide_qna{
     box-sizing: border-box;
     width: 100%;
     padding: 0 5%;
@@ -240,13 +253,14 @@ section {
     position: absolute;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    background-color: #f7ffe7;
+    background-color: #EEFFE2;
 }
 .recru_img{
     position: absolute;
     left: 5%;
-    bottom: 5%;
-    width: 40%;
+    top: 50%;
+    width: 35%;
+    transform: translate(0%,-50%);
 }
 .recru_img img{
     width: 100%;
@@ -270,7 +284,7 @@ section {
     padding: 6% 10%;
     font-size: 1.5rem;
     color: white;
-    background-color: #377903;
+    background-color: #327900;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
     border: none;
     border-radius: 10px;
@@ -303,7 +317,7 @@ section {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #fef0f0;
+    background-color: #E2FCFF;
     border-radius: 20px 20px 0 0;
 }
 .arcade_explain div{
@@ -329,7 +343,7 @@ section {
     padding: 2% 5%;
     font-size: 1.5rem;
     color: white;
-    background-color: #930000;
+    background-color: #007482;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
     border: none;
     border-radius: 10px;
@@ -407,7 +421,7 @@ section {
     position: absolute;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    background-color: #eef3FF;
+    background-color: #ffeffc;
 }
 .suggest_image{
     width: 60%;
@@ -443,7 +457,7 @@ section {
     padding: 4% 5%;
     font-size: 1.5rem;
     color: white;
-    background-color: #335097;
+    background-color: #920084;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
     border: none;
     border-radius: 10px;
@@ -509,7 +523,7 @@ section {
     position: absolute;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    background-color: #fbf4ff;
+    background-color: #ffffff;
 }
 .tip_contents{
     position: absolute;
