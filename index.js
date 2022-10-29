@@ -129,9 +129,26 @@ server.get("/", (req, res) => {
 //     );
 // });
 
+const archivePage = fs.readFileSync("./public/html/archive.ejs", "utf8");
 server.get("/archive", (req, res) => {
-    res.sendFile(__dirname + "/public/html/archive.html");
+    connection.query(
+        "SELECT id FROM concert_info ORDER BY id desc limit 1;",
+        function (error, rows, fields) {
+            if(error) {
+                console.log(error);
+            } else {
+                let concertNum = rows[0].id;
+                //데이터 생성
+                var page = ejs.render(archivePage, {
+                    concertNum: concertNum,
+                });
+                //응답
+                res.send(page);
+            }
+        }
+    )
 });
+
 
 // server.get("/board", (req, res) => {
 //     res.redirect("/board/1");
@@ -304,6 +321,10 @@ server.get("/test", (req, res) => {
 
 server.get("/lab", (req, res) => {
     res.sendFile(__dirname + "/public/html/lab.html");
+});
+
+server.get("/laboratory", (req, res) => {
+    res.sendFile(__dirname + "/public/html/laboratory.html");
 });
 
 server.get("/restaurant", (req, res) => {
@@ -518,7 +539,6 @@ server.get("/archive/concert/:idx", (req, res) => {
                 let concert_place = rows[0][0].place;
                 let concert_date = rows[0][0].date;
                 let concert_conductor = rows[0][0].conductor;
-                let concert_link = rows[0][0].link;
                 let concert_composer = [];
                 let concert_program = [];
                 for (var i in rows[1]) {
@@ -533,7 +553,6 @@ server.get("/archive/concert/:idx", (req, res) => {
                     concert_place: concert_place,
                     concert_date: concert_date,
                     concert_conductor: concert_conductor,
-                    concert_link: concert_link,
                     concert_program: concert_program,
                     concert_composer: concert_composer,
                 });

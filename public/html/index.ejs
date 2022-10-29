@@ -44,7 +44,7 @@
                         <li><a href="./archive">아카이브</a></li>
                         <li><a href="./qna">Q&A</a></li>
                         <li><a href="./gamecenter">놀이터</a></li>
-                        <li><a href="./lab">체험실</a></li>
+                        <li><a href="./lab">etc.</a></li>
                     </ul>
                 </nav>
                 <div class="ham">
@@ -60,7 +60,7 @@
                             <li><a href="./archive">아카이브</a></li>
                             <li><a href="./qna">Q&A</a></li>
                             <li><a href="./gamecenter">놀이터</a></li>
-                            <li><a href="./lab">콘텐츠</a></li>
+                            <li><a href="./lab">etc.</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -77,24 +77,25 @@
             <div class="slide_area">
                 <ul>
                     <li class="slide_list">
-                        <div class="slide_main"></div>
-
+                        <div class="slide_main" title="main_img"></div>
                     </li>
                     <li class="slide_list">
-                        <div class="slide_archive">
-                            <div>
-                                <img src="./image/poster/poster_<%=id_one%>.jpg" alt="제<%=id_one%>회 정기연주회 포스터">
-                                <img src="./image/poster/poster_<%=id_two%>.jpg" alt="제<%=id_two%>회 정기연주회 포스터">
+                        <div class="slide_archive" onclick="location.href='./archive';" style="cursor: pointer;">
+                            <div class="archive_left">
+                                <div>
+                                    <img src="./image/poster/poster_<%=id_one%>.jpg" alt="제<%=id_one%>회 정기연주회 포스터">
+                                </div>
+                                <div>
+                                    <img src="./image/poster/poster_<%=id_two%>.jpg" alt="제<%=id_two%>회 정기연주회 포스터">
+                                </div>
                             </div>
-                            <div>
+                            <div class="archive_right">
                                 <p class="slide_archive_title">쿠필의 역대 연주회가<br>궁금하다면?</p>
-                                <p class="slide_archive_text"><a href="./archive">보러 가기 >></a></p>
                             </div>
                         </div>
                     </li>
                     <li class="slide_list">
-                        <div class="slide_recru">
-
+                        <div class="slide_qna" onclick="location.href='./qna';" style="cursor: pointer;">
                         </div>
                     </li>
                 </ul>
@@ -115,10 +116,12 @@
             let slide = document.getElementsByClassName("slide_list");
             function slideShow(index) {
                 for (let i = 0; i < slide.length; i++) {
+                    slide[i].style.zIndex = "0";
                     slide[i].style.opacity = "0";
                     document.getElementsByClassName('slide_btn')[i].style.backgroundColor = 'black';
                 }
                 slide[index].style.opacity = '1';
+                slide[index].style.zIndex = "1";
                 //현재 차례의 슬라이드를 보여줌
 
                 document.getElementsByClassName('slide_btn')[index].style.backgroundColor = 'white';
@@ -131,7 +134,7 @@
                 }
 
                 clearTimeout(timeid);
-                timeid = setTimeout("slideShow(" + index + ")", 1000);//함수를 4초마다 호출
+                timeid = setTimeout("slideShow(" + index + ")", 1000000);//함수를 4초마다 호출
             }
         </script>
         <section>
@@ -196,16 +199,18 @@
             </div>
             <div class="row_3rd">
                 <div class="main_suggest">
-                    <a href="./cooperation">
+                    
                         <div class="main_suggest_content">
                             <div class="suggest_image">
-                                <img src="./image/suggest.png" alt="제휴제안">
+                                <img src="./image/main/suggest.png" alt="제휴제안">
                             </div>
-                            <div class="suggest_p">
-                                <p>쿠필과의 제휴 안내</p>
+                            <div class="suggest_btn">
+                                <span>
+                                    <button onclick="location.href='./cooperation'">쿠필과 제휴 맺기</button>
+                                </span>
+                                
                             </div>
                         </div>
-                    </a>
                 </div>
                 <div class="main_sns">
                     <div class="main_sns_content">
@@ -227,7 +232,7 @@
                     <div class="main_tip_content">
                         <div class="tip_contents">
                             <p>
-                                tmi) <%= tip %>
+                                Tip) <%= tip %>
                             </p>
                         </div>
                     </div>

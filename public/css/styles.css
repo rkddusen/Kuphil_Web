@@ -32,10 +32,12 @@
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: 2s all;
-}
+    z-index: 0;
+    transition: opacity 0.5s, z-index 0.3s 0.2s;}
+    
 .slide_area ul li:first-child{
     opacity: 1;
+    z-index: 1;
 }
 .slide_main{
     box-sizing: border-box;
@@ -64,43 +66,64 @@
 }
 
 
-.slide_archive div{
+.archive_left{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     width: 50%;
     height: 100%;
     float: left;
 }
-.slide_archive div:first-child{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.slide_archive img{
+.archive_left div{
     height: 50%;
+    width: 40%;
+    border: black;
 }
-.slide_archive div:last-child{
+.archive_left div img{
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    color: white;
+}
+.archive_right{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    width: 50%;
+    height: 100%;
+    float: left;
 }
-.slide_archive div .slide_archive_title{
+.slide_archive_title{
     font-size: 3rem;
     color: white;
     font-weight: bold;
     padding-left: 10%;
 }
-.slide_archive div .slide_archive_text{
+.slide_archive_text{
     text-align: end;
     padding: 0 20%;
 }
-.slide_archive div .slide_archive_text a{
+.slide_archive_text a{
     font-size: 2rem;
     color: white;
 }
-.slide_archive div .slide_archive_text a:hover{
+.slide_archive_text a:hover{
     font-weight: bold;
 }
 
-.slide_recru{
+.slide_qna_text{
+    text-align: end;
+    padding: 34% 10%;
+}
+.slide_qna_text a{
+    font-size: 2rem;
+    color: white;
+}
+.slide_qna_text a:hover{
+    font-weight: bold;
+}
+
+.slide_qna{
     box-sizing: border-box;
     width: 100%;
     padding: 0 5%;
@@ -231,13 +254,14 @@ section {
     position: absolute;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    background-color: #FAFFEF;
+    background-color: #EEFFE2;
 }
 .recru_img{
     position: absolute;
     left: 5%;
-    bottom: 5%;
-    width: 40%;
+    top: 50%;
+    width: 35%;
+    transform: translate(0%,-50%);
 }
 .recru_img img{
     width: 100%;
@@ -258,10 +282,10 @@ section {
     display: inline-block;
     box-sizing: border-box;
     margin-top: 10%;
-    padding: 5% 10%;
+    padding: 6% 10%;
     font-size: 1.5rem;
     color: white;
-    background-color: #377903;
+    background-color: #327900;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
     border: none;
     border-radius: 10px;
@@ -294,7 +318,7 @@ section {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #fef0f0;
+    background-color: #E2FCFF;
     border-radius: 20px 20px 0 0;
 }
 .arcade_explain div{
@@ -317,10 +341,10 @@ section {
     display: inline-block;
     box-sizing: border-box;
     margin-top: 5%;
-    padding: 3% 5%;
+    padding: 2% 5%;
     font-size: 1.5rem;
     color: white;
-    background-color: #930000;
+    background-color: #007482;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
     border: none;
     border-radius: 10px;
@@ -398,9 +422,10 @@ section {
     position: absolute;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
+    background-color: #ffeffc;
 }
-.suggest_image, .suggest_p{
-    width: 50%;
+.suggest_image{
+    width: 60%;
     height: 100%;
     float: left;
     position: relative;
@@ -410,9 +435,15 @@ section {
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    width: 70%;
+    width: 80%;
 }
-.suggest_p p{
+.suggest_btn{
+    width: 40%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+.suggest_btn span{
     position: absolute;
     left: 50%;
     top: 50%;
@@ -420,6 +451,18 @@ section {
     width: 100%;
     text-align: center;
     font-size: 2rem;
+}
+.suggest_btn button{
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 4% 5%;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #920084;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 10px;
+    letter-spacing: 0.2rem;
 }
 
 /* 컨택 */
@@ -447,7 +490,7 @@ section {
     left: 0;
     transform:translate(0%,-50%);
     width: 100%;
-    height: 40%;
+    height: 35%;
 }
 .sns_contents{
     width: 100%;
@@ -481,7 +524,7 @@ section {
     position: absolute;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    background-color: #eef3FF;
+    background-color: #ffffff;
 }
 .tip_contents{
     position: absolute;
@@ -501,6 +544,9 @@ section {
 @media (max-width : 1023px){
     .recru_area div, .arcade_explain div p, .suggest_p p, .tip_contents p{
         font-size: 1.8rem;
+    }
+    .tip_contents p{
+        font-size: 1.6rem;
     }
 }
 @media (max-width : 767px) {
@@ -565,8 +611,11 @@ section {
         margin: 0 30px;
     }
 
-    .recru_area div, .arcade_explain div p, .suggest_p p, .tip_contents p{
+    .recru_area div, .arcade_explain div p, .suggest_p p{
         font-size: 2rem;
+    }
+    .tip_contents p{
+        font-size: 1.6rem;
     }
     .main_recru{
         width: 100%;
@@ -600,6 +649,12 @@ section {
         width: 100%;
         padding-top: 25%;
         float: left;
+    }
+    .suggest_image, .suggest_btn{
+        width: 50%;
+    }
+    .suggest_btn button{
+        padding: 6% 10%;
     }
     .main_sns{
         margin-top: 7%;
@@ -642,7 +697,10 @@ section {
         font-size: 1rem;
         margin: 0 20px;
     }
-    .recru_area div, .arcade_explain div p, .suggest_p p, .tip_contents p{
+    .recru_area div, .arcade_explain div p, .suggest_p p{
         font-size: 1.6rem;
+    }
+    .tip_contents p{
+        font-size: 1.3rem;
     }
 }

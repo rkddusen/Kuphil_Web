@@ -1,9 +1,7 @@
 let showfirst = document.getElementsByClassName("posterbox_1")[0];
 let showsecond = document.getElementsByClassName("posterbox_2")[0];
-// let arc = [];
-//38 >> 전체 포스터의 수
-let num = 38;
-
+//concertCnt >> 전체 포스터의 수
+let num = concertCnt;
 
 function showPage(){
     let buildOne = ``;
@@ -74,7 +72,7 @@ function showPage(){
     };
     showfirst.innerHTML = buildOne;
     showsecond.innerHTML = buildTwo;
-    if (num>=38) {
+    if (num>=concertCnt) {
         document.getElementsByClassName( 'prev_btn' )[0].removeAttribute( 'onClick' );
         document.getElementsByClassName('prev_btn')[0].style.borderRight = '2px solid #999';
         document.getElementsByClassName('prev_btn')[0].style.borderTop = '2px solid #999';
@@ -107,7 +105,7 @@ function removePage() {
 
 function prevPage() {
     removePage();
-    if (num < 38) {
+    if (num < concertCnt) {
         num += 6;
         showPage();
     }
@@ -130,16 +128,3 @@ function nextPage() {
 
 showPage();
 
-// function popPoster() {
-//     window.open('windowopen.html','window팝업','width = 400, height = 200, status = no, toolbar = no');
-// function popPoster(url) {
-//     const img = new Image();
-//     img.src=url;
-//     var img_width=img.width;
-//     var win_width=img.width+25;
-//     var img_height=img.height;
-//     var win=img.height+30;
-//     const OpenWindow=window.open('','_blank', 'width='+img_width+', height='+img_height+', menubars=no, scrollbars=auto');
-//     OpenWindow.document.write("<style>body{margin:0px;}</style><img src='"+url+"' width='"+win_width+"'>");
-//     }
-// };

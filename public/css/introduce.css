@@ -90,10 +90,14 @@ article {
     margin: 70px auto;
     margin-top:100px;
 }
-#introduce_image > img {
+.whatKuphil1 {
     width: 100%;
-    display: flex;
+    display: block;
     margin: 0 auto;
+}
+
+.whatKuphil2 {
+    display: none;
 }
 
 #path {
@@ -210,12 +214,18 @@ article {
         flex-direction:column;
     }
 
-    #introduce_image > img {
-        width:100%;
-    }
 
     #introduce_image > span{
         font-size: 3.5rem;
+    }
+
+    .whatKuphil1 {
+        display: none;
+    }
+    
+    .whatKuphil2 {
+        display: block;
+        width: 100%;
     }
 
     
@@ -320,6 +330,7 @@ article {
         font-size:3rem;
     }
 
+
     #path>span{
         margin: 0 auto;
         font-size:3rem;
@@ -331,5 +342,9 @@ article {
 
     .stairs{
         line-height:15px;
+    }
+
+    article{
+        font-size:1.6rem;
     }
 }
