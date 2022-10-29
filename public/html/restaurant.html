@@ -47,15 +47,16 @@
                         <li><a href="./archive">아카이브</a></li>
                         <li><a href="./qna">Q&A</a></li>
                         <li><a href="./gamecenter">놀이터</a></li>
-                        <li><a href="./lab">실험실</a></li>
+                        <li><a href="./lab">etc.</a></li>
                     </ul>
                 </nav>
-                <div class="small_menu">
-                    <p onclick="smallOpen();">≡</p>
-
+                <div class="ham">
+                    <span class="bar1"></span>
+                    <span class="bar2"></span>
+                    <span class="bar3"></span>
                 </div>
+
                 <div class="small_menu_open">
-                    <p onclick="smallClose();">X</p>
                     <nav>
                         <ul>
                             <li><a href="./introduce">소개</a></li>
@@ -67,13 +68,10 @@
                     </nav>
                 </div>
                 <script>
-                    let small_menu_open = document.getElementsByClassName("small_menu_open")[0];
-                    function smallOpen() {
-                        small_menu_open.style.display = 'block';
-                    }
-                    function smallClose() {
-                        small_menu_open.style.display = 'none';
-                    }
+                    $(".ham").click(function () {
+                        $(this).toggleClass("active");
+                        $(".small_menu_open").toggleClass("active");
+                    });
                 </script>
             </div>
             <div class="nav_notice">
@@ -81,27 +79,40 @@
                     <a href="./restaurant">쿠필 맛집</a>
                 </p>
                 <p class="notice_exp">
-                    소개하고 연혁입니다.<br>
-                    소개하고 연혁입니다.
+                    쿠필 개발자들이 선정한<br>
+                    건대 맛집입니다.
                 </p>
             </div>
         </header>
 
-        <div class="lab_content">
+        <div class="restaurant_content">
             <div id="wrap_restaurant_area">
-                <div class="restaurant_area" id="konkuk_univ_subway_area" onclick="restaurant_area_check(id);"
-                    style="color: #361F0F">건입</div>
-                <div class="restaurant_area" id="middle_gate_area" onclick="restaurant_area_check(id);">중문</div>
-                <div class="restaurant_area" id="back_gate_area" onclick="restaurant_area_check(id);">후문</div>
+                <section id="theme">
+                    <div class="select">
+                        <div class="text">건입</div>
+                        <div class="tri">▼</div>
+                        <ul class="option-list">
+                            <li class="option" class="restaurant_area" id="konkuk_univ_subway_area" onclick="restaurant_area_check(id);">건입</li>
+                            <li class="option" class="restaurant_area" id="middle_gate_area" onclick="restaurant_area_check(id);">중문</li>
+                            <li class="option" class="restaurant_area" id="back_gate_area" onclick="restaurant_area_check(id);">후문</li>
+                        </ul>
+                    </div>
+                </section>
+                <section id="theme1">
+                    <div class="select1">
+                        <div class="text1">선택</div>
+                        <div class="tri">▼</div>
+                        <ul class="option-list1">
+                            <li class="option1" class="restaurant_type" id="ku_subway_area_meal" onclick="restaurant_type_check(id);">밥집</li>
+                            <li class="option1" class="restaurant_type" id="ku_subway_area_bar_or_pub" onclick="restaurant_type_check(id);">술집</li>
+                            <li class="option1" class="restaurant_type" id="ku_subway_area_cafe" onclick="restaurant_type_check(id);">카페</li>
+                        </ul>
+                    </div>
+                </section>
             </div>
-            <div id="wrap_restaurant_type">
-                <div class="restaurant_type" id="ku_subway_area_meal" onclick="restaurant_type_check(id);">밥집</div>
-                <div class="restaurant_type" id="ku_subway_area_bar_or_pub" onclick="restaurant_type_check(id);">술집
-                </div>
-                <div class="restaurant_type" id="ku_subway_area_cafe" onclick="restaurant_type_check(id);">카페</div>
-            </div>
+                
             <div id="wrap_restaurant_map_n_info">
-                <div id="map" style="width:300px;height:300px;"></div>
+                <div id="map" style="width:320px;height:320px;"></div>
                 <div id="wrap_restaurant_info_n_btn">
                     <div class="restaurant_info_n_btn">
                         <div class="wrap_restaurant_info">
@@ -161,6 +172,51 @@
 
     <script>
 
+        function onClickSelect(e) {
+            const isActive = e.currentTarget.className.indexOf("active") !== -1;
+            if (isActive) {
+              e.currentTarget.className = "select";
+            } else {
+              e.currentTarget.className = "select active";
+            }
+        }
+          
+        document.querySelector("#theme .select").addEventListener("click", onClickSelect);
+          
+        function onClickOption(e) {
+        const selectedValue = e.currentTarget.innerHTML;
+        document.querySelector("#theme .text").innerHTML = selectedValue;
+        }
+        
+        var optionList = document.querySelectorAll("#theme .option");
+        for (var i = 0; i < optionList.length; i++) {
+        var option = optionList[i];
+        option.addEventListener("click", onClickOption);
+        }
+
+        function onClickSelect1(e) {
+            const isActive1 = e.currentTarget.className.indexOf("active") !== -1;
+            if (isActive1) {
+              e.currentTarget.className = "select1";
+            } else {
+              e.currentTarget.className = "select1 active";
+            }
+        }
+          
+        document.querySelector("#theme1 .select1").addEventListener("click", onClickSelect1);
+          
+        function onClickOption1(e) {
+        const selectedValue1 = e.currentTarget.innerHTML;
+        document.querySelector("#theme1 .text1").innerHTML = selectedValue1;
+        console.log(selectedValue1);
+        }
+        
+        var optionList1 = document.querySelectorAll("#theme1 .option1");
+        for (var i = 0; i < optionList1.length; i++) {
+        var option1 = optionList1[i];
+        option1.addEventListener("click", onClickOption1);
+        }
+        
         function searchAddressToCoordinate(address) {
 
             var map = new naver.maps.Map('map', {
@@ -246,33 +302,39 @@
         function restaurant_area_check(area) {
 
             if (area == "konkuk_univ_subway_area") {
-                restaurant_type_check('ku_subway_area_meal');
-                document.getElementsByClassName('restaurant_area')[0].setAttribute("style", "color: #361F0F");
-                document.getElementsByClassName('restaurant_area')[1].setAttribute("style", "color: #784520");
-                document.getElementsByClassName('restaurant_area')[2].setAttribute("style", "color: #784520");
+                //restaurant_type_check('ku_subway_area_meal');
+                /*
+                document.getElementsByClassName('restaurant_area')[0].setAttribute("style", "color: #000000");
+                document.getElementsByClassName('restaurant_area')[1].setAttribute("style", "color: #c5c5c5");
+                document.getElementsByClassName('restaurant_area')[2].setAttribute("style", "color: #c5c5c5");
                 document.getElementsByClassName('restaurant_type')[0].id = 'ku_subway_area_meal';
                 document.getElementsByClassName('restaurant_type')[1].id = 'ku_subway_area_bar_or_pub';
-                document.getElementsByClassName('restaurant_type')[2].id = 'ku_subway_area_cafe';
+                document.getElementsByClassName('restaurant_type')[2].id = 'ku_subway_area_cafe';*/
+                document.getElementsByClassName('option1')[0].id = 'ku_subway_area_meal';
+                document.getElementsByClassName('option1')[1].id = 'ku_subway_area_bar_or_pub';
+                document.getElementsByClassName('option1')[2].id = 'ku_subway_area_cafe';
             }
 
             if (area == "middle_gate_area") {
-                restaurant_type_check('middle_gate_area_meal');
-                document.getElementsByClassName('restaurant_area')[0].setAttribute("style", "color: #784520");
-                document.getElementsByClassName('restaurant_area')[1].setAttribute("style", "color: #361F0F");
-                document.getElementsByClassName('restaurant_area')[2].setAttribute("style", "color: #784520");
-                document.getElementsByClassName('restaurant_type')[0].id = 'middle_gate_area_meal';
-                document.getElementsByClassName('restaurant_type')[1].id = 'middle_gate_area_bar_or_pub';
-                document.getElementsByClassName('restaurant_type')[2].id = 'middle_gate_area_cafe';
+                //restaurant_type_check('middle_gate_area_meal');
+                /*
+                document.getElementsByClassName('restaurant_area')[0].setAttribute("style", "color: #c5c5c5");
+                document.getElementsByClassName('restaurant_area')[1].setAttribute("style", "color: #000000");
+                document.getElementsByClassName('restaurant_area')[2].setAttribute("style", "color: #c5c5c5");*/
+                document.getElementsByClassName('option1')[0].id = 'middle_gate_area_meal';
+                document.getElementsByClassName('option1')[1].id = 'middle_gate_area_bar_or_pub';
+                document.getElementsByClassName('option1')[2].id = 'middle_gate_area_cafe';
             }
 
             if (area == "back_gate_area") {
-                restaurant_type_check('back_gate_area_meal');
-                document.getElementsByClassName('restaurant_area')[0].setAttribute("style", "color: #784520");
-                document.getElementsByClassName('restaurant_area')[1].setAttribute("style", "color: #784520");
-                document.getElementsByClassName('restaurant_area')[2].setAttribute("style", "color: #361F0F");
-                document.getElementsByClassName('restaurant_type')[0].id = 'back_gate_area_meal';
-                document.getElementsByClassName('restaurant_type')[1].id = 'back_gate_area_bar_or_pub';
-                document.getElementsByClassName('restaurant_type')[2].id = 'back_gate_area_cafe';
+                //restaurant_type_check('back_gate_area_meal');
+                /*
+                document.getElementsByClassName('restaurant_area')[0].setAttribute("style", "color: #c5c5c5");
+                document.getElementsByClassName('restaurant_area')[1].setAttribute("style", "color: #c5c5c5");
+                document.getElementsByClassName('restaurant_area')[2].setAttribute("style", "color: #000000");*/
+                document.getElementsByClassName('option1')[0].id = 'back_gate_area_meal';
+                document.getElementsByClassName('option1')[1].id = 'back_gate_area_bar_or_pub';
+                document.getElementsByClassName('option1')[2].id = 'back_gate_area_cafe';
             }
         }
 
