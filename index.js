@@ -308,8 +308,8 @@ server.get("/test", (req, res) => {
     );
 });
 
-server.get("/lab", (req, res) => {
-    res.sendFile(__dirname + "/public/html/lab.html");
+server.get("/etc", (req, res) => {
+    res.sendFile(__dirname + "/public/html/etc.html");
 });
 
 server.get("/laboratory", (req, res) => {

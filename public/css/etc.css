@@ -1,12 +1,12 @@
 .nav_notice{
     background: linear-gradient(91.48deg, #EFF2FF 0%, rgba(252, 225, 225, 0.31) 100%);
 }
-.lab_area{
+.etc_area{
     width: 90%;
     margin: 0 auto;
     text-align: center;
 }
-.lab_content{
+.etc_content{
     margin: 0 auto;
     margin-top: 70px;
     padding: 25px 0;
@@ -19,16 +19,16 @@
     border-radius: 20px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
 }
-.lab_content:last-child{
+.etc_content:last-child{
     margin-bottom: 70px;
 }
 
-.lab_title{
+.etc_title{
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
-.lab_thumbnail{
+.etc_thumbnail{
     width: 300px;
     height: 300px;
     border: 1px solid rgb(204, 204, 204);
@@ -36,19 +36,19 @@
     cursor: pointer;
 }
 /* '준비 중' 썸네일에는 커서 초기화 */
-.lab_content:last-child .game_thumbnail{
+.etc_content:last-child .game_thumbnail{
     cursor: auto;
 }
-.lab_content section{
+.etc_content section{
     text-align:center;
     margin-bottom: 20px;
 }
 
-.lab_info{
+.etc_info{
     font-size: 1.5rem;
 }
 
-.lab_selection{
+.etc_selection{
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
     border: none;
     border-radius: 10px;
@@ -63,17 +63,14 @@
 }
 
 @media (max-width: 767px) {
-    .lab_thumbnail{
+    .etc_thumbnail{
         width: 250px;
         height: 250px;
     }
 }
 
 @media (max-width: 479px) {
-    #lab_notice{
-        margin-top: 10px;
-    }
-    .lab_thumbnail{
+    .etc_thumbnail{
         width: 200px;
         height: 200px;
     }
