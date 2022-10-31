@@ -297,19 +297,8 @@ server.get("/test", (req, res) => {
                         fanswer: rows[i].answer,
                         sanswer: rows[i].sanswer,
                     };
-                    // question[i] = rows[i].question; conductor[i] = rows[i].conductor; firstViolin[i] = rows[i].firstViolin;
-                    // secondViolin[i] = rows[i].secondViolin; viola[i] = rows[i].viola; cello[i] = rows[i].cello; contra[i] = rows[i].contra;
-                    // flute[i] = rows[i].flute; oboe[i] = rows[i].oboe; clarinet[i] = rows[i].clarinet;
-                    // basson[i] = rows[i].basson; trumpet[i] = rows[i].trumpet; trombone[i] = rows[i].trombone; horn[i] = rows[i].horn;
-                    // tuba[i] = rows[i].tuba; timpani[i] = rows[i].timpani; percussion[i] = rows[i].percussion;
-                    // piano[i] = rows[i].piano; fanswer[i] = rows[i].answer; sanswer[i] = rows[i].sanswer;
                 } //데이터 생성
                 var page = ejs.render(testPage, {
-                    // question: question, conductor: conductor, firstViolin: firstViolin, secondViolin: secondViolin, viola: viola,
-                    // cello: cello, contra: contra, flute: flute, oboe: oboe,
-                    // clarinet: clarinet, basson: basson, trumpet: trumpet, trombone: trombone, horn: horn,
-                    // tuba: tuba, timpani: timpani, percussion: percussion, piano: piano,
-                    // fanswer: fanswer, sanswer: sanswer,
                     testArray: testArray,
                 });
                 //응답
@@ -628,6 +617,34 @@ server.get("/recruitment", (req, res) => {
 
 server.get("/audio", (req, res) => {
     res.sendFile(__dirname + "/public/html/audio.html");
+});
+
+const examPage = fs.readFileSync("./public/html/exam.ejs", "utf8");
+server.get("/exam", (req, res) => {
+    connection.query(
+        "SELECT * FROM exam ORDER BY RAND() LIMIT 10;",
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                let examArray = [];
+                for (var i in rows) {
+                    examArray[i] = {
+                        exam_question: rows[i].exam_question,
+                        exam_answer1: rows[i].exam_answer1,
+                        exam_answer2: rows[i].exam_answer2,
+                        exam_answer3: rows[i].exam_answer3,
+                        exam_answer4: rows[i].exam_answer4,
+                    };
+                } //데이터 생성
+                var page = ejs.render(examPage, {
+                    examArray: examArray,
+                });
+                //응답
+                res.send(page);
+            }
+        }
+    );
 });
 
 server.use((req, res) => {
