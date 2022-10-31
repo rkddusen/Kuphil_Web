@@ -1,4 +1,4 @@
-let audio = new Audio('../image/442hz_30s.mp4');
+let audio = new Audio('../audio/442hz_30s.mp4');
 
     audio.addEventListener('ended', function(){
         this.currentTime = 0;

@@ -8,10 +8,10 @@ let downButton = document.getElementsByClassName("game_button_down")[0];
 //시작 버튼 눌렀을 때 init
 function init() {
     let table = document.getElementsByClassName("game_content")[0];
-    initTable = '<table><tr class="game_start_tr"><td class="block00"><img src="./image/2048block/00.jpg"></td><td class="block01"><img src="./image/2048block/00.jpg"></td><td class="block02"><img src="./image/2048block/00.jpg"></td><td class="block03"><img src="./image/2048block/00.jpg"></td></tr>';
-    initTable += '<tr class="game_start_tr"><td class="block10"><img src="./image/2048block/00.jpg"></td><td class="block11"><img src="./image/2048block/00.jpg"></td><td class="block12"><img src="./image/2048block/00.jpg"></td><td class="block13"><img src="./image/2048block/00.jpg"></td></tr>';
-    initTable += '<tr class="game_start_tr"><td class="block20"><img src="./image/2048block/00.jpg"></td><td class="block21"><img src="./image/2048block/00.jpg"></td><td class="block22"><img src="./image/2048block/00.jpg"></td><td class="block23"><img src="./image/2048block/00.jpg"></td></tr>';
-    initTable += '<tr class="game_start_tr"><td class="block30"><img src="./image/t2048blockest/00.jpg"></td><td class="block31"><img src="./image/2048block/00.jpg"></td><td class="block32"><img src="./image/2048block/00.jpg"></td><td class="block33"><img src="./image/2048block/00.jpg"></td></tr></table>';
+    initTable = '<table><tr class="game_start_tr"><td class="block00"></td><td class="block01"></td><td class="block02"></td><td class="block03"></td></tr>';
+    initTable += '<tr class="game_start_tr"><td class="block10"></td><td class="block11"></td><td class="block12"></td><td class="block13"></td></tr>';
+    initTable += '<tr class="game_start_tr"><td class="block20"></td><td class="block21"></td><td class="block22"></td><td class="block23"></td></tr>';
+    initTable += '<tr class="game_start_tr"><td class="block30"></td><td class="block31"></td><td class="block32"></td><td class="block33"></td></tr></table>';
     table.innerHTML = initTable;
 
     // 4*4배열
@@ -389,71 +389,71 @@ function checkBlock(block) {
                 document.getElementsByClassName("block" + x + y)[0].innerHTML = '';
                 document.getElementsByClassName("block" + x + y)[0].style.backgroundColor = 'white';
             } else if (block[x][y] == 1) {
-                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/game_image/2048_image/tile_2.png">';
+                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/2048/tile_2.png">';
                 document.getElementsByClassName("block" + x + y)[0].style.backgroundColor = '#FFA07A';
                 score = score + 10;
             } else if (block[x][y] == 2) {
-                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/game_image/2048_image/tile_4.png">';
+                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/2048/tile_4.png">';
                 document.getElementsByClassName("block" + x + y)[0].style.backgroundColor = '#FF7070';
                 score = score + 20;
             } else if (block[x][y] == 4) {
-                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/game_image/2048_image/tile_8.png">';
+                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/2048/tile_8.png">';
                 document.getElementsByClassName("block" + x + y)[0].style.backgroundColor = '#FFA500';
                 score = score + 40;
             } else if (block[x][y] == 8) {
-                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/game_image/2048_image/tile_16.png">';
+                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/2048/tile_16.png">';
                 document.getElementsByClassName("block" + x + y)[0].style.backgroundColor = '#FFFF00';
                 score = score + 80;
             } else if (block[x][y] == 16) {
-                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/game_image/2048_image/tile_32.png">';
+                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/2048/tile_32.png">';
                 document.getElementsByClassName("block" + x + y)[0].style.backgroundColor = '#00FF7F';
                 score = score + 160;
             } else if (block[x][y] == 32) {
-                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/game_image/2048_image/tile_64.png">';
+                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/2048/tile_64.png">';
                 document.getElementsByClassName("block" + x + y)[0].style.backgroundColor = '#7FFF00';
                 score = score + 320;
             } else if (block[x][y] == 64) {
-                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/game_image/2048_image/tile_128.png">';
+                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/2048/tile_128.png">';
                 document.getElementsByClassName("block" + x + y)[0].style.backgroundColor = '#008000';
                 score = score + 640;
             } else if (block[x][y] == 128) {
-                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/game_image/2048_image/tile_256.png">';
+                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/2048/tile_256.png">';
                 document.getElementsByClassName("block" + x + y)[0].style.backgroundColor = '#AFEEEE';
                 score = score + 1280;
             } else if (block[x][y] == 256) {
-                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/game_image/2048_image/tile_512.png">';
+                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/2048/tile_512.png">';
                 document.getElementsByClassName("block" + x + y)[0].style.backgroundColor = '#00FFFF';
                 score = score + 2560;
             } else if (block[x][y] == 512) {
-                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/game_image/2048_image/tile_1024.png">';
+                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/2048/tile_1024.png">';
                 document.getElementsByClassName("block" + x + y)[0].style.backgroundColor = '#00BFFF';
                 score = score + 5120;
             } else if (block[x][y] == 1024) {
-                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/game_image/2048_image/tile_2048.png">';
+                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/2048/tile_2048.png">';
                 document.getElementsByClassName("block" + x + y)[0].style.backgroundColor = '#1E90FF';
                 score = score + 10240;
             } else if (block[x][y] == 2048) {
-                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/game_image/2048_image/tile_4096.png">';
+                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/2048/tile_4096.png">';
                 document.getElementsByClassName("block" + x + y)[0].style.backgroundColor = '#0000FF';
                 score = score + 20480;
             } else if (block[x][y] == 4096) {
-                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/game_image/2048_image/tile_8192.png">';
+                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/2048/tile_8192.png">';
                 document.getElementsByClassName("block" + x + y)[0].style.backgroundColor = '#9370DB';
                 score = score + 40960;
             } else if (block[x][y] == 8192) {
-                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/game_image/2048_image/tile_16384.png">';
+                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/2048/tile_16384.png">';
                 document.getElementsByClassName("block" + x + y)[0].style.backgroundColor = '#4B0082';
                 score = score + 81920;
             } else if (block[x][y] == 16384) {
-                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/game_image/2048_image/tile_32768.png">';
+                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/2048/tile_32768.png">';
                 document.getElementsByClassName("block" + x + y)[0].style.backgroundColor = '#808080';
                 score = score + 163840;
             } else if (block[x][y] == 32768) {
-                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/game_image/2048_image/tile_65536.png">';
+                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/2048/tile_65536.png">';
                 document.getElementsByClassName("block" + x + y)[0].style.backgroundColor = '#2F4F4F';
                 score = score + 327680;
             } else if (block[x][y] == 65536) {
-                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/game_image/2048_image/tile_131072.png">';
+                document.getElementsByClassName("block" + x + y)[0].innerHTML = '<img src="./image/2048/tile_131072.png">';
                 document.getElementsByClassName("block" + x + y)[0].style.backgroundColor = '#000000';
                 score = score + 655360;
             }

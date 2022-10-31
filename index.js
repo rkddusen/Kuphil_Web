@@ -615,8 +615,8 @@ server.get("/recruitment", (req, res) => {
     res.sendFile(__dirname + "/public/html/recruitment.html");
 });
 
-server.get("/audio", (req, res) => {
-    res.sendFile(__dirname + "/public/html/audio.html");
+server.get("/tuner", (req, res) => {
+    res.sendFile(__dirname + "/public/html/tuner.html");
 });
 
 const examPage = fs.readFileSync("./public/html/exam.ejs", "utf8");
