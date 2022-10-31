@@ -75,25 +75,25 @@ function Score(score){
     let str = '';
     switch (true) {
         case (score >= 100):
-            str = "<img class='score_img' src='./image/exam_image/A+.png' >";
+            str = "<img class='score_img' src='./image/exam/A+.png' >";
             break;
         case (score >= 90):
-            str = "<img class='score_img' src='./image/exam_image/A.png' >";
+            str = "<img class='score_img' src='./image/exam/A.png' >";
             break;
         case (score >= 80):
-            str = "<img class='score_img' src='./image/exam_image/B+.png' >";
+            str = "<img class='score_img' src='./image/exam/B+.png' >";
             break;
         case (score >= 70):
-            str = "<img class='score_img' src='./image/exam_image/B.png' >";
+            str = "<img class='score_img' src='./image/exam/B.png' >";
             break;
         case (score >= 60):
-            str = "<img class='score_img' src='./image/exam_image/C+.png' >";
+            str = "<img class='score_img' src='./image/exam/C+.png' >";
             break;
         case (score >= 50):
-            str = "<img class='score_img' src='./image/exam_image/C.png' >";
+            str = "<img class='score_img' src='./image/exam/C.png' >";
             break;
         case (score >= 0):
-            str = "<img class='score_img' src='./image/exam_image/F.png' >";
+            str = "<img class='score_img' src='./image/exam/F.png' >";
             break;
     }
     question.innerHTML = str + "<br>당신의 점수는 "+score+"점 입니다!";
