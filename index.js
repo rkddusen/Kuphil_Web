@@ -32,10 +32,6 @@ mysql.db_open(connection);
 //db 데이터를 받을 변수
 
 //request 이벤트 리스너 설정//라우터 설정
-// server.get("/", (req, res) => {
-
-//     res.sendFile(__dirname + "/public/html/index.html");
-// });
 server.get("/introduce", (req, res) => {
     res.sendFile(__dirname + "/public/html/introduce.html");
 });
@@ -64,70 +60,6 @@ server.get("/", (req, res) => {
         }
     });
 });
-// server.get("/history", (req, res) => {
-
-//     res.sendFile(__dirname + "/public/html/history.html");
-// });
-
-// server.post("/calendar/add_schedule", (req, res) => {
-//     let title = req.body.title;
-//     let startDate = req.body.year + '-' + req.body.month + '-' + req.body.day;
-//     let startTime = req.body.startHour + ':' + req.body.startMin;
-//     let endTime = req.body.endHour + ':' + req.body.endMin;
-//     let main = (req.body.maincheck == 'on') ? 1 : 0;
-//     if (req.body.allDay) {
-//         startTime = '00:00';
-//         endTime = '23:59';
-//     }
-//     let sql = 'UPDATE schedule SET main=0 ; INSERT INTO schedule (title, date, startTime, endTime, main) VALUES(?, ?, ?, ?, ?)';
-//     let params = [title, startDate, startTime + ":00", endTime + ":00", main];
-//     connection.query(sql, params, function (err, result, fields) {
-//         if (err) {
-//             console.log(err);
-//         }
-//         return res.redirect('/public/html/calendar');
-//     })
-// });
-// server.post("/calendar/delete_schedule", (req, res) => {
-//     let data = req.body.deleteData;
-//     let spli = '';
-//     let array = [];
-//     for (let i = 0; i < 4; i++) {
-//         spli = data.split('/');
-//         array[i] = spli[i];
-//     }
-//     let sql = "DELETE FROM schedule WHERE date='" + array[0] + "' and starttime='" + array[1] + "' and endtime='" + array[2] + "' and title='" + array[3] + "'";
-//     connection.query(sql, function (err, result) {
-//         if (err) {
-//             console.log(err);
-//         }
-//         return res.redirect('/public/html/calendar');
-//     })
-// });
-
-// const calPage = fs.readFileSync('./public/html/calendar.ejs', 'utf8');
-// server.get("/calendar", (req, res) => {
-//     let data = '';
-//     connection.query('SELECT date,starttime,endtime,title FROM schedule ORDER BY date',
-//         function (error, rows, fields) {
-//             if (error) {
-//                 console.log(error);
-//             }
-//             else {
-//                 for (var i in rows) {
-//                     data += rows[i].date + "/" + rows[i].starttime + "/";
-//                     data += rows[i].endtime + "/";
-//                     data += rows[i].title + "//";
-//                 }//데이터 생성
-//                 var page = ejs.render(calPage, {
-//                     db: data,
-//                 });
-//                 //응답
-//                 res.send(page);
-//             }
-//         }
-//     );
-// });
 
 const archivePage = fs.readFileSync("./public/html/archive.ejs", "utf8");
 server.get("/archive", (req, res) => {
@@ -149,119 +81,6 @@ server.get("/archive", (req, res) => {
     )
 });
 
-
-// server.get("/board", (req, res) => {
-//     res.redirect("/board/1");
-// });
-
-// server.get("/board/write", (req, res) => {
-//     res.sendFile(__dirname + "/board-write.html");
-// });
-
-// const boaPage = fs.readFileSync('./board.ejs', 'utf8');
-// server.get("/board/:page", (req, res) => {
-//     var paging=req.params.page;
-//     let pageStart=(paging-1)*10?(paging-1)*10:0;
-//     let sql='SELECT title, writer, date FROM board ORDER BY date DESC LIMIT ?, 10;';
-//     let sqll='SELECT COUNT(*) AS number FROM board;';
-//     connection.query(sql+sqll,[pageStart],
-//         function (error, rows, fields) {
-//             if (error) {
-//                 console.log(error);
-//             }
-//             else {
-//                 let dataResult=rows[0];
-//                 let countResult=rows[1];
-//                 let data = [];
-//                 let number=countResult[0].number;
-//                 for (var i in rows[0]) {
-//                     data[i] = dataResult[i].title + "//" + dataResult[i].writer+"//"+ dataResult[i].date;
-//                 }
-//                 //데이터 생성
-//                 page = ejs.render(boaPage, {
-//                     page_num:10,
-//                     pass:true,
-//                     page:paging,
-//                     data:data,
-//                     number:number,
-//                 });
-//                 res.send(page);
-//             }
-//         }
-//     );
-// });
-
-// server.get("/signup1", (req, res) => {
-//     res.sendFile(__dirname + "/signup1.html");
-// });
-
-// server.get("/signup2", (req, res) => {
-//     res.sendFile(__dirname + "/signup2.html");
-// });
-
-// server.post('/signup2/verify', function (req, res) {
-//     let id_data = req.body.signup_id;
-//     let pwd_data = req.body.signup_pwd;
-
-//     let sql = 'INSERT INTO signupinformation (id_data, pwd_data) VALUES(?, ?)';
-//     let params = [id_data, pwd_data];
-
-//     connection.query(sql, params, function(err, result, fields) {
-//         if(err) console.log('query is not excuted. insert fail...\n' + err);
-//         else res.redirect('/signup3');
-//     });
-// });
-
-// const signup3Page = fs.readFileSync('./signup3.ejs', 'utf8');
-// server.get('/signup3', function (req, res) {
-//     let id_data = '';
-//     let pwd_data = '';
-//     var sql = 'SELECT id_data, pwd_data FROM signupinformation ORDER BY id_data, pwd_data';
-//     connection.query(sql,
-//         function (err, rows, fields) {
-//         if (err) {
-//             console.log('query is not excuted. select fail...\n' + err);
-//         }
-//         else {
-//             let list = [];
-//             let count = 0;
-//             for (var i in rows) {
-//                 list[i] = rows[i].id_data + "/" + rows[i].pwd_data+"//";
-//                 count++;
-//             }
-//             console.log(rows);
-//             var page = ejs.render(signup3Page, {
-//                 db:list,
-//                 count:count,
-//             });
-//             res.send(page);
-//         }
-//     });
-// });
-
-// const boaReaPage = fs.readFileSync('./board-read.ejs', 'utf8');
-// server.get("/read/:idx", (req, res) => {
-//     var idx=req.params.idx;
-//     connection.query('SELECT id, title, content, writer, date FROM board WHERE id=?;',[idx],
-//         function (error, rows, fields) {
-//             if (error) {
-//                 console.log(error);
-//             }
-//             else {
-//                 //데이터 생성
-//                 page = ejs.render(boaReaPage, {
-//                     id:rows[0].id,
-//                     title:rows[0].title,
-//                     content:rows[0].content,
-//                     writer:rows[0].writer,
-//                     date:rows[0].date,
-//                 });
-//                 res.send(page);
-//             }
-//         }
-//     );
-// });
-
 const testPage = fs.readFileSync("./public/html/test.ejs", "utf8");
 server.get("/test", (req, res) => {
     connection.query(
@@ -270,9 +89,6 @@ server.get("/test", (req, res) => {
             if (error) {
                 console.log(error);
             } else {
-                // let question = []; let conductor = []; let firstViolin = []; let secondViolin = []; let viola = []; let cello = []; let contra = [];
-                // let flute = []; let oboe = []; let clarinet = []; let basson = []; let trumpet = []; let trombone = []; let horn = []; let tuba = [];
-                // let timpani = []; let percussion = []; let piano = []; let fanswer = []; let sanswer = [];
                 let testArray = [];
                 for (var i in rows) {
                     testArray[i] = {
@@ -326,10 +142,6 @@ server.get("/gamecenter", (req, res) => {
 server.get("/cooperation", (req, res) => {
     res.sendFile(__dirname + "/public/html/cooperation.html");
 });
-// server.get("/snakegame", (req, res) => {
-
-//     res.sendFile(__dirname + "/public/html/snake_game.html");
-// });
 
 const game2048 = fs.readFileSync("./public/html/2048.ejs", "utf8");
 server.get("/2048game", (req, res) => {
@@ -377,7 +189,6 @@ const qnaPage = fs.readFileSync("./public/html/qna.ejs", "utf8");
 server.get("/qna/:page", (req, res) => {
     var paging = req.params.page;
     let pageStart = (paging - 1) * 10 ? (paging - 1) * 10 : 0;
-    // let sql = 'SELECT title, question, answer_num, date FROM qna_question ORDER BY id desc LIMIT ?, 10;';
     let sql =
         "SELECT q.id, q.title, q.question, q.date, c.count FROM qna_question q left outer join (select a.id as id, count(*) as count from qna_answer a group by a.id) c on q.id = c.id ORDER BY q.id desc LIMIT ?, 10;";
     let sqll = "SELECT COUNT(*) AS number FROM qna_question;";
@@ -504,7 +315,6 @@ server.post("/qna/deleteSubmit", (req, res) => {
         //sql1로 부터 해당 테이블에 (id=id && password=password)가 없으면 count가 0이고 해당 게시글에 머무르게 됨
         if (count == 0) {
             res.send("<script>alert('비밀번호가 틀렸습니다.');location.href='/qna/read/" + id+"';</script>");
-            // return res.redirect("/qna/read/" + id);
         } else {//(id=id && password=password)가 있으면 해당 게시글을 지우고 qna첫 페이지로 넘어감
             return res.redirect("/qna");
         }
@@ -552,10 +362,6 @@ server.get("/archive/concert/:idx", (req, res) => {
     );
 });
 
-// server.get("/worldcup", (req, res) => {
-
-//     res.sendFile(__dirname + "/public/html/worldcup.html");
-// });
 const worldcupPage = fs.readFileSync("./public/html/worldcup.ejs", "utf8");
 server.get("/worldcup", (req, res) => {
     connection.query("SELECT * FROM worldcup", function (error, rows, fields) {
@@ -569,7 +375,6 @@ server.get("/worldcup", (req, res) => {
                     kr: rows[i].composer_kr,
                     img: rows[i].img,
                 };
-                // entry = "en: '" + rows[i].composer_en + "', kr: '" + rows[i].composer_kr + "', img: '" + rows[i].img + "'";
             } //데이터 생성
             var page = ejs.render(worldcupPage, {
                 composer: composer,
@@ -660,5 +465,3 @@ http.createServer(server).listen(server.get("port"), server.get("host"), () => {
             server.get("port")
     );
 });
-
-
