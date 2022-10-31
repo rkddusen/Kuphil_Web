@@ -1,0 +1,106 @@
+.nav_notice{
+    background: linear-gradient(91.48deg, #EFF2FF 0%, rgba(252, 225, 225, 0.31) 100%);
+}
+
+.exam_area{
+    padding: 0 5%;
+    width: 90%;
+    margin: 70px auto;
+}
+
+.exam_contents{
+    margin: 0 auto;
+    padding: 50px;
+    max-width: 600px;
+    min-height: 600px;
+    background-image: url("../image/game_image/exam_back.jpg");
+    background-size: cover;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.exam_question{
+    min-height: 300px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    background-color: rgba(255, 255, 255, 0.5);
+    position: relative;
+}
+.exam_question p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 0 15px;
+    box-sizing: border-box;
+    word-break: keep-all;
+}
+.exam_answer{
+    margin-top: 50px;
+}
+.answer_list{
+    font-size: 2rem;
+    color: black;
+    min-height: 50px;
+    padding: 0 5px;
+    word-break: keep-all;
+}
+.answer_list:nth-child(n+3):nth-child(-n+4){
+    display: none;
+}
+.answer_text{
+    font-size: 2rem;
+    cursor: pointer;
+    padding-left: 5px;
+
+    /* 드래그 방지 */
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.answer_text:hover{
+    text-decoration: underline;
+}
+.score_img{
+    width: 200px;
+}
+
+
+@media (max-width : 768px) {
+    .exam_area{
+        margin: 30px auto;
+    }
+    .exam_contents{
+        min-height: 450px;
+        padding: 25px;
+    }
+
+    .exam_question{
+        min-height: 250px;
+    }
+    .exam_question p{
+        font-size: 2rem;
+    }
+    .answer_list{
+        min-height: 30px;
+    }
+    .score_img{
+        width: 150px;
+    }
+}
+
+@media (max-width: 479px) {
+    .exam_question p{
+        font-size: 1.8rem;
+    }
+    .answer_list, .answer_text{
+        font-size: 1.8rem;
+    }
+    .score_img{
+        width: 100px;
+    }
+}
