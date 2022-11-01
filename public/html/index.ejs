@@ -144,12 +144,12 @@
                         <div class="wea">
                             <div>
                                 <img id="weather_icon">
-                                <span id="weather_temp"></span>
-                                <span id="weather_desc"></span>
-                                (<span id="weather_humidity"></span>
-                                <span id="weather_precipitation"></span>)
+                                <span id="weather_temp" width="100%" display="inline-block"></span>
+                                <span id="weather_desc" width="100%" display="inline-block"></span>
+                                (<span id="weather_humidity" width="100%" display="inline-block"></span>
+                                <span id="weather_precipitation" width="100%" display="inline-block"></span>)
                             </div>
-                            <div><span id="weather_info">건국대학교 기준</span></div>
+                            <div><span id="weather_info" width="100%">건국대학교 기준</span></div>
                         </div>
                     </div>
                 </div>
@@ -293,83 +293,95 @@
                             //날씨 설명을 아주 세세하게 할 필요는 없으므로 weather[0].main을 번역.
                             switch (weatherDesc) {
                                 case 'Thunderstorm':
-                                    weatherDesc = "뇌우(천둥번개를 동반한 비)";
-                                    weatherIconAdrs = "https://img.icons8.com/office/80/000000/storm.png";
+                                    weatherDesc = "뇌우";
+                                    weatherIconAdrs = "./image/weather/thunderstorms.svg";
+                                    if ((hour < 6) || (hour > 17)) {
+                                        weatherIconAdrs = "./image/weather/thunderstorms-sunny-night.svg";
+                                    }
                                     break;
 
                                 case 'Drizzle':
                                     weatherDesc = "이슬비";
-                                    weatherIconAdrs = "https://img.icons8.com/office/80/000000/rain.png";
+                                    weatherIconAdrs = "./image/weather/drizzle.svg";
+                                    if ((hour < 6) || (hour > 17)) {
+                                        weatherIconAdrs = "./image/weather/drizzle-night.svg";
+                                    }
                                     break;
 
                                 case 'Rain':
                                     weatherDesc = "비";
-                                    weatherIconAdrs = "https://img.icons8.com/office/80/000000/heavy-rain.png";
+                                    weatherIconAdrs = "./image/weather/drizzle.svg";
+                                    if ((hour < 6) || (hour > 17)) {
+                                        weatherIconAdrs = "./image/weather/drizzle-night.svg";
+                                    }
                                     break;
 
                                 case 'Snow':
                                     weatherDesc = "눈";
-                                    weatherIconAdrs = "https://img.icons8.com/office/80/000000/snow.png"
+                                    weatherIconAdrs = "./image/weather/snow.svg"
                                     break;
 
                                 case 'Mist':
-                                    weatherDesc = "엷은 안개(박무)";
-                                    weatherIconAdrs = "https://img.icons8.com/office/80/000000/dust.png";
+                                    weatherDesc = "엷은 안개";
+                                    weatherIconAdrs = "./image/weather/fog.svg";
                                     break;
 
                                 case 'Smoke':
                                     weatherDesc = "연기로 가득 참";
-                                    weatherIconAdrs = "https://img.icons8.com/office/80/000000/dust.png";
+                                    weatherIconAdrs = "./image/weather/fog.svg";
                                     break;
 
                                 case 'Haze':
-                                    weatherDesc = "대기가 나빠서 생기는 안개(연무)";
-                                    weatherIconAdrs = "https://img.icons8.com/office/80/000000/dust.png";
+                                    weatherDesc = "안개";
+                                    weatherIconAdrs = "./image/weather/fog.svg";
                                     break;
 
                                 case 'Dust':
                                     weatherDesc = "먼지 날림";
-                                    weatherIconAdrs = "https://img.icons8.com/office/80/000000/dust.png";
+                                    weatherIconAdrs = "./image/weather/windy.svg";
                                     break;
 
                                 case 'Fog':
                                     weatherDesc = "짙은 안개";
-                                    weatherIconAdrs = "https://img.icons8.com/office/80/000000/dust.png";
+                                    weatherIconAdrs = "./image/weather/fog.svg";
                                     break;
 
                                 case 'Sand':
                                     weatherDesc = "황사";
-                                    weatherIconAdrs = "https://img.icons8.com/office/80/000000/dust.png";
+                                    weatherIconAdrs = "./image/weather/windy.svg";
                                     break;
 
                                 case 'Ash':
                                     weatherDesc = "재로 가득 참";
-                                    weatherIconAdrs = "https://img.icons8.com/office/80/000000/dust.png";
+                                    weatherIconAdrs = "./image/weather/fog.svg";
                                     break;
 
                                 case 'Squall':
                                     weatherDesc = "스콜";
-                                    weatherIconAdrs = "https://img.icons8.com/office/80/000000/heavy-rain.png";
+                                    weatherIconAdrs = "./image/weather/thunderstorms.svg";
+                                    if ((hour < 6) || (hour > 17)) {
+                                        weatherIconAdrs = "./image/weather/thunderstorms-sunny-night.svg";
+                                    }
                                     break;
 
                                 case 'Tornado':
                                     weatherDesc = "토네이도";
-                                    weatherIconAdrs = "https://img.icons8.com/office/80/000000/tornado.png";
+                                    weatherIconAdrs = "./image/weather/tornado.svg";
                                     break;
 
                                 case 'Clear':
                                     weatherDesc = "맑음";
-                                    weatherIconAdrs = "https://img.icons8.com/office/80/000000/sun--v1.png"
+                                    weatherIconAdrs = "./image/weather/sunny.svg"
                                     if ((hour < 6) || (hour > 17)) {
-                                        weatherIconAdrs = "https://img.icons8.com/office/80/000000/bright-moon.png"
+                                        weatherIconAdrs = "./image/weather/night.svg"
                                     }
                                     break;
 
                                 case 'Clouds':
                                     weatherDesc = "흐림";
-                                    weatherIconAdrs = "https://img.icons8.com/office/80/000000/clouds.png"
+                                    weatherIconAdrs = "./image/weather/mostly-cloudy.svg"
                                     if ((hour < 6) || (hour > 17)) {
-                                        weatherIconAdrs = "https://img.icons8.com/office/80/000000/partly-cloudy-night--v1.png";
+                                        weatherIconAdrs = "./image/weather/mostly-cloudy-night.svg";
                                     }
                                     break;
                             }
@@ -389,7 +401,7 @@
                             //const weatherIconAdrs = 'http://openweathermap.org/img/wn/' + weatherIcon + '@2x.png';
                             weather_icon.setAttribute('src', weatherIconAdrs);
                             weather_desc.innerHTML = weatherDesc;
-                            weather_temp.innerHTML = weatherTemp + "°";
+                            weather_temp.innerHTML = weatherTemp + "°C";
                             weather_humidity.innerHTML = "습도 " + weatherHumidity + "%";
                             weather_precipitation.innerHTML = "강수량 " + weatherPrecipitation + "mm";
                         })
@@ -400,13 +412,13 @@
                 getWeather();
 
                 //timer 돌리기. 굳이 초까지 출력할 필요는 없고 대신 시간은 정확하게 받아와야 하므로 1초마다 다시 실행해준다.
-                //weather도 초 단위로 받아오면 서버에 부담이 갈 수 있으므로 1분마다 받아오도록 만든다. 하지만 정확성은 아주 약간 떨어질 수 있음.
+                //weather도 초 단위로 받아오면 서버에 부담이 갈 수 있으므로 5분마다 받아오도록 만든다. 하지만 정확성은 아주 약간 떨어질 수 있음.
                 //서버만 괜찮으면 초 단위로 받아오는 게 가장 좋을 거 같다.
                 var i = 0;
                 setInterval(function () {
                     getTime();
                     i = i + 1;
-                    if (i == 60) {
+                    if (i == 300) {
                         i = 0;
                         getWeather();
                     }
