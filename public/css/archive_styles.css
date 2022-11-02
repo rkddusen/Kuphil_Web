@@ -1,286 +1,266 @@
-.nav_notice{
+.nav_notice {
     background: linear-gradient(91.48deg, #ECFDE5 0%, rgba(189, 222, 236, 0.31) 100%);
+
+}
+
+.archiveBox {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.container {
+    margin: 0 auto;
+    position: relative;
+}
+.posterbox{
+    text-align: center;
+}
+.posterbox .poster_img{
+    display: inline-block;
+    width: 25%;
+    margin: 20px 1%;
+}
+.thumbnail_div{
+    margin: 0 10%;
+    position: relative;
+    width: 80%;
+    padding-top: 112%;
+    box-shadow: 5px 5px 5px #999;
+    cursor: pointer;
     
-        }
-    
-    .archiveBox{
-        width: 90%;
-        margin: 0 auto;
-        margin-top: 50px;
+}
+.thumbnail_1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+}
+.thumbnail_1:hover {
+    transform-origin: 0 0;
+    transform: scale(1.01) translate(-50%, -50%);
+}
+
+.poster_title {
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.7rem;
+    color: #222;
+    margin: 1vw;
+    clear: left;
+}
+
+.loadposters {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.prev_btn {
+    cursor: pointer;
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+    border-top: 3px solid #222;
+    border-right: 3px solid #222;
+    transform: rotate(-135deg);
+}
+
+.next_btn {
+    cursor: pointer;
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+    border-top: 3px solid #222;
+    border-right: 3px solid #222;
+    transform: rotate(45deg);
+}
+
+
+/* 아카이브 상세 페이지 CSS */
+
+.archiveBox .container_2 {
+    display: flex;
+    flex-direction: row;
+    padding: 3% 5% 10% 5%;
+}
+
+
+.arc_concert_poster {
+    /* 포스터 사이즈가 규격에 맞지 않으면 잘려서 출력됨 */
+    width: 29.4vw;
+    height: 41.4vw;
+    margin: 0 3% 0 0;
+}
+
+
+.concert_info {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    margin: 0 2vw;
+}
+
+
+.arc_concert_title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 2vw;
+}
+
+.concert_detail {
+    text-align: left;
+    display: inline-block;
+}
+
+.arc_info_bold {
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.detail {
+    font-weight: initial;
+    font-size: 1.6rem;
+}
+
+.concert_text1 {
+    font-size: 2.3rem;
+}
+
+.arc_concert_place {
+    margin-bottom: 1vw;
+}
+
+.arc_concert_date {
+    margin-bottom: 1vw;
+}
+
+.arc_concert_conductor {
+    margin-bottom: 1vw;
+}
+
+.concert_text2 {
+    font-size: 1.8rem;
+    margin: 2vw 0;
+    padding-top: 2vw;
+    border-top: 1px solid #222;
+}
+
+.concert_program_list {
+    margin: 1vw 1vw;
+}
+
+.concert_program_list span {
+    font-size: 1.6rem;
+}
+
+
+
+@media (max-width: 1023px) {
+    .concert_text1 {
+        font-size: 1.5rem;
     }
-    
-    .container {
-        margin: 0 auto;
+
+    .arc_concert_poster {
+        max-width: 300px;
+        height: 100%;
     }
-    
-    
-    .posterbox_1 {
-        width: 100%;
-        padding: 2vw 0 0  0;
-    
-        display: flex;
-        justify-content: center;
+
+    .arc_info_bold {
+        font-weight: bold;
+        font-size: 1.5rem;
     }
-    .posterbox_2 {
-        width: 100%;
-        padding: 2vw 0 10vw 0;
-        display: flex;
-        justify-content: center;
+
+    .detail {
+        font-size: 1.5rem;
     }
-    
-    .poster_img {
-        /* 포스터 사이즈가 규격에 맞지 않으면 잘려서 출력됨 */
-        width: 22.05vw;
-        height: 31.05vw;
-        margin: 0 3.5vw;
-        text-align: center;
-        transition: all 0.2s linear;
-    
+}
+
+
+@media (max-width: 767px) {
+
+    .posterbox .poster_img{
+        width: 40%;
+        margin: 20px 2%;
     }
-    
-    
-    .thumbnail_1 {
-        box-shadow: 5px 5px 5px #999;
-        cursor: pointer;
-        width: 80%;
-        height: 80%;
-        object-fit: cover;
-    }
-    
-    .thumbnail_1:hover {
-        transform: scale(1.03);
-    
-    }
-    
-    
-    .thumbnail_2 {
-        box-shadow: 5px 5px 5px #999;
-        cursor: pointer;
-        width: 80%;
-        height: 80%;
-        object-fit:cover;
-    }
-    
-    
-    .thumbnail_2:hover {
-        transform: scale(1.03);
-    }
-    
-    .poster_title {
-        text-align: center;
-        font-weight: 500;
-        font-size: 1.7rem;
-        color: #222;
-        margin: 1vw;
-        clear: left;
-    }
-    
-    
-    .loadposters {
-        width: 100%;
-        margin: 2% auto;
-        display: flex;
-        justify-content: space-between;
-    }
-    
     .prev_btn {
-        cursor: pointer;
-        content: '';
-        display:inline-block;
-        width: 25px;
-        height: 25px;
-        margin-left: 5px;
-        border-top: 3px solid #222;
-        border-right: 3px solid #222;
-        transform: rotate(-135deg);
+        width: 15px;
+        height: 15px;
     }
-    
-    
+
     .next_btn {
-        cursor: pointer;
-        content: '';
-        display:inline-block;
-        width: 25px;
-        height: 25px;
-        margin-left: 5px;
-        border-top: 3px solid #222;
-        border-right: 3px solid #222;
-        transform: rotate(45deg);
+        width: 15px;
+        height: 15px;
     }
-    
-    
-    
-    .hidden{
-        display: none;
-    }
-    
-    
-    /* 아카이브 상세 페이지 CSS */
-    
-    .archiveBox .container_2{
-        display: flex;
-        flex-direction: row;
-        padding: 3% 5% 10% 5%;
-    }
-    
-    
-    .arc_concert_poster{
-        /* 포스터 사이즈가 규격에 맞지 않으면 잘려서 출력됨 */
-        width: 29.4vw;
-        height: 41.4vw;
-        margin: 0 3% 0 0 ;
-    }
-    
-    
-    .concert_info {
+
+    .archiveBox .container_2 {
         display: flex;
         flex-direction: column;
-        font-size: 1rem;
-        margin: 0 2vw;
+        margin: 0 auto;
+        justify-content: center;
+        text-align: center;
     }
-    
-    
+    .arc_concert_poster {
+        width: 40%;
+        height: 40%;
+        margin: 0 auto;
+    }
+
     .arc_concert_title {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
+        margin: 3vw;
+    }
+
+    .concert_detail {
+        align-self: center;
+    }
+
+    .arc_info_bold {
         font-weight: bold;
-        margin-bottom: 2vw;
     }
-    
-    .concert_detail{
-        text-align: left;
-        display: inline-block;
+
+
+    .concert_text1 {
+        font-size: 1rem;
     }
-    
-    .arc_info_bold{
-        font-weight: bold;
-        font-size: 1.8rem;
+
+    .concert_text2 {
+        font-size: 1rem;
     }
-    
-    .detail{
-        font-weight: initial;
-        font-size: 1.6rem;
+
+    .concert_program_list {
+        margin: 1vw 0 0 1vw;
     }
-    
-    .concert_text1{
-        font-size: 2.3rem;
+
+    .concert_program_list span {
+        font-size: 1rem;
     }
-    
-    .arc_concert_place{
-        margin-bottom: 1vw;
+}
+
+@media (max-width: 479px) {
+    .posterbox .poster_img{
+        width: 80%;
+        margin: 20px 2%;
     }
-    
-    .arc_concert_date{
-        margin-bottom: 1vw;
+    .prev_btn {
+        width: 10px;
+        height: 10px;
     }
-    
-    .arc_concert_conductor{
-        margin-bottom: 1vw;
+
+    .next_btn {
+        width: 10px;
+        height: 10px;
     }
-    
-    .concert_text2{
-        font-size: 1.8rem;
-        margin: 2vw 0;
-        padding-top: 2vw;
-        border-top: 1px solid #222;
-    }
-    
-    .concert_program_list{
-        margin: 1vw 1vw;
-    }
-    .concert_program_list span{
-        font-size: 1.6rem;
-    }
-    
-    
-    
-    @media (max-width: 1023px) {
-        
-        .concert_text1{
-            font-size: 1.5rem;
-        }
-    
-        .arc_concert_poster{
-            max-width: 300px;
-            height: 100%;
-        }
-    
-        .arc_info_bold{
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-    
-        .detail {
-            font-size: 1.5rem;
-        }
-    }
-    
-    
-    @media (max-width: 767px) {
-        
-        .archiveBox .container_2{
-            display: flex;
-            flex-direction: column;
-            margin: 0 auto;
-            justify-content: center;
-            text-align: center;
-        }
-    
-        .prev_btn {
-            width: 15px;
-            height: 15px;
-        }
-    
-        .next_btn {
-            width: 15px;
-            height: 15px;
-        }
-    
-        .arc_concert_poster{
-            width: 40%;
-            height: 40%;
-            margin: 0 auto;
-        }
-    
-        .arc_concert_title {
-            font-size: 2.5rem;
-            margin: 3vw;
-        }
-    
-        .concert_detail{
-            align-self: center;
-        }
-    
-        .arc_info_bold{
-            font-weight: bold;
-        }
-    
-    
-        .concert_text1{
-            font-size: 1rem;
-        }
-    
-        .concert_text2{
-            font-size: 1rem;
-        }
-    
-        .concert_program_list{
-            margin: 1vw 0 0 1vw;
-        }
-        .concert_program_list span{
-            font-size: 1rem;
-        }
-    }
-    
-    @media (max-width: 479px) {
-    
-        .prev_btn {
-            width: 10px;
-            height: 10px;
-        }
-    
-        .next_btn {
-            width: 10px;
-            height: 10px;
-        }
-    
-    }
+
+}
