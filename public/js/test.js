@@ -27,13 +27,13 @@ function showResult(resultMax) {
             endText += "<p class='resultName'>Contra Bass</p><p>조용한 듯 하지만 가만히 있어도 존재감이 넘쳐나는 당신!<br>백 마디 실없는 농담보다 뼈 있는 한 마디 말을 더 좋아하는 당신에게는, <br>위엄 넘치는 저음이 매력적인 '더블 베이스'가 어울려요!<br>거대한 악기 사이즈에 모두를 놀라게 하지만, 연주를 시작하면 그 엄청난 울림에 더 놀랄 걸요?<p>";
             break;
         case 6:
-            endText += "<p class='resultName'>Flute</p><p>평소엔 조용해도 다 같이 모여있으면 독보적인 존재감을 뽐내는 당신!<br>통통 튀는 밝고 눈부신 음색으로 사람들의 귀를 사로잡는 '플룻'이 어울려요! <br>민첩하게 고음역대를 연주하기 위해 긴 호흡량과 빠른 손놀림이 필수인 플룻!  <br>연주회 때 은빛 물결을 보고 싶지 않나요?<p>";
-            break;
-        case 7:
             endText += "<p class='resultName'>Oboe</p><p>누구보다 시크하면서도 독특한 당신!<br>당신이야말로 세상에서 제일 고고한 존재가 아닐까요?<br>당신은 모두가 내적 친밀감을 가지고 있는,<br>조율의 기준이 되는 목관의 왕 '오보에'가 어울려요!<br>관통력이 좋아서 한 대만 있어도 소리가 뚫고 나오는 오보에!<p>";
             break;
-        case 8:
+        case 7:
             endText += "<p class='resultName'>Clarinet</p><p>매력이 넘쳐서 사람들을 뒤돌아보게 만드는 당신!<br>활용도가 높아 여러 장르에서, 중요한 솔로를 자주 맡는 '클라리넷'이 어울려요!<br>다양한 음색과 셈여림을 표현할 수 있는 카멜레온 같은 클라리넷! <br>클라리넷의 안개 끼는 듯한 묘한 음색이 궁금하지 않나요? <p>";
+            break;
+        case 8:
+            endText += "<p class='resultName'>Flute</p><p>평소엔 조용해도 다 같이 모여있으면 독보적인 존재감을 뽐내는 당신!<br>통통 튀는 밝고 눈부신 음색으로 사람들의 귀를 사로잡는 '플룻'이 어울려요! <br>민첩하게 고음역대를 연주하기 위해 긴 호흡량과 빠른 손놀림이 필수인 플룻!  <br>연주회 때 은빛 물결을 보고 싶지 않나요?<p>";
             break;
         case 9:
             endText += "<p class='resultName'>Basson</p><p>앞에서 나서기 보단 뒤에서 사람들을 서포트하는 걸 즐기는 당신!<br>저음을 맡고 있어 귀 기울여 듣지 않으면 눈치 못 채기도 하지만,<br>특유의 음색 때문에 오케스트라에 없으면 너무나 허전한 '바순'이 어울려요!<br>아직도 악기의 잠재력이 무궁무진한 바순! <p>";
@@ -98,6 +98,9 @@ function endGame() {
     ques.innerHTML = quesText;
     document.getElementsByClassName("answer")[0].innerHTML = '';
     
+    console.log("오보에"+resultArray[6]);
+    console.log("클라"+resultArray[7]);
+    console.log("플룻"+resultArray[8]);
     //최대값 찾기
     for (let i = 0; i < 17; i++) {
         if (resultArray[i] > resultArray[resultMax]) {
@@ -120,9 +123,9 @@ function answer_0() {
     resultArray[3] += testArray[num].viola;
     resultArray[4] += testArray[num].cello;
     resultArray[5] += testArray[num].contra;
-    resultArray[6] += testArray[num].flute;
-    resultArray[7] += testArray[num].oboe;
-    resultArray[8] += testArray[num].clarinet;
+    resultArray[6] += testArray[num].oboe;
+    resultArray[7] += testArray[num].clarinet;
+    resultArray[8] += testArray[num].flute;
     resultArray[9] += testArray[num].basson;
     resultArray[10] += testArray[num].trumpet;
     resultArray[11] += testArray[num].trombone;
@@ -148,9 +151,9 @@ function answer_1() {
     resultArray[3] += (6-testArray[num].viola);
     resultArray[4] += (6-testArray[num].cello);
     resultArray[5] += (6-testArray[num].contra);
-    resultArray[6] += (6-testArray[num].flute);
-    resultArray[7] += (6-testArray[num].oboe);
-    resultArray[8] += (6-testArray[num].clarinet);
+    resultArray[6] += (6-testArray[num].oboe);
+    resultArray[7] += (6-testArray[num].clarinet);
+    resultArray[8] += (6-testArray[num].flute);
     resultArray[9] += (6-testArray[num].basson);
     resultArray[10] += (6-testArray[num].trumpet);
     resultArray[11] += (6-testArray[num].trombone);
