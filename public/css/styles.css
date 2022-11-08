@@ -243,7 +243,8 @@ section {
     position: relative;
     width:57%;
     height: 0;
-    padding-top: 30%;
+    /* padding-top: 30%; */
+    padding-top: 39%;
     margin-top: 3%;
 }
 .main_recru_content{
@@ -301,6 +302,7 @@ section {
     height: 0;
     padding-top: 39%;
     margin-top: -6%;
+    margin-top: 3%;
 }
 
 .main_arcade_content{
