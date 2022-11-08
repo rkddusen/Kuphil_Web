@@ -1,0 +1,163 @@
+
+
+
+.cooperate_with_KUPhil{
+    width: 90%;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+
+.please_call>p{
+    text-align:center;
+    font-size:2rem;
+}
+
+.please_call{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    margin-bottom:2%;
+}
+
+
+.plz1 {
+    width: 90%;
+}
+
+.plz2 {
+    display: none;
+}
+
+.plz3 {
+    display: none;
+}
+
+#contact_how{
+    width:90%;
+    margin:0 auto;
+}
+
+.contact{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:30px;
+}
+
+.contact>img{
+    width:50px;
+    margin-right:25px;
+    margin-left:50px;
+}
+
+.contact>a>p{
+    font-size: 1.5rem;
+    color:black;
+    font-weight:bold;
+}
+
+.contact>p{
+    font-size:1.5rem;
+    color:black;
+    font-weight:bold;
+}
+
+@media (max-width : 1023px){       
+    .contact{
+        margin-bottom:30px;
+    }
+    
+    .contact>a>img{
+        width:50px;
+        margin-right:25px;
+    }
+    
+    .contact>img{
+        width:50px;
+        margin-right:25px;
+    }
+    
+    .contact>a>p{
+        font-size: 1.5rem;
+        color:black;
+        font-weight:bold;
+    }
+    
+    .contact>p{
+        font-size:1.5rem;
+        color:black;
+        font-weight:bold;
+    }
+}
+
+@media (max-width : 767px){  
+    .contact{
+        margin-bottom:20px;
+    }
+
+    .contact>a>img{
+        width:45px;
+    }
+    
+    .contact>img{
+        width:45px;
+    }
+
+    .please_call>ul{
+        margin-top:35px;
+    }
+
+    .plz1{
+        display: none;
+    }
+
+    .plz2{
+        display: flex;
+        width: 90%;
+    }
+}
+
+@media (max-width : 479px){ 
+    #handshake{
+        width:70%;
+    }
+    
+    .please_call>p{
+        font-size:1.6rem;
+    }
+
+    .please_call>ul{
+        font-size: 1.4rem;
+    }
+    
+    .please_call>li{
+        font-size:1.2rem;
+    }
+
+    .plz2{
+        display: none;
+    }
+
+    .plz3{
+        display: flex;
+        width: 100%;
+    }
+    
+    .contact>img{
+        width:30px;
+        margin-left:20px;
+    }    
+
+    .please_call{
+        margin-bottom:10%;
+    }
+
+    .contact>p{
+        font-size:1.1rem;
+    }
+}

@@ -1,331 +1,708 @@
-/* section으로 사실상 body 영역 기본세팅 */
-section {
-    width: 90vw;
-    padding: 0 5vw;
-}
+/* 메인화면의 nav는 다른 화면과 색이 다르기 때문에 따로 추가로 설정 */
 
-
-/* position: relative로 인해 부모 태그가 자식 태그의 기준점이 됨 */
-#main_welcome {
-    width: 90vw;
-    overflow: hidden;
-    margin-top: -90px;
-    text-align: center;
+/* 메인화면 슬라이드 기능 */
+.main_slide{
     position: relative;
+    width:90%;
+    height: 0;
+    margin: 3% 5% 0 5%;
+    padding-top: 40%;
+}
+.slide_area{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
 }
 
-/* object-fit은 img같은 대체 콘텐츠의 크기를 어떤 방식으로 조절해 요소에 맞출 것인지 지정
-cover는 대체 콘텐츠의 가로세로비를 유지하면서 요소 콘텐츠 박스 가득 채움
-서로의 가로세로비가 일치하지 않으면 객체 일부가 잘려나감 */
-#main_welcome img {
-    width: 90vw;
+.slide_area ul{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.slide_area ul li{
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 0.5s, z-index 0.3s 0.2s;}
+    
+.slide_area ul li:first-child{
+    opacity: 1;
+    z-index: 1;
+}
+.slide_main{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 5%;
+    height: 100%;
+    background-image: url("../image/main/mainimg.png");
+    background-size: cover;
+    border-radius: 20px;
+    background-position: center;
+}
+.slide_main img{
+    width: 100%;
+    border-radius: 20px;
 }
 
-/* position: absolute로 인해 부모 태그를 기준으로 위치가 결정됨 */
-/* font-family는 앞쪽이 사용하고 싶은 글꼴이고 뒤쪽은 기본 글꼴임
-사용하고 싶은 글꼴을 불러오지 못하는 경우 웹 브라우저에 지정된 기본 글꼴로 대체됨 
-앞쪽부터 순서대로 불러오기 때문에 여러 개 지정해둘 수도 있음 */
-#main_welcome > p {
-    width: 80vw;
-    color: #FFFFFF;
-    font-size: 10rem;
-    font-family: 'Reenie Beanie', cursive;
-    position :absolute;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, 0);
+.slide_archive{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 5%;
+    height: 100%;
+    background-image: url("../image/main/slide2.jpg");
+    background-size: cover;
+    border-radius: 20px;
+    background-position: center;
 }
 
-.kuphil_sns {
-    border-top: 2px solid #BE7743;
-    background-color: #FFF4EA;
-    height: 120px;
-    margin-top: 5px;
-}
 
-.kuphil_sns_title {
-    color:#864415;
-    font-size: 3rem;
-    padding: 5px 0 0 1vw;
-    /* font-family: 'Alegreya', serif; */
-}
-.show{
-    margin-top: 10px;
+.archive_left{
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    float: left;
 }
-.show div{
+.archive_left div{
+    height: 50%;
+    width: 40%;
+    border: black;
+}
+.archive_left div img{
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    color: white;
+}
+.archive_right{
     display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 50%;
+    height: 100%;
+    float: left;
 }
-.show img{
-    width: 45px;
-}
-.show a{
-    line-height: 45px;
-    font-size: 20px;
-    color: gray;
+.slide_archive_title{
+    font-size: 3rem;
+    color: white;
     font-weight: bold;
-    margin-left: 10px;
+    padding-left: 10%;
 }
-.show a:hover{
-    text-decoration: underline;
-    color: black;
+.slide_archive_text{
+    text-align: end;
+    padding: 0 20%;
 }
-/* #whatsnew a {
-    color: #000000;
-    font-size: 32px;
-} */
+.slide_archive_text a{
+    font-size: 2rem;
+    color: white;
+}
+.slide_archive_text a:hover{
+    font-weight: bold;
+}
 
-/* text-align 속성을 사용해서 text 위치 지정 가능
-height와 line-height를 일치시키면 text가 수직 가운데 정렬됨*/
-/* #d_day > div {
-    height: 32px;
+.slide_qna_text{
+    text-align: end;
+    padding: 34% 10%;
+}
+.slide_qna_text a{
+    font-size: 2rem;
+    color: white;
+}
+.slide_qna_text a:hover{
+    font-weight: bold;
+}
+
+.slide_qna{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 5%;
+    height: 100%;
+    background-image: url("../image/main/mainimg2.jpg");
+    background-size: cover;
+    border-radius: 20px;
+    background-position: center;
+}
+
+.slide_num{
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    z-index: 10;
+}
+.slide_num div{
+    width: 18px;
+    height: 18px;
+    font-size: 15px;
+    margin: 5px;
+    float: left;
+    border-radius: 20px;
+    background-color: black;
+    line-height: 20px;
     text-align: center;
-    line-height: 32px;
-    font-size: 25px;
-} */
-
-.nothing_and_weather {
-    margin-top: 1vw;
-    display: flex;
+    cursor: pointer;
+    opacity: 50%;
+}
+.slide_num div:first-child{
+    background-color: white;
 }
 
-.nothing {
-    margin-right: 1vw;
-    background-color: burlywood;
+
+
+
+section {
+    width: 90%;
+    margin: 0 auto;
+}
+.row_1st, .row_2nd, .row_3rd, .row_4th{
+    width: 100%;
+    margin-top: 0;
 }
 
-.weather {
-    background-color: burlywood;
-}
-
-.nothing, .weather {
-    width: 44.5vw;
-    height: 100px;
-}
-
-.spelling_introduce span {
-    color: #FF8A00;
-    font-size: 6rem;
-    /* font-family: 'Alegreya', serif; */
-    font-weight: bold;
-}
-
-.spell p:first-child {
-    font-size: 4rem;
-    /* font-family: 'Alegreya', serif; */
-    font-weight: bold;
-}
-
-.spell p:last-child {
-    font-size: 1.8rem;
-    /* font-family: 'Basic', sans-serif; */
-}
-
-.spell {
-    width: 90vw;
-    overflow: hidden;
-    margin-bottom: 60px;
-    height: 400px;
-}
-
-#k > .spell_intro {
-    width: 30vw;
-    margin: 30px 10vw;
-    float: left;
-    position: relative;
-    z-index: 2;
-}
-
-#k > .spell_intro:nth-child(2) {
-    width: 30vw;
-    margin-left: 5vw;
-    margin-right: 5vw;
-}
-
-/* border-radius 속성을 사용해서 여러 부채꼴을 만들 수 있음
-transform: rotate()을 이용해 회전 가능
-z-index는 겹쳐진 요소들 사이에서 front, back을 정하는 우선순위, 숫자가 클수록 front에 위치
-right와 bottom에 -가 붙은 이유는 position: relative일 때는 각각의 방향을 기준으로
-태그가 안쪽 방향으로 이동하기 때문에 -를 붙여야 바깥쪽 방향으로 이동하게 됨 */
-#circle1 {
-    position: relative;
-    width: 20vw;
-    height: 10vw;
-    border-radius: 20vw 20vw 0 0;
-    transform: rotate(90deg);
-    z-index: 1;
-    right: -45vw;
-    bottom: -10vw;
-    background-color: #fef6f0;
-}
-
-#u > .spell_intro {
-    width: 30vw;
-    float: right;
-    margin: 30px 5vw;
-    position: relative;
-    z-index: 2;
-}
-
-#u > .spell_intro:nth-child(2) {
-    width: 30vw;
-    margin-right: 10vw;
-}
-
-#circle2 {
-    position: relative;
-    width: 10vw;
-    height: 10vw;
-    border-radius: 100%;
-    z-index: 1;
-    right: -60px;
-    bottom: -20px;
-    background-color: #feece1;
-}
-
-#p > .spell_intro {
-    width: 30vw;
-    float: left;
-    margin: 30px 5vw;
-    position: relative;
-    z-index: 2;
-}
-
-#p > .spell_intro:nth-child(2) {
-    width: 35vw;
-    margin-left: 10vw;
-}
-
-#circle3 {
-    position: relative;
-    width: 18vw;
-    height: 18vw;
-    border-radius: 100%;
-    z-index: 1;
-    right: -55vw;
-    bottom: -5vw;
-    background-color: #fce5d8;
-}
-
-#h > .spell_intro {
-    width: 35vw;
-    float: right;
-    margin: 30px 5vw;
-    position: relative;
-    z-index: 2;
-}
-#h > .spell_intro:nth-child(2) {
-    width: 30vw;
-    margin-right: 10vw;
-}
-
-#circle4 {
-    position: relative;
-    width: 20vw;
-    height: 10vw;
-    border-radius: 150px 150px 0 0;
-    transform: rotate(-90deg);
-    z-index: 1;
-    right: -35vw;
-    bottom: -10vw;
-    background-color: #fed5bd;
-}
-
-#i > .spell_intro {
-    width: 35vw;
-    float: left;
-    margin: 30px 5vw;
-    position: relative;
-    z-index: 2;
-}
-
-#i > .spell_intro:nth-child(2) {
-    width: 30vw;
-    margin-left: 10vw;
-}
-
-#circle5 {
-    position: relative;
-    width: 15vw;
-    height: 15vw;
-    border-radius: 100%;
-    z-index: 1;
-    right: -38vw;
-    bottom: -2vw;
-    background-color: #fdceb3;
-}
-
-#l > .spell_intro {
-    width: 30vw;
-    float: right;
-    margin: 30px 5vw;
-    position: relative;
-    z-index: 2;
-}
-
-#l > .spell_intro:nth-child(2) {
-    width: 35vw;
-    margin-right: 5vw;
-}
-
-#circle6 {
-    position: relative;
-    width: 20vw;
-    height: 10vw;
-    border-radius: 20vw 20vw 0 0;
-    z-index: 1;
-    transform: rotate(90deg);
-    bottom: -10vw;
-    background-color: #fec8a9;
-}
-
-.spell::after {
-    clear: both;
-    display: block;
+.row_1st::after, .row_2nd::after, .row_3rd::after, .row_4th::after{
     content: '';
+    display: block;
+    clear: both;
+}
+.row_4th::after{
+    margin-bottom: 3%;
 }
 
-/* #circle1, #circle2, #circle3, #circle4, #circle5, #circle6{
-    background-color: #FBE7D4;
-} */
+/* 날씨 */
+.main_wea{
+    float: left;
+    position: relative;
+    width:57%;
+    height: 0;
+    padding-top: 6%;
+    margin-top: 3%;
+}
+.main_wea_content{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+.wea{
+    height: 100%;
+    width: 100%;
+    
+    font-size: 1.4rem;
+}
+.wea div{
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+#weather_icon{
+    height: 50%;
+    margin: 0 10px 0 30px;
+}
+.wea_detail{
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform:translate(0,-50%);
+    width: 90%;
+}
+#weather_temp, #weather_desc{
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin-right: 5px;
+}
+#weather_humidity, #weather_precipitation{
+    color: rgb(49, 49, 49);
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+#weather_precipitation{
+    margin-left: 5px;
+}
+#weather_info{
+    color: grey;
+    margin-left: 10px;
+    font-size: 1rem;
+}
+/* recruitment */
+.main_recru{
+    float: left;
+    position: relative;
+    width:57%;
+    height: 0;
+    /* padding-top: 30%; */
+    padding-top: 39%;
+    margin-top: 3%;
+}
+.main_recru_content{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    background-color: #EEFFE2;
+}
+.recru_img{
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    width: 35%;
+    transform: translate(0%,-50%);
+}
+.recru_img img{
+    width: 100%;
+}
+.recru_area{
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translate(0%,-50%);
+}
+.recru_area div{
+    text-align: end;
+    font-size: 2rem;
+    line-height: 150%;
+    letter-spacing: 1rem;
+}
+.recru_btn{
+    display: inline-block;
+    box-sizing: border-box;
+    margin-top: 10%;
+    padding: 6% 10%;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #327900;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 10px;
+    letter-spacing: 0.1rem;
+}
+
+
+/* Arcade */
+.main_arcade{
+    float: right;
+    position: relative;
+    width:40%;
+    height: 0;
+    padding-top: 39%;
+    margin-top: -6%;
+    margin-top: 3%;
+}
+
+.main_arcade_content{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    position: absolute;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+.arcade_explain{
+    position: absolute;
+    height: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #E2FCFF;
+    border-radius: 20px 20px 0 0;
+}
+.arcade_explain div{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.arcade_explain div p{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 2rem;
+    transform: translate(-50%,-50%);
+    letter-spacing: 0.5rem;
+    line-height: 120%;
+}
+.arcade_explain div p button{
+    display: inline-block;
+    box-sizing: border-box;
+    margin-top: 5%;
+    padding: 2% 5%;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #007482;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 10px;
+    letter-spacing: 0.2rem;
+}
+.arcade_img{
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    z-index: 1;
+    left: 50%;
+    transform:translate(-50%,0);
+    bottom: 0;
+    text-align: center;
+}
+.arcade_img img{
+    height: 100%;
+}
+
+/* 최근연주회 */
+.main_recent{
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 50%;
+    margin-top: 3%;
+}
+.recent_content{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    position: absolute;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    background-color: #111111;
+}
+.recent_explain{
+    margin: 0 auto;
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.recent_iframe{
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.3%;
+}
+.recent_iframe iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 제휴제안 */
+.main_suggest{
+    margin-top: 3%;
+    position: relative;
+    width: 60%;
+    height: 0;
+    padding-top: 15%;
+    float: left;
+    box-sizing: border-box;
+}
+.main_suggest_content{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    position: absolute;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    background-color: #ffeffc;
+}
+.suggest_image{
+    width: 60%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+.suggest_image img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 80%;
+}
+.suggest_btn{
+    width: 40%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+.suggest_btn span{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+}
+.suggest_btn button{
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 4% 5%;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #920084;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 10px;
+    letter-spacing: 0.2rem;
+}
+
+/* 컨택 */
+.main_sns{
+    margin: 3% 0 0 3%;
+    position: relative;
+    width: 37%;
+    height: 0;
+    padding-top: 15%;
+    float: left;
+    box-sizing: border-box;
+}
+.main_sns_content{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    position: absolute;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+.sns_explain {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform:translate(0%,-50%);
+    width: 100%;
+    height: 35%;
+}
+.sns_contents{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.sns_contents a{
+    width: 20%;
+    margin: 0 5%;
+    text-align: center;
+}
+.sns_contents a img{
+    width: auto;
+    height: 100%;
+}
+
+/* 팁 */
+.main_tip{
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 20%;
+    margin-top: 3%;
+}
+.main_tip_content{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    position: absolute;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+.tip_contents{
+    position: absolute;
+    width: 95%;
+    left: 2.5%;
+    top: 50%;
+    transform:translate(0%,-50%);
+    
+}
+.tip_contents p{
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+}
+
 
 @media (max-width : 1023px){
-
+    .recru_area div, .arcade_explain div p, .suggest_p p, .tip_contents p{
+        font-size: 1.8rem;
+    }
+    .tip_contents p{
+        font-size: 1.6rem;
+    }
 }
 @media (max-width : 767px) {
-    #main_welcome {
-        margin-top: -70px;
+    .slide_archive div .slide_archive_title{
+        font-size: 2.3rem;
     }
-    #main_welcome > p{
-        font-size: 7rem;
+    .slide_archive div .slide_archive_text a{
+        font-size: 1.5rem;
     }
-    .spell {
-        margin-bottom: 30px;
-        height: 550px;
-    }
-    #k > .spell_intro, #u > .spell_intro, #p > .spell_intro, 
-    #h > .spell_intro, #i > .spell_intro, #l > .spell_intro {
-        float:none;
-        width: 60vw;
-        margin: 30px 15vw;
-    }
-    #k > .spell_intro{
-        width: 50vw;
-        margin: 30px 20vw;
-    }
-    #k > .spell_intro:nth-child(2), #u > .spell_intro:nth-child(2), #p > .spell_intro:nth-child(2), 
-    #h > .spell_intro:nth-child(2), #i > .spell_intro:nth-child(2), #l > .spell_intro:nth-child(2) {
-        width: 70vw;
-        margin: 0 10vw;
-        
-    }
-    #circle1, #circle2, #circle3, #circle4, #circle5, #circle6{
+    /* 슬라이드 넘기는 번호는 767px부터 없애기 */
+    .slide_num{
         display: none;
     }
+
+    .row_4th::after{
+        margin-bottom: 7%;
+    }
+    #weather_temp, #weather_desc{
+        font-size: 1.1rem;
+    }
+    #weather_humidity, #weather_precipitation{
+        font-size: 1rem;
+    }
+
+
+    .main_wea{
+        width: 100%;
+        padding-top: 20%;
+        margin-top: 7%;
+        float: left;
+    }
+    .wea{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    .wea div{
+        font-size: 1.8rem;
+        width: 100%;
+    }
+    .wea div:first-child{
+        height: 60%;
+    }
+    .wea div:last-child{
+        height: 20%;
+        justify-content: end;
+    }
+    #weather_icon{
+        height: 60%;
+    }
+    #weather_temp, #weather_desc{
+        font-weight: bold;
+        font-size: 2.5rem;
+    }
+    #weather_humidity, #weather_precipitation{
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+    #weather_info{
+        font-size: 1.5rem;
+        margin: 0 30px;
+    }
+
+    .recru_area div, .arcade_explain div p, .suggest_p p{
+        font-size: 2rem;
+    }
+    .tip_contents p{
+        font-size: 1.6rem;
+    }
+    .main_recru{
+        width: 100%;
+        padding-top: 60%;
+        margin-top: 7%;
+        float: left;
+    }
+    .recru_btn{
+        margin-top: 20%;
+        padding: 8% 20%;
+    }
+    .main_arcade{
+        width: 100%;
+        padding-top: 75%;
+        margin-top: 7%;
+        float: left;
+    }
+    .arcade_explain div p button{
+        padding: 2% 5%;
+    }
+    .main_recent{
+        width: 100%;
+        padding-top: 60%;
+        margin-top: 7%;
+    }
+    .recent_explain{
+        width: 90%;
+    }
+    .main_suggest{
+        margin-top: 7%;
+        width: 100%;
+        padding-top: 25%;
+        float: left;
+    }
+    .suggest_image, .suggest_btn{
+        width: 50%;
+    }
+    .suggest_btn button{
+        padding: 6% 10%;
+    }
+    .main_sns{
+        margin-top: 7%;
+        margin-left: 0;
+        width: 100%;
+        padding-top: 20%;
+    }
+    .sns_contents a
+    {
+        width: 15%;
+    }
+    .main_tip{
+        width: 100%;
+        padding-top: 30%;
+        float: left;
+        margin-top: 7%;
+    }
+
 }
 @media (max-width : 479px) {
-    .spell {
-        height: 400px;
+    .slide_archive div .slide_archive_title{
+        font-size: 1.8rem;
+    }
+    .slide_archive div .slide_archive_text a{
+        font-size: 1.3rem;
+    }
+    #weather_icon{
+        margin-left: 20px;
+
+    }
+    #weather_temp, #weather_desc{
+        font-weight: bold;
+        font-size: 2rem;
+    }
+    #weather_humidity, #weather_precipitation{
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+    #weather_info{
+        font-size: 1rem;
+        margin: 0 20px;
+    }
+    .recru_area div, .arcade_explain div p, .suggest_p p{
+        font-size: 1.6rem;
+    }
+    .tip_contents p{
+        font-size: 1.3rem;
     }
 }

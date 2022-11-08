@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./css/headfoot.css">
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    <!--Google Web Font를 이용하기 위한 link들 삽입-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Poiret+One&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <title>KUPHIL</title>
+</head>
+
+<body>
+    <div class="total_div">
+        <header>
+            <div class="main_head">
+                <div class="mainlogo">
+                    <a href="./"><img src="./image/main/page_logo_black.png" alt="KUPHIL 흰색로고"></a>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="./introduce">소개</a></li>
+                        <li><a href="./archive">아카이브</a></li>
+                        <li><a href="./qna">Q&A</a></li>
+                        <li><a href="./gamecenter">놀이터</a></li>
+                        <li><a href="./etc">etc.</a></li>
+                    </ul>
+                </nav>
+                <div class="ham">
+                    <span class="bar1"></span>
+                    <span class="bar2"></span>
+                    <span class="bar3"></span>
+                </div>
+
+                <div class="small_menu_open">
+                    <nav>
+                        <ul>
+                            <li><a href="./introduce">소개</a></li>
+                            <li><a href="./archive">아카이브</a></li>
+                            <li><a href="./qna">Q&A</a></li>
+                            <li><a href="./gamecenter">놀이터</a></li>
+                            <li><a href="./etc">etc.</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <script>
+                    $(".ham").click(function () {
+                        $(this).toggleClass("active");
+                        $(".small_menu_open").toggleClass("active");
+                    });
+                </script>
+            </div>
+        </header>
+        <!-- 메인 이미지 슬라이드 -->
+        <div class="main_slide">
+            <div class="slide_area">
+                <ul>
+                    <li class="slide_list">
+                        <div class="slide_main" title="main_img"></div>
+                    </li>
+                    <li class="slide_list">
+                        <div class="slide_archive" onclick="location.href='./archive';" style="cursor: pointer;">
+                            <div class="archive_left">
+                                <div>
+                                    <img src="./image/poster/poster_<%=id_one%>.jpg" alt="제<%=id_one%>회 정기연주회 포스터">
+                                </div>
+                                <div>
+                                    <img src="./image/poster/poster_<%=id_two%>.jpg" alt="제<%=id_two%>회 정기연주회 포스터">
+                                </div>
+                            </div>
+                            <div class="archive_right">
+                                <p class="slide_archive_title">쿠필의 역대 연주회가<br>궁금하다면?</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="slide_list">
+                        <div class="slide_qna" onclick="location.href='./qna';" style="cursor: pointer;">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="slide_num">
+                <div class="slide_btn" onclick="slideShow(0);"></div>
+                <div class="slide_btn" onclick="slideShow(1);"></div>
+                <div class="slide_btn" onclick="slideShow(2);"></div>
+            </div>
+        </div>
+        <script>
+            //메인 이미지 슬라이드
+            let timeid;//clearTimeout을 위한 변수
+            let index = 0;//이미지에 접근하는 인덱스
+            window.onload = function () {
+                slideShow(0);
+            }
+            let slide = document.getElementsByClassName("slide_list");
+            function slideShow(index) {
+                for (let i = 0; i < slide.length; i++) {
+                    slide[i].style.zIndex = "0";
+                    slide[i].style.opacity = "0";
+                    document.getElementsByClassName('slide_btn')[i].style.backgroundColor = 'black';
+                }
+                slide[index].style.opacity = '1';
+                slide[index].style.zIndex = "1";
+                //현재 차례의 슬라이드를 보여줌
+
+                document.getElementsByClassName('slide_btn')[index].style.backgroundColor = 'white';
+
+                if (index == slide.length - 1) {
+                    index = 0;
+                }
+                else {
+                    index++;
+                }
+
+                clearTimeout(timeid);
+                timeid = setTimeout("slideShow(" + index + ")", 4000);//함수를 4초마다 호출
+            }
+        </script>
+        <section>
+            <div class="row_1st">
+                <!-- <div class="main_wea">
+                    <div class="main_wea_content">
+                        <div class="wea">
+                            <div>
+                                <img id="weather_icon">
+                                <span id="weather_temp" width="100%" display="inline-block"></span>
+                                <span id="weather_desc" width="100%" display="inline-block"></span>
+                                (<span id="weather_humidity" width="100%" display="inline-block"></span>
+                                <span id="weather_precipitation" width="100%" display="inline-block"></span>)
+                            </div>
+                            <div><span id="weather_info" width="100%">건국대학교 기준</span></div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="main_recru">
+                    <div class="main_recru_content">
+                        <div class="recru_img">
+                            <img src="./image/main/recruitment.png" alt="recruitment">
+                        </div>
+                        <div class="recru_area">
+                            <div>
+                                쿠필과 연주할<br>신입 부원을<br>모집합니다.<br>
+                                <button class="recru_btn" onclick="location.href='./recruitment'">자세히 보기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_arcade">
+                    <div class="main_arcade_content">
+                        <div class="arcade_explain">
+                            <div>
+                                <p>
+                                    쿠웹에서 즐기는<br>미니게임 한 판!<br>
+                                    <button onclick="location.href='./gamecenter'">Go</button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="arcade_img">
+                            <img src="./image/main/arcade.png" alt="arcade">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row_2nd">
+                <div class="main_recent">
+                    <div class="recent_content">
+                        <div class="recent_explain">
+                            <div class="recent_iframe">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/woR7WaYK91Y"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row_3rd">
+                <div class="main_suggest">
+                    
+                        <div class="main_suggest_content">
+                            <div class="suggest_image">
+                                <img src="./image/main/suggest.png" alt="제휴제안">
+                            </div>
+                            <div class="suggest_btn">
+                                <span>
+                                    <button onclick="location.href='./cooperation'">쿠필과 제휴 맺기</button>
+                                </span>
+                                
+                            </div>
+                        </div>
+                </div>
+                <div class="main_sns">
+                    <div class="main_sns_content">
+                        <div class="sns_explain">
+                            <div class="sns_contents">
+                                <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA"><img
+                                        src="./image/sns/youtube.png" alt="유튜브"></a>
+                                <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank"><img
+                                        src="./image/sns/instagram.png" alt="인스타그램"></a>
+                                <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank"><img
+                                        src="./image/sns/facebook.png" alt="페이스북"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row_4th">
+                <div class="main_tip">
+                    <div class="main_tip_content">
+                        <div class="tip_contents">
+                            <p>
+                                Tip) <%= tip %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <script>
+                function getTime() {
+                    let time = document.getElementById("time");
+                    let date = new Date();
+                    let todayYear = date.getFullYear();
+                    let todayMonth = date.getMonth() + 1;
+                    let todayDate = date.getDate();
+                    const week = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
+                    let dayOfWeek = week[date.getDay()];
+                    let hour = date.getHours();
+                    let minute = date.getMinutes();
+                    //let second = date.getSeconds();
+
+                    // time.innerHTML = String(todayYear) + "년 " + String(todayMonth) + "월 " + String(todayDate) + "일 ";
+
+                }
+                function getWeather() {
+                    fetch(
+                        'https://api.openweathermap.org/data/2.5/weather?lat=37.543786&lon=127.073463&lang=kr&appid=c7f2c867ba8c30eb3e96bc0236f31cdf'
+                    )
+                        .then(function (response) {
+                            return response.json();
+                        })
+                        .then(function (json) {
+                            let date = new Date();
+                            let hour = date.getHours();
+                            console.log(json);
+                            let weather_icon = document.getElementById('weather_icon');
+                            let weather_desc = document.getElementById('weather_desc');
+                            let weather_temp = document.getElementById('weather_temp');
+                            let weather_humidity = document.getElementById('weather_humidity');
+                            let weather_precipitation = document.getElementById('weather_precipitation');
+
+                            let weatherDesc = json.weather[0].main;
+                            //const weatherIcon = json.weather[0].icon;
+                            let weatherIconAdrs;
+                            let weatherTemp = json.main.temp;
+                            weatherTemp = (weatherTemp - 273.15);
+                            let weatherHumidity = json.main.humidity;
+                            let weatherPrecipitation;
+
+                            //늘 일정하게 소수 첫째 자리까지 출력하도록 한다. 일단은 반올림을 고려하지 않는다. (if 문 내에서 문자열과 숫자를 왔다갔다하면 코드만 복잡해지기 때문)
+                            if ((weatherTemp >= 10.0) || ((weatherTemp < 0.0) && (weatherTemp > -10.0))) {
+                                weatherTemp = String(weatherTemp).slice(0, 4);
+                            }
+                            else if (weatherTemp <= -10.0) {
+                                weatherTemp = String(weatherTemp).slice(0, 5);
+                            }
+                            else {
+                                weatherTemp = String(weatherTemp).slice(0, 3);
+                            }
+
+                            //날씨 설명을 아주 세세하게 할 필요는 없으므로 weather[0].main을 번역.
+                            switch (weatherDesc) {
+                                case 'Thunderstorm':
+                                    weatherDesc = "뇌우";
+                                    weatherIconAdrs = "./image/weather/thunderstorms.svg";
+                                    if ((hour < 6) || (hour > 17)) {
+                                        weatherIconAdrs = "./image/weather/thunderstorms-sunny-night.svg";
+                                    }
+                                    break;
+
+                                case 'Drizzle':
+                                    weatherDesc = "이슬비";
+                                    weatherIconAdrs = "./image/weather/drizzle.svg";
+                                    if ((hour < 6) || (hour > 17)) {
+                                        weatherIconAdrs = "./image/weather/drizzle-night.svg";
+                                    }
+                                    break;
+
+                                case 'Rain':
+                                    weatherDesc = "비";
+                                    weatherIconAdrs = "./image/weather/drizzle.svg";
+                                    if ((hour < 6) || (hour > 17)) {
+                                        weatherIconAdrs = "./image/weather/drizzle-night.svg";
+                                    }
+                                    break;
+
+                                case 'Snow':
+                                    weatherDesc = "눈";
+                                    weatherIconAdrs = "./image/weather/snow.svg"
+                                    break;
+
+                                case 'Mist':
+                                    weatherDesc = "엷은 안개";
+                                    weatherIconAdrs = "./image/weather/fog.svg";
+                                    break;
+
+                                case 'Smoke':
+                                    weatherDesc = "연기로 가득 참";
+                                    weatherIconAdrs = "./image/weather/fog.svg";
+                                    break;
+
+                                case 'Haze':
+                                    weatherDesc = "안개";
+                                    weatherIconAdrs = "./image/weather/fog.svg";
+                                    break;
+
+                                case 'Dust':
+                                    weatherDesc = "먼지 날림";
+                                    weatherIconAdrs = "./image/weather/windy.svg";
+                                    break;
+
+                                case 'Fog':
+                                    weatherDesc = "짙은 안개";
+                                    weatherIconAdrs = "./image/weather/fog.svg";
+                                    break;
+
+                                case 'Sand':
+                                    weatherDesc = "황사";
+                                    weatherIconAdrs = "./image/weather/windy.svg";
+                                    break;
+
+                                case 'Ash':
+                                    weatherDesc = "재로 가득 참";
+                                    weatherIconAdrs = "./image/weather/fog.svg";
+                                    break;
+
+                                case 'Squall':
+                                    weatherDesc = "스콜";
+                                    weatherIconAdrs = "./image/weather/thunderstorms.svg";
+                                    if ((hour < 6) || (hour > 17)) {
+                                        weatherIconAdrs = "./image/weather/thunderstorms-sunny-night.svg";
+                                    }
+                                    break;
+
+                                case 'Tornado':
+                                    weatherDesc = "토네이도";
+                                    weatherIconAdrs = "./image/weather/tornado.svg";
+                                    break;
+
+                                case 'Clear':
+                                    weatherDesc = "맑음";
+                                    weatherIconAdrs = "./image/weather/sunny.svg"
+                                    if ((hour < 6) || (hour > 17)) {
+                                        weatherIconAdrs = "./image/weather/night.svg"
+                                    }
+                                    break;
+
+                                case 'Clouds':
+                                    weatherDesc = "흐림";
+                                    weatherIconAdrs = "./image/weather/mostly-cloudy.svg"
+                                    if ((hour < 6) || (hour > 17)) {
+                                        weatherIconAdrs = "./image/weather/mostly-cloudy-night.svg";
+                                    }
+                                    break;
+                            }
+
+                            if (weatherDesc == '비') {
+                                weatherPrecipitation = json.rain["1h"];
+                            }
+
+                            else if (weatherDesc == '눈') {
+                                weatherPrecipitation = json.snow["1h"];
+                            }
+
+                            else {
+                                weatherPrecipitation = 0;
+                            }
+
+                            //const weatherIconAdrs = 'http://openweathermap.org/img/wn/' + weatherIcon + '@2x.png';
+                            weather_icon.setAttribute('src', weatherIconAdrs);
+                            weather_desc.innerHTML = weatherDesc;
+                            weather_temp.innerHTML = weatherTemp + "°C";
+                            weather_humidity.innerHTML = "습도 " + weatherHumidity + "%";
+                            weather_precipitation.innerHTML = "강수량 " + weatherPrecipitation + "mm";
+                        })
+                }
+
+                //최초 시간, 날씨 정보 받아오기
+                getTime();
+                getWeather();
+
+                //timer 돌리기. 굳이 초까지 출력할 필요는 없고 대신 시간은 정확하게 받아와야 하므로 1초마다 다시 실행해준다.
+                //weather도 초 단위로 받아오면 서버에 부담이 갈 수 있으므로 5분마다 받아오도록 만든다. 하지만 정확성은 아주 약간 떨어질 수 있음.
+                //서버만 괜찮으면 초 단위로 받아오는 게 가장 좋을 거 같다.
+                var i = 0;
+                setInterval(function () {
+                    getTime();
+                    i = i + 1;
+                    if (i == 300) {
+                        i = 0;
+                        getWeather();
+                    }
+                }, 1000);
+            </script> -->
+        </section>
+    </div>
+    <footer>
+        <div class="footer_section">
+            <div class="footer_area">
+                <div class="footer_logo">
+                    <img src="./image/main/logo.png">
+                    <img src="./image/main/무제.png">
+                </div>
+                <div class="footer_explain">
+                    <a class="footer_use" href="./policy">이용 약관</a>
+                    <p>서울특별시 광진구 능동로 120, 제2학생회관 B117호</p>
+                    <p>후원 | 카카오뱅크 3333180300967</p><br>
+                    <p>© KUPHIL. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

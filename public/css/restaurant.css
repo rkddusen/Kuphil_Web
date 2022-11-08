@@ -1,0 +1,203 @@
+.restaurant_content {
+    margin: 30px auto;
+    padding: 50px 0;
+    width: 100vw;
+    height: 500px;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+}
+
+#wrap_restaurant_area {
+    display: flex;
+    gap: 0 5vw;
+    margin-bottom: 100px;
+}
+
+/*
+#wrap_restaurant_type {
+    display: flex;
+    gap: 0 3vw;
+    margin-bottom: 10px;
+}*/
+
+.restaurant_name {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.restaurant_menu {
+    font-size: 1.25rem;
+    color: #42458E;
+}
+
+#wrap_restaurant_map_n_info {
+    display: flex;
+    gap: 0 3vw;
+}
+
+.restaurant_info_n_btn {
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px #42458E;
+    align-items: center;
+}
+
+.restaurant_address {
+    width: 50px;
+    height: 30px;
+    background: #1D2063;
+    border-radius: 5px;
+    color: #FFFFFF;
+}
+
+#wrap_restaurant_info_n_btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.wrap_restaurant_info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.select {
+    position: relative;
+  }
+  
+  .select .option-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+  }
+  
+  .select.active .option-list {
+    max-height: none;
+  }
+
+  .text {
+    font-size: 2rem;
+  }
+
+  .text1 {
+    font-size: 2rem;
+  }
+
+  .tri {
+    font-size: 2rem;
+  }
+  
+  /* 테마 적용하기 */
+  #theme .select {
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 95px;
+    height: 35px;
+    justify-content: space-between;
+    color: #333333
+  }
+  #theme .select:hover {
+    color: #333;
+    transition: all .3s;
+  }
+  #theme .select .option-list {
+    list-style: none;
+    padding: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+  }
+  #theme .select .option-list .option {
+    padding: 10px 15px;
+  }
+  #theme .select .option-list .option:hover {
+    background-color: #f2f2f2;
+  }
+ 
+  
+
+
+
+  .select1 {
+    position: relative;
+  }
+  
+  .select1 .option-list1 {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+  }
+  
+  .select1.active .option-list1 {
+    max-height: none;
+  }
+  
+  /* 테마 적용하기 */
+  #theme1 .select1 {
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 95px;
+    height: 35px;
+    justify-content: space-between;
+    color: #333333
+  }
+  #theme1 .select1:hover {
+    color: #333;
+    transition: all .3s;
+  }
+  #theme1 .select1 .option-list1 {
+    list-style: none;
+    padding: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+  }
+  #theme1 .select1 .option-list1 .option1 {
+    padding: 10px 15px;
+  }
+  #theme1 .select1 .option-list1 .option1:hover {
+    background-color: #f2f2f2;
+  }
+
+@media (max-width: 1023px) {
+
+}
+
+@media (max-width: 767px) {
+    .restaurant_content {
+        margin: 70px auto;
+    }
+
+    #wrap_restaurant_map_n_info {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 479px) {
+    .restaurant_content {
+        margin: 70px auto;
+    }
+
+    #wrap_restaurant_map_n_info {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

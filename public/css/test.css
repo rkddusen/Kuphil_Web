@@ -1,36 +1,45 @@
-.gameContents{
-    padding: 0 5vw;
-    width: 90vw;
-    margin-top: 100px;
-    height: auto;
-    min-height: 100%;
-    padding-bottom: 260px;
+.nav_notice{
+    background: linear-gradient(91.48deg, #EFF2FF 0%, rgba(252, 225, 225, 0.31) 100%);
 }
 
-.question{
-    font-size: 3rem;
+.gameContents{
+    padding: 0 5%;
+    width: 90%;
+    margin: 100px auto;
+}
+.question {
     text-align: center;
+}
+.question p{
+    font-size: 2.8rem;
 }
 
 .answer{
     display: flex;
     justify-content: center;
 }
+.firstAnswer, .secondAnswer{
+    margin: 50px 2%;
+}
 .firstAnswer button{
-    font-size: 2rem;
+    font-size: 1.5rem;
     width: 400px;
     height: 100px;
-    margin: 50px 2vw 50px 0;
-    border: 2px solid blue;
-    background-color: #EFEFFB;
+    border: none;
+
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
 }
 .secondAnswer button{
-    font-size: 2rem;
+    font-size: 1.5rem;
     width: 400px;
     height: 100px;
-    margin: 50px 0 50px 2vw;
-    border: 2px solid red;
-    background-color: #FBEFEF;
+    border: none;
+    background-color: #ffffff;
+    
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
 }
 .result{
     text-align: center;
@@ -42,7 +51,8 @@
 .resultName{
     font-size: 4rem;
     padding: 10px;
-    color: brown;
+    color: #64391a;
+    font-weight: bold;
 }
 .resultText p:nth-child(2), .resultText p:nth-child(3){
     font-size: 2rem;
@@ -57,19 +67,26 @@
 }
 
 @media (max-width : 768px) {
+    .gameContents{
+        width: 90%;
+        margin: 50px auto;
+    }
     .answer{
         display: block;
     }
+    .firstAnswer, .secondAnswer{
+        margin: 0px;
+    }
     .firstAnswer button{
-        width: 90vw;
+        width: 100%;
         margin: 0;
-        margin: 50px 0 10px 0;
+        margin: 50px 0 0 0;
         height: 50px;
     }
     .secondAnswer button{
-        width: 90vw;
+        width: 100%;
         margin: 0;
-        margin: 10px 0;
+        margin-top: 30px;
         height: 50px;
     }
     .resultText p:nth-child(2), .resultText p:nth-child(3){

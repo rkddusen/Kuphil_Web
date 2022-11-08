@@ -1,18 +1,40 @@
+.nav_notice{
 
-a{
-    color: black;
-    text-decoration: none;
-}
-.head3_introduce_a{
-    color: #efe2de;
-}
-.head3_introduce, .head3_history_a{
-    color: #784520;
+    background: linear-gradient(91.48deg, rgba(255, 224, 196, 0.44) 0%, #FFFBD9 100%);
+        }
+.notice_title{
+    color: #d2bba5;
 }
 
+.notice_title>a{
+    color:#d2bba5;
+}
+
+#history_nav{
+    color:#000000;
+}
+.float{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+    text-align: center;
+    background-color: white;
+}
+.float_button{
+    width: 100%;
+    height: 100%;
+    border: 0;
+    font-size: 30px;
+    background: none;
+    border-radius: 50px;
+}
 #SelectYear {
-    width: 900px;
-    padding: 0 200px;
+    padding: 0 15%;
     margin: 70px auto;
     display: flex;
     justify-content: space-evenly;
@@ -21,23 +43,21 @@ a{
 .Years{
     border: none;
     background-color: transparent;
-    font-size: 20px;
-    color: #BE7743;
+    font-size: 2rem;
     cursor:pointer;
-    z-index:1000000;
 }
 
 .Years:hover{    
-    color:#5C3A1A;
+    color:gray;
     font-weight: bold;
 }
 
-.back{
-    background-color:transparent;
+.back {
+    background-color: transparent;
     position: relative;
-    width: 1130px;
+    width: 70%;
     height: 100%;
-    margin: 0 auto;
+    margin-left: 12%;
 }
 
 /*#back_logo{
@@ -62,62 +82,75 @@ a{
 }
 */
 
-.year1  section {
-    font-size: 30px;
+.year1 section, .year2 section, .year3 section, .year4 section, .year5 section{
+    font-size: 2.8rem;
     margin: 10px 0;
+    font-weight:bold;
 }
 
-.year1  p{
-    font-size: 15px;
-    margin: 80px 0;
-    margin-top: 30px;
+.year1 p, .year2 p, .year3 p, .year4 p, .year5 p{
+    margin: 30px 0 80px 20px;
+    border-left: 3px solid #ccd0d3;
+    padding-left: 10px;
+}
+.date{
+    display: inline-block;
+    font-size: 1.7rem;
+    width: 100px;
+    font-weight: bold;
+    margin: 0 10px 0 20px;
+    text-align: start;
+}
+.context{
+    display: inline-block;
+    font-size: 1.7rem;
     line-height: 200%;
 }
 
-.year2  section {
-    font-size: 30px;
-    margin: 10px 0;
+@media (max-width : 1023px){       
 }
 
-.year2  p{
-    font-size: 15px;
-    margin: 80px 0;
-    margin-top: 30px;
-    line-height: 200%;
+@media (max-width : 767px) {
+    #SelectYear {
+        padding: 0 5%;
+        margin-top: 30px;
+    }
+
+    .back{
+        width: 90%;
+        margin: 0 5%;
+        text-align:Center;
+    }
+
+    .year1  section, .year2  section, .year3  section, .year4  section, .year5  section {
+        font-weight:bold;
+    }
+    
+    .year1 p, .year2 p, .year3 p, .year4 p, .year5 p{
+        font-size: 1.8rem;
+        border: none;
+        padding-left: 0;
+        margin-left: 0;
+    }
+    
+    .year1 p span, .year2 p span, .year3 p span, .year4 p span, .year5  p spa{
+        display: block;
+    }
+    .date{
+        width: 90%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    #year2{
+        display:none;
+    }
+
+    #year4{
+        display:none;
+    }
 }
 
-.year3  section {
-    font-size: 30px;
-    margin: 10px 0;
-}
+@media (max-width : 479px) {
 
-.year3  p{
-    font-size: 15px;
-    margin: 80px 0;
-    margin-top: 30px;
-    line-height: 200%;
-}
-
-.year4  section {
-    font-size: 30px;
-    margin: 10px 0;
-}
-
-.year4  p{
-    font-size: 15px;
-    margin: 80px 0;
-    margin-top: 30px;
-    line-height: 200%;
-}
-
-.year5  section {
-    font-size: 30px;
-    margin: 10px 0;
-}
-
-.year5  p{
-    font-size: 15px;
-    margin: 80px 0;
-    margin-top: 30px;
-    line-height: 200%;
 }

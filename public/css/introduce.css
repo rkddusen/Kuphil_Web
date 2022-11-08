@@ -1,74 +1,116 @@
 
 /* 소개 */
+.nav_notice{
 
-a{
-    color: black;
-    text-decoration: none;
-}
-.head3_history_a{
-    color: #efe2d6;
-}
-.head3_introduce, .head3_introduce_a{
-    color: #784520;
+    background: linear-gradient(91.48deg, rgba(255, 224, 196, 0.44) 0%, #FFFBD9 100%);
+        }
+.notice_title{
+    color: #d2bba5;
 }
 
-.greeting{
-    width:1130px;
-    padding: 0 30px;
+#introduce_nav{
+    color: #000000;
+}
+
+#history_nav{
+    color:#d2bba5;
+}
+
+
+.greeting {
+    width: 84%;
+    padding: 0 8%;
     margin: 70px auto;
+}
+
+#introduce_welcome > p {
+    font-size: 1.6rem;
+    margin-left: 50px;
+    /* background-color:#dfd3c3a2; */
+    width: 100%;
+    line-height:180%;
 }
 
 #introduce_greeting > span {
     margin: 20px auto;
-    padding: 0 20px;
-    height: 50px;
-    font-size: 36px;
+    font-size: 3.6rem;
     margin-top: 50px;
 }
 
 #introduce_welcome {
     margin: 30px auto;
-    padding: 0 20px;
+    padding: 0 1.5%;
     display: flex;
     align-items: flex-start;
 }
 
 #introduce_welcome > img {
-    width:250px;
-    height: 250px;
+    width:20%;
+    border-radius:70%;
 }
 
-#introduce_welcome > p {
-    font-size: 16px;
+article {
+    margin-top:20px;
+    font-size: 1.9rem;
+    line-height:180%;
+    font-weight: bold;
+    z-index:2;
+}
+
+/*#square{
+    width: 50vw;
+    height:2vw;
+    background: #F8F2ED;
+    border-radius: 10px;
+    z-index:1;
+}*/
+
+.professor_welcome {
+    font-size: 1.6rem;
     margin-left: 50px;
-    /* background-color:#dfd3c3a2; */
-    width: 1000px;
-    height: 700px;
+    width: 100%;
     line-height:180%;
 }
-#introduce_welcome > p > h3{
-    font-size: 16px;
-    margin-left: 50px;
-    /* background-color:#dfd3c3a2; */
-    width: 1000px;
-    height: 700px;
+
+.professor_welcome > p{
+    font-size: 1.7rem;
+    width: 100%;
     line-height:180%;
+    text-align:right;
+}
+
+#introduce_image > span {
+    margin: 20px auto;
+    font-size: 3.6rem;
+    margin-top: 50px;
+}
+#introduce_image{
+    width: 84%;
+    padding: 0 8%;
+    margin: 70px auto;
+    margin-top:100px;
+}
+.whatKuphil1 {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.whatKuphil2 {
+    display: none;
 }
 
 #path {
-    width: 1130px;
-    margin: 30px auto;
-    padding: 0 30px;
-    margin-bottom: 80px;
-    margin-top:150px;
+    width: 84%;
+    margin: 70px auto;
+    padding: 0 8%;
 }
 
 
 #path>span{
     margin: 20px auto;
-    padding: 0 20px;
     height: 50px;
-    font-size: 36px;
+    font-size: 3.6rem;
     margin-top: 50px;
 }
 
@@ -79,39 +121,213 @@ a{
 }
 
 #kuphil_room > img{
-    width:500px;
-    
+    width:45%;
 }
 
-#kuphil_room > p {
-    padding: 0 100px;
-    height: 50px;
-    font-size: 17px;
+#locations{
+    display:none;
 }
 
-.start_location{
-    width: 1300px;
+.location{
     margin: 30px auto;
     display: flex;
     justify-content: space-evenly;
 }
 
-.start_location > input{
-    border: none;
-    background-color: transparent;
-    font-size: 15px;
-    color: #d5bca3;
-    cursor:pointer;
+.location > input:first-child{
+    color:#000000;
 }
 
-.start_location > input:hover{    
-    color:#5C3A1A;
+.location > input{
+    border: none;
+    background-color: transparent;
+    font-size: 1.8rem;
+    color: #989898;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.location > input:hover{    
+    color:#000000;
     font-weight: bold;
 }
 
-#stairs{
+.stairs{
     margin: 30px auto;
-    font-size:15px;
-    font-weight:bold;
+    font-size:1.5rem;
     text-align:center;
+    line-height:25px;
+}
+
+.stairs>span{
+    font-size:1.5rem;
+    font-weight:bold;
+}
+
+
+@media (max-width : 1023px){       
+    #introduce_welcome > img {
+        width:25%;
+    }
+}
+@media (max-width : 767px) {
+
+    #introduce_greeting{
+        display: flex;
+        align-items:center;
+        flex-direction:column;
+        margin-top:30px;
+    }
+
+    #introduce_greeting > span {
+        font-size: 3.5rem;
+        margin:0 auto;
+        margin-bottom:10px;
+    }
+    
+    #introduce_welcome {
+        display: flex;
+        align-items:center;
+        flex-direction:column;
+    }
+    
+    #introduce_welcome > p {
+        margin-left:0;
+    }
+
+    #introduce_welcome > img {
+        width:35%;
+    }
+
+    article{
+        margin-top:0;
+    }
+    
+    .professor_welcome{
+        margin-top:30px;
+        margin-left:0;
+    }
+
+    #introduce_image {
+        display: flex;
+        align-items:center;
+        flex-direction:column;
+    }
+
+
+    #introduce_image > span{
+        font-size: 3.5rem;
+    }
+
+    
+
+    
+    #path {
+        margin: 20px auto;
+        margin-top:80px;
+        display:flex;
+        flex-direction:column;
+    }
+    
+    #path>span{
+        margin: 15px auto;
+        font-size:3.5rem;
+    }
+
+    .location{
+        margin-top:5px;
+        margin-bottom:20px;
+    }
+
+    .location > input{
+        font-size: 1.5rem;
+    }
+
+    #kuphil_room {
+        flex-direction:column;
+        justify-content: center;
+    }
+    
+    #kuphil_room > img{
+        width:85%;
+    }
+    
+    #kuphil_room > p {
+        margin-top:30px;
+    }
+
+    .stairs{
+        font-size:1rem;
+    }
+   
+    .stairs>span{
+        font-size:1rem;
+    }
+
+
+}
+
+/*모바일*/
+@media (max-width : 479px) {
+    .greeting {
+        padding: 0 5%;
+    }
+
+    #introduce_greeting {
+        margin-bottom:30px;
+        margin-top:30px;
+    }
+
+    #introduce_greeting {
+        margin-top: 20px;
+    }
+
+    #introduce_welcome{
+        margin: 10px auto;
+    }
+
+    #introduce_greeting > span {
+        font-size: 3rem;
+    }
+
+    #introduce_welcome > img {
+        padding-bottom:0;
+    }
+    
+    #introduce_welcome > p {
+        font-size: 1rem;
+    }
+
+    #introduce_image{
+        margin:10px auto;
+    }
+
+    #introduce_image > span{
+        font-size:3rem;
+    }
+.whatKuphil1 {
+        display: none;
+    }
+    
+    .whatKuphil2 {
+        display: block;
+        width: 100%;
+    }
+
+    #path>span{
+        margin: 0 auto;
+        font-size:3rem;
+    }
+
+    .start_location{
+        margin: 20px auto;
+    }
+
+    .stairs{
+        line-height:15px;
+    }
+
+    article{
+        font-size:1.6rem;
+    }
 }

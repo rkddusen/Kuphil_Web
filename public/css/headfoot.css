@@ -1,5 +1,4 @@
-/* 헤더와 푸터를 위한 css
-헤더와 푸터 스타일 변경하고 싶을 때 여기서 하면 됩니다. */
+/* 헤더와 푸터를 위한 css */
 
 /* css 기본 세팅*/
 /* font-size 62.5%인 이유 : font-size에 rem이라는 단위를 쓰려고 하는데, 브라우저가 지정해주는 기본 폰트 사이즈는 100% = 16px임. 그래서 62.5% = 10px로 바꿔주려고 함 */
@@ -7,250 +6,235 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 62.5%;
 }
-
-ul,
-li {
+html, body{
+    height: 100%;
+}
+/* 콘텐츠의 길이가 짧을 때 푸터가 위로 올라오는 현상을 막음 */
+/* 헤더를 포함한 콘텐츠 높이를 최소 100으로 두고 그 이하를 푸터 영역으로 두면 */
+/* 콘텐츠가 짧아도 푸터가 하단에 고정됨 */
+.total_div{
+    min-height: 100%;
+}
+ul, li {
     list-style: none;
 }
 
-a,
-p,
-span {
+a, p, span {
     text-decoration: none;
+    color: black;
 }
 
 img {
     border: 0;
 }
 
-/* 마우스를 더블클릭하거나 드래그하는와중에, button 속에 text 가 선택됨. 이것을 방지 */
 button {
+    /* 마우스를 더블클릭하거나 드래그하는와중에, 
+    button 속에 text 가 선택됨. 이것을 방지 */
     user-select: none;
     cursor: pointer;
     color: black;
 }
 
-
-/* header {
-    width: 1130px;
-    margin: 0 auto;
-    height: 120px;
-    padding: 0 30px;
-} */
-
-/* float 속성을 해제(clear)하기 위해 float된 요소의 부모태그에
-가상요소 ::after를 만들고 clear: both를 지정 */
-/* header::after {
-    clear: both;
-    display: block;
-    content: '';
-}
-
-#nav {
-    width: 660px;
-    height: 118px;
-    font-family: Arial, Helvetica, sans-serif;
-} */
-
-/* 자식 태그가 float한 경우
-일반적으로 부모 태그에 overflow: hidden 속성을 줘서
-넘치는 부분(=영역을 벗어난 부분)을 보이지 않게 함 */
-/* #nav ul {
-    width: 660px;
-    height: 118px;
-    overflow: hidden;
-} */
-
-/* mainmenu들 사이 간격을 동일하게 만들기 위해 
-글자 크기에 맞춰서 li의 width를 지정하고
-margin 값을 동일하게 지정 */
-/* #nav li {
-    width: 100px;
-    height: 50px;
-    float: left;
-    overflow: hidden;
-    margin-top: 68px;
-    margin-left: 37px;
-    margin-right: 30px;
-}
-
-#nav li:nth-child(1) {
-    width: 40px;
-}
-
-#nav li:nth-child(2) {
-    width: 80px;
-}
-
-#nav li:nth-child(3) {
-   width: 40px;
-}
-
-#nav li:nth-child(4) {
-    width: 60px;
-}
-
-#nav a {
-    color: #FFFFFF;
-    font-size: 20px;
-    float: left;
-}
-
-#nav li::after{
-    clear: both;
-    display: block;
-    content: '';
-}
-
-#nav::after{
-    clear: both;
-    display: block;
-    content: '';
-}
-
-header img {
-    width: 200px;
-    height: 90px;
-} */
-
-/* #head1 {
-    width: 1130px;
-    height: 118px;
-    background-color: #B47134;
-    opacity: 0.88;
-    overflow: hidden;
-}
-
-#head1 div {
-    float: left;
-}
-
-#mainlogo {
-    width: 600px;
-}
-
-#head2 {
-    width: 1130px;
-    height: 24px;
-    overflow: hidden;
-}
-
-#head2 a {
-    font-size: 15px;
-    float: right;
-    line-height: 24px;
-    color: #BE7743;
-}
-
-#head2 a::after {
-    clear: both;
-    display: block;
-    content: '';
-}
-
-hr {
-    width: 1130px;
-    height: 3px;
-    background-color: #BE7743;
-    border: 0;
-} */
-
 header {
-    width: 90vw;
-    height: 200px;
-    padding: 0 5vw;
+    width: 90%;
+    margin: 0 auto;
 }
 
 .main_head {
-    height: 100px;
-    border-bottom: 3px solid #BE7743;
-}
-
-/* .head1{
-    color: #BE7743;
-    margin: 0 10px 0 0;
-    height: 30px;
     position: relative;
-}
-.head1 div{
-    float: right;
-}
-.head1 a{
-    color: #BE7743;
-}
-.head1 a:hover{
-    color: #784520;
-    font-weight: bold;
-} */
-.nav {
-    margin-top: 20px;
-    float: right;
+    height: 80px;
+    z-index: 999;
+    border-bottom: 1px solid rgb(200, 200, 200);
 }
 
 .mainlogo img {
-    margin-left: 1vw;
-    height: 90px;
+    margin-left: 10px;
+    margin-top: 20px;
+    height: 40px;
     float: left;
+}
+
+.nav {
+    margin-top: 30px;
+    float: right;
 }
 
 .nav>ul {
     float: left;
-    height: 80px;
-    line-height: 80px;
+    height: 30px;
+    line-height: 30px;
 }
 
 .nav>ul>li {
     float: left;
-    font-size: 3.5rem;
-    padding: 0 3vw 0 1.2vw;
-    position: relative;
+    padding: 0 2vw 0 2.2vw;
 }
 
 .nav>ul>li>a {
-    color: #BE7743;
+    color: black;
+    font-size: 18px;
+    display: block;
+    line-height: 30px;
+    letter-spacing: 2px;
+    /* letter-spacing으로 오른쪽 부분이 2px더 늘어나게 되어 
+    padding-left로 2px늘려줘서 대칭을 맞춤*/
+    padding-left: 2px;
 }
 
 .nav>ul>li>a:hover {
-    color: #784520;
+    border-bottom: 2px solid black;
+}
+
+.nav_notice{
+    background: linear-gradient(91.48deg, #FFF2E7 0%, rgba(254, 204, 190, 0.57) 100%);
+    box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.1);
+border-radius: 20px;
+
+    height: 200px;
+    margin-top: 3%;
+    }
+
+.notice_title{
+    text-align: center;
+    font-size: 3.3rem;
+    padding: 50px 0 25px 0;
+}
+.notice_title a{
+    font-size: 3.3rem;
+    color: black;
+}
+.notice_exp{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+
+/* footer */
+footer {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 15%;
+    border-top: 1px solid rgb(203, 203, 203);
+}
+
+.footer_section {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform:translate(0,-50%);
+}
+.footer_area{
+    position: relative;
+    height: 0;
+    padding-top: 15%;
+}
+.footer_explain {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 50%;
+    
+    transform:translate(0,-50%);
+}
+.footer_explain p{
+    font-size: 1.2rem;
+    color: #000000;
+}
+.footer_explain p:nth-child(2){
+    margin-top: 5px;
+}
+.footer_use{
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    color: #000000;
+    
+}
+.footer_use:hover{
+    text-decoration: underline;
+}
+.footer_explain .footer_use{
     font-weight: bold;
 }
+.footer_logo {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    width: 50%;
+    text-align: end;
+    transform:translate(0,-50%);
+}
 
-.small_menu {
-    display: none;
-    margin-right: 1vw;
+.footer_logo img:first-child {
+    width: 13%;
     float: right;
-    margin-top: 2px;
+    margin-left: 10%;
 }
 
-.small_menu p {
-    font-size: 5rem;
-    color: #BE7743;
+.footer_logo img:nth-child(2) {
+    width: 26%;
+    float: right;
 }
-.small_menu p:hover{
-    cursor: pointer;
+
+/* hamberger menu */
+.ham {
+    display: none;
+    position: absolute;
+    top: 50%; right: 0%;
+    margin-right: 10px;
+    transform: translate(0, -50%);
+    cursor:pointer;
+    z-index: 6;
+    width: 30px;
+    height: 25px;
+}
+.ham span {
+    display: block;
+    background: #000;
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    transition: margin 0.25s 0.25s, transform 0.25s ;
+}
+.ham .bar1 {margin-bottom: 6px;}
+.ham .bar2 {}
+.ham .bar3 {margin-top: 6px;}
+  
+.ham.active span {
+    transition: margin 0.25s, transform 0.25s 0.25s;
+}
+  
+.ham.active .bar1 {
+    margin-top: 12px;
+    margin-bottom: -4px;
+    transform: rotate(45deg);
+}
+.ham.active .bar2 {
+    transform: rotate(45deg);
+    
+}
+.ham.active .bar3 {
+    margin-top: -4px;
+    transform: rotate(135deg);
 }
 
 .small_menu_open {
     display: none;
     position: fixed;
-    right: 0;
-    background-color: #BE7743;
+    left: 100%;
+    background-color: rgb(255, 255, 255);
     height: 100%;
-    width: 40vw;
-    z-index: 3;
+    width: 50%;
+    z-index: 5;
+    transition: all 0.3s linear;
 }
-.small_menu_open p{
-    position: fixed;
-    font-size: 4rem;
-    right: 10px;
-    top: 10px;
-    color: white;
-}
-.small_menu_open p:hover{
-    cursor: pointer;
+.small_menu_open.active{
+    left: 50%;
+    
 }
 .small_menu_open nav{
     text-align: center;
@@ -261,140 +245,9 @@ header {
     
 }
 .small_menu_open nav ul li a{
-    color: white;
+    color: black;
 }
 
-/*
-.sub1 li{
-    padding-left: 25px;
-}
-nav > ul > li > ul > li{
-    height: 50px;
-}
-
-nav > ul > li > ul > li > a{
-    color: #BE7743;
-}
-nav > ul > li > ul > li > a:hover{
-    color: #784520;
-    font-weight: bold;
-}
-nav:hover ul {
-    display: block;
-} */
-header article {
-
-    width: 90vw;
-    display: flex;
-    justify-content: space-between;
-}
-
-.head3_line_f {
-    width: 5vw;
-    height: 50px;
-    border-bottom: 2px solid #BE7743;
-}
-
-.head3_name {
-    margin-top: 25px;
-    height: 60px;
-    font-size: 4rem;
-    font-weight: bold;
-    color: #784520;
-}
-
-.head3_line_s {
-    height: 50px;
-    width: 50vw;
-    border-bottom: 2px solid #BE7743;
-}
-
-.head3_archive_a,
-.head3_calendar_a,
-.head3_lab_a,
-.head3_test_a,
-.head3_gamecenter_a,
-.head3_qna_a {
-    color: #784520;
-}
-
-
-footer {
-    background-color: #393939;
-    height: 20vw;
-    width: 100vw;
-    min-height: 260px;
-}
-
-.footer_first {
-    width: 100vw;
-    border-bottom: 2px solid #BBBBBB;
-    height: 70px;
-}
-
-.footer_first>li {
-    float: left;
-    padding: 20px 0vw 20px 3vw;
-    height: 30px;
-    line-height: 30px;
-    font-size: 2rem;
-}
-
-.footer_first>li>a {
-    color: #BBBBBB;
-}
-
-.footer_first>li>a:hover {
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-.footer_second {
-    width: 90vw;
-    padding: 0 5vw;
-    display: flex;
-    justify-content: space-between;
-    height: 150px;
-    margin-top: 40px;
-}
-
-.footer_logo {
-    height: 100%;
-    width: 35%;
-}
-
-.footer_logo img:first-child {
-    width: 10vw;
-}
-
-.footer_logo img:nth-child(2) {
-    width: 20vw;
-}
-
-.footer_explain {
-    width: 45%;
-    color: #BBBBBB;
-    font-size: 2.2rem;
-}
-
-.footer_sns {
-    width: 20%;
-}
-
-.footer_sns>p {
-    color: #BBBBBB;
-    font-size: 2rem;
-}
-
-.footer_sns img {
-    margin: 10px 5%;
-    width: 20%;
-    object-fit: cover;
-}
-
-.small_footer_explain {
-    display: none;
-}
 
 @media (max-width : 1023px){
     * {
@@ -407,73 +260,43 @@ footer {
         /* 8px */
         font-size: 50%;
     }
-    header{
-        height: 140px;
-    }
-    .head3_line_f {
-        height: 40px;
-    }
-    
-    .head3_name {
-        margin-top: 15px;
-        font-size: 5rem;
-        font-weight: bold;
-        color: #784520;
-    }
-    
-    .head3_line_s {
-        height: 40px;
-    }
-
-    .main_head {
-        height: 60px;
-    }
-
     .nav {
         display: none;
     }
-
-    .small_menu {
-        display: block;
-    }
-
-    .mainlogo img {
-        height: 55px;
-    }
+    .nav_notice{
+        height: 110px;
+        }
+        .notice_title{
+            font-size: 2.5rem;
+            padding: 25px 0 10px 0;
+        }
+        .notice_title a{
+            font-size: 2.5rem;
+        }
+        .notice_exp{
+            font-size: 1rem;
+        }
 
     footer {
-        height: 310px;
+        padding-top: 30%;
     }
-
-    .footer_second {
-        height: 110px;
-    }
-
-    .footer_logo {
-        width: 60%;
-    }
-
-    .footer_logo img:first-child {
-        width: 16vw;
-    }
-
-    .footer_logo img:nth-child(2) {
-        width: 26vw;
-    }
-
-    .footer_sns {
-        width: 40%;
-    }
-
     .footer_explain {
+        text-align: center;
+        left: 00%;
+        width: 100%;
+    }
+    .footer_explain p{
+        font-size: 1rem;
+    }
+    .footer_logo {
         display: none;
     }
 
-    .small_footer_explain {
+    .ham {
         display: block;
-        font-size: 3rem;
-        color: #BBBBBB;
-        text-align: center;
+    }
+    .small_menu_open{
+        display: block;
     }
 }
 
@@ -482,8 +305,8 @@ footer {
         /* 8px */
         font-size: 45%;
     }
-    .head3_name {
-        margin-top: 20px;
-        font-size: 3.5rem;
+
+    footer {
+        padding-top: 40%;
     }
 }

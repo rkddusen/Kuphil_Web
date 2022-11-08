@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../css/headfoot.css">
     <link rel="stylesheet" type="text/css" href="../css/qna.css">
+    <!--Google Web Font를 이용하기 위한 link들 삽입-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Poiret+One&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
@@ -23,132 +27,140 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="../favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <title>KUPHIL</title>
 </head>
 
 <body>
-    <!-- 헤더 -->
-    <header>
-        <div class="main_head">
-            <div class="mainlogo">
-                <a href="../"><img src="../image/main/kuphilLogo.png" alt="KUPHIL 흰색로고"></a>
-            </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="../introduce">소개</a></li>
-                    <li><a href="../archive">아카이브</a></li>
-                    <li><a href="../calendar">달력</a></li>
-                    <li><a href="../gamecenter">놀이터</a></li>
-                    <li><a href="../lab">실험실</a></li>
-                </ul>
-            </nav>
-            <div class="small_menu">
-                <p onclick="smallOpen();">≡</p>
-
-            </div>
-            <div class="small_menu_open">
-                <p onclick="smallClose();">X</p>
-                <nav>
+    <div class="total_div">
+        <!-- 헤더 -->
+        <header>
+            <div class="main_head">
+                <div class="mainlogo">
+                    <a href="../"><img src="../image/main/page_logo_black.png" alt="KUPHIL 흰색로고"></a>
+                </div>
+                <nav class="nav">
                     <ul>
                         <li><a href="../introduce">소개</a></li>
                         <li><a href="../archive">아카이브</a></li>
-                        <li><a href="../calendar">달력</a></li>
+                        <li><a href="../qna">Q&A</a></li>
                         <li><a href="../gamecenter">놀이터</a></li>
-                        <li><a href="../lab">실험실</a></li>
+                        <li><a href="../etc">etc.</a></li>
                     </ul>
                 </nav>
-            </div>
-            <script>
-                let small_menu_open = document.getElementsByClassName("small_menu_open")[0];
-                function smallOpen() {
-                    small_menu_open.style.display = 'block';
-                }
-                function smallClose() {
-                    small_menu_open.style.display = 'none';
-                }
-            </script>
-        </div>
-        <article>
-            <div class="head3_line_f"></div>
-            <div class="head3_name"><a class="head3_qna_a" href="../qna">쿠필 지식인</a></div>
-            <div class="head3_line_s"></div>
-        </article>
-    </header>
+                <div class="ham">
+                    <span class="bar1"></span>
+                    <span class="bar2"></span>
+                    <span class="bar3"></span>
+                </div>
 
-    <!-- 내용 -->
-    <div class="qna_section">
-        <div class="qna_write">
-            <button onclick="qna_question_add();">작성하기</button>
-        </div>
-        
-        <div class="qna_contents">
-            <div class="qna_question_add">
-                <form action="/qna/questionSubmit" method="post" onsubmit="return questionDoAction();">
-                    <strong>Q.</strong><br>
-                    <input type="text" class="qna_question_add_title" name="qna_title" placeholder="제목을 작성하세요."/><br>
-                    <input type="text" class="qna_question_add_textarea" placeholder="질문을 작성하세요." name="qna_question" /><br>
-                    <div>
-                        <button name="submit" class="qna_question_add_subCan">작성</button>
-                        <button type="button" name="cancel" onclick="qna_question_add_cancel();" class="qna_question_add_subCan">취소</button>
-                    </div>
-                </form>
+                <div class="small_menu_open">
+                    <nav>
+                        <ul>
+                            <li><a href="../introduce">소개</a></li>
+                            <li><a href="../archive">아카이브</a></li>
+                            <li><a href="../qna">Q&A</a></li>
+                            <li><a href="../gamecenter">놀이터</a></li>
+                            <li><a href="../etc">etc.</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <script>
+                    $(".ham").click(function () {
+                        $(this).toggleClass("active");
+                        $(".small_menu_open").toggleClass("active");
+                    });
+                </script>
             </div>
-            <% for(var i=0; i < page_num; i++) { 
-                if(number==0){ %>
-                    <div class="qna_entry_empty">
-                            <span>아직 질문이 없습니다.</span>
-                    </div>
-                <% break;}
-                if(number-((page-1)*10)-i>0){ %>
-                    <div class="qna_entry" onclick="location.href='./read/<%=qna_id[i]%>'">
-                        <div>  
-                            <span><%= qna_title[i] %></span>
-                            <p><%= qna_question[i] %></p>
-                        </div>
+            <div class="nav_notice">
+                <p class="notice_title">
+                    <a href="../qna">Q & A</a>
+                </p>
+                <p class="notice_exp">
+                    누구나 평소 궁금했던 것을 질문하고 답변을 받을 수 있는 공간입니다.<br>
+                    네티켓은 꼭 지켜주세요! (부적절하다고 판단되는 글은 무통보 삭제됩니다.)
+                </p>
+            </div>
+        </header>
+
+        <!-- 내용 -->
+        <div class="qna_section">
+            <div class="float">
+                <button class="float_button" onclick="qna_question_add();">+</button>
+            </div>
+            <div class="qna_contents">
+                <div class="qna_question_add">
+                    <form action="/qna/questionSubmit" method="post" onsubmit="return questionDoAction();">
+                        <strong>새로운 질문 작성</strong><br>
+                        <input type="text" class="qna_question_add_title" name="qna_title"
+                            placeholder="제목을 작성하세요. (최대 30자)" autocomplete='off' maxlength='30' /><br>
+                        <textarea class="qna_question_add_textarea" placeholder="질문을 작성하세요. (최대 500자)"
+                            name="qna_question" autocomplete='off' maxlength='500' wrap="soft"></textarea><br>
+                        <input type="password" class="qna_question_add_password" placeholder="비밀번호를 작성하세요. (글 삭제 시 필요)"
+                            name="qna_password" autocomplete='off' /><br>
+                        <input type="text" class="qna_question_add_date" name="qna_date" value="0000-00-00"
+                            style="display: none;" />
                         <div>
-                            <span>답변 <%= qna_answer_num[i] %></span>&ensp;&ensp;
-                            <span>등록 <%= qna_date[i] %></span>
+                            <button name="submit" class="qna_question_add_subCan">작성</button>
                         </div>
-                    </div>
-                <% }
-            } %>
+                    </form>
+                </div>
+                <div class="qna_part">
+                    <% for(var i=0; i < page_num; i++) { if(number==0){ %>
+                        <div class="qna_entry_empty">
+                            <span>아직 질문이 없습니다.</span>
+                        </div>
+                        <% break;} if(number-((page-1)*10)-i>0){ %>
+                            <div class="qna_entry" onclick="location.href='./read/<%=qna_id[i]%>'">
+                                <div>
+                                    <span>
+                                        <%= qna_title[i] %>
+                                    </span>
+                                    <p>
+                                        <%= qna_question[i] %>
+                                    </p>
+                                </div>
+                                <div>
+                                    <span>답변 <%= qna_answer_num[i] %></span>&ensp;&ensp;
+                                    <span>등록 <%= qna_date[i] %></span>
+                                </div>
+                            </div>
+                            <% } } %>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <!-- 페이지 넘길 수 있음 -->
-    <table class="qna_page">
-        <tr>
-            <!-- 이전 페이지 구간의 마지막 페이지 -->
-            <!-- ex) 15페이지에서 '이전' 버튼 누르면 10페이지로 감 -->
-            
-            <td><a id="prev" href="/qna/<%= parseInt((page - 1) / 10) * 10 %>">이전</a></td>
-                <% 
-                <!-- 마지막 페이지 -->
-                <!-- 1~10이므로 1을 뺀 후에, 10으로 나누기 -->
-                let last_page = ((number-1) / page_num) + 1;
-                <!-- 현재 페이지가 있는 구간의 시작 -->
-                let now_page_first = parseInt((page-1) / 10) * 10 + 1;
-                let now_page_last = now_page_first + 9;
-                for (var i = now_page_first; i <= now_page_last; i++) {
-                    if(i <= last_page) {%>
+        <!-- 페이지 넘길 수 있음 -->
+        <table class="qna_page">
+            <tr>
+                <!-- 이전 페이지 구간의 마지막 페이지 -->
+                <!-- ex) 15페이지에서 '이전' 버튼 누르면 10페이지로 감 -->
+
+                <td><a id="prev" href="/qna/<%= parseInt((page - 1) / 10) * 10 %>">
+                        <<</a>
+                </td>
+                <% <!-- 마지막 페이지 -->
+                    <!-- 1~10이므로 1을 뺀 후에, 10으로 나누기 -->
+                    let last_page = ((number-1) / page_num) + 1;
+                    <!-- 현재 페이지가 있는 구간의 시작 -->
+                    let now_page_first = parseInt((page-1) / 10) * 10 + 1;
+                    let now_page_last = now_page_first + 9;
+                    for (var i = now_page_first; i <= now_page_last; i++) { if(i <=last_page) {%>
                         <td>
                             <a id="num_<%= i %>" href="/qna/<%= i %>">
                                 <%= i %>
                             </a>
                         </td>
-                    <% } else {
-                        break;
-                    }
-                } %>
-            <td><a id="next" href="/qna/<%= (parseInt((page - 1) / 10) + 1) * 10 + 1%>">다음</a></td>
-        </tr>
+                        <% } else { break; } } %>
+                            <td><a id="next" href="/qna/<%= (parseInt((page - 1) / 10) + 1) * 10 + 1%>">>></a></td>
+            </tr>
         </table>
         <script>
             // 1~10페이지 구간에 현재 페이지가 존재하면, '이전' 버튼 비활성화
             // ex) 현재 페이지가 5페이지이면 1~10 사이에 존재하므로 '이전' 버튼 비활성화
             document.getElementById("num_" + "<%= page %>").style.color = 'red';
             if ("<%= parseInt(page) %>" <= 10) {
-                document.getElementById("prev").style.color = 'rgb(200, 200, 200)';
+                document.getElementById("prev").style.color = 'rgb(230, 230, 230)';
                 document.getElementById("prev").setAttribute("onclick", "return false;");
                 document.getElementById("prev").style.cursor = 'default';
             }
@@ -156,49 +168,26 @@
             // ex) 마지막 페이지는 19페이지이고 현재 15페이지면
             // 마지막 페이지인 19페이지가 있는 구간인 11~20 사이에 현재 15페이지가 존재하므로, '다음' 비활성화
             if ("<%= parseInt((page - 1) / 10) %>" == "<%= parseInt((last_page - 1) / 10) %>") {
-                document.getElementById("next").style.color = 'rgb(200, 200, 200)';
+                document.getElementById("next").style.color = 'rgb(230, 230, 230)';
                 document.getElementById("next").setAttribute("onclick", "return false;");
                 document.getElementById("next").style.cursor = 'default';
             }
         </script>
     </div>
-
     <footer>
-        <div class="footer_first">
-            <li><a href="#">오시는 길</a></li>
-            <li><a href="#">이용 약관</a></li>
-            <li><a href="#">제휴 제안</a></li>
-            <li><a href="#">개인정보 처리방침</a></li>
-        </div>
-        <div class="footer_second">
-            <div class="footer_logo">
-                <img src="../image/main/graylogo.png">
-                <img src="../image/main/무제.png">
+        <div class="footer_section">
+            <div class="footer_area">
+                <div class="footer_logo">
+                    <img src="../image/main/logo.png">
+                    <img src="../image/main/무제.png">
+                </div>
+                <div class="footer_explain">
+                    <a class="footer_use" href="../policy">이용 약관</a>
+                    <p>서울특별시 광진구 능동로 120, 제2학생회관 B117호</p>
+                    <p>후원 | 카카오뱅크 3333180300967</p><br>
+                    <p>© KUPHIL. All rights reserved.</p>
+                </div>
             </div>
-            <div class="footer_explain">
-
-                <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
-                <p>후원 | ##은행 #####</p><br>
-                <p>copyright 2021 KUPHIL, All rights reserved.</p>
-            </div>
-            <div class="footer_sns">
-                <p>Contact Us :)</p>
-                <a href="https://www.youtube.com/channel/UCyG3uwmWmLt8tYNOJ3I1QYA" target="_blank">
-                    <img src="../image/main/kuphil_youtube.png" alt="쿠필 유튜브">
-                </a>
-                <a href="https://www.instagram.com/kuphilharmonic/?hl=ko" target="_blank">
-                    <img src="../image/main/kuphil_instagram.png" alt="쿠필 인스타그램">
-                </a>
-                <a href="https://www.facebook.com/KUPhilharmonic/" target="_blank">
-                    <img src="../image/main/kuphil_facebook.png" alt="쿠필 페이스북">
-                </a>
-            </div>
-        </div>
-        <div class="small_footer_explain">
-
-            <p>서울특별시 광진구 능동로 120 제2학생회관 지하 117호</p>
-            <p>후원 | ##은행 #####</p><br>
-            <p>copyright 2021 KUPHIL, All rights reserved.</p>
         </div>
     </footer>
 </body>
