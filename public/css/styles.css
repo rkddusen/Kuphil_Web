@@ -500,14 +500,16 @@ section {
     display: flex;
     justify-content: center;
 }
-.sns_contents a{
-    width: 20%;
-    margin: 0 5%;
-    text-align: center;
+.sns_contents div{
+    position: relative;
+    width: 25%;
 }
-.sns_contents a img{
-    width: auto;
-    height: 100%;
+.sns_contents div img{
+    position: absolute;
+    width: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 /* 팁 */
@@ -664,9 +666,11 @@ section {
         width: 100%;
         padding-top: 20%;
     }
-    .sns_contents a
-    {
-        width: 15%;
+    .sns_explain{
+        height: 100%;
+    }
+    .sns_contents div img{
+        width: 50%;
     }
     .main_tip{
         width: 100%;
