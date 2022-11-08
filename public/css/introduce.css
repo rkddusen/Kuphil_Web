@@ -219,14 +219,7 @@ article {
         font-size: 3.5rem;
     }
 
-    .whatKuphil1 {
-        display: none;
-    }
     
-    .whatKuphil2 {
-        display: block;
-        width: 100%;
-    }
 
     
     #path {
@@ -241,31 +234,14 @@ article {
         font-size:3.5rem;
     }
 
-    #locations{
-        display:inline-block;
-        margin:0 35%;
-        margin-bottom:15px;
-        border:1px;
-        border-radius:7px;
-        width:30%;
-        text-align:center;
-        font-size:1.3rem;
-        height:30px;
-        background-color:#fffaf7;
-    }
-
-    
-    #start_location{
-        display:none;
-    }
-    /*.location{
+    .location{
         margin-top:5px;
         margin-bottom:20px;
     }
 
     .location > input{
         font-size: 1.5rem;
-    }*/
+    }
 
     #kuphil_room {
         flex-direction:column;
@@ -329,7 +305,14 @@ article {
     #introduce_image > span{
         font-size:3rem;
     }
-
+.whatKuphil1 {
+        display: none;
+    }
+    
+    .whatKuphil2 {
+        display: block;
+        width: 100%;
+    }
 
     #path>span{
         margin: 0 auto;
