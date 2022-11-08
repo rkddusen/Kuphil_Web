@@ -63,6 +63,7 @@ function showResult(resultMax) {
     endText += '<br>지금 당장 쿠필에서 도전해 보아요~!😘';
     endText += '</div>';
     endText += '<img class="resultImg" src="./image/test/' + resultMax + '_결과.jpg">';
+    endText += '<br><button class="resultRe" onclick="location.reload();">다시 하기</button>'
     end.innerHTML = endText;
 }
 
@@ -97,10 +98,7 @@ function endGame() {
     let quesText = '';
     ques.innerHTML = quesText;
     document.getElementsByClassName("answer")[0].innerHTML = '';
-    
-    console.log("오보에"+resultArray[6]);
-    console.log("클라"+resultArray[7]);
-    console.log("플룻"+resultArray[8]);
+
     //최대값 찾기
     for (let i = 0; i < 17; i++) {
         if (resultArray[i] > resultArray[resultMax]) {
