@@ -194,6 +194,7 @@
         width: 40%;
         margin: 20px 2%;
     }
+    
     .prev_btn {
         width: 15px;
         height: 15px;
@@ -252,6 +253,15 @@
     .posterbox .poster_img{
         width: 80%;
         margin: 20px 2%;
+    }
+    .loadposters {
+        margin: 0 auto;
+        margin-top: 10px;
+        width: 30%;
+        display: flex;
+        justify-content: space-between;
+        position: unset;
+        transform: translate(0,0);
     }
     .prev_btn {
         width: 10px;
