@@ -86,14 +86,14 @@ article {
 }
 #introduce_image{
     width: 84%;
-    padding: 0 8%;
     margin: 70px auto;
     margin-top:100px;
 }
 .whatKuphil1 {
-    width: 100%;
+    width: 80%;
     display: block;
     margin: 0 auto;
+    max-width: 800px;
 }
 
 .whatKuphil2 {
@@ -229,7 +229,9 @@ article {
     }
 
     
-
+    .whatKuphil1 {
+        width: 100%;
+    }
     
     #path {
         margin: 20px auto;
@@ -315,13 +317,15 @@ article {
     #introduce_image > span{
         font-size:3rem;
     }
-.whatKuphil1 {
+    .whatKuphil1 {
         display: none;
     }
     
     .whatKuphil2 {
+        width: 80%;
         display: block;
-        width: 100%;
+        margin: 0 auto;
+        max-width: 600px;
     }
 
     #path>span{
