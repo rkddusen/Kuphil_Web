@@ -119,9 +119,18 @@ article {
     align-items:center;
     justify-content: space-evenly;
 }
-
-#kuphil_room > img{
-    width:45%;
+#kuphil_room div{
+    position: relative;
+    width: 45%;
+    max-width: 600px;
+    padding-top: 45%;
+}
+#kuphil_room div img{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 100%
 }
 
 #locations{
@@ -248,8 +257,9 @@ article {
         justify-content: center;
     }
     
-    #kuphil_room > img{
-        width:85%;
+    #kuphil_room div{
+        width: 80%;
+        padding-top: 80%;
     }
     
     #kuphil_room > p {
