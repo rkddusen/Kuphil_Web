@@ -202,15 +202,26 @@ section {
     
     font-size: 1.4rem;
 }
-.wea div{
+.wea div:first-child{
+    margin-left: 3%;
     height: 100%;
     float: left;
     display: flex;
     align-items: center;
 }
+.wea div:last-child{
+    margin-right: 3%;
+    height: 100%;
+    float: right;
+    display: flex;
+    align-items: center;
+}
+.wea div span{
+    white-space: nowrap;
+}
 #weather_icon{
     height: 50%;
-    margin: 0 10px 0 30px;
+    margin: 0 10px 0 0;
 }
 .wea_detail{
     position: absolute;
@@ -243,8 +254,8 @@ section {
     position: relative;
     width:57%;
     height: 0;
-    /* padding-top: 30%; */
-    padding-top: 39%;
+    padding-top: 30%;
+    /* padding-top: 39%; */
     margin-top: 3%;
 }
 .main_recru_content{
@@ -302,7 +313,7 @@ section {
     height: 0;
     padding-top: 39%;
     margin-top: -6%;
-    margin-top: 3%;
+    /* margin-top: 3%; */
 }
 
 .main_arcade_content{
@@ -594,13 +605,16 @@ section {
     }
     .wea div:first-child{
         height: 60%;
+        margin-left: 0;
     }
     .wea div:last-child{
         height: 20%;
         justify-content: end;
+        margin-right: 0%;
     }
     #weather_icon{
         height: 60%;
+        margin-left: 30px;
     }
     #weather_temp, #weather_desc{
         font-weight: bold;
