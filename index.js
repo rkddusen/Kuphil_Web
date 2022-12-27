@@ -124,12 +124,8 @@ server.get("/test", (req, res) => {
     );
 });
 
-server.get("/etc", (req, res) => {
-    res.sendFile(__dirname + "/public/html/etc.html");
-});
-
-server.get("/laboratory", (req, res) => {
-    res.sendFile(__dirname + "/public/html/laboratory.html");
+server.get("/lab", (req, res) => {
+    res.sendFile(__dirname + "/public/html/lab.html");
 });
 
 server.get("/restaurant", (req, res) => {
