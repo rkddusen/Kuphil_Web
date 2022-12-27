@@ -143,45 +143,6 @@ server.get("/cooperation", (req, res) => {
     res.sendFile(__dirname + "/public/html/cooperation.html");
 });
 
-const game2048 = fs.readFileSync("./public/html/2048.ejs", "utf8");
-server.get("/2048game", (req, res) => {
-    connection.query(
-        "SELECT name, score FROM 2048game ORDER BY score desc limit 15;",
-        function (error, rows, fields) {
-            if (error) {
-                console.log(error);
-            } else {
-                let name = "";
-                let score = [];
-                for (var i in rows) {
-                    name += rows[i].name ? rows[i].name : "정보 없음";
-                    name += "//나누는구간//";
-                    score[i] = rows[i].score ? rows[i].score : 0;
-                } //데이터 생성
-                var page = ejs.render(game2048, {
-                    name: name,
-                    bestscore: score,
-                });
-                //응답
-                res.send(page);
-            }
-        }
-    );
-});
-
-server.post("/2048game/record", (req, res) => {
-    let name = req.body.name;
-    let score = req.body.score;
-    let sql = "INSERT INTO 2048game (name, score) VALUES(?, ?)";
-    let params = [name, score];
-    connection.query(sql, params, function (err, result, fields) {
-        if (err) {
-            console.log(err);
-        }
-        return res.redirect("/2048game");
-    });
-});
-
 server.get("/qna", (req, res) => {
     res.redirect("/qna/1");
 });
