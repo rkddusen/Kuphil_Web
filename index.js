@@ -3,17 +3,12 @@ const express = require("express");
 (http = require("http")), (path = require("path"));
 
 //express 미들웨어 불러오기
-var static = require("serve-static"),
-    bodyParser = require("body-parser");
-var session = require("express-session");
+var bodyParser = require("body-parser");
 const ejs = require("ejs");
 const fs = require("fs");
-const { rawListeners, title } = require("process");
-const { text } = require("express");
 
 //서버를 생성, express 객체 생성
 const server = express();
-var router = express.Router();
 
 //기본 속성 설정
 server.set("port", process.env.PORT || 8080);
