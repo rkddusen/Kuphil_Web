@@ -230,7 +230,7 @@ server.post("/qna/questionSubmit", (req, res) => {
     let password = req.body.qna_password;
     let date = req.body.qna_date;
     let sql =
-        'INSERT INTO qna_question (title, question, password, date) VALUES(?, ?, password("?"), ?)';
+        'INSERT INTO qna_question (title, question, password, date) VALUES(?, ?, md5("?"), ?)';
     let params = [title, question, password, date];
     connection.query(sql, params, function (err, result, fields) {
         if (err) {
@@ -256,8 +256,8 @@ server.post("/qna/deleteSubmit", (req, res) => {
     let password = req.body.qna_password;
     let id = req.body.qna_id;
     let sql1 =
-        'SELECT count(*) as count FROM qna_question WHERE id=? and password=password("?");';
-    let sql = 'DELETE FROM qna_question WHERE id=? and password=password("?");';
+        'SELECT count(*) as count FROM qna_question WHERE id=? and password=md5("?");';
+    let sql = 'DELETE FROM qna_question WHERE id=? and password=md5("?");';
     let params = [id, password, id, password];
     connection.query(sql1 + sql, params, function (err, rows, fields) {
         if (err) {
