@@ -278,8 +278,9 @@ server.get("/archive/concert/:idx", (req, res) => {
     var idx = req.params.idx;
     let sql_info = "SELECT * FROM concert_info WHERE id=?;"; //첫번째 sql -> rows[0]
     let sql_program = "SELECT * FROM concert_program WHERE id=?;"; //두번째 sql -> rows[1]
+    let sql_num = "SELECT id FROM concert_info ORDER BY id desc limit 1;"
     connection.query(
-        sql_info + sql_program,
+        sql_info + sql_program + sql_num,
         [idx, idx],
         function (error, rows, fields) {
             if (error) {
@@ -296,6 +297,7 @@ server.get("/archive/concert/:idx", (req, res) => {
                     concert_composer[i] = rows[1][i].composer;
                     concert_program[i] = rows[1][i].program;
                 }
+                let concert_total_num = rows[2][0].id;
 
                 //데이터 생성
                 var page = ejs.render(arcReadPage, {
@@ -306,6 +308,7 @@ server.get("/archive/concert/:idx", (req, res) => {
                     concert_conductor: concert_conductor,
                     concert_program: concert_program,
                     concert_composer: concert_composer,
+                    concert_total_num: concert_total_num,
                 });
                 //응답
                 res.send(page);
