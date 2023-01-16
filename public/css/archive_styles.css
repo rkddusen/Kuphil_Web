@@ -93,9 +93,23 @@
 .archiveBox .container_2 {
     display: flex;
     flex-direction: row;
-    padding: 3% 5% 10% 5%;
+    padding: 2% 5% 10% 5%;
+    position: relative;
 }
-
+.qna_back{
+    margin: 0 5%;
+    width: 40px;
+    height: 40px;
+    font-size: 2rem;
+    border: none;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+}
+.ng-star-inserted{
+    transform: rotate(-90deg);
+    margin-top: 7px;
+}
 
 .arc_concert_poster {
     /* 포스터 사이즈가 규격에 맞지 않으면 잘려서 출력됨 */
@@ -212,8 +226,11 @@
         justify-content: center;
         text-align: center;
     }
+    .qna_back{
+        margin: 0;
+    }
     .arc_concert_poster {
-        width: 40%;
+        /* width: 40%; */
         height: 40%;
         margin: 0 auto;
     }
