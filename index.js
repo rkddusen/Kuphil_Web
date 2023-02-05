@@ -3,17 +3,12 @@ const express = require("express");
 (http = require("http")), (path = require("path"));
 
 //express 미들웨어 불러오기
-var static = require("serve-static"),
-    bodyParser = require("body-parser");
-var session = require("express-session");
+var bodyParser = require("body-parser");
 const ejs = require("ejs");
 const fs = require("fs");
-const { rawListeners, title } = require("process");
-const { text } = require("express");
 
 //서버를 생성, express 객체 생성
 const server = express();
-var router = express.Router();
 
 //기본 속성 설정
 server.set("port", process.env.PORT || 8080);
@@ -124,12 +119,8 @@ server.get("/test", (req, res) => {
     );
 });
 
-server.get("/etc", (req, res) => {
-    res.sendFile(__dirname + "/public/html/etc.html");
-});
-
-server.get("/laboratory", (req, res) => {
-    res.sendFile(__dirname + "/public/html/laboratory.html");
+server.get("/lab", (req, res) => {
+    res.sendFile(__dirname + "/public/html/lab.html");
 });
 
 server.get("/restaurant", (req, res) => {
@@ -141,45 +132,6 @@ server.get("/gamecenter", (req, res) => {
 });
 server.get("/cooperation", (req, res) => {
     res.sendFile(__dirname + "/public/html/cooperation.html");
-});
-
-const game2048 = fs.readFileSync("./public/html/2048.ejs", "utf8");
-server.get("/2048game", (req, res) => {
-    connection.query(
-        "SELECT name, score FROM 2048game ORDER BY score desc limit 15;",
-        function (error, rows, fields) {
-            if (error) {
-                console.log(error);
-            } else {
-                let name = "";
-                let score = [];
-                for (var i in rows) {
-                    name += rows[i].name ? rows[i].name : "정보 없음";
-                    name += "//나누는구간//";
-                    score[i] = rows[i].score ? rows[i].score : 0;
-                } //데이터 생성
-                var page = ejs.render(game2048, {
-                    name: name,
-                    bestscore: score,
-                });
-                //응답
-                res.send(page);
-            }
-        }
-    );
-});
-
-server.post("/2048game/record", (req, res) => {
-    let name = req.body.name;
-    let score = req.body.score;
-    let sql = "INSERT INTO 2048game (name, score) VALUES(?, ?)";
-    let params = [name, score];
-    connection.query(sql, params, function (err, result, fields) {
-        if (err) {
-            console.log(err);
-        }
-        return res.redirect("/2048game");
-    });
 });
 
 server.get("/qna", (req, res) => {
@@ -278,7 +230,7 @@ server.post("/qna/questionSubmit", (req, res) => {
     let password = req.body.qna_password;
     let date = req.body.qna_date;
     let sql =
-        'INSERT INTO qna_question (title, question, password, date) VALUES(?, ?, password("?"), ?)';
+        'INSERT INTO qna_question (title, question, password, date) VALUES(?, ?, md5("?"), ?)';
     let params = [title, question, password, date];
     connection.query(sql, params, function (err, result, fields) {
         if (err) {
@@ -304,8 +256,8 @@ server.post("/qna/deleteSubmit", (req, res) => {
     let password = req.body.qna_password;
     let id = req.body.qna_id;
     let sql1 =
-        'SELECT count(*) as count FROM qna_question WHERE id=? and password=password("?");';
-    let sql = 'DELETE FROM qna_question WHERE id=? and password=password("?");';
+        'SELECT count(*) as count FROM qna_question WHERE id=? and password=md5("?");';
+    let sql = 'DELETE FROM qna_question WHERE id=? and password=md5("?");';
     let params = [id, password, id, password];
     connection.query(sql1 + sql, params, function (err, rows, fields) {
         if (err) {
@@ -326,8 +278,9 @@ server.get("/archive/concert/:idx", (req, res) => {
     var idx = req.params.idx;
     let sql_info = "SELECT * FROM concert_info WHERE id=?;"; //첫번째 sql -> rows[0]
     let sql_program = "SELECT * FROM concert_program WHERE id=?;"; //두번째 sql -> rows[1]
+    let sql_num = "SELECT id FROM concert_info ORDER BY id desc limit 1;"
     connection.query(
-        sql_info + sql_program,
+        sql_info + sql_program + sql_num,
         [idx, idx],
         function (error, rows, fields) {
             if (error) {
@@ -344,6 +297,7 @@ server.get("/archive/concert/:idx", (req, res) => {
                     concert_composer[i] = rows[1][i].composer;
                     concert_program[i] = rows[1][i].program;
                 }
+                let concert_total_num = rows[2][0].id;
 
                 //데이터 생성
                 var page = ejs.render(arcReadPage, {
@@ -354,6 +308,7 @@ server.get("/archive/concert/:idx", (req, res) => {
                     concert_conductor: concert_conductor,
                     concert_program: concert_program,
                     concert_composer: concert_composer,
+                    concert_total_num: concert_total_num,
                 });
                 //응답
                 res.send(page);

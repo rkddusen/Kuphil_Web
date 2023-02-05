@@ -12,15 +12,8 @@
 #wrap_restaurant_area {
     display: flex;
     gap: 0 5vw;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
 }
-
-/*
-#wrap_restaurant_type {
-    display: flex;
-    gap: 0 3vw;
-    margin-bottom: 10px;
-}*/
 
 .restaurant_name {
     font-size: 1.25rem;
@@ -108,27 +101,28 @@
     justify-content: space-between;
     color: #333333
   }
+
   #theme .select:hover {
     color: #333;
     transition: all .3s;
   }
+
   #theme .select .option-list {
     list-style: none;
     padding: 0;
     border-radius: 5px;
     box-shadow: 0 0 2px rgba(0,0,0,0.3);
   }
+
   #theme .select .option-list .option {
     padding: 10px 15px;
+    font-size: 2rem;
   }
+
   #theme .select .option-list .option:hover {
     background-color: #f2f2f2;
   }
  
-  
-
-
-
   .select1 {
     position: relative;
   }
@@ -159,19 +153,24 @@
     justify-content: space-between;
     color: #333333
   }
+
   #theme1 .select1:hover {
     color: #333;
     transition: all .3s;
   }
+
   #theme1 .select1 .option-list1 {
     list-style: none;
     padding: 0;
     border-radius: 5px;
     box-shadow: 0 0 2px rgba(0,0,0,0.3);
   }
+
   #theme1 .select1 .option-list1 .option1 {
     padding: 10px 15px;
+    font-size: 2rem;
   }
+
   #theme1 .select1 .option-list1 .option1:hover {
     background-color: #f2f2f2;
   }
@@ -182,22 +181,74 @@
 
 @media (max-width: 767px) {
     .restaurant_content {
-        margin: 70px auto;
+      height: 700px;
+    }
+
+    #wrap_restaurant_area {
+      margin-bottom: 110px;
     }
 
     #wrap_restaurant_map_n_info {
-        flex-direction: column;
-        gap: 20px;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .select {
+      width: 57px;
+      height: 21px;
+    }
+
+    .select1 {
+      width: 57px;
+      height: 21px;
+    }
+
+    .text {
+      font-size: 1.2rem;
+    }
+
+    .text1 {
+      font-size: 1.2rem;
+    }
+
+    .tri {
+      font-size: 1.2rem;
     }
 }
 
 @media (max-width: 479px) {
     .restaurant_content {
-        margin: 70px auto;
+      height: 700px;
+    }
+
+    #wrap_restaurant_area {
+      margin-bottom: 110px;
     }
 
     #wrap_restaurant_map_n_info {
-        flex-direction: column;
-        gap: 20px;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .select {
+      width: 57px;
+      height: 21px;
+    }
+
+    .select1 {
+      width: 57px;
+      height: 21px;
+    }
+
+    .text {
+      font-size: 1.2rem;
+    }
+
+    .text1 {
+      font-size: 1.2rem;
+    }
+
+    .tri {
+      font-size: 1.2rem;
     }
 }
