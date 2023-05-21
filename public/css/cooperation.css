@@ -41,9 +41,18 @@
     width:90%;
     margin:0 auto;
 }
-
+#contact_how > p{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+.contact_content{
+    width: 300px;
+    margin: 0 auto;
+}
 .contact{
     display:flex;
+    flex-direction: column;
     align-items:center;
     justify-content:center;
     margin-bottom:30px;
@@ -51,8 +60,7 @@
 
 .contact>img{
     width:50px;
-    margin-right:25px;
-    margin-left:50px;
+    margin-bottom: 10px;
 }
 
 .contact>a>p{
