@@ -171,21 +171,32 @@
             </div>
 
             <div class="year5">
-                <% for(let x=0; x < 5; x++){ if(activity.length==0){ break; } else{ %>
-                    <section>
-                        <%=activity[0].year%>
-                    </section>
-                    <p>
-                        <% for(let i=0; i < activity.length; i++){ if(activity[0].year> 2020 + x){ break; } else{ %>
-                            <span class="date">
-                                <%= activity[0].month %>
-                                    <%= activity[0].day %>
-                            </span> <span class="context">
-                                <%= activity[0].context %>
-                            </span><br>
-                            <% } activity.shift(); } %>
-                    </p>
-                    <% } } %>
+                <% for(let x=0; x < 5; x++){ 
+                    if(activity.length==0) break;
+                    else{ %>
+                        <section>
+                            <%=activity[0].year%>
+                        </section>
+                        <p>
+                            <% 
+                            let count = activity.length;
+                            for(let i=0; i < count; i++){
+                                if(activity[0].year > 2020 + x) break;
+                                else{ %>
+                                    <span class="date">
+                                        <%= activity[0].month %>
+                                        <%= activity[0].day %>
+                                    </span>
+                                    <span class="context">
+                                        <%= activity[0].context %>
+                                    </span>
+                                    <br>
+                                    <% activity.shift();
+                                 } 
+                            } %>
+                        </p>
+                    <% }
+                } %>
             </div>
         </div>
 
