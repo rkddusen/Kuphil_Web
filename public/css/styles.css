@@ -291,10 +291,11 @@ section {
     letter-spacing: 1rem;
 }
 .recru_btn{
+    width: 120px;
+    height: 50px;
     display: inline-block;
     box-sizing: border-box;
     margin-top: 10%;
-    padding: 6% 10%;
     font-size: 1.5rem;
     color: white;
     background-color: #327900;
@@ -354,7 +355,8 @@ section {
     display: inline-block;
     box-sizing: border-box;
     margin-top: 5%;
-    padding: 2% 5%;
+    width: 120px;
+    height: 50px;
     font-size: 1.5rem;
     color: white;
     background-color: #007482;
@@ -466,9 +468,10 @@ section {
     font-size: 2rem;
 }
 .suggest_btn button{
+    width: 150px;
+    height: 50px;
     display: inline-block;
     box-sizing: border-box;
-    padding: 4% 5%;
     font-size: 1.5rem;
     color: white;
     background-color: #920084;
@@ -563,6 +566,18 @@ section {
     .tip_contents p{
         font-size: 1.6rem;
     }
+    .recru_btn{
+        width: 100px;
+        height: 40px;
+    }
+    .arcade_explain div p button{
+        width: 100px;
+        height: 40px;
+    }
+    .suggest_btn button{
+        width: 140px;
+        height: 40px;
+    }
 }
 @media (max-width : 767px) {
     .slide_archive div .slide_archive_title{
@@ -643,16 +658,12 @@ section {
     }
     .recru_btn{
         margin-top: 20%;
-        padding: 8% 20%;
     }
     .main_arcade{
         width: 100%;
         padding-top: 75%;
         margin-top: 7%;
         float: left;
-    }
-    .arcade_explain div p button{
-        padding: 2% 5%;
     }
     .main_recent{
         width: 100%;
@@ -670,9 +681,6 @@ section {
     }
     .suggest_image, .suggest_btn{
         width: 50%;
-    }
-    .suggest_btn button{
-        padding: 6% 10%;
     }
     .main_sns{
         margin-top: 7%;

@@ -277,7 +277,7 @@ const arcReadPage = fs.readFileSync("./public/html/arcConcert.ejs", "utf8");
 server.get("/archive/concert/:idx", (req, res) => {
     var idx = req.params.idx;
     let sql_info = "SELECT * FROM concert_info WHERE id=?;"; //첫번째 sql -> rows[0]
-    let sql_program = "SELECT * FROM concert_program WHERE id=?;"; //두번째 sql -> rows[1]
+    let sql_program = "SELECT * FROM concert_program WHERE concert_id=?;"; //두번째 sql -> rows[1]
     let sql_num = "SELECT id FROM concert_info ORDER BY id desc limit 1;"
     connection.query(
         sql_info + sql_program + sql_num,

@@ -149,16 +149,12 @@ footer {
     margin-top: 5px;
 }
 .footer_use{
-    margin-bottom: 5px;
     font-size: 1.2rem;
     color: #000000;
-    
+    font-weight: bold;
 }
 .footer_use:hover{
     text-decoration: underline;
-}
-.footer_explain .footer_use{
-    font-weight: bold;
 }
 .footer_logo {
     position: absolute;
