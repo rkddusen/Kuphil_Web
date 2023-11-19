@@ -124,8 +124,14 @@ server.get("/lab", (req, res) => {
     res.sendFile(__dirname + "/public/html/lab.html");
 });
 
+const restaurantPage = fs.readFileSync("./public/html/restaurant.ejs", "utf8");
+const naverMapClientId = process.env.NAVER_MAP_CLIENT_ID;
 server.get("/restaurant", (req, res) => {
-    res.sendFile(__dirname + "/public/html/restaurant.html");
+    var page = ejs.render(restaurantPage, {
+        naverMapClientId
+    });
+    //응답
+    res.send(page);
 });
 
 server.get("/gamecenter", (req, res) => {
