@@ -1,6 +1,7 @@
 //모듈을 추출
 const express = require("express");
 (http = require("http")), (path = require("path"));
+require('dotenv').config();
 
 //express 미들웨어 불러오기
 var bodyParser = require("body-parser");
@@ -11,8 +12,8 @@ const fs = require("fs");
 const server = express();
 
 //기본 속성 설정
-server.set("port", process.env.PORT || 8080);
-server.set("hostname", "127.0.0.1");
+server.set("port", process.env.SERVER_PORT);
+server.set("hostname", process.env.SERVER_HOST);
 
 //정적(css,일부js,사진)파일을 사용 가능하게끔
 server.use(express.static(__dirname + "/public"));
